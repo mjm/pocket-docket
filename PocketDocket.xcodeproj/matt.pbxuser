@@ -2,9 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* PDAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {926, 560}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 791}";
+			sepNavIntBoundsRect = "{{0, 0}, {926, 489}}";
+			sepNavSelRange = "{13, 0}";
+			sepNavVisRange = "{0, 629}";
+		};
+	};
+	1D3623250D0F684500981E51 /* PDAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {3045, 2660}}";
+			sepNavSelRange = "{1217, 0}";
+			sepNavVisRange = "{0, 655}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* PocketDocket */ = {

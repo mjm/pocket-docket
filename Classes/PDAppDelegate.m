@@ -1,5 +1,7 @@
 #import "PDAppDelegate.h"
 
+#import "PDPersistenceController.h"
+
 @implementation PDAppDelegate
 
 @synthesize window;
@@ -7,9 +9,11 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-    // Override point for customization after app launch    
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+    PDPersistenceController *persistenceController =
+			[[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:nil];
 
 	[window makeKeyAndVisible];
 }
@@ -22,11 +26,6 @@
     NSError *error = nil;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-			/*
-			 Replace this implementation with code to handle the error appropriately.
-			 
-			 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-			 */
 			NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 			abort();
         } 

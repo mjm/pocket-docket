@@ -15,6 +15,7 @@
 		28C3AD8A0F43EF2300507BA6 /* PocketDocket.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 28C3AD890F43EF2300507BA6 /* PocketDocket.xcdatamodel */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		C94C55F51154450100791FAC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindow.xib */; };
+		C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketDocket_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PocketDocket-Info.plist"; sourceTree = "<group>"; };
 		C94C55F41154450100791FAC /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPersistenceController.h; sourceTree = "<group>"; };
+		C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPersistenceController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* PDAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PDAppDelegate.m */,
+				C94C55FC115447E500791FAC /* PDPersistenceController.h */,
+				C94C55FD115447E500791FAC /* PDPersistenceController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* PDAppDelegate.m in Sources */,
 				28C3AD8A0F43EF2300507BA6 /* PocketDocket.xcdatamodel in Sources */,
+				C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
