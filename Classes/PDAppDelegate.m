@@ -1,6 +1,7 @@
 #import "PDAppDelegate.h"
 
 #import "PDPersistenceController.h"
+#import "Controllers/PDListsViewController.h"
 
 @implementation PDAppDelegate
 
@@ -13,7 +14,13 @@
     PDPersistenceController *persistenceController =
 			[[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
 	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:nil];
+	PDListsViewController *listsController = [[PDListsViewController alloc] initWithPersistenceController:persistenceController];
+	[persistenceController release];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];
+	[listsController release];
+	
+	[window addSubview:navController.view];
 
 	[window makeKeyAndVisible];
 }

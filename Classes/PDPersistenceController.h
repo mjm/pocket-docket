@@ -1,4 +1,7 @@
 //! Handles various persistence related operations.
+/*!
+ \nosubgrouping
+ */
 @interface PDPersistenceController : NSObject {
 	//! \name Accessing Core Data
 	//@{

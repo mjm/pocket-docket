@@ -16,6 +16,11 @@
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		C94C55F51154450100791FAC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindow.xib */; };
 		C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
+		C94C560311544FF700791FAC /* PDListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C560211544FF700791FAC /* PDListsViewController.m */; };
+		C94C56051154529500791FAC /* PDListsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56041154529500791FAC /* PDListsView.xib */; };
+		C94C564311569C8D00791FAC /* PDListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C564211569C8D00791FAC /* PDListTableCell.m */; };
+		C94C56451156A12B00791FAC /* PDListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56441156A12B00791FAC /* PDListTableCell.xib */; };
+		C94C569B1156B1A900791FAC /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +38,13 @@
 		C94C55F41154450100791FAC /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPersistenceController.h; sourceTree = "<group>"; };
 		C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPersistenceController.m; sourceTree = "<group>"; };
+		C94C560111544FF700791FAC /* PDListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListsViewController.h; path = Controllers/PDListsViewController.h; sourceTree = "<group>"; };
+		C94C560211544FF700791FAC /* PDListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListsViewController.m; path = Controllers/PDListsViewController.m; sourceTree = "<group>"; };
+		C94C56041154529500791FAC /* PDListsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDListsView.xib; sourceTree = "<group>"; };
+		C94C564111569C8D00791FAC /* PDListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListTableCell.h; path = Views/PDListTableCell.h; sourceTree = "<group>"; };
+		C94C564211569C8D00791FAC /* PDListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListTableCell.m; path = Views/PDListTableCell.m; sourceTree = "<group>"; };
+		C94C56441156A12B00791FAC /* PDListTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDListTableCell.xib; sourceTree = "<group>"; };
+		C94C569A1156B1A900791FAC /* ListIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C94C564011569C5400791FAC /* Views */,
+				C94C563F11569C4B00791FAC /* Controllers */,
 				1D3623240D0F684500981E51 /* PDAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PDAppDelegate.m */,
 				C94C55FC115447E500791FAC /* PDPersistenceController.h */,
@@ -93,6 +107,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C94C56991156B1A900791FAC /* Graphics */,
 				C94C55F31154450100791FAC /* XIBs */,
 				28C3AD890F43EF2300507BA6 /* PocketDocket.xcdatamodel */,
 				8D1107310486CEB800E47090 /* PocketDocket-Info.plist */,
@@ -115,8 +130,36 @@
 			isa = PBXGroup;
 			children = (
 				C94C55F41154450100791FAC /* MainWindow.xib */,
+				C94C56041154529500791FAC /* PDListsView.xib */,
+				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
 			);
 			path = XIBs;
+			sourceTree = "<group>";
+		};
+		C94C563F11569C4B00791FAC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C94C560111544FF700791FAC /* PDListsViewController.h */,
+				C94C560211544FF700791FAC /* PDListsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C94C564011569C5400791FAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C94C564111569C8D00791FAC /* PDListTableCell.h */,
+				C94C564211569C8D00791FAC /* PDListTableCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C94C56991156B1A900791FAC /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				C94C569A1156B1A900791FAC /* ListIcon.png */,
+			);
+			path = Graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +205,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C94C55F51154450100791FAC /* MainWindow.xib in Resources */,
+				C94C56051154529500791FAC /* PDListsView.xib in Resources */,
+				C94C56451156A12B00791FAC /* PDListTableCell.xib in Resources */,
+				C94C569B1156B1A900791FAC /* ListIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +222,8 @@
 				1D3623260D0F684500981E51 /* PDAppDelegate.m in Sources */,
 				28C3AD8A0F43EF2300507BA6 /* PocketDocket.xcdatamodel in Sources */,
 				C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */,
+				C94C560311544FF700791FAC /* PDListsViewController.m in Sources */,
+				C94C564311569C8D00791FAC /* PDListTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
