@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,9 +279,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>25</integer>
-									<integer>23</integer>
-									<integer>20</integer>
+									<integer>12</integer>
+									<integer>10</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -316,6 +314,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C94C57F2115704B300791FAC</string>
+										<string>C94C585A115710B700791FAC</string>
 										<key>history</key>
 										<array>
 											<string>C94C56111154555600791FAC</string>
@@ -349,10 +349,10 @@
 											<string>C94C573F1156EAF200791FAC</string>
 											<string>C94C579B1156F03900791FAC</string>
 											<string>C94C57A31156F12700791FAC</string>
-											<string>C94C57AE1156F6C000791FAC</string>
-											<string>C94C57DF115700B700791FAC</string>
-											<string>C94C57EA1157035900791FAC</string>
-											<string>C94C57EB1157035900791FAC</string>
+											<string>C94C582311570BF800791FAC</string>
+											<string>C94C584711570FCB00791FAC</string>
+											<string>C94C584C1157100100791FAC</string>
+											<string>C94C584D1157100100791FAC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -530,12 +530,12 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {1293, 391}}</string>
+						<string>{{0, 0}, {1293, 350}}</string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
 					<key>Proportion</key>
-					<string>391pt</string>
+					<string>350pt</string>
 				</dict>
 				<dict>
 					<key>ContentConfiguration</key>
@@ -591,7 +591,7 @@
 						<key>DebugSTDIOWindowFrame</key>
 						<string>{{200, 200}, {500, 300}}</string>
 						<key>Frame</key>
-						<string>{{0, 396}, {1293, 443}}</string>
+						<string>{{0, 355}, {1293, 443}}</string>
 						<key>PBXDebugSessionStackFrameViewKey</key>
 						<dict>
 							<key>DebugVariablesTableConfiguration</key>

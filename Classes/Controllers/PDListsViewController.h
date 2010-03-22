@@ -9,8 +9,7 @@
  
  \nosubgrouping
  */
-@interface PDListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,
-		PDEditListViewControllerDelegate, NSFetchedResultsControllerDelegate> {
+@interface PDListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDEditListViewControllerDelegate, NSFetchedResultsControllerDelegate> {
 	//! \name Managing Persistence
 	//@{
 	
@@ -29,6 +28,12 @@
 	IBOutlet UIBarButtonItem *editButton;
 	IBOutlet UIBarButtonItem *doneButton;
 	IBOutlet UIBarButtonItem *addButton;
+	
+	//@}
+	//! \name User Interface
+	//@{
+	
+	BOOL isAdd;
 	
 	//@}
 }

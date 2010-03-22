@@ -5,7 +5,7 @@
 
 @implementation PDEditListViewController
 
-@synthesize list, delegate, titleCell, navItem;
+@synthesize list, delegate, titleCell, navItem, navBar, table;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -24,7 +24,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.navItem.title = self.title;
+	
+	if (self.navigationController) {
+		self.navigationItem.title = self.navItem.title;
+		self.navigationItem.rightBarButtonItem = self.navItem.rightBarButtonItem;
+		[self.navBar removeFromSuperview];
+		
+		[self.table setFrame:CGRectMake(0.0, 0.0, 320.0, 416.0)];
+	} else {
+		self.navItem.title = self.title;
+	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

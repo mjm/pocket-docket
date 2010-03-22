@@ -11,6 +11,8 @@
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list;
 
+- (void)doneEditingList:(PDList *)list;
+
 @end
 
 @implementation PDListsViewController (PrivateMethods)
@@ -18,6 +20,17 @@
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list {
 	cell.titleLabel.text = list.title;
 	cell.completionLabel.text = @"1 of 3 completed";
+}
+
+- (void)doneEditingList:(PDList *)list {
+	if (isAdd) {
+		[self dismissModalViewControllerAnimated:YES];
+	} else {
+		[self.navigationController popViewControllerAnimated:YES];
+		
+		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
+		[self.table deselectRowAtIndexPath:indexPath animated:YES];
+	}
 }
 
 @end
@@ -57,8 +70,18 @@
 	[self.fetchedResultsController performFetch:&error];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	// Make sure the table is not in editing mode.
+	[self doneEditingLists];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
+	
+	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
+	if (indexPath) {
+		[self.table deselectRowAtIndexPath:indexPath animated:animated];
+	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -87,6 +110,8 @@
 }
 
 - (IBAction)addList {
+	isAdd = YES;
+	
 	PDList *list = [self.persistenceController createList];
 	
 	PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
@@ -154,16 +179,28 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	return UITableViewCellEditingStyleDelete;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if ([self.table isEditing]) {
+		isAdd = NO;
+		
+		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
+		editController.delegate = self;
+		
+		[self.navigationController pushViewController:editController animated:YES];
+	}
+}
+
 #pragma mark -
 #pragma mark Edit List Controller Delegate Methods
 
 - (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
-	[self dismissModalViewControllerAnimated:YES];
+	[self doneEditingList:list];
 	[self.persistenceController save];
 }
 
 - (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {
-	[self dismissModalViewControllerAnimated:YES];
+	[self doneEditingList:list];
 	[self.persistenceController deleteList:list];
 }
 

@@ -28,6 +28,8 @@
 	//@{
 	
 	IBOutlet UINavigationItem *navItem;
+	IBOutlet UINavigationBar	 *navBar;
+	IBOutlet UITableView *table;
 	
 	//@}
 }
@@ -36,6 +38,8 @@
 @property (nonatomic, assign) id <PDEditListViewControllerDelegate> delegate;
 @property (nonatomic, retain) PDTextFieldCell *titleCell;
 @property (nonatomic, retain) IBOutlet UINavigationItem *navItem;
+@property (nonatomic, retain) IBOutlet UINavigationBar *navBar;
+@property (nonatomic, retain) IBOutlet UITableView *table;
 
 //! \name Initializing a View Controller
 //@{
