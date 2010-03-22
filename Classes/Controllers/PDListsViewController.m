@@ -1,11 +1,32 @@
 #import "PDListsViewController.h"
 
+#import "PDEditListViewController.h"
 #import "../PDPersistenceController.h"
+#import "../Models/PDList.h"
 #import "../Views/PDListTableCell.h"
+
+#pragma mark Private Methods
+
+@interface PDListsViewController (PrivateMethods)
+
+- (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list;
+
+@end
+
+@implementation PDListsViewController (PrivateMethods)
+
+- (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list {
+	cell.titleLabel.text = list.title;
+	cell.completionLabel.text = @"1 of 3 completed";
+}
+
+@end
+
+#pragma mark -
 
 @implementation PDListsViewController
 
-@synthesize persistenceController;
+@synthesize persistenceController, fetchedResultsController;
 @synthesize table, editButton, doneButton, addButton;
 
 #pragma mark -
@@ -16,6 +37,8 @@
 		return nil;
 	
 	self.persistenceController = controller;
+	self.fetchedResultsController = [controller listsFetchedResultsController];
+	self.fetchedResultsController.delegate = self;
 	
 	return self;
 }
@@ -29,6 +52,13 @@
 	self.title = @"Lists";
 	self.navigationItem.leftBarButtonItem = self.editButton;
 	self.navigationItem.rightBarButtonItem = self.addButton;
+	
+	NSError *error;
+	[self.fetchedResultsController performFetch:&error];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -39,6 +69,7 @@
 	[super viewDidUnload];
 	
 	self.editButton = nil;
+	self.doneButton = nil;
 	self.addButton = nil;
 }
 
@@ -55,23 +86,37 @@
 	self.navigationItem.leftBarButtonItem = editButton;
 }
 
+- (IBAction)addList {
+	PDList *list = [self.persistenceController createList];
+	
+	PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
+	editController.title = @"New List";
+	editController.delegate = self;
+	
+	[self presentModalViewController:editController animated:YES];
+	[editController release];
+}
+
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	return 3;
+	id <NSFetchedResultsSectionInfo> sectionInfo =
+		[[self.fetchedResultsController sections] objectAtIndex:section];
+	return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *ListCell = @"ListCell";
+	
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
 	PDListTableCell *cell = (PDListTableCell *) [tableView dequeueReusableCellWithIdentifier:ListCell];
 	if (!cell) {
 		cell = [PDListTableCell listTableCell];
 	}
 	
-	cell.titleLabel.text = @"Title";
-	cell.completionLabel.text = @"1 of 3 completed";
+	[self configureCell:cell withList:list];
 	
 	return cell;
 }
@@ -109,12 +154,75 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 #pragma mark -
+#pragma mark Edit List Controller Delegate Methods
+
+- (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
+	[self dismissModalViewControllerAnimated:YES];
+	[self.persistenceController save];
+}
+
+- (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {
+	[self dismissModalViewControllerAnimated:YES];
+	[self.persistenceController deleteList:list];
+}
+
+#pragma mark -
+#pragma mark Fetched Results Controller Delegate Methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	[self.table beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	[self.table endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath
+	 forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath {
+	
+	switch (type) {
+		case NSFetchedResultsChangeInsert:
+			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:(PDListTableCell *) [self.table cellForRowAtIndexPath:indexPath]
+					   withList:anObject];
+			break;
+		case NSFetchedResultsChangeMove:
+			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex
+	 forChangeType:(NSFetchedResultsChangeType)type {
+	return;
+}
+
+#pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc {
 	self.persistenceController = nil;
+	self.fetchedResultsController = nil;
+	
 	self.editButton = nil;
+	self.doneButton = nil;
 	self.addButton = nil;
+	
     [super dealloc];
 }
 

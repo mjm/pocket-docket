@@ -1,3 +1,5 @@
+#import "PDEditListViewController.h"
+
 @class PDPersistenceController;
 
 //! A view controller that displays all of the users lists.
@@ -7,12 +9,16 @@
  
  \nosubgrouping
  */
-@interface PDListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface PDListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,
+		PDEditListViewControllerDelegate, NSFetchedResultsControllerDelegate> {
 	//! \name Managing Persistence
 	//@{
 	
 	//! The controller used for persistence operations.
 	PDPersistenceController *persistenceController;
+	
+	//! The controller used to manage the lists.
+	NSFetchedResultsController *fetchedResultsController;
 	
 	//@}
 	//! \name Outlets
@@ -28,6 +34,7 @@
 }
 
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *editButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
@@ -52,6 +59,9 @@
 
 //! Action called when the user is done editing their lists.
 - (IBAction)doneEditingLists;
+
+//! Action called when the user wants to create a new list.
+- (IBAction)addList;
 
 //@}
 
