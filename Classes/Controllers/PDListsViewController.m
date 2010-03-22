@@ -77,11 +77,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
-	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
-	if (indexPath) {
-		[self.table deselectRowAtIndexPath:indexPath animated:animated];
-	}
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {

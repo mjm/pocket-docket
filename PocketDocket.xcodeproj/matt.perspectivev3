@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C94C585A115710B700791FAC</string>
+										<string>C94C58671157131900791FAC</string>
 										<key>history</key>
 										<array>
 											<string>C94C56111154555600791FAC</string>
@@ -352,7 +352,7 @@
 											<string>C94C582311570BF800791FAC</string>
 											<string>C94C584711570FCB00791FAC</string>
 											<string>C94C584C1157100100791FAC</string>
-											<string>C94C584D1157100100791FAC</string>
+											<string>C94C585F115712CF00791FAC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -669,6 +669,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C94C58641157131300791FAC</string>
 		<string>C94C57621156ECFC00791FAC</string>
 		<string>C94C57631156ECFC00791FAC</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
