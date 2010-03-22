@@ -231,6 +231,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -279,9 +281,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
-									<integer>10</integer>
-									<integer>1</integer>
+									<integer>25</integer>
+									<integer>23</integer>
+									<integer>20</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -314,8 +316,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -333,7 +333,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C94C57E1115700B700791FAC</string>
+										<string>C94C57F2115704B300791FAC</string>
 										<key>history</key>
 										<array>
 											<string>C94C56111154555600791FAC</string>
@@ -350,9 +350,9 @@
 											<string>C94C579B1156F03900791FAC</string>
 											<string>C94C57A31156F12700791FAC</string>
 											<string>C94C57AE1156F6C000791FAC</string>
-											<string>C94C57DE115700B700791FAC</string>
 											<string>C94C57DF115700B700791FAC</string>
-											<string>C94C57E0115700B700791FAC</string>
+											<string>C94C57EA1157035900791FAC</string>
+											<string>C94C57EB1157035900791FAC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -669,7 +669,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C94C57E2115700B700791FAC</string>
 		<string>C94C57621156ECFC00791FAC</string>
 		<string>C94C57631156ECFC00791FAC</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>

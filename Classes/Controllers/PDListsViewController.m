@@ -138,7 +138,8 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (void) tableView:(UITableView *)tableView
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
-	
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self.persistenceController deleteList:list];
 }
 
 #pragma mark -

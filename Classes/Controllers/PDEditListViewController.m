@@ -72,7 +72,9 @@
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-
+- (NSIndexPath *) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	return nil;
+}
 
 #pragma mark -
 #pragma mark Memory Management

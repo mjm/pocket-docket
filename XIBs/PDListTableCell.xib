@@ -158,6 +158,7 @@
 				<int key="IBUIAccessoryType">1</int>
 				<reference key="IBUIContentView" ref="922191570"/>
 				<string key="IBUIReuseIdentifier">ListCell</string>
+				<int key="IBUIEditingAccessoryType">1</int>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
