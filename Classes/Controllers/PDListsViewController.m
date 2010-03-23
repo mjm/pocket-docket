@@ -19,7 +19,7 @@
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list {
 	cell.titleLabel.text = list.title;
-	cell.completionLabel.text = @"1 of 3 completed";
+	cell.completionLabel.text = [NSString stringWithFormat:@"%@ of ? completed", list.order];
 }
 
 - (void)doneEditingList:(PDList *)list {
@@ -148,7 +148,12 @@
 - (void) tableView:(UITableView *)tableView
 moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	   toIndexPath:(NSIndexPath *)destinationIndexPath {
+	userIsMoving = YES;
 	
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
+	[self.persistenceController moveList:list fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	
+	userIsMoving = NO;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -183,6 +188,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		editController.delegate = self;
 		
 		[self.navigationController pushViewController:editController animated:YES];
+		[editController release];
 	}
 }
 
@@ -203,10 +209,16 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark Fetched Results Controller Delegate Methods
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	if (userIsMoving)
+		return;
+	
 	[self.table beginUpdates];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	if (userIsMoving)
+		return;
+	
 	[self.table endUpdates];
 }
 
@@ -230,10 +242,12 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 					   withList:anObject];
 			break;
 		case NSFetchedResultsChangeMove:
-			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-							  withRowAnimation:UITableViewRowAnimationFade];
-			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-							  withRowAnimation:UITableViewRowAnimationFade];
+			if (!userIsMoving) {
+				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+			}
 			break;
 	}
 }

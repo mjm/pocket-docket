@@ -46,6 +46,21 @@
 - (PDList *)createList;
 
 //@}
+//! \name Manipulating Model Objects
+//@{
+
+//! Changes the position of a list.
+/*!
+ Makes sure that all lists in between the old and new positions have their order updated
+ appropriately.
+ 
+ \param list The list to move.
+ \param fromRow The previous location of the list.
+ \param toRow The desired location of the list.
+ */
+- (void)moveList:(PDList *)list fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
+
+//@}
 //! \name Deleting Model Objects
 //@{
 

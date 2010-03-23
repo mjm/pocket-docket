@@ -30,10 +30,11 @@
 	IBOutlet UIBarButtonItem *addButton;
 	
 	//@}
-	//! \name User Interface
+	//! \name Handling State
 	//@{
 	
 	BOOL isAdd;
+	BOOL userIsMoving;
 	
 	//@}
 }
