@@ -31,7 +31,7 @@
 	if (![super init])
 		return nil;
 	
-	managedObjectContext = [context retain];
+	self.managedObjectContext = context;
 	return self;
 }
 
@@ -40,6 +40,21 @@
 
 - (NSFetchedResultsController *)listsFetchedResultsController {
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"allLists"];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[sortDescriptor release];
+	
+	return [[[NSFetchedResultsController alloc] initWithFetchRequest:request
+												managedObjectContext:self.managedObjectContext
+												  sectionNameKeyPath:nil
+														   cacheName:nil] autorelease];
+}
+
+- (NSFetchedResultsController *)entriesFetchedResultsControllerForList:(PDList *)list {
+	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"LIST"];
+	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesForList"
+																  substitutionVariables:vars];
 	
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
 	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];

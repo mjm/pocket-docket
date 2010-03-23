@@ -35,6 +35,13 @@
  */
 - (NSFetchedResultsController *)listsFetchedResultsController;
 
+//! Creates a fetched results controller for the sorted list of entries in a checklist.
+/*!
+ \param list The checklist whose containing entries should be retrieved.
+ \return A fetched results controller for entries sorted by order.
+ */
+- (NSFetchedResultsController *)entriesFetchedResultsControllerForList:(PDList *)list;
+
 //@}
 //! \name Creating Model Objects
 //@{

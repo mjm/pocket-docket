@@ -1,6 +1,7 @@
 #import "PDListsViewController.h"
 
 #import "PDEditListViewController.h"
+#import "PDEntriesViewController.h"
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
 #import "../Views/PDListTableCell.h"
@@ -180,15 +181,23 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	
 	if ([self.table isEditing]) {
 		isAdd = NO;
 		
-		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
 		editController.delegate = self;
 		
 		[self.navigationController pushViewController:editController animated:YES];
 		[editController release];
+	} else {
+		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list
+																			 persistenceController:self.persistenceController];
+		// TODO set delegate
+		
+		[self.navigationController pushViewController:entriesController animated:YES];
+		[entriesController release];
 	}
 }
 

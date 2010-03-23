@@ -2,6 +2,6 @@
 
 @implementation PDList
 
-@dynamic title, order;
+@dynamic title, order, entries;
 
 @end
