@@ -280,8 +280,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>5</integer>
-									<integer>2</integer>
+									<integer>14</integer>
+									<integer>12</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDListEntry.h</string>
+								<string>PDListsViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDListEntry.h</string>
+										<string>PDListsViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C94C5A7C1159A6A200791FAC</string>
+										<string>C94C5AB31159AE3800791FAC</string>
 										<key>history</key>
 										<array>
 											<string>C94C56111154555600791FAC</string>
@@ -352,12 +352,12 @@
 											<string>C94C598711585A6F00791FAC</string>
 											<string>C94C598811585A6F00791FAC</string>
 											<string>C94C59C611597FEE00791FAC</string>
-											<string>C94C5A4311599E1600791FAC</string>
-											<string>C94C5A561159A45500791FAC</string>
 											<string>C94C5A571159A45500791FAC</string>
 											<string>C94C5A5C1159A50900791FAC</string>
-											<string>C94C5A751159A67800791FAC</string>
-											<string>C94C5A7B1159A69500791FAC</string>
+											<string>C94C5A861159A8EB00791FAC</string>
+											<string>C94C5A941159AA0B00791FAC</string>
+											<string>C94C5AB11159AE3800791FAC</string>
+											<string>C94C5AB21159AE3800791FAC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -674,7 +674,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C94C5A7D1159A6A200791FAC</string>
 		<string>C94C596C11584FF300791FAC</string>
 		<string>C94C57621156ECFC00791FAC</string>
 		<string>C94C57631156ECFC00791FAC</string>

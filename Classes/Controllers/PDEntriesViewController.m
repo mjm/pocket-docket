@@ -2,11 +2,42 @@
 
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
+#import "../Models/PDListEntry.h"
+
+#pragma mark Private Methods
+
+@interface PDEntriesViewController (PrivateMethods)
+
+- (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry;
+
+- (void)scrollToBottom;
+
+@end
+
+@implementation PDEntriesViewController (PrivateMethods)
+
+- (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry {
+	cell.textLabel.text = entry.text;
+}
+
+- (void)scrollToBottom {
+	NSUInteger numRows = [self tableView:self.table numberOfRowsInSection:0];
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(numRows - 1) inSection:0];
+	
+	[self.table scrollToRowAtIndexPath:indexPath
+					  atScrollPosition:UITableViewScrollPositionBottom
+							  animated:YES];
+}
+
+@end
+
+
+#pragma mark -
 
 @implementation PDEntriesViewController
 
 @synthesize list, persistenceController, fetchedResultsController;
-@synthesize newEntryField;
+@synthesize table, newEntryField;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -18,6 +49,7 @@
 	self.list = aList;
 	self.persistenceController = controller;
 	self.fetchedResultsController = [self.persistenceController entriesFetchedResultsControllerForList:self.list];
+	self.fetchedResultsController.delegate = self;
 	
 	return self;
 }
@@ -88,6 +120,8 @@
 		self.view.frame = frame;
 		
 		[UIView commitAnimations];
+		
+		[self scrollToBottom];
 	}
 }
 
@@ -109,10 +143,81 @@
 }
 
 #pragma mark -
-#pragma mark Scroll View Delegate Methods
+#pragma mark Table View Data Source Methods
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-	[self.newEntryField resignFirstResponder];
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+	return [sectionInfo numberOfObjects];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	static NSString *EntryCell = @"EntryCell";
+	
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EntryCell];
+	
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+									  reuseIdentifier:EntryCell];
+	}
+	
+	[self configureCell:cell withEntry:entry];
+	
+	return cell;
+}
+
+#pragma mark -
+#pragma mark Fetched Results Controller Delegate Methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	if (userIsMoving)
+		return;
+	
+	[self.table beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	if (userIsMoving)
+		return;
+	
+	[self.table endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath
+	 forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath {
+	
+	switch (type) {
+		case NSFetchedResultsChangeInsert:
+			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:[self.table cellForRowAtIndexPath:indexPath]
+					  withEntry:anObject];
+			break;
+		case NSFetchedResultsChangeMove:
+			if (!userIsMoving) {
+				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+			}
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex
+	 forChangeType:(NSFetchedResultsChangeType)type {
+	return;
 }
 
 #pragma mark -
