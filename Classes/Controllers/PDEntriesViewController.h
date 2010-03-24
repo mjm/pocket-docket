@@ -2,15 +2,21 @@
 @class PDPersistenceController;
 
 //! A view controller for displaying the entries in a list.
-@interface PDEntriesViewController : UIViewController {
+@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate> {
 	PDList *list;
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
+	
+	IBOutlet UITextField *newEntryField;
+	
+	BOOL keyboardIsShowing;
+	CGFloat keyboardHeight;
 }
 
 @property (nonatomic, retain) PDList *list;
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) IBOutlet UITextField *newEntryField;
 
 //! \name Initializing a View Controller
 //@{
@@ -24,6 +30,11 @@
 - (id)initWithList:(PDList *)aList persistenceController:(PDPersistenceController *)controller;
 
 //@}
+//! \name Actions
+//@{
 
+- (IBAction)addListEntry;
+
+//@}
 
 @end

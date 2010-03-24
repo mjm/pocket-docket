@@ -39,7 +39,7 @@
 #pragma mark Retrieving Model Objects
 
 - (NSFetchedResultsController *)listsFetchedResultsController {
-	NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"allLists"];
+	NSFetchRequest *request = [[self.managedObjectModel fetchRequestTemplateForName:@"allLists"] copy];
 	
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
 	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
