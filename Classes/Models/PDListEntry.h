@@ -1,6 +1,6 @@
 @class PDList;
 
-@interface PDListEntry : NSObject {
+@interface PDListEntry : NSManagedObject {
 
 }
 

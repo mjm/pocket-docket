@@ -1,4 +1,5 @@
 @class PDList;
+@class PDListEntry;
 
 //! Handles various persistence related operations.
 /*!
@@ -51,6 +52,14 @@
  \return A new checklist.
  */
 - (PDList *)createList;
+
+//! Creates a new entry with some text and adds it to a list.
+/*!
+ \param text The text for the new entry.
+ \param list The list to add the entry to.
+ \return The newly created entry.
+ */
+- (PDListEntry *)createEntry:(NSString *)text inList:(PDList *)list;
 
 //@}
 //! \name Manipulating Model Objects

@@ -32,6 +32,8 @@
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
 		[self.table deselectRowAtIndexPath:indexPath animated:YES];
 	}
+	
+	[self.persistenceController save];
 }
 
 @end
@@ -206,12 +208,11 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
 	[self doneEditingList:list];
-	[self.persistenceController save];
 }
 
 - (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {
-	[self doneEditingList:list];
 	[self.persistenceController deleteList:list];
+	[self doneEditingList:list];
 }
 
 #pragma mark -

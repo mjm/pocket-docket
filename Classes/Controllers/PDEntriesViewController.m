@@ -73,8 +73,6 @@
 	CGRect keyboardBounds;
     [[note.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
 	
-	NSLog(@"Keyboard bounds: (%f, %f) (%f, %f)", keyboardBounds.origin.x, keyboardBounds.origin.y,
-		  keyboardBounds.size.width, keyboardBounds.size.height);
 	keyboardHeight = keyboardBounds.size.height;
 	
 	if (!keyboardIsShowing) {
@@ -94,8 +92,6 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)note {
-	NSLog(@"Hiding keyboard");
-	
 	if (keyboardIsShowing) {
 		keyboardIsShowing = NO;
 		
@@ -123,6 +119,10 @@
 #pragma mark Actions
 
 - (IBAction)addListEntry {
+	NSString *text = self.newEntryField.text;
+	[self.persistenceController createEntry:text inList:self.list];
+	self.newEntryField.text = @"";
+	
 	[self.newEntryField resignFirstResponder];
 }
 

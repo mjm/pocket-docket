@@ -1,6 +1,7 @@
 #import "PDPersistenceController.h"
 
 #import "Models/PDList.h"
+#import "Models/PDListEntry.h"
 
 #pragma mark PrivateMethods
 
@@ -84,13 +85,46 @@
 				each.order = [NSNumber numberWithInteger:[each.order integerValue] + 1];
 			}
 		}
-		
-		[self save];
 	} else {
 		NSLog(@"Error when retrieving lists to increment order, %@, %@", error, [error userInfo]);
 	}
 	
 	return list;
+}
+
+- (PDListEntry *)createEntry:(NSString *)text inList:(PDList *)list {
+	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"LIST"];
+	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesForList"
+																  substitutionVariables:vars];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:NO];
+	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[sortDescriptor release];
+	
+	// Only get the top one. We just want to determine the highest order value.
+	[request setFetchLimit:1];
+	
+	NSError *error;
+	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (results) {
+		PDListEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"ListEntry"
+														   inManagedObjectContext:self.managedObjectContext];
+		entry.list = list;
+		entry.text = text;
+		
+		if ([results count] == 0) {
+			entry.order = [NSNumber numberWithInteger:0];
+		} else {
+			entry.order = [NSNumber numberWithInteger:[[[results objectAtIndex:0] order] integerValue] + 1];
+		}
+		
+		[self save];
+		
+		return entry;
+	} else {
+		NSLog(@"Error loading entries for creating new entry, %@, %@", error, [error userInfo]);
+		return nil;
+	}
 }
 
 #pragma mark -
@@ -148,8 +182,6 @@
 		for (PDList *each in results) {
 			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
 		}
-		
-		[self save];
 	} else {
 		NSLog(@"Error retrieving objects with higher order, %@, %@", error, [error userInfo]);
 	}
@@ -170,7 +202,7 @@
 #pragma mark Memory Management
 
 - (void)dealloc {
-	[managedObjectContext release];
+	self.managedObjectContext = nil;
 	[super dealloc];
 }
 
