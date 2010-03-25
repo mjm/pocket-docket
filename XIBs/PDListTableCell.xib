@@ -87,7 +87,10 @@
 											<int key="NSColorSpace">1</int>
 											<bytes key="NSRGB">MCAwIDAAA</bytes>
 										</object>
-										<nil key="IBUIHighlightedColor"/>
+										<object class="NSColor" key="IBUIHighlightedColor">
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MQA</bytes>
+										</object>
 										<int key="IBUIBaselineAdjustment">1</int>
 										<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 										<float key="IBUIMinimumFontSize">10</float>
@@ -115,7 +118,10 @@
 											<int key="NSColorSpace">3</int>
 											<bytes key="NSWhite">MC41NTI0MTkzNTQ4AA</bytes>
 										</object>
-										<nil key="IBUIHighlightedColor"/>
+										<object class="NSColor" key="IBUIHighlightedColor">
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MQA</bytes>
+										</object>
 										<int key="IBUIBaselineAdjustment">1</int>
 										<float key="IBUIMinimumFontSize">10</float>
 									</object>
@@ -263,7 +269,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>PDListTableCell</string>
-					<string>{{772, 19}, {320, 56}}</string>
+					<string>{{442, 526}, {320, 56}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

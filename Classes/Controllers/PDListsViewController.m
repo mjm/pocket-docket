@@ -83,7 +83,7 @@
 	
 	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
 	if (indexPath) {
-		[self.table deselectRowAtIndexPath:indexPath animated:animated];
+		[self.table deselectRowAtIndexPath:indexPath animated:NO];
 	}
 }
 
