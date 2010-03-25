@@ -173,6 +173,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	[self.persistenceController deleteList:list];
+	[self.persistenceController save];
 }
 
 #pragma mark -

@@ -166,6 +166,43 @@
 	}
 }
 
+- (void)moveEntry:(PDListEntry *)entry fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow {
+	if (fromRow == toRow)
+		return;
+	
+	NSUInteger minRow = MIN(fromRow, toRow);
+	NSUInteger maxRow = MAX(fromRow, toRow);
+	
+	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
+						  [NSNumber numberWithInteger:minRow], @"MIN_ROW",
+						  [NSNumber numberWithInteger:maxRow], @"MAX_ROW",
+						  entry.list, @"LIST", nil];
+	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesBetween"
+																  substitutionVariables:vars];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[sortDescriptor release];
+	
+	NSError *error;
+	NSArray *records = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (records) {
+		NSUInteger index = (minRow == fromRow) ? minRow : minRow + 1;
+		for (PDListEntry *each in records) {
+			if ([each isEqual:entry]) {
+				each.order = [NSNumber numberWithInteger:toRow];
+			} else {
+				each.order = [NSNumber numberWithInteger:index];
+				index++;
+			}
+		}
+		
+		[self save];
+	} else {
+		NSLog(@"Error retrieving objects to reorder: %@, %@", error, [error userInfo]);
+	}
+}
+
 #pragma mark -
 #pragma mark Deleting Model Objects
 
@@ -180,6 +217,27 @@
 	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
 	if (results) {
 		for (PDList *each in results) {
+			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
+		}
+	} else {
+		NSLog(@"Error retrieving objects with higher order, %@, %@", error, [error userInfo]);
+	}
+}
+
+- (void)deleteEntry:(PDListEntry *)entry {
+	PDList *list = entry.list;
+	
+	NSNumber *position = entry.order;
+	[self.managedObjectContext deleteObject:entry];
+	
+	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
+						  position, @"POSITION", list, @"LIST", nil];
+	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesAbove"
+																  substitutionVariables:vars];
+	NSError *error;
+	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (results) {
+		for (PDListEntry *each in results) {
 			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
 		}
 	} else {

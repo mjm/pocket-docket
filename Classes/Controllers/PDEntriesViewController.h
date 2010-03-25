@@ -7,6 +7,8 @@
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
 	
+	IBOutlet UIBarButtonItem *editButton;
+	IBOutlet UIBarButtonItem *doneButton;
 	IBOutlet UITableView *table;
 	IBOutlet UITextField *newEntryField;
 	
@@ -19,6 +21,8 @@
 @property (nonatomic, retain) PDList *list;
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *editButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UITextField *newEntryField;
 
@@ -36,6 +40,10 @@
 //@}
 //! \name Actions
 //@{
+
+- (IBAction)editEntries;
+
+- (IBAction)doneEditingEntries;
 
 - (IBAction)addListEntry;
 

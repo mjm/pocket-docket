@@ -17,27 +17,34 @@
 @implementation PDEntriesViewController (PrivateMethods)
 
 - (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry {
-	cell.textLabel.text = entry.text;
+	cell.textLabel.text = [NSString stringWithFormat:@"(%@) %@", entry.order, entry.text];
+	//cell.textLabel.text = entry.text;
+	
+	cell.accessoryType = entry.comment ?
+			UITableViewCellAccessoryDetailDisclosureButton :
+			UITableViewCellAccessoryNone;
+	cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
 - (void)scrollToBottom {
 	NSUInteger numRows = [self tableView:self.table numberOfRowsInSection:0];
-	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(numRows - 1) inSection:0];
-	
-	[self.table scrollToRowAtIndexPath:indexPath
-					  atScrollPosition:UITableViewScrollPositionBottom
-							  animated:YES];
+	if (numRows > 0) {
+		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(numRows - 1) inSection:0];
+		
+		[self.table scrollToRowAtIndexPath:indexPath
+						  atScrollPosition:UITableViewScrollPositionBottom
+								  animated:YES];
+	}
 }
 
 @end
-
 
 #pragma mark -
 
 @implementation PDEntriesViewController
 
 @synthesize list, persistenceController, fetchedResultsController;
-@synthesize table, newEntryField;
+@synthesize editButton, doneButton, table, newEntryField;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -61,6 +68,7 @@
     [super viewDidLoad];
 	
 	self.title = self.list.title;
+	self.navigationItem.rightBarButtonItem = self.editButton;
 	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
@@ -95,6 +103,9 @@
 }
 
 - (void)viewDidUnload {
+	self.editButton = nil;
+	self.doneButton = nil;
+	self.table = nil;
 	self.newEntryField = nil;
 }
 
@@ -122,6 +133,7 @@
 		[UIView commitAnimations];
 		
 		[self scrollToBottom];
+		[self doneEditingEntries];
 	}
 }
 
@@ -164,6 +176,33 @@
 	[self configureCell:cell withEntry:entry];
 	
 	return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+- (void) tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self.persistenceController deleteEntry:entry];
+	[self.persistenceController save];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+- (void) tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+	   toIndexPath:(NSIndexPath *)destinationIndexPath {
+	userIsMoving = YES;
+	
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
+	[self.persistenceController moveEntry:entry fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	
+	userIsMoving = NO;
 }
 
 #pragma mark -
@@ -223,6 +262,20 @@
 #pragma mark -
 #pragma mark Actions
 
+- (IBAction)editEntries {
+	[self.table setEditing:YES animated:YES];
+	self.navigationItem.rightBarButtonItem = self.doneButton;
+	
+	if (keyboardIsShowing) {
+		[self.newEntryField resignFirstResponder];
+	}
+}
+
+- (IBAction)doneEditingEntries {
+	[self.table setEditing:NO animated:YES];
+	self.navigationItem.rightBarButtonItem = self.editButton;
+}
+
 - (IBAction)addListEntry {
 	NSString *text = self.newEntryField.text;
 	[self.persistenceController createEntry:text inList:self.list];
@@ -238,6 +291,9 @@
 	self.list = nil;
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
+	self.editButton = nil;
+	self.doneButton = nil;
+	self.table = nil;
 	self.newEntryField = nil;
     [super dealloc];
 }

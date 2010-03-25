@@ -76,6 +76,17 @@
  */
 - (void)moveList:(PDList *)list fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
 
+//! Changes the position of a list entry.
+/*!
+ Makes sure that all entries in between the old and new positions have their order updated
+ appropriately.
+ 
+ \param list The list entry to move.
+ \param fromRow The previous location of the list entry.
+ \param toRow The desired location of the list entry.
+ */
+- (void)moveEntry:(PDListEntry *)entry fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
+
 //@}
 //! \name Deleting Model Objects
 //@{
@@ -85,6 +96,12 @@
  \param list The check list to delete.
  */
 - (void)deleteList:(PDList *)list;
+
+//! Deletes an entry from its list.
+/*!
+ \param entry The entry to delete.
+ */
+- (void)deleteEntry:(PDListEntry *)entry;
 
 //@}
 //! \name Saving Changes
