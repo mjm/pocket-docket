@@ -29,6 +29,9 @@
 		C94C59801158557400791FAC /* PDEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */; };
 		C94C59821158588000791FAC /* PDEntriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C59811158588000791FAC /* PDEntriesView.xib */; };
 		C94C59A311585B0D00791FAC /* PocketDocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */; };
+		C94C5B66115C332400791FAC /* CheckBox.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B65115C332400791FAC /* CheckBox.png */; };
+		C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B67115C332B00791FAC /* CheckBoxChecked.png */; };
+		C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,10 @@
 		C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntriesViewController.m; path = Controllers/PDEntriesViewController.m; sourceTree = "<group>"; };
 		C94C59811158588000791FAC /* PDEntriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntriesView.xib; sourceTree = "<group>"; };
 		C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 2.xcdatamodel"; sourceTree = "<group>"; };
+		C94C5B65115C332400791FAC /* CheckBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckBox.png; sourceTree = "<group>"; };
+		C94C5B67115C332B00791FAC /* CheckBoxChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckBoxChecked.png; sourceTree = "<group>"; };
+		C94C5B83115C395000791FAC /* PDEntriesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntriesTableView.h; path = Views/PDEntriesTableView.h; sourceTree = "<group>"; };
+		C94C5B84115C395000791FAC /* PDEntriesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntriesTableView.m; path = Views/PDEntriesTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +188,8 @@
 				C94C564211569C8D00791FAC /* PDListTableCell.m */,
 				C94C570A1156D6DE00791FAC /* PDTextFieldCell.h */,
 				C94C570B1156D6DE00791FAC /* PDTextFieldCell.m */,
+				C94C5B83115C395000791FAC /* PDEntriesTableView.h */,
+				C94C5B84115C395000791FAC /* PDEntriesTableView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,6 +197,8 @@
 		C94C56991156B1A900791FAC /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C94C5B65115C332400791FAC /* CheckBox.png */,
+				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
 				C94C569A1156B1A900791FAC /* ListIcon.png */,
 			);
 			path = Graphics;
@@ -253,6 +264,8 @@
 				C94C56F91156C5C500791FAC /* PDTextFieldCell.xib in Resources */,
 				C94C56FF1156C86100791FAC /* PDEditListView.xib in Resources */,
 				C94C59821158588000791FAC /* PDEntriesView.xib in Resources */,
+				C94C5B66115C332400791FAC /* CheckBox.png in Resources */,
+				C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +287,7 @@
 				C94C570C1156D6DE00791FAC /* PDTextFieldCell.m in Sources */,
 				C94C594811584D3300791FAC /* PDListEntry.m in Sources */,
 				C94C59801158557400791FAC /* PDEntriesViewController.m in Sources */,
+				C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

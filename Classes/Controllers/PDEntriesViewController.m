@@ -17,13 +17,23 @@
 @implementation PDEntriesViewController (PrivateMethods)
 
 - (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry {
-	cell.textLabel.text = [NSString stringWithFormat:@"(%@) %@", entry.order, entry.text];
-	//cell.textLabel.text = entry.text;
+	cell.imageView.image = [entry.checked boolValue] ?
+			[UIImage imageNamed:@"CheckBoxChecked.png"] :
+			[UIImage imageNamed:@"CheckBox.png"];
+	cell.textLabel.text = entry.text;
 	
 	cell.accessoryType = entry.comment ?
 			UITableViewCellAccessoryDetailDisclosureButton :
 			UITableViewCellAccessoryNone;
 	cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	
+	if ([entry.checked boolValue]) {
+		cell.textLabel.textColor = [UIColor lightGrayColor];
+	} else {
+		cell.textLabel.textColor = [UIColor blackColor];
+	}
 }
 
 - (void)scrollToBottom {
@@ -203,6 +213,32 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	[self.persistenceController moveEntry:entry fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
 	
 	userIsMoving = NO;
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if ([self.table isEditing]) {
+		return UITableViewCellEditingStyleDelete;
+	}
+	return UITableViewCellEditingStyleNone;
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView
+  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"Will select row at index path: %@", indexPath);
+	if ([self.table isEditing]) {
+		return indexPath;
+	}
+	return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSwipeCellAtIndexPath:(NSIndexPath *)indexPath {
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
+	[self.persistenceController save];
 }
 
 #pragma mark -
