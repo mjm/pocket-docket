@@ -4,5 +4,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSNumber *order;
 @property (nonatomic, retain) NSSet *entries;
+@property (nonatomic, retain) NSArray *completedEntries;
 
 @end

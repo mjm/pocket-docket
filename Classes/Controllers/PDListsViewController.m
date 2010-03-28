@@ -20,7 +20,7 @@
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list {
 	cell.titleLabel.text = list.title;
-	cell.completionLabel.text = [NSString stringWithFormat:@"%@ of ? completed", list.order];
+	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
 }
 
 - (void)doneEditingList:(PDList *)list {
@@ -83,6 +83,8 @@
 	
 	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
 	if (indexPath) {
+		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		[self.persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
 		[self.table deselectRowAtIndexPath:indexPath animated:NO];
 	}
 }

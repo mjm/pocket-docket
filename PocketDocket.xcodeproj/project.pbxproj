@@ -73,6 +73,7 @@
 		C94C5B67115C332B00791FAC /* CheckBoxChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckBoxChecked.png; sourceTree = "<group>"; };
 		C94C5B83115C395000791FAC /* PDEntriesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntriesTableView.h; path = Views/PDEntriesTableView.h; sourceTree = "<group>"; };
 		C94C5B84115C395000791FAC /* PDEntriesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntriesTableView.m; path = Views/PDEntriesTableView.m; sourceTree = "<group>"; };
+		C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 3.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,8 +385,9 @@
 			isa = XCVersionGroup;
 			children = (
 				C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */,
+				C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */,
 			);
-			currentVersion = C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */;
+			currentVersion = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */;
 			path = PocketDocket.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

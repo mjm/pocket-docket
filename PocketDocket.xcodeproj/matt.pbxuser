@@ -189,7 +189,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphoneos3.1.3;
+		activeSDKPreference = iphonesimulator3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
@@ -940,6 +940,39 @@
 			C94C5C1B115C47EB00791FAC /* PBXTextBookmark */ = C94C5C1B115C47EB00791FAC /* PBXTextBookmark */;
 			C94C5C1C115C47EB00791FAC /* PBXTextBookmark */ = C94C5C1C115C47EB00791FAC /* PBXTextBookmark */;
 			C94C5C1D115C47EB00791FAC /* XDModelBookmark */ = C94C5C1D115C47EB00791FAC /* XDModelBookmark */;
+			C94C5C29115C4CCE00791FAC /* PBXTextBookmark */ = C94C5C29115C4CCE00791FAC /* PBXTextBookmark */;
+			C94C5C2A115C4CCE00791FAC /* PBXTextBookmark */ = C94C5C2A115C4CCE00791FAC /* PBXTextBookmark */;
+			C94C5C2B115C4CCE00791FAC /* PBXTextBookmark */ = C94C5C2B115C4CCE00791FAC /* PBXTextBookmark */;
+			C94C5C2C115C4CCE00791FAC /* PBXTextBookmark */ = C94C5C2C115C4CCE00791FAC /* PBXTextBookmark */;
+			C94C5C2D115C4CCE00791FAC /* XDModelBookmark */ = C94C5C2D115C4CCE00791FAC /* XDModelBookmark */;
+			C94C5C2E115C4CCE00791FAC /* XDModelBookmark */ = C94C5C2E115C4CCE00791FAC /* XDModelBookmark */;
+			C94C5C35115C4D4F00791FAC /* PBXTextBookmark */ = C94C5C35115C4D4F00791FAC /* PBXTextBookmark */;
+			C94C5C36115C4D4F00791FAC /* PBXTextBookmark */ = C94C5C36115C4D4F00791FAC /* PBXTextBookmark */;
+			C94C5C37115C4D4F00791FAC /* PBXTextBookmark */ = C94C5C37115C4D4F00791FAC /* PBXTextBookmark */;
+			C94C5C38115C4D4F00791FAC /* PBXTextBookmark */ = C94C5C38115C4D4F00791FAC /* PBXTextBookmark */;
+			C94C5C39115C4D5C00791FAC /* PBXTextBookmark */ = C94C5C39115C4D5C00791FAC /* PBXTextBookmark */;
+			C94C5C3A115C4D5C00791FAC /* PBXTextBookmark */ = C94C5C3A115C4D5C00791FAC /* PBXTextBookmark */;
+			C94C5C3C115C4D5C00791FAC /* PBXTextBookmark */ = C94C5C3C115C4D5C00791FAC /* PBXTextBookmark */;
+			C94C5C3E115C4D5C00791FAC /* PBXTextBookmark */ = C94C5C3E115C4D5C00791FAC /* PBXTextBookmark */;
+			C94C5C48115C4DAF00791FAC /* PBXTextBookmark */ = C94C5C48115C4DAF00791FAC /* PBXTextBookmark */;
+			C94C5C4B115C4DCC00791FAC /* PBXTextBookmark */ = C94C5C4B115C4DCC00791FAC /* PBXTextBookmark */;
+			C94C5C4C115C4DCC00791FAC /* PBXTextBookmark */ = C94C5C4C115C4DCC00791FAC /* PBXTextBookmark */;
+			C94C5C4E115C4DCC00791FAC /* PBXTextBookmark */ = C94C5C4E115C4DCC00791FAC /* PBXTextBookmark */;
+			C94C5C50115C4DCC00791FAC /* PBXTextBookmark */ = C94C5C50115C4DCC00791FAC /* PBXTextBookmark */;
+			C94C5C5F115C4E6A00791FAC /* PBXTextBookmark */ = C94C5C5F115C4E6A00791FAC /* PBXTextBookmark */;
+			C94C5C60115C4E6A00791FAC /* XDModelBookmark */ = C94C5C60115C4E6A00791FAC /* XDModelBookmark */;
+			C94C5C61115C4E6A00791FAC /* PlistBookmark */ = C94C5C61115C4E6A00791FAC /* PlistBookmark */;
+			C94C5C62115C4E6A00791FAC /* XDModelBookmark */ = C94C5C62115C4E6A00791FAC /* XDModelBookmark */;
+			C94C5C63115C4E6A00791FAC /* XDModelBookmark */ = C94C5C63115C4E6A00791FAC /* XDModelBookmark */;
+			C94C5C64115C4E6E00791FAC /* PBXTextBookmark */ = C94C5C64115C4E6E00791FAC /* PBXTextBookmark */;
+			C94C5C65115C4E6E00791FAC /* PBXTextBookmark */ = C94C5C65115C4E6E00791FAC /* PBXTextBookmark */;
+			C94C5C67115C4E6E00791FAC /* XDModelBookmark */ = C94C5C67115C4E6E00791FAC /* XDModelBookmark */;
+			C94C5C6D116017C200791FAC /* XDModelBookmark */ = C94C5C6D116017C200791FAC /* XDModelBookmark */;
+			C94C5C6E116017C200791FAC /* PBXTextBookmark */ = C94C5C6E116017C200791FAC /* PBXTextBookmark */;
+			C94C5C6F116017C200791FAC /* PBXTextBookmark */ = C94C5C6F116017C200791FAC /* PBXTextBookmark */;
+			C94C5C70116017C200791FAC /* PBXTextBookmark */ = C94C5C70116017C200791FAC /* PBXTextBookmark */;
+			C94C5C71116017C200791FAC /* PBXTextBookmark */ = C94C5C71116017C200791FAC /* PBXTextBookmark */;
+			C94C5C761160186C00791FAC /* PBXTextBookmark */ = C94C5C761160186C00791FAC /* PBXTextBookmark */;
 		};
 		sourceControlManager = C94C55DD1154410800791FAC /* Source Control */;
 		userBuildSettings = {
@@ -1058,9 +1091,9 @@
 	};
 	C94C560211544FF700791FAC /* PDListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1155, 5700}}";
-			sepNavSelRange = "{6918, 0}";
-			sepNavVisRange = "{176, 886}";
+			sepNavIntBoundsRect = "{{0, 0}, {1227, 6300}}";
+			sepNavSelRange = "{1958, 0}";
+			sepNavVisRange = "{2325, 704}";
 		};
 	};
 	C94C56111154555600791FAC /* PlistBookmark */ = {
@@ -1273,7 +1306,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 7";
 		rLen = 0;
-		rLoc = 1275;
+		rLoc = 1317;
 		rType = 0;
 		vrLen = 546;
 		vrLoc = 0;
@@ -1353,7 +1386,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 33";
 		rLen = 0;
-		rLoc = 8026;
+		rLoc = 8235;
 		rType = 0;
 		vrLen = 397;
 		vrLoc = 359;
@@ -1363,7 +1396,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 38";
 		rLen = 0;
-		rLoc = 3911;
+		rLoc = 4120;
 		rType = 0;
 		vrLen = 547;
 		vrLoc = 407;
@@ -1373,7 +1406,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 28";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 0;
@@ -1423,7 +1456,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 28";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 658;
 		vrLoc = 0;
@@ -1433,7 +1466,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 32";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 689;
 		vrLoc = 297;
@@ -1443,7 +1476,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 32";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 297;
@@ -1463,7 +1496,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 32";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 213;
 		vrLoc = 551;
@@ -1473,7 +1506,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 8";
 		rLen = 0;
-		rLoc = 1275;
+		rLoc = 1317;
 		rType = 0;
 		vrLen = 724;
 		vrLoc = 0;
@@ -1527,7 +1560,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 48";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4057;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 621;
@@ -1537,7 +1570,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 48";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4057;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 621;
@@ -1566,7 +1599,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 48";
 		rLen = 0;
-		rLoc = 3848;
+		rLoc = 4057;
 		rType = 0;
 		vrLen = 732;
 		vrLoc = 621;
@@ -1576,7 +1609,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 46";
 		rLen = 0;
-		rLoc = 3737;
+		rLoc = 3946;
 		rType = 0;
 		vrLen = 731;
 		vrLoc = 621;
@@ -1596,7 +1629,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 46";
 		rLen = 0;
-		rLoc = 3737;
+		rLoc = 3946;
 		rType = 0;
 		vrLen = 731;
 		vrLoc = 621;
@@ -1606,7 +1639,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 46";
 		rLen = 0;
-		rLoc = 3737;
+		rLoc = 3946;
 		rType = 0;
 		vrLen = 731;
 		vrLoc = 621;
@@ -1626,7 +1659,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 46";
 		rLen = 0;
-		rLoc = 3737;
+		rLoc = 3946;
 		rType = 0;
 		vrLen = 731;
 		vrLoc = 621;
@@ -1646,7 +1679,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 46";
 		rLen = 0;
-		rLoc = 3737;
+		rLoc = 3946;
 		rType = 0;
 		vrLen = 212;
 		vrLoc = 624;
@@ -1666,7 +1699,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 45";
 		rLen = 0;
-		rLoc = 3691;
+		rLoc = 3900;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 761;
@@ -1676,7 +1709,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 58";
 		rLen = 0;
-		rLoc = 4995;
+		rLoc = 5204;
 		rType = 0;
 		vrLen = 782;
 		vrLoc = 761;
@@ -1696,7 +1729,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 48";
 		rLen = 0;
-		rLoc = 3157;
+		rLoc = 3366;
 		rType = 0;
 		vrLen = 518;
 		vrLoc = 473;
@@ -1756,7 +1789,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 49";
 		rLen = 0;
-		rLoc = 2572;
+		rLoc = 2781;
 		rType = 0;
 		vrLen = 537;
 		vrLoc = 678;
@@ -1806,7 +1839,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 49";
 		rLen = 0;
-		rLoc = 2572;
+		rLoc = 2781;
 		rType = 0;
 		vrLen = 537;
 		vrLoc = 678;
@@ -1816,7 +1849,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 9";
 		rLen = 0;
-		rLoc = 1181;
+		rLoc = 1223;
 		rType = 0;
 		vrLen = 755;
 		vrLoc = 0;
@@ -1836,7 +1869,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 55";
 		rLen = 0;
-		rLoc = 2794;
+		rLoc = 3003;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 970;
@@ -1856,7 +1889,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 55";
 		rLen = 0;
-		rLoc = 2794;
+		rLoc = 3003;
 		rType = 0;
 		vrLen = 846;
 		vrLoc = 970;
@@ -1866,7 +1899,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 55";
 		rLen = 0;
-		rLoc = 2794;
+		rLoc = 3003;
 		rType = 0;
 		vrLen = 192;
 		vrLoc = 970;
@@ -1876,7 +1909,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 55";
 		rLen = 0;
-		rLoc = 2794;
+		rLoc = 3003;
 		rType = 0;
 		vrLen = 664;
 		vrLoc = 757;
@@ -1896,7 +1929,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 80";
 		rLen = 0;
-		rLoc = 4019;
+		rLoc = 4228;
 		rType = 0;
 		vrLen = 827;
 		vrLoc = 1131;
@@ -1916,7 +1949,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 86";
 		rLen = 0;
-		rLoc = 4402;
+		rLoc = 4611;
 		rType = 0;
 		vrLen = 744;
 		vrLoc = 1570;
@@ -1936,7 +1969,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 95";
 		rLen = 0;
-		rLoc = 4512;
+		rLoc = 4721;
 		rType = 0;
 		vrLen = 812;
 		vrLoc = 1671;
@@ -1970,7 +2003,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 86";
 		rLen = 0;
-		rLoc = 4402;
+		rLoc = 4611;
 		rType = 0;
 		vrLen = 865;
 		vrLoc = 1075;
@@ -1980,7 +2013,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 62";
 		rLen = 0;
-		rLoc = 3307;
+		rLoc = 3516;
 		rType = 0;
 		vrLen = 865;
 		vrLoc = 1075;
@@ -1990,7 +2023,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 73";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 1420;
@@ -2000,7 +2033,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 73";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 1420;
@@ -2010,7 +2043,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 73";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 1420;
@@ -2020,7 +2053,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 73";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 1420;
@@ -2030,7 +2063,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 73";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 1418;
@@ -2040,7 +2073,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 91";
 		rLen = 0;
-		rLoc = 4510;
+		rLoc = 4719;
 		rType = 0;
 		vrLen = 715;
 		vrLoc = 1840;
@@ -2283,7 +2316,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 8";
 		rLen = 0;
-		rLoc = 1160;
+		rLoc = 1202;
 		rType = 0;
 		vrLen = 804;
 		vrLoc = 74;
@@ -2300,16 +2333,16 @@
 	};
 	C94C56E41156BF2200791FAC /* PDList.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1458, 755}}";
-			sepNavSelRange = "{39, 0}";
-			sepNavVisRange = "{0, 187}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 724}}";
+			sepNavSelRange = "{237, 0}";
+			sepNavVisRange = "{0, 244}";
 		};
 	};
 	C94C56E51156BF2200791FAC /* PDList.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1458, 755}}";
-			sepNavSelRange = "{74, 0}";
-			sepNavVisRange = "{0, 82}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 724}}";
+			sepNavSelRange = "{92, 0}";
+			sepNavVisRange = "{0, 100}";
 		};
 	};
 	C94C56EB1156BFB600791FAC /* PBXTextBookmark */ = {
@@ -2492,7 +2525,7 @@
 		fRef = C94C56E51156BF2200791FAC /* PDList.m */;
 		name = "PDList.m: 5";
 		rLen = 0;
-		rLoc = 75;
+		rLoc = 93;
 		rType = 0;
 		vrLen = 73;
 		vrLoc = 0;
@@ -2502,7 +2535,7 @@
 		fRef = C94C56E41156BF2200791FAC /* PDList.h */;
 		name = "PDList.h: 6";
 		rLen = 0;
-		rLoc = 181;
+		rLoc = 238;
 		rType = 0;
 		vrLen = 141;
 		vrLoc = 0;
@@ -2512,7 +2545,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 75";
 		rLen = 0;
-		rLoc = 3689;
+		rLoc = 3898;
 		rType = 0;
 		vrLen = 887;
 		vrLoc = 1404;
@@ -2522,7 +2555,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 83";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 1022;
 		vrLoc = 1359;
@@ -2532,7 +2565,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 83";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 1022;
 		vrLoc = 1359;
@@ -2542,7 +2575,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 83";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 358;
 		vrLoc = 1433;
@@ -2552,7 +2585,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 83";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 1035;
 		vrLoc = 1359;
@@ -2588,7 +2621,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 83";
 		rLen = 0;
-		rLoc = 3853;
+		rLoc = 4062;
 		rType = 0;
 		vrLen = 1034;
 		vrLoc = 1360;
@@ -2762,7 +2795,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 68";
 		rLen = 0;
-		rLoc = 2992;
+		rLoc = 3201;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 1234;
@@ -2872,7 +2905,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 143";
 		rLen = 0;
-		rLoc = 6332;
+		rLoc = 6541;
 		rType = 0;
 		vrLen = 806;
 		vrLoc = 3350;
@@ -2882,7 +2915,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 143";
 		rLen = 0;
-		rLoc = 6332;
+		rLoc = 6541;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 1236;
@@ -2892,7 +2925,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 68";
 		rLen = 0;
-		rLoc = 2933;
+		rLoc = 3142;
 		rType = 0;
 		vrLen = 307;
 		vrLoc = 1470;
@@ -2902,7 +2935,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 68";
 		rLen = 0;
-		rLoc = 2933;
+		rLoc = 3142;
 		rType = 0;
 		vrLen = 971;
 		vrLoc = 2066;
@@ -2972,7 +3005,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 68";
 		rLen = 0;
-		rLoc = 2933;
+		rLoc = 3142;
 		rType = 0;
 		vrLen = 307;
 		vrLoc = 1470;
@@ -3092,7 +3125,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 68";
 		rLen = 0;
-		rLoc = 2933;
+		rLoc = 3142;
 		rType = 0;
 		vrLen = 749;
 		vrLoc = 3433;
@@ -3252,7 +3285,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 138";
 		rLen = 0;
-		rLoc = 6152;
+		rLoc = 6361;
 		rType = 0;
 		vrLen = 382;
 		vrLoc = 3607;
@@ -3360,7 +3393,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 68";
 		rLen = 0;
-		rLoc = 2933;
+		rLoc = 3142;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 3366;
@@ -3370,7 +3403,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 36";
 		rLen = 70;
-		rLoc = 1858;
+		rLoc = 1900;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 680;
@@ -3380,7 +3413,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 144";
 		rLen = 0;
-		rLoc = 6124;
+		rLoc = 6333;
 		rType = 0;
 		vrLen = 872;
 		vrLoc = 3343;
@@ -3390,7 +3423,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 56";
 		rLen = 0;
-		rLoc = 2505;
+		rLoc = 2714;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 3690;
@@ -3410,7 +3443,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 145";
 		rLen = 0;
-		rLoc = 6152;
+		rLoc = 6361;
 		rType = 0;
 		vrLen = 933;
 		vrLoc = 3347;
@@ -3420,7 +3453,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 22";
 		rLen = 0;
-		rLoc = 1592;
+		rLoc = 1634;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 72;
@@ -3430,7 +3463,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 198";
 		rLen = 0;
-		rLoc = 7372;
+		rLoc = 7581;
 		rType = 0;
 		vrLen = 1188;
 		vrLoc = 4711;
@@ -3440,7 +3473,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 191";
 		rLen = 0;
-		rLoc = 7089;
+		rLoc = 7298;
 		rType = 0;
 		vrLen = 1141;
 		vrLoc = 4819;
@@ -3450,7 +3483,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 25";
 		rLen = 0;
-		rLoc = 1060;
+		rLoc = 1102;
 		rType = 0;
 		vrLen = 762;
 		vrLoc = 178;
@@ -3470,7 +3503,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 93";
 		rLen = 0;
-		rLoc = 3014;
+		rLoc = 3223;
 		rType = 0;
 		vrLen = 784;
 		vrLoc = 1755;
@@ -3530,7 +3563,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 93";
 		rLen = 0;
-		rLoc = 3014;
+		rLoc = 3223;
 		rType = 0;
 		vrLen = 790;
 		vrLoc = 1757;
@@ -3540,7 +3573,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 93";
 		rLen = 0;
-		rLoc = 3008;
+		rLoc = 3217;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 0;
@@ -3550,7 +3583,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 21";
 		rLen = 0;
-		rLoc = 1038;
+		rLoc = 1080;
 		rType = 0;
 		vrLen = 787;
 		vrLoc = 393;
@@ -3590,7 +3623,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 21";
 		rLen = 0;
-		rLoc = 1038;
+		rLoc = 1080;
 		rType = 0;
 		vrLen = 748;
 		vrLoc = 393;
@@ -3600,7 +3633,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 142";
 		rLen = 0;
-		rLoc = 4824;
+		rLoc = 5033;
 		rType = 0;
 		vrLen = 819;
 		vrLoc = 3147;
@@ -3610,7 +3643,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 56";
 		rLen = 0;
-		rLoc = 1874;
+		rLoc = 1916;
 		rType = 0;
 		vrLen = 623;
 		vrLoc = 1059;
@@ -3620,7 +3653,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 56";
 		rLen = 0;
-		rLoc = 1874;
+		rLoc = 1916;
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 3794;
@@ -3640,7 +3673,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 56";
 		rLen = 0;
-		rLoc = 1874;
+		rLoc = 1916;
 		rType = 0;
 		vrLen = 300;
 		vrLoc = 3794;
@@ -3704,7 +3737,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 28";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 678;
 		vrLoc = 330;
@@ -3714,7 +3747,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 28";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 796;
 		vrLoc = 592;
@@ -3724,7 +3757,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 167";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 4130;
@@ -3734,7 +3767,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 172";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 1146;
 		vrLoc = 4130;
@@ -3744,7 +3777,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 174";
 		rLen = 0;
-		rLoc = 5958;
+		rLoc = 6167;
 		rType = 0;
 		vrLen = 454;
 		vrLoc = 4373;
@@ -3754,7 +3787,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 168";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 1148;
 		vrLoc = 4130;
@@ -3774,7 +3807,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 168";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 1147;
 		vrLoc = 4131;
@@ -3784,7 +3817,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 26";
 		rLen = 0;
-		rLoc = 729;
+		rLoc = 771;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 258;
@@ -3794,7 +3827,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 33";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 727;
 		vrLoc = 258;
@@ -3804,7 +3837,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 104";
 		rLen = 0;
-		rLoc = 2835;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 710;
 		vrLoc = 2128;
@@ -3814,7 +3847,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 104";
 		rLen = 0;
-		rLoc = 2835;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 577;
 		vrLoc = 1478;
@@ -3924,7 +3957,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 182";
 		rLen = 0;
-		rLoc = 5958;
+		rLoc = 6167;
 		rType = 0;
 		vrLen = 365;
 		vrLoc = 4481;
@@ -4024,7 +4057,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 180";
 		rLen = 0;
-		rLoc = 5957;
+		rLoc = 6166;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 4419;
@@ -4034,7 +4067,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 180";
 		rLen = 0;
-		rLoc = 5957;
+		rLoc = 6166;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 4419;
@@ -4054,7 +4087,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 181";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 4490;
@@ -4094,7 +4127,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 181";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 4490;
@@ -4144,7 +4177,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 181";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 4490;
@@ -4154,7 +4187,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 186";
 		rLen = 0;
-		rLoc = 5955;
+		rLoc = 6164;
 		rType = 0;
 		vrLen = 973;
 		vrLoc = 4163;
@@ -4164,7 +4197,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 180";
 		rLen = 0;
-		rLoc = 5390;
+		rLoc = 5599;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 4163;
@@ -4174,7 +4207,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 185";
 		rLen = 0;
-		rLoc = 5635;
+		rLoc = 5844;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 4163;
@@ -4184,7 +4217,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 81";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 675;
 		vrLoc = 1683;
@@ -4194,7 +4227,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 84";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 1601;
@@ -4204,7 +4237,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 84";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 611;
 		vrLoc = 2273;
@@ -4224,7 +4257,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 84";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 302;
 		vrLoc = 1512;
@@ -4234,7 +4267,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 84";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 1760;
@@ -4244,7 +4277,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 79";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 1933;
@@ -4254,7 +4287,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 79";
 		rLen = 0;
-		rLoc = 2268;
+		rLoc = 2477;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 1933;
@@ -4268,7 +4301,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 88";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 624;
 		vrLoc = 1933;
@@ -4668,7 +4701,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 88";
 		rLen = 0;
-		rLoc = 2434;
+		rLoc = 2643;
 		rType = 0;
 		vrLen = 602;
 		vrLoc = 1933;
@@ -4678,7 +4711,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 154";
 		rLen = 0;
-		rLoc = 4336;
+		rLoc = 4545;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 3586;
@@ -4853,7 +4886,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 22";
 		rLen = 0;
-		rLoc = 667;
+		rLoc = 709;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 0;
@@ -5028,7 +5061,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 7514;
+		rLoc = 7723;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 6169;
@@ -5038,7 +5071,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 7514;
+		rLoc = 7723;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 6169;
@@ -5213,7 +5246,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 7514;
+		rLoc = 7723;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 6169;
@@ -5223,7 +5256,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 7514;
+		rLoc = 7723;
 		rType = 0;
 		vrLen = 1004;
 		vrLoc = 6169;
@@ -5398,7 +5431,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 232";
 		rLen = 0;
-		rLoc = 7367;
+		rLoc = 7576;
 		rType = 0;
 		vrLen = 409;
 		vrLoc = 6453;
@@ -5408,7 +5441,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 232";
 		rLen = 0;
-		rLoc = 7367;
+		rLoc = 7576;
 		rType = 0;
 		vrLen = 1067;
 		vrLoc = 6169;
@@ -5418,7 +5451,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 232";
 		rLen = 0;
-		rLoc = 7367;
+		rLoc = 7576;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 6169;
@@ -5593,7 +5626,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 223";
 		rLen = 0;
-		rLoc = 6971;
+		rLoc = 7180;
 		rType = 0;
 		vrLen = 1007;
 		vrLoc = 6169;
@@ -5768,7 +5801,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 179";
 		rLen = 0;
-		rLoc = 5172;
+		rLoc = 5381;
 		rType = 0;
 		vrLen = 982;
 		vrLoc = 4545;
@@ -5963,7 +5996,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 223";
 		rLen = 0;
-		rLoc = 6960;
+		rLoc = 7169;
 		rType = 0;
 		vrLen = 1018;
 		vrLoc = 6218;
@@ -6158,7 +6191,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 236";
 		rLen = 0;
-		rLoc = 7490;
+		rLoc = 7699;
 		rType = 0;
 		vrLen = 1018;
 		vrLoc = 6218;
@@ -6185,7 +6218,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 232";
 		rLen = 0;
-		rLoc = 7367;
+		rLoc = 7576;
 		rType = 0;
 		vrLen = 499;
 		vrLoc = 6266;
@@ -6390,7 +6423,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 236";
 		rLen = 0;
-		rLoc = 7490;
+		rLoc = 7699;
 		rType = 0;
 		vrLen = 1132;
 		vrLoc = 6169;
@@ -6400,7 +6433,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 236";
 		rLen = 0;
-		rLoc = 7490;
+		rLoc = 7699;
 		rType = 0;
 		vrLen = 814;
 		vrLoc = 987;
@@ -6575,7 +6608,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 236";
 		rLen = 0;
-		rLoc = 7490;
+		rLoc = 7699;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 6463;
@@ -6585,7 +6618,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 236";
 		rLen = 0;
-		rLoc = 7490;
+		rLoc = 7699;
 		rType = 0;
 		vrLen = 954;
 		vrLoc = 6463;
@@ -6769,7 +6802,7 @@
 		isa = PBXTextBookmark;
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		rLen = 0;
-		rLoc = 261;
+		rLoc = 263;
 		rType = 1;
 	};
 	C94C58C1115834DE00791FAC /* PBXTextBookmark */ = {
@@ -6777,7 +6810,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 7514;
+		rLoc = 7723;
 		rType = 0;
 		vrLen = 1087;
 		vrLoc = 6320;
@@ -6972,7 +7005,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 230";
 		rLen = 0;
-		rLoc = 7284;
+		rLoc = 7493;
 		rType = 0;
 		vrLen = 1143;
 		vrLoc = 6035;
@@ -6982,7 +7015,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 230";
 		rLen = 0;
-		rLoc = 7284;
+		rLoc = 7493;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 6035;
@@ -7157,7 +7190,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 230";
 		rLen = 0;
-		rLoc = 7284;
+		rLoc = 7493;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 6035;
@@ -7360,7 +7393,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 209;
+		rLoc = 211;
 		rType = 1;
 	};
 	C94C58DC1158356700791FAC /* PBXTextBookmark */ = {
@@ -7368,7 +7401,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 189";
 		rLen = 0;
-		rLoc = 5635;
+		rLoc = 5844;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 4719;
@@ -7543,7 +7576,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 189";
 		rLen = 0;
-		rLoc = 5635;
+		rLoc = 5844;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 4719;
@@ -7553,7 +7586,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 154";
 		rLen = 103;
-		rLoc = 4277;
+		rLoc = 4486;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 3630;
@@ -7728,7 +7761,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7373;
+		rLoc = 7582;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 6158;
@@ -7738,7 +7771,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7373;
+		rLoc = 7582;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 6158;
@@ -7913,7 +7946,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 153";
 		rLen = 0;
-		rLoc = 4212;
+		rLoc = 4421;
 		rType = 0;
 		vrLen = 921;
 		vrLoc = 3798;
@@ -8088,7 +8121,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 153";
 		rLen = 0;
-		rLoc = 4212;
+		rLoc = 4421;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 6246;
@@ -8263,7 +8296,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7545;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 6246;
@@ -8273,7 +8306,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7545;
 		rType = 0;
 		vrLen = 1026;
 		vrLoc = 6246;
@@ -8448,7 +8481,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7545;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 6124;
@@ -8641,7 +8674,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7545;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 6197;
@@ -8816,7 +8849,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 231";
 		rLen = 0;
-		rLoc = 7291;
+		rLoc = 7500;
 		rType = 0;
 		vrLen = 693;
 		vrLoc = 6481;
@@ -8856,7 +8889,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 233";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7545;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 6156;
@@ -8866,7 +8899,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 210";
 		rLen = 0;
-		rLoc = 6520;
+		rLoc = 6729;
 		rType = 0;
 		vrLen = 926;
 		vrLoc = 5555;
@@ -9041,7 +9074,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 210";
 		rLen = 0;
-		rLoc = 6520;
+		rLoc = 6729;
 		rType = 0;
 		vrLen = 1085;
 		vrLoc = 6124;
@@ -9216,7 +9249,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 210";
 		rLen = 0;
-		rLoc = 6520;
+		rLoc = 6729;
 		rType = 0;
 		vrLen = 1135;
 		vrLoc = 6035;
@@ -9226,7 +9259,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 210";
 		rLen = 0;
-		rLoc = 6520;
+		rLoc = 6729;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 5847;
@@ -9410,7 +9443,7 @@
 		isa = PBXTextBookmark;
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 248;
 		rType = 1;
 	};
 	C94C592011583A6F00791FAC /* PBXTextBookmark */ = {
@@ -9418,7 +9451,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 223";
 		rLen = 0;
-		rLoc = 6918;
+		rLoc = 7127;
 		rType = 0;
 		vrLen = 1043;
 		vrLoc = 5847;
@@ -9428,7 +9461,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 223";
 		rLen = 0;
-		rLoc = 6918;
+		rLoc = 7127;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 5789;
@@ -9603,7 +9636,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 229";
 		rLen = 0;
-		rLoc = 6918;
+		rLoc = 7127;
 		rType = 0;
 		vrLen = 840;
 		vrLoc = 5600;
@@ -9778,7 +9811,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 231";
 		rLen = 0;
-		rLoc = 6918;
+		rLoc = 7127;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 5716;
@@ -9962,7 +9995,7 @@
 		isa = PBXTextBookmark;
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		rLen = 0;
-		rLoc = 246;
+		rLoc = 248;
 		rType = 1;
 	};
 	C94C592E11583BA400791FAC /* PBXTextBookmark */ = {
@@ -9970,7 +10003,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 156";
 		rLen = 0;
-		rLoc = 4402;
+		rLoc = 4611;
 		rType = 0;
 		vrLen = 494;
 		vrLoc = 3690;
@@ -9980,7 +10013,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 156";
 		rLen = 0;
-		rLoc = 4402;
+		rLoc = 4611;
 		rType = 0;
 		vrLen = 1157;
 		vrLoc = 3470;
@@ -10350,7 +10383,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 156";
 		rLen = 0;
-		rLoc = 4402;
+		rLoc = 4611;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 3468;
@@ -10567,7 +10600,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 55";
 		rLen = 0;
-		rLoc = 1594;
+		rLoc = 1636;
 		rType = 0;
 		vrLen = 908;
 		vrLoc = 1279;
@@ -10597,7 +10630,7 @@
 		fRef = C94C56E51156BF2200791FAC /* PDList.m */;
 		name = "PDList.m: 5";
 		rLen = 0;
-		rLoc = 74;
+		rLoc = 92;
 		rType = 0;
 		vrLen = 82;
 		vrLoc = 0;
@@ -10792,7 +10825,7 @@
 		fRef = C94C56E51156BF2200791FAC /* PDList.m */;
 		name = "PDList.m: 5";
 		rLen = 0;
-		rLoc = 74;
+		rLoc = 92;
 		rType = 0;
 		vrLen = 82;
 		vrLoc = 0;
@@ -10863,16 +10896,16 @@
 	};
 	C94C597E1158557400791FAC /* PDEntriesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1434, 920}}";
-			sepNavSelRange = "{953, 0}";
-			sepNavVisRange = "{0, 1363}";
+			sepNavIntBoundsRect = "{{0, 0}, {1623, 960}}";
+			sepNavSelRange = "{284, 0}";
+			sepNavVisRange = "{15, 1133}";
 		};
 	};
 	C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1233, 6780}}";
-			sepNavSelRange = "{6640, 0}";
-			sepNavVisRange = "{6641, 429}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 6900}}";
+			sepNavSelRange = "{8748, 0}";
+			sepNavVisRange = "{8030, 751}";
 		};
 	};
 	C94C598411585A6F00791FAC /* XDModelBookmark */ = {
@@ -11085,7 +11118,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 14";
 		rLen = 0;
-		rLoc = 1079;
+		rLoc = 1100;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 0;
@@ -11105,7 +11138,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 55";
 		rLen = 0;
-		rLoc = 1594;
+		rLoc = 1636;
 		rType = 0;
 		vrLen = 652;
 		vrLoc = 1535;
@@ -11115,7 +11148,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 199";
 		rLen = 0;
-		rLoc = 5952;
+		rLoc = 6161;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 4626;
@@ -11493,7 +11526,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 157";
 		rLen = 0;
-		rLoc = 4384;
+		rLoc = 4593;
 		rType = 0;
 		vrLen = 479;
 		vrLoc = 3506;
@@ -11513,7 +11546,7 @@
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
 					_indexOfSelectedPane = 0;
-					_indexOfSelectedView = 1;
+					_indexOfSelectedView = 0;
 				};
 				UIContextForEntityArea = {
 					_indexOfSelectedView = 0;
@@ -11534,7 +11567,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						43.080078,
+						67.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -11544,8 +11577,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {593, 218}}",
-							"{{598, 0}, {312, 218}}",
+							"{{0, 0}, {667, 218}}",
+							"{{672, 0}, {351, 218}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -11554,8 +11587,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {910, 220}}",
-							"{{0, 225}, {910, 517}}",
+							"{{0, 0}, {1023, 220}}",
+							"{{0, 225}, {1023, 491}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -11564,13 +11597,13 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {193, 218}}",
-							"{{198, 0}, {395, 218}}",
+							"{{0, 0}, {217, 218}}",
+							"{{222, 0}, {443, 218}}",
 						);
 					};
 				};
 				UIContextForPropertyArea = {
-					_indexOfSelectedView = 4;
+					_indexOfSelectedView = 0;
 					chosenTableColumnnFRTs = (
 						"FT Fetch Request",
 						"FT Predicate",
@@ -11654,7 +11687,7 @@
 					chosenTableWidthsPT = (
 						128.000000,
 						108.110840,
-						132.570801,
+						180.570801,
 					);
 					chosenTableWidthsRT = (
 						128.000000,
@@ -11662,9 +11695,9 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-124, -35}, {895, 502}}";
+				"xdesign model diagram view visible rect key" = "{{-180, -22}, {1008, 476}}";
 			};
-			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
+			sepNavWindowFrame = "{{201, 35}, {910, 878}}";
 		};
 	};
 	C94C59A911585B4A00791FAC /* PBXTextBookmark */ = {
@@ -13545,7 +13578,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 75";
 		rLen = 0;
-		rLoc = 1995;
+		rLoc = 2037;
 		rType = 0;
 		vrLen = 645;
 		vrLoc = 1678;
@@ -13828,7 +13861,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 10";
 		rLen = 0;
-		rLoc = 560;
+		rLoc = 581;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 0;
@@ -13858,7 +13891,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 10";
 		rLen = 0;
-		rLoc = 560;
+		rLoc = 581;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 0;
@@ -13958,7 +13991,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 33";
 		rLen = 0;
-		rLoc = 1577;
+		rLoc = 1598;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 283;
@@ -13968,7 +14001,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 103";
 		rLen = 0;
-		rLoc = 9265;
+		rLoc = 9361;
 		rType = 0;
 		vrLen = 517;
 		vrLoc = 2306;
@@ -13978,7 +14011,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9263;
+		rLoc = 9359;
 		rType = 0;
 		vrLen = 528;
 		vrLoc = 2306;
@@ -13988,7 +14021,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9263;
+		rLoc = 9359;
 		rType = 0;
 		vrLen = 528;
 		vrLoc = 2306;
@@ -13998,7 +14031,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 33";
 		rLen = 0;
-		rLoc = 1577;
+		rLoc = 1598;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 283;
@@ -14008,7 +14041,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 10";
 		rLen = 0;
-		rLoc = 533;
+		rLoc = 554;
 		rType = 0;
 		vrLen = 968;
 		vrLoc = 0;
@@ -14018,7 +14051,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 19";
 		rLen = 0;
-		rLoc = 1078;
+		rLoc = 1099;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 0;
@@ -14028,7 +14061,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 17";
 		rLen = 0;
-		rLoc = 697;
+		rLoc = 718;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 0;
@@ -14038,7 +14071,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 114";
 		rLen = 0;
-		rLoc = 9516;
+		rLoc = 9612;
 		rType = 0;
 		vrLen = 427;
 		vrLoc = 2545;
@@ -14048,7 +14081,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9263;
+		rLoc = 9359;
 		rType = 0;
 		vrLen = 572;
 		vrLoc = 2408;
@@ -14058,7 +14091,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9252;
+		rLoc = 9348;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -14068,7 +14101,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9261;
+		rLoc = 9357;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -14078,7 +14111,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9261;
+		rLoc = 9357;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -14088,7 +14121,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9261;
+		rLoc = 9357;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -14098,7 +14131,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9261;
+		rLoc = 9357;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 2100;
@@ -14158,7 +14191,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9232;
+		rLoc = 9328;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 2745;
@@ -14168,7 +14201,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 17";
 		rLen = 0;
-		rLoc = 697;
+		rLoc = 718;
 		rType = 0;
 		vrLen = 939;
 		vrLoc = 0;
@@ -14178,7 +14211,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 38";
 		rLen = 0;
-		rLoc = 1577;
+		rLoc = 1598;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 350;
@@ -14188,7 +14221,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 5";
 		rLen = 0;
-		rLoc = 264;
+		rLoc = 285;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 0;
@@ -14198,7 +14231,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9232;
+		rLoc = 9328;
 		rType = 0;
 		vrLen = 543;
 		vrLoc = 2745;
@@ -14208,7 +14241,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 8668;
+		rLoc = 8764;
 		rType = 0;
 		vrLen = 489;
 		vrLoc = 2982;
@@ -14218,7 +14251,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 8668;
+		rLoc = 8764;
 		rType = 0;
 		vrLen = 489;
 		vrLoc = 2982;
@@ -14228,7 +14261,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 8668;
+		rLoc = 8764;
 		rType = 0;
 		vrLen = 554;
 		vrLoc = 2982;
@@ -14238,7 +14271,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 8668;
+		rLoc = 8764;
 		rType = 0;
 		vrLen = 222;
 		vrLoc = 2982;
@@ -14285,7 +14318,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 36";
 		rLen = 0;
-		rLoc = 1577;
+		rLoc = 1598;
 		rType = 0;
 		vrLen = 962;
 		vrLoc = 0;
@@ -14295,7 +14328,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 122";
 		rLen = 0;
-		rLoc = 8684;
+		rLoc = 8780;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 2955;
@@ -14315,7 +14348,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 75";
 		rLen = 0;
-		rLoc = 1995;
+		rLoc = 2037;
 		rType = 0;
 		vrLen = 646;
 		vrLoc = 1676;
@@ -14325,7 +14358,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 208";
 		rLen = 0;
-		rLoc = 6152;
+		rLoc = 6361;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 5619;
@@ -14335,7 +14368,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 36";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 367;
@@ -14345,7 +14378,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 36";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 367;
@@ -14365,7 +14398,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 36";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 530;
 		vrLoc = 469;
@@ -14375,7 +14408,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 36";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 734;
 		vrLoc = 367;
@@ -14425,7 +14458,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 122";
 		rLen = 0;
-		rLoc = 8684;
+		rLoc = 8780;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 2955;
@@ -14445,7 +14478,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 123";
 		rLen = 0;
-		rLoc = 9122;
+		rLoc = 9218;
 		rType = 0;
 		vrLen = 539;
 		vrLoc = 2828;
@@ -14455,7 +14488,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 8684;
+		rLoc = 8780;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 2828;
@@ -14465,7 +14498,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 36";
 		rLen = 0;
-		rLoc = 1036;
+		rLoc = 1078;
 		rType = 0;
 		vrLen = 531;
 		vrLoc = 470;
@@ -14475,7 +14508,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 8684;
+		rLoc = 8780;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 2849;
@@ -14527,7 +14560,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 8684;
+		rLoc = 8780;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 2828;
@@ -14557,7 +14590,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 8684;
+		rLoc = 8780;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 2849;
@@ -14612,7 +14645,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 5";
 		rLen = 0;
-		rLoc = 263;
+		rLoc = 284;
 		rType = 0;
 		vrLen = 1006;
 		vrLoc = 0;
@@ -14632,7 +14665,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 221";
 		rLen = 1617;
-		rLoc = 6409;
+		rLoc = 6618;
 		rType = 0;
 		vrLen = 890;
 		vrLoc = 6152;
@@ -14642,7 +14675,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 10";
 		rLen = 0;
-		rLoc = 491;
+		rLoc = 512;
 		rType = 0;
 		vrLen = 1028;
 		vrLoc = 15;
@@ -14653,7 +14686,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 277;
+		rLoc = 276;
 		rType = 1;
 	};
 	C94C5A961159AA0B00791FAC /* PBXTextBookmark */ = {
@@ -14661,7 +14694,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 189";
 		rLen = 0;
-		rLoc = 8066;
+		rLoc = 8009;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 4550;
@@ -14691,7 +14724,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 208";
 		rLen = 0;
-		rLoc = 8668;
+		rLoc = 8764;
 		rType = 0;
 		vrLen = 686;
 		vrLoc = 5559;
@@ -14761,7 +14794,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 221";
 		rLen = 1617;
-		rLoc = 6409;
+		rLoc = 6618;
 		rType = 0;
 		vrLen = 875;
 		vrLoc = 6167;
@@ -14771,7 +14804,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 86";
 		rLen = 0;
-		rLoc = 2265;
+		rLoc = 2474;
 		rType = 0;
 		vrLen = 691;
 		vrLoc = 1798;
@@ -14805,7 +14838,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 176";
 		rLen = 0;
-		rLoc = 4824;
+		rLoc = 5033;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 4198;
@@ -15905,7 +15938,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 44";
 		rLen = 0;
-		rLoc = 1550;
+		rLoc = 1571;
 		rType = 0;
 		vrLen = 799;
 		vrLoc = 655;
@@ -15915,7 +15948,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 9";
 		rLen = 78;
-		rLoc = 387;
+		rLoc = 408;
 		rType = 0;
 		vrLen = 964;
 		vrLoc = 267;
@@ -16090,7 +16123,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 26";
 		rLen = 0;
-		rLoc = 953;
+		rLoc = 974;
 		rType = 0;
 		vrLen = 990;
 		vrLoc = 267;
@@ -16100,7 +16133,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 269";
 		rLen = 0;
-		rLoc = 9489;
+		rLoc = 9585;
 		rType = 0;
 		vrLen = 688;
 		vrLoc = 6927;
@@ -16285,7 +16318,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 248";
 		rLen = 0;
-		rLoc = 8907;
+		rLoc = 9003;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 6624;
@@ -16460,7 +16493,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 152";
 		rLen = 489;
-		rLoc = 3915;
+		rLoc = 4124;
 		rType = 0;
 		vrLen = 940;
 		vrLoc = 3855;
@@ -18301,7 +18334,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 152";
 		rLen = 489;
-		rLoc = 3915;
+		rLoc = 4124;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 3855;
@@ -18311,7 +18344,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 86";
 		rLen = 0;
-		rLoc = 2263;
+		rLoc = 2472;
 		rType = 0;
 		vrLen = 743;
 		vrLoc = 1716;
@@ -18485,7 +18518,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 78";
 		rLen = 0;
-		rLoc = 2045;
+		rLoc = 2087;
 		rType = 0;
 		vrLen = 743;
 		vrLoc = 1716;
@@ -20625,7 +20658,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6650;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5454;
@@ -20650,7 +20683,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6650;
 		rType = 0;
 		vrLen = 359;
 		vrLoc = 6079;
@@ -20660,7 +20693,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6650;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5454;
@@ -20864,7 +20897,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6650;
 		rType = 0;
 		vrLen = 359;
 		vrLoc = 6079;
@@ -20909,7 +20942,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6650;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5454;
@@ -20919,7 +20952,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 6996;
+		rLoc = 6939;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 5736;
@@ -20939,7 +20972,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 6996;
+		rLoc = 6939;
 		rType = 0;
 		vrLen = 411;
 		vrLoc = 6321;
@@ -20976,7 +21009,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 236";
 		rLen = 0;
-		rLoc = 6996;
+		rLoc = 6939;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 5736;
@@ -21001,7 +21034,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 236";
 		rLen = 0;
-		rLoc = 6996;
+		rLoc = 6939;
 		rType = 0;
 		vrLen = 309;
 		vrLoc = 6426;
@@ -21011,7 +21044,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6707;
+		rLoc = 6650;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 5971;
@@ -21185,7 +21218,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 26";
 		rLen = 0;
-		rLoc = 953;
+		rLoc = 974;
 		rType = 0;
 		vrLen = 1363;
 		vrLoc = 0;
@@ -21205,7 +21238,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 6994;
+		rLoc = 6937;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 5956;
@@ -21215,7 +21248,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 6805;
+		rLoc = 6748;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 5956;
@@ -21225,7 +21258,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 6805;
+		rLoc = 6748;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 5956;
@@ -21399,7 +21432,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 6805;
+		rLoc = 6748;
 		rType = 0;
 		vrLen = 424;
 		vrLoc = 6263;
@@ -21436,7 +21469,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 223";
 		rLen = 0;
-		rLoc = 6640;
+		rLoc = 6583;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 5956;
@@ -21446,7 +21479,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 223";
 		rLen = 0;
-		rLoc = 6640;
+		rLoc = 6583;
 		rType = 0;
 		vrLen = 418;
 		vrLoc = 6172;
@@ -21671,5 +21704,1597 @@
 			"xdesign model selected properties key" = (
 			);
 		};
+	};
+	C94C5C29115C4CCE00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 247";
+		rLen = 0;
+		rLoc = 7127;
+		rType = 0;
+		vrLen = 886;
+		vrLoc = 176;
+	};
+	C94C5C2A115C4CCE00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 247";
+		rLen = 0;
+		rLoc = 7076;
+		rType = 0;
+		vrLen = 1093;
+		vrLoc = 6228;
+	};
+	C94C5C2B115C4CCE00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56E41156BF2200791FAC /* PDList.h */;
+		name = "PDList.h: 2";
+		rLen = 0;
+		rLoc = 39;
+		rType = 0;
+		vrLen = 187;
+		vrLoc = 0;
+	};
+	C94C5C2C115C4CCE00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56E41156BF2200791FAC /* PDList.h */;
+		name = "PDList.h: 7";
+		rLen = 0;
+		rLoc = 220;
+		rType = 0;
+		vrLen = 227;
+		vrLoc = 0;
+	};
+	C94C5C2D115C4CCE00791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 1;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					43.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {593, 218}}",
+						"{{598, 0}, {312, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {910, 220}}",
+						"{{0, 225}, {910, 540}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {193, 218}}",
+						"{{198, 0}, {395, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					132.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-124, -47}, {895, 525}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x204967460>{name=ListEntry, package=}",
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	C94C5C2E115C4CCE00791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					43.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {593, 218}}",
+						"{{598, 0}, {312, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {910, 220}}",
+						"{{0, 225}, {910, 540}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {193, 218}}",
+						"{{198, 0}, {395, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					132.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-124, -47}, {895, 525}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x205209fc0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchedProperty: 0x2057f90a0>{name=newFetchedProperty, type=(null)}",
+			);
+		};
+	};
+	C94C5C35115C4D4F00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56E41156BF2200791FAC /* PDList.h */;
+		name = "PDList.h: 7";
+		rLen = 0;
+		rLoc = 237;
+		rType = 0;
+		vrLen = 244;
+		vrLoc = 0;
+	};
+	C94C5C36115C4D4F00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56E51156BF2200791FAC /* PDList.m */;
+		name = "PDList.m: 5";
+		rLen = 0;
+		rLoc = 92;
+		rType = 0;
+		vrLen = 100;
+		vrLoc = 0;
+	};
+	C94C5C37115C4D4F00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 247";
+		rLen = 0;
+		rLoc = 7127;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 108;
+	};
+	C94C5C38115C4D4F00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 23";
+		rLen = 0;
+		rLoc = 708;
+		rType = 0;
+		vrLen = 980;
+		vrLoc = 108;
+	};
+	C94C5C39115C4D5C00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 231";
+		rLen = 0;
+		rLoc = 6583;
+		rType = 0;
+		vrLen = 392;
+		vrLoc = 6524;
+	};
+	C94C5C3A115C4D5C00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5C3B115C4D5C00791FAC /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	C94C5C3B115C4D5C00791FAC /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	C94C5C3C115C4D5C00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5C3D115C4D5C00791FAC /* asm __kill  0x33b3db24 */;
+		name = "asm __kill  0x33b3db24: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 375;
+		vrLoc = 0;
+	};
+	C94C5C3D115C4D5C00791FAC /* asm __kill  0x33b3db24 */ = {
+		isa = PBXFileReference;
+		path = "asm __kill  0x33b3db24";
+		sourceTree = "<group>";
+	};
+	C94C5C3E115C4D5C00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 23";
+		rLen = 0;
+		rLoc = 708;
+		rType = 0;
+		vrLen = 482;
+		vrLoc = 407;
+	};
+	C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */ = {
+		uiCtxt = {
+			"Xdesign Model Editor Bookmark Key" = {
+				UIContextForDetailArea = {
+					_indexOfSelectedPane = 0;
+					_indexOfSelectedView = 0;
+				};
+				UIContextForEntityArea = {
+					_indexOfSelectedView = 0;
+					chosenTableColumnns = (
+						"ET Entity",
+						"ET Abstract",
+						"ET Class",
+					);
+					chosenTableColumnns_sortDirections = (
+						YES,
+					);
+					chosenTableColumnns_sortKeys = (
+						name,
+					);
+					chosenTableColumnns_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableWidths = (
+						103.000000,
+						22.000000,
+						68.080078,
+					);
+				};
+				UIContextForLayoutManager = {
+					detailSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {667, 218}}",
+							"{{672, 0}, {351, 218}}",
+						);
+					};
+					diagramSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {1023, 220}}",
+							"{{0, 225}, {1023, 491}}",
+						);
+					};
+					tableSplitGeometry = {
+						_collapsingFrameDimension = 0;
+						_indexOfCollapsedView = 0;
+						_percentageOfCollapsedView = 0;
+						isCollapsed = yes;
+						sizes = (
+							"{{0, 0}, {218, 218}}",
+							"{{223, 0}, {442, 218}}",
+						);
+					};
+				};
+				UIContextForPropertyArea = {
+					_indexOfSelectedView = 0;
+					chosenTableColumnnFRTs = (
+						"FT Fetch Request",
+						"FT Predicate",
+					);
+					chosenTableColumnnFRTs_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnFRTs_sortKeys = (
+						name,
+					);
+					chosenTableColumnnFRTs_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsAT = (
+						"AT Attribute",
+						"AT Type",
+					);
+					chosenTableColumnnsAT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsAT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsAT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsFPT = (
+						"FP FetchedProperty",
+						"FP Destination",
+						"FP Predicate",
+					);
+					chosenTableColumnnsFPT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsFPT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsFPT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsPT = (
+						"PT Property",
+						"PT Kind",
+						"PT SharedKeyOne",
+					);
+					chosenTableColumnnsPT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsPT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsPT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableColumnnsRT = (
+						"RT Relationship",
+						"RT Destination",
+					);
+					chosenTableColumnnsRT_sortDirections = (
+						YES,
+					);
+					chosenTableColumnnsRT_sortKeys = (
+						name,
+					);
+					chosenTableColumnnsRT_sortSelectors = (
+						"_xdcaseInsensitiveNumericCompare:",
+					);
+					chosenTableWidthsAT = (
+						128.000000,
+						64.000000,
+					);
+					chosenTableWidthsFPT = (
+						128.000000,
+						64.000000,
+						144.764160,
+					);
+					chosenTableWidthsFRT = (
+						128.000000,
+						249.764160,
+					);
+					chosenTableWidthsPT = (
+						128.000000,
+						108.110840,
+						179.570801,
+					);
+					chosenTableWidthsRT = (
+						128.000000,
+						64.000000,
+					);
+				};
+				"xdesign model browser state key - shown/hidden" = 1;
+				"xdesign model diagram view visible rect key" = "{{-180, -22}, {1008, 476}}";
+			};
+			sepNavWindowFrame = "{{38, 136}, {910, 896}}";
+		};
+	};
+	C94C5C48115C4DAF00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 23";
+		rLen = 0;
+		rLoc = 708;
+		rType = 0;
+		vrLen = 980;
+		vrLoc = 108;
+	};
+	C94C5C4B115C4DCC00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 23";
+		rLen = 0;
+		rLoc = 708;
+		rType = 0;
+		vrLen = 482;
+		vrLoc = 407;
+	};
+	C94C5C4C115C4DCC00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5C4D115C4DCC00791FAC /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	C94C5C4D115C4DCC00791FAC /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	C94C5C4E115C4DCC00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5C4F115C4DCC00791FAC /* asm __kill  0x33b3db24 */;
+		rLen = 0;
+		rLoc = 9223372036854775807;
+		rType = 0;
+	};
+	C94C5C4F115C4DCC00791FAC /* asm __kill  0x33b3db24 */ = {
+		isa = PBXFileReference;
+		path = "asm __kill  0x33b3db24";
+		sourceTree = "<group>";
+	};
+	C94C5C50115C4DCC00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5C51115C4DCC00791FAC /* asm __kill  0x33b3db24 */;
+		name = "asm __kill  0x33b3db24: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 375;
+		vrLoc = 0;
+	};
+	C94C5C51115C4DCC00791FAC /* asm __kill  0x33b3db24 */ = {
+		isa = PBXFileReference;
+		path = "asm __kill  0x33b3db24";
+		sourceTree = "<group>";
+	};
+	C94C5C5F115C4E6A00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 23";
+		rLen = 0;
+		rLoc = 708;
+		rType = 0;
+		vrLen = 980;
+		vrLoc = 108;
+	};
+	C94C5C60115C4E6A00791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					67.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {667, 218}}",
+						"{{672, 0}, {351, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1023, 220}}",
+						"{{0, 225}, {1023, 491}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {217, 218}}",
+						"{{222, 0}, {443, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					180.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-180, -22}, {1008, 476}}";
+			"xdesign model selected entities key" = (
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	C94C5C61115C4E6A00791FAC /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PocketDocket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleDisplayName,
+		);
+		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C94C5C62115C4E6A00791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					68.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {667, 218}}",
+						"{{672, 0}, {351, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1023, 220}}",
+						"{{0, 225}, {1023, 491}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {218, 218}}",
+						"{{223, 0}, {442, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					179.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-180, -22}, {1008, 476}}";
+			"xdesign model selected entities key" = (
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	C94C5C63115C4E6A00791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					68.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {667, 218}}",
+						"{{672, 0}, {351, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1023, 220}}",
+						"{{0, 225}, {1023, 491}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {218, 218}}",
+						"{{223, 0}, {442, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					179.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-180, -22}, {1008, 476}}";
+			"xdesign model selected entities key" = (
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	C94C5C64115C4E6E00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 23";
+		rLen = 0;
+		rLoc = 708;
+		rType = 0;
+		vrLen = 461;
+		vrLoc = 367;
+	};
+	C94C5C65115C4E6E00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5C66115C4E6E00791FAC /* asm __dyld__dyld_start  0x2fe01028 */;
+		name = "asm __dyld__dyld_start  0x2fe01028: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 588;
+		vrLoc = 0;
+	};
+	C94C5C66115C4E6E00791FAC /* asm __dyld__dyld_start  0x2fe01028 */ = {
+		isa = PBXFileReference;
+		path = "asm __dyld__dyld_start  0x2fe01028";
+		sourceTree = "<group>";
+	};
+	C94C5C67115C4E6E00791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					127.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {843, 218}}",
+						"{{848, 0}, {444, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1292, 220}}",
+						"{{0, 225}, {1292, 61}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {277, 218}}",
+						"{{282, 0}, {561, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					298.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-315, 0}, {1277, 46}}";
+			"xdesign model selected entities key" = (
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	C94C5C6D116017C200791FAC /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					68.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {667, 218}}",
+						"{{672, 0}, {351, 218}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1023, 220}}",
+						"{{0, 225}, {1023, 491}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {218, 218}}",
+						"{{223, 0}, {442, 218}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					249.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					179.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-180, -22}, {1008, 476}}";
+			"xdesign model selected entities key" = (
+			);
+			"xdesign model selected properties key" = (
+			);
+		};
+	};
+	C94C5C6E116017C200791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 73";
+		rLen = 0;
+		rLoc = 1958;
+		rType = 0;
+		vrLen = 704;
+		vrLoc = 2325;
+	};
+	C94C5C6F116017C200791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
+		name = "PDEntriesViewController.h: 5";
+		rLen = 0;
+		rLoc = 284;
+		rType = 0;
+		vrLen = 1133;
+		vrLoc = 15;
+	};
+	C94C5C70116017C200791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 300";
+		rLen = 0;
+		rLoc = 8764;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 8030;
+	};
+	C94C5C71116017C200791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 300";
+		rLen = 0;
+		rLoc = 8682;
+		rType = 0;
+		vrLen = 819;
+		vrLoc = 8030;
+	};
+	C94C5C761160186C00791FAC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 301";
+		rLen = 0;
+		rLoc = 8748;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 8030;
 	};
 }
