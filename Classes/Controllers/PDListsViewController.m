@@ -76,6 +76,12 @@
 - (void)viewWillAppear:(BOOL)animated {
 	// Make sure the table is not in editing mode.
 	[self doneEditingLists];
+	
+	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
+	if (indexPath) {
+		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		[self.persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -83,8 +89,6 @@
 	
 	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
 	if (indexPath) {
-		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		[self.persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
 		[self.table deselectRowAtIndexPath:indexPath animated:NO];
 	}
 }

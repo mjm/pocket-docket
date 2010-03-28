@@ -322,10 +322,13 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (IBAction)addListEntry {
 	NSString *text = self.newEntryField.text;
-	[self.persistenceController createEntry:text inList:self.list];
-	self.newEntryField.text = @"";
 	
-	[self.newEntryField resignFirstResponder];
+	if ([text length] != 0) {
+		[self.persistenceController createEntry:text inList:self.list];
+		self.newEntryField.text = @"";
+		
+		[self.newEntryField resignFirstResponder];
+	}
 }
 
 #pragma mark -
