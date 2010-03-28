@@ -137,7 +137,17 @@
 		[UIView beginAnimations:nil context:NULL];
 		
 		[UIView setAnimationBeginsFromCurrentState:YES];
-		[UIView setAnimationDelay:0.0f];
+		NSDictionary *info = [note userInfo];
+		NSValue *value = [info valueForKey:UIKeyboardAnimationCurveUserInfoKey];
+		UIViewAnimationCurve curve;
+		[value getValue:&curve];
+		[UIView setAnimationCurve:curve];
+		
+		value = [info valueForKey:UIKeyboardAnimationDurationUserInfoKey];
+		NSTimeInterval duration;
+		[value getValue:&duration];
+		[UIView setAnimationDuration:duration];
+		
 		self.view.frame = frame;
 		
 		[UIView commitAnimations];
