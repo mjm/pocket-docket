@@ -228,7 +228,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (NSIndexPath *)tableView:(UITableView *)tableView
   willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"Will select row at index path: %@", indexPath);
 	if ([self.table isEditing]) {
 		return indexPath;
 	}
@@ -293,6 +292,15 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		   atIndex:(NSUInteger)sectionIndex
 	 forChangeType:(NSFetchedResultsChangeType)type {
 	return;
+}
+
+#pragma mark -
+#pragma mark Text Field Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[self addListEntry];
+	
+	return NO;
 }
 
 #pragma mark -

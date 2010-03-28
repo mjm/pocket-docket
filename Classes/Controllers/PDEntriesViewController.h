@@ -2,7 +2,7 @@
 @class PDPersistenceController;
 
 //! A view controller for displaying the entries in a list.
-@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate> {
+@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate> {
 	PDList *list;
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
