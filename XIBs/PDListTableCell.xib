@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="4"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -53,7 +53,7 @@
 									<object class="IBUIImageView" id="925683489">
 										<reference key="NSNextResponder" ref="1065714906"/>
 										<int key="NSvFlags">292</int>
-										<string key="NSFrame">{{10, 10}, {36, 36}}</string>
+										<string key="NSFrame">{{10, 15}, {36, 36}}</string>
 										<reference key="NSSuperview" ref="1065714906"/>
 										<bool key="IBUIOpaque">NO</bool>
 										<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -67,7 +67,7 @@
 									<object class="IBUILabel" id="3387927">
 										<reference key="NSNextResponder" ref="1065714906"/>
 										<int key="NSvFlags">290</int>
-										<string key="NSFrame">{{54, 9}, {246, 21}}</string>
+										<string key="NSFrame">{{54, 9}, {246, 29}}</string>
 										<reference key="NSSuperview" ref="1065714906"/>
 										<object class="NSColor" key="IBUIBackgroundColor">
 											<int key="NSColorSpace">3</int>
@@ -80,14 +80,14 @@
 										<string key="IBUIText">Vacation Stuff</string>
 										<object class="NSFont" key="IBUIFont">
 											<string key="NSName">Helvetica-Bold</string>
-											<double key="NSSize">17</double>
+											<double key="NSSize">20</double>
 											<int key="NSfFlags">16</int>
 										</object>
 										<object class="NSColor" key="IBUITextColor">
 											<int key="NSColorSpace">1</int>
 											<bytes key="NSRGB">MCAwIDAAA</bytes>
 										</object>
-										<object class="NSColor" key="IBUIHighlightedColor">
+										<object class="NSColor" key="IBUIHighlightedColor" id="327163385">
 											<int key="NSColorSpace">3</int>
 											<bytes key="NSWhite">MQA</bytes>
 										</object>
@@ -98,7 +98,7 @@
 									<object class="IBUILabel" id="94028453">
 										<reference key="NSNextResponder" ref="1065714906"/>
 										<int key="NSvFlags">290</int>
-										<string key="NSFrame">{{54, 29}, {246, 16}}</string>
+										<string key="NSFrame">{{54, 37}, {246, 16}}</string>
 										<reference key="NSSuperview" ref="1065714906"/>
 										<object class="NSColor" key="IBUIBackgroundColor">
 											<int key="NSColorSpace">3</int>
@@ -118,15 +118,12 @@
 											<int key="NSColorSpace">3</int>
 											<bytes key="NSWhite">MC41NTI0MTkzNTQ4AA</bytes>
 										</object>
-										<object class="NSColor" key="IBUIHighlightedColor">
-											<int key="NSColorSpace">3</int>
-											<bytes key="NSWhite">MQA</bytes>
-										</object>
+										<reference key="IBUIHighlightedColor" ref="327163385"/>
 										<int key="IBUIBaselineAdjustment">1</int>
 										<float key="IBUIMinimumFontSize">10</float>
 									</object>
 								</object>
-								<string key="NSFrameSize">{300, 55}</string>
+								<string key="NSFrameSize">{300, 65}</string>
 								<reference key="NSSuperview" ref="922191570"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -139,7 +136,7 @@
 								<int key="IBUIContentMode">3</int>
 							</object>
 						</object>
-						<string key="NSFrameSize">{300, 55}</string>
+						<string key="NSFrameSize">{300, 64}</string>
 						<reference key="NSSuperview" ref="1047333184"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -151,7 +148,7 @@
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 56}</string>
+				<string key="NSFrameSize">{320, 65}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -230,8 +227,8 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="94028453"/>
-							<reference ref="3387927"/>
 							<reference ref="925683489"/>
+							<reference ref="3387927"/>
 						</object>
 						<reference key="parent" ref="1047333184"/>
 					</object>
@@ -269,7 +266,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>PDListTableCell</string>
-					<string>{{442, 526}, {320, 56}}</string>
+					<string>{{442, 517}, {320, 65}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

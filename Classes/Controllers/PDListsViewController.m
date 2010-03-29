@@ -187,7 +187,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark Table View Delegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return 55.0;
+	return 65.0;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
