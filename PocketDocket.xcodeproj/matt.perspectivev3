@@ -280,14 +280,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>16</integer>
+									<integer>20</integer>
 									<integer>14</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 89}, {258, 780}}</string>
+							<string>{{0, 68}, {258, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,7 +322,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDListsViewController.m</string>
+								<string>PDEntriesViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,16 +330,14 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDListsViewController.m</string>
+										<string>PDEntriesViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C97C7E28116045C10070BF90</string>
+										<string>C97C7E90116057C10070BF90</string>
 										<key>history</key>
 										<array>
-											<string>C94C56131154555600791FAC</string>
 											<string>C94C56A01156B1F200791FAC</string>
-											<string>C94C57011156C86500791FAC</string>
 											<string>C94C57181156DFFB00791FAC</string>
 											<string>C94C573E1156EAF200791FAC</string>
 											<string>C94C573F1156EAF200791FAC</string>
@@ -349,18 +347,22 @@
 											<string>C94C598811585A6F00791FAC</string>
 											<string>C94C5A861159A8EB00791FAC</string>
 											<string>C94C5B3D115ADF5A00791FAC</string>
-											<string>C94C5B94115C3B8B00791FAC</string>
-											<string>C94C5C1A115C47EB00791FAC</string>
 											<string>C94C5C35115C4D4F00791FAC</string>
 											<string>C94C5C36115C4D4F00791FAC</string>
 											<string>C94C5C60115C4E6A00791FAC</string>
 											<string>C94C5C61115C4E6A00791FAC</string>
 											<string>C94C5C6D116017C200791FAC</string>
-											<string>C94C5C6F116017C200791FAC</string>
 											<string>C94C5CA31160251C00791FAC</string>
-											<string>C94C5CA711603E5600791FAC</string>
 											<string>C97C7E21116045300070BF90</string>
-											<string>C97C7E22116045300070BF90</string>
+											<string>C97C7E49116052B60070BF90</string>
+											<string>C97C7E4A116052B60070BF90</string>
+											<string>C97C7E4B116052B60070BF90</string>
+											<string>C97C7E4C116052B60070BF90</string>
+											<string>C97C7E4D116052B60070BF90</string>
+											<string>C97C7E67116054C60070BF90</string>
+											<string>C97C7E7E1160566D0070BF90</string>
+											<string>C97C7E8A116057810070BF90</string>
+											<string>C97C7E8B116057810070BF90</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -677,6 +679,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C97C7E91116057C10070BF90</string>
+		<string>C97C7E51116052B60070BF90</string>
+		<string>C97C7E52116052B60070BF90</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
 	</array>
 	<key>WindowString</key>

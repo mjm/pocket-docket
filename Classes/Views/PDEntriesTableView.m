@@ -2,7 +2,7 @@
 
 @implementation PDEntriesTableView
 
-#define HORIZ_SWIPE_DRAG_MIN  70
+#define HORIZ_SWIPE_DRAG_MIN 70
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	if ([self isEditing]) {

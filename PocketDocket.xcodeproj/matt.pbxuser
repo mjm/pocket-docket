@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* PDAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {926, 489}}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 589}}";
 			sepNavSelRange = "{13, 0}";
 			sepNavVisRange = "{0, 629}";
 		};
 	};
 	1D3623250D0F684500981E51 /* PDAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1173, 2760}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1173, 2820}}";
 			sepNavSelRange = "{590, 0}";
-			sepNavVisRange = "{0, 1009}";
+			sepNavVisRange = "{0, 943}";
 			sepNavWindowFrame = "{{38, 161}, {1190, 871}}";
 		};
 	};
@@ -863,6 +863,53 @@
 			C97C7E22116045300070BF90 /* PBXTextBookmark */ = C97C7E22116045300070BF90 /* PBXTextBookmark */;
 			C97C7E23116045300070BF90 /* PBXTextBookmark */ = C97C7E23116045300070BF90 /* PBXTextBookmark */;
 			C97C7E28116045C10070BF90 /* PBXTextBookmark */ = C97C7E28116045C10070BF90 /* PBXTextBookmark */;
+			C97C7E49116052B60070BF90 /* PBXTextBookmark */ = C97C7E49116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E4A116052B60070BF90 /* PBXTextBookmark */ = C97C7E4A116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E4B116052B60070BF90 /* PBXTextBookmark */ = C97C7E4B116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E4C116052B60070BF90 /* PBXTextBookmark */ = C97C7E4C116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E4D116052B60070BF90 /* PBXTextBookmark */ = C97C7E4D116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E4E116052B60070BF90 /* PBXTextBookmark */ = C97C7E4E116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E4F116052B60070BF90 /* PBXTextBookmark */ = C97C7E4F116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E50116052B60070BF90 /* PBXTextBookmark */ = C97C7E50116052B60070BF90 /* PBXTextBookmark */;
+			C97C7E53116053DE0070BF90 /* PBXTextBookmark */ = C97C7E53116053DE0070BF90 /* PBXTextBookmark */;
+			C97C7E54116053DE0070BF90 /* PBXTextBookmark */ = C97C7E54116053DE0070BF90 /* PBXTextBookmark */;
+			C97C7E55116053DE0070BF90 /* PBXTextBookmark */ = C97C7E55116053DE0070BF90 /* PBXTextBookmark */;
+			C97C7E58116053EB0070BF90 /* PBXTextBookmark */ = C97C7E58116053EB0070BF90 /* PBXTextBookmark */;
+			C97C7E5B1160540C0070BF90 /* PBXTextBookmark */ = C97C7E5B1160540C0070BF90 /* PBXTextBookmark */;
+			C97C7E5E116054720070BF90 /* PBXTextBookmark */ = C97C7E5E116054720070BF90 /* PBXTextBookmark */;
+			C97C7E5F116054720070BF90 /* PBXTextBookmark */ = C97C7E5F116054720070BF90 /* PBXTextBookmark */;
+			C97C7E60116054720070BF90 /* PBXTextBookmark */ = C97C7E60116054720070BF90 /* PBXTextBookmark */;
+			C97C7E61116054750070BF90 /* PBXTextBookmark */ = C97C7E61116054750070BF90 /* PBXTextBookmark */;
+			C97C7E62116054870070BF90 /* PBXTextBookmark */ = C97C7E62116054870070BF90 /* PBXTextBookmark */;
+			C97C7E63116054870070BF90 /* PBXTextBookmark */ = C97C7E63116054870070BF90 /* PBXTextBookmark */;
+			C97C7E64116054990070BF90 /* PBXTextBookmark */ = C97C7E64116054990070BF90 /* PBXTextBookmark */;
+			C97C7E67116054C60070BF90 /* PBXTextBookmark */ = C97C7E67116054C60070BF90 /* PBXTextBookmark */;
+			C97C7E68116054C60070BF90 /* PBXTextBookmark */ = C97C7E68116054C60070BF90 /* PBXTextBookmark */;
+			C97C7E69116054C60070BF90 /* PBXTextBookmark */ = C97C7E69116054C60070BF90 /* PBXTextBookmark */;
+			C97C7E6A116054C60070BF90 /* PBXTextBookmark */ = C97C7E6A116054C60070BF90 /* PBXTextBookmark */;
+			C97C7E6B116054C60070BF90 /* PBXTextBookmark */ = C97C7E6B116054C60070BF90 /* PBXTextBookmark */;
+			C97C7E6E116055FC0070BF90 /* PBXTextBookmark */ = C97C7E6E116055FC0070BF90 /* PBXTextBookmark */;
+			C97C7E6F116055FC0070BF90 /* PBXTextBookmark */ = C97C7E6F116055FC0070BF90 /* PBXTextBookmark */;
+			C97C7E70116055FC0070BF90 /* PBXTextBookmark */ = C97C7E70116055FC0070BF90 /* PBXTextBookmark */;
+			C97C7E71116056030070BF90 /* PBXTextBookmark */ = C97C7E71116056030070BF90 /* PBXTextBookmark */;
+			C97C7E72116056060070BF90 /* PBXTextBookmark */ = C97C7E72116056060070BF90 /* PBXTextBookmark */;
+			C97C7E77116056370070BF90 /* PBXTextBookmark */ = C97C7E77116056370070BF90 /* PBXTextBookmark */;
+			C97C7E7A116056510070BF90 /* PBXTextBookmark */ = C97C7E7A116056510070BF90 /* PBXTextBookmark */;
+			C97C7E7D1160566D0070BF90 /* PBXTextBookmark */ = C97C7E7D1160566D0070BF90 /* PBXTextBookmark */;
+			C97C7E7E1160566D0070BF90 /* PBXTextBookmark */ = C97C7E7E1160566D0070BF90 /* PBXTextBookmark */;
+			C97C7E7F1160566D0070BF90 /* PBXTextBookmark */ = C97C7E7F1160566D0070BF90 /* PBXTextBookmark */;
+			C97C7E801160566D0070BF90 /* PBXTextBookmark */ = C97C7E801160566D0070BF90 /* PBXTextBookmark */;
+			C97C7E83116056850070BF90 /* PBXTextBookmark */ = C97C7E83116056850070BF90 /* PBXTextBookmark */;
+			C97C7E84116056850070BF90 /* PBXTextBookmark */ = C97C7E84116056850070BF90 /* PBXTextBookmark */;
+			C97C7E85116056850070BF90 /* PBXTextBookmark */ = C97C7E85116056850070BF90 /* PBXTextBookmark */;
+			C97C7E871160568C0070BF90 /* PBXTextBookmark */ = C97C7E871160568C0070BF90 /* PBXTextBookmark */;
+			C97C7E88116056DB0070BF90 /* PBXTextBookmark */ = C97C7E88116056DB0070BF90 /* PBXTextBookmark */;
+			C97C7E89116057150070BF90 /* PBXTextBookmark */ = C97C7E89116057150070BF90 /* PBXTextBookmark */;
+			C97C7E8A116057810070BF90 /* PBXTextBookmark */ = C97C7E8A116057810070BF90 /* PBXTextBookmark */;
+			C97C7E8B116057810070BF90 /* PBXTextBookmark */ = C97C7E8B116057810070BF90 /* PBXTextBookmark */;
+			C97C7E8C116057810070BF90 /* PBXTextBookmark */ = C97C7E8C116057810070BF90 /* PBXTextBookmark */;
+			C97C7E8D116057A50070BF90 /* PBXTextBookmark */ = C97C7E8D116057A50070BF90 /* PBXTextBookmark */;
+			C97C7E90116057C10070BF90 /* PBXTextBookmark */ = C97C7E90116057C10070BF90 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C94C55DD1154410800791FAC /* Source Control */;
 		userBuildSettings = {
@@ -880,7 +927,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -967,9 +1014,9 @@
 	};
 	C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {939, 5900}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1192, 5880}}";
 			sepNavSelRange = "{1089, 0}";
-			sepNavVisRange = "{605, 907}";
+			sepNavVisRange = "{767, 341}";
 		};
 	};
 	C94C560111544FF700791FAC /* PDListsViewController.h */ = {
@@ -983,7 +1030,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {966, 5880}}";
 			sepNavSelRange = "{5348, 0}";
-			sepNavVisRange = "{4855, 896}";
+			sepNavVisRange = "{4855, 995}";
 		};
 	};
 	C94C56111154555600791FAC /* PlistBookmark */ = {
@@ -4399,7 +4446,7 @@
 		ignoreCount = 0;
 		lineNumber = 147;
 		location = PocketDocket;
-		modificationTime = 291260742.921559;
+		modificationTime = 291526276.176828;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -4874,14 +4921,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1623, 960}}";
 			sepNavSelRange = "{284, 0}";
-			sepNavVisRange = "{15, 1133}";
+			sepNavVisRange = "{0, 1147}";
 		};
 	};
 	C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {912, 7220}}";
-			sepNavSelRange = "{3646, 0}";
-			sepNavVisRange = "{3487, 838}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 7100}}";
+			sepNavSelRange = "{7537, 0}";
+			sepNavVisRange = "{7012, 971}";
 		};
 	};
 	C94C598411585A6F00791FAC /* XDModelBookmark */ = {
@@ -4944,7 +4991,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 27";
 		rLen = 0;
-		rLoc = 2261;
+		rLoc = 2756;
 		rType = 0;
 		vrLen = 603;
 		vrLoc = 586;
@@ -4989,7 +5036,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 27";
 		rLen = 0;
-		rLoc = 2261;
+		rLoc = 2756;
 		rType = 0;
 		vrLen = 598;
 		vrLoc = 586;
@@ -4999,7 +5046,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 4";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1921;
 		rType = 0;
 		vrLen = 563;
 		vrLoc = 695;
@@ -5014,7 +5061,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 4";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1921;
 		rType = 0;
 		vrLen = 563;
 		vrLoc = 695;
@@ -5034,7 +5081,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 4";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1921;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 695;
@@ -5203,7 +5250,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 4";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1921;
 		rType = 0;
 		vrLen = 629;
 		vrLoc = 509;
@@ -5228,7 +5275,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 4";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1921;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 695;
@@ -5268,7 +5315,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 4";
 		rLen = 0;
-		rLoc = 1426;
+		rLoc = 1921;
 		rType = 0;
 		vrLen = 293;
 		vrLoc = 695;
@@ -5338,7 +5385,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 40";
 		rLen = 0;
-		rLoc = 2509;
+		rLoc = 3004;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 623;
@@ -5348,7 +5395,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 46";
 		rLen = 0;
-		rLoc = 2777;
+		rLoc = 3272;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 623;
@@ -5358,7 +5405,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 44";
 		rLen = 0;
-		rLoc = 2673;
+		rLoc = 3168;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 744;
@@ -5368,7 +5415,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 44";
 		rLen = 0;
-		rLoc = 2673;
+		rLoc = 3168;
 		rType = 0;
 		vrLen = 905;
 		vrLoc = 744;
@@ -5383,7 +5430,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 44";
 		rLen = 0;
-		rLoc = 2673;
+		rLoc = 3168;
 		rType = 0;
 		vrLen = 466;
 		vrLoc = 1293;
@@ -5393,7 +5440,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 77";
 		rLen = 0;
-		rLoc = 4761;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 1648;
@@ -5403,7 +5450,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 77";
 		rLen = 0;
-		rLoc = 4761;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 1648;
@@ -5413,7 +5460,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 77";
 		rLen = 0;
-		rLoc = 4761;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 615;
 		vrLoc = 1648;
@@ -5423,7 +5470,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 81";
 		rLen = 0;
-		rLoc = 4761;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 778;
 		vrLoc = 1759;
@@ -5433,7 +5480,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 81";
 		rLen = 0;
-		rLoc = 4761;
+		rLoc = 5256;
 		rType = 0;
 		vrLen = 779;
 		vrLoc = 1619;
@@ -5443,7 +5490,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 78";
 		rLen = 0;
-		rLoc = 3646;
+		rLoc = 4141;
 		rType = 0;
 		vrLen = 432;
 		vrLoc = 1922;
@@ -5463,7 +5510,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 72";
 		rLen = 0;
-		rLoc = 3646;
+		rLoc = 4141;
 		rType = 0;
 		vrLen = 674;
 		vrLoc = 1838;
@@ -5473,7 +5520,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 82";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 689;
 		vrLoc = 1786;
@@ -5493,7 +5540,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 78";
 		rLen = 0;
-		rLoc = 3606;
+		rLoc = 4101;
 		rType = 0;
 		vrLen = 682;
 		vrLoc = 1777;
@@ -5503,7 +5550,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 83";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 722;
 		vrLoc = 1777;
@@ -5513,7 +5560,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 84";
 		rLen = 0;
-		rLoc = 3742;
+		rLoc = 4237;
 		rType = 0;
 		vrLen = 725;
 		vrLoc = 1777;
@@ -5523,7 +5570,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 84";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 761;
 		vrLoc = 1777;
@@ -5533,7 +5580,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 86";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 793;
 		vrLoc = 1777;
@@ -5543,7 +5590,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 90";
 		rLen = 0;
-		rLoc = 4265;
+		rLoc = 4760;
 		rType = 0;
 		vrLen = 804;
 		vrLoc = 1777;
@@ -5553,7 +5600,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 90";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 1777;
@@ -5563,7 +5610,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 92";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 2102;
@@ -5573,7 +5620,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 92";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 700;
 		vrLoc = 2102;
@@ -5593,7 +5640,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 103";
 		rLen = 0;
-		rLoc = 9744;
+		rLoc = 10228;
 		rType = 0;
 		vrLen = 517;
 		vrLoc = 2306;
@@ -5603,7 +5650,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 528;
 		vrLoc = 2306;
@@ -5613,7 +5660,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 528;
 		vrLoc = 2306;
@@ -5663,7 +5710,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 114";
 		rLen = 0;
-		rLoc = 9995;
+		rLoc = 10479;
 		rType = 0;
 		vrLen = 427;
 		vrLoc = 2545;
@@ -5673,7 +5720,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 572;
 		vrLoc = 2408;
@@ -5683,7 +5730,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -5693,7 +5740,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -5703,7 +5750,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -5713,7 +5760,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 105";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 583;
 		vrLoc = 2408;
@@ -5723,7 +5770,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 104";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 775;
 		vrLoc = 2100;
@@ -5733,7 +5780,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 102";
 		rLen = 0;
-		rLoc = 4492;
+		rLoc = 4987;
 		rType = 0;
 		vrLen = 182;
 		vrLoc = 2572;
@@ -5743,7 +5790,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 111";
 		rLen = 0;
-		rLoc = 4758;
+		rLoc = 5253;
 		rType = 0;
 		vrLen = 600;
 		vrLoc = 2456;
@@ -5753,7 +5800,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 108";
 		rLen = 0;
-		rLoc = 4696;
+		rLoc = 5191;
 		rType = 0;
 		vrLen = 579;
 		vrLoc = 2456;
@@ -5763,7 +5810,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 108";
 		rLen = 0;
-		rLoc = 4696;
+		rLoc = 5191;
 		rType = 0;
 		vrLen = 579;
 		vrLoc = 2456;
@@ -5773,7 +5820,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 108";
 		rLen = 0;
-		rLoc = 4696;
+		rLoc = 5191;
 		rType = 0;
 		vrLen = 579;
 		vrLoc = 2456;
@@ -5783,7 +5830,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 578;
 		vrLoc = 2745;
@@ -5823,7 +5870,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 543;
 		vrLoc = 2745;
@@ -5833,7 +5880,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9111;
+		rLoc = 9595;
 		rType = 0;
 		vrLen = 489;
 		vrLoc = 2982;
@@ -5843,7 +5890,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9111;
+		rLoc = 9595;
 		rType = 0;
 		vrLen = 489;
 		vrLoc = 2982;
@@ -5853,7 +5900,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9111;
+		rLoc = 9595;
 		rType = 0;
 		vrLen = 554;
 		vrLoc = 2982;
@@ -5863,7 +5910,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 119";
 		rLen = 0;
-		rLoc = 9111;
+		rLoc = 9595;
 		rType = 0;
 		vrLen = 222;
 		vrLoc = 2982;
@@ -5922,7 +5969,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 122";
 		rLen = 0;
-		rLoc = 9127;
+		rLoc = 9611;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 2955;
@@ -6052,7 +6099,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 122";
 		rLen = 0;
-		rLoc = 9127;
+		rLoc = 9611;
 		rType = 0;
 		vrLen = 552;
 		vrLoc = 2955;
@@ -6062,7 +6109,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 75";
 		rLen = 0;
-		rLoc = 3600;
+		rLoc = 4095;
 		rType = 0;
 		vrLen = 882;
 		vrLoc = 1192;
@@ -6072,7 +6119,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 123";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 539;
 		vrLoc = 2828;
@@ -6082,7 +6129,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 9127;
+		rLoc = 9611;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 2828;
@@ -6102,7 +6149,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 9127;
+		rLoc = 9611;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 2849;
@@ -6157,7 +6204,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 9127;
+		rLoc = 9611;
 		rType = 0;
 		vrLen = 612;
 		vrLoc = 2828;
@@ -6187,7 +6234,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 118";
 		rLen = 0;
-		rLoc = 9127;
+		rLoc = 9611;
 		rType = 0;
 		vrLen = 405;
 		vrLoc = 2849;
@@ -6253,7 +6300,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 18";
 		rLen = 0;
-		rLoc = 611;
+		rLoc = 731;
 		rType = 0;
 		vrLen = 935;
 		vrLoc = 3293;
@@ -6283,7 +6330,7 @@
 		comments = "'PDEntriesViewController' may not respond to '-configureCell:withList:'";
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		rLen = 1;
-		rLoc = 286;
+		rLoc = 291;
 		rType = 1;
 	};
 	C94C5A961159AA0B00791FAC /* PBXTextBookmark */ = {
@@ -6291,7 +6338,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 189";
 		rLen = 0;
-		rLoc = 8356;
+		rLoc = 8840;
 		rType = 0;
 		vrLen = 1124;
 		vrLoc = 4550;
@@ -6301,7 +6348,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 41";
 		rLen = 0;
-		rLoc = 2048;
+		rLoc = 2543;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 488;
@@ -6311,7 +6358,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 41";
 		rLen = 0;
-		rLoc = 2048;
+		rLoc = 2543;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 488;
@@ -6321,7 +6368,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 208";
 		rLen = 0;
-		rLoc = 9111;
+		rLoc = 9595;
 		rType = 0;
 		vrLen = 686;
 		vrLoc = 5559;
@@ -6331,7 +6378,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 29";
 		rLen = 0;
-		rLoc = 1402;
+		rLoc = 1454;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 327;
@@ -6341,7 +6388,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 29";
 		rLen = 0;
-		rLoc = 1402;
+		rLoc = 1454;
 		rType = 0;
 		vrLen = 721;
 		vrLoc = 327;
@@ -6361,7 +6408,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 29";
 		rLen = 0;
-		rLoc = 1402;
+		rLoc = 1454;
 		rType = 0;
 		vrLen = 353;
 		vrLoc = 533;
@@ -6371,7 +6418,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 25";
 		rLen = 0;
-		rLoc = 1402;
+		rLoc = 1454;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 327;
@@ -6381,7 +6428,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 25";
 		rLen = 0;
-		rLoc = 1402;
+		rLoc = 1454;
 		rType = 0;
 		vrLen = 720;
 		vrLoc = 327;
@@ -6445,7 +6492,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 178";
 		rLen = 0;
-		rLoc = 6015;
+		rLoc = 6510;
 		rType = 0;
 		vrLen = 750;
 		vrLoc = 4373;
@@ -6455,7 +6502,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 178";
 		rLen = 0;
-		rLoc = 6015;
+		rLoc = 6510;
 		rType = 0;
 		vrLen = 816;
 		vrLoc = 4277;
@@ -6470,7 +6517,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 20";
 		rLen = 0;
-		rLoc = 611;
+		rLoc = 731;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 301;
@@ -6485,7 +6532,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 20";
 		rLen = 0;
-		rLoc = 611;
+		rLoc = 731;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 301;
@@ -6495,7 +6542,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 20";
 		rLen = 0;
-		rLoc = 611;
+		rLoc = 731;
 		rType = 0;
 		vrLen = 337;
 		vrLoc = 560;
@@ -6505,7 +6552,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 31";
 		rLen = 0;
-		rLoc = 1405;
+		rLoc = 1900;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 301;
@@ -6520,7 +6567,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 21";
 		rLen = 0;
-		rLoc = 1060;
+		rLoc = 1112;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 301;
@@ -6535,7 +6582,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 21";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 733;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 301;
@@ -6550,7 +6597,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 23";
 		rLen = 0;
-		rLoc = 1063;
+		rLoc = 1115;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 301;
@@ -6565,7 +6612,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 40";
 		rLen = 0;
-		rLoc = 1572;
+		rLoc = 2067;
 		rType = 0;
 		vrLen = 957;
 		vrLoc = 598;
@@ -6610,7 +6657,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 269";
 		rLen = 0;
-		rLoc = 9968;
+		rLoc = 10452;
 		rType = 0;
 		vrLen = 688;
 		vrLoc = 6927;
@@ -6620,7 +6667,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 129";
 		rLen = 0;
-		rLoc = 4378;
+		rLoc = 4873;
 		rType = 0;
 		vrLen = 707;
 		vrLoc = 2942;
@@ -6635,7 +6682,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 248";
 		rLen = 0;
-		rLoc = 9350;
+		rLoc = 9834;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 6624;
@@ -6680,7 +6727,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 202";
 		rLen = 0;
-		rLoc = 6317;
+		rLoc = 6812;
 		rType = 0;
 		vrLen = 925;
 		vrLoc = 5188;
@@ -6690,7 +6737,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 203";
 		rLen = 0;
-		rLoc = 6431;
+		rLoc = 6926;
 		rType = 0;
 		vrLen = 927;
 		vrLoc = 5188;
@@ -6710,7 +6757,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 203";
 		rLen = 0;
-		rLoc = 6431;
+		rLoc = 6926;
 		rType = 0;
 		vrLen = 927;
 		vrLoc = 5188;
@@ -6830,7 +6877,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 21";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 733;
 		rType = 0;
 		vrLen = 613;
 		vrLoc = 391;
@@ -6965,7 +7012,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 203";
 		rLen = 0;
-		rLoc = 6431;
+		rLoc = 6926;
 		rType = 0;
 		vrLen = 927;
 		vrLoc = 5188;
@@ -6975,7 +7022,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 20";
 		rLen = 0;
-		rLoc = 611;
+		rLoc = 731;
 		rType = 0;
 		vrLen = 903;
 		vrLoc = 76;
@@ -6990,7 +7037,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 20";
 		rLen = 0;
-		rLoc = 562;
+		rLoc = 682;
 		rType = 0;
 		vrLen = 910;
 		vrLoc = 76;
@@ -7005,7 +7052,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 21";
 		rLen = 0;
-		rLoc = 613;
+		rLoc = 733;
 		rType = 0;
 		vrLen = 904;
 		vrLoc = 76;
@@ -7020,7 +7067,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 22";
 		rLen = 0;
-		rLoc = 574;
+		rLoc = 694;
 		rType = 0;
 		vrLen = 966;
 		vrLoc = 222;
@@ -7032,16 +7079,16 @@
 	};
 	C94C5B83115C395000791FAC /* PDEntriesTableView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {964, 701}}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 566}}";
 			sepNavSelRange = "{67, 0}";
 			sepNavVisRange = "{0, 106}";
 		};
 	};
 	C94C5B84115C395000791FAC /* PDEntriesTableView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1011, 1300}}";
-			sepNavSelRange = "{478, 0}";
-			sepNavVisRange = "{0, 1108}";
+			sepNavIntBoundsRect = "{{0, 0}, {912, 1380}}";
+			sepNavSelRange = "{97, 0}";
+			sepNavVisRange = "{0, 738}";
 		};
 	};
 	C94C5B93115C3B8B00791FAC /* PBXTextBookmark */ = {
@@ -7049,7 +7096,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 22";
 		rLen = 0;
-		rLoc = 574;
+		rLoc = 694;
 		rType = 0;
 		vrLen = 991;
 		vrLoc = 222;
@@ -7079,7 +7126,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 15";
 		rLen = 0;
-		rLoc = 485;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 0;
@@ -7089,7 +7136,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 15";
 		rLen = 0;
-		rLoc = 485;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1195;
 		vrLoc = 0;
@@ -7104,7 +7151,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 17";
 		rLen = 0;
-		rLoc = 485;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 0;
@@ -7119,7 +7166,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 17";
 		rLen = 0;
-		rLoc = 485;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1080;
 		vrLoc = 0;
@@ -7144,7 +7191,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 431;
 		vrLoc = 297;
@@ -7154,7 +7201,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 420;
@@ -7164,7 +7211,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 420;
@@ -7179,7 +7226,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 420;
@@ -7194,7 +7241,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 383;
 		vrLoc = 989;
@@ -7233,7 +7280,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 420;
@@ -7243,7 +7290,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 215";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 1182;
 		vrLoc = 5024;
@@ -7253,7 +7300,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 215";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 1193;
 		vrLoc = 5010;
@@ -7263,7 +7310,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 652;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 429;
 		vrLoc = 297;
@@ -7289,7 +7336,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 215";
 		rLen = 0;
-		rLoc = 6821;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 490;
 		vrLoc = 5713;
@@ -7308,8 +7355,8 @@
 		isa = PBXTextBookmark;
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 210";
-		rLen = 125;
-		rLoc = 6575;
+		rLen = 0;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 1044;
 		vrLoc = 5454;
@@ -7319,7 +7366,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6997;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5454;
@@ -7345,7 +7392,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6997;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 359;
 		vrLoc = 6079;
@@ -7355,7 +7402,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6997;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5454;
@@ -7365,7 +7412,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 420;
@@ -7375,7 +7422,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 22";
 		rLen = 0;
-		rLoc = 736;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1092;
 		vrLoc = 420;
@@ -7390,7 +7437,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 59";
 		rLen = 0;
-		rLoc = 1879;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1046;
 		vrLoc = 680;
@@ -7400,7 +7447,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6997;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 359;
 		vrLoc = 6079;
@@ -7426,7 +7473,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 59";
 		rLen = 0;
-		rLoc = 1879;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 329;
 		vrLoc = 1397;
@@ -7436,7 +7483,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 59";
 		rLen = 0;
-		rLoc = 1879;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 781;
@@ -7446,7 +7493,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6997;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 5454;
@@ -7456,7 +7503,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 7286;
+		rLoc = 7770;
 		rType = 0;
 		vrLen = 1027;
 		vrLoc = 5736;
@@ -7466,7 +7513,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 59";
 		rLen = 0;
-		rLoc = 1879;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 329;
 		vrLoc = 1397;
@@ -7476,7 +7523,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 7286;
+		rLoc = 7770;
 		rType = 0;
 		vrLen = 411;
 		vrLoc = 6321;
@@ -7515,7 +7562,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 236";
 		rLen = 0;
-		rLoc = 7286;
+		rLoc = 7770;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 5736;
@@ -7541,7 +7588,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 236";
 		rLen = 0;
-		rLoc = 7286;
+		rLoc = 7770;
 		rType = 0;
 		vrLen = 309;
 		vrLoc = 6426;
@@ -7551,7 +7598,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 226";
 		rLen = 0;
-		rLoc = 6997;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 5971;
@@ -7576,9 +7623,9 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 8";
 		rLen = 0;
-		rLoc = 170;
+		rLoc = 101;
 		rType = 0;
-		vrLen = 1118;
+		vrLen = 1117;
 		vrLoc = 846;
 	};
 	C94C5BF7115C456C00791FAC /* PBXTextBookmark */ = {
@@ -7586,7 +7633,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 7284;
+		rLoc = 7603;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 5956;
@@ -7596,7 +7643,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 7095;
+		rLoc = 7414;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 5956;
@@ -7606,7 +7653,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 7095;
+		rLoc = 7414;
 		rType = 0;
 		vrLen = 980;
 		vrLoc = 5956;
@@ -7621,7 +7668,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 230";
 		rLen = 0;
-		rLoc = 7095;
+		rLoc = 7414;
 		rType = 0;
 		vrLen = 424;
 		vrLoc = 6263;
@@ -7660,7 +7707,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 223";
 		rLen = 0;
-		rLoc = 6930;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 1084;
 		vrLoc = 5956;
@@ -7670,7 +7717,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 223";
 		rLen = 0;
-		rLoc = 6930;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 418;
 		vrLoc = 6172;
@@ -7709,7 +7756,7 @@
 		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
 		name = "PDEntriesTableView.m: 17";
 		rLen = 0;
-		rLoc = 478;
+		rLoc = 101;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 0;
@@ -7719,7 +7766,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 23";
 		rLen = 0;
-		rLoc = 646;
+		rLoc = 766;
 		rType = 0;
 		vrLen = 1113;
 		vrLoc = 0;
@@ -7729,7 +7776,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 33";
 		rLen = 0;
-		rLoc = 996;
+		rLoc = 1048;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 170;
@@ -7754,7 +7801,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 247";
 		rLen = 0;
-		rLoc = 7423;
+		rLoc = 7907;
 		rType = 0;
 		vrLen = 1093;
 		vrLoc = 6228;
@@ -7834,7 +7881,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 231";
 		rLen = 0;
-		rLoc = 6930;
+		rLoc = 7070;
 		rType = 0;
 		vrLen = 392;
 		vrLoc = 6524;
@@ -8203,7 +8250,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 300";
 		rLen = 0;
-		rLoc = 9111;
+		rLoc = 9595;
 		rType = 0;
 		vrLen = 807;
 		vrLoc = 8030;
@@ -8213,7 +8260,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 300";
 		rLen = 0;
-		rLoc = 9029;
+		rLoc = 9513;
 		rType = 0;
 		vrLen = 819;
 		vrLoc = 8030;
@@ -8223,7 +8270,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 301";
 		rLen = 0;
-		rLoc = 9095;
+		rLoc = 9579;
 		rType = 0;
 		vrLen = 751;
 		vrLoc = 8030;
@@ -8233,7 +8280,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 331";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 648;
 		vrLoc = 8931;
@@ -8243,7 +8290,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 331";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 573;
 		vrLoc = 8601;
@@ -8293,7 +8340,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 331";
 		rLen = 0;
-		rLoc = 9742;
+		rLoc = 10226;
 		rType = 0;
 		vrLen = 564;
 		vrLoc = 8610;
@@ -8303,7 +8350,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 140";
 		rLen = 0;
-		rLoc = 4217;
+		rLoc = 4712;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 3487;
@@ -8313,7 +8360,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 140";
 		rLen = 0;
-		rLoc = 4086;
+		rLoc = 4581;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 3487;
@@ -8323,7 +8370,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 140";
 		rLen = 0;
-		rLoc = 4086;
+		rLoc = 4581;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 3487;
@@ -8333,7 +8380,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 140";
 		rLen = 0;
-		rLoc = 4086;
+		rLoc = 4581;
 		rType = 0;
 		vrLen = 713;
 		vrLoc = 3487;
@@ -8343,7 +8390,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 141";
 		rLen = 0;
-		rLoc = 4257;
+		rLoc = 4752;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 3487;
@@ -8353,7 +8400,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 144";
 		rLen = 0;
-		rLoc = 4086;
+		rLoc = 4581;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 3487;
@@ -8363,7 +8410,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 144";
 		rLen = 0;
-		rLoc = 4086;
+		rLoc = 4581;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 3487;
@@ -8373,7 +8420,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 129";
 		rLen = 0;
-		rLoc = 3646;
+		rLoc = 4141;
 		rType = 0;
 		vrLen = 863;
 		vrLoc = 3487;
@@ -8423,7 +8470,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 129";
 		rLen = 0;
-		rLoc = 3646;
+		rLoc = 4141;
 		rType = 0;
 		vrLen = 838;
 		vrLoc = 3487;
@@ -8692,5 +8739,489 @@
 		rType = 0;
 		vrLen = 896;
 		vrLoc = 4855;
+	};
+	C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {948, 589}}";
+			sepNavSelRange = "{218, 0}";
+			sepNavVisRange = "{0, 763}";
+		};
+	};
+	C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {939, 1560}}";
+			sepNavSelRange = "{559, 0}";
+			sepNavVisRange = "{115, 662}";
+		};
+	};
+	C97C7E49116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 190";
+		rLen = 0;
+		rLoc = 5348;
+		rType = 0;
+		vrLen = 995;
+		vrLoc = 4855;
+	};
+	C97C7E4A116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* PDAppDelegate.m */;
+		name = "PDAppDelegate.m: 18";
+		rLen = 0;
+		rLoc = 590;
+		rType = 0;
+		vrLen = 943;
+		vrLoc = 0;
+	};
+	C97C7E4B116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* PDAppDelegate.h */;
+		name = "PDAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 13;
+		rType = 0;
+		vrLen = 629;
+		vrLoc = 0;
+	};
+	C97C7E4C116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
+		name = "PDEntriesViewController.h: 5";
+		rLen = 0;
+		rLoc = 284;
+		rType = 0;
+		vrLen = 1147;
+		vrLoc = 0;
+	};
+	C97C7E4D116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
+		name = "PDEntryDetailViewController.h: 5";
+		rLen = 0;
+		rLoc = 218;
+		rType = 0;
+		vrLen = 763;
+		vrLoc = 0;
+	};
+	C97C7E4E116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 26";
+		rLen = 0;
+		rLoc = 838;
+		rType = 0;
+		vrLen = 962;
+		vrLoc = 445;
+	};
+	C97C7E4F116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 63";
+		rLen = 0;
+		rLoc = 1496;
+		rType = 0;
+		vrLen = 670;
+		vrLoc = 941;
+	};
+	C97C7E50116052B60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 20";
+		rLen = 0;
+		rLoc = 540;
+		rType = 0;
+		vrLen = 662;
+		vrLoc = 115;
+	};
+	C97C7E53116053DE0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 24";
+		rLen = 0;
+		rLoc = 559;
+		rType = 0;
+		vrLen = 662;
+		vrLoc = 115;
+	};
+	C97C7E54116053DE0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 26";
+		rLen = 0;
+		rLoc = 838;
+		rType = 0;
+		vrLen = 962;
+		vrLoc = 445;
+	};
+	C97C7E55116053DE0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 259";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 930;
+		vrLoc = 7508;
+	};
+	C97C7E58116053EB0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 269";
+		rLen = 0;
+		rLoc = 7746;
+		rType = 0;
+		vrLen = 982;
+		vrLoc = 7335;
+	};
+	C97C7E5B1160540C0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 248";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 967;
+		vrLoc = 7025;
+	};
+	C97C7E5E116054720070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 248";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 7025;
+	};
+	C97C7E5F116054720070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 17";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 739;
+		vrLoc = 0;
+	};
+	C97C7E60116054720070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 9";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 769;
+		vrLoc = 0;
+	};
+	C97C7E61116054750070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 9";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 769;
+		vrLoc = 0;
+	};
+	C97C7E62116054870070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 49";
+		rLen = 0;
+		rLoc = 1089;
+		rType = 0;
+		vrLen = 341;
+		vrLoc = 767;
+	};
+	C97C7E63116054870070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 9";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 0;
+	};
+	C97C7E64116054990070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 8";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 815;
+		vrLoc = 0;
+	};
+	C97C7E67116054C60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B83115C395000791FAC /* PDEntriesTableView.h */;
+		name = "PDEntriesTableView.h: 2";
+		rLen = 0;
+		rLoc = 67;
+		rType = 0;
+		vrLen = 106;
+		vrLoc = 0;
+	};
+	C97C7E68116054C60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 8";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 799;
+		vrLoc = 1314;
+	};
+	C97C7E69116054C60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 24";
+		rLen = 0;
+		rLoc = 559;
+		rType = 0;
+		vrLen = 662;
+		vrLoc = 115;
+	};
+	C97C7E6A116054C60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 248";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 860;
+		vrLoc = 7025;
+	};
+	C97C7E6B116054C60070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 240";
+		rLen = 0;
+		rLoc = 7070;
+		rType = 0;
+		vrLen = 963;
+		vrLoc = 6529;
+	};
+	C97C7E6E116055FC0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 48";
+		rLen = 0;
+		rLoc = 1457;
+		rType = 0;
+		vrLen = 907;
+		vrLoc = 224;
+	};
+	C97C7E6F116055FC0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 8";
+		rLen = 0;
+		rLoc = 101;
+		rType = 0;
+		vrLen = 838;
+		vrLoc = 1275;
+	};
+	C97C7E70116055FC0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 12";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 0;
+	};
+	C97C7E71116056030070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 12";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 816;
+		vrLoc = 0;
+	};
+	C97C7E72116056060070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 12";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 384;
+		vrLoc = 0;
+	};
+	C97C7E77116056370070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 790;
+		vrLoc = 0;
+	};
+	C97C7E7A116056510070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 0;
+	};
+	C97C7E7D1160566D0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 0;
+	};
+	C97C7E7E1160566D0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 24";
+		rLen = 0;
+		rLoc = 559;
+		rType = 0;
+		vrLen = 662;
+		vrLoc = 115;
+	};
+	C97C7E7F1160566D0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 48";
+		rLen = 0;
+		rLoc = 1457;
+		rType = 0;
+		vrLen = 936;
+		vrLoc = 195;
+	};
+	C97C7E801160566D0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 240";
+		rLen = 248;
+		rLoc = 7070;
+		rType = 0;
+		vrLen = 868;
+		vrLoc = 7003;
+	};
+	C97C7E83116056850070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 248";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 785;
+		vrLoc = 7003;
+	};
+	C97C7E84116056850070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 0;
+	};
+	C97C7E85116056850070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 0;
+	};
+	C97C7E871160568C0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 862;
+		vrLoc = 0;
+	};
+	C97C7E88116056DB0070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 14";
+		rLen = 0;
+		rLoc = 169;
+		rType = 0;
+		vrLen = 812;
+		vrLoc = 0;
+	};
+	C97C7E89116057150070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 7";
+		rLen = 0;
+		rLoc = 134;
+		rType = 0;
+		vrLen = 356;
+		vrLoc = 0;
+	};
+	C97C7E8A116057810070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */;
+		name = "PDEntriesTableView.m: 5";
+		rLen = 0;
+		rLoc = 97;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 0;
+	};
+	C97C7E8B116057810070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 248";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 783;
+		vrLoc = 7005;
+	};
+	C97C7E8C116057810070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 24";
+		rLen = 0;
+		rLoc = 766;
+		rType = 0;
+		vrLen = 935;
+		vrLoc = 590;
+	};
+	C97C7E8D116057A50070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 254";
+		rLen = 0;
+		rLoc = 7318;
+		rType = 0;
+		vrLen = 921;
+		vrLoc = 7198;
+	};
+	C97C7E90116057C10070BF90 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 250";
+		rLen = 0;
+		rLoc = 7537;
+		rType = 0;
+		vrLen = 971;
+		vrLoc = 7012;
 	};
 }

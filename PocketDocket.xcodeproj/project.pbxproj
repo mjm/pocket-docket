@@ -32,6 +32,8 @@
 		C94C5B66115C332400791FAC /* CheckBox.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B65115C332400791FAC /* CheckBox.png */; };
 		C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B67115C332B00791FAC /* CheckBoxChecked.png */; };
 		C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */; };
+		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
+		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,9 @@
 		C94C5B83115C395000791FAC /* PDEntriesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntriesTableView.h; path = Views/PDEntriesTableView.h; sourceTree = "<group>"; };
 		C94C5B84115C395000791FAC /* PDEntriesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntriesTableView.m; path = Views/PDEntriesTableView.m; sourceTree = "<group>"; };
 		C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 3.xcdatamodel"; sourceTree = "<group>"; };
+		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
+		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
+		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +170,7 @@
 				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
 				C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */,
 				C94C59811158588000791FAC /* PDEntriesView.xib */,
+				C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -178,6 +184,8 @@
 				C94C56FC1156C72600791FAC /* PDEditListViewController.m */,
 				C94C597E1158557400791FAC /* PDEntriesViewController.h */,
 				C94C597F1158557400791FAC /* PDEntriesViewController.m */,
+				C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */,
+				C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +275,7 @@
 				C94C59821158588000791FAC /* PDEntriesView.xib in Resources */,
 				C94C5B66115C332400791FAC /* CheckBox.png in Resources */,
 				C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */,
+				C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +298,7 @@
 				C94C594811584D3300791FAC /* PDListEntry.m in Sources */,
 				C94C59801158557400791FAC /* PDEntriesViewController.m in Sources */,
 				C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */,
+				C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

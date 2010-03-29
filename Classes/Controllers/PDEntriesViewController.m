@@ -3,14 +3,15 @@
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
+#import "../Controllers/PDEntryDetailViewController.h"
 
 #pragma mark Private Methods
 
 @interface PDEntriesViewController (PrivateMethods)
 
 - (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry;
-
 - (void)scrollToBottom;
+- (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -22,10 +23,8 @@
 			[UIImage imageNamed:@"CheckBox.png"];
 	cell.textLabel.text = entry.text;
 	
-	cell.accessoryType = entry.comment ?
-			UITableViewCellAccessoryDetailDisclosureButton :
-			UITableViewCellAccessoryNone;
-	cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+	cell.editingAccessoryType = UITableViewCellAccessoryNone;
 	
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	
@@ -45,6 +44,16 @@
 						  atScrollPosition:UITableViewScrollPositionBottom
 								  animated:YES];
 	}
+}
+
+- (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath {
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	
+	PDEntryDetailViewController *detailController = [[PDEntryDetailViewController alloc] initWithEntry:entry
+																				 persistenceController:self.persistenceController];
+	[self.navigationController pushViewController:detailController animated:YES];
+	
+	[detailController release];
 }
 
 @end
@@ -236,18 +245,14 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	return UITableViewCellEditingStyleNone;
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView
-  willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if ([self.table isEditing]) {
-		return indexPath;
-	}
-	return nil;
-}
-
 - (void)tableView:(UITableView *)tableView didSwipeCellAtIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
 	[self.persistenceController save];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	[self displayEntryDetailsForIndexPath:indexPath];
 }
 
 #pragma mark -
