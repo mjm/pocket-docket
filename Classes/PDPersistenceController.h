@@ -15,6 +15,7 @@
 }
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSUndoManager *undoManager;
 
 //! \name Initializing a Persistence Controller
 //@{

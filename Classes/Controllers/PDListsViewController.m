@@ -121,6 +121,7 @@
 - (IBAction)addList {
 	isAdd = YES;
 	
+	[self.persistenceController.undoManager beginUndoGrouping];
 	PDList *list = [self.persistenceController createList];
 	
 	PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
@@ -219,11 +220,14 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark Edit List Controller Delegate Methods
 
 - (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
+	[self.persistenceController.undoManager endUndoGrouping];
 	[self doneEditingList:list];
 }
 
 - (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {
-	[self.persistenceController deleteList:list];
+	[self.persistenceController.undoManager endUndoGrouping];
+	[self.persistenceController.undoManager undo];
+
 	[self doneEditingList:list];
 }
 

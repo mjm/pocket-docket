@@ -37,6 +37,19 @@
 }
 
 #pragma mark -
+#pragma mark Undoing Changes
+
+- (NSUndoManager *)undoManager {
+	NSUndoManager* undoManager = [self.managedObjectContext undoManager];
+	if (!undoManager) {
+		undoManager = [[NSUndoManager alloc] init];
+		[self.managedObjectContext setUndoManager:undoManager];
+		[undoManager release];
+	}
+	return undoManager;
+}
+
+#pragma mark -
 #pragma mark Retrieving Model Objects
 
 - (NSFetchedResultsController *)listsFetchedResultsController {
