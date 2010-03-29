@@ -42,10 +42,12 @@
 		}
 		
 		processingSwipe = YES;
-		if ([self.delegate respondsToSelector:@selector(tableView:didSwipeCellAtIndexPath:)]) {
+		
+		NSIndexPath *indexPath = [self indexPathForRowAtPoint:startTouchPosition];
+		if ([self.delegate respondsToSelector:@selector(tableView:didSwipeCellAtIndexPath:)] && indexPath) {
 			[self.delegate performSelector:@selector(tableView:didSwipeCellAtIndexPath:)
 								withObject:self
-								withObject:[self indexPathForRowAtPoint:startTouchPosition]];
+								withObject:indexPath];
 		}
     } else if (abs(diffy / diffx) > 1) {
 		processingSwipe = YES;
