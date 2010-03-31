@@ -4,12 +4,13 @@
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
 #import "../Controllers/PDEntryDetailViewController.h"
+#import "../Views/PDEntryTableCell.h"
 
 #pragma mark Private Methods
 
 @interface PDEntriesViewController (PrivateMethods)
 
-- (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry;
+- (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry;
 - (void)scrollToBottom;
 - (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath;
 
@@ -17,22 +18,19 @@
 
 @implementation PDEntriesViewController (PrivateMethods)
 
-- (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry {
-	cell.imageView.image = [entry.checked boolValue] ?
-			[UIImage imageNamed:@"CheckBoxChecked.png"] :
-			[UIImage imageNamed:@"CheckBox.png"];
+- (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
+	[cell.checkboxButton setImage:[entry.checked boolValue] ?
+	 [UIImage imageNamed:@"CheckBoxChecked.png"] :
+	 [UIImage imageNamed:@"CheckBox.png"]
+						 forState:UIControlStateNormal];
 	cell.textLabel.text = entry.text;
-	
-	cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
-	cell.editingAccessoryType = UITableViewCellAccessoryNone;
-	
-	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	
 	if ([entry.checked boolValue]) {
 		cell.textLabel.textColor = [UIColor lightGrayColor];
 	} else {
 		cell.textLabel.textColor = [UIColor blackColor];
 	}
+	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
 }
 
 - (void)scrollToBottom {
@@ -195,11 +193,13 @@
 	static NSString *EntryCell = @"EntryCell";
 	
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:EntryCell];
+	PDEntryTableCell *cell = (PDEntryTableCell *) [tableView dequeueReusableCellWithIdentifier:EntryCell];
 	
 	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-									  reuseIdentifier:EntryCell];
+		cell = [PDEntryTableCell entryTableCell];
+		[cell.checkboxButton addTarget:self
+								action:@selector(checkedBox:forEvent:)
+					  forControlEvents:UIControlEventTouchUpInside];
 	}
 	
 	[self configureCell:cell withEntry:entry];
@@ -236,6 +236,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 #pragma mark -
 #pragma mark Table View Delegate Methods
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	return nil;
+}
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
 		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -288,7 +292,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 							  withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:[self.table cellForRowAtIndexPath:indexPath]
+			[self configureCell:(PDEntryTableCell *) [self.table cellForRowAtIndexPath:indexPath]
 					  withEntry:anObject];
 			break;
 		case NSFetchedResultsChangeMove:
@@ -343,6 +347,19 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		self.newEntryField.text = @"";
 		
 		[self.newEntryField resignFirstResponder];
+	}
+}
+
+- (IBAction)checkedBox:(id)sender forEvent:(UIEvent *)event {
+	NSSet *touches = [event allTouches];
+	UITouch *touch = [touches anyObject];
+	
+	CGPoint location = [touch locationInView:self.table];
+	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:location];
+	if (indexPath != nil) {
+		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
+		[self.persistenceController save];
 	}
 }
 
