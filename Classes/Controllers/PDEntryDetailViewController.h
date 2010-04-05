@@ -5,10 +5,16 @@
 @interface PDEntryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
 	PDListEntry *entry;
 	PDPersistenceController *persistenceController;
+	
+	IBOutlet UITableView *table;
+	
+	CGFloat keyboardHeight;
+	BOOL keyboardIsShowing;
 }
 
 @property (nonatomic, retain) PDListEntry *entry;
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
+@property (nonatomic, retain) UITableView *table;
 
 //! \name Initializing a View Controller
 //@{

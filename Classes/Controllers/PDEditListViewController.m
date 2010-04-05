@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	
 	if (self.navigationController) {
 		self.navigationItem.title = self.navItem.title;
 		self.navigationItem.rightBarButtonItem = self.navItem.rightBarButtonItem;
@@ -64,7 +63,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *Cell = @"Cell";
+	static NSString *Cell = @"TextField";
 	
 	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
 	if (!cell) {

@@ -37,21 +37,21 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUITableViewCell" id="709811501">
+			<object class="IBUITableViewCell" id="98090701">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
-					<object class="IBUIView" id="615758686">
-						<reference key="NSNextResponder" ref="709811501"/>
+					<object class="IBUIView" id="307401950">
+						<reference key="NSNextResponder" ref="98090701"/>
 						<int key="NSvFlags">256</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIButton" id="123941998">
-								<reference key="NSNextResponder" ref="615758686"/>
+							<object class="IBUIButton" id="537261034">
+								<reference key="NSNextResponder" ref="307401950"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{10, 10}, {24, 24}}</string>
-								<reference key="NSSuperview" ref="615758686"/>
+								<reference key="NSSuperview" ref="307401950"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -78,11 +78,11 @@
 									<string key="NSResourceName">CheckBox.png</string>
 								</object>
 							</object>
-							<object class="IBUILabel" id="701795148">
-								<reference key="NSNextResponder" ref="615758686"/>
+							<object class="IBUILabel" id="589034591">
+								<reference key="NSNextResponder" ref="307401950"/>
 								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{42, 10}, {235, 22}}</string>
-								<reference key="NSSuperview" ref="615758686"/>
+								<reference key="NSSuperview" ref="307401950"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -106,8 +106,8 @@
 								<float key="IBUIMinimumFontSize">14</float>
 							</object>
 						</object>
-						<string key="NSFrameSize">{287, 44}</string>
-						<reference key="NSSuperview" ref="709811501"/>
+						<string key="NSFrameSize">{287, 0}</string>
+						<reference key="NSSuperview" ref="98090701"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MCAwAA</bytes>
@@ -119,7 +119,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</object>
-				<string key="NSFrameSize">{320, 44}</string>
+				<string key="NSFrameSize">{320, 0}</string>
 				<reference key="NSSuperview"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -129,7 +129,7 @@
 				<int key="IBUISeparatorStyle">1</int>
 				<int key="IBUISelectionStyle">0</int>
 				<int key="IBUIAccessoryType">2</int>
-				<reference key="IBUIContentView" ref="615758686"/>
+				<reference key="IBUIContentView" ref="307401950"/>
 				<string key="IBUIReuseIdentifier">EntryCell</string>
 			</object>
 		</object>
@@ -139,16 +139,16 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">textLabel</string>
-						<reference key="source" ref="709811501"/>
-						<reference key="destination" ref="701795148"/>
+						<reference key="source" ref="98090701"/>
+						<reference key="destination" ref="589034591"/>
 					</object>
 					<int key="connectionID">5</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">checkboxButton</string>
-						<reference key="source" ref="709811501"/>
-						<reference key="destination" ref="123941998"/>
+						<reference key="source" ref="98090701"/>
+						<reference key="destination" ref="537261034"/>
 					</object>
 					<int key="connectionID">6</int>
 				</object>
@@ -175,23 +175,23 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2</int>
-						<reference key="object" ref="709811501"/>
+						<reference key="object" ref="98090701"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="123941998"/>
-							<reference ref="701795148"/>
+							<reference ref="537261034"/>
+							<reference ref="589034591"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">3</int>
-						<reference key="object" ref="123941998"/>
-						<reference key="parent" ref="709811501"/>
+						<reference key="object" ref="537261034"/>
+						<reference key="parent" ref="98090701"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="701795148"/>
-						<reference key="parent" ref="709811501"/>
+						<reference key="object" ref="589034591"/>
+						<reference key="parent" ref="98090701"/>
 					</object>
 				</object>
 			</object>
@@ -210,7 +210,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>PDEntryTableCell</string>
-					<string>{{355, 570}, {320, 44}}</string>
+					<string>{{40, -43}, {0, 0}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -375,7 +375,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">NSObject</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="130100898">
+					<object class="IBClassDescriptionSource" key="sourceIdentifier" id="875788625">
 						<string key="majorKey">IBFrameworkSource</string>
 						<string key="minorKey">UIKit.framework/Headers/UIResponder.h</string>
 					</object>
@@ -407,7 +407,7 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">UIResponder</string>
 					<string key="superclassName">NSObject</string>
-					<reference key="sourceIdentifier" ref="130100898"/>
+					<reference key="sourceIdentifier" ref="875788625"/>
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">UITableViewCell</string>

@@ -1,11 +1,14 @@
 #import "PDEntryDetailViewController.h"
 
 #import "../Models/PDListEntry.h"
+#import "../Views/PDTextFieldCell.h"
+#import "../Views/PDTextViewCell.h"
 #import "../PDPersistenceController.h"
 
 @implementation PDEntryDetailViewController
 
 @synthesize entry, persistenceController;
+@synthesize table;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -30,11 +33,88 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	[self.table performSelector:@selector(reloadData) withObject:nil afterDelay:0.1];
     return YES;
 }
 
 - (void)viewDidUnload {
+	self.table = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWillShow:)
+												 name:UIKeyboardWillShowNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(keyboardWillHide:)
+												 name:UIKeyboardWillHideNotification
+											   object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:UIKeyboardWillShowNotification
+												  object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self
+													name:UIKeyboardWillHideNotification
+												  object:nil];
+}
+
+#pragma mark -
+#pragma mark Keyboard Notifications
+
+- (void)keyboardWillShow:(NSNotification *)note {
+	CGRect keyboardBounds;
+    [[note.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
+	
+	keyboardHeight = keyboardBounds.size.height;
+	
+	if (!keyboardIsShowing) {
+		keyboardIsShowing = YES;
+		
+		CGRect frame = self.view.frame;
+		frame.size.height -= keyboardHeight;
+		
+		[UIView beginAnimations:nil context:NULL];
+		
+		[UIView setAnimationBeginsFromCurrentState:YES];
+		NSDictionary *info = [note userInfo];
+		NSValue *value = [info valueForKey:UIKeyboardAnimationCurveUserInfoKey];
+		UIViewAnimationCurve curve;
+		[value getValue:&curve];
+		[UIView setAnimationCurve:curve];
+		
+		value = [info valueForKey:UIKeyboardAnimationDurationUserInfoKey];
+		NSTimeInterval duration;
+		[value getValue:&duration];
+		[UIView setAnimationDuration:duration];
+		
+		self.view.frame = frame;
+		
+		[UIView commitAnimations];
+	}
+}
+
+- (void)keyboardWillHide:(NSNotification *)note {
+	if (keyboardIsShowing) {
+		keyboardIsShowing = NO;
+		
+		CGRect frame = self.view.frame;
+		frame.size.height += keyboardHeight;
+		
+		[UIView beginAnimations:nil context:NULL];
+		
+		[UIView setAnimationBeginsFromCurrentState:YES];
+		[UIView setAnimationDelay:0.0f];
+		self.view.frame = frame;
+		
+		[UIView commitAnimations];
+	}
 }
 
 #pragma mark -
@@ -46,23 +126,61 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	static NSString *Cell = @"Cell";
-	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
-	if (!cell) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell] autorelease];
+	if (indexPath.row == 0) {
+		static NSString *Cell = @"TextField";
+		
+		PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+		if (!cell) {
+			cell = [PDTextFieldCell textFieldCell];
+		}
+		
+		cell.selectionStyle = UITableViewCellSelectionStyleNone;
+		cell.textField.text = self.entry.text;
+		
+		return cell;
+	} else {
+		static NSString *Cell = @"TextView";
+		
+		PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+		if (!cell) {
+			cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:Cell] autorelease];
+		}
+		
+		cell.paragraphLabel.text = @"This is a test with some words and some more words and some more words.";//self.entry.comment;
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//		CGSize constraint = CGSizeMake(280.0f, 20000.0f);
+//		CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17.0f]
+//					   constrainedToSize:constraint
+//						   lineBreakMode:UILineBreakModeWordWrap];
+//		if (!label)
+//			label = (UILabel *) [cell viewWithTag:1];
+//		
+//		label.text = text;
+//		label.frame = CGRectMake(10.0f, 10.0f, 280.0f, MAX(size.height, 44.0f));
+		
+		return cell;
+	}
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+	if (indexPath.row == 0) {
+		return 44.0f;
 	}
 	
-	switch (indexPath.row) {
-		case 0:
-			cell.textLabel.text = self.entry.text;
-			break;
-		case 1:
-			cell.textLabel.text = self.entry.comment;
-			break;
-	}
+	NSString *text = @"This is a test with some words and some more words and some more words.";
+	NSLog(@"Width: %f", self.view.frame.size.width);
+	CGFloat width = self.view.frame.size.width;
+	CGSize constraint = CGSizeMake(width - 40.0f, 20000.0f);
+	CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17.0f]
+				   constrainedToSize:constraint
+					   lineBreakMode:UILineBreakModeWordWrap];
 	
-	return cell;
+	CGFloat height = MAX(size.height, 44.0f);
+	return height + 20.0f;
 }
 
 #pragma mark -
@@ -71,6 +189,7 @@
 - (void)dealloc {
 	self.entry = nil;
 	self.persistenceController = nil;
+	self.table = nil;
     [super dealloc];
 }
 

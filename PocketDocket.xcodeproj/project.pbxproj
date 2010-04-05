@@ -13,6 +13,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
 		C94C55F51154450100791FAC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindow.xib */; };
 		C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
 		C94C560311544FF700791FAC /* PDListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C560211544FF700791FAC /* PDListsViewController.m */; };
@@ -49,6 +50,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketDocket_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PocketDocket-Info.plist"; sourceTree = "<group>"; };
+		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
+		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
 		C94C55F41154450100791FAC /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPersistenceController.h; sourceTree = "<group>"; };
 		C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPersistenceController.m; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				C94C5B84115C395000791FAC /* PDEntriesTableView.m */,
 				C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */,
 				C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */,
+				C915E64D1166F0F0004A9597 /* PDTextViewCell.h */,
+				C915E64E1166F0F0004A9597 /* PDTextViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -309,6 +314,7 @@
 				C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */,
 				C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */,
 				C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */,
+				C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
