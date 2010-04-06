@@ -24,7 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphonesimulator3.1.3;
+		activeSDKPreference = iphoneos3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
@@ -227,6 +227,29 @@
 			C9748CD8116AD14100D2B372 /* PBXTextBookmark */ = C9748CD8116AD14100D2B372 /* PBXTextBookmark */;
 			C9748CDB116AD2CE00D2B372 /* PBXTextBookmark */ = C9748CDB116AD2CE00D2B372 /* PBXTextBookmark */;
 			C9748CDC116AD32400D2B372 /* PBXTextBookmark */ = C9748CDC116AD32400D2B372 /* PBXTextBookmark */;
+			C9748CDD116AD38800D2B372 /* PBXTextBookmark */ = C9748CDD116AD38800D2B372 /* PBXTextBookmark */;
+			C9748CDE116AD38800D2B372 /* PBXTextBookmark */ = C9748CDE116AD38800D2B372 /* PBXTextBookmark */;
+			C9748CDF116AD38800D2B372 /* PBXTextBookmark */ = C9748CDF116AD38800D2B372 /* PBXTextBookmark */;
+			C9748CE6116AD47600D2B372 /* PBXTextBookmark */ = C9748CE6116AD47600D2B372 /* PBXTextBookmark */;
+			C9748CE7116AD47600D2B372 /* PBXTextBookmark */ = C9748CE7116AD47600D2B372 /* PBXTextBookmark */;
+			C9748CE8116AD47600D2B372 /* PBXTextBookmark */ = C9748CE8116AD47600D2B372 /* PBXTextBookmark */;
+			C9748CEC116AD5C600D2B372 /* PBXTextBookmark */ = C9748CEC116AD5C600D2B372 /* PBXTextBookmark */;
+			C9748CED116AD5C600D2B372 /* PBXTextBookmark */ = C9748CED116AD5C600D2B372 /* PBXTextBookmark */;
+			C9748CEE116AD5C600D2B372 /* PBXTextBookmark */ = C9748CEE116AD5C600D2B372 /* PBXTextBookmark */;
+			C9748CF2116AD5EF00D2B372 /* PBXTextBookmark */ = C9748CF2116AD5EF00D2B372 /* PBXTextBookmark */;
+			C9748CF4116AD64900D2B372 /* PBXTextBookmark */ = C9748CF4116AD64900D2B372 /* PBXTextBookmark */;
+			C9748CF5116AD70F00D2B372 /* PBXTextBookmark */ = C9748CF5116AD70F00D2B372 /* PBXTextBookmark */;
+			C9748CF6116AD70F00D2B372 /* PBXTextBookmark */ = C9748CF6116AD70F00D2B372 /* PBXTextBookmark */;
+			C9748CF7116AD70F00D2B372 /* PBXTextBookmark */ = C9748CF7116AD70F00D2B372 /* PBXTextBookmark */;
+			C9748CF8116AD75300D2B372 /* PBXTextBookmark */ = C9748CF8116AD75300D2B372 /* PBXTextBookmark */;
+			C9748CF9116AD75300D2B372 /* PBXTextBookmark */ = C9748CF9116AD75300D2B372 /* PBXTextBookmark */;
+			C9748CFA116AD75300D2B372 /* PBXTextBookmark */ = C9748CFA116AD75300D2B372 /* PBXTextBookmark */;
+			C9748CFB116AD80A00D2B372 /* PBXTextBookmark */ = C9748CFB116AD80A00D2B372 /* PBXTextBookmark */;
+			C9748CFC116AD80A00D2B372 /* PBXTextBookmark */ = C9748CFC116AD80A00D2B372 /* PBXTextBookmark */;
+			C9748CFD116AD80A00D2B372 /* PBXTextBookmark */ = C9748CFD116AD80A00D2B372 /* PBXTextBookmark */;
+			C9748D02116AD84C00D2B372 /* PBXTextBookmark */ = C9748D02116AD84C00D2B372 /* PBXTextBookmark */;
+			C9748D08116AD88500D2B372 /* PBXTextBookmark */ = C9748D08116AD88500D2B372 /* PBXTextBookmark */;
+			C9748D0B116ADB3E00D2B372 /* PBXTextBookmark */ = C9748D0B116ADB3E00D2B372 /* PBXTextBookmark */;
 			C97C7E21116045300070BF90 = C97C7E21116045300070BF90 /* PBXTextBookmark */;
 			C97C7E49116052B60070BF90 = C97C7E49116052B60070BF90 /* PBXTextBookmark */;
 			C97C7E4A116052B60070BF90 = C97C7E4A116052B60070BF90 /* PBXTextBookmark */;
@@ -272,9 +295,9 @@
 	};
 	C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1054, 1000}}";
-			sepNavSelRange = "{679, 0}";
-			sepNavVisRange = "{536, 745}";
+			sepNavIntBoundsRect = "{{0, 0}, {1054, 1060}}";
+			sepNavSelRange = "{774, 0}";
+			sepNavVisRange = "{536, 841}";
 		};
 	};
 	C915E66F116985A5004A9597 /* PBXTextBookmark */ = {
@@ -332,7 +355,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 115";
 		rLen = 0;
-		rLoc = 5523;
+		rLoc = 6156;
 		rType = 0;
 		vrLen = 39;
 		vrLoc = 1514;
@@ -342,7 +365,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 115";
 		rLen = 0;
-		rLoc = 5523;
+		rLoc = 6156;
 		rType = 0;
 		vrLen = 42;
 		vrLoc = 1514;
@@ -1001,7 +1024,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 72";
 		rLen = 0;
-		rLoc = 4270;
+		rLoc = 4367;
 		rType = 0;
 		vrLen = 1057;
 		vrLoc = 1223;
@@ -1021,7 +1044,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 23";
 		rLen = 0;
-		rLoc = 1065;
+		rLoc = 1169;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 0;
@@ -1031,7 +1054,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 23";
 		rLen = 0;
-		rLoc = 1065;
+		rLoc = 1169;
 		rType = 0;
 		vrLen = 776;
 		vrLoc = 0;
@@ -1051,7 +1074,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 23";
 		rLen = 0;
-		rLoc = 1065;
+		rLoc = 1169;
 		rType = 0;
 		vrLen = 287;
 		vrLoc = 383;
@@ -1061,7 +1084,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 23";
 		rLen = 0;
-		rLoc = 1065;
+		rLoc = 1169;
 		rType = 0;
 		vrLen = 313;
 		vrLoc = 357;
@@ -1081,7 +1104,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 34";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 1074;
 		rType = 0;
 		vrLen = 778;
 		vrLoc = 446;
@@ -1091,7 +1114,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 72";
 		rLen = 116;
-		rLoc = 4154;
+		rLoc = 4251;
 		rType = 0;
 		vrLen = 1050;
 		vrLoc = 1383;
@@ -1101,7 +1124,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 66";
 		rLen = 0;
-		rLoc = 4052;
+		rLoc = 4149;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 1383;
@@ -1111,7 +1134,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 89";
 		rLen = 506;
-		rLoc = 4352;
+		rLoc = 4449;
 		rType = 0;
 		vrLen = 895;
 		vrLoc = 2160;
@@ -1121,7 +1144,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 4856;
+		rLoc = 4953;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 2160;
@@ -1131,7 +1154,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 4856;
+		rLoc = 4953;
 		rType = 0;
 		vrLen = 924;
 		vrLoc = 2160;
@@ -1141,7 +1164,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 4856;
+		rLoc = 4953;
 		rType = 0;
 		vrLen = 889;
 		vrLoc = 2160;
@@ -1151,7 +1174,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 35";
 		rLen = 0;
-		rLoc = 1065;
+		rLoc = 1169;
 		rType = 0;
 		vrLen = 443;
 		vrLoc = 60;
@@ -1161,7 +1184,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 103";
 		rLen = 0;
-		rLoc = 4856;
+		rLoc = 4953;
 		rType = 0;
 		vrLen = 438;
 		vrLoc = 2646;
@@ -1199,7 +1222,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 101";
 		rLen = 0;
-		rLoc = 4840;
+		rLoc = 4937;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 2155;
@@ -1209,7 +1232,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 96";
 		rLen = 0;
-		rLoc = 4573;
+		rLoc = 4670;
 		rType = 0;
 		vrLen = 835;
 		vrLoc = 2155;
@@ -1219,7 +1242,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 96";
 		rLen = 0;
-		rLoc = 4535;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 2155;
@@ -1229,7 +1252,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 96";
 		rLen = 0;
-		rLoc = 4535;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 2155;
@@ -1239,7 +1262,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 96";
 		rLen = 0;
-		rLoc = 4535;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 866;
 		vrLoc = 2155;
@@ -1249,7 +1272,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 96";
 		rLen = 0;
-		rLoc = 4535;
+		rLoc = 4632;
 		rType = 0;
 		vrLen = 516;
 		vrLoc = 2487;
@@ -1259,7 +1282,7 @@
 		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
 		name = "PDEntryDetailViewController.h: 14";
 		rLen = 0;
-		rLoc = 625;
+		rLoc = 741;
 		rType = 0;
 		vrLen = 845;
 		vrLoc = 0;
@@ -1269,7 +1292,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 35";
 		rLen = 0;
-		rLoc = 1002;
+		rLoc = 1075;
 		rType = 0;
 		vrLen = 652;
 		vrLoc = 291;
@@ -1279,7 +1302,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 756;
 		vrLoc = 0;
@@ -1289,7 +1312,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 756;
 		vrLoc = 0;
@@ -1299,7 +1322,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 756;
 		vrLoc = 0;
@@ -1309,7 +1332,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 0;
@@ -1319,7 +1342,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 0;
@@ -1329,7 +1352,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 0;
@@ -1339,7 +1362,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 11";
 		rLen = 0;
-		rLoc = 329;
+		rLoc = 341;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 0;
@@ -1349,7 +1372,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 36";
 		rLen = 0;
-		rLoc = 1000;
+		rLoc = 1073;
 		rType = 0;
 		vrLen = 421;
 		vrLoc = 729;
@@ -1379,7 +1402,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 42";
 		rLen = 0;
-		rLoc = 1956;
+		rLoc = 2053;
 		rType = 0;
 		vrLen = 758;
 		vrLoc = 635;
@@ -1389,7 +1412,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 99";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2991;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 2088;
@@ -1399,7 +1422,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 99";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2991;
 		rType = 0;
 		vrLen = 834;
 		vrLoc = 2011;
@@ -1409,7 +1432,7 @@
 		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
 		name = "PDEntryDetailViewController.h: 14";
 		rLen = 0;
-		rLoc = 625;
+		rLoc = 741;
 		rType = 0;
 		vrLen = 845;
 		vrLoc = 0;
@@ -1419,7 +1442,7 @@
 		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
 		name = "PDEntryDetailViewController.h: 15";
 		rLen = 0;
-		rLoc = 471;
+		rLoc = 510;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 0;
@@ -1429,7 +1452,7 @@
 		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
 		name = "PDEntryDetailViewController.h: 16";
 		rLen = 0;
-		rLoc = 534;
+		rLoc = 573;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 0;
@@ -1439,7 +1462,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 99";
 		rLen = 0;
-		rLoc = 2894;
+		rLoc = 2991;
 		rType = 0;
 		vrLen = 956;
 		vrLoc = 1923;
@@ -1449,7 +1472,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 37";
 		rLen = 0;
-		rLoc = 969;
+		rLoc = 1042;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 560;
@@ -1463,7 +1486,7 @@
 	};
 	C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1054, 2880}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1054, 2780}}";
 			sepNavSelRange = "{819, 0}";
 			sepNavVisRange = "{393, 873}";
 		};
@@ -1523,7 +1546,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 178";
 		rLen = 0;
-		rLoc = 5221;
+		rLoc = 5461;
 		rType = 0;
 		vrLen = 981;
 		vrLoc = 4259;
@@ -1533,7 +1556,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 5221;
+		rLoc = 5461;
 		rType = 0;
 		vrLen = 1033;
 		vrLoc = 4301;
@@ -1793,7 +1816,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 188";
 		rLen = 0;
-		rLoc = 5521;
+		rLoc = 5725;
 		rType = 0;
 		vrLen = 1072;
 		vrLoc = 4434;
@@ -1803,7 +1826,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 190";
 		rLen = 0;
-		rLoc = 5459;
+		rLoc = 5663;
 		rType = 0;
 		vrLen = 1097;
 		vrLoc = 4434;
@@ -1813,7 +1836,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 188";
 		rLen = 0;
-		rLoc = 5459;
+		rLoc = 5663;
 		rType = 0;
 		vrLen = 979;
 		vrLoc = 887;
@@ -1863,7 +1886,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 43";
 		rLen = 0;
-		rLoc = 1069;
+		rLoc = 1142;
 		rType = 0;
 		vrLen = 1002;
 		vrLoc = 887;
@@ -1873,7 +1896,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 61";
 		rLen = 0;
-		rLoc = 1599;
+		rLoc = 1696;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 793;
@@ -1883,7 +1906,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 61";
 		rLen = 0;
-		rLoc = 1599;
+		rLoc = 1696;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 793;
@@ -2003,7 +2026,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 61";
 		rLen = 0;
-		rLoc = 1599;
+		rLoc = 1696;
 		rType = 0;
 		vrLen = 1000;
 		vrLoc = 793;
@@ -2013,7 +2036,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 184";
 		rLen = 0;
-		rLoc = 5221;
+		rLoc = 5461;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 4574;
@@ -2023,7 +2046,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 171";
 		rLen = 0;
-		rLoc = 4533;
+		rLoc = 4630;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 3957;
@@ -2033,7 +2056,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 4855;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 3957;
@@ -2043,7 +2066,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 4855;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 3957;
@@ -2053,7 +2076,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 34";
 		rLen = 0;
-		rLoc = 970;
+		rLoc = 1074;
 		rType = 0;
 		vrLen = 778;
 		vrLoc = 446;
@@ -2063,7 +2086,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 35";
 		rLen = 0;
-		rLoc = 1059;
+		rLoc = 1163;
 		rType = 0;
 		vrLen = 741;
 		vrLoc = 486;
@@ -2073,7 +2096,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 31";
 		rLen = 0;
-		rLoc = 867;
+		rLoc = 971;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 325;
@@ -2083,7 +2106,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 31";
 		rLen = 0;
-		rLoc = 867;
+		rLoc = 971;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 325;
@@ -2093,7 +2116,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 179";
 		rLen = 0;
-		rLoc = 4855;
+		rLoc = 4952;
 		rType = 0;
 		vrLen = 1106;
 		vrLoc = 3957;
@@ -2103,7 +2126,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 189";
 		rLen = 0;
-		rLoc = 5222;
+		rLoc = 5462;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 4449;
@@ -2113,7 +2136,7 @@
 		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
 		name = "PDEntryDetailViewController.m: 189";
 		rLen = 0;
-		rLoc = 5222;
+		rLoc = 5462;
 		rType = 0;
 		vrLen = 1075;
 		vrLoc = 4449;
@@ -2123,7 +2146,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 31";
 		rLen = 0;
-		rLoc = 867;
+		rLoc = 971;
 		rType = 0;
 		vrLen = 858;
 		vrLoc = 325;
@@ -2133,7 +2156,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 42";
 		rLen = 0;
-		rLoc = 1230;
+		rLoc = 1334;
 		rType = 0;
 		vrLen = 726;
 		vrLoc = 552;
@@ -2173,7 +2196,7 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 47";
 		rLen = 0;
-		rLoc = 1274;
+		rLoc = 1378;
 		rType = 0;
 		vrLen = 745;
 		vrLoc = 536;
@@ -2183,10 +2206,240 @@
 		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
 		name = "PDTextViewCell.m: 26";
 		rLen = 0;
-		rLoc = 679;
+		rLoc = 783;
 		rType = 0;
 		vrLen = 745;
 		vrLoc = 536;
+	};
+	C9748CDD116AD38800D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
+		name = "PDTextViewCell.m: 26";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 536;
+	};
+	C9748CDE116AD38800D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */;
+		name = "PDCommentViewController.m: 37";
+		rLen = 0;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 393;
+	};
+	C9748CDF116AD38800D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */;
+		name = "PDCommentViewController.m: 37";
+		rLen = 0;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 912;
+		vrLoc = 393;
+	};
+	C9748CE6116AD47600D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */;
+		name = "PDCommentViewController.m: 37";
+		rLen = 0;
+		rLoc = 819;
+		rType = 0;
+		vrLen = 873;
+		vrLoc = 393;
+	};
+	C9748CE7116AD47600D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
+		name = "PDTextViewCell.m: 26";
+		rLen = 0;
+		rLoc = 783;
+		rType = 0;
+		vrLen = 745;
+		vrLoc = 536;
+	};
+	C9748CE8116AD47600D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
+		name = "PDTextViewCell.m: 29";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 536;
+	};
+	C9748CEC116AD5C600D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
+		name = "PDTextViewCell.m: 29";
+		rLen = 0;
+		rLoc = 774;
+		rType = 0;
+		vrLen = 841;
+		vrLoc = 536;
+	};
+	C9748CED116AD5C600D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 189";
+		rLen = 0;
+		rLoc = 5462;
+		rType = 0;
+		vrLen = 1075;
+		vrLoc = 4449;
+	};
+	C9748CEE116AD5C600D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 185";
+		rLen = 0;
+		rLoc = 5210;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 4449;
+	};
+	C9748CF2116AD5EF00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 185";
+		rLen = 0;
+		rLoc = 5210;
+		rType = 0;
+		vrLen = 1154;
+		vrLoc = 4449;
+	};
+	C9748CF4116AD64900D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 178";
+		rLen = 0;
+		rLoc = 4905;
+		rType = 0;
+		vrLen = 1148;
+		vrLoc = 4535;
+	};
+	C9748CF5116AD70F00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 198";
+		rLen = 0;
+		rLoc = 5660;
+		rType = 0;
+		vrLen = 1148;
+		vrLoc = 4535;
+	};
+	C9748CF6116AD70F00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
+		name = "PDEntryDetailViewController.h: 7";
+		rLen = 0;
+		rLoc = 287;
+		rType = 0;
+		vrLen = 967;
+		vrLoc = 0;
+	};
+	C9748CF7116AD70F00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
+		name = "PDEntryDetailViewController.h: 21";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 1078;
+		vrLoc = 0;
+	};
+	C9748CF8116AD75300D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
+		name = "PDEntryDetailViewController.h: 21";
+		rLen = 0;
+		rLoc = 741;
+		rType = 0;
+		vrLen = 1078;
+		vrLoc = 0;
+	};
+	C9748CF9116AD75300D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 198";
+		rLen = 0;
+		rLoc = 5660;
+		rType = 0;
+		vrLen = 1148;
+		vrLoc = 4535;
+	};
+	C9748CFA116AD75300D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 35";
+		rLen = 0;
+		rLoc = 862;
+		rType = 0;
+		vrLen = 681;
+		vrLoc = 584;
+	};
+	C9748CFB116AD80A00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */;
+		name = "PDEntryDetailViewController.h: 36";
+		rLen = 0;
+		rLoc = 1106;
+		rType = 0;
+		vrLen = 960;
+		vrLoc = 153;
+	};
+	C9748CFC116AD80A00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 35";
+		rLen = 0;
+		rLoc = 862;
+		rType = 0;
+		vrLen = 681;
+		vrLoc = 584;
+	};
+	C9748CFD116AD80A00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 213";
+		rLen = 0;
+		rLoc = 6154;
+		rType = 0;
+		vrLen = 759;
+		vrLoc = 5464;
+	};
+	C9748D02116AD84C00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 213";
+		rLen = 0;
+		rLoc = 5968;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 5464;
+	};
+	C9748D08116AD88500D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 201";
+		rLen = 0;
+		rLoc = 5663;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 5464;
+	};
+	C9748D0B116ADB3E00D2B372 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 217";
+		rLen = 0;
+		rLoc = 6156;
+		rType = 0;
+		vrLen = 885;
+		vrLoc = 5464;
 	};
 	C97C7E21116045300070BF90 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2200,16 +2453,16 @@
 	};
 	C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1245, 660}}";
-			sepNavSelRange = "{287, 0}";
-			sepNavVisRange = "{0, 967}";
+			sepNavIntBoundsRect = "{{0, 0}, {1245, 780}}";
+			sepNavSelRange = "{1106, 0}";
+			sepNavVisRange = "{153, 960}";
 		};
 	};
 	C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1054, 4160}}";
-			sepNavSelRange = "{5222, 0}";
-			sepNavVisRange = "{4449, 1075}";
+			sepNavIntBoundsRect = "{{0, 0}, {1054, 4580}}";
+			sepNavSelRange = "{6156, 0}";
+			sepNavVisRange = "{5464, 885}";
 		};
 	};
 	C97C7E49116052B60070BF90 /* PBXTextBookmark */ = {

@@ -9,6 +9,7 @@
 	PDPersistenceController *persistenceController;
 	
 	IBOutlet UITableView *table;
+	IBOutlet UIBarButtonItem *saveButton;
 	
 	CGFloat keyboardHeight;
 	BOOL keyboardIsShowing;
@@ -16,7 +17,8 @@
 
 @property (nonatomic, retain) PDListEntry *entry;
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
-@property (nonatomic, retain) UITableView *table;
+@property (nonatomic, retain) IBOutlet UITableView *table;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButton;
 
 //! \name Initializing a View Controller
 //@{
@@ -28,5 +30,9 @@
  \return A new view controller.
  */
 - (id)initWithEntry:(PDListEntry *)entry persistenceController:(PDPersistenceController *)controller;
+
+//@}
+
+- (IBAction)saveEntry;
 
 @end

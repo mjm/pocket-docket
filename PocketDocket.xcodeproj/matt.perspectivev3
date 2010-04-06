@@ -281,14 +281,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
-									<integer>7</integer>
-									<integer>1</integer>
+									<integer>48</integer>
+									<integer>41</integer>
+									<integer>36</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 129}, {244, 780}}</string>
+							<string>{{0, 206}, {244, 780}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -323,7 +323,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDTextViewCell.m</string>
+								<string>PDEntryDetailViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDTextViewCell.m</string>
+										<string>PDEntryDetailViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9748CDC116AD32400D2B372</string>
+										<string>C9748D0B116ADB3E00D2B372</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -365,10 +365,10 @@
 											<string>C9748C92116AC94A00D2B372</string>
 											<string>C9748C94116AC94A00D2B372</string>
 											<string>C9748CA7116ACAE800D2B372</string>
-											<string>C9748CB4116ACD1100D2B372</string>
-											<string>C9748CB5116ACD1100D2B372</string>
-											<string>C9748CCD116AD0F300D2B372</string>
-											<string>C9748CCE116AD0F300D2B372</string>
+											<string>C9748CE6116AD47600D2B372</string>
+											<string>C9748CEC116AD5C600D2B372</string>
+											<string>C9748CFB116AD80A00D2B372</string>
+											<string>C9748CFC116AD80A00D2B372</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

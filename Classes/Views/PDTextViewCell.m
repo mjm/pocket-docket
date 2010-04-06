@@ -25,6 +25,9 @@
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	
+	if (!self.paragraphLabel.text)
+		self.paragraphLabel.frame = CGRectMake(10.0f, 10.0f, 10.0f, 24.0f);
+	
 	CGFloat width = self.frame.size.width;
 	NSString *text = self.paragraphLabel.text;
 	

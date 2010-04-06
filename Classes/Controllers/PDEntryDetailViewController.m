@@ -9,7 +9,7 @@
 @implementation PDEntryDetailViewController
 
 @synthesize entry, persistenceController;
-@synthesize table;
+@synthesize table, saveButton;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -31,6 +31,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	self.navigationItem.rightBarButtonItem = self.saveButton;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -42,6 +44,7 @@
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.table = nil;
+	self.saveButton = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -180,7 +183,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 1) {
+	if (indexPath.row == 0) {
+		PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
+		[cell.textField becomeFirstResponder];
+	} else {
 		PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
 		controller.delegate = self;
 		[self.navigationController pushViewController:controller animated:YES];
@@ -193,8 +199,20 @@
 
 - (void)commentController:(PDCommentViewController *)controller commentDidChange:(NSString *)comment {
 	self.entry.comment = comment;
+	
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark Actions
+
+- (IBAction)saveEntry {
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
+	self.entry.text = cell.textField.text;
 	[self.persistenceController save];
 	
+	// TODO don't like doing this from the controller being popped.
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -205,6 +223,7 @@
 	self.entry = nil;
 	self.persistenceController = nil;
 	self.table = nil;
+	self.saveButton = nil;
     [super dealloc];
 }
 
