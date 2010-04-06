@@ -35,6 +35,7 @@
 		C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */; };
 		C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */; };
 		C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9748C59116AC33F00D2B372 /* PDCommentView.xib */; };
+		C9748D10116ADE7800D2B372 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9748D0F116ADE7800D2B372 /* Default.png */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
@@ -86,6 +87,7 @@
 		C9748C56116AC18B00D2B372 /* PDCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCommentViewController.h; path = Controllers/PDCommentViewController.h; sourceTree = "<group>"; };
 		C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCommentViewController.m; path = Controllers/PDCommentViewController.m; sourceTree = "<group>"; };
 		C9748C59116AC33F00D2B372 /* PDCommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDCommentView.xib; sourceTree = "<group>"; };
+		C9748D0F116ADE7800D2B372 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		C94C56991156B1A900791FAC /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C9748D0F116ADE7800D2B372 /* Default.png */,
 				C94C5B65115C332400791FAC /* CheckBox.png */,
 				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
 				C94C569A1156B1A900791FAC /* ListIcon.png */,
@@ -299,6 +302,7 @@
 				C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */,
 				C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */,
 				C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */,
+				C9748D10116ADE7800D2B372 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
