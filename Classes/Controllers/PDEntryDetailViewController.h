@@ -1,8 +1,10 @@
+#import "PDCommentViewController.h"
+
 @class PDListEntry;
 @class PDPersistenceController;
 
 //! A view controller for showing the details of a list entry.
-@interface PDEntryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface PDEntryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDCommentViewControllerDelegate> {
 	PDListEntry *entry;
 	PDPersistenceController *persistenceController;
 	

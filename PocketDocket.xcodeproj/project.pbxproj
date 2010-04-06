@@ -33,6 +33,8 @@
 		C94C5B66115C332400791FAC /* CheckBox.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B65115C332400791FAC /* CheckBox.png */; };
 		C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B67115C332B00791FAC /* CheckBoxChecked.png */; };
 		C94C5B85115C395000791FAC /* PDEntriesTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C5B84115C395000791FAC /* PDEntriesTableView.m */; };
+		C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */; };
+		C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9748C59116AC33F00D2B372 /* PDCommentView.xib */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
@@ -81,6 +83,9 @@
 		C94C5B83115C395000791FAC /* PDEntriesTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntriesTableView.h; path = Views/PDEntriesTableView.h; sourceTree = "<group>"; };
 		C94C5B84115C395000791FAC /* PDEntriesTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntriesTableView.m; path = Views/PDEntriesTableView.m; sourceTree = "<group>"; };
 		C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 3.xcdatamodel"; sourceTree = "<group>"; };
+		C9748C56116AC18B00D2B372 /* PDCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCommentViewController.h; path = Controllers/PDCommentViewController.h; sourceTree = "<group>"; };
+		C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCommentViewController.m; path = Controllers/PDCommentViewController.m; sourceTree = "<group>"; };
+		C9748C59116AC33F00D2B372 /* PDCommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDCommentView.xib; sourceTree = "<group>"; };
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
@@ -180,6 +185,7 @@
 				C94C59811158588000791FAC /* PDEntriesView.xib */,
 				C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */,
 				C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */,
+				C9748C59116AC33F00D2B372 /* PDCommentView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -195,6 +201,8 @@
 				C94C597F1158557400791FAC /* PDEntriesViewController.m */,
 				C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */,
 				C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */,
+				C9748C56116AC18B00D2B372 /* PDCommentViewController.h */,
+				C9748C57116AC18B00D2B372 /* PDCommentViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */,
 				C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */,
 				C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */,
+				C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +324,7 @@
 				C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */,
 				C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */,
 				C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */,
+				C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 	label.numberOfLines = 0;
 	label.font = [UIFont systemFontOfSize:17.0f];
 	label.tag = 1;
+	label.highlightedTextColor = [UIColor whiteColor];
 	[self.contentView addSubview:label];
 	
 	return self;
@@ -27,25 +28,22 @@
 	CGFloat width = self.frame.size.width;
 	NSString *text = self.paragraphLabel.text;
 	
-	CGSize constraint = CGSizeMake(width - 40.0f, 20000.0f);
+	CGSize constraint = CGSizeMake(width - 45.0f, 20000.0f);
 	CGSize size = [text sizeWithFont:self.paragraphLabel.font
 				   constrainedToSize:constraint
 					   lineBreakMode:UILineBreakModeWordWrap];
 	
-	self.paragraphLabel.frame = CGRectMake(10.0f, 10.0f, width - 40.0f, MAX(size.height, 44.0f));
+	self.paragraphLabel.frame = CGRectMake(10.0f, 10.0f, width - 45.0f, MAX(size.height, 24.0f));
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
+    self.paragraphLabel.highlighted = selected;
 }
-
 
 - (void)dealloc {
     [super dealloc];
 }
-
 
 @end

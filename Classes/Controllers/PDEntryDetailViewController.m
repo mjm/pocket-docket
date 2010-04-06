@@ -3,6 +3,7 @@
 #import "../Models/PDListEntry.h"
 #import "../Views/PDTextFieldCell.h"
 #import "../Views/PDTextViewCell.h"
+#import "PDCommentViewController.h"
 #import "../PDPersistenceController.h"
 
 @implementation PDEntryDetailViewController
@@ -33,11 +34,13 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	// adjusts the table view cells
 	[self.table performSelector:@selector(reloadData) withObject:nil afterDelay:0.1];
     return YES;
 }
 
 - (void)viewDidUnload {
+	[super viewDidUnload];
 	self.table = nil;
 }
 
@@ -52,6 +55,10 @@
 											 selector:@selector(keyboardWillHide:)
 												 name:UIKeyboardWillHideNotification
 											   object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+	[self.table reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -146,17 +153,8 @@
 			cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:Cell] autorelease];
 		}
 		
-		cell.paragraphLabel.text = @"This is a test with some words and some more words and some more words.";//self.entry.comment;
+		cell.paragraphLabel.text = self.entry.comment;
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//		CGSize constraint = CGSizeMake(280.0f, 20000.0f);
-//		CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17.0f]
-//					   constrainedToSize:constraint
-//						   lineBreakMode:UILineBreakModeWordWrap];
-//		if (!label)
-//			label = (UILabel *) [cell viewWithTag:1];
-//		
-//		label.text = text;
-//		label.frame = CGRectMake(10.0f, 10.0f, 280.0f, MAX(size.height, 44.0f));
 		
 		return cell;
 	}
@@ -165,22 +163,39 @@
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.row == 0) {
 		return 44.0f;
 	}
 	
-	NSString *text = @"This is a test with some words and some more words and some more words.";
-	NSLog(@"Width: %f", self.view.frame.size.width);
+	NSString *text = self.entry.comment;
 	CGFloat width = self.view.frame.size.width;
 	CGSize constraint = CGSizeMake(width - 40.0f, 20000.0f);
 	CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17.0f]
 				   constrainedToSize:constraint
 					   lineBreakMode:UILineBreakModeWordWrap];
 	
-	CGFloat height = MAX(size.height, 44.0f);
-	return height + 20.0f;
+	CGFloat height = MAX(size.height + 20.0f, 44.0f);
+	return height;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 1) {
+		PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
+		controller.delegate = self;
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
+	}
+}
+
+#pragma mark -
+#pragma mark Comment Controller Delegate Methods
+
+- (void)commentController:(PDCommentViewController *)controller commentDidChange:(NSString *)comment {
+	self.entry.comment = comment;
+	[self.persistenceController save];
+	
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -
