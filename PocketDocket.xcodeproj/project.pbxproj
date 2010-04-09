@@ -348,6 +348,7 @@
 				INFOPLIST_FILE = "PocketDocket-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = PocketDocket;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -363,7 +364,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = PocketDocket_Prefix.pch;
 				INFOPLIST_FILE = "PocketDocket-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
 				PRODUCT_NAME = PocketDocket;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

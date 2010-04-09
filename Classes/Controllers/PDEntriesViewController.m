@@ -87,6 +87,13 @@
 	self.title = self.list.title;
 	self.navigationItem.rightBarButtonItem = self.editButton;
 	
+	Class swipeGesture = NSClassFromString(@"UISwipeGestureRecognizer");
+	if (swipeGesture) {
+		UIGestureRecognizer *gestureRecognizer = [[swipeGesture alloc] initWithTarget:self
+																						   action:@selector(swipeDetected:)];
+		[self.table addGestureRecognizer:gestureRecognizer];
+	}
+	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
 }
@@ -356,6 +363,17 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	
 	CGPoint location = [touch locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:location];
+	if (indexPath != nil) {
+		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
+		[self.persistenceController save];
+	}
+}
+
+- (IBAction)swipeDetected:(UIGestureRecognizer *)gestureRecognizer {
+	CGPoint point = [gestureRecognizer locationInView:self.table];
+	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:point];
+	
 	if (indexPath != nil) {
 		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
