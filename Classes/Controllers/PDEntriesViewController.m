@@ -61,7 +61,7 @@
 @implementation PDEntriesViewController
 
 @synthesize list, persistenceController, fetchedResultsController;
-@synthesize editButton, doneButton, table, newEntryField;
+@synthesize table, newEntryField;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -85,12 +85,13 @@
     [super viewDidLoad];
 	
 	self.title = self.list.title;
-	self.navigationItem.rightBarButtonItem = self.editButton;
+	self.navigationItem.rightBarButtonItem = [self editButtonItem];
 	
 	Class swipeGesture = NSClassFromString(@"UISwipeGestureRecognizer");
 	if (swipeGesture) {
-		UIGestureRecognizer *gestureRecognizer = [[swipeGesture alloc] initWithTarget:self
+		UISwipeGestureRecognizer *gestureRecognizer = [[swipeGesture alloc] initWithTarget:self
 																						   action:@selector(swipeDetected:)];
+		gestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
 		[self.table addGestureRecognizer:gestureRecognizer];
 	}
 	
@@ -127,10 +128,18 @@
 }
 
 - (void)viewDidUnload {
-	self.editButton = nil;
-	self.doneButton = nil;
 	self.table = nil;
 	self.newEntryField = nil;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+	[self.table setEditing:editing animated:animated];
+	
+	// Only do this when editing since showing the keyboard will set editing to NO
+	if (editing && keyboardIsShowing) {
+		[self.newEntryField resignFirstResponder];
+	}
 }
 
 #pragma mark -
@@ -167,7 +176,7 @@
 		[UIView commitAnimations];
 		
 		[self scrollToBottom];
-		[self doneEditingEntries];
+		[self setEditing:NO animated:YES];
 	}
 }
 
@@ -332,20 +341,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)editEntries {
-	[self.table setEditing:YES animated:YES];
-	self.navigationItem.rightBarButtonItem = self.doneButton;
-	
-	if (keyboardIsShowing) {
-		[self.newEntryField resignFirstResponder];
-	}
-}
-
-- (IBAction)doneEditingEntries {
-	[self.table setEditing:NO animated:YES];
-	self.navigationItem.rightBarButtonItem = self.editButton;
-}
-
 - (IBAction)addListEntry {
 	NSString *text = self.newEntryField.text;
 	
@@ -388,8 +383,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.list = nil;
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
-	self.editButton = nil;
-	self.doneButton = nil;
 	self.table = nil;
 	self.newEntryField = nil;
     [super dealloc];

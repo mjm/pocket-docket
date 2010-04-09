@@ -24,10 +24,9 @@
 	//@{
 	
 	IBOutlet UITableView *table;
-	
-	IBOutlet UIBarButtonItem *editButton;
-	IBOutlet UIBarButtonItem *doneButton;
+
 	IBOutlet UIBarButtonItem *addButton;
+	IBOutlet UIBarButtonItem *backButton;
 	
 	//@}
 	//! \name Handling State
@@ -42,9 +41,8 @@
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *editButton;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 
 //! \name Initializing a View Controller
 //@{
@@ -60,14 +58,11 @@
 //! \name Actions
 //@{
 
-//! Action called when the user wants to edit their lists.
-- (IBAction)editLists;
-
-//! Action called when the user is done editing their lists.
-- (IBAction)doneEditingLists;
-
 //! Action called when the user wants to create a new list.
 - (IBAction)addList;
+
+//! Action called when the user wants to come back to this view.
+- (IBAction)backToLists;
 
 //@}
 

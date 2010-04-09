@@ -43,7 +43,7 @@
 @implementation PDListsViewController
 
 @synthesize persistenceController, fetchedResultsController;
-@synthesize table, editButton, doneButton, addButton;
+@synthesize table, addButton, backButton;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -66,8 +66,9 @@
     [super viewDidLoad];
 	
 	self.title = @"Lists";
-	self.navigationItem.leftBarButtonItem = self.editButton;
+	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 	self.navigationItem.rightBarButtonItem = self.addButton;
+	self.navigationItem.backBarButtonItem = self.backButton;
 	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
@@ -75,7 +76,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	// Make sure the table is not in editing mode.
-	[self doneEditingLists];
+	[self setEditing:NO];
 	
 	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
 	if (indexPath) {
@@ -100,23 +101,18 @@
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	
-	self.editButton = nil;
-	self.doneButton = nil;
+	self.table = nil;
 	self.addButton = nil;
+	self.backButton = nil;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+	[self.table setEditing:editing animated:animated];
 }
 
 #pragma mark -
 #pragma mark Actions
-
-- (IBAction)editLists {
-	[self.table setEditing:YES animated:YES];
-	self.navigationItem.leftBarButtonItem = doneButton;
-}
-
-- (IBAction)doneEditingLists {
-	[self.table setEditing:NO animated:YES];
-	self.navigationItem.leftBarButtonItem = editButton;
-}
 
 - (IBAction)addList {
 	isAdd = YES;
@@ -130,6 +126,10 @@
 	
 	[self presentModalViewController:editController animated:YES];
 	[editController release];
+}
+
+- (IBAction)backToLists {
+	NSLog(@"Going back...");
 }
 
 #pragma mark -
@@ -292,9 +292,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
 	
-	self.editButton = nil;
-	self.doneButton = nil;
+	self.table = nil;
 	self.addButton = nil;
+	self.backButton = nil;
 	
     [super dealloc];
 }
