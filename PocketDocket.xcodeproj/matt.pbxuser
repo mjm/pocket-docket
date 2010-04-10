@@ -46,7 +46,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					956,
+					640,
 					20,
 					48,
 					43,
@@ -89,6 +89,14 @@
 			PBXWorkspaceStateSaveDate = 292566090;
 		};
 		perUserProjectItems = {
+			C900DC381170D1FB00C46492 /* PBXTextBookmark */ = C900DC381170D1FB00C46492 /* PBXTextBookmark */;
+			C900DC391170D1FB00C46492 /* PBXTextBookmark */ = C900DC391170D1FB00C46492 /* PBXTextBookmark */;
+			C900DC3A1170D1FB00C46492 /* PBXTextBookmark */ = C900DC3A1170D1FB00C46492 /* PBXTextBookmark */;
+			C900DC3B1170D1FB00C46492 /* PBXTextBookmark */ = C900DC3B1170D1FB00C46492 /* PBXTextBookmark */;
+			C900DC3C1170D1FB00C46492 /* PBXTextBookmark */ = C900DC3C1170D1FB00C46492 /* PBXTextBookmark */;
+			C900DC3D1170D1FB00C46492 /* PBXTextBookmark */ = C900DC3D1170D1FB00C46492 /* PBXTextBookmark */;
+			C900DC4B1170D23200C46492 /* PBXTextBookmark */ = C900DC4B1170D23200C46492 /* PBXTextBookmark */;
+			C900DC521170D2AA00C46492 /* PBXTextBookmark */ = C900DC521170D2AA00C46492 /* PBXTextBookmark */;
 			C915E5FB1162E364004A9597 = C915E5FB1162E364004A9597 /* PBXTextBookmark */;
 			C915E671116985A5004A9597 = C915E671116985A5004A9597 /* PBXTextBookmark */;
 			C94C573E1156EAF200791FAC = C94C573E1156EAF200791FAC /* PBXTextBookmark */;
@@ -139,6 +147,86 @@
 			sepNavWindowFrame = "{{15, 2}, {1190, 871}}";
 		};
 	};
+	C900DC381170D1FB00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 5";
+		rLen = 0;
+		rLoc = 89;
+		rType = 0;
+		vrLen = 875;
+		vrLoc = 0;
+	};
+	C900DC391170D1FB00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */;
+		name = "PDTextViewCell.m: 15";
+		rLen = 0;
+		rLoc = 479;
+		rType = 0;
+		vrLen = 989;
+		vrLoc = 0;
+	};
+	C900DC3A1170D1FB00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */;
+		name = "PDEntryTableCell.m: 13";
+		rLen = 0;
+		rLoc = 394;
+		rType = 0;
+		vrLen = 539;
+		vrLoc = 0;
+	};
+	C900DC3B1170D1FB00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 122";
+		rLen = 0;
+		rLoc = 3242;
+		rType = 0;
+		vrLen = 889;
+		vrLoc = 2995;
+	};
+	C900DC3C1170D1FB00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
+		name = "PDEditListViewController.m: 16";
+		rLen = 0;
+		rLoc = 383;
+		rType = 0;
+		vrLen = 850;
+		vrLoc = 147;
+	};
+	C900DC3D1170D1FB00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
+		name = "PDEditListViewController.m: 32";
+		rLen = 0;
+		rLoc = 727;
+		rType = 0;
+		vrLen = 828;
+		vrLoc = 147;
+	};
+	C900DC4B1170D23200C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
+		name = "PDEditListViewController.m: 32";
+		rLen = 0;
+		rLoc = 779;
+		rType = 0;
+		vrLen = 826;
+		vrLoc = 147;
+	};
+	C900DC521170D2AA00C46492 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
+		name = "PDEditListViewController.m: 30";
+		rLen = 0;
+		rLoc = 721;
+		rType = 0;
+		vrLen = 826;
+		vrLoc = 147;
+	};
 	C915E5FB1162E364004A9597 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */;
@@ -160,7 +248,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {873, 1060}}";
 			sepNavSelRange = "{479, 0}";
-			sepNavVisRange = "{430, 955}";
+			sepNavVisRange = "{0, 989}";
 		};
 	};
 	C915E671116985A5004A9597 /* PBXTextBookmark */ = {
@@ -302,9 +390,9 @@
 	};
 	C94C56FC1156C72600791FAC /* PDEditListViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1134, 1900}}";
-			sepNavSelRange = "{383, 0}";
-			sepNavVisRange = "{210, 763}";
+			sepNavIntBoundsRect = "{{0, 0}, {849, 1960}}";
+			sepNavSelRange = "{721, 0}";
+			sepNavVisRange = "{147, 826}";
 			sepNavWindowFrame = "{{84, 119}, {1190, 871}}";
 		};
 	};
@@ -832,9 +920,9 @@
 	};
 	C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {915, 4760}}";
-			sepNavSelRange = "{4552, 0}";
-			sepNavVisRange = "{2055, 905}";
+			sepNavIntBoundsRect = "{{0, 0}, {939, 4820}}";
+			sepNavSelRange = "{3242, 0}";
+			sepNavVisRange = "{2995, 889}";
 		};
 	};
 	C97C7E4A116052B60070BF90 /* PBXTextBookmark */ = {
@@ -866,9 +954,9 @@
 	};
 	C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1084, 480}}";
+			sepNavIntBoundsRect = "{{0, 0}, {927, 700}}";
 			sepNavSelRange = "{394, 0}";
-			sepNavVisRange = "{30, 429}";
+			sepNavVisRange = "{0, 539}";
 		};
 	};
 	C9EB34D1116FF3420092DE45 /* PBXTextBookmark */ = {
@@ -940,8 +1028,8 @@
 	};
 	C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {818, 786}}";
-			sepNavSelRange = "{255, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {818, 700}}";
+			sepNavSelRange = "{89, 0}";
 			sepNavVisRange = "{0, 875}";
 		};
 	};

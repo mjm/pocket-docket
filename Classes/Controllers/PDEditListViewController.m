@@ -29,7 +29,7 @@
 		self.navigationItem.rightBarButtonItem = self.navItem.rightBarButtonItem;
 		[self.navBar removeFromSuperview];
 		
-		[self.table setFrame:CGRectMake(0.0, 0.0, 320.0, 416.0)];
+		[self.table setFrame:CGRectMake(0.0, 0.0, 320.0, 460.0)];
 	} else {
 		self.navItem.title = self.title;
 	}
