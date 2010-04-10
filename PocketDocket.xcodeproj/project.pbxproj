@@ -40,6 +40,8 @@
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
 		C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */; };
+		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
+		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,9 @@
 		C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryTableCell.xib; sourceTree = "<group>"; };
 		C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryTableCell.h; path = Views/PDEntryTableCell.h; sourceTree = "<group>"; };
 		C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryTableCell.m; path = Views/PDEntryTableCell.m; sourceTree = "<group>"; };
+		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
+		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
+		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +227,8 @@
 				C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */,
 				C915E64D1166F0F0004A9597 /* PDTextViewCell.h */,
 				C915E64E1166F0F0004A9597 /* PDTextViewCell.m */,
+				C9EB3522117015B40092DE45 /* PDListProgressView.h */,
+				C9EB3523117015B40092DE45 /* PDListProgressView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 				C94C5B65115C332400791FAC /* CheckBox.png */,
 				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
 				C94C569A1156B1A900791FAC /* ListIcon.png */,
+				C9EB356111701D1D0092DE45 /* ListIconDark.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -303,6 +311,7 @@
 				C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */,
 				C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */,
 				C9748D10116ADE7800D2B372 /* Default.png in Resources */,
+				C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +338,7 @@
 				C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */,
 				C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */,
 				C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */,
+				C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

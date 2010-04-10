@@ -24,7 +24,7 @@
 
 @implementation PDListTableCell
 
-@synthesize imageView, titleLabel, completionLabel;
+@synthesize progressView, titleLabel, completionLabel;
 
 + (PDListTableCell *)listTableCell {
 	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"PDListTableCell" owner:self options:nil];
@@ -50,7 +50,7 @@
 }
 
 - (void)dealloc {
-	self.imageView = nil;
+	self.progressView = nil;
 	self.titleLabel = nil;
 	self.completionLabel = nil;
     [super dealloc];

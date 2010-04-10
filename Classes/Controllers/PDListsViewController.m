@@ -5,6 +5,7 @@
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
 #import "../Views/PDListTableCell.h"
+#import "../Views/PDListProgressView.h"
 
 #pragma mark Private Methods
 
@@ -19,6 +20,7 @@
 @implementation PDListsViewController (PrivateMethods)
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list {
+	cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
 	cell.titleLabel.text = list.title;
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
 }
