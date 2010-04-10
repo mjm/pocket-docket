@@ -4,16 +4,6 @@
 
 @synthesize progress;
 
-- (id)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:frame])) {
-        // Initialization code
-    }
-	
-	self.progress = 0.5;
-	
-    return self;
-}
-
 - (void)drawRect:(CGRect)rect {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSetRGBFillColor(ctx, 255, 255, 255, 0);
@@ -35,10 +25,6 @@
 	image = [UIImage imageWithCGImage:cgImage];
 	[image drawInRect:bottomHalf];
 	CGImageRelease(cgImage);
-}
-
-- (void)dealloc {
-    [super dealloc];
 }
 
 @end
