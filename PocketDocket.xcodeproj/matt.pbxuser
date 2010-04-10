@@ -24,7 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphonesimulator4.0;
+		activeSDKPreference = iphoneos4.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
@@ -215,6 +215,12 @@
 			C9EB357C11701E810092DE45 /* PBXTextBookmark */ = C9EB357C11701E810092DE45 /* PBXTextBookmark */;
 			C9EB357D11701E810092DE45 /* XCBuildMessageTextBookmark */ = C9EB357D11701E810092DE45 /* XCBuildMessageTextBookmark */;
 			C9EB357E11701E810092DE45 /* PBXTextBookmark */ = C9EB357E11701E810092DE45 /* PBXTextBookmark */;
+			C9EB3589117020490092DE45 /* PBXTextBookmark */ = C9EB3589117020490092DE45 /* PBXTextBookmark */;
+			C9EB358A117020490092DE45 /* PBXTextBookmark */ = C9EB358A117020490092DE45 /* PBXTextBookmark */;
+			C9EB358B117020490092DE45 /* PBXTextBookmark */ = C9EB358B117020490092DE45 /* PBXTextBookmark */;
+			C9EB358C117020490092DE45 /* PBXTextBookmark */ = C9EB358C117020490092DE45 /* PBXTextBookmark */;
+			C9EB358D117020C40092DE45 /* PBXTextBookmark */ = C9EB358D117020C40092DE45 /* PBXTextBookmark */;
+			C9EB35901170211D0092DE45 /* PBXTextBookmark */ = C9EB35901170211D0092DE45 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C94C55DD1154410800791FAC /* Source Control */;
 		userBuildSettings = {
@@ -368,7 +374,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {918, 1220}}";
 			sepNavSelRange = "{1146, 0}";
-			sepNavVisRange = "{701, 573}";
+			sepNavVisRange = "{313, 671}";
 		};
 	};
 	C94C56E41156BF2200791FAC /* PDList.h */ = {
@@ -1840,9 +1846,9 @@
 	};
 	C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {791, 920}}";
-			sepNavSelRange = "{257, 0}";
-			sepNavVisRange = "{238, 872}";
+			sepNavIntBoundsRect = "{{0, 0}, {791, 900}}";
+			sepNavSelRange = "{340, 0}";
+			sepNavVisRange = "{238, 840}";
 		};
 	};
 	C9EB352C1170177D0092DE45 /* PBXTextBookmark */ = {
@@ -1920,7 +1926,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 20";
 		rLen = 0;
-		rLoc = 520;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 596;
 		vrLoc = 209;
@@ -1940,7 +1946,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 20";
 		rLen = 0;
-		rLoc = 520;
+		rLoc = 488;
 		rType = 0;
 		vrLen = 854;
 		vrLoc = 0;
@@ -1980,7 +1986,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 26";
 		rLen = 0;
-		rLoc = 593;
+		rLoc = 561;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 238;
@@ -1990,7 +1996,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 26";
 		rLen = 0;
-		rLoc = 454;
+		rLoc = 422;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 238;
@@ -2000,7 +2006,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 35";
 		rLen = 0;
-		rLoc = 839;
+		rLoc = 807;
 		rType = 0;
 		vrLen = 989;
 		vrLoc = 238;
@@ -2010,7 +2016,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 27";
 		rLen = 0;
-		rLoc = 473;
+		rLoc = 441;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 238;
@@ -2020,7 +2026,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 26";
 		rLen = 0;
-		rLoc = 453;
+		rLoc = 421;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 238;
@@ -2030,7 +2036,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 26";
 		rLen = 0;
-		rLoc = 453;
+		rLoc = 421;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 238;
@@ -2040,7 +2046,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 28";
 		rLen = 0;
-		rLoc = 601;
+		rLoc = 569;
 		rType = 0;
 		vrLen = 988;
 		vrLoc = 238;
@@ -2113,5 +2119,65 @@
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 0;
+	};
+	C9EB3589117020490092DE45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 8";
+		rLen = 0;
+		rLoc = 252;
+		rType = 0;
+		vrLen = 917;
+		vrLoc = 0;
+	};
+	C9EB358A117020490092DE45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C564211569C8D00791FAC /* PDListTableCell.m */;
+		name = "PDListTableCell.m: 51";
+		rLen = 0;
+		rLoc = 1146;
+		rType = 0;
+		vrLen = 671;
+		vrLoc = 313;
+	};
+	C9EB358B117020490092DE45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 16";
+		rLen = 0;
+		rLoc = 257;
+		rType = 0;
+		vrLen = 870;
+		vrLoc = 238;
+	};
+	C9EB358C117020490092DE45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 19";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 872;
+		vrLoc = 238;
+	};
+	C9EB358D117020C40092DE45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 19";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 874;
+		vrLoc = 238;
+	};
+	C9EB35901170211D0092DE45 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 18";
+		rLen = 0;
+		rLoc = 340;
+		rType = 0;
+		vrLen = 840;
+		vrLoc = 238;
 	};
 }

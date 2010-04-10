@@ -16,8 +16,7 @@
 
 - (void)drawRect:(CGRect)rect {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
-	CGContextClearRect(ctx, rect);
-	CGContextSetRGBFillColor(ctx, 255, 255, 255, 1);
+	CGContextSetRGBFillColor(ctx, 255, 255, 255, 0);
 	CGContextFillRect(ctx, rect);
 
 	CGRect topHalf = CGRectMake(0, 0, 32, 32 * (1.0 - self.progress));
