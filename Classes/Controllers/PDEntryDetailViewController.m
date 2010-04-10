@@ -157,6 +157,14 @@
 		}
 		
 		cell.paragraphLabel.text = self.entry.comment;
+		if (self.entry.comment && [self.entry.comment length] > 0) {
+			cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
+			cell.paragraphLabel.textColor = [UIColor blackColor];
+		} else {
+			cell.paragraphLabel.text = @"No comment. Tap to add one.";
+			cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
+			cell.paragraphLabel.textColor = [UIColor darkGrayColor];
+		}
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		
 		return cell;
