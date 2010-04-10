@@ -231,8 +231,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -283,9 +281,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>48</integer>
-									<integer>42</integer>
-									<integer>36</integer>
+									<integer>20</integer>
+									<integer>18</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -318,12 +316,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDEntriesViewController.m</string>
+								<string>PDListsViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -331,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDEntriesViewController.m</string>
+										<string>PDListsViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9EB34D9116FF3540092DE45</string>
+										<string>C9EB3510116FFDFA0092DE45</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -364,11 +364,11 @@
 											<string>C9748CEC116AD5C600D2B372</string>
 											<string>C9748CFB116AD80A00D2B372</string>
 											<string>C9748D17116EAF7200D2B372</string>
-											<string>C9EB349C116FEEC50092DE45</string>
-											<string>C9EB34C7116FF22B0092DE45</string>
 											<string>C9EB34D1116FF3420092DE45</string>
 											<string>C9EB34D2116FF3420092DE45</string>
-											<string>C9EB34D7116FF34F0092DE45</string>
+											<string>C9EB34EF116FFCB10092DE45</string>
+											<string>C9EB34F0116FFCB10092DE45</string>
+											<string>C9EB350F116FFDF60092DE45</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -685,6 +685,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C9EB3511116FFDFA0092DE45</string>
 		<string>C9EB3475116ECEBE0092DE45</string>
 		<string>C9EB3477116ECEBE0092DE45</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>

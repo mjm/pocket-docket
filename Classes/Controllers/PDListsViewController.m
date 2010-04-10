@@ -220,7 +220,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark Edit List Controller Delegate Methods
 
 - (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
-	[self.persistenceController.undoManager endUndoGrouping];
+	// Prevent edits from crashing
+	if (isAdd) {
+		[self.persistenceController.undoManager endUndoGrouping];
+	}
 	[self doneEditingList:list];
 }
 
