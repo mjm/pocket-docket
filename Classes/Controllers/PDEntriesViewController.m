@@ -87,13 +87,16 @@
 	self.title = self.list.title;
 	self.navigationItem.rightBarButtonItem = [self editButtonItem];
 	
-	Class swipeGesture = NSClassFromString(@"UISwipeGestureRecognizer");
-	if (swipeGesture) {
-		UISwipeGestureRecognizer *gestureRecognizer = [[swipeGesture alloc] initWithTarget:self
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+	if ([UISwipeGestureRecognizer class] != nil) {
+		id gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
 																						   action:@selector(swipeDetected:)];
-		gestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+		[gestureRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight];
 		[self.table addGestureRecognizer:gestureRecognizer];
 	}
+#endif
+#endif
 	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
@@ -365,7 +368,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	}
 }
 
-- (IBAction)swipeDetected:(UIGestureRecognizer *)gestureRecognizer {
+- (IBAction)swipeDetected:(id)gestureRecognizer {
 	CGPoint point = [gestureRecognizer locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:point];
 	

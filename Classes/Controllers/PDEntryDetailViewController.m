@@ -58,6 +58,12 @@
 											 selector:@selector(keyboardWillHide:)
 												 name:UIKeyboardWillHideNotification
 											   object:nil];
+	
+	if (!editingComment) {
+		[self.persistenceController.undoManager beginUndoGrouping];
+	} else {
+		editingComment = NO;
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -73,6 +79,17 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self
 													name:UIKeyboardWillHideNotification
 												  object:nil];
+	
+	if (!editingComment) {
+		// We are going back to the entry list, so either save or undo changes.
+		[self.persistenceController.undoManager endUndoGrouping];
+		if (didSave) {
+			[self.persistenceController save];
+			didSave = NO;
+		} else {
+			[self.persistenceController.undoManager undo];
+		}
+	}
 }
 
 #pragma mark -
@@ -195,6 +212,8 @@
 		PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 		[cell.textField becomeFirstResponder];
 	} else {
+		editingComment = YES;
+		
 		PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
 		controller.delegate = self;
 		[self.navigationController pushViewController:controller animated:YES];
@@ -218,7 +237,8 @@
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 	PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 	self.entry.text = cell.textField.text;
-	[self.persistenceController save];
+	
+	didSave = YES;
 	
 	// TODO don't like doing this from the controller being popped.
 	[self.navigationController popViewControllerAnimated:YES];

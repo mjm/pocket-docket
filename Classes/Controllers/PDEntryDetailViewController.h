@@ -13,6 +13,9 @@
 	
 	CGFloat keyboardHeight;
 	BOOL keyboardIsShowing;
+	
+	BOOL editingComment;
+	BOOL didSave;
 }
 
 @property (nonatomic, retain) PDListEntry *entry;
