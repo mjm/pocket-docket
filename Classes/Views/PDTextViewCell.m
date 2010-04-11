@@ -14,6 +14,7 @@
 	label.tag = 1;
 	label.highlightedTextColor = [UIColor whiteColor];
 	[self.contentView addSubview:label];
+	[label release];
 	
 	return self;
 }

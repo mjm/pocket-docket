@@ -248,6 +248,7 @@
 												   destructiveButtonTitle:@"Delete Entry"
 														otherButtonTitles:nil];
 		[actionSheet showInView:self.view];
+		[actionSheet release];
 	}
 }
 
@@ -269,6 +270,16 @@
 		didSave = YES;
 		[self.navigationController popViewControllerAnimated:YES];
 	}
+}
+
+#pragma mark -
+#pragma mark Text Field Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[textField resignFirstResponder];
+	self.entry.text = textField.text;
+	
+	return NO;
 }
 
 #pragma mark -
