@@ -147,42 +147,62 @@
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 	return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	if (section == 0)
+		return 2;
+	return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0) {
-		static NSString *Cell = @"TextField";
-		
-		PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-		if (!cell) {
-			cell = [PDTextFieldCell textFieldCell];
-		}
-		
-		cell.selectionStyle = UITableViewCellSelectionStyleNone;
-		cell.textField.text = self.entry.text;
-		
-		return cell;
-	} else {
-		static NSString *Cell = @"TextView";
-		
-		PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-		if (!cell) {
-			cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:Cell] autorelease];
-		}
-		
-		cell.paragraphLabel.text = self.entry.comment;
-		if (self.entry.comment && [self.entry.comment length] > 0) {
-			cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
-			cell.paragraphLabel.textColor = [UIColor blackColor];
+	if (indexPath.section == 0) {
+		if (indexPath.row == 0) {
+			static NSString *Cell = @"TextField";
+			
+			PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+			if (!cell) {
+				cell = [PDTextFieldCell textFieldCell];
+			}
+			
+			cell.selectionStyle = UITableViewCellSelectionStyleNone;
+			cell.textField.text = self.entry.text;
+			
+			return cell;
 		} else {
-			cell.paragraphLabel.text = @"No comment. Tap to add one.";
-			cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
-			cell.paragraphLabel.textColor = [UIColor darkGrayColor];
+			static NSString *Cell = @"TextView";
+			
+			PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+			if (!cell) {
+				cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:Cell] autorelease];
+			}
+			
+			cell.paragraphLabel.text = self.entry.comment;
+			if (self.entry.comment && [self.entry.comment length] > 0) {
+				cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
+				cell.paragraphLabel.textColor = [UIColor blackColor];
+			} else {
+				cell.paragraphLabel.text = @"No comment. Tap to add one.";
+				cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
+				cell.paragraphLabel.textColor = [UIColor darkGrayColor];
+			}
+			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			
+			return cell;
 		}
-		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	} else {
+		static NSString *Cell = @"DeleteButton";
+		
+		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
+		if (!cell) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell] autorelease];
+		}
+		
+		cell.textLabel.textAlignment = UITextAlignmentCenter;
+		cell.textLabel.text = @"Delete Entry";
 		
 		return cell;
 	}
@@ -203,21 +223,31 @@
 				   constrainedToSize:constraint
 					   lineBreakMode:UILineBreakModeWordWrap];
 	
-	CGFloat height = MAX(size.height + 20.0f, 44.0f);
-	return height;
+	return MAX(size.height + 20.0f, 44.0f);
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0) {
-		PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
-		[cell.textField becomeFirstResponder];
+	if (indexPath.section == 0) {
+		if (indexPath.row == 0) {
+			PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
+			[cell.textField becomeFirstResponder];
+		} else {
+			editingComment = YES;
+			
+			PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
+			controller.delegate = self;
+			[self.navigationController pushViewController:controller animated:YES];
+			[controller release];
+		}
 	} else {
-		editingComment = YES;
+		[tableView deselectRowAtIndexPath:indexPath animated:NO];
 		
-		PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
-		controller.delegate = self;
-		[self.navigationController pushViewController:controller animated:YES];
-		[controller release];
+		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Delete Entry"
+																 delegate:self
+														cancelButtonTitle:@"Cancel"
+												   destructiveButtonTitle:@"Delete Entry"
+														otherButtonTitles:nil];
+		[actionSheet showInView:self.view];
 	}
 }
 
@@ -228,6 +258,17 @@
 	self.entry.comment = comment;
 	
 	[self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark Action Sheet Delegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == [actionSheet destructiveButtonIndex]) {
+		[self.persistenceController deleteEntry:self.entry];
+		didSave = YES;
+		[self.navigationController popViewControllerAnimated:YES];
+	}
 }
 
 #pragma mark -

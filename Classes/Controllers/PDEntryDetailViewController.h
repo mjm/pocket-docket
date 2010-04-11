@@ -4,7 +4,7 @@
 @class PDPersistenceController;
 
 //! A view controller for showing the details of a list entry.
-@interface PDEntryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDCommentViewControllerDelegate> {
+@interface PDEntryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDCommentViewControllerDelegate, UIActionSheetDelegate> {
 	PDListEntry *entry;
 	PDPersistenceController *persistenceController;
 	
