@@ -1,4 +1,5 @@
 #import "PDCommentViewController.h"
+#import "../PDKeyboardObserver.h"
 
 @class PDListEntry;
 @class PDPersistenceController;
@@ -11,8 +12,7 @@
 	IBOutlet UITableView *table;
 	IBOutlet UIBarButtonItem *saveButton;
 	
-	CGFloat keyboardHeight;
-	BOOL keyboardIsShowing;
+	PDKeyboardObserver *keyboardObserver;
 	
 	BOOL editingComment;
 	BOOL didSave;
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButton;
+@property (nonatomic, retain) PDKeyboardObserver *keyboardObserver;
 
 //! \name Initializing a View Controller
 //@{

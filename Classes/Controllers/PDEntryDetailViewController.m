@@ -8,7 +8,7 @@
 
 @implementation PDEntryDetailViewController
 
-@synthesize entry, persistenceController;
+@synthesize entry, persistenceController, keyboardObserver;
 @synthesize table, saveButton;
 
 #pragma mark -
@@ -20,6 +20,7 @@
 	
 	self.entry = aEntry;
 	self.persistenceController = controller;
+	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
 	
 	self.title = @"Edit Entry";
 	
@@ -36,9 +37,13 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	// adjusts the table view cells
-	[self.table performSelector:@selector(reloadData) withObject:nil afterDelay:0.1];
-    return YES;
+	if ([keyboardObserver isKeyboardShowing]) {
+		return NO;
+	} else {
+		// adjusts the table view cells
+		[self.table performSelector:@selector(reloadData) withObject:nil afterDelay:0.1];
+		return YES;
+	}
 }
 
 - (void)viewDidUnload {
@@ -49,15 +54,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWillShow:)
-												 name:UIKeyboardWillShowNotification
-											   object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWillHide:)
-												 name:UIKeyboardWillHideNotification
-											   object:nil];
+	[keyboardObserver registerNotifications];
 	
 	if (!editingComment) {
 		[self.persistenceController.undoManager beginUndoGrouping];
@@ -72,13 +69,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIKeyboardWillShowNotification
-												  object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIKeyboardWillHideNotification
-												  object:nil];
+	[keyboardObserver unregisterNotifications];
 	
 	if (!editingComment) {
 		// We are going back to the entry list, so either save or undo changes.
@@ -89,58 +80,6 @@
 		} else {
 			[self.persistenceController.undoManager undo];
 		}
-	}
-}
-
-#pragma mark -
-#pragma mark Keyboard Notifications
-
-- (void)keyboardWillShow:(NSNotification *)note {
-	CGRect keyboardBounds;
-    [[note.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
-	
-	keyboardHeight = keyboardBounds.size.height;
-	
-	if (!keyboardIsShowing) {
-		keyboardIsShowing = YES;
-		
-		CGRect frame = self.view.frame;
-		frame.size.height -= keyboardHeight;
-		
-		[UIView beginAnimations:nil context:NULL];
-		
-		[UIView setAnimationBeginsFromCurrentState:YES];
-		NSDictionary *info = [note userInfo];
-		NSValue *value = [info valueForKey:UIKeyboardAnimationCurveUserInfoKey];
-		UIViewAnimationCurve curve;
-		[value getValue:&curve];
-		[UIView setAnimationCurve:curve];
-		
-		value = [info valueForKey:UIKeyboardAnimationDurationUserInfoKey];
-		NSTimeInterval duration;
-		[value getValue:&duration];
-		[UIView setAnimationDuration:duration];
-		
-		self.view.frame = frame;
-		
-		[UIView commitAnimations];
-	}
-}
-
-- (void)keyboardWillHide:(NSNotification *)note {
-	if (keyboardIsShowing) {
-		keyboardIsShowing = NO;
-		
-		CGRect frame = self.view.frame;
-		frame.size.height += keyboardHeight;
-		
-		[UIView beginAnimations:nil context:NULL];
-		
-		[UIView setAnimationBeginsFromCurrentState:YES];
-		[UIView setAnimationDelay:0.0f];
-		self.view.frame = frame;
-		
-		[UIView commitAnimations];
 	}
 }
 
@@ -302,9 +241,10 @@
 - (void)dealloc {
 	self.entry = nil;
 	self.persistenceController = nil;
+	self.keyboardObserver = nil;
 	self.table = nil;
 	self.saveButton = nil;
-    [super dealloc];
+	[super dealloc];
 }
 
 @end

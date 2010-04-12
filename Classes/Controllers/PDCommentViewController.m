@@ -2,7 +2,7 @@
 
 @implementation PDCommentViewController
 
-@synthesize delegate, comment;
+@synthesize delegate, comment, keyboardObserver;
 @synthesize textView, saveButton;
 
 #pragma mark -
@@ -14,6 +14,8 @@
 	
 	self.comment = aComment;
 	self.title = @"Comment";
+	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	
 	return self;
 }
 
@@ -28,26 +30,18 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return !keyboardIsShowing;
+    return ![keyboardObserver isKeyboardShowing];
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
+	[super viewDidUnload];
 	self.textView = nil;
 	self.saveButton = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWillShow:)
-												 name:UIKeyboardWillShowNotification
-											   object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWillHide:)
-												 name:UIKeyboardWillHideNotification
-											   object:nil];
+	[keyboardObserver registerNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,65 +50,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIKeyboardWillShowNotification
-												  object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIKeyboardWillHideNotification
-												  object:nil];
-}
-
-#pragma mark -
-#pragma mark Keyboard Notifications
-
-- (void)keyboardWillShow:(NSNotification *)note {
-	CGRect keyboardBounds;
-    [[note.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
-	
-	keyboardHeight = keyboardBounds.size.height;
-	
-	if (!keyboardIsShowing) {
-		keyboardIsShowing = YES;
-		
-		CGRect frame = self.view.frame;
-		frame.size.height -= keyboardHeight;
-		
-		[UIView beginAnimations:nil context:NULL];
-		
-		[UIView setAnimationBeginsFromCurrentState:YES];
-		NSDictionary *info = [note userInfo];
-		NSValue *value = [info valueForKey:UIKeyboardAnimationCurveUserInfoKey];
-		UIViewAnimationCurve curve;
-		[value getValue:&curve];
-		[UIView setAnimationCurve:curve];
-		
-		value = [info valueForKey:UIKeyboardAnimationDurationUserInfoKey];
-		NSTimeInterval duration;
-		[value getValue:&duration];
-		[UIView setAnimationDuration:duration];
-		
-		self.view.frame = frame;
-		
-		[UIView commitAnimations];
-	}
-}
-
-- (void)keyboardWillHide:(NSNotification *)note {
-	if (keyboardIsShowing) {
-		keyboardIsShowing = NO;
-		
-		CGRect frame = self.view.frame;
-		frame.size.height += keyboardHeight;
-		
-		[UIView beginAnimations:nil context:NULL];
-		
-		[UIView setAnimationBeginsFromCurrentState:YES];
-		[UIView setAnimationDelay:0.0f];
-		self.view.frame = frame;
-		
-		[UIView commitAnimations];
-	}
+	[keyboardObserver unregisterNotifications];
 }
 
 #pragma mark -
@@ -130,9 +66,11 @@
 
 - (void)dealloc {
 	self.comment = nil;
+	self.delegate = nil;
 	self.textView = nil;
 	self.saveButton = nil;
-    [super dealloc];
+	self.keyboardObserver = nil;
+	[super dealloc];
 }
 
 

@@ -1,3 +1,5 @@
+#import "../PDKeyboardObserver.h"
+
 @protocol PDCommentViewControllerDelegate;
 
 @interface PDCommentViewController : UIViewController {
@@ -8,14 +10,14 @@
 	IBOutlet UITextView *textView;
 	IBOutlet UIBarButtonItem *saveButton;
 	
-	BOOL keyboardIsShowing;
-	CGFloat keyboardHeight;
+	PDKeyboardObserver *keyboardObserver;
 }
 
 @property (nonatomic, assign) id <PDCommentViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString *comment;
 @property (nonatomic, retain) IBOutlet UITextView *textView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButton;
+@property (nonatomic, retain) PDKeyboardObserver *keyboardObserver;
 
 - (id)initWithComment:(NSString *)aComment;
 

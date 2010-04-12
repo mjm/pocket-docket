@@ -60,7 +60,7 @@
 
 @implementation PDEntriesViewController
 
-@synthesize list, persistenceController, fetchedResultsController;
+@synthesize list, persistenceController, fetchedResultsController, keyboardObserver;
 @synthesize table, newEntryField;
 
 #pragma mark -
@@ -74,6 +74,7 @@
 	self.persistenceController = controller;
 	self.fetchedResultsController = [self.persistenceController entriesFetchedResultsControllerForList:self.list];
 	self.fetchedResultsController.delegate = self;
+	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:self];
 	
 	return self;
 }
@@ -104,30 +105,16 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWillShow:)
-												 name:UIKeyboardWillShowNotification
-											   object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self
-											 selector:@selector(keyboardWillHide:)
-												 name:UIKeyboardWillHideNotification
-											   object:nil];
+	[keyboardObserver registerNotifications];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIKeyboardWillShowNotification
-												  object:nil];
-	[[NSNotificationCenter defaultCenter] removeObserver:self
-													name:UIKeyboardWillHideNotification
-												  object:nil];
+	[keyboardObserver unregisterNotifications];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return !keyboardIsShowing;
+    return ![keyboardObserver isKeyboardShowing];
 }
 
 - (void)viewDidUnload {
@@ -140,64 +127,17 @@
 	[self.table setEditing:editing animated:animated];
 	
 	// Only do this when editing since showing the keyboard will set editing to NO
-	if (editing && keyboardIsShowing) {
+	if (editing) {
 		[self.newEntryField resignFirstResponder];
 	}
 }
 
 #pragma mark -
-#pragma mark Keyboard Notifications
+#pragma mark Keyboard Observer Delegate Methods
 
-- (void)keyboardWillShow:(NSNotification *)note {
-	CGRect keyboardBounds;
-    [[note.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
-	
-	keyboardHeight = keyboardBounds.size.height;
-	
-	if (!keyboardIsShowing) {
-		keyboardIsShowing = YES;
-		
-		CGRect frame = self.view.frame;
-		frame.size.height -= keyboardHeight;
-		
-		[UIView beginAnimations:nil context:NULL];
-		
-		[UIView setAnimationBeginsFromCurrentState:YES];
-		NSDictionary *info = [note userInfo];
-		NSValue *value = [info valueForKey:UIKeyboardAnimationCurveUserInfoKey];
-		UIViewAnimationCurve curve;
-		[value getValue:&curve];
-		[UIView setAnimationCurve:curve];
-		
-		value = [info valueForKey:UIKeyboardAnimationDurationUserInfoKey];
-		NSTimeInterval duration;
-		[value getValue:&duration];
-		[UIView setAnimationDuration:duration];
-		
-		self.view.frame = frame;
-		
-		[UIView commitAnimations];
-		
-		[self scrollToBottom];
-		[self setEditing:NO animated:YES];
-	}
-}
-
-- (void)keyboardWillHide:(NSNotification *)note {
-	if (keyboardIsShowing) {
-		keyboardIsShowing = NO;
-		
-		CGRect frame = self.view.frame;
-		frame.size.height += keyboardHeight;
-		
-		[UIView beginAnimations:nil context:NULL];
-		
-		[UIView setAnimationBeginsFromCurrentState:YES];
-		[UIView setAnimationDelay:0.0f];
-		self.view.frame = frame;
-		
-		[UIView commitAnimations];
-	}
+- (void)keyboardObserverWillShowKeyboard:(PDKeyboardObserver *)observer {
+	[self scrollToBottom];
+	[self setEditing:NO animated:YES];
 }
 
 #pragma mark -
@@ -386,6 +326,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.list = nil;
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
+	self.keyboardObserver = nil;
 	self.table = nil;
 	self.newEntryField = nil;
     [super dealloc];

@@ -1,8 +1,10 @@
+#import "../PDKeyboardObserver.h"
+
 @class PDList;
 @class PDPersistenceController;
 
 //! A view controller for displaying the entries in a list.
-@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate> {
+@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate, PDKeyboardObserverDelegate> {
 	PDList *list;
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
@@ -10,8 +12,7 @@
 	IBOutlet UITableView *table;
 	IBOutlet UITextField *newEntryField;
 	
-	BOOL keyboardIsShowing;
-	CGFloat keyboardHeight;
+	PDKeyboardObserver *keyboardObserver;
 	
 	BOOL userIsMoving;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UITextField *newEntryField;
+@property (nonatomic, retain) PDKeyboardObserver *keyboardObserver;
 
 //! \name Initializing a View Controller
 //@{
