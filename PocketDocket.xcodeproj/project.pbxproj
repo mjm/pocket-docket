@@ -14,7 +14,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
-		C94C55F51154450100791FAC /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindow.xib */; };
+		C94C55F51154450100791FAC /* MainWindowPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindowPhone.xib */; };
 		C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
 		C94C560311544FF700791FAC /* PDListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C560211544FF700791FAC /* PDListsViewController.m */; };
 		C94C56051154529500791FAC /* PDListsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56041154529500791FAC /* PDListsView.xib */; };
@@ -40,6 +40,21 @@
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
 		C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */; };
 		C9BD10B411727788005E350E /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
+		C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */; };
+		C9BD11011172ADD9005E350E /* PocketDocket 2.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */; };
+		C9BD11021172ADD9005E350E /* PocketDocket 3.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */; };
+		C9BD11041172AE24005E350E /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C56E51156BF2200791FAC /* PDList.m */; };
+		C9BD11061172AE24005E350E /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C594711584D3300791FAC /* PDListEntry.m */; };
+		C9BD11081172AE24005E350E /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
+		C9BD11CD1172AE3C005E350E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		C9BD11CE1172AE3C005E350E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		C9BD11CF1172AE3C005E350E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		C9BD11D01172AE3C005E350E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		C9BD11E01172AEF3005E350E /* MainWindowPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */; };
+		C9BD11F31172B103005E350E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		C9BD122D1172B596005E350E /* DOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD122C1172B596005E350E /* DOAppDelegate.m */; };
+		C9BD12301172B693005E350E /* DOListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD122F1172B693005E350E /* DOListsViewController.m */; };
+		C9BD12371172B9FB005E350E /* DOEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 /* End PBXBuildFile section */
@@ -57,7 +72,7 @@
 		8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PocketDocket-Info.plist"; sourceTree = "<group>"; };
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
-		C94C55F41154450100791FAC /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		C94C55F41154450100791FAC /* MainWindowPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowPhone.xib; sourceTree = "<group>"; };
 		C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPersistenceController.h; sourceTree = "<group>"; };
 		C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPersistenceController.m; sourceTree = "<group>"; };
 		C94C560111544FF700791FAC /* PDListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListsViewController.h; path = Controllers/PDListsViewController.h; sourceTree = "<group>"; };
@@ -96,6 +111,16 @@
 		C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryTableCell.m; path = Views/PDEntryTableCell.m; sourceTree = "<group>"; };
 		C9BD10B211727788005E350E /* PDKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeyboardObserver.h; sourceTree = "<group>"; };
 		C9BD10B311727788005E350E /* PDKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeyboardObserver.m; sourceTree = "<group>"; };
+		C9BD10FA1172AD83005E350E /* Docket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Docket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9BD10FC1172AD83005E350E /* Docket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Docket-Info.plist"; sourceTree = "<group>"; };
+		C9BD11DD1172AE94005E350E /* Docket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Docket-Info.plist"; sourceTree = "<group>"; };
+		C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowPad.xib; sourceTree = "<group>"; };
+		C9BD122B1172B596005E350E /* DOAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOAppDelegate.h; sourceTree = "<group>"; };
+		C9BD122C1172B596005E350E /* DOAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOAppDelegate.m; sourceTree = "<group>"; };
+		C9BD122E1172B693005E350E /* DOListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOListsViewController.h; path = Controllers/DOListsViewController.h; sourceTree = "<group>"; };
+		C9BD122F1172B693005E350E /* DOListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOListsViewController.m; path = Controllers/DOListsViewController.m; sourceTree = "<group>"; };
+		C9BD12351172B9FB005E350E /* DOEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntriesViewController.h; path = Controllers/DOEntriesViewController.h; sourceTree = "<group>"; };
+		C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntriesViewController.m; path = Controllers/DOEntriesViewController.m; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
@@ -110,6 +135,17 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9BD10F81172AD83005E350E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BD11CD1172AE3C005E350E /* UIKit.framework in Frameworks */,
+				C9BD11CE1172AE3C005E350E /* Foundation.framework in Frameworks */,
+				C9BD11CF1172AE3C005E350E /* CoreGraphics.framework in Frameworks */,
+				C9BD11D01172AE3C005E350E /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +164,8 @@
 				C94C55FD115447E500791FAC /* PDPersistenceController.m */,
 				C9BD10B211727788005E350E /* PDKeyboardObserver.h */,
 				C9BD10B311727788005E350E /* PDKeyboardObserver.m */,
+				C9BD122B1172B596005E350E /* DOAppDelegate.h */,
+				C9BD122C1172B596005E350E /* DOAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -136,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* PocketDocket.app */,
+				C9BD10FA1172AD83005E350E /* Docket.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,10 +203,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9BD11DD1172AE94005E350E /* Docket-Info.plist */,
 				C94C56991156B1A900791FAC /* Graphics */,
 				C94C55F31154450100791FAC /* XIBs */,
 				C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */,
 				8D1107310486CEB800E47090 /* PocketDocket-Info.plist */,
+				C9BD10FC1172AD83005E350E /* Docket-Info.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -186,7 +227,7 @@
 		C94C55F31154450100791FAC /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				C94C55F41154450100791FAC /* MainWindow.xib */,
+				C94C55F41154450100791FAC /* MainWindowPhone.xib */,
 				C94C56041154529500791FAC /* PDListsView.xib */,
 				C94C56FE1156C86100791FAC /* PDEditListView.xib */,
 				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
@@ -195,6 +236,7 @@
 				C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */,
 				C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */,
 				C9748C59116AC33F00D2B372 /* PDCommentView.xib */,
+				C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -212,6 +254,10 @@
 				C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */,
 				C9748C56116AC18B00D2B372 /* PDCommentViewController.h */,
 				C9748C57116AC18B00D2B372 /* PDCommentViewController.m */,
+				C9BD122E1172B693005E350E /* DOListsViewController.h */,
+				C9BD122F1172B693005E350E /* DOListsViewController.m */,
+				C9BD12351172B9FB005E350E /* DOEntriesViewController.h */,
+				C9BD12361172B9FB005E350E /* DOEntriesViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -276,6 +322,23 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* PocketDocket.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C9BD10F91172AD83005E350E /* Docket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9BD10FF1172AD85005E350E /* Build configuration list for PBXNativeTarget "Docket" */;
+			buildPhases = (
+				C9BD10F61172AD83005E350E /* Resources */,
+				C9BD10F71172AD83005E350E /* Sources */,
+				C9BD10F81172AD83005E350E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Docket;
+			productName = Docket;
+			productReference = C9BD10FA1172AD83005E350E /* Docket.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -289,6 +352,7 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* PocketDocket */,
+				C9BD10F91172AD83005E350E /* Docket */,
 			);
 		};
 /* End PBXProject section */
@@ -298,7 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C94C55F51154450100791FAC /* MainWindow.xib in Resources */,
+				C94C55F51154450100791FAC /* MainWindowPhone.xib in Resources */,
 				C94C56051154529500791FAC /* PDListsView.xib in Resources */,
 				C94C56451156A12B00791FAC /* PDListTableCell.xib in Resources */,
 				C94C569B1156B1A900791FAC /* ListIcon.png in Resources */,
@@ -312,6 +376,14 @@
 				C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */,
 				C9748D10116ADE7800D2B372 /* Default.png in Resources */,
 				C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9BD10F61172AD83005E350E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BD11E01172AEF3005E350E /* MainWindowPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +414,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9BD10F71172AD83005E350E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9BD11F31172B103005E350E /* main.m in Sources */,
+				C9BD11041172AE24005E350E /* PDList.m in Sources */,
+				C9BD11061172AE24005E350E /* PDListEntry.m in Sources */,
+				C9BD11081172AE24005E350E /* PDPersistenceController.m in Sources */,
+				C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */,
+				C9BD11011172ADD9005E350E /* PocketDocket 2.xcdatamodel in Sources */,
+				C9BD11021172ADD9005E350E /* PocketDocket 3.xcdatamodel in Sources */,
+				C9BD122D1172B596005E350E /* DOAppDelegate.m in Sources */,
+				C9BD12301172B693005E350E /* DOListsViewController.m in Sources */,
+				C9BD12371172B9FB005E350E /* DOEntriesViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -350,6 +439,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -367,6 +457,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"/Volumes/Skiiing2/CD/ViewBased/Unknown Path/System/Library/Frameworks\"",
@@ -407,6 +498,51 @@
 			};
 			name = Release;
 		};
+		C9BD10FD1172AD84005E350E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PocketDocket_Prefix.pch;
+				INFOPLIST_FILE = "Docket-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = Docket;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
+			};
+			name = Debug;
+		};
+		C9BD10FE1172AD84005E350E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PocketDocket_Prefix.pch;
+				INFOPLIST_FILE = "Docket-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = Docket;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALID_ARCHS = armv7;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -424,6 +560,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9BD10FF1172AD85005E350E /* Build configuration list for PBXNativeTarget "Docket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9BD10FD1172AD84005E350E /* Debug */,
+				C9BD10FE1172AD84005E350E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
