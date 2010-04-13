@@ -41,8 +41,6 @@
 		C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */; };
 		C9BD10B411727788005E350E /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */; };
-		C9BD11011172ADD9005E350E /* PocketDocket 2.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A411585B0D00791FAC /* PocketDocket 2.xcdatamodel */; };
-		C9BD11021172ADD9005E350E /* PocketDocket 3.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */; };
 		C9BD11041172AE24005E350E /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C56E51156BF2200791FAC /* PDList.m */; };
 		C9BD11061172AE24005E350E /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C594711584D3300791FAC /* PDListEntry.m */; };
 		C9BD11081172AE24005E350E /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
@@ -55,6 +53,12 @@
 		C9BD122D1172B596005E350E /* DOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD122C1172B596005E350E /* DOAppDelegate.m */; };
 		C9BD12301172B693005E350E /* DOListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD122F1172B693005E350E /* DOListsViewController.m */; };
 		C9BD12371172B9FB005E350E /* DOEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */; };
+		C9BD12C11173E6B3005E350E /* PDListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C564211569C8D00791FAC /* PDListTableCell.m */; };
+		C9BD12D81173E6DA005E350E /* PDListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56441156A12B00791FAC /* PDListTableCell.xib */; };
+		C9BD13541173F772005E350E /* DOEditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD13531173F772005E350E /* DOEditListViewController.m */; };
+		C9BD135A1173F97C005E350E /* PDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C570B1156D6DE00791FAC /* PDTextFieldCell.m */; };
+		C9BD13AD1173FBAE005E350E /* PDTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */; };
+		C9BD13B71173FCFB005E350E /* DOEditListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BD13B61173FCFB005E350E /* DOEditListView.xib */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 /* End PBXBuildFile section */
@@ -121,6 +125,9 @@
 		C9BD122F1172B693005E350E /* DOListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOListsViewController.m; path = Controllers/DOListsViewController.m; sourceTree = "<group>"; };
 		C9BD12351172B9FB005E350E /* DOEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntriesViewController.h; path = Controllers/DOEntriesViewController.h; sourceTree = "<group>"; };
 		C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntriesViewController.m; path = Controllers/DOEntriesViewController.m; sourceTree = "<group>"; };
+		C9BD13521173F772005E350E /* DOEditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEditListViewController.h; path = Controllers/DOEditListViewController.h; sourceTree = "<group>"; };
+		C9BD13531173F772005E350E /* DOEditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEditListViewController.m; path = Controllers/DOEditListViewController.m; sourceTree = "<group>"; };
+		C9BD13B61173FCFB005E350E /* DOEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEditListView.xib; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
@@ -237,6 +244,7 @@
 				C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */,
 				C9748C59116AC33F00D2B372 /* PDCommentView.xib */,
 				C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */,
+				C9BD13B61173FCFB005E350E /* DOEditListView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -258,6 +266,8 @@
 				C9BD122F1172B693005E350E /* DOListsViewController.m */,
 				C9BD12351172B9FB005E350E /* DOEntriesViewController.h */,
 				C9BD12361172B9FB005E350E /* DOEntriesViewController.m */,
+				C9BD13521173F772005E350E /* DOEditListViewController.h */,
+				C9BD13531173F772005E350E /* DOEditListViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -384,6 +394,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BD11E01172AEF3005E350E /* MainWindowPad.xib in Resources */,
+				C9BD12D81173E6DA005E350E /* PDListTableCell.xib in Resources */,
+				C9BD13AD1173FBAE005E350E /* PDTextFieldCell.xib in Resources */,
+				C9BD13B71173FCFB005E350E /* DOEditListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,16 +431,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BD12C11173E6B3005E350E /* PDListTableCell.m in Sources */,
 				C9BD11F31172B103005E350E /* main.m in Sources */,
 				C9BD11041172AE24005E350E /* PDList.m in Sources */,
 				C9BD11061172AE24005E350E /* PDListEntry.m in Sources */,
 				C9BD11081172AE24005E350E /* PDPersistenceController.m in Sources */,
 				C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */,
-				C9BD11011172ADD9005E350E /* PocketDocket 2.xcdatamodel in Sources */,
-				C9BD11021172ADD9005E350E /* PocketDocket 3.xcdatamodel in Sources */,
 				C9BD122D1172B596005E350E /* DOAppDelegate.m in Sources */,
 				C9BD12301172B693005E350E /* DOListsViewController.m in Sources */,
 				C9BD12371172B9FB005E350E /* DOEntriesViewController.m in Sources */,
+				C9BD13541173F772005E350E /* DOEditListViewController.m in Sources */,
+				C9BD135A1173F97C005E350E /* PDTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

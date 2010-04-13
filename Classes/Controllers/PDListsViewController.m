@@ -134,10 +134,6 @@
 	[editController release];
 }
 
-- (IBAction)backToLists {
-	NSLog(@"Going back...");
-}
-
 #pragma mark -
 #pragma mark Table View Data Source Methods
 

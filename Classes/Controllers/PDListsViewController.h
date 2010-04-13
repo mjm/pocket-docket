@@ -61,9 +61,6 @@
 //! Action called when the user wants to create a new list.
 - (IBAction)addList;
 
-//! Action called when the user wants to come back to this view.
-- (IBAction)backToLists;
-
 //@}
 
 @end
