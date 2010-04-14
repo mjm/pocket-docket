@@ -22,6 +22,7 @@
 	}
 	cell.titleLabel.text = list.title;
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
+	cell.accessoryType = UITableViewCellAccessoryNone;
 }
 
 @end
@@ -120,6 +121,29 @@
 	return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+- (void) tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+	   toIndexPath:(NSIndexPath *)destinationIndexPath {
+	userIsMoving = YES;
+	
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
+	[self.persistenceController moveList:list fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	
+	userIsMoving = NO;
+}
+
+- (void) tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self.persistenceController deleteList:list];
+	[self.persistenceController save];
+}
+
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
@@ -130,6 +154,14 @@
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
 		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"selected index path: %@", indexPath);
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSLog(@"deselected index path: %@", indexPath);
 }
 
 #pragma mark -
