@@ -23,6 +23,7 @@
 	cell.titleLabel.text = list.title;
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
 	cell.accessoryType = UITableViewCellAccessoryNone;
+	cell.editingAccessoryType = UITableViewCellAccessoryNone;
 }
 
 @end
@@ -30,7 +31,7 @@
 
 @implementation DOListsViewController
 
-@synthesize fetchedResultsController, popoverController, table;
+@synthesize persistenceController, fetchedResultsController, popoverController, table;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -52,10 +53,6 @@
 
 #pragma mark -
 #pragma mark Managing Persistence
-
-- (PDPersistenceController *)persistenceController {
-	return persistenceController;
-}
 
 - (void)setPersistenceController:(PDPersistenceController *)controller {
 	persistenceController = [controller retain];

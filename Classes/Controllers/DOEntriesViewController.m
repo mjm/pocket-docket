@@ -1,15 +1,19 @@
 #import "DOEntriesViewController.h"
 
+#import "../Models/PDList.h"
+
 @implementation DOEntriesViewController
 
-@synthesize popoverController, toolbar;
+@synthesize list, popoverController, toolbar;
+
+#pragma mark -
+#pragma mark View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
     return YES;
 }
 
@@ -18,6 +22,21 @@
 	self.popoverController = nil;
 	self.toolbar = nil;
 }
+
+#pragma mark -
+#pragma mark Table View Data Source Methods
+
+- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
+	return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return nil;
+}
+
+#pragma mark -
+#pragma mark Split View Delegate Methods
 
 - (void)splitViewController:(UISplitViewController *)svc
 	 willHideViewController:(UIViewController *)aViewController
@@ -50,6 +69,7 @@
 }
 
 - (void)dealloc {
+	self.list = nil;
 	self.popoverController = nil;
 	self.toolbar = nil;
 	[super dealloc];

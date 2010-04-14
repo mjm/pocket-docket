@@ -64,6 +64,7 @@
 		C9BD142D11753F15005E350E /* CheckBoxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B67115C332B00791FAC /* CheckBoxChecked.png */; };
 		C9BD142E11753F15005E350E /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
 		C9BD142F11753F15005E350E /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
+		C9BD1479117554A0005E350E /* pencilangled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9BD1478117554A0005E350E /* pencilangled.png */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 /* End PBXBuildFile section */
@@ -133,6 +134,7 @@
 		C9BD13521173F772005E350E /* DOEditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEditListViewController.h; path = Controllers/DOEditListViewController.h; sourceTree = "<group>"; };
 		C9BD13531173F772005E350E /* DOEditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEditListViewController.m; path = Controllers/DOEditListViewController.m; sourceTree = "<group>"; };
 		C9BD13B61173FCFB005E350E /* DOEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEditListView.xib; sourceTree = "<group>"; };
+		C9BD1478117554A0005E350E /* pencilangled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilangled.png; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
 				C94C569A1156B1A900791FAC /* ListIcon.png */,
 				C9EB356111701D1D0092DE45 /* ListIconDark.png */,
+				C9BD1478117554A0005E350E /* pencilangled.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				C9BD12D81173E6DA005E350E /* PDListTableCell.xib in Resources */,
 				C9BD13AD1173FBAE005E350E /* PDTextFieldCell.xib in Resources */,
 				C9BD13B71173FCFB005E350E /* DOEditListView.xib in Resources */,
+				C9BD1479117554A0005E350E /* pencilangled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
