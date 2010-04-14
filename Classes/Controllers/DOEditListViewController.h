@@ -71,12 +71,4 @@
 - (void)editListController:(DOEditListViewController *)controller
 			 listDidChange:(PDList *)list;
 
-//! Called when the user is done editing the list and wants to discard their changes.
-/*!
- \param controller The controller that finished editing.
- \param list The list the user was editing unchanged.
- */
-- (void)editListController:(DOEditListViewController *)controller
-		  listDidNotChange:(PDList *)list;
-
 @end

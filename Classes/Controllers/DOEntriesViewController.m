@@ -28,6 +28,10 @@
 	[toolbarItems insertObject:barButtonItem atIndex:0];
 	[toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
+	
+	UINavigationController *navController = (UINavigationController *) aViewController;
+	navController.visibleViewController.navigationItem.rightBarButtonItem.enabled = NO;
+	
 	self.popoverController = pc;
 }
 
@@ -38,6 +42,10 @@
 	[toolbarItems removeObjectAtIndex:0];
 	[toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
+	
+	UINavigationController *navController = (UINavigationController *) aViewController;
+	navController.visibleViewController.navigationItem.rightBarButtonItem.enabled = YES;
+	
 	self.popoverController = nil;
 }
 

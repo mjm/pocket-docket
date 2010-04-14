@@ -29,24 +29,24 @@
 
 @implementation DOListsViewController
 
-@synthesize fetchedResultsController;
+@synthesize fetchedResultsController, popoverController, table;
 
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	NSLog(@"Test");
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+	return YES;
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
+	[super viewDidUnload];
+	self.popoverController = nil;
+	self.table = nil;
 }
 
 #pragma mark -
@@ -60,7 +60,7 @@
 	persistenceController = [controller retain];
 	
 	self.fetchedResultsController = [self.persistenceController listsFetchedResultsController];
-	//self.fetchedResultsController.delegate = self;
+	self.fetchedResultsController.delegate = self;
 	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
@@ -70,17 +70,27 @@
 #pragma mark Actions
 
 - (IBAction)addList {
+	[self.persistenceController.undoManager beginUndoGrouping];
 	PDList *list = [self.persistenceController createList];
+	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:list];
+	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
 	
-	UIPopoverController *popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
-	popoverController.popoverContentSize = CGSizeMake(320.0, 100.0);
+	if (!popoverController) {
+		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+	} else {
+		self.popoverController.contentViewController = navController;
+	}
+	self.popoverController.popoverContentSize = CGSizeMake(320.0, 100.0);
+	self.popoverController.delegate = self;
 	[navController release];
 	
-	[popoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+	[self.popoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem
+								   permittedArrowDirections:UIPopoverArrowDirectionAny
+												   animated:YES];
 }
 
 #pragma mark -
@@ -107,8 +117,93 @@
 	
 	[self configureCell:cell withList:list];
 	
-	NSLog(@"lists returns cell: %@", cell);
 	return cell;
+}
+
+#pragma mark -
+#pragma mark Table View Delegate Methods
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 65.0;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return UITableViewCellEditingStyleDelete;
+}
+
+#pragma mark -
+#pragma mark Edit List Delegate Methods
+
+// Called when the user hits the save button in the popover.
+- (void)editListController:(DOEditListViewController *)controller listDidChange:(PDList *)list {
+	[self.persistenceController.undoManager endUndoGrouping];
+	[self.persistenceController save];
+	[self.popoverController dismissPopoverAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark Popover Controller Delegate Methods
+
+// Called when the user dismisses the popover without saving.
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+	[self.persistenceController.undoManager endUndoGrouping];
+	[self.persistenceController.undoManager undo];
+	[self.persistenceController save];
+}
+
+#pragma mark -
+#pragma mark Fetched Results Controller Delegate Methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+	if (userIsMoving)
+		return;
+	
+	[self.table beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+	if (userIsMoving)
+		return;
+	
+	[self.table endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath
+	 forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath {
+	
+	switch (type) {
+		case NSFetchedResultsChangeInsert:
+			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+							  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:(PDListTableCell *) [self.table cellForRowAtIndexPath:indexPath]
+					   withList:anObject];
+			break;
+		case NSFetchedResultsChangeMove:
+			if (!userIsMoving) {
+				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+			}
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex
+	 forChangeType:(NSFetchedResultsChangeType)type {
+	return;
 }
 
 #pragma mark -
@@ -117,6 +212,8 @@
 - (void)dealloc {
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
+	self.popoverController = nil;
+	self.table = nil;
 	[super dealloc];
 }
 

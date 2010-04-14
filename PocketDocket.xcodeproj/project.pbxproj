@@ -59,6 +59,11 @@
 		C9BD135A1173F97C005E350E /* PDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C570B1156D6DE00791FAC /* PDTextFieldCell.m */; };
 		C9BD13AD1173FBAE005E350E /* PDTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */; };
 		C9BD13B71173FCFB005E350E /* DOEditListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9BD13B61173FCFB005E350E /* DOEditListView.xib */; };
+		C9BD141A11753E7B005E350E /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
+		C9BD142C11753F15005E350E /* CheckBox.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B65115C332400791FAC /* CheckBox.png */; };
+		C9BD142D11753F15005E350E /* CheckBoxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B67115C332B00791FAC /* CheckBoxChecked.png */; };
+		C9BD142E11753F15005E350E /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
+		C9BD142F11753F15005E350E /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 /* End PBXBuildFile section */
@@ -393,6 +398,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BD142C11753F15005E350E /* CheckBox.png in Resources */,
+				C9BD142D11753F15005E350E /* CheckBoxChecked.png in Resources */,
+				C9BD142E11753F15005E350E /* ListIcon.png in Resources */,
+				C9BD142F11753F15005E350E /* ListIconDark.png in Resources */,
 				C9BD11E01172AEF3005E350E /* MainWindowPad.xib in Resources */,
 				C9BD12D81173E6DA005E350E /* PDListTableCell.xib in Resources */,
 				C9BD13AD1173FBAE005E350E /* PDTextFieldCell.xib in Resources */,
@@ -442,6 +451,7 @@
 				C9BD12371172B9FB005E350E /* DOEntriesViewController.m in Sources */,
 				C9BD13541173F772005E350E /* DOEditListViewController.m in Sources */,
 				C9BD135A1173F97C005E350E /* PDTextFieldCell.m in Sources */,
+				C9BD141A11753E7B005E350E /* PDListProgressView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
