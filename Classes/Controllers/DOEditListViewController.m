@@ -14,7 +14,10 @@
 	if (![super initWithNibName:@"DOEditListView" bundle:nil])
 		return nil;
 	
+	self.title = @"Edit List";
 	self.list = aList;
+	self.contentSizeForViewInPopover = CGSizeMake(320, 63);
+	
 	return self;
 }
 
@@ -24,7 +27,6 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.title = @"New List"; // TODO set appropriately
 	self.navigationItem.rightBarButtonItem = self.saveButton;
 }
 

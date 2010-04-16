@@ -14,6 +14,8 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
+		C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */; };
+		C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */; };
 		C94C55F51154450100791FAC /* MainWindowPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindowPhone.xib */; };
 		C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
 		C94C560311544FF700791FAC /* PDListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C560211544FF700791FAC /* PDListsViewController.m */; };
@@ -82,6 +84,9 @@
 		8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PocketDocket-Info.plist"; sourceTree = "<group>"; };
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
+		C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryDetailsViewController.h; path = Controllers/DOEntryDetailsViewController.h; sourceTree = "<group>"; };
+		C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryDetailsViewController.m; path = Controllers/DOEntryDetailsViewController.m; sourceTree = "<group>"; };
+		C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryDetailsView.xib; sourceTree = "<group>"; };
 		C94C55F41154450100791FAC /* MainWindowPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowPhone.xib; sourceTree = "<group>"; };
 		C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPersistenceController.h; sourceTree = "<group>"; };
 		C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPersistenceController.m; sourceTree = "<group>"; };
@@ -252,6 +257,7 @@
 				C9748C59116AC33F00D2B372 /* PDCommentView.xib */,
 				C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */,
 				C9BD13B61173FCFB005E350E /* DOEditListView.xib */,
+				C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -275,6 +281,8 @@
 				C9BD12361172B9FB005E350E /* DOEntriesViewController.m */,
 				C9BD13521173F772005E350E /* DOEditListViewController.h */,
 				C9BD13531173F772005E350E /* DOEditListViewController.m */,
+				C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */,
+				C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 				C9BD13AD1173FBAE005E350E /* PDTextFieldCell.xib in Resources */,
 				C9BD13B71173FCFB005E350E /* DOEditListView.xib in Resources */,
 				C9BD1479117554A0005E350E /* pencilangled.png in Resources */,
+				C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +465,7 @@
 				C9BD13541173F772005E350E /* DOEditListViewController.m in Sources */,
 				C9BD135A1173F97C005E350E /* PDTextFieldCell.m in Sources */,
 				C9BD141A11753E7B005E350E /* PDListProgressView.m in Sources */,
+				C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

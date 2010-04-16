@@ -1,5 +1,6 @@
 #import "DOListsViewController.h"
 
+#import "DOEntriesViewController.h"
 #import "DOEditListViewController.h"
 #import "../PDPersistenceController.h"
 #import "../Views/PDListTableCell.h"
@@ -31,7 +32,8 @@
 
 @implementation DOListsViewController
 
-@synthesize persistenceController, fetchedResultsController, popoverController, table;
+@synthesize persistenceController, fetchedResultsController, popoverController;
+@synthesize entriesViewController;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -48,20 +50,22 @@
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.popoverController = nil;
-	self.table = nil;
 }
 
 #pragma mark -
 #pragma mark Managing Persistence
 
 - (void)setPersistenceController:(PDPersistenceController *)controller {
-	persistenceController = [controller retain];
-	
-	self.fetchedResultsController = [self.persistenceController listsFetchedResultsController];
-	self.fetchedResultsController.delegate = self;
-	
-	NSError *error;
-	[self.fetchedResultsController performFetch:&error];
+	if (persistenceController != controller) {
+		[persistenceController release];
+		persistenceController = [controller retain];
+		
+		self.fetchedResultsController = [self.persistenceController listsFetchedResultsController];
+		self.fetchedResultsController.delegate = self;
+		
+		NSError *error;
+		[self.fetchedResultsController performFetch:&error];
+	}
 }
 
 #pragma mark -
@@ -73,6 +77,7 @@
 	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:list];
 	controller.delegate = self;
+	controller.title = @"New List";
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
@@ -82,7 +87,6 @@
 	} else {
 		self.popoverController.contentViewController = navController;
 	}
-	self.popoverController.popoverContentSize = CGSizeMake(320.0, 100.0);
 	self.popoverController.delegate = self;
 	[navController release];
 	
@@ -154,11 +158,12 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"selected index path: %@", indexPath);
+	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	self.entriesViewController.list = list;
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-	NSLog(@"deselected index path: %@", indexPath);
+	//self.entriesViewController.list = nil;
 }
 
 #pragma mark -
@@ -188,14 +193,14 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	if (userIsMoving)
 		return;
 	
-	[self.table beginUpdates];
+	[self.tableView beginUpdates];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
 	if (userIsMoving)
 		return;
 	
-	[self.table endUpdates];
+	[self.tableView endUpdates];
 }
 
 - (void)controller:(NSFetchedResultsController *)controller
@@ -206,22 +211,22 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	
 	switch (type) {
 		case NSFetchedResultsChangeInsert:
-			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
 							  withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeDelete:
-			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 							  withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:(PDListTableCell *) [self.table cellForRowAtIndexPath:indexPath]
+			[self configureCell:(PDListTableCell *) [self.tableView cellForRowAtIndexPath:indexPath]
 					   withList:anObject];
 			break;
 		case NSFetchedResultsChangeMove:
 			if (!userIsMoving) {
-				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+				[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 								  withRowAnimation:UITableViewRowAnimationFade];
-				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+				[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
 								  withRowAnimation:UITableViewRowAnimationFade];
 			}
 			break;
@@ -242,7 +247,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
 	self.popoverController = nil;
-	self.table = nil;
 	[super dealloc];
 }
 
