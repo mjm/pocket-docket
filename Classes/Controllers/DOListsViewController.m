@@ -21,6 +21,8 @@
 	} else {
 		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
 	}
+	[cell.progressView setNeedsDisplay];
+	
 	cell.titleLabel.text = list.title;
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
 	cell.accessoryType = UITableViewCellAccessoryNone;
