@@ -2,6 +2,7 @@
 
 #import "PDPersistenceController.h"
 #import "Controllers/DOListsViewController.h"
+#import "Controllers/DOEntriesViewController.h"
 
 @implementation DOAppDelegate
 
@@ -9,6 +10,7 @@
 	PDPersistenceController *persistenceController = [[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
 	
 	listsViewController.persistenceController = persistenceController;
+	entriesViewController.persistenceController = persistenceController;
 	
 	[window addSubview:splitViewController.view];
 	[window makeKeyAndVisible];

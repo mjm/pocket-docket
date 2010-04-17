@@ -352,6 +352,14 @@
 					</object>
 					<int key="connectionID">53</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">table</string>
+						<reference key="source" ref="85400257"/>
+						<reference key="destination" ref="9975573"/>
+					</object>
+					<int key="connectionID">54</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -579,7 +587,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">53</int>
+			<int key="maxID">54</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -679,12 +687,14 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>editButton</string>
 							<string>listsViewController</string>
+							<string>table</string>
 							<string>toolbar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIBarButtonItem</string>
 							<string>DOListsViewController</string>
+							<string>UITableView</string>
 							<string>UIToolbar</string>
 						</object>
 					</object>
@@ -694,6 +704,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>editButton</string>
 							<string>listsViewController</string>
+							<string>table</string>
 							<string>toolbar</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -705,6 +716,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">listsViewController</string>
 								<string key="candidateClassName">DOListsViewController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">table</string>
+								<string key="candidateClassName">UITableView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">toolbar</string>

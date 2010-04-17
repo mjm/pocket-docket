@@ -5,11 +5,25 @@
 #import "DOEntryDetailsViewController.h"
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
+#import "../Models/PDListEntry.h"
+
+#pragma mark -
+#pragma mark Private Methods
+
+@interface DOEntriesViewController ()
+
+- (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry;
+
+@end
 
 @implementation DOEntriesViewController
 
-@synthesize list, persistenceController;
-@synthesize popoverController, listsViewController, toolbar, editButton;
+@synthesize list, persistenceController, fetchedResultsController;
+@synthesize popoverController, listsViewController, toolbar, editButton, table;
+
+- (void)configureCell:(UITableViewCell *)cell withEntry:(PDListEntry *)entry {
+	cell.textLabel.text = entry.text;
+}
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -28,6 +42,7 @@
 	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.editButton = nil;
+	self.table = nil;
 }
 
 #pragma mark -
@@ -37,6 +52,15 @@
 	if (list != aList) {
 		[list release];
 		list = [aList retain];
+		
+		if (self.list) {
+			self.fetchedResultsController = [self.persistenceController entriesFetchedResultsControllerForList:self.list];
+			self.fetchedResultsController.delegate = self;
+			
+			NSError *error;
+			[self.fetchedResultsController performFetch:&error];
+			[self.table reloadData];
+		}
 	}
 }
 
@@ -81,12 +105,77 @@
 #pragma mark Table View Data Source Methods
 
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	return 0;
+	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+	return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	return nil;
+	static NSString *Cell = @"Cell";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
+	if (!cell) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell] autorelease];
+	}
+	
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self configureCell:cell withEntry:entry];
+	
+	return cell;
+}
+
+#pragma mark -
+#pragma mark Fetched Results Controller Delegate Methods
+
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
+//	if (userIsMoving)
+//		return;
+	
+	[self.table beginUpdates];
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+//	if (userIsMoving)
+//		return;
+	
+	[self.table endUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+   didChangeObject:(id)anObject
+	   atIndexPath:(NSIndexPath *)indexPath
+	 forChangeType:(NSFetchedResultsChangeType)type
+	  newIndexPath:(NSIndexPath *)newIndexPath {
+	
+	switch (type) {
+		case NSFetchedResultsChangeInsert:
+			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeDelete:
+			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+								  withRowAnimation:UITableViewRowAnimationFade];
+			break;
+		case NSFetchedResultsChangeUpdate:
+			[self configureCell:[self.table cellForRowAtIndexPath:indexPath]
+					   withEntry:anObject];
+			break;
+		case NSFetchedResultsChangeMove:
+//			if (!userIsMoving) {
+				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+									  withRowAnimation:UITableViewRowAnimationFade];
+				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
+									  withRowAnimation:UITableViewRowAnimationFade];
+//			}
+			break;
+	}
+}
+
+- (void)controller:(NSFetchedResultsController *)controller
+  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
+		   atIndex:(NSUInteger)sectionIndex
+	 forChangeType:(NSFetchedResultsChangeType)type {
+	return;
 }
 
 #pragma mark -
@@ -160,10 +249,12 @@
 - (void)dealloc {
 	self.list = nil;
 	self.persistenceController = nil;
+	self.fetchedResultsController = nil;
 	self.popoverController = nil;
 	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.editButton = nil;
+	self.table = nil;
 	[super dealloc];
 }
 
