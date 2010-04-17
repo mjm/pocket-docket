@@ -1,5 +1,6 @@
 #import "DOEntriesViewController.h"
 
+#import "DOListsViewController.h"
 #import "DOEditListViewController.h"
 #import "DOEntryDetailsViewController.h"
 #import "../PDPersistenceController.h"
@@ -8,7 +9,7 @@
 @implementation DOEntriesViewController
 
 @synthesize list, persistenceController;
-@synthesize popoverController, toolbar, editButton;
+@synthesize popoverController, listsViewController, toolbar, editButton;
 
 #pragma mark -
 #pragma mark View Lifecycle
@@ -24,6 +25,7 @@
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.popoverController = nil;
+	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.editButton = nil;
 }
@@ -100,8 +102,7 @@
 	[toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
 	
-	UINavigationController *navController = (UINavigationController *) aViewController;
-	navController.visibleViewController.navigationItem.rightBarButtonItem.enabled = NO;
+	self.listsViewController.navigationItem.rightBarButtonItem.enabled = NO;
 	
 	self.popoverController = pc;
 }
@@ -114,8 +115,7 @@
 	[toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
 	
-	UINavigationController *navController = (UINavigationController *) aViewController;
-	navController.visibleViewController.navigationItem.rightBarButtonItem.enabled = YES;
+	self.listsViewController.navigationItem.rightBarButtonItem.enabled = YES;
 	
 	self.popoverController = nil;
 }
@@ -161,6 +161,7 @@
 	self.list = nil;
 	self.persistenceController = nil;
 	self.popoverController = nil;
+	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.editButton = nil;
 	[super dealloc];
