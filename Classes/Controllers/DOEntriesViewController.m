@@ -14,6 +14,7 @@
 @interface DOEntriesViewController ()
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry;
+- (CGRect)popoverRectForEntry:(PDListEntry *)entry centeredAtPoint:(CGPoint)point;
 
 @end
 
@@ -36,6 +37,12 @@
 	}
 	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
 	cell.accessoryType = UITableViewCellAccessoryNone;
+}
+
+- (CGRect)popoverRectForEntry:(PDListEntry *)entry centeredAtPoint:(CGPoint)point {
+	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:entry];
+	CGRect rect = [self.table rectForRowAtIndexPath:indexPath];
+	return CGRectMake(point.x - 22.0f, rect.origin.y, 44.0f, rect.size.height);
 }
 
 #pragma mark -
@@ -178,20 +185,18 @@
 - (void)tapAndHoldDetected:(UILongPressGestureRecognizer *)gestureRecognizer {
 	if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
 		
-		CGPoint point = [gestureRecognizer locationInView:self.table];
-		NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:point];
+		popoverPoint = [gestureRecognizer locationInView:self.table];
+		NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:popoverPoint];
 		if (indexPath) {
 			self.selectedEntry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-			CGRect rowRect = [self.table rectForRowAtIndexPath:indexPath];
-			
 			UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
 															   delegate:self
 													  cancelButtonTitle:nil
 												 destructiveButtonTitle:nil
 													  otherButtonTitles:@"Edit Entry", @"Delete Entry", nil];
-			[sheet showFromRect:CGRectMake(point.x - 22.0f, rowRect.origin.y, 44.0f, rowRect.size.height)
+			[sheet showFromRect:[self popoverRectForEntry:self.selectedEntry centeredAtPoint:popoverPoint]
 						 inView:self.table
-					   animated:YES];			
+					   animated:YES];
 		}
 	}
 }
@@ -335,16 +340,30 @@
 #pragma mark Action Sheet Delegate Methods
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if (buttonIndex == 0) {
-		[self.persistenceController.undoManager beginUndoGrouping];
-		
-		DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:self.selectedEntry
-																									  delegate:self];
-		
-		[controller presentModalToViewController:self];
-		[controller release];
-	} else if (buttonIndex == 1) {
-		NSLog(@"Delete");
+	if ([actionSheet destructiveButtonIndex] == -1) {
+		if (buttonIndex == 0) {
+			[self.persistenceController.undoManager beginUndoGrouping];
+			
+			DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:self.selectedEntry
+																										  delegate:self];
+			
+			[controller presentModalToViewController:self];
+			[controller release];
+		} else if (buttonIndex == 1) {
+			UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Delete Entry"
+															   delegate:self
+													  cancelButtonTitle:@"Cancel"
+												 destructiveButtonTitle:@"Delete Entry"
+													  otherButtonTitles:nil];
+			[sheet showFromRect:[self popoverRectForEntry:self.selectedEntry centeredAtPoint:popoverPoint]
+						 inView:self.table
+					   animated:YES];
+		}
+	} else {
+		if (buttonIndex == [actionSheet destructiveButtonIndex]) {
+			[self.persistenceController deleteEntry:self.selectedEntry];
+			self.selectedEntry = nil;
+		}
 	}
 }
 

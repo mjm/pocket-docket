@@ -18,6 +18,7 @@
 	IBOutlet UITableView *table;
 	
 	PDListEntry *selectedEntry;
+	CGPoint popoverPoint;
 }
 
 @property (nonatomic, retain) PDList *list;
