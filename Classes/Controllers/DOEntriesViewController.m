@@ -20,7 +20,7 @@
 @implementation DOEntriesViewController
 
 @synthesize list, persistenceController, fetchedResultsController, selectedEntry;
-@synthesize popoverController, listsViewController, toolbar, editButton, table;
+@synthesize popoverController, listsViewController, toolbar, editButton, addButton, table;
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
@@ -65,6 +65,7 @@
 	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.editButton = nil;
+	self.addButton = nil;
 	self.table = nil;
 }
 
@@ -83,6 +84,12 @@
 			NSError *error;
 			[self.fetchedResultsController performFetch:&error];
 			[self.table reloadData];
+			
+			self.editButton.enabled = YES;
+			self.addButton.enabled = YES;
+		} else {
+			self.editButton.enabled = NO;
+			self.addButton.enabled = NO;
 		}
 	}
 }
@@ -352,6 +359,7 @@
 	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.editButton = nil;
+	self.addButton = nil;
 	self.table = nil;
 	[super dealloc];
 }

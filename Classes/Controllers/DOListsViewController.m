@@ -215,10 +215,19 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		case NSFetchedResultsChangeInsert:
 			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
 							  withRowAnimation:UITableViewRowAnimationFade];
+			if (self.entriesViewController.list) {
+				NSIndexPath *indexPath = [controller indexPathForObject:self.entriesViewController.list];
+				[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+			}
+			
 			break;
 		case NSFetchedResultsChangeDelete:
 			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 							  withRowAnimation:UITableViewRowAnimationFade];
+			if ([anObject isEqual:self.entriesViewController.list]) {
+				self.entriesViewController.list = nil;
+			}
+			
 			break;
 		case NSFetchedResultsChangeUpdate:
 			[self configureCell:(PDListTableCell *) [self.tableView cellForRowAtIndexPath:indexPath]

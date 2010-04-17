@@ -14,6 +14,7 @@
 	IBOutlet DOListsViewController *listsViewController;
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UIBarButtonItem *editButton;
+	IBOutlet UIBarButtonItem *addButton;
 	IBOutlet UITableView *table;
 	
 	PDListEntry *selectedEntry;
@@ -26,6 +27,7 @@
 @property (nonatomic, retain) DOListsViewController *listsViewController;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *editButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) PDListEntry *selectedEntry;
 
