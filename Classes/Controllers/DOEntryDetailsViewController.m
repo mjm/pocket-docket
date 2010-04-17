@@ -8,6 +8,9 @@
 
 - (void)updateTitleBarWithTextField:(UITextField *)textField;
 
+- (UITextField *)summaryTextField;
+- (UITextView *)commentTextView;
+
 @end
 
 #pragma mark -
@@ -21,8 +24,16 @@
 	if ([textField.text length] > 0) {
 		self.navigationItem.title = textField.text;
 	} else {
-		self.navigationItem.title = @"New Entry";
+		self.navigationItem.title = isNew ? @"New Entry" : @"Edit Entry";
 	}
+}
+
+- (UITextField *)summaryTextField {
+	return (UITextField *) [self.textCell viewWithTag:1];
+}
+
+- (UITextView *)commentTextView {
+	return (UITextView *) [self.commentCell viewWithTag:1];
 }
 
 #pragma mark -
@@ -32,8 +43,23 @@
 	if (![super initWithNibName:@"DOEntryDetailsView" bundle:nil])
 		return nil;
 	
-	self.title = @"New Entry";
 	self.entry = aEntry;
+	return self;
+}
+
+- (id)initWithNewEntry:(PDListEntry *)aEntry {
+	if (![self initWithEntry:aEntry])
+		return nil;
+	
+	isNew = YES;
+	return self;
+}
+
+- (id)initWithExistingEntry:(PDListEntry *)aEntry {
+	if (![self initWithEntry:aEntry])
+		return nil;
+	
+	isNew = NO;
 	return self;
 }
 
@@ -45,11 +71,15 @@
 	
 	self.navigationItem.leftBarButtonItem = self.cancelButton;
 	self.navigationItem.rightBarButtonItem = self.saveButton;
+	
+	[[self summaryTextField] setText:self.entry.text];
+	[[self commentTextView] setText:self.entry.comment];
+	
+	[self updateTitleBarWithTextField:[self summaryTextField]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-	UITextField *textField = (UITextField *) [self.textCell viewWithTag:1];
-	[textField becomeFirstResponder];
+	[[self summaryTextField] becomeFirstResponder];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -72,11 +102,8 @@
 }
 
 - (IBAction)saveEntry {
-	UITextField *textField = (UITextField *) [self.textCell viewWithTag:1];
-	UITextView *textView = (UITextView *) [self.commentCell viewWithTag:1];
-	
-	self.entry.text = textField.text;
-	self.entry.comment = textView.text;
+	self.entry.text = [[self summaryTextField] text];
+	self.entry.comment = [[self commentTextView] text];
 	
 	[self.delegate entryDetailsController:self didSaveEntry:self.entry];
 }
@@ -124,8 +151,7 @@
 #pragma mark Text Field Delegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	UITextView *textView = (UITextView *) [self.commentCell viewWithTag:1];
-	[textView becomeFirstResponder];
+	[[self commentTextView] becomeFirstResponder];
 	
 	return NO;
 }

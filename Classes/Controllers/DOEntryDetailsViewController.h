@@ -11,6 +11,8 @@
 	
 	IBOutlet UITableViewCell *textCell;
 	IBOutlet UITableViewCell *commentCell;
+	
+	BOOL isNew;
 }
 
 @property (nonatomic, retain) PDListEntry *entry;
@@ -20,7 +22,8 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *textCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *commentCell;
 
-- (id)initWithEntry:(PDListEntry *)entry;
+- (id)initWithNewEntry:(PDListEntry *)entry;
+- (id)initWithExistingEntry:(PDListEntry *)entry;
 
 - (IBAction)cancelEntry;
 - (IBAction)saveEntry;

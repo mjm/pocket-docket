@@ -5,7 +5,7 @@
 @class PDPersistenceController;
 @class DOListsViewController;
 
-@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate> {
+@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, UIActionSheetDelegate> {
 	PDList *list;
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
@@ -15,6 +15,8 @@
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UIBarButtonItem *editButton;
 	IBOutlet UITableView *table;
+	
+	PDListEntry *selectedEntry;
 }
 
 @property (nonatomic, retain) PDList *list;
@@ -25,6 +27,7 @@
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *editButton;
 @property (nonatomic, retain) IBOutlet UITableView *table;
+@property (nonatomic, retain) PDListEntry *selectedEntry;
 
 - (IBAction)editList;
 - (IBAction)addEntry;

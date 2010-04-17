@@ -19,7 +19,7 @@
 
 @implementation DOEntriesViewController
 
-@synthesize list, persistenceController, fetchedResultsController;
+@synthesize list, persistenceController, fetchedResultsController, selectedEntry;
 @synthesize popoverController, listsViewController, toolbar, editButton, table;
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
@@ -50,6 +50,7 @@
 	[swipeRecognizer release];
 	
 	UILongPressGestureRecognizer *holdRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tapAndHoldDetected:)];
+	holdRecognizer.minimumPressDuration = 0.7;
 	[self.table addGestureRecognizer:holdRecognizer];
 	[holdRecognizer release];
 }
@@ -112,7 +113,7 @@
 	[self.persistenceController.undoManager beginUndoGrouping];
 	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
 	
-	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithEntry:entry];
+	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithNewEntry:entry];
 	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -174,8 +175,23 @@
 }
 
 - (void)tapAndHoldDetected:(UILongPressGestureRecognizer *)gestureRecognizer {
-	if (gestureRecognizer.state == UIGestureRecognizerStateRecognized) {
-		NSLog(@"Hold detected");
+	if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+		
+		CGPoint point = [gestureRecognizer locationInView:self.table];
+		NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:point];
+		if (indexPath) {
+			self.selectedEntry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+			CGRect rowRect = [self.table rectForRowAtIndexPath:indexPath];
+			
+			UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+															   delegate:self
+													  cancelButtonTitle:nil
+												 destructiveButtonTitle:nil
+													  otherButtonTitles:@"Edit Entry", @"Delete Entry", nil];
+			[sheet showFromRect:CGRectMake(point.x - 22.0f, rowRect.origin.y, 44.0f, rowRect.size.height)
+						 inView:self.table
+					   animated:YES];			
+		}
 	}
 }
 
@@ -312,6 +328,26 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
 	self.popoverController = nil;
+}
+
+#pragma mark -
+#pragma mark Action Sheet Delegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex == 0) {
+		[self.persistenceController.undoManager beginUndoGrouping];
+		DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:self.selectedEntry];
+		controller.delegate = self;
+		
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+		navController.modalPresentationStyle = UIModalPresentationFormSheet;
+		[controller release];
+		
+		[self presentModalViewController:navController animated:YES];
+		[navController release];
+	} else if (buttonIndex == 1) {
+		NSLog(@"Delete");
+	}
 }
 
 #pragma mark -
