@@ -113,15 +113,9 @@
 	[self.persistenceController.undoManager beginUndoGrouping];
 	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
 	
-	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithNewEntry:entry];
-	controller.delegate = self;
-	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-	navController.modalPresentationStyle = UIModalPresentationFormSheet;
+	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithNewEntry:entry delegate:self];
+	[controller presentModalToViewController:self];
 	[controller release];
-	
-	[self presentModalViewController:navController animated:YES];
-	[navController release];
 }
 
 #pragma mark -
@@ -336,15 +330,12 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == 0) {
 		[self.persistenceController.undoManager beginUndoGrouping];
-		DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:self.selectedEntry];
-		controller.delegate = self;
 		
-		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-		navController.modalPresentationStyle = UIModalPresentationFormSheet;
+		DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:self.selectedEntry
+																									  delegate:self];
+		
+		[controller presentModalToViewController:self];
 		[controller release];
-		
-		[self presentModalViewController:navController animated:YES];
-		[navController release];
 	} else if (buttonIndex == 1) {
 		NSLog(@"Delete");
 	}

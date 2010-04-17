@@ -39,24 +39,25 @@
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithEntry:(PDListEntry *)aEntry {
+- (id)initWithEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate {
 	if (![super initWithNibName:@"DOEntryDetailsView" bundle:nil])
 		return nil;
 	
 	self.entry = aEntry;
+	self.delegate = aDelegate;
 	return self;
 }
 
-- (id)initWithNewEntry:(PDListEntry *)aEntry {
-	if (![self initWithEntry:aEntry])
+- (id)initWithNewEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate {
+	if (![self initWithEntry:aEntry delegate:aDelegate])
 		return nil;
 	
 	isNew = YES;
 	return self;
 }
 
-- (id)initWithExistingEntry:(PDListEntry *)aEntry {
-	if (![self initWithEntry:aEntry])
+- (id)initWithExistingEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate {
+	if (![self initWithEntry:aEntry delegate:aDelegate])
 		return nil;
 	
 	isNew = NO;
@@ -166,6 +167,17 @@
 	[self performSelector:@selector(updateTitleBarWithTextField:) withObject:textField afterDelay:0.5];
 	
 	return YES;
+}
+
+#pragma mark -
+#pragma mark Presenting a View Controller
+
+- (void)presentModalToViewController:(UIViewController *)controller {
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
+	navController.modalPresentationStyle = UIModalPresentationFormSheet;
+	
+	[controller presentModalViewController:navController animated:YES];
+	[navController release];
 }
 
 #pragma mark -

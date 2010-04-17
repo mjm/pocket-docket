@@ -22,11 +22,13 @@
 @property (nonatomic, retain) IBOutlet UITableViewCell *textCell;
 @property (nonatomic, retain) IBOutlet UITableViewCell *commentCell;
 
-- (id)initWithNewEntry:(PDListEntry *)entry;
-- (id)initWithExistingEntry:(PDListEntry *)entry;
+- (id)initWithNewEntry:(PDListEntry *)entry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate;
+- (id)initWithExistingEntry:(PDListEntry *)entry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate;
 
 - (IBAction)cancelEntry;
 - (IBAction)saveEntry;
+
+- (void)presentModalToViewController:(UIViewController *)controller;
 
 @end
 

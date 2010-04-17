@@ -326,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DOEntryDetailsViewController.m</string>
+								<string>DOEntriesViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DOEntryDetailsViewController.m</string>
+										<string>DOEntriesViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C92953CC117A32870052A674</string>
+										<string>C92953D3117A3C960052A674</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -386,9 +386,9 @@
 											<string>C9295351117964BE0052A674</string>
 											<string>C929535F117966370052A674</string>
 											<string>C92953B4117A27980052A674</string>
-											<string>C92953C1117A2EE90052A674</string>
-											<string>C92953C2117A2EE90052A674</string>
-											<string>C92953C8117A32780052A674</string>
+											<string>C92953D0117A3C960052A674</string>
+											<string>C92953D1117A3C960052A674</string>
+											<string>C92953D2117A3C960052A674</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -705,7 +705,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C92953CD117A32870052A674</string>
+		<string>C92953D4117A3C960052A674</string>
 		<string>C92952A4117952FA0052A674</string>
 		<string>C92952A5117952FA0052A674</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
