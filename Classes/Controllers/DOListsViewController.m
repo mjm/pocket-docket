@@ -54,6 +54,17 @@
 	self.popoverController = nil;
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+	
+	if (!editing && self.entriesViewController.list) {
+		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
+		if (indexPath) {
+			[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+		}
+	}
+}
+
 #pragma mark -
 #pragma mark Managing Persistence
 

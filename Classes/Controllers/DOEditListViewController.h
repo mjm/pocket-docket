@@ -4,7 +4,7 @@
 @protocol DOEditListViewControllerDelegate;
 
 //! A view controller that allows the user to edit the title of a list.
-@interface DOEditListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface DOEditListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
 	//! \name Properties
 	//@{
 	

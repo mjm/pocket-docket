@@ -55,6 +55,8 @@
 	[items insertObject:[self editButtonItem] atIndex:0];
 	[toolbar setItems:items animated:NO];
 	
+	[[self editButtonItem] setEnabled:NO];
+	
 	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
 	swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
 	[self.table addGestureRecognizer:swipeRecognizer];
@@ -103,9 +105,11 @@
 			
 			self.editButton.enabled = YES;
 			self.addButton.enabled = YES;
+			[[self editButtonItem] setEnabled:YES];
 		} else {
 			self.editButton.enabled = NO;
 			self.addButton.enabled = NO;
+			[[self editButtonItem] setEnabled:NO];
 		}
 	}
 }
