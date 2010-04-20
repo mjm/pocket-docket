@@ -20,7 +20,7 @@
 
 @implementation DOEntriesViewController
 
-@synthesize list, persistenceController, fetchedResultsController, selectedEntry;
+@synthesize list, persistenceController, fetchedResultsController;
 @synthesize popoverController, listsViewController, toolbar, editButton, addButton, table;
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
@@ -56,10 +56,10 @@
 	[self.table addGestureRecognizer:swipeRecognizer];
 	[swipeRecognizer release];
 	
-	UILongPressGestureRecognizer *holdRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(tapAndHoldDetected:)];
-	holdRecognizer.minimumPressDuration = 0.7;
-	[self.table addGestureRecognizer:holdRecognizer];
-	[holdRecognizer release];
+	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapDetected:)];
+	tapRecognizer.numberOfTapsRequired = 2;
+	[self.table addGestureRecognizer:tapRecognizer];
+	[tapRecognizer release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -182,21 +182,19 @@
 	}
 }
 
-- (void)tapAndHoldDetected:(UILongPressGestureRecognizer *)gestureRecognizer {
-	if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-		
-		popoverPoint = [gestureRecognizer locationInView:self.table];
+- (void)doubleTapDetected:(UITapGestureRecognizer *)gestureRecognizer {
+	if (gestureRecognizer.state == UIGestureRecognizerStateRecognized) {
+		CGPoint popoverPoint = [gestureRecognizer locationInView:self.table];
 		NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:popoverPoint];
 		if (indexPath) {
-			self.selectedEntry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-			UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
-															   delegate:self
-													  cancelButtonTitle:nil
-												 destructiveButtonTitle:nil
-													  otherButtonTitles:@"Edit Entry", @"Delete Entry", nil];
-			[sheet showFromRect:[self popoverRectForEntry:self.selectedEntry centeredAtPoint:popoverPoint]
-						 inView:self.table
-					   animated:YES];
+			PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+			[self.persistenceController.undoManager beginUndoGrouping];
+			
+			DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:entry
+																										  delegate:self];
+			
+			[controller presentModalToViewController:self];
+			[controller release];
 		}
 	}
 }
@@ -305,14 +303,16 @@
 #pragma mark -
 #pragma mark Entry Details Delegate Methods
 
-- (void)entryDetailsController:(DOEntryDetailsViewController *)controller didSaveEntry:(PDListEntry *)entry {
+- (void)entryDetailsController:(DOEntryDetailsViewController *)controller
+				  didSaveEntry:(PDListEntry *)entry {
 	[self.persistenceController.undoManager endUndoGrouping];
 	[self.persistenceController save];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
 
-- (void)entryDetailsController:(DOEntryDetailsViewController *)controller didCancelEntry:(PDListEntry *)entry {
+- (void)entryDetailsController:(DOEntryDetailsViewController *)controller
+				didCancelEntry:(PDListEntry *)entry {
 	[self.persistenceController.undoManager endUndoGrouping];
 	[self.persistenceController.undoManager undo];
 	
@@ -334,37 +334,6 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
 	self.popoverController = nil;
-}
-
-#pragma mark -
-#pragma mark Action Sheet Delegate Methods
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-	if ([actionSheet destructiveButtonIndex] == -1) {
-		if (buttonIndex == 0) {
-			[self.persistenceController.undoManager beginUndoGrouping];
-			
-			DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:self.selectedEntry
-																										  delegate:self];
-			
-			[controller presentModalToViewController:self];
-			[controller release];
-		} else if (buttonIndex == 1) {
-			UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Delete Entry"
-															   delegate:self
-													  cancelButtonTitle:@"Cancel"
-												 destructiveButtonTitle:@"Delete Entry"
-													  otherButtonTitles:nil];
-			[sheet showFromRect:[self popoverRectForEntry:self.selectedEntry centeredAtPoint:popoverPoint]
-						 inView:self.table
-					   animated:YES];
-		}
-	} else {
-		if (buttonIndex == [actionSheet destructiveButtonIndex]) {
-			[self.persistenceController deleteEntry:self.selectedEntry];
-			self.selectedEntry = nil;
-		}
-	}
 }
 
 #pragma mark -

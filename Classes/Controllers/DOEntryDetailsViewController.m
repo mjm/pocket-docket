@@ -1,5 +1,6 @@
 #import "DOEntryDetailsViewController.h"
 
+#import "../PDKeyboardObserver.h"
 #import "../Models/PDListEntry.h"
 
 #pragma mark Private Methods
@@ -8,17 +9,14 @@
 
 - (void)updateTitleBarWithTextField:(UITextField *)textField;
 
-- (UITextField *)summaryTextField;
-- (UITextView *)commentTextView;
-
 @end
 
 #pragma mark -
 
 @implementation DOEntryDetailsViewController
 
-@synthesize entry, delegate;
-@synthesize cancelButton, saveButton, textCell, commentCell;
+@synthesize entry, delegate, keyboardObserver;
+@synthesize cancelButton, saveButton, summaryTextField, commentTextView;
 
 - (void)updateTitleBarWithTextField:(UITextField *)textField {
 	if ([textField.text length] > 0) {
@@ -26,14 +24,6 @@
 	} else {
 		self.navigationItem.title = isNew ? @"New Entry" : @"Edit Entry";
 	}
-}
-
-- (UITextField *)summaryTextField {
-	return (UITextField *) [self.textCell viewWithTag:1];
-}
-
-- (UITextView *)commentTextView {
-	return (UITextView *) [self.commentCell viewWithTag:1];
 }
 
 #pragma mark -
@@ -70,17 +60,32 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	
 	self.navigationItem.leftBarButtonItem = self.cancelButton;
 	self.navigationItem.rightBarButtonItem = self.saveButton;
 	
-	[[self summaryTextField] setText:self.entry.text];
-	[[self commentTextView] setText:self.entry.comment];
+	self.summaryTextField.text = self.entry.text;
+	self.commentTextView.text = self.entry.comment;
 	
-	[self updateTitleBarWithTextField:[self summaryTextField]];
+	[self updateTitleBarWithTextField:self.summaryTextField];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	[self.keyboardObserver registerNotifications];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	
+	[self.keyboardObserver unregisterNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-	[[self summaryTextField] becomeFirstResponder];
+	[super viewDidAppear:animated];
+	[self.summaryTextField becomeFirstResponder];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -91,8 +96,9 @@
 	[super viewDidUnload];
 	self.cancelButton = nil;
 	self.saveButton = nil;
-	self.textCell = nil;
-	self.commentCell = nil;
+	self.summaryTextField = nil;
+	self.commentTextView = nil;
+	self.keyboardObserver = nil;
 }
 
 #pragma mark -
@@ -103,56 +109,17 @@
 }
 
 - (IBAction)saveEntry {
-	self.entry.text = [[self summaryTextField] text];
-	self.entry.comment = [[self commentTextView] text];
+	self.entry.text = self.summaryTextField.text;
+	self.entry.comment = self.commentTextView.text;
 	
 	[self.delegate entryDetailsController:self didSaveEntry:self.entry];
-}
-
-#pragma mark -
-#pragma mark Table View Data Source Methods
-
-- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	return 2;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell;
-	
-	static NSString *TextCell = @"TextCell";
-	static NSString *CommentCell = @"CommentCell";
-	
-	if (indexPath.row == 0) {
-		cell = [tableView dequeueReusableCellWithIdentifier:TextCell];
-		if (!cell) {
-			cell = self.textCell;
-		}
-	} else {
-		cell = [tableView dequeueReusableCellWithIdentifier:CommentCell];
-		if (!cell) {
-			cell = self.commentCell;
-		}
-	}
-	
-	return cell;
-}
-
-#pragma mark -
-#pragma mark Table View Delegate Methods
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 1) {
-		// TODO calculate this better.
-		return 80.0f;
-	}
-	return 44.0f;
 }
 
 #pragma mark -
 #pragma mark Text Field Delegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	[[self commentTextView] becomeFirstResponder];
+	[self.commentTextView becomeFirstResponder];
 	
 	return NO;
 }
@@ -174,7 +141,7 @@
 
 - (void)presentModalToViewController:(UIViewController *)controller {
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self];
-	navController.modalPresentationStyle = UIModalPresentationFormSheet;
+	navController.modalPresentationStyle = UIModalPresentationPageSheet;
 	
 	[controller presentModalViewController:navController animated:YES];
 	[navController release];
@@ -188,6 +155,8 @@
 	self.delegate = nil;
 	self.cancelButton = nil;
 	self.saveButton = nil;
+	self.summaryTextField = nil;
+	self.commentTextView = nil;
 	[super dealloc];
 }
 

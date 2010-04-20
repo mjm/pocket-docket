@@ -70,7 +70,6 @@
 		[UIView setAnimationDuration:duration];
 		
 		self.viewController.view.frame = frame;
-		
 		[UIView commitAnimations];
 		
 		[self.delegate keyboardObserverWillShowKeyboard:self];
