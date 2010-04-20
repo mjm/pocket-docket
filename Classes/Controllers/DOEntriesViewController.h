@@ -16,6 +16,8 @@
 	IBOutlet UIBarButtonItem *editButton;
 	IBOutlet UIBarButtonItem *addButton;
 	IBOutlet UITableView *table;
+	
+	BOOL userIsMoving;
 }
 
 @property (nonatomic, retain) PDList *list;

@@ -51,6 +51,10 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	NSMutableArray *items = [[toolbar items] mutableCopy];
+	[items insertObject:[self editButtonItem] atIndex:0];
+	[toolbar setItems:items animated:NO];
+	
 	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
 	swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
 	[self.table addGestureRecognizer:swipeRecognizer];
@@ -74,6 +78,11 @@
 	self.editButton = nil;
 	self.addButton = nil;
 	self.table = nil;
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+	[self.table setEditing:editing animated:animated];
 }
 
 #pragma mark -
@@ -158,6 +167,29 @@
 	return cell;
 }
 
+- (void) tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
+ forRowAtIndexPath:(NSIndexPath *)indexPath {
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self.persistenceController deleteEntry:entry];
+	[self.persistenceController save];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+	return YES;
+}
+
+- (void) tableView:(UITableView *)tableView
+moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+	   toIndexPath:(NSIndexPath *)destinationIndexPath {
+	userIsMoving = YES;
+	
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
+	[self.persistenceController moveEntry:entry fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	
+	userIsMoving = NO;
+}
+
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
@@ -219,15 +251,15 @@
 #pragma mark Fetched Results Controller Delegate Methods
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-//	if (userIsMoving)
-//		return;
+	if (userIsMoving)
+		return;
 	
 	[self.table beginUpdates];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-//	if (userIsMoving)
-//		return;
+	if (userIsMoving)
+		return;
 	
 	[self.table endUpdates];
 }
@@ -252,12 +284,12 @@
 					   withEntry:anObject];
 			break;
 		case NSFetchedResultsChangeMove:
-//			if (!userIsMoving) {
+			if (!userIsMoving) {
 				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 									  withRowAnimation:UITableViewRowAnimationFade];
 				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
 									  withRowAnimation:UITableViewRowAnimationFade];
-//			}
+			}
 			break;
 	}
 }
