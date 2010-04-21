@@ -14,10 +14,10 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
-		C929530011795D7B0052A674 /* PDEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */; };
-		C929530F11795D9E0052A674 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
 		C9295433117A97560052A674 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9295432117A97560052A674 /* NSString+Additions.m */; };
 		C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
+		C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */; };
+		C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */; };
 		C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */; };
 		C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */; };
 		C94C55F51154450100791FAC /* MainWindowPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C55F41154450100791FAC /* MainWindowPhone.xib */; };
@@ -90,6 +90,9 @@
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
 		C9295431117A97560052A674 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Additions.h"; path = "Categories/NSString+Additions.h"; sourceTree = "<group>"; };
 		C9295432117A97560052A674 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Additions.m"; path = "Categories/NSString+Additions.m"; sourceTree = "<group>"; };
+		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
+		C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryTableCell.m; path = Views/DOEntryTableCell.m; sourceTree = "<group>"; };
+		C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryTableCell.xib; sourceTree = "<group>"; };
 		C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryDetailsViewController.h; path = Controllers/DOEntryDetailsViewController.h; sourceTree = "<group>"; };
 		C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryDetailsViewController.m; path = Controllers/DOEntryDetailsViewController.m; sourceTree = "<group>"; };
 		C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryDetailsView.xib; sourceTree = "<group>"; };
@@ -274,6 +277,7 @@
 				C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */,
 				C9BD13B61173FCFB005E350E /* DOEditListView.xib */,
 				C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */,
+				C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -316,6 +320,8 @@
 				C915E64E1166F0F0004A9597 /* PDTextViewCell.m */,
 				C9EB3522117015B40092DE45 /* PDListProgressView.h */,
 				C9EB3523117015B40092DE45 /* PDListProgressView.m */,
+				C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */,
+				C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -425,7 +431,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C929530F11795D9E0052A674 /* PDEntryTableCell.xib in Resources */,
 				C9BD142C11753F15005E350E /* CheckBox.png in Resources */,
 				C9BD142D11753F15005E350E /* CheckBoxChecked.png in Resources */,
 				C9BD142E11753F15005E350E /* ListIcon.png in Resources */,
@@ -436,6 +441,7 @@
 				C9BD13B71173FCFB005E350E /* DOEditListView.xib in Resources */,
 				C9BD1479117554A0005E350E /* pencilangled.png in Resources */,
 				C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */,
+				C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +477,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */,
-				C929530011795D7B0052A674 /* PDEntryTableCell.m in Sources */,
 				C9BD12C11173E6B3005E350E /* PDListTableCell.m in Sources */,
 				C9BD11F31172B103005E350E /* main.m in Sources */,
 				C9BD11041172AE24005E350E /* PDList.m in Sources */,
@@ -486,6 +491,7 @@
 				C9BD141A11753E7B005E350E /* PDListProgressView.m in Sources */,
 				C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */,
 				C9295433117A97560052A674 /* NSString+Additions.m in Sources */,
+				C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

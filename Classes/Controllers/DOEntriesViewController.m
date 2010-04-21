@@ -6,14 +6,15 @@
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
-#import "../Views/PDEntryTableCell.h"
+#import "../Views/DOEntryTableCell.h"
+#import "../Categories/NSString+Additions.h"
 
 #pragma mark -
 #pragma mark Private Methods
 
 @interface DOEntriesViewController ()
 
-- (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry;
+- (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry;
 - (CGRect)popoverRectForEntry:(PDListEntry *)entry centeredAtPoint:(CGPoint)point;
 
 @end
@@ -23,17 +24,18 @@
 @synthesize list, persistenceController, fetchedResultsController;
 @synthesize popoverController, listsViewController, toolbar, editButton, addButton, table;
 
-- (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
+- (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry {
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
 	 [UIImage imageNamed:@"CheckBoxChecked.png"] :
 	 [UIImage imageNamed:@"CheckBox.png"]
 						 forState:UIControlStateNormal];
 	cell.textLabel.text = entry.text;
+	cell.commentLabel.text = entry.comment;
 	
 	if ([entry.checked boolValue]) {
-		cell.textLabel.textColor = [UIColor lightGrayColor];
+		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
 	} else {
-		cell.textLabel.textColor = [UIColor blackColor];
+		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
 	}
 	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
 	cell.accessoryType = UITableViewCellAccessoryNone;
@@ -157,9 +159,9 @@
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *Cell = @"EntryCell";
 	
-	PDEntryTableCell *cell = (PDEntryTableCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+	DOEntryTableCell *cell = (DOEntryTableCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
 	if (!cell) {
-		cell = [PDEntryTableCell entryTableCell];
+		cell = [DOEntryTableCell entryTableCell];
 		[cell.checkboxButton addTarget:self
 								action:@selector(checkedBox:forEvent:)
 					  forControlEvents:UIControlEventTouchUpInside];
@@ -199,6 +201,19 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	NSString *text = entry.comment;
+	
+	if (!text || [text length] == 0) {
+		return 44.0f;
+	} else {
+		CGFloat height = [text heightWithFont:[UIFont systemFontOfSize:17.0]
+						   constrainedToWidth:self.table.frame.size.width - ENTRY_CELL_OFFSET];
+		return 50.0f + height;
+	}
 }
 
 #pragma mark -
@@ -284,7 +299,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 								  withRowAnimation:UITableViewRowAnimationFade];
 			break;
 		case NSFetchedResultsChangeUpdate:
-			[self configureCell:(PDEntryTableCell *) [self.table cellForRowAtIndexPath:indexPath]
+			[self configureCell:(DOEntryTableCell *) [self.table cellForRowAtIndexPath:indexPath]
 					   withEntry:anObject];
 			break;
 		case NSFetchedResultsChangeMove:
