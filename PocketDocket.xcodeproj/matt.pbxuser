@@ -210,6 +210,7 @@
 			C92A1271117E90AC00D43C65 /* PBXTextBookmark */ = C92A1271117E90AC00D43C65 /* PBXTextBookmark */;
 			C92A1272117E90AD00D43C65 /* PBXTextBookmark */ = C92A1272117E90AD00D43C65 /* PBXTextBookmark */;
 			C92A1275117E915D00D43C65 /* PBXTextBookmark */ = C92A1275117E915D00D43C65 /* PBXTextBookmark */;
+			C92A1276117FB11700D43C65 /* PBXTextBookmark */ = C92A1276117FB11700D43C65 /* PBXTextBookmark */;
 			C94C573E1156EAF200791FAC = C94C573E1156EAF200791FAC /* PBXTextBookmark */;
 			C94C59741158528F00791FAC = C94C59741158528F00791FAC /* PBXTextBookmark */;
 			C94C5A861159A8EB00791FAC = C94C5A861159A8EB00791FAC /* PBXTextBookmark */;
@@ -414,8 +415,8 @@
 	};
 	C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1026, 840}}";
-			sepNavSelRange = "{651, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1026, 820}}";
+			sepNavSelRange = "{624, 0}";
 			sepNavVisRange = "{0, 832}";
 		};
 	};
@@ -464,7 +465,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 13";
 		rLen = 0;
-		rLoc = 727;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 0;
@@ -554,7 +555,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 13";
 		rLen = 0;
-		rLoc = 727;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 0;
@@ -564,7 +565,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 13";
 		rLen = 0;
-		rLoc = 727;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 536;
 		vrLoc = 0;
@@ -594,7 +595,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 15";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 696;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 0;
@@ -604,7 +605,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 15";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 696;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 0;
@@ -614,7 +615,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 15";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 696;
 		rType = 0;
 		vrLen = 254;
 		vrLoc = 258;
@@ -624,7 +625,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 15";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 696;
 		rType = 0;
 		vrLen = 633;
 		vrLoc = 0;
@@ -694,7 +695,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 18";
 		rLen = 0;
-		rLoc = 723;
+		rLoc = 696;
 		rType = 0;
 		vrLen = 811;
 		vrLoc = 0;
@@ -714,7 +715,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 20";
 		rLen = 0;
-		rLoc = 698;
+		rLoc = 671;
 		rType = 0;
 		vrLen = 912;
 		vrLoc = 0;
@@ -814,7 +815,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 692;
+		rLoc = 665;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -824,7 +825,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 692;
+		rLoc = 665;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -834,7 +835,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 692;
+		rLoc = 665;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -844,7 +845,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 692;
+		rLoc = 665;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -884,7 +885,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 692;
+		rLoc = 665;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -894,7 +895,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 692;
+		rLoc = 665;
 		rType = 0;
 		vrLen = 941;
 		vrLoc = 0;
@@ -904,7 +905,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 696;
+		rLoc = 669;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -914,7 +915,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 696;
+		rLoc = 669;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -964,7 +965,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 696;
+		rLoc = 669;
 		rType = 0;
 		vrLen = 923;
 		vrLoc = 0;
@@ -974,7 +975,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 24";
 		rLen = 194;
-		rLoc = 727;
+		rLoc = 700;
 		rType = 0;
 		vrLen = 931;
 		vrLoc = 0;
@@ -984,7 +985,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 27";
 		rLen = 0;
-		rLoc = 919;
+		rLoc = 892;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 0;
@@ -994,7 +995,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 624;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 0;
@@ -1004,7 +1005,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 624;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 0;
@@ -1014,7 +1015,7 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 21";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 624;
 		rType = 0;
 		vrLen = 938;
 		vrLoc = 0;
@@ -1024,7 +1025,17 @@
 		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
 		name = "DOEntryTableCell.m: 24";
 		rLen = 0;
-		rLoc = 651;
+		rLoc = 624;
+		rType = 0;
+		vrLen = 832;
+		vrLoc = 0;
+	};
+	C92A1276117FB11700D43C65 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */;
+		name = "DOEntryTableCell.m: 23";
+		rLen = 0;
+		rLoc = 624;
 		rType = 0;
 		vrLen = 832;
 		vrLoc = 0;
