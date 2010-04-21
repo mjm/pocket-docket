@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -214,6 +214,7 @@
 				<string>action</string>
 				<string>NSToolbarFlexibleSpaceItem</string>
 				<string>debugger-enable-breakpoints</string>
+				<string>buildOrClean</string>
 				<string>build-and-go</string>
 				<string>com.apple.ide.PBXToolbarStopButton</string>
 				<string>get-info</string>
@@ -287,10 +288,10 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>120</integer>
-									<integer>102</integer>
-									<integer>89</integer>
-									<integer>87</integer>
+									<integer>29</integer>
+									<integer>23</integer>
+									<integer>1</integer>
+									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
@@ -310,6 +311,8 @@
 							<string>MainColumn</string>
 							<real>242</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>3 219 1351 839 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -320,12 +323,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DOEntryTableCell.m</string>
+								<string>PDEntriesViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -333,11 +338,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DOEntryTableCell.m</string>
+										<string>PDEntriesViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C92A1276117FB11700D43C65</string>
+										<string>C92A1288117FB3EC00D43C65</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -379,7 +384,6 @@
 											<string>C9CC8EED117D39E200F2B6F0</string>
 											<string>C9CC8EEE117D39E200F2B6F0</string>
 											<string>C9CC8F00117D3F7900F2B6F0</string>
-											<string>C9CC8F08117D4A8900F2B6F0</string>
 											<string>C9CC8F09117D4A8900F2B6F0</string>
 											<string>C9CC8F27117D52BD00F2B6F0</string>
 											<string>C9CC8F28117D52BD00F2B6F0</string>
@@ -391,7 +395,8 @@
 											<string>C92A122D117E8AB800D43C65</string>
 											<string>C92A1256117E8F5B00D43C65</string>
 											<string>C92A1266117E8FE500D43C65</string>
-											<string>C92A1267117E8FE500D43C65</string>
+											<string>C92A1286117FB3EC00D43C65</string>
+											<string>C92A1287117FB3EC00D43C65</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -406,6 +411,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1087, 665}}</string>
+								<key>RubberWindowFrame</key>
+								<string>3 219 1351 839 0 0 1920 1058 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -429,6 +436,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1087, 101}}</string>
+										<key>RubberWindowFrame</key>
+										<string>3 219 1351 839 0 0 1920 1058 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -566,8 +575,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1351, 342}}</string>
-						<key>RubberWindowFrame</key>
-						<string>3 219 1351 839 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -642,11 +649,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{654, 0}, {697, 190}}</string>
-							<key>RubberWindowFrame</key>
-							<string>3 219 1351 839 0 0 1920 1058 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>3 219 1351 839 0 0 1920 1058 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -710,6 +713,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C92A1289117FB3EC00D43C65</string>
 		<string>C92A11F8117E7F6000D43C65</string>
 		<string>C92A11F9117E7F6000D43C65</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>

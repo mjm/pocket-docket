@@ -277,6 +277,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[self addListEntry];
+	[textField resignFirstResponder];
 	
 	return NO;
 }
@@ -291,7 +292,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		[self.persistenceController createEntry:text inList:self.list];
 		self.newEntryField.text = @"";
 		
-		[self.newEntryField resignFirstResponder];
+		[self scrollToBottom];
 	}
 }
 
