@@ -90,9 +90,10 @@
 	
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
-	if ([UISwipeGestureRecognizer class] != nil) {
+	float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+	if (version >= 3.2) {
 		id gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-																						   action:@selector(swipeDetected:)];
+																		 action:@selector(swipeDetected:)];
 		[gestureRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight];
 		[self.table addGestureRecognizer:gestureRecognizer];
 	}
