@@ -71,6 +71,7 @@
 		C9BD142E11753F15005E350E /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
 		C9BD142F11753F15005E350E /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 		C9BD1479117554A0005E350E /* pencilangled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9BD1478117554A0005E350E /* pencilangled.png */; };
+		C9D963EA1181199000E08A48 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D963E91181199000E08A48 /* Icon.png */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 /* End PBXBuildFile section */
@@ -93,6 +94,7 @@
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
 		C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryTableCell.m; path = Views/DOEntryTableCell.m; sourceTree = "<group>"; };
 		C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryTableCell.xib; sourceTree = "<group>"; };
+		C92E4A5D1181159B00DF646A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryDetailsViewController.h; path = Controllers/DOEntryDetailsViewController.h; sourceTree = "<group>"; };
 		C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryDetailsViewController.m; path = Controllers/DOEntryDetailsViewController.m; sourceTree = "<group>"; };
 		C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryDetailsView.xib; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		C9BD13531173F772005E350E /* DOEditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEditListViewController.m; path = Controllers/DOEditListViewController.m; sourceTree = "<group>"; };
 		C9BD13B61173FCFB005E350E /* DOEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEditListView.xib; sourceTree = "<group>"; };
 		C9BD1478117554A0005E350E /* pencilangled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilangled.png; sourceTree = "<group>"; };
+		C9D963E91181199000E08A48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
@@ -238,6 +241,7 @@
 				C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */,
 				8D1107310486CEB800E47090 /* PocketDocket-Info.plist */,
 				C9BD10FC1172AD83005E350E /* Docket-Info.plist */,
+				C92E4A5D1181159B00DF646A /* Entitlements.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -329,6 +333,7 @@
 		C94C56991156B1A900791FAC /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C9D963E91181199000E08A48 /* Icon.png */,
 				C9748D0F116ADE7800D2B372 /* Default.png */,
 				C94C5B65115C332400791FAC /* CheckBox.png */,
 				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
@@ -442,6 +447,7 @@
 				C9BD1479117554A0005E350E /* pencilangled.png in Resources */,
 				C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */,
 				C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */,
+				C9D963EA1181199000E08A48 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,10 +568,71 @@
 			};
 			name = Release;
 		};
+		C92E4A55118114F900DF646A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.1.3;
+			};
+			name = AdHoc;
+		};
+		C92E4A56118114F900DF646A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"/Volumes/Skiiing2/CD/ViewBased/Unknown Path/System/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PocketDocket_Prefix.pch;
+				INFOPLIST_FILE = "PocketDocket-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.1.2;
+				PRODUCT_NAME = PocketDocket;
+				SDKROOT = iphoneos4.0;
+			};
+			name = AdHoc;
+		};
+		C92E4A57118114F900DF646A /* AdHoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Code/PocketDocket/Entitlements.plist";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Matt Moriarity";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PocketDocket_Prefix.pch;
+				INFOPLIST_FILE = "Docket-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
+				OTHER_LDFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = Docket;
+				PROVISIONING_PROFILE = "7A62949D-D26C-4A5F-9431-BA6261970F91";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = armv7;
+				ZERO_LINK = NO;
+			};
+			name = AdHoc;
+		};
 		C9BD10FD1172AD84005E350E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Code/PocketDocket/Entitlements.plist";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -588,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = "~/Code/PocketDocket/Entitlements.plist";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -615,6 +683,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				C92E4A56118114F900DF646A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -624,6 +693,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				C92E4A55118114F900DF646A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -633,6 +703,7 @@
 			buildConfigurations = (
 				C9BD10FD1172AD84005E350E /* Debug */,
 				C9BD10FE1172AD84005E350E /* Release */,
+				C92E4A57118114F900DF646A /* AdHoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
