@@ -19,7 +19,9 @@
 @implementation DOEntriesViewController
 
 @synthesize list, persistenceController, fetchedResultsController;
-@synthesize popoverController, listsViewController, toolbar, editButton, addButton, table;
+@synthesize popoverController;
+@synthesize listsViewController, toolbar, editButton, addButton, table;
+@synthesize tapGestureRecognizer;
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry {
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
@@ -62,10 +64,9 @@
 	[self.table addGestureRecognizer:swipeRecognizer];
 	[swipeRecognizer release];
 	
-	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapDetected:)];
-	tapRecognizer.numberOfTapsRequired = 2;
-	[self.table addGestureRecognizer:tapRecognizer];
-	[tapRecognizer release];
+	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapDetected:)];
+	tapGestureRecognizer.numberOfTapsRequired = 2;
+	[self.table addGestureRecognizer:tapGestureRecognizer];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -80,11 +81,13 @@
 	self.editButton = nil;
 	self.addButton = nil;
 	self.table = nil;
+	self.tapGestureRecognizer = nil;
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 	[self.table setEditing:editing animated:animated];
+	self.tapGestureRecognizer.numberOfTapsRequired = editing ? 1 : 2;
 }
 
 #pragma mark -
@@ -410,6 +413,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.editButton = nil;
 	self.addButton = nil;
 	self.table = nil;
+	self.tapGestureRecognizer = nil;
 	[super dealloc];
 }
 
