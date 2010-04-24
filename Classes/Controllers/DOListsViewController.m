@@ -199,6 +199,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	[self.persistenceController.undoManager endUndoGrouping];
 	[self.persistenceController save];
 	[self.popoverController dismissPopoverAnimated:YES];
+	
+	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
+	[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+	self.entriesViewController.list = list;
 }
 
 #pragma mark -
