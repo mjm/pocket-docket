@@ -1,3 +1,4 @@
+#import "DOListsViewController.h"
 #import "DOEditListViewController.h"
 #import "DOEntryDetailsViewController.h"
 
@@ -5,7 +6,7 @@
 @class PDPersistenceController;
 @class DOListsViewController;
 
-@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate> {
+@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate> {
 	PDList *list;
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;

@@ -34,7 +34,7 @@
 
 @implementation DOListsViewController
 
-@synthesize persistenceController, fetchedResultsController, popoverController;
+@synthesize delegate, persistenceController, fetchedResultsController, popoverController;
 @synthesize entriesViewController;
 
 #pragma mark -
@@ -184,8 +184,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	self.entriesViewController.list = list;
-	[self.persistenceController saveSelectedList:list];
+	[self.delegate listsController:self didSelectList:list];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {

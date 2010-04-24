@@ -1,8 +1,5 @@
 #import "DOEntriesViewController.h"
 
-#import "DOListsViewController.h"
-#import "DOEditListViewController.h"
-#import "DOEntryDetailsViewController.h"
 #import "../PDPersistenceController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
@@ -350,6 +347,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.listsViewController.navigationItem.rightBarButtonItem.enabled = YES;
 	
 	self.popoverController = nil;
+}
+
+#pragma mark -
+#pragma mark Lists Delegate Methods
+
+- (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)aList {
+	self.list = aList;
+	[self.persistenceController saveSelectedList:self.list];
+	
+	if (self.popoverController) {
+		[self.popoverController dismissPopoverAnimated:YES];
+	}
 }
 
 #pragma mark -
