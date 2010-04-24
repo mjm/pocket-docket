@@ -45,6 +45,15 @@
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	if (self.entriesViewController.list) {
+		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
+		[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+	}
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
 }
@@ -78,6 +87,9 @@
 		
 		NSError *error;
 		[self.fetchedResultsController performFetch:&error];
+		
+		PDList *list = [self.persistenceController loadSelectedList];
+		self.entriesViewController.list = list;
 	}
 }
 
@@ -173,6 +185,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	self.entriesViewController.list = list;
+	[self.persistenceController saveSelectedList:list];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -111,5 +111,12 @@
 - (void)save;
 
 //@}
+//! \name Saving and Restoring State
+//@{
+
+- (void)saveSelectedList:(PDList *)list;
+- (PDList *)loadSelectedList;
+
+//@}
 
 @end

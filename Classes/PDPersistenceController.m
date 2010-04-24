@@ -271,6 +271,28 @@
 }
 
 #pragma mark -
+#pragma mark Saving and Restoring State
+
+- (void)saveSelectedList:(PDList *)list {
+	NSString *idString = [[[list objectID] URIRepresentation] absoluteString];
+	NSLog(@"saving ID: %@", idString);
+	[[NSUserDefaults standardUserDefaults] setObject:idString forKey:@"DOSelectedListId"];
+}
+
+- (PDList *)loadSelectedList {
+	NSString *idString = [[NSUserDefaults standardUserDefaults] objectForKey:@"DOSelectedListId"];
+	NSLog(@"loading ID: %@", idString);
+	
+	if (idString == nil)
+		return nil;
+	
+	NSManagedObjectID *objectId = [[self.managedObjectContext persistentStoreCoordinator] managedObjectIDForURIRepresentation:[NSURL URLWithString:idString]];
+	PDList *list = (PDList *) [self.managedObjectContext objectWithID:objectId];
+	NSLog(@"loaded list: %@", list);
+	return list;
+}
+
+#pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc {

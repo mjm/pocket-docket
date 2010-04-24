@@ -56,6 +56,7 @@
 	NSMutableArray *items = [[toolbar items] mutableCopy];
 	[items insertObject:[self editButtonItem] atIndex:0];
 	[toolbar setItems:items animated:NO];
+	[items release];
 	
 	[[self editButtonItem] setEnabled:NO];
 	

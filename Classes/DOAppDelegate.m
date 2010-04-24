@@ -9,8 +9,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	PDPersistenceController *persistenceController = [[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
 	
-	listsViewController.persistenceController = persistenceController;
 	entriesViewController.persistenceController = persistenceController;
+	listsViewController.persistenceController = persistenceController;
 	
 	[window addSubview:splitViewController.view];
 	[window makeKeyAndVisible];
