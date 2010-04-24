@@ -20,7 +20,7 @@
 
 @synthesize list, persistenceController, fetchedResultsController;
 @synthesize popoverController;
-@synthesize listsViewController, toolbar, editButton, addButton, table;
+@synthesize listsViewController, toolbar, titleButton, editButton, addButton, table;
 @synthesize tapGestureRecognizer;
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry {
@@ -78,6 +78,7 @@
 	self.popoverController = nil;
 	self.listsViewController = nil;
 	self.toolbar = nil;
+	self.titleButton = nil;
 	self.editButton = nil;
 	self.addButton = nil;
 	self.table = nil;
@@ -335,6 +336,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	[toolbarItems release];
 	
 	self.listsViewController.navigationItem.rightBarButtonItem.enabled = NO;
+	self.titleButton.title = self.list.title;
 	
 	self.popoverController = pc;
 }
@@ -348,6 +350,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	[toolbarItems release];
 	
 	self.listsViewController.navigationItem.rightBarButtonItem.enabled = YES;
+	self.titleButton.title = @"";
 	
 	self.popoverController = nil;
 }
@@ -361,6 +364,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	
 	if (self.popoverController) {
 		[self.popoverController dismissPopoverAnimated:YES];
+		self.titleButton.title = self.list.title;
 	}
 }
 
@@ -410,6 +414,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.popoverController = nil;
 	self.listsViewController = nil;
 	self.toolbar = nil;
+	self.titleButton = nil;
 	self.editButton = nil;
 	self.addButton = nil;
 	self.table = nil;

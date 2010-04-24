@@ -257,6 +257,12 @@
 			C9D964AB118382BF00E08A48 /* PBXTextBookmark */ = C9D964AB118382BF00E08A48 /* PBXTextBookmark */;
 			C9D964AC118382BF00E08A48 /* PBXTextBookmark */ = C9D964AC118382BF00E08A48 /* PBXTextBookmark */;
 			C9D964AF118382EC00E08A48 /* PBXTextBookmark */ = C9D964AF118382EC00E08A48 /* PBXTextBookmark */;
+			C9D964B2118385AC00E08A48 /* PBXTextBookmark */ = C9D964B2118385AC00E08A48 /* PBXTextBookmark */;
+			C9D964B3118385AC00E08A48 /* PBXTextBookmark */ = C9D964B3118385AC00E08A48 /* PBXTextBookmark */;
+			C9D964B4118385AC00E08A48 /* PBXTextBookmark */ = C9D964B4118385AC00E08A48 /* PBXTextBookmark */;
+			C9D964B71183861F00E08A48 /* PBXTextBookmark */ = C9D964B71183861F00E08A48 /* PBXTextBookmark */;
+			C9D964BC118386F900E08A48 /* PBXTextBookmark */ = C9D964BC118386F900E08A48 /* PBXTextBookmark */;
+			C9D964BF118387EB00E08A48 /* PBXTextBookmark */ = C9D964BF118387EB00E08A48 /* PBXTextBookmark */;
 			C9DFE470117FE9D50017A21C = C9DFE470117FE9D50017A21C /* PBXTextBookmark */;
 			C9DFE4AD117FFC0E0017A21C = C9DFE4AD117FFC0E0017A21C /* PBXTextBookmark */;
 			C9EB3519116FFFB20092DE45 = C9EB3519116FFFB20092DE45 /* PBXTextBookmark */;
@@ -434,7 +440,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 38";
 		rLen = 0;
-		rLoc = 1250;
+		rLoc = 1263;
 		rType = 0;
 		vrLen = 1251;
 		vrLoc = 588;
@@ -1241,16 +1247,16 @@
 	};
 	C9BD12351172B9FB005E350E /* DOEntriesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1043, 840}}";
-			sepNavSelRange = "{1594, 0}";
-			sepNavVisRange = "{190, 1456}";
+			sepNavIntBoundsRect = "{{0, 0}, {1043, 880}}";
+			sepNavSelRange = "{1433, 0}";
+			sepNavVisRange = "{384, 1371}";
 		};
 	};
 	C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1043, 8580}}";
-			sepNavSelRange = "{13232, 0}";
-			sepNavVisRange = "{12530, 934}";
+			sepNavIntBoundsRect = "{{0, 0}, {1043, 8460}}";
+			sepNavSelRange = "{12503, 0}";
+			sepNavVisRange = "{11981, 927}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1463,7 +1469,7 @@
 		fRef = C9BD12351172B9FB005E350E /* DOEntriesViewController.h */;
 		name = "DOEntriesViewController.h: 20";
 		rLen = 0;
-		rLoc = 912;
+		rLoc = 952;
 		rType = 0;
 		vrLen = 1358;
 		vrLoc = 94;
@@ -1908,7 +1914,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 61";
 		rLen = 0;
-		rLoc = 2002;
+		rLoc = 2015;
 		rType = 0;
 		vrLen = 1299;
 		vrLoc = 1463;
@@ -1948,7 +1954,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 337";
 		rLen = 0;
-		rLoc = 11478;
+		rLoc = 11516;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 10946;
@@ -1998,7 +2004,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 337";
 		rLen = 0;
-		rLoc = 11478;
+		rLoc = 11516;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 10946;
@@ -2008,7 +2014,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 359";
 		rLen = 0;
-		rLoc = 12183;
+		rLoc = 12295;
 		rType = 0;
 		vrLen = 1032;
 		vrLoc = 11558;
@@ -2048,7 +2054,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 357";
 		rLen = 0;
-		rLoc = 12253;
+		rLoc = 12365;
 		rType = 0;
 		vrLen = 1089;
 		vrLoc = 11449;
@@ -2058,7 +2064,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 360";
 		rLen = 0;
-		rLoc = 12347;
+		rLoc = 12503;
 		rType = 0;
 		vrLen = 1105;
 		vrLoc = 11449;
@@ -2068,7 +2074,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 361";
 		rLen = 0;
-		rLoc = 12350;
+		rLoc = 12506;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 11449;
@@ -2078,7 +2084,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 354";
 		rLen = 0;
-		rLoc = 12089;
+		rLoc = 12201;
 		rType = 0;
 		vrLen = 1055;
 		vrLoc = 11449;
@@ -2088,7 +2094,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 361";
 		rLen = 0;
-		rLoc = 12350;
+		rLoc = 12506;
 		rType = 0;
 		vrLen = 1153;
 		vrLoc = 10295;
@@ -2098,7 +2104,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 315";
 		rLen = 0;
-		rLoc = 10825;
+		rLoc = 10863;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 10295;
@@ -2108,7 +2114,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 326";
 		rLen = 0;
-		rLoc = 11150;
+		rLoc = 11188;
 		rType = 0;
 		vrLen = 1154;
 		vrLoc = 10295;
@@ -2118,7 +2124,7 @@
 		fRef = C9BD12351172B9FB005E350E /* DOEntriesViewController.h */;
 		name = "DOEntriesViewController.h: 34";
 		rLen = 0;
-		rLoc = 1594;
+		rLoc = 1703;
 		rType = 0;
 		vrLen = 1456;
 		vrLoc = 190;
@@ -2128,7 +2134,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 234";
 		rLen = 17;
-		rLoc = 7932;
+		rLoc = 7970;
 		rType = 0;
 		vrLen = 1129;
 		vrLoc = 3502;
@@ -2138,7 +2144,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 84";
 		rLen = 0;
-		rLoc = 2907;
+		rLoc = 2945;
 		rType = 0;
 		vrLen = 1130;
 		vrLoc = 2009;
@@ -2148,7 +2154,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 395";
 		rLen = 0;
-		rLoc = 13232;
+		rLoc = 13388;
 		rType = 0;
 		vrLen = 934;
 		vrLoc = 12530;
@@ -2182,6 +2188,66 @@
 		rType = 0;
 		vrLen = 1338;
 		vrLoc = 5808;
+	};
+	C9D964B2118385AC00E08A48 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD122F1172B693005E350E /* DOListsViewController.m */;
+		name = "DOListsViewController.m: 205";
+		rLen = 0;
+		rLoc = 6822;
+		rType = 0;
+		vrLen = 1338;
+		vrLoc = 5808;
+	};
+	C9D964B3118385AC00E08A48 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12351172B9FB005E350E /* DOEntriesViewController.h */;
+		name = "DOEntriesViewController.h: 32";
+		rLen = 0;
+		rLoc = 1433;
+		rType = 0;
+		vrLen = 1371;
+		vrLoc = 384;
+	};
+	C9D964B4118385AC00E08A48 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 395";
+		rLen = 0;
+		rLoc = 13388;
+		rType = 0;
+		vrLen = 1046;
+		vrLoc = 12369;
+	};
+	C9D964B71183861F00E08A48 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 353";
+		rLen = 0;
+		rLoc = 12113;
+		rType = 0;
+		vrLen = 1093;
+		vrLoc = 11312;
+	};
+	C9D964BC118386F900E08A48 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 339";
+		rLen = 0;
+		rLoc = 11617;
+		rType = 0;
+		vrLen = 1146;
+		vrLoc = 11226;
+	};
+	C9D964BF118387EB00E08A48 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 367";
+		rLen = 0;
+		rLoc = 12503;
+		rType = 0;
+		vrLen = 927;
+		vrLoc = 11981;
 	};
 	C9DFE470117FE9D50017A21C /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
