@@ -11,6 +11,8 @@
 	//! The list being edited by this controller.
 	PDList *list;
 	
+	BOOL didSave;
+	
 	//@}
 	//! \name Delegation
 	//@{
@@ -61,7 +63,7 @@
 @end
 
 //! Protocol for DOEditListViewController delegates.
-@protocol DOEditListViewControllerDelegate
+@protocol DOEditListViewControllerDelegate <NSObject>
 
 //! Called when the user is done editing the list and wants to save their changes.
 /*!
@@ -70,5 +72,8 @@
  */
 - (void)editListController:(DOEditListViewController *)controller
 			 listDidChange:(PDList *)list;
+
+- (void)editListController:(DOEditListViewController *)controller
+		  listDidNotChange:(PDList *)list;
 
 @end

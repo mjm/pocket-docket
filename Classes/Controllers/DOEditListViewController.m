@@ -34,6 +34,20 @@
     return YES;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	NSLog(@"Will appear");
+	didSave = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	NSLog(@"Will disappear");
+	if (!didSave && [self.delegate respondsToSelector:@selector(editListController:listDidNotChange:)]) {
+		[self.delegate editListController:self listDidNotChange:self.list];
+	}
+}
+
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.table = nil;
@@ -45,6 +59,8 @@
 
 - (IBAction)saveList {
 	self.list.title = self.titleCell.textField.text;
+	
+	didSave = YES;
 	[self.delegate editListController:self listDidChange:self.list];
 }
 

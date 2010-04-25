@@ -113,20 +113,24 @@
 	controller.delegate = self;
 	controller.title = @"New List";
 	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-	[controller release];
-	
-	if (!self.popoverController) {
-		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+	if ([self.delegate listsControllerShouldDisplayControllerInPopover:self]) {
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+		[controller release];
+		
+		if (!self.popoverController) {
+			self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+		} else {
+			self.popoverController.contentViewController = navController;
+		}
+		[navController release];
+		
+		[self.popoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem
+									   permittedArrowDirections:UIPopoverArrowDirectionAny
+													   animated:YES];
 	} else {
-		self.popoverController.contentViewController = navController;
+		[self.navigationController pushViewController:controller animated:YES];
+		[controller release];
 	}
-	self.popoverController.delegate = self;
-	[navController release];
-	
-	[self.popoverController presentPopoverFromBarButtonItem:self.navigationItem.rightBarButtonItem
-								   permittedArrowDirections:UIPopoverArrowDirectionAny
-												   animated:YES];
 }
 
 #pragma mark -
@@ -211,14 +215,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	
 	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
 	[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-	self.entriesViewController.list = list;
+	[self.delegate listsController:self didSelectList:list];
 }
 
-#pragma mark -
-#pragma mark Popover Controller Delegate Methods
-
-// Called when the user dismisses the popover without saving.
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+- (void)editListController:(DOEditListViewController *)controller listDidNotChange:(PDList *)list {
 	[self.persistenceController.undoManager endUndoGrouping];
 	[self.persistenceController.undoManager undo];
 	[self.persistenceController save];

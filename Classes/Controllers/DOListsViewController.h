@@ -30,5 +30,6 @@
 @protocol DOListsViewControllerDelegate <NSObject>
 
 - (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)list;
+- (BOOL)listsControllerShouldDisplayControllerInPopover:(DOListsViewController *)controller;
 
 @end

@@ -349,7 +349,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	[toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
 	
-	self.listsViewController.navigationItem.rightBarButtonItem.enabled = NO;
 	self.titleButton.title = self.list.title;
 	
 	self.listsPopoverController = pc;
@@ -363,8 +362,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	[toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
 	
-	self.listsViewController.navigationItem.rightBarButtonItem.enabled = YES;
 	self.titleButton.title = @"";
+	
+	UINavigationController *controller = (UINavigationController *) aViewController;
+	[controller popToRootViewControllerAnimated:NO];
 	
 	self.listsPopoverController = nil;
 }
@@ -375,6 +376,11 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	if (self.popoverController.popoverVisible) {
 		[self.popoverController dismissPopoverAnimated:YES];
 	}
+	
+	self.listsPopoverController.popoverContentSize = CGSizeMake(320, 1100);
+	
+	UINavigationController *controller = (UINavigationController *) aViewController;
+	[controller popToRootViewControllerAnimated:NO];
 }
 
 #pragma mark -
@@ -388,6 +394,16 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		[self.listsPopoverController dismissPopoverAnimated:YES];
 		self.titleButton.title = self.list.title;
 	}
+}
+
+- (BOOL)listsControllerShouldDisplayControllerInPopover:(DOListsViewController *)controller {
+	BOOL usePopover = self.listsPopoverController == nil;
+	
+	if (!usePopover) {
+		self.listsPopoverController.popoverContentSize = CGSizeMake(320, 100);
+	}
+	
+	return usePopover;
 }
 
 #pragma mark -
