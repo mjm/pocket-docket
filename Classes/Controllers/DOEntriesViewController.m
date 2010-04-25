@@ -19,7 +19,7 @@
 @implementation DOEntriesViewController
 
 @synthesize list, persistenceController, fetchedResultsController;
-@synthesize popoverController;
+@synthesize listsPopoverController, popoverController;
 @synthesize listsViewController, toolbar, titleButton, editButton, addButton, table;
 @synthesize tapGestureRecognizer;
 
@@ -75,6 +75,7 @@
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
+	self.listsPopoverController = nil;
 	self.popoverController = nil;
 	self.listsViewController = nil;
 	self.toolbar = nil;
@@ -128,11 +129,16 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
 	
-	if (self.popoverController) {
-		[self.popoverController dismissPopoverAnimated:YES];
+	if (self.listsPopoverController.popoverVisible) {
+		[self.listsPopoverController dismissPopoverAnimated:YES];
 	}
-	self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
-	self.popoverController.delegate = self;
+	
+	if (self.popoverController) {
+		self.popoverController.contentViewController = navController;
+	} else {
+		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+		self.popoverController.delegate = self;
+	}
 	[navController release];
 	
 	[self.popoverController presentPopoverFromBarButtonItem:self.editButton
@@ -141,6 +147,14 @@
 }
 
 - (IBAction)addEntry {
+	if (self.listsPopoverController.popoverVisible) {
+		[self.listsPopoverController dismissPopoverAnimated:NO];
+	}
+	
+	if (self.popoverController.popoverVisible) {
+		[self.popoverController dismissPopoverAnimated:NO];
+	}
+	
 	[self.persistenceController.undoManager beginUndoGrouping];
 	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
 	
@@ -338,7 +352,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.listsViewController.navigationItem.rightBarButtonItem.enabled = NO;
 	self.titleButton.title = self.list.title;
 	
-	self.popoverController = pc;
+	self.listsPopoverController = pc;
 }
 
 - (void)splitViewController:(UISplitViewController *)svc
@@ -352,7 +366,15 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.listsViewController.navigationItem.rightBarButtonItem.enabled = YES;
 	self.titleButton.title = @"";
 	
-	self.popoverController = nil;
+	self.listsPopoverController = nil;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+		  popoverController:(UIPopoverController *)pc
+  willPresentViewController:(UIViewController *)aViewController {
+	if (self.popoverController.popoverVisible) {
+		[self.popoverController dismissPopoverAnimated:YES];
+	}
 }
 
 #pragma mark -
@@ -362,8 +384,8 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.list = aList;
 	[self.persistenceController saveSelectedList:self.list];
 	
-	if (self.popoverController) {
-		[self.popoverController dismissPopoverAnimated:YES];
+	if (self.listsPopoverController) {
+		[self.listsPopoverController dismissPopoverAnimated:YES];
 		self.titleButton.title = self.list.title;
 	}
 }
@@ -411,6 +433,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.list = nil;
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
+	self.listsPopoverController = nil;
 	self.popoverController = nil;
 	self.listsViewController = nil;
 	self.toolbar = nil;

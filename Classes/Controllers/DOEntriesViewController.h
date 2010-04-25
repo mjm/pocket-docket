@@ -11,7 +11,9 @@
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
 	
+	UIPopoverController *listsPopoverController;
 	UIPopoverController *popoverController;
+	
 	IBOutlet DOListsViewController *listsViewController;
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UIBarButtonItem *titleButton;
@@ -26,6 +28,7 @@
 @property (nonatomic, retain) PDList *list;
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) UIPopoverController *listsPopoverController;
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @property (nonatomic, retain) DOListsViewController *listsViewController;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
