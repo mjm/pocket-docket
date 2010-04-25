@@ -12,7 +12,6 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="24"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -89,11 +88,10 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="IBUITableViewController" id="128818010">
 							<object class="IBUITableView" key="IBUIView" id="277288909">
-								<reference key="NSNextResponder"/>
+								<nil key="NSNextResponder"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrameSize">{320, 704}</string>
-								<reference key="NSSuperview"/>
-								<object class="NSColor" key="IBUIBackgroundColor" id="834257980">
+								<string key="NSFrame">{{-160, 0}, {320, 704}}</string>
+								<object class="NSColor" key="IBUIBackgroundColor" id="19414396">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MQA</bytes>
 									<object class="NSColorSpace" key="NSCustomColorSpace">
@@ -112,7 +110,6 @@
 								<float key="IBUISectionFooterHeight">22</float>
 							</object>
 							<object class="IBUINavigationItem" key="IBUINavigationItem" id="131585390">
-								<reference key="IBUINavigationBar"/>
 								<string key="IBUITitle">Lists</string>
 								<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="634173975">
 									<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -137,7 +134,7 @@
 				</object>
 				<object class="IBUIViewController" key="IBUIDetailViewController" id="85400257">
 					<object class="IBUIView" key="IBUIView" id="587179350">
-						<reference key="NSNextResponder"/>
+						<nil key="NSNextResponder"/>
 						<int key="NSvFlags">274</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -156,16 +153,16 @@
 										<reference key="IBUIToolbar" ref="788517909"/>
 										<int key="IBUISystemItemIdentifier">5</int>
 									</object>
-									<object class="IBUIBarButtonItem" id="745828791">
+									<object class="IBUIBarButtonItem" id="395646394">
 										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 										<reference key="IBUIToolbar" ref="788517909"/>
 									</object>
-									<object class="IBUIBarButtonItem" id="83809007">
+									<object class="IBUIBarButtonItem" id="248113407">
 										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 										<reference key="IBUIToolbar" ref="788517909"/>
 										<int key="IBUISystemItemIdentifier">5</int>
 									</object>
-									<object class="IBUIBarButtonItem" id="328452925">
+									<object class="IBUIBarButtonItem" id="237330056">
 										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 										<float key="IBUIWidth">30</float>
 										<reference key="IBUIToolbar" ref="788517909"/>
@@ -199,21 +196,21 @@
 								<int key="NSvFlags">274</int>
 								<string key="NSFrame">{{0, 44}, {703, 704}}</string>
 								<reference key="NSSuperview" ref="587179350"/>
-								<reference key="IBUIBackgroundColor" ref="834257980"/>
+								<reference key="IBUIBackgroundColor" ref="19414396"/>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<bool key="IBUIAlwaysBounceVertical">YES</bool>
 								<int key="IBUISeparatorStyle">1</int>
 								<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
+								<bool key="IBUIAllowsSelectionDuringEditing">YES</bool>
 								<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
 								<float key="IBUIRowHeight">44</float>
 								<float key="IBUISectionHeaderHeight">22</float>
 								<float key="IBUISectionFooterHeight">22</float>
 							</object>
 						</object>
-						<string key="NSFrameSize">{703, 748}</string>
-						<reference key="NSSuperview"/>
-						<reference key="IBUIBackgroundColor" ref="834257980"/>
+						<string key="NSFrame">{{160, 0}, {703, 748}}</string>
+						<reference key="IBUIBackgroundColor" ref="19414396"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
 					<reference key="IBUIToolbarItems" ref="0"/>
@@ -394,7 +391,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">titleButton</string>
 						<reference key="source" ref="85400257"/>
-						<reference key="destination" ref="745828791"/>
+						<reference key="destination" ref="395646394"/>
 					</object>
 					<int key="connectionID">67</int>
 				</object>
@@ -507,9 +504,9 @@
 							<reference ref="38889319"/>
 							<reference ref="586743829"/>
 							<reference ref="547724596"/>
-							<reference ref="83809007"/>
-							<reference ref="745828791"/>
-							<reference ref="328452925"/>
+							<reference ref="248113407"/>
+							<reference ref="395646394"/>
+							<reference ref="237330056"/>
 						</object>
 						<reference key="parent" ref="587179350"/>
 					</object>
@@ -545,17 +542,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">57</int>
-						<reference key="object" ref="83809007"/>
+						<reference key="object" ref="248113407"/>
 						<reference key="parent" ref="788517909"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">66</int>
-						<reference key="object" ref="745828791"/>
+						<reference key="object" ref="395646394"/>
 						<reference key="parent" ref="788517909"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">68</int>
-						<reference key="object" ref="328452925"/>
+						<reference key="object" ref="237330056"/>
 						<reference key="parent" ref="788517909"/>
 					</object>
 				</object>
@@ -622,7 +619,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{359, 88}, {1024, 768}}</string>
+					<string>{{347, 243}, {1024, 768}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>

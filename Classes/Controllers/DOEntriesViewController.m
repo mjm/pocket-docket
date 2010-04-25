@@ -12,7 +12,7 @@
 @interface DOEntriesViewController ()
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry;
-- (CGRect)popoverRectForEntry:(PDListEntry *)entry centeredAtPoint:(CGPoint)point;
+- (void)editEntryAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
@@ -40,10 +40,15 @@
 	cell.accessoryType = UITableViewCellAccessoryNone;
 }
 
-- (CGRect)popoverRectForEntry:(PDListEntry *)entry centeredAtPoint:(CGPoint)point {
-	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:entry];
-	CGRect rect = [self.table rectForRowAtIndexPath:indexPath];
-	return CGRectMake(point.x - 22.0f, rect.origin.y, 44.0f, rect.size.height);
+- (void)editEntryAtIndexPath:(NSIndexPath *)indexPath {
+	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	[self.persistenceController.undoManager beginUndoGrouping];
+	
+	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:entry
+																								  delegate:self];
+	
+	[controller presentModalToViewController:self];
+	[controller release];
 }
 
 #pragma mark -
@@ -89,7 +94,7 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 	[self.table setEditing:editing animated:animated];
-	self.tapGestureRecognizer.numberOfTapsRequired = editing ? 1 : 2;
+	self.tapGestureRecognizer.enabled = !editing;
 }
 
 #pragma mark -
@@ -216,7 +221,14 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark Table View Delegate Methods
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (self.editing) {
+		return indexPath;
+	}
 	return nil;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	[self editEntryAtIndexPath:indexPath];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -254,14 +266,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		CGPoint popoverPoint = [gestureRecognizer locationInView:self.table];
 		NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:popoverPoint];
 		if (indexPath) {
-			PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-			[self.persistenceController.undoManager beginUndoGrouping];
-			
-			DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:entry
-																										  delegate:self];
-			
-			[controller presentModalToViewController:self];
-			[controller release];
+			[self editEntryAtIndexPath:indexPath];
 		}
 	}
 }
