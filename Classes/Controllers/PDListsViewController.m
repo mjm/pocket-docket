@@ -58,6 +58,7 @@
 	if (![super initWithNibName:@"PDListsView" bundle:nil])
 		return nil;
 	
+	self.title = @"Lists";
 	self.persistenceController = controller;
 	self.fetchedResultsController = [controller listsFetchedResultsController];
 	self.fetchedResultsController.delegate = self;
@@ -69,12 +70,10 @@
 #pragma mark View Controller Lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	
-	self.title = @"Lists";
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 	self.navigationItem.rightBarButtonItem = self.addButton;
-	self.navigationItem.backBarButtonItem = self.backButton;
 	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
@@ -89,6 +88,8 @@
 		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		[self.persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
 	}
+	
+	[self.persistenceController saveSelectedList:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -107,6 +107,8 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	[keyboardObserver registerNotifications];
+	
+	[self.persistenceController saveSelectedList:self.list];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

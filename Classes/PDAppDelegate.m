@@ -2,6 +2,7 @@
 
 #import "PDPersistenceController.h"
 #import "Controllers/PDListsViewController.h"
+#import "Controllers/PDEntriesViewController.h"
 
 @implementation PDAppDelegate
 
@@ -11,17 +12,22 @@
 #pragma mark Application lifecycle
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-    PDPersistenceController *persistenceController =
+	PDPersistenceController *persistenceController =
 			[[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] initWithPersistenceController:persistenceController];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];
+	
+	PDList *selectedList = [persistenceController loadSelectedList];
 	[persistenceController release];
 	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];
+	if (selectedList) {
+		PDEntriesViewController *listController = [[PDEntriesViewController alloc] initWithList:selectedList persistenceController:persistenceController];
+		[navController pushViewController:listController animated:NO];
+	}
 	[listsController release];
 	
 	[window addSubview:navController.view];
-
 	[window makeKeyAndVisible];
 }
 

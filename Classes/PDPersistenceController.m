@@ -275,11 +275,11 @@
 
 - (void)saveSelectedList:(PDList *)list {
 	NSString *idString = [[[list objectID] URIRepresentation] absoluteString];
-	[[NSUserDefaults standardUserDefaults] setObject:idString forKey:@"DOSelectedListId"];
+	[[NSUserDefaults standardUserDefaults] setObject:idString forKey:@"PDSelectedListId"];
 }
 
 - (PDList *)loadSelectedList {
-	NSString *idString = [[NSUserDefaults standardUserDefaults] objectForKey:@"DOSelectedListId"];
+	NSString *idString = [[NSUserDefaults standardUserDefaults] objectForKey:@"PDSelectedListId"];
 	if (idString == nil)
 		return nil;
 	
@@ -288,11 +288,11 @@
 	
 	@try {
 		list.title; // fire the fault
-		return list;
 	}
 	@catch (NSException * e) {
 		return nil;
 	}
+	return list;
 }
 
 #pragma mark -
