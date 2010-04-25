@@ -414,6 +414,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)editListController:(DOEditListViewController *)controller listDidChange:(PDList *)list {
 	[self.persistenceController save];
+	if (self.listsPopoverController) {
+		self.titleButton.title = self.list.title;
+	}
 	
 	[self.popoverController dismissPopoverAnimated:YES];
 	self.popoverController = nil;

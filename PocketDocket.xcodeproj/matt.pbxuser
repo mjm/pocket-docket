@@ -199,6 +199,10 @@
 			C9FD29101183CC1600ED7954 /* PBXTextBookmark */ = C9FD29101183CC1600ED7954 /* PBXTextBookmark */;
 			C9FD29111183CC1600ED7954 /* PBXTextBookmark */ = C9FD29111183CC1600ED7954 /* PBXTextBookmark */;
 			C9FD29141183CC6B00ED7954 /* PBXTextBookmark */ = C9FD29141183CC6B00ED7954 /* PBXTextBookmark */;
+			C9FD29191183D47700ED7954 /* PBXTextBookmark */ = C9FD29191183D47700ED7954 /* PBXTextBookmark */;
+			C9FD291A1183D47700ED7954 /* PBXTextBookmark */ = C9FD291A1183D47700ED7954 /* PBXTextBookmark */;
+			C9FD291D1183D4A600ED7954 /* PBXTextBookmark */ = C9FD291D1183D4A600ED7954 /* PBXTextBookmark */;
+			C9FD291E1183D50F00ED7954 /* PBXTextBookmark */ = C9FD291E1183D50F00ED7954 /* PBXTextBookmark */;
 		};
 		sourceControlManager = C94C55DD1154410800791FAC /* Source Control */;
 		userBookmarkGroup = C9BD106011726B4B005E350E /* PBXBookmarkGroup */;
@@ -1125,9 +1129,9 @@
 	};
 	C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1043, 9040}}";
-			sepNavSelRange = "{5057, 0}";
-			sepNavVisRange = "{4649, 1061}";
+			sepNavIntBoundsRect = "{{0, 0}, {1043, 9180}}";
+			sepNavSelRange = "{14093, 0}";
+			sepNavVisRange = "{13401, 971}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1552,5 +1556,45 @@
 		rType = 0;
 		vrLen = 1061;
 		vrLoc = 4649;
+	};
+	C9FD29191183D47700ED7954 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 155";
+		rLen = 0;
+		rLoc = 5057;
+		rType = 0;
+		vrLen = 1159;
+		vrLoc = 5381;
+	};
+	C9FD291A1183D47700ED7954 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 417";
+		rLen = 0;
+		rLoc = 14096;
+		rType = 0;
+		vrLen = 977;
+		vrLoc = 13401;
+	};
+	C9FD291D1183D4A600ED7954 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 418";
+		rLen = 0;
+		rLoc = 14093;
+		rType = 0;
+		vrLen = 971;
+		vrLoc = 13401;
+	};
+	C9FD291E1183D50F00ED7954 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 418";
+		rLen = 0;
+		rLoc = 14093;
+		rType = 0;
+		vrLen = 971;
+		vrLoc = 13401;
 	};
 }
