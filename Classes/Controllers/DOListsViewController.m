@@ -97,6 +97,10 @@
 #pragma mark Actions
 
 - (IBAction)addList {
+	if (self.popoverController.popoverVisible) {
+		return;
+	}
+	
 	[self.persistenceController.undoManager beginUndoGrouping];
 	PDList *list = [self.persistenceController createList];
 	
@@ -107,7 +111,7 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
 	
-	if (!popoverController) {
+	if (!self.popoverController) {
 		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
 	} else {
 		self.popoverController.contentViewController = navController;
@@ -213,6 +217,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	[self.persistenceController.undoManager endUndoGrouping];
 	[self.persistenceController.undoManager undo];
 	[self.persistenceController save];
+	
+	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
+	[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 }
 
 #pragma mark -
@@ -244,7 +251,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 							  withRowAnimation:UITableViewRowAnimationFade];
 			if (self.entriesViewController.list) {
 				NSIndexPath *indexPath = [controller indexPathForObject:self.entriesViewController.list];
-				[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+				[self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 			}
 			
 			break;
