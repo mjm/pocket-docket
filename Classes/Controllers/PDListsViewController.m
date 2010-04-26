@@ -227,7 +227,18 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	if (isAdd) {
 		[self.persistenceController.undoManager endUndoGrouping];
 	}
+	
 	[self doneEditingList:list];
+	
+	if (isAdd) {
+		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
+		[self.table selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+		
+		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list
+																			 persistenceController:self.persistenceController];
+		[self.navigationController pushViewController:entriesController animated:YES];
+		[entriesController release];
+	}
 }
 
 - (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {

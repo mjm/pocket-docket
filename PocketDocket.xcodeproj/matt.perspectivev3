@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Debug</string>
+	<string>Project</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -284,7 +284,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>45</integer>
+									<integer>25</integer>
+									<integer>23</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -306,6 +307,8 @@
 							<string>MainColumn</string>
 							<real>242</real>
 						</array>
+						<key>RubberWindowFrame</key>
+						<string>2 39 1368 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,12 +319,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDPersistenceController.m</string>
+								<string>PDListsViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDPersistenceController.m</string>
+										<string>PDListsViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9FD2A2011850E2D00ED7954</string>
+										<string>C9FD2A3B11852DE600ED7954</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -362,7 +367,6 @@
 											<string>C9BD143311753F1B005E350E</string>
 											<string>C9BD143911753FC9005E350E</string>
 											<string>C9BD148E117567CC005E350E</string>
-											<string>C9295414117A45D40052A674</string>
 											<string>C9CC8EED117D39E200F2B6F0</string>
 											<string>C9CC8F00117D3F7900F2B6F0</string>
 											<string>C92A1204117E811100D43C65</string>
@@ -386,8 +390,9 @@
 											<string>C9FD2A1711850E0100ED7954</string>
 											<string>C9FD2A1811850E0100ED7954</string>
 											<string>C9FD2A1911850E0100ED7954</string>
-											<string>C9FD2A1A11850E0100ED7954</string>
-											<string>C9FD2A1B11850E0100ED7954</string>
+											<string>C9FD2A33118529B200ED7954</string>
+											<string>C9FD2A34118529B200ED7954</string>
+											<string>C9FD2A35118529B200ED7954</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -402,6 +407,8 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {1104, 682}}</string>
+								<key>RubberWindowFrame</key>
+								<string>2 39 1368 839 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -479,6 +486,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1104, 84}}</string>
+										<key>RubberWindowFrame</key>
+										<string>2 39 1368 839 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -562,8 +571,6 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1368, 342}}</string>
-						<key>RubberWindowFrame</key>
-						<string>2 39 1368 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -638,11 +645,7 @@
 							</array>
 							<key>Frame</key>
 							<string>{{662, 0}, {706, 190}}</string>
-							<key>RubberWindowFrame</key>
-							<string>2 39 1368 839 0 0 1440 878 </string>
 						</dict>
-						<key>RubberWindowFrame</key>
-						<string>2 39 1368 839 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -706,6 +709,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>C9FD2A3C11852DE600ED7954</string>
 		<string>C9FD29891184B58400ED7954</string>
 		<string>C9FD298B1184B58400ED7954</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
