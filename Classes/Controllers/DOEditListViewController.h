@@ -73,6 +73,7 @@
 - (void)editListController:(DOEditListViewController *)controller
 			 listDidChange:(PDList *)list;
 
+@optional
 - (void)editListController:(DOEditListViewController *)controller
 		  listDidNotChange:(PDList *)list;
 

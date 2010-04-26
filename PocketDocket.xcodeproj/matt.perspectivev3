@@ -284,7 +284,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>35</integer>
+									<integer>38</integer>
 									<integer>23</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -326,7 +326,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DOListsViewController.m</string>
+								<string>DOEditListViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +334,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DOListsViewController.m</string>
+										<string>DOEditListViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9FD2A7711853D0300ED7954</string>
+										<string>C9FD2A8611853F2D00ED7954</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -383,16 +383,15 @@
 											<string>C9D9646911836E1700E08A48</string>
 											<string>C9D9646A11836E1700E08A48</string>
 											<string>C9FD294B1184AED500ED7954</string>
-											<string>C9FD294E1184AED500ED7954</string>
 											<string>C9FD29D01184BE6600ED7954</string>
 											<string>C9FD2A1811850E0100ED7954</string>
 											<string>C9FD2A1911850E0100ED7954</string>
 											<string>C9FD2A33118529B200ED7954</string>
 											<string>C9FD2A34118529B200ED7954</string>
 											<string>C9FD2A44118534CB00ED7954</string>
-											<string>C9FD2A7411853D0300ED7954</string>
-											<string>C9FD2A7511853D0300ED7954</string>
-											<string>C9FD2A7611853D0300ED7954</string>
+											<string>C9FD2A8011853EFD00ED7954</string>
+											<string>C9FD2A8111853EFD00ED7954</string>
+											<string>C9FD2A8211853EFD00ED7954</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
