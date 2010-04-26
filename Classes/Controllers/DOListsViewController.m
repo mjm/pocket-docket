@@ -227,6 +227,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
 		[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	}
+	
+	if (self.navigationController.visibleViewController != self) {
+		[self.navigationController popToRootViewControllerAnimated:NO];
+	}
 }
 
 #pragma mark -
