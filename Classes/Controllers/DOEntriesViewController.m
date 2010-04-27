@@ -72,6 +72,11 @@
 	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapDetected:)];
 	tapGestureRecognizer.numberOfTapsRequired = 2;
 	[self.table addGestureRecognizer:tapGestureRecognizer];
+	
+	[self addObserver:self
+		   forKeyPath:@"list.title"
+			  options:NSKeyValueObservingOptionNew
+			  context:NULL];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -89,6 +94,8 @@
 	self.addButton = nil;
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
+	
+	[self removeObserver:self forKeyPath:@"list.title"];
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
@@ -120,6 +127,17 @@
 			self.editButton.enabled = NO;
 			self.addButton.enabled = NO;
 			[[self editButtonItem] setEnabled:NO];
+		}
+	}
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context {
+	if ([keyPath isEqual:@"list.title"]) {
+		if (self.listsPopoverController) {
+			self.titleButton.title = [change objectForKey:NSKeyValueChangeNewKey];
 		}
 	}
 }
@@ -397,7 +415,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	
 	if (self.listsPopoverController) {
 		[self.listsPopoverController dismissPopoverAnimated:YES];
-		self.titleButton.title = self.list.title;
 	}
 }
 
@@ -435,9 +452,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)editListController:(DOEditListViewController *)controller listDidChange:(PDList *)list {
 	[self.persistenceController save];
-	if (self.listsPopoverController) {
-		self.titleButton.title = self.list.title;
-	}
 	
 	[self.popoverController dismissPopoverAnimated:YES];
 	self.popoverController = nil;
