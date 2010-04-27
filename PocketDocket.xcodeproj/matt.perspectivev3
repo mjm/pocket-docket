@@ -284,14 +284,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>37</integer>
-									<integer>23</integer>
-									<integer>1</integer>
+									<integer>80</integer>
+									<integer>53</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 167}, {278, 801}}</string>
+							<string>{{0, 708}, {278, 801}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,14 +318,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>DOEntriesViewController.m</string>
+								<string>PocketDocket-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>DOEntriesViewController.m</string>
+										<string>PocketDocket-Info.plist</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9FD2AA11186627500ED7954</string>
+										<string>C9FD2AB91186770200ED7954</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -377,8 +374,6 @@
 											<string>C92A1256117E8F5B00D43C65</string>
 											<string>C92A1286117FB3EC00D43C65</string>
 											<string>C9D963EF11811A0300E08A48</string>
-											<string>C9D963F011811A0300E08A48</string>
-											<string>C9D9642C11813B2900E08A48</string>
 											<string>C9D9644311813D0700E08A48</string>
 											<string>C9D9646911836E1700E08A48</string>
 											<string>C9D9646A11836E1700E08A48</string>
@@ -392,7 +387,9 @@
 											<string>C9FD2A8011853EFD00ED7954</string>
 											<string>C9FD2A8111853EFD00ED7954</string>
 											<string>C9FD2A8F11865B4600ED7954</string>
-											<string>C9FD2A9D1186600F00ED7954</string>
+											<string>C9FD2AAD1186766800ED7954</string>
+											<string>C9FD2AAE1186766800ED7954</string>
+											<string>C9FD2AAF1186766800ED7954</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

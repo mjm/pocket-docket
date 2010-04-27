@@ -74,6 +74,7 @@
 		C9D963EA1181199000E08A48 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D963E91181199000E08A48 /* Icon.png */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
+		C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD2AA91186763B00ED7954 /* IconPhone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,7 +140,6 @@
 		C9BD10B311727788005E350E /* PDKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeyboardObserver.m; sourceTree = "<group>"; };
 		C9BD10FA1172AD83005E350E /* Docket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Docket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9BD10FC1172AD83005E350E /* Docket-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Docket-Info.plist"; sourceTree = "<group>"; };
-		C9BD11DD1172AE94005E350E /* Docket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Docket-Info.plist"; sourceTree = "<group>"; };
 		C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowPad.xib; sourceTree = "<group>"; };
 		C9BD122B1172B596005E350E /* DOAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOAppDelegate.h; sourceTree = "<group>"; };
 		C9BD122C1172B596005E350E /* DOAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOAppDelegate.m; sourceTree = "<group>"; };
@@ -155,6 +155,7 @@
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
+		C9FD2AA91186763B00ED7954 /* IconPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPhone.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,7 +236,6 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C9BD11DD1172AE94005E350E /* Docket-Info.plist */,
 				C94C56991156B1A900791FAC /* Graphics */,
 				C94C55F31154450100791FAC /* XIBs */,
 				C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */,
@@ -340,6 +340,7 @@
 				C94C569A1156B1A900791FAC /* ListIcon.png */,
 				C9EB356111701D1D0092DE45 /* ListIconDark.png */,
 				C9BD1478117554A0005E350E /* pencilangled.png */,
+				C9FD2AA91186763B00ED7954 /* IconPhone.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -429,6 +430,7 @@
 				C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */,
 				C9748D10116ADE7800D2B372 /* Default.png in Resources */,
 				C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */,
+				C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
