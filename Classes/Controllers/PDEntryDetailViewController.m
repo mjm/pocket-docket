@@ -22,7 +22,7 @@
 	self.persistenceController = controller;
 	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
 	
-	self.title = @"Entry Details";
+	self.title = self.entry.text;
 	
 	return self;
 }
@@ -34,6 +34,10 @@
 	[super viewDidLoad];
 	
 	self.navigationItem.rightBarButtonItem = [self editButtonItem];
+	[self.entry addObserver:self
+				 forKeyPath:@"text"
+					options:NSKeyValueObservingOptionNew
+					context:NULL];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -46,6 +50,8 @@
 	[super viewDidUnload];
 	self.table = nil;
 	self.cancelButton = nil;
+	
+	[self.entry removeObserver:self forKeyPath:@"text"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -94,6 +100,18 @@
 		// cell may have changed since earlier.
 		cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 		[cell.textField becomeFirstResponder];
+	}
+}
+
+#pragma mark -
+#pragma mark Handling Model Changes
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context {
+	if ([keyPath isEqual:@"text"]) {
+		self.navigationItem.title = [change objectForKey:NSKeyValueChangeNewKey];
 	}
 }
 
@@ -201,6 +219,10 @@
 			PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 			[cell.textField becomeFirstResponder];
 		} else {
+			NSIndexPath *textIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+			PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:textIndexPath];
+			self.entry.text = cell.textField.text;
+			
 			PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
 			controller.delegate = self;
 			[self.navigationController pushViewController:controller animated:YES];
