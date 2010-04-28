@@ -24,9 +24,9 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
-		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphoneos4.0;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
+		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
+		activeSDKPreference = iphonesimulator3.2;
+		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
 		);
@@ -209,6 +209,9 @@
 			C9213F5E1187D51C005BDE38 /* PBXTextBookmark */ = C9213F5E1187D51C005BDE38 /* PBXTextBookmark */;
 			C9213F651187D589005BDE38 /* PBXTextBookmark */ = C9213F651187D589005BDE38 /* PBXTextBookmark */;
 			C9213F6D1187D673005BDE38 /* PBXTextBookmark */ = C9213F6D1187D673005BDE38 /* PBXTextBookmark */;
+			C9213F7C1187DA41005BDE38 /* PBXTextBookmark */ = C9213F7C1187DA41005BDE38 /* PBXTextBookmark */;
+			C9213F811187DAA4005BDE38 /* PBXTextBookmark */ = C9213F811187DAA4005BDE38 /* PBXTextBookmark */;
+			C9213F861187DADC005BDE38 /* PBXTextBookmark */ = C9213F861187DADC005BDE38 /* PBXTextBookmark */;
 			C92A1204117E811100D43C65 = C92A1204117E811100D43C65 /* PBXTextBookmark */;
 			C92A1205117E811100D43C65 = C92A1205117E811100D43C65 /* PBXTextBookmark */;
 			C92A120B117E812E00D43C65 = C92A120B117E812E00D43C65 /* PBXTextBookmark */;
@@ -1004,6 +1007,36 @@
 		vrLen = 1113;
 		vrLoc = 1608;
 	};
+	C9213F7C1187DA41005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 1608;
+	};
+	C9213F811187DAA4005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 1608;
+	};
+	C9213F861187DADC005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 1608;
+	};
 	C9295431117A97560052A674 /* NSString+Additions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1026, 625}}";
@@ -1698,7 +1731,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {944, 5740}}";
 			sepNavSelRange = "{2067, 0}";
-			sepNavVisRange = "{1608, 1113}";
+			sepNavVisRange = "{1608, 1083}";
 		};
 	};
 	C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {
