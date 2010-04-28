@@ -10,18 +10,17 @@
 	PDPersistenceController *persistenceController;
 	
 	IBOutlet UITableView *table;
-	IBOutlet UIBarButtonItem *saveButton;
+	IBOutlet UIBarButtonItem *cancelButton;
 	
 	PDKeyboardObserver *keyboardObserver;
-	
-	BOOL editingComment;
-	BOOL didSave;
+
+	BOOL didCancel;
 }
 
 @property (nonatomic, retain) PDListEntry *entry;
 @property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem *saveButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *cancelButton;
 @property (nonatomic, retain) PDKeyboardObserver *keyboardObserver;
 
 //! \name Initializing a View Controller
@@ -37,6 +36,6 @@
 
 //@}
 
-- (IBAction)saveEntry;
+- (IBAction)cancelEditing;
 
 @end

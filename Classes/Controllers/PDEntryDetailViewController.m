@@ -9,7 +9,7 @@
 @implementation PDEntryDetailViewController
 
 @synthesize entry, persistenceController, keyboardObserver;
-@synthesize table, saveButton;
+@synthesize table, cancelButton;
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -22,7 +22,7 @@
 	self.persistenceController = controller;
 	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
 	
-	self.title = @"Edit Entry";
+	self.title = @"Entry Details";
 	
 	return self;
 }
@@ -31,55 +31,69 @@
 #pragma mark View Controller Lifecycle
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
 	
-	self.navigationItem.rightBarButtonItem = self.saveButton;
+	self.navigationItem.rightBarButtonItem = [self editButtonItem];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	if ([keyboardObserver isKeyboardShowing]) {
-		return NO;
-	} else {
-		// adjusts the table view cells
-		[self.table performSelector:@selector(reloadData) withObject:nil afterDelay:0.1];
-		return YES;
-	}
+	// adjusts the table view cells
+	[self.table performSelector:@selector(reloadData) withObject:nil afterDelay:0.1];
+	return YES;
 }
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
 	self.table = nil;
-	self.saveButton = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-	[super viewWillAppear:animated];
-	[keyboardObserver registerNotifications];
-	
-	if (!editingComment) {
-		[self.persistenceController.undoManager beginUndoGrouping];
-	} else {
-		editingComment = NO;
-	}
+	self.cancelButton = nil;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[self.table reloadData];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-	[keyboardObserver unregisterNotifications];
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+	[super setEditing:editing animated:animated];
+	[self.table setEditing:editing animated:animated];
 	
-	if (!editingComment) {
-		// We are going back to the entry list, so either save or undo changes.
+	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+	PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
+	
+	if (editing) {
+		[self.persistenceController.undoManager beginUndoGrouping];
+		self.navigationItem.hidesBackButton = YES;
+		self.navigationItem.leftBarButtonItem = self.cancelButton;
+	} else {
+		self.entry.text = cell.textField.text;
+		[cell.textField resignFirstResponder];
+		
 		[self.persistenceController.undoManager endUndoGrouping];
-		if (didSave) {
-			[self.persistenceController save];
-			didSave = NO;
-		} else {
+		if (didCancel) {
 			[self.persistenceController.undoManager undo];
+			didCancel = NO;
+		} else {
+			[self.persistenceController save];
 		}
+		self.navigationItem.hidesBackButton = NO;
+		self.navigationItem.leftBarButtonItem = nil;
+	}
+	
+	[self.table beginUpdates];
+	if (editing) {
+		[self.table insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+	} else {
+		[self.table deleteSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+	}
+	[self.table endUpdates];
+	
+	[self.table beginUpdates];
+	[self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+	[self.table endUpdates];
+	
+	if (editing) {
+		// cell may have changed since earlier.
+		cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
+		[cell.textField becomeFirstResponder];
 	}
 }
 
@@ -87,7 +101,7 @@
 #pragma mark Table View Data Source Methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 2;
+	return self.editing ? 2 : 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -107,8 +121,9 @@
 				cell = [PDTextFieldCell textFieldCell];
 			}
 			
-			cell.selectionStyle = UITableViewCellSelectionStyleNone;
 			cell.textField.text = self.entry.text;
+			cell.textField.delegate = self;
+			cell.textField.enabled = self.editing;
 			
 			return cell;
 		} else {
@@ -124,11 +139,12 @@
 				cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
 				cell.paragraphLabel.textColor = [UIColor blackColor];
 			} else {
-				cell.paragraphLabel.text = @"No comment. Tap to add one.";
+				cell.paragraphLabel.text = self.editing ? @"No comment. Tap to add one." : @"No comment.";
 				cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
 				cell.paragraphLabel.textColor = [UIColor darkGrayColor];
 			}
-			cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+			cell.accessoryType = UITableViewCellAccessoryNone;
+			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
 			
 			return cell;
 		}
@@ -137,7 +153,8 @@
 		
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
 		if (!cell) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:Cell] autorelease];
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+										   reuseIdentifier:Cell] autorelease];
 		}
 		
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
@@ -145,6 +162,15 @@
 		
 		return cell;
 	}
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
+		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return UITableViewCellEditingStyleNone;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath {
+	return NO;
 }
 
 #pragma mark -
@@ -165,14 +191,16 @@
 	return MAX(size.height + 20.0f, 44.0f);
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	return self.editing ? indexPath : nil;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
 		if (indexPath.row == 0) {
 			PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 			[cell.textField becomeFirstResponder];
 		} else {
-			editingComment = YES;
-			
 			PDCommentViewController *controller = [[PDCommentViewController alloc] initWithComment:self.entry.comment];
 			controller.delegate = self;
 			[self.navigationController pushViewController:controller animated:YES];
@@ -206,7 +234,8 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == [actionSheet destructiveButtonIndex]) {
 		[self.persistenceController deleteEntry:self.entry];
-		didSave = YES;
+		[self.persistenceController.undoManager endUndoGrouping];
+		[self.persistenceController save];
 		[self.navigationController popViewControllerAnimated:YES];
 	}
 }
@@ -224,15 +253,9 @@
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)saveEntry {
-	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-	PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
-	self.entry.text = cell.textField.text;
-	
-	didSave = YES;
-	
-	// TODO don't like doing this from the controller being popped.
-	[self.navigationController popViewControllerAnimated:YES];
+- (IBAction)cancelEditing {
+	didCancel = YES;
+	[self setEditing:NO animated:YES];
 }
 
 #pragma mark -
@@ -243,7 +266,7 @@
 	self.persistenceController = nil;
 	self.keyboardObserver = nil;
 	self.table = nil;
-	self.saveButton = nil;
+	self.cancelButton = nil;
 	[super dealloc];
 }
 
