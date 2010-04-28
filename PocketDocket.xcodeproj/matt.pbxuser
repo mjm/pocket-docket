@@ -25,7 +25,7 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphonesimulator4.0;
+		activeSDKPreference = iphoneos4.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
@@ -202,6 +202,13 @@
 			C9213F3C1187CEA3005BDE38 /* PBXTextBookmark */ = C9213F3C1187CEA3005BDE38 /* PBXTextBookmark */;
 			C9213F3E1187CEBA005BDE38 /* PBXTextBookmark */ = C9213F3E1187CEBA005BDE38 /* PBXTextBookmark */;
 			C9213F401187CECE005BDE38 /* PBXTextBookmark */ = C9213F401187CECE005BDE38 /* PBXTextBookmark */;
+			C9213F471187D226005BDE38 /* PBXTextBookmark */ = C9213F471187D226005BDE38 /* PBXTextBookmark */;
+			C9213F481187D226005BDE38 /* PBXTextBookmark */ = C9213F481187D226005BDE38 /* PBXTextBookmark */;
+			C9213F4D1187D232005BDE38 /* PBXTextBookmark */ = C9213F4D1187D232005BDE38 /* PBXTextBookmark */;
+			C9213F581187D4D1005BDE38 /* PBXTextBookmark */ = C9213F581187D4D1005BDE38 /* PBXTextBookmark */;
+			C9213F5E1187D51C005BDE38 /* PBXTextBookmark */ = C9213F5E1187D51C005BDE38 /* PBXTextBookmark */;
+			C9213F651187D589005BDE38 /* PBXTextBookmark */ = C9213F651187D589005BDE38 /* PBXTextBookmark */;
+			C9213F6D1187D673005BDE38 /* PBXTextBookmark */ = C9213F6D1187D673005BDE38 /* PBXTextBookmark */;
 			C92A1204117E811100D43C65 = C92A1204117E811100D43C65 /* PBXTextBookmark */;
 			C92A1205117E811100D43C65 = C92A1205117E811100D43C65 /* PBXTextBookmark */;
 			C92A120B117E812E00D43C65 = C92A120B117E812E00D43C65 /* PBXTextBookmark */;
@@ -927,6 +934,76 @@
 		vrLen = 1239;
 		vrLoc = 6101;
 	};
+	C9213F471187D226005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 460;
+		vrLoc = 1889;
+	};
+	C9213F481187D226005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 398;
+		vrLoc = 1951;
+	};
+	C9213F4D1187D232005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 1608;
+	};
+	C9213F581187D4D1005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 1608;
+	};
+	C9213F5E1187D51C005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 1608;
+	};
+	C9213F651187D589005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1083;
+		vrLoc = 1608;
+	};
+	C9213F6D1187D673005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 73";
+		rLen = 0;
+		rLoc = 2067;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 1608;
+	};
 	C9295431117A97560052A674 /* NSString+Additions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1026, 625}}";
@@ -1214,7 +1291,7 @@
 		ignoreCount = 0;
 		lineNumber = 148;
 		location = PocketDocket;
-		modificationTime = 294112701.543274;
+		modificationTime = 294115129.130105;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1619,9 +1696,9 @@
 	};
 	C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {944, 5720}}";
-			sepNavSelRange = "{7016, 0}";
-			sepNavVisRange = "{6101, 1239}";
+			sepNavIntBoundsRect = "{{0, 0}, {944, 5740}}";
+			sepNavSelRange = "{2067, 0}";
+			sepNavVisRange = "{1608, 1113}";
 		};
 	};
 	C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {
