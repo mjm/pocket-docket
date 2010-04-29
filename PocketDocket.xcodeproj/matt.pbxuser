@@ -24,9 +24,9 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
-		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
-		activeSDKPreference = iphonesimulator3.2;
-		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
+		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
+		activeSDKPreference = iphonesimulator4.0;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
 		);
@@ -212,6 +212,10 @@
 			C9213F7C1187DA41005BDE38 /* PBXTextBookmark */ = C9213F7C1187DA41005BDE38 /* PBXTextBookmark */;
 			C9213F811187DAA4005BDE38 /* PBXTextBookmark */ = C9213F811187DAA4005BDE38 /* PBXTextBookmark */;
 			C9213F861187DADC005BDE38 /* PBXTextBookmark */ = C9213F861187DADC005BDE38 /* PBXTextBookmark */;
+			C9213F8B11890A32005BDE38 /* PBXTextBookmark */ = C9213F8B11890A32005BDE38 /* PBXTextBookmark */;
+			C9213F8C11890A32005BDE38 /* PBXTextBookmark */ = C9213F8C11890A32005BDE38 /* PBXTextBookmark */;
+			C9213F8D11890A32005BDE38 /* PBXTextBookmark */ = C9213F8D11890A32005BDE38 /* PBXTextBookmark */;
+			C9213F8E11890A32005BDE38 /* PBXTextBookmark */ = C9213F8E11890A32005BDE38 /* PBXTextBookmark */;
 			C92A1204117E811100D43C65 = C92A1204117E811100D43C65 /* PBXTextBookmark */;
 			C92A1205117E811100D43C65 = C92A1205117E811100D43C65 /* PBXTextBookmark */;
 			C92A120B117E812E00D43C65 = C92A120B117E812E00D43C65 /* PBXTextBookmark */;
@@ -1037,6 +1041,46 @@
 		vrLen = 1083;
 		vrLoc = 1608;
 	};
+	C9213F8B11890A32005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */;
+		name = "PDEntryDetailViewController.m: 70";
+		rLen = 0;
+		rLoc = 1972;
+		rType = 0;
+		vrLen = 1113;
+		vrLoc = 1608;
+	};
+	C9213F8C11890A32005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FB1156C72600791FAC /* PDEditListViewController.h */;
+		name = "PDEditListViewController.h: 7";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 602;
+		vrLoc = 0;
+	};
+	C9213F8D11890A32005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
+		name = "PDEditListViewController.m: 71";
+		rLen = 0;
+		rLoc = 1768;
+		rType = 0;
+		vrLen = 725;
+		vrLoc = 0;
+	};
+	C9213F8E11890A32005BDE38 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
+		name = "PDEditListViewController.m: 93";
+		rLen = 0;
+		rLoc = 2213;
+		rType = 0;
+		vrLen = 585;
+		vrLoc = 1679;
+	};
 	C9295431117A97560052A674 /* NSString+Additions.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1026, 625}}";
@@ -1272,17 +1316,17 @@
 	};
 	C94C56FB1156C72600791FAC /* PDEditListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1025, 1740}}";
-			sepNavSelRange = "{0, 2247}";
-			sepNavVisRange = "{0, 581}";
+			sepNavIntBoundsRect = "{{0, 0}, {944, 1900}}";
+			sepNavSelRange = "{276, 0}";
+			sepNavVisRange = "{0, 602}";
 			sepNavWindowFrame = "{{107, 98}, {1190, 871}}";
 		};
 	};
 	C94C56FC1156C72600791FAC /* PDEditListViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1025, 1920}}";
-			sepNavSelRange = "{0, 2148}";
-			sepNavVisRange = "{0, 722}";
+			sepNavIntBoundsRect = "{{0, 0}, {944, 2080}}";
+			sepNavSelRange = "{2213, 0}";
+			sepNavVisRange = "{1679, 585}";
 			sepNavWindowFrame = "{{84, 119}, {1190, 871}}";
 		};
 	};
@@ -1730,8 +1774,8 @@
 	C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {944, 5740}}";
-			sepNavSelRange = "{2067, 0}";
-			sepNavVisRange = "{1608, 1083}";
+			sepNavSelRange = "{1972, 0}";
+			sepNavVisRange = "{1608, 1113}";
 		};
 	};
 	C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {
@@ -1973,7 +2017,7 @@
 		isa = PBXTextBookmark;
 		fRef = C94C56FB1156C72600791FAC /* PDEditListViewController.h */;
 		name = "PDEditListViewController.h: 1";
-		rLen = 2247;
+		rLen = 2268;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 581;
@@ -1983,7 +2027,7 @@
 		isa = PBXTextBookmark;
 		fRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */;
 		name = "PDEditListViewController.m: 1";
-		rLen = 2148;
+		rLen = 2329;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 722;

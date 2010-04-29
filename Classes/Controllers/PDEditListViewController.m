@@ -68,6 +68,7 @@
 	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
 	if (!cell) {
 		cell = [PDTextFieldCell textFieldCell];
+		cell.textField.delegate = self;
 	}
 	
 	cell.textField.text = list.title;
@@ -82,6 +83,14 @@
 
 - (NSIndexPath *) tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	return nil;
+}
+
+#pragma mark -
+#pragma mark Text Field Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+	[self saveList];
+	return NO;
 }
 
 #pragma mark -
