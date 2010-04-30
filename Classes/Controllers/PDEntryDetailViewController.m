@@ -68,7 +68,7 @@
 	if (editing) {
 		[self.persistenceController.undoManager beginUndoGrouping];
 		self.navigationItem.hidesBackButton = YES;
-		self.navigationItem.leftBarButtonItem = self.cancelButton;
+		[self.navigationItem setLeftBarButtonItem:self.cancelButton animated:animated];
 	} else {
 		self.entry.text = cell.textField.text;
 		[cell.textField resignFirstResponder];
@@ -80,8 +80,8 @@
 		} else {
 			[self.persistenceController save];
 		}
+		[self.navigationItem setLeftBarButtonItem:nil animated:animated];
 		self.navigationItem.hidesBackButton = NO;
-		self.navigationItem.leftBarButtonItem = nil;
 	}
 	
 	[self.table beginUpdates];
@@ -93,11 +93,11 @@
 	[self.table endUpdates];
 	
 	[self.table beginUpdates];
-	[self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+	[self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
 	[self.table endUpdates];
 	
 	if (editing) {
-		// cell may have changed since earlier.
+		// cell will have changed since earlier.
 		cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 		[cell.textField becomeFirstResponder];
 	}
@@ -131,25 +131,39 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
 		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 0) {
+		static NSString *TextViewCell = @"TextView";
 		if (indexPath.row == 0) {
 			static NSString *Cell = @"TextField";
 			
-			PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-			if (!cell) {
-				cell = [PDTextFieldCell textFieldCell];
+			if (self.editing) {
+				PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+				if (!cell) {
+					cell = [PDTextFieldCell textFieldCell];
+				}
+				
+				cell.textField.text = self.entry.text;
+				cell.textField.delegate = self;
+				cell.textField.enabled = self.editing;
+				
+				return cell;
+			} else {
+				PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:TextViewCell];
+				if (!cell) {
+					cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:TextViewCell] autorelease];
+				}
+				
+				cell.paragraphLabel.text = self.entry.text;
+				cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
+				cell.paragraphLabel.textColor = [UIColor blackColor];
+				cell.accessoryType = UITableViewCellAccessoryNone;
+				
+				return cell;
 			}
-			
-			cell.textField.text = self.entry.text;
-			cell.textField.delegate = self;
-			cell.textField.enabled = self.editing;
-			
-			return cell;
 		} else {
-			static NSString *Cell = @"TextView";
 			
-			PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
+			PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:TextViewCell];
 			if (!cell) {
-				cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:Cell] autorelease];
+				cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:TextViewCell] autorelease];
 			}
 			
 			cell.paragraphLabel.text = self.entry.comment;
@@ -195,11 +209,11 @@
 #pragma mark Table View Delegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0) {
+	if (indexPath.row == 0 && self.editing) {
 		return 44.0f;
 	}
 	
-	NSString *text = self.entry.comment;
+	NSString *text = indexPath.row == 0 ? self.entry.text : self.entry.comment;
 	CGFloat width = self.view.frame.size.width;
 	CGSize constraint = CGSizeMake(width - 40.0f, 20000.0f);
 	CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:17.0f]
