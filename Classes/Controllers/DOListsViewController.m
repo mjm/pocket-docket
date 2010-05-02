@@ -216,6 +216,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
 	[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	[self.delegate listsController:self didSelectList:list];
+	
+	[self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 - (void)editListController:(DOEditListViewController *)controller listDidNotChange:(PDList *)list {
@@ -227,10 +229,8 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
 		[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 	}
-	
-	if (self.navigationController.visibleViewController != self) {
-		[self.navigationController popToRootViewControllerAnimated:NO];
-	}
+
+	[self.navigationController popToRootViewControllerAnimated:NO];
 }
 
 #pragma mark -
