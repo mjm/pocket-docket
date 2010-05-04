@@ -23,6 +23,7 @@
 	
 	BOOL userIsMoving;
 	UITapGestureRecognizer *tapGestureRecognizer;
+	UISwipeGestureRecognizer *swipeGestureRecognizer;
 }
 
 @property (nonatomic, retain) PDList *list;
@@ -37,6 +38,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, retain) UISwipeGestureRecognizer *swipeGestureRecognizer;
 
 - (IBAction)editList;
 - (IBAction)addEntry;

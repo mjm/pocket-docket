@@ -21,7 +21,7 @@
 @synthesize list, persistenceController, fetchedResultsController;
 @synthesize listsPopoverController, popoverController;
 @synthesize listsViewController, toolbar, titleButton, editButton, addButton, table;
-@synthesize tapGestureRecognizer;
+@synthesize tapGestureRecognizer, swipeGestureRecognizer;
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry {
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
@@ -64,10 +64,10 @@
 	
 	[[self editButtonItem] setEnabled:NO];
 	
-	UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeDetected:)];
-	swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-	[self.table addGestureRecognizer:swipeRecognizer];
-	[swipeRecognizer release];
+	self.swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+																			action:@selector(swipeDetected:)];
+	self.swipeGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
+	[self.table addGestureRecognizer:self.swipeGestureRecognizer];
 	
 	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapDetected:)];
 	tapGestureRecognizer.numberOfTapsRequired = 2;
@@ -94,6 +94,7 @@
 	self.addButton = nil;
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
+	self.swipeGestureRecognizer = nil;
 	
 	[self removeObserver:self forKeyPath:@"list.title"];
 }
@@ -101,6 +102,7 @@
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
 	[self.table setEditing:editing animated:animated];
+	self.swipeGestureRecognizer.enabled = !editing;
 	self.tapGestureRecognizer.enabled = !editing;
 }
 
@@ -480,6 +482,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.addButton = nil;
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
+	self.swipeGestureRecognizer = nil;
 	[super dealloc];
 }
 
