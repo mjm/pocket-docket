@@ -336,7 +336,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C94E9DE8118FA8A2007B9674</string>
+										<string>C94E9DF0118FB1F9007B9674</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -708,7 +708,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C94E9DE9118FA8A2007B9674</string>
+		<string>C94E9DF1118FB1F9007B9674</string>
 		<string>C94E9DBF118E112A007B9674</string>
 		<string>C94E9DC0118E112A007B9674</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>

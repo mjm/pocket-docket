@@ -25,7 +25,7 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
-		activeSDKPreference = iphoneos3.2;
+		activeSDKPreference = iphonesimulator3.2;
 		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
@@ -177,6 +177,7 @@
 			C94E9DE6118FA8A2007B9674 /* PBXTextBookmark */ = C94E9DE6118FA8A2007B9674 /* PBXTextBookmark */;
 			C94E9DE7118FA8A2007B9674 /* PBXTextBookmark */ = C94E9DE7118FA8A2007B9674 /* PBXTextBookmark */;
 			C94E9DE8118FA8A2007B9674 /* PBXTextBookmark */ = C94E9DE8118FA8A2007B9674 /* PBXTextBookmark */;
+			C94E9DF0118FB1F9007B9674 /* PBXTextBookmark */ = C94E9DF0118FB1F9007B9674 /* PBXTextBookmark */;
 			C9BD10D61172996D005E350E = C9BD10D61172996D005E350E /* PBXTextBookmark */;
 			C9BD11FF1172B120005E350E = C9BD11FF1172B120005E350E /* PBXTextBookmark */;
 			C9BD12001172B120005E350E = C9BD12001172B120005E350E /* PBXTextBookmark */;
@@ -629,7 +630,7 @@
 		ignoreCount = 0;
 		lineNumber = 148;
 		location = Docket;
-		modificationTime = 294628393.117889;
+		modificationTime = 294629860.269963;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -1193,6 +1194,16 @@
 		vrLoc = 0;
 	};
 	C94E9DE8118FA8A2007B9674 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 485";
+		rLen = 0;
+		rLoc = 15650;
+		rType = 0;
+		vrLen = 1072;
+		vrLoc = 1877;
+	};
+	C94E9DF0118FB1F9007B9674 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 485";
