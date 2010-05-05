@@ -74,7 +74,7 @@
 	if (!editing && self.entriesViewController.list) {
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
 		if (indexPath) {
-			[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+			[self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
 		}
 	}
 }
