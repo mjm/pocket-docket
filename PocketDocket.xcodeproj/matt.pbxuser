@@ -570,7 +570,7 @@
 		ignoreCount = 0;
 		lineNumber = 148;
 		location = PocketDocket;
-		modificationTime = 294806683.804447;
+		modificationTime = 294807345.621976;
 		originalNumberOfMultipleMatches = 1;
 		state = 1;
 	};
@@ -990,9 +990,9 @@
 	};
 	C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1025, 1560}}";
-			sepNavSelRange = "{1320, 0}";
-			sepNavVisRange = "{1072, 590}";
+			sepNavIntBoundsRect = "{{0, 0}, {1090, 1500}}";
+			sepNavSelRange = "{656, 0}";
+			sepNavVisRange = "{222, 851}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};

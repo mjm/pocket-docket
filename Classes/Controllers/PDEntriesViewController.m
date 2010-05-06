@@ -113,6 +113,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
+	[self.newEntryField resignFirstResponder];
 	[keyboardObserver unregisterNotifications];
 }
 
