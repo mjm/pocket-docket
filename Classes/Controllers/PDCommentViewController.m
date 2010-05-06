@@ -25,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.navigationItem.hidesBackButton = YES;
 	self.navigationItem.rightBarButtonItem = self.saveButton;
 	self.textView.text = self.comment;
 }

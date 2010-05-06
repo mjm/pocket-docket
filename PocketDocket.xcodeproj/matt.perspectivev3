@@ -338,7 +338,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9A0AC8D11910BC00026F4E3</string>
+										<string>C919D1721192638800790B20</string>
 										<key>history</key>
 										<array>
 											<string>C94C573E1156EAF200791FAC</string>
@@ -392,8 +392,8 @@
 											<string>C94E9DCC118E1323007B9674</string>
 											<string>C94E9DCD118E1323007B9674</string>
 											<string>C94E9DE6118FA8A2007B9674</string>
-											<string>C9A0AC8111910B1B0026F4E3</string>
-											<string>C9A0AC8211910B1B0026F4E3</string>
+											<string>C9A0AC951191D4B80026F4E3</string>
+											<string>C9A0AC971191D4B80026F4E3</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -407,18 +407,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1151, 682}}</string>
+								<string>{{0, 0}, {1151, 679}}</string>
 								<key>RubberWindowFrame</key>
 								<string>1920 -245 1440 860 1920 -285 1440 900 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>682pt</string>
+							<string>679pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>132pt</string>
+							<string>135pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -432,7 +432,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1151, 105}}</string>
+										<string>{{10, 27}, {1151, 108}}</string>
 										<key>RubberWindowFrame</key>
 										<string>1920 -245 1440 860 1920 -285 1440 900 </string>
 									</dict>
@@ -516,11 +516,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C9A0AC5D119106DA0026F4E3</string>
+				<string>C919D1731192638800790B20</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>C9A0AC5E119106DA0026F4E3</string>
+				<string>C919D1741192638800790B20</string>
 				<string>C94C55DF115441EA00791FAC</string>
-				<string>C9A0AC5F119106DA0026F4E3</string>
+				<string>C919D1751192638800790B20</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -710,9 +710,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9A0AC8E11910BC00026F4E3</string>
-		<string>C9A0AC77119108360026F4E3</string>
-		<string>C9A0AC78119108360026F4E3</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
