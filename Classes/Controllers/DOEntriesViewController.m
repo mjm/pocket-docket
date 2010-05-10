@@ -139,7 +139,12 @@
 					   context:(void *)context {
 	if ([keyPath isEqual:@"list.title"]) {
 		if (self.listsPopoverController) {
-			self.titleButton.title = [change objectForKey:NSKeyValueChangeNewKey];
+			id title = [change objectForKey:NSKeyValueChangeNewKey];
+			if (![title isEqual:[NSNull null]]) {
+				self.titleButton.title = [change objectForKey:NSKeyValueChangeNewKey];				
+			} else {
+				self.titleButton.title = @"";
+			}
 		}
 	}
 }

@@ -179,6 +179,11 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	if ([list isEqual:self.entriesViewController.list]) {
+		// if currently selected list, deselect it.
+		[self.delegate listsController:self didSelectList:nil];
+	}
+	
 	[self.persistenceController deleteList:list];
 	[self.persistenceController save];
 }
