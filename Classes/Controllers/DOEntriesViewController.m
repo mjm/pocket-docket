@@ -153,6 +153,10 @@
 #pragma mark Actions
 
 - (IBAction)editList {
+	if (self.popoverController.popoverVisible) {
+		[self.popoverController dismissPopoverAnimated:NO];
+	}
+	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.list];
 	controller.delegate = self;
 	
@@ -177,6 +181,10 @@
 }
 
 - (IBAction)addEntry {
+	if (self.popoverController.popoverVisible) {
+		[self.popoverController dismissPopoverAnimated:NO];
+	}
+	
 	[self.persistenceController.undoManager beginUndoGrouping];
 	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
 	

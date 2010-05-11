@@ -54,9 +54,15 @@
 #pragma mark Actions
 
 - (IBAction)doneAdding {
-	self.entry.text = self.textField.text;
-	
+	// turn off any cancelling on disappear, since the view should be dismissed by the delegate
 	didSave = YES;
+	
+	if ([self.textField.text length] == 0) {
+		[self.delegate newEntryController:self didCancelEntry:self.entry];
+		return;
+	}
+	
+	self.entry.text = self.textField.text;
 	[self.delegate newEntryController:self didCreateEntry:self.entry shouldDismiss:YES];
 }
 
@@ -81,7 +87,8 @@
 	
 	cell.textField.text = @"";
 	cell.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
-	cell.textField.returnKeyType = UIReturnKeyDefault;
+	cell.textField.returnKeyType = UIReturnKeyNext;
+	cell.textField.enablesReturnKeyAutomatically = YES;
 	[cell.textField becomeFirstResponder];
 	
 	return cell;
