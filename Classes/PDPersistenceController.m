@@ -257,6 +257,9 @@
 	} else {
 		NSLog(@"Error retrieving objects with higher order, %@, %@", error, [error userInfo]);
 	}
+	
+	// make sure the completion counts update
+	[self.managedObjectContext refreshObject:list mergeChanges:YES];
 }
 
 #pragma mark -
