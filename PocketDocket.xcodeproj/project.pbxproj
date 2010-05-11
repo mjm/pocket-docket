@@ -41,6 +41,9 @@
 		C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */; };
 		C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9748C59116AC33F00D2B372 /* PDCommentView.xib */; };
 		C9748D10116ADE7800D2B372 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9748D0F116ADE7800D2B372 /* Default.png */; };
+		C9777E5D119892AC0047E997 /* DONewEntryViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = C9777E5C119892AC0047E997 /* DONewEntryViewController.m */; };
+		C9777E601198936A0047E997 /* DONewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9777E5C119892AC0047E997 /* DONewEntryViewController.m */; };
+		C9777E68119897120047E997 /* DONewEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777E67119897120047E997 /* DONewEntryView.xib */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
@@ -130,6 +133,9 @@
 		C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCommentViewController.m; path = Controllers/PDCommentViewController.m; sourceTree = "<group>"; };
 		C9748C59116AC33F00D2B372 /* PDCommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDCommentView.xib; sourceTree = "<group>"; };
 		C9748D0F116ADE7800D2B372 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		C9777E5B119892AC0047E997 /* DONewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DONewEntryViewController.h; path = Controllers/DONewEntryViewController.h; sourceTree = "<group>"; };
+		C9777E5C119892AC0047E997 /* DONewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DONewEntryViewController.m; path = Controllers/DONewEntryViewController.m; sourceTree = "<group>"; };
+		C9777E67119897120047E997 /* DONewEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DONewEntryView.xib; sourceTree = "<group>"; };
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 				C9BD13B61173FCFB005E350E /* DOEditListView.xib */,
 				C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */,
 				C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */,
+				C9777E67119897120047E997 /* DONewEntryView.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -307,6 +314,8 @@
 				C9BD13531173F772005E350E /* DOEditListViewController.m */,
 				C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */,
 				C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */,
+				C9777E5B119892AC0047E997 /* DONewEntryViewController.h */,
+				C9777E5C119892AC0047E997 /* DONewEntryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -450,6 +459,8 @@
 				C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */,
 				C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */,
 				C9D963EA1181199000E08A48 /* Icon.png in Resources */,
+				C9777E5D119892AC0047E997 /* DONewEntryViewController.m in Resources */,
+				C9777E68119897120047E997 /* DONewEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +511,7 @@
 				C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */,
 				C9295433117A97560052A674 /* NSString+Additions.m in Sources */,
 				C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */,
+				C9777E601198936A0047E997 /* DONewEntryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +646,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = armv7;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;

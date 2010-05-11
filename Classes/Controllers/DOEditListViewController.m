@@ -36,13 +36,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	NSLog(@"Will appear");
+
 	didSave = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	NSLog(@"Will disappear");
+
 	if (!didSave && [self.delegate respondsToSelector:@selector(editListController:listDidNotChange:)]) {
 		[self.delegate editListController:self listDidNotChange:self.list];
 	}

@@ -177,20 +177,30 @@
 }
 
 - (IBAction)addEntry {
+	[self.persistenceController.undoManager beginUndoGrouping];
+	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
+	
+	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithEntry:entry];
+	controller.delegate = self;
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+	[controller release];
+	
 	if (self.listsPopoverController.popoverVisible) {
 		[self.listsPopoverController dismissPopoverAnimated:NO];
 	}
 	
-	if (self.popoverController.popoverVisible) {
-		[self.popoverController dismissPopoverAnimated:NO];
+	if (self.popoverController) {
+		self.popoverController.contentViewController = navController;
+	} else {
+		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+		self.popoverController.delegate = self;
 	}
+	[navController release];
 	
-	[self.persistenceController.undoManager beginUndoGrouping];
-	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
-	
-	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithNewEntry:entry delegate:self];
-	[controller presentModalToViewController:self];
-	[controller release];
+	[self.popoverController presentPopoverFromBarButtonItem:self.addButton
+								   permittedArrowDirections:UIPopoverArrowDirectionAny
+												   animated:YES];
 }
 
 #pragma mark -
@@ -459,9 +469,40 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 #pragma mark -
+#pragma mark New Entry Delegate Methods
+
+- (void)newEntryController:(DONewEntryViewController *)controller
+			didCreateEntry:(PDListEntry *)entry
+			 shouldDismiss:(BOOL)dismiss {
+	[self.persistenceController.undoManager endUndoGrouping];
+	[self.persistenceController save];
+	
+	if (dismiss) {
+		[self.popoverController dismissPopoverAnimated:YES];
+		self.popoverController = nil;
+	} else {
+		[self.persistenceController.undoManager beginUndoGrouping];
+		PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
+		controller.entry = entry;
+	}
+}
+
+- (void)newEntryController:(DONewEntryViewController *)controller
+			didCancelEntry:(PDListEntry *)entry {
+	[self.persistenceController.undoManager endUndoGrouping];
+	[self.persistenceController.undoManager undo];
+	
+	if (self.popoverController.popoverVisible) {
+		[self.popoverController dismissPopoverAnimated:YES];
+	}
+	self.popoverController = nil;
+}
+
+#pragma mark -
 #pragma mark Edit List Delegate Methods
 
-- (void)editListController:(DOEditListViewController *)controller listDidChange:(PDList *)list {
+- (void)editListController:(DOEditListViewController *)controller
+			 listDidChange:(PDList *)list {
 	[self.persistenceController save];
 	
 	[self.popoverController dismissPopoverAnimated:YES];

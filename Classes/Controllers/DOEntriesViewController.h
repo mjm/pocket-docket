@@ -1,12 +1,13 @@
 #import "DOListsViewController.h"
 #import "DOEditListViewController.h"
+#import "DONewEntryViewController.h"
 #import "DOEntryDetailsViewController.h"
 
 @class PDList;
 @class PDPersistenceController;
 @class DOListsViewController;
 
-@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate> {
+@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate> {
 	PDList *list;
 	PDPersistenceController *persistenceController;
 	NSFetchedResultsController *fetchedResultsController;
