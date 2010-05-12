@@ -14,6 +14,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 	PDPersistenceController *persistenceController =
 			[[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
+	[persistenceController createFirstLaunchData];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] initWithPersistenceController:persistenceController];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];

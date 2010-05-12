@@ -8,6 +8,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	PDPersistenceController *persistenceController = [[PDPersistenceController alloc] initWithManagedObjectContext:self.managedObjectContext];
+	[persistenceController createFirstLaunchData];
 	
 	entriesViewController.persistenceController = persistenceController;
 	listsViewController.persistenceController = persistenceController;

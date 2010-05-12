@@ -44,6 +44,8 @@
 		C9777E5D119892AC0047E997 /* DONewEntryViewController.m in Resources */ = {isa = PBXBuildFile; fileRef = C9777E5C119892AC0047E997 /* DONewEntryViewController.m */; };
 		C9777E601198936A0047E997 /* DONewEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9777E5C119892AC0047E997 /* DONewEntryViewController.m */; };
 		C9777E68119897120047E997 /* DONewEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9777E67119897120047E997 /* DONewEntryView.xib */; };
+		C9777F39119A1AEF0047E997 /* DOFirstLaunchData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9777F38119A1AEF0047E997 /* DOFirstLaunchData.plist */; };
+		C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9777F51119A37350047E997 /* PDFirstLaunchData.plist */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
@@ -136,6 +138,8 @@
 		C9777E5B119892AC0047E997 /* DONewEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DONewEntryViewController.h; path = Controllers/DONewEntryViewController.h; sourceTree = "<group>"; };
 		C9777E5C119892AC0047E997 /* DONewEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DONewEntryViewController.m; path = Controllers/DONewEntryViewController.m; sourceTree = "<group>"; };
 		C9777E67119897120047E997 /* DONewEntryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DONewEntryView.xib; sourceTree = "<group>"; };
+		C9777F38119A1AEF0047E997 /* DOFirstLaunchData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = DOFirstLaunchData.plist; path = FirstLaunch/DOFirstLaunchData.plist; sourceTree = "<group>"; };
+		C9777F51119A37350047E997 /* PDFirstLaunchData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; name = PDFirstLaunchData.plist; path = FirstLaunch/PDFirstLaunchData.plist; sourceTree = "<group>"; };
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C9777F37119A1A9C0047E997 /* First Launch */,
 				C94C56991156B1A900791FAC /* Graphics */,
 				C94C55F31154450100791FAC /* XIBs */,
 				C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */,
@@ -365,6 +370,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		C9777F37119A1A9C0047E997 /* First Launch */ = {
+			isa = PBXGroup;
+			children = (
+				C9777F38119A1AEF0047E997 /* DOFirstLaunchData.plist */,
+				C9777F51119A37350047E997 /* PDFirstLaunchData.plist */,
+			);
+			name = "First Launch";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,6 +454,7 @@
 				C9748D10116ADE7800D2B372 /* Default.png in Resources */,
 				C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */,
 				C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */,
+				C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +476,7 @@
 				C9D963EA1181199000E08A48 /* Icon.png in Resources */,
 				C9777E5D119892AC0047E997 /* DONewEntryViewController.m in Resources */,
 				C9777E68119897120047E997 /* DONewEntryView.xib in Resources */,
+				C9777F39119A1AEF0047E997 /* DOFirstLaunchData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

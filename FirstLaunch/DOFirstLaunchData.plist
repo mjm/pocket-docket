@@ -1,0 +1,9 @@
+{
+	title = "Welcome to Docket";
+	entries = (
+		{
+			text = Testing;
+			comment = "Comment testing.";
+		},
+	);
+}

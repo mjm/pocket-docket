@@ -1,0 +1,9 @@
+{
+	title = "Welcome to Pocket Docket";
+	entries = (
+		{
+			text = Testing;
+			comment = "Comment testing.";
+		},
+	);
+}

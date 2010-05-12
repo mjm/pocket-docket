@@ -26,6 +26,15 @@
 @synthesize managedObjectContext;
 
 #pragma mark -
+#pragma mark Registering Defaults
+
++ (void)initialize {
+	[[NSUserDefaults standardUserDefaults]
+	 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+												  forKey:@"PDFirstLaunch"]];
+}
+
+#pragma mark -
 #pragma mark Initializing a View Controller
 
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)context {
@@ -139,6 +148,38 @@
 		NSLog(@"Error loading entries for creating new entry, %@, %@", error, [error userInfo]);
 		return nil;
 	}
+}
+
+- (void)createFirstLaunchData {
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	if (![userDefaults boolForKey:@"PDFirstLaunch"]) {
+		return;
+	}
+	
+	NSString *dataFileName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+		? @"DOFirstLaunchData"
+		: @"PDFirstLaunchData";
+	
+	NSString *pathToFile = [[NSBundle mainBundle] pathForResource:dataFileName ofType:@"plist"];
+	if (!pathToFile) {
+		NSLog(@"Could not load first launch data");
+		return;
+	}
+	
+	NSDictionary *dataDict = [NSDictionary dictionaryWithContentsOfFile:pathToFile];
+	PDList *list = [self createList];
+	list.title = [dataDict valueForKey:@"title"];
+	
+	NSArray *entries = [dataDict valueForKey:@"entries"];
+	for (NSDictionary *entryDict in entries) {
+		PDListEntry *entry = [self createEntry:[entryDict valueForKey:@"text"]
+										inList:list];
+		entry.comment = [entryDict valueForKey:@"comment"];
+	}
+	
+	[self save];
+	[self saveSelectedList:list];
+	[userDefaults setBool:NO forKey:@"PDFirstLaunch"];
 }
 
 #pragma mark -

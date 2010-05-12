@@ -62,6 +62,8 @@
  */
 - (PDListEntry *)createEntry:(NSString *)text inList:(PDList *)list;
 
+- (void)createFirstLaunchData;
+
 //@}
 //! \name Manipulating Model Objects
 //@{
