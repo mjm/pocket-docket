@@ -1,9 +1,35 @@
 {
-	title = "Welcome to Pocket Docket";
+	title = "Welcome to Docket";
 	entries = (
 		{
-			text = Testing;
-			comment = "Comment testing.";
+			text = "This is an example list";
+		},
+		{
+			text = "Add to it using the box below";
+		},
+		{
+			text = "The Edit button lets you delete";
+		},
+		{
+			text = "As well as reorder entries";
+		},
+		{
+			text = "Check entries by tapping the box";
+		},
+		{
+			text = "Swiping also works";
+		},
+		{
+			text = "(If your device has the 4.0 OS)";
+		},
+		{
+			text = "The blue arrow shows details";
+		},
+		{
+			text = "It also lets you edit entries";
+		},
+		{
+			text = "That's about it!";
 		},
 	);
 }

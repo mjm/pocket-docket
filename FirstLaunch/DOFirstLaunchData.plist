@@ -2,8 +2,36 @@
 	title = "Welcome to Docket";
 	entries = (
 		{
-			text = Testing;
-			comment = "Comment testing.";
+			text = "This is an example list.";
+			comment = "";
+		},
+		{
+			text = "You can change the title of the selected list by tapping the pencil icon in the toolbar.";
+			comment = "";
+		},
+		{
+			text = "Lists have entries, which can be checked or not.";
+			comment = "Entries can also have comments, like this one. Comments can be as long as you like.";
+		},
+		{
+			text = "To check off an entry, you can either tap the box or swipe the entry.";
+			comment = "The same action will also uncheck an already checked entry. Try it out on this entry.";
+		},
+		{
+			text = "To create a new entry, use the compose button in the toolbar above.";
+			comment = "You can add many entries quickly by typing out the entry and tapping the Next button on the keyboard.";
+		},
+		{
+			text = "You can edit an entry by double-tapping it.";
+			comment = "The edit screen lets you add comments to entries.";
+		},
+		{
+			text = "Tap the edit button in the toolbar to delete or reorder entries.";
+			comment = "";
+		},
+		{
+			text = "That's about it!";
+			comment = "";
 		},
 	);
 }

@@ -156,9 +156,15 @@
 		return;
 	}
 	
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
 	NSString *dataFileName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		? @"DOFirstLaunchData"
 		: @"PDFirstLaunchData";
+#else
+	NSString *dataFileName = @"PDFirstLaunchData";
+#endif
+#endif
 	
 	NSString *pathToFile = [[NSBundle mainBundle] pathForResource:dataFileName ofType:@"plist"];
 	if (!pathToFile) {
@@ -174,7 +180,10 @@
 	for (NSDictionary *entryDict in entries) {
 		PDListEntry *entry = [self createEntry:[entryDict valueForKey:@"text"]
 										inList:list];
-		entry.comment = [entryDict valueForKey:@"comment"];
+		NSString *comment = [entryDict valueForKey:@"comment"];
+		if (comment) {
+			entry.comment = comment;
+		}
 	}
 	
 	[self save];
