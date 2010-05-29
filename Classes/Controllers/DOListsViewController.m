@@ -68,7 +68,6 @@
 	
 	if (self.popoverController.popoverVisible) {
 		[self.popoverController dismissPopoverAnimated:YES];
-		[self popoverControllerDidDismissPopover:self.popoverController];
 	}
 	
 	if (!editing && self.entriesViewController.list) {
@@ -180,8 +179,17 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	if ([list isEqual:self.entriesViewController.list]) {
-		// if currently selected list, deselect it.
-		[self.delegate listsController:self didSelectList:nil];
+		NSInteger row = indexPath.row - 1;
+		if (row < 0) row = indexPath.row + 1;
+		
+		if (row < [self tableView:self.tableView numberOfRowsInSection:0]) {
+			NSIndexPath *path = [NSIndexPath indexPathForRow:row inSection:0];
+			PDList *list = [self.fetchedResultsController objectAtIndexPath:path];
+			
+			[self.delegate listsController:self didSelectList:list];
+		} else {
+			[self.delegate listsController:self didSelectList:nil];
+		}
 	}
 	
 	[self.persistenceController deleteList:list];
@@ -274,10 +282,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		case NSFetchedResultsChangeDelete:
 			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 							  withRowAnimation:UITableViewRowAnimationFade];
-			if ([anObject isEqual:self.entriesViewController.list]) {
-				self.entriesViewController.list = nil;
-			}
-			
 			break;
 		case NSFetchedResultsChangeUpdate:
 			[self configureCell:(PDListTableCell *) [self.tableView cellForRowAtIndexPath:indexPath]
