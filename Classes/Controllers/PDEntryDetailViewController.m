@@ -298,6 +298,7 @@
 #pragma mark Memory Management
 
 - (void)dealloc {
+	[self.entry removeObserver:self forKeyPath:@"text"];
 	self.entry = nil;
 	self.persistenceController = nil;
 	self.keyboardObserver = nil;

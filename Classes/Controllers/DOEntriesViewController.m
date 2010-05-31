@@ -528,6 +528,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark Memory Management
 
 - (void)dealloc {
+	[self removeObserver:self forKeyPath:@"list.title"];
 	self.list = nil;
 	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
