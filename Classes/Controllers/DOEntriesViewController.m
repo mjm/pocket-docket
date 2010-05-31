@@ -482,6 +482,13 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (void)newEntryController:(DONewEntryViewController *)controller
 			didCreateEntry:(PDListEntry *)entry
 			 shouldDismiss:(BOOL)dismiss {
+	if ([entry.text length] == 0) {
+		if (dismiss) {
+			[self newEntryController:controller didCancelEntry:entry];
+		}
+		return;
+	}
+	
 	[self.persistenceController.undoManager endUndoGrouping];
 	[self.persistenceController save];
 	
