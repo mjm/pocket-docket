@@ -171,7 +171,9 @@
 				cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
 				cell.paragraphLabel.textColor = [UIColor blackColor];
 			} else {
-				cell.paragraphLabel.text = self.editing ? @"No comment. Tap to add one." : @"No comment.";
+				cell.paragraphLabel.text = self.editing
+						? NSLocalizedString(@"NoCommentTap", nil) //@"No comment. Tap to add one."
+						: NSLocalizedString(@"NoComment", nil); //@"No comment.";
 				cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
 				cell.paragraphLabel.textColor = [UIColor darkGrayColor];
 			}
@@ -190,7 +192,7 @@
 		}
 		
 		cell.textLabel.textAlignment = UITextAlignmentCenter;
-		cell.textLabel.text = @"Delete Entry";
+		cell.textLabel.text = NSLocalizedString(@"Delete Entry", nil);
 		
 		return cell;
 	}
@@ -245,10 +247,10 @@
 	} else {
 		[tableView deselectRowAtIndexPath:indexPath animated:NO];
 		
-		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Delete Entry"
+		UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Delete Entry", nil)
 																 delegate:self
-														cancelButtonTitle:@"Cancel"
-												   destructiveButtonTitle:@"Delete Entry"
+														cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+												   destructiveButtonTitle:NSLocalizedString(@"Delete Entry", nil)
 														otherButtonTitles:nil];
 		[actionSheet showInView:self.view];
 		[actionSheet release];

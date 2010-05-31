@@ -26,7 +26,11 @@
 		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
 	}
 	cell.titleLabel.text = list.title;
-	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
+	
+	NSString *of = NSLocalizedString(@"of", nil);
+	NSString *completed = NSLocalizedString(@"completed", nil);
+	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
+								 [list.completedEntries count], of, [list.entries count], completed];
 }
 
 - (void)doneEditingList:(PDList *)list {
@@ -58,7 +62,7 @@
 	if (![super initWithNibName:@"PDListsView" bundle:nil])
 		return nil;
 	
-	self.title = @"Lists";
+	self.title = NSLocalizedString(@"Lists", nil);
 	self.persistenceController = controller;
 	self.fetchedResultsController = [controller listsFetchedResultsController];
 	self.fetchedResultsController.delegate = self;
@@ -128,7 +132,7 @@
 	PDList *list = [self.persistenceController createList];
 	
 	PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
-	editController.title = @"New List";
+	editController.title = NSLocalizedString(@"New List", nil);
 	editController.delegate = self;
 	
 	[self presentModalViewController:editController animated:YES];

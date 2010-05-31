@@ -38,6 +38,8 @@
 		C94C59A311585B0D00791FAC /* PocketDocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */; };
 		C94C5B66115C332400791FAC /* CheckBox.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B65115C332400791FAC /* CheckBox.png */; };
 		C94C5B68115C332B00791FAC /* CheckBoxChecked.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C5B67115C332B00791FAC /* CheckBoxChecked.png */; };
+		C94D90CB11B3737500A3E225 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94D90C911B3737500A3E225 /* Localizable.strings */; };
+		C94D90CC11B3737500A3E225 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94D90C911B3737500A3E225 /* Localizable.strings */; };
 		C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */; };
 		C9748C5A116AC33F00D2B372 /* PDCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9748C59116AC33F00D2B372 /* PDCommentView.xib */; };
 		C9748D10116ADE7800D2B372 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C9748D0F116ADE7800D2B372 /* Default.png */; };
@@ -131,6 +133,7 @@
 		C94C5B65115C332400791FAC /* CheckBox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckBox.png; sourceTree = "<group>"; };
 		C94C5B67115C332B00791FAC /* CheckBoxChecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CheckBoxChecked.png; sourceTree = "<group>"; };
 		C94C5C42115C4D8400791FAC /* PocketDocket 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 3.xcdatamodel"; sourceTree = "<group>"; };
+		C94D90CA11B3737500A3E225 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		C9748C56116AC18B00D2B372 /* PDCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCommentViewController.h; path = Controllers/PDCommentViewController.h; sourceTree = "<group>"; };
 		C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCommentViewController.m; path = Controllers/PDCommentViewController.m; sourceTree = "<group>"; };
 		C9748C59116AC33F00D2B372 /* PDCommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDCommentView.xib; sourceTree = "<group>"; };
@@ -246,6 +249,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C94D90C811B3737500A3E225 /* en.lproj */,
 				C9777F37119A1A9C0047E997 /* First Launch */,
 				C94C56991156B1A900791FAC /* Graphics */,
 				C94C55F31154450100791FAC /* XIBs */,
@@ -370,6 +374,14 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		C94D90C811B3737500A3E225 /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				C94D90C911B3737500A3E225 /* Localizable.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		C9777F37119A1A9C0047E997 /* First Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +436,13 @@
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PocketDocket" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -455,6 +474,7 @@
 				C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */,
 				C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */,
 				C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */,
+				C94D90CB11B3737500A3E225 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +497,7 @@
 				C9777E5D119892AC0047E997 /* DONewEntryViewController.m in Resources */,
 				C9777E68119897120047E997 /* DONewEntryView.xib in Resources */,
 				C9777F39119A1AEF0047E997 /* DOFirstLaunchData.plist in Resources */,
+				C94D90CC11B3737500A3E225 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +553,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C94D90C911B3737500A3E225 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94D90CA11B3737500A3E225 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
