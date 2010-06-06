@@ -79,6 +79,15 @@
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 	self.navigationItem.rightBarButtonItem = self.addButton;
 	
+	// eliminate separators for empty cells
+	UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
+	footer.backgroundColor = [UIColor clearColor];
+	self.table.tableFooterView = footer;
+	[footer release];
+	
+	// set correct separator color
+	self.table.separatorColor = [UIColor colorWithWhite:200.0f/255.0f alpha:1.0f];
+	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
 }

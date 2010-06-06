@@ -88,6 +88,9 @@
 	self.title = self.list.title;
 	self.navigationItem.rightBarButtonItem = [self editButtonItem];
 	
+	UIColor *sepColor = [UIColor colorWithRed:151.0/255.0 green:199.0/255.0 blue:223.0/255.0 alpha:1.0];
+	self.table.separatorColor = sepColor;
+	
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 	float version = [[[UIDevice currentDevice] systemVersion] floatValue];

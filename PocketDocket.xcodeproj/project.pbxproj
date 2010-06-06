@@ -50,6 +50,13 @@
 		C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9777F51119A37350047E997 /* PDFirstLaunchData.plist */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
+		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
+		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
+		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
+		C9B584B211BC02D7008C973C /* ListCellHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584B111BC02D7008C973C /* ListCellHighlight.png */; };
+		C9B584B311BC02D7008C973C /* ListCellHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584B111BC02D7008C973C /* ListCellHighlight.png */; };
+		C9B584DC11BC1015008C973C /* Margin.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584DB11BC1015008C973C /* Margin.png */; };
+		C9B584DD11BC1015008C973C /* Margin.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584DB11BC1015008C973C /* Margin.png */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
 		C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */; };
 		C9BD10B411727788005E350E /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
@@ -146,6 +153,10 @@
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
+		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
+		C9B584B111BC02D7008C973C /* ListCellHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCellHighlight.png; sourceTree = "<group>"; };
+		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
 		C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryTableCell.xib; sourceTree = "<group>"; };
 		C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryTableCell.h; path = Views/PDEntryTableCell.h; sourceTree = "<group>"; };
 		C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryTableCell.m; path = Views/PDEntryTableCell.m; sourceTree = "<group>"; };
@@ -180,6 +191,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+				C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +280,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
+				C9B5845F11BB6F38008C973C /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +364,9 @@
 		C94C56991156B1A900791FAC /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C9B584DB11BC1015008C973C /* Margin.png */,
+				C9B584B111BC02D7008C973C /* ListCellHighlight.png */,
+				C9B5848F11BBFC22008C973C /* ListCell.png */,
 				C9D963E91181199000E08A48 /* Icon.png */,
 				C9748D0F116ADE7800D2B372 /* Default.png */,
 				C94C5B65115C332400791FAC /* CheckBox.png */,
@@ -475,6 +491,9 @@
 				C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */,
 				C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */,
 				C94D90CB11B3737500A3E225 /* Localizable.strings in Resources */,
+				C9B5849011BBFC22008C973C /* ListCell.png in Resources */,
+				C9B584B211BC02D7008C973C /* ListCellHighlight.png in Resources */,
+				C9B584DC11BC1015008C973C /* Margin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +517,9 @@
 				C9777E68119897120047E997 /* DONewEntryView.xib in Resources */,
 				C9777F39119A1AEF0047E997 /* DOFirstLaunchData.plist in Resources */,
 				C94D90CC11B3737500A3E225 /* Localizable.strings in Resources */,
+				C9B5849111BBFC22008C973C /* ListCell.png in Resources */,
+				C9B584B311BC02D7008C973C /* ListCellHighlight.png in Resources */,
+				C9B584DD11BC1015008C973C /* Margin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +602,7 @@
 				INFOPLIST_FILE = "PocketDocket-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = PocketDocket;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -599,7 +621,7 @@
 				INFOPLIST_FILE = "PocketDocket-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = PocketDocket;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
@@ -658,7 +680,7 @@
 				INFOPLIST_FILE = "PocketDocket-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = PocketDocket;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.0;
 			};
 			name = AdHoc;
 		};
