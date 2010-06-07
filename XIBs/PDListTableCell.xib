@@ -47,18 +47,6 @@
 						<int key="NSvFlags">256</int>
 						<object class="NSMutableArray" key="NSSubviews">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<object class="IBUIImageView" id="20539586">
-								<reference key="NSNextResponder" ref="922191570"/>
-								<int key="NSvFlags">292</int>
-								<string key="NSFrameSize">{320, 65}</string>
-								<reference key="NSSuperview" ref="922191570"/>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">ListCell.png</string>
-								</object>
-							</object>
 							<object class="IBUILabel" id="3387927">
 								<reference key="NSNextResponder" ref="922191570"/>
 								<int key="NSvFlags">290</int>
@@ -191,14 +179,6 @@
 					</object>
 					<int key="connectionID">15</int>
 				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">imageView</string>
-						<reference key="source" ref="1047333184"/>
-						<reference key="destination" ref="20539586"/>
-					</object>
-					<int key="connectionID">17</int>
-				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -228,7 +208,6 @@
 							<reference ref="703332223"/>
 							<reference ref="94028453"/>
 							<reference ref="3387927"/>
-							<reference ref="20539586"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -247,11 +226,6 @@
 						<reference key="object" ref="703332223"/>
 						<reference key="parent" ref="1047333184"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="20539586"/>
-						<reference key="parent" ref="1047333184"/>
-					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -261,7 +235,6 @@
 					<string>-2.CustomClassName</string>
 					<string>14.CustomClassName</string>
 					<string>14.IBPluginDependency</string>
-					<string>16.IBPluginDependency</string>
 					<string>2.CustomClassName</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
@@ -272,7 +245,6 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>UIResponder</string>
 					<string>PDListProgressView</string>
-					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>PDListTableCell</string>
 					<string>{{442, 517}, {320, 65}}</string>
@@ -379,10 +351,6 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<string key="IBDocument.LastKnownRelativeProjectPath">../PocketDocket.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
-		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">ListCell.png</string>
-			<string key="NS.object.0">{320, 65}</string>
-		</object>
 		<string key="IBCocoaTouchPluginVersion">116</string>
 	</data>
 </archive>

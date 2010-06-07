@@ -12,7 +12,6 @@
 	//! \name Outlets
 	//@{
 	
-	IBOutlet UIImageView *imageView;
 	IBOutlet PDListProgressView *progressView;
 	IBOutlet UILabel *titleLabel;
 	IBOutlet UILabel *completionLabel;
@@ -20,7 +19,6 @@
 	//@}
 }
 
-@property (nonatomic, retain) IBOutlet UIImageView *imageView;
 @property (nonatomic, retain) IBOutlet PDListProgressView *progressView;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 @property (nonatomic, retain) IBOutlet UILabel *completionLabel;

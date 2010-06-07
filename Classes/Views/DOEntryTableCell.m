@@ -21,7 +21,7 @@
 	CGFloat height = [self.commentLabel.text heightWithFont:self.commentLabel.font
 										 constrainedToWidth:constraintWidth];
 	
-	self.commentLabel.frame = CGRectMake(15, 40, constraintWidth, height);
+	self.commentLabel.frame = CGRectMake(53, 40, constraintWidth, height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

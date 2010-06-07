@@ -1,4 +1,4 @@
-#define ENTRY_CELL_OFFSET 30
+#define ENTRY_CELL_OFFSET 68
 
 @interface DOEntryTableCell : UITableViewCell {
 	IBOutlet UIButton *checkboxButton;
