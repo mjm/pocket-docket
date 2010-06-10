@@ -25,10 +25,9 @@
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
 		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
-		activeSDKPreference = iphonesimulator3.2;
+		activeSDKPreference = iphoneos3.2;
 		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
 		addToTargets = (
-			1D6058900D05DD3D006BFB54 /* PocketDocket */,
 			C9BD10F91172AD83005E350E /* Docket */,
 		);
 		breakpoints = (
@@ -327,7 +326,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1009, 2960}}";
 			sepNavSelRange = "{3078, 0}";
-			sepNavVisRange = "{2727, 660}";
+			sepNavVisRange = "{2727, 662}";
 			sepNavWindowFrame = "{{15, 180}, {910, 878}}";
 		};
 	};

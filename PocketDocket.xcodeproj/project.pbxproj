@@ -50,6 +50,8 @@
 		C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9777F51119A37350047E997 /* PDFirstLaunchData.plist */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
+		C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07C11C09DA6003A5D1C /* Default-Landscape.png */; };
+		C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07D11C09DA6003A5D1C /* Default-Portrait.png */; };
 		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
 		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
 		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
@@ -153,6 +155,8 @@
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
+		C981B07C11C09DA6003A5D1C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
+		C981B07D11C09DA6003A5D1C /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
 		C9B584B111BC02D7008C973C /* ListCellHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCellHighlight.png; sourceTree = "<group>"; };
@@ -364,6 +368,8 @@
 		C94C56991156B1A900791FAC /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C981B07C11C09DA6003A5D1C /* Default-Landscape.png */,
+				C981B07D11C09DA6003A5D1C /* Default-Portrait.png */,
 				C9B584DB11BC1015008C973C /* Margin.png */,
 				C9B584B111BC02D7008C973C /* ListCellHighlight.png */,
 				C9B5848F11BBFC22008C973C /* ListCell.png */,
@@ -520,6 +526,8 @@
 				C9B5849111BBFC22008C973C /* ListCell.png in Resources */,
 				C9B584B311BC02D7008C973C /* ListCellHighlight.png in Resources */,
 				C9B584DD11BC1015008C973C /* Margin.png in Resources */,
+				C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */,
+				C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
