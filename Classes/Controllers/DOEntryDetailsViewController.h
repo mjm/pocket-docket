@@ -31,6 +31,7 @@
 
 - (IBAction)cancelEntry;
 - (IBAction)saveEntry;
+- (IBAction)updateTitleBarWithTextField:(UITextField *)textField;
 
 - (void)presentModalToViewController:(UIViewController *)controller;
 

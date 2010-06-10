@@ -3,28 +3,10 @@
 #import "../PDKeyboardObserver.h"
 #import "../Models/PDListEntry.h"
 
-#pragma mark Private Methods
-
-@interface DOEntryDetailsViewController ()
-
-- (void)updateTitleBarWithTextField:(UITextField *)textField;
-
-@end
-
-#pragma mark -
-
 @implementation DOEntryDetailsViewController
 
 @synthesize entry, delegate, keyboardObserver;
 @synthesize cancelButton, saveButton, summaryTextField, commentTextView;
-
-- (void)updateTitleBarWithTextField:(UITextField *)textField {
-	if ([textField.text length] > 0) {
-		self.navigationItem.title = textField.text;
-	} else {
-		self.navigationItem.title = isNew ? @"New Entry" : @"Edit Entry";
-	}
-}
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -115,6 +97,14 @@
 	[self.delegate entryDetailsController:self didSaveEntry:self.entry];
 }
 
+- (void)updateTitleBarWithTextField:(UITextField *)textField {
+	if ([textField.text length] > 0) {
+		self.navigationItem.title = textField.text;
+	} else {
+		self.navigationItem.title = isNew ? @"New Entry" : @"Edit Entry";
+	}
+}
+
 #pragma mark -
 #pragma mark Text Field Delegate Methods
 
@@ -125,12 +115,6 @@
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
-	[self performSelector:@selector(updateTitleBarWithTextField:) withObject:textField afterDelay:0.5];
-	
-	return YES;
-}
-
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 	[self performSelector:@selector(updateTitleBarWithTextField:) withObject:textField afterDelay:0.5];
 	
 	return YES;
