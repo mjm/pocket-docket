@@ -66,6 +66,10 @@
 	[self.delegate newEntryController:self didCreateEntry:self.entry shouldDismiss:YES];
 }
 
+- (IBAction)textChanged:(UITextField *)sender {
+	self.entry.text = sender.text;
+}
+
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
@@ -81,6 +85,7 @@
 	if (!cell) {
 		cell = [PDTextFieldCell textFieldCell];
 		cell.textField.delegate = self;
+		[cell.textField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventEditingChanged];
 		
 		self.textField = cell.textField;
 	}

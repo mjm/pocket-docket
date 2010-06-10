@@ -21,6 +21,7 @@
 
 - (id)initWithEntry:(PDListEntry *)aEntry;
 
+- (IBAction)textChanged:(UITextField *)sender;
 - (IBAction)doneAdding;
 
 @end
