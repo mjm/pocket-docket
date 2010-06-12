@@ -1,0 +1,17 @@
+Docket is the easy way to make checklists on the go. I created it after looking for an existing checklist app on the App Store and becoming unsatisfied with what was already there. Docket is meant to be checklists as Apple would do them.
+
+Docket makes it easy to create your lists. Just tap the compose button, and start typing. You can hit the return key on the keyboard to start a new entry, allowing you to create lists with many items very quickly.
+
+Each entry can have a comment, which lets you note some extra details about the entry. Comments appear below the text of the entry. A double-tap will allow you to edit them.
+
+Docket was inspired by Tada Lists from 37signals. If you're away from your iPhone or iPad or need to collaborate with others, Tada Lists is a very good web-based list maker.
+
+---
+
+Pocket Docket is the easy way to make checklists on the go. I created it after looking for an existing checklist app on the App Store and becoming unsatisfied with what was already there. Pocket Docket is meant to be checklists as Apple would do them.
+
+Pocket Docket makes it easy to create your lists. It was designed to be very similar to sending a text message: tap in the box, type your entry, then hit the plus to add it. The keyboard stays open so you can keep adding more entries to build up your list.
+
+Entries can have a comment, which lets you note some extra details about the entry. Just tap the blue arrow next to the entry to see the comment. You'll also be able to edit the entry from this screen.
+
+Pocket Docket was inspired by Tada Lists from 37signals. If you're away from your iPhone or iPad or need to collaborate with others, Tada Lists is a very good web-based list maker.
