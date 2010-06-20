@@ -25,6 +25,7 @@
 	if (selectedList) {
 		PDEntriesViewController *listController = [[PDEntriesViewController alloc] initWithList:selectedList persistenceController:persistenceController];
 		[navController pushViewController:listController animated:NO];
+		[listController release];
 	}
 	[listsController release];
 	

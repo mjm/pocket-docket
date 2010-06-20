@@ -99,6 +99,7 @@
 																		 action:@selector(swipeDetected:)];
 		[gestureRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight];
 		[self.table addGestureRecognizer:gestureRecognizer];
+		[gestureRecognizer release];
 	}
 #endif
 #endif
