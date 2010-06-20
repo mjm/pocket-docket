@@ -188,6 +188,10 @@
 		[self.popoverController dismissPopoverAnimated:NO];
 	}
 	
+	if (self.listsPopoverController.popoverVisible) {
+		[self.listsPopoverController dismissPopoverAnimated:NO];
+	}
+	
 	[self.persistenceController.undoManager beginUndoGrouping];
 	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
 	
@@ -196,10 +200,6 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
-	
-	if (self.listsPopoverController.popoverVisible) {
-		[self.listsPopoverController dismissPopoverAnimated:NO];
-	}
 	
 	if (self.popoverController) {
 		self.popoverController.contentViewController = navController;
