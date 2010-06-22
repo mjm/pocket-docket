@@ -20,7 +20,7 @@
 	
 	self.entry = aEntry;
 	self.persistenceController = controller;
-	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
 	
 	self.title = self.entry.text;
 	
@@ -111,7 +111,9 @@
 						change:(NSDictionary *)change
 					   context:(void *)context {
 	if ([keyPath isEqual:@"text"]) {
-		self.navigationItem.title = [change objectForKey:NSKeyValueChangeNewKey];
+		id newValue = [change objectForKey:NSKeyValueChangeNewKey];
+		if (newValue != [NSNull null])
+			self.navigationItem.title = newValue;
 	}
 }
 

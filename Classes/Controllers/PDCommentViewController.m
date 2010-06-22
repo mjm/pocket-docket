@@ -14,7 +14,7 @@
 	
 	self.comment = aComment;
 	self.title = NSLocalizedString(@"Comment", nil);
-	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
 	
 	return self;
 }

@@ -44,8 +44,9 @@
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	[self.persistenceController.undoManager beginUndoGrouping];
 	
-	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithExistingEntry:entry
-																								  delegate:self];
+	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc]
+												initWithExistingEntry:entry
+												delegate:self];
 	
 	[controller presentModalToViewController:self];
 	[controller release];
