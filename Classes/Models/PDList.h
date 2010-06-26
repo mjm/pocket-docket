@@ -6,4 +6,6 @@
 @property (nonatomic, retain) NSSet *entries;
 @property (nonatomic, retain) NSArray *completedEntries;
 
+- (NSString *)plainTextString;
+
 @end

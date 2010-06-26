@@ -220,8 +220,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		[self.navigationController pushViewController:editController animated:YES];
 		[editController release];
 	} else {
-		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list
-																			 persistenceController:self.persistenceController];
+		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc]
+													  initWithList:list
+													  persistenceController:self.persistenceController];
 		// TODO set delegate
 		
 		[self.navigationController pushViewController:entriesController animated:YES];

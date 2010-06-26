@@ -87,6 +87,7 @@
 		C9BD142E11753F15005E350E /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
 		C9BD142F11753F15005E350E /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 		C9BD1479117554A0005E350E /* pencilangled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9BD1478117554A0005E350E /* pencilangled.png */; };
+		C9D6DE2711D688C300FF64EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6DE2611D688C300FF64EC /* MessageUI.framework */; };
 		C9D963EA1181199000E08A48 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D963E91181199000E08A48 /* Icon.png */; };
 		C9E18CF611CE964D00C61B18 /* CheckBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */; };
 		C9E18CF711CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */; };
@@ -194,6 +195,7 @@
 		C9BD13531173F772005E350E /* DOEditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEditListViewController.m; path = Controllers/DOEditListViewController.m; sourceTree = "<group>"; };
 		C9BD13B61173FCFB005E350E /* DOEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEditListView.xib; sourceTree = "<group>"; };
 		C9BD1478117554A0005E350E /* pencilangled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilangled.png; sourceTree = "<group>"; };
+		C9D6DE2611D688C300FF64EC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9D963E91181199000E08A48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBox@2x.png"; sourceTree = "<group>"; };
 		C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBoxChecked@2x.png"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
 				C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */,
+				C9D6DE2711D688C300FF64EC /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +305,7 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
 				C9B5845F11BB6F38008C973C /* QuartzCore.framework */,
+				C9D6DE2611D688C300FF64EC /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

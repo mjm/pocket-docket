@@ -8,15 +8,18 @@
 
 #pragma mark Private Methods
 
-@interface PDEntriesViewController (PrivateMethods)
+@interface PDEntriesViewController ()
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry;
 - (void)scrollToBottom;
 - (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath;
 
+- (void)showAddButton;
+- (void)showSendButton;
+
 @end
 
-@implementation PDEntriesViewController (PrivateMethods)
+@implementation PDEntriesViewController
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
@@ -53,12 +56,6 @@
 	
 	[detailController release];
 }
-
-@end
-
-#pragma mark -
-
-@implementation PDEntriesViewController
 
 #pragma mark -
 #pragma mark Initializing a View Controller
@@ -115,6 +112,8 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[self.newEntryField resignFirstResponder];
+	[self showSendButton];
+	
 	[self.keyboardObserver unregisterNotifications];
 }
 
@@ -134,6 +133,34 @@
 	// Only do this when editing since showing the keyboard will set editing to NO
 	if (editing) {
 		[self.newEntryField resignFirstResponder];
+		[self showSendButton];
+	}
+}
+
+#pragma mark -
+#pragma mark Changing the Button
+
+- (void)showAddButton {
+	if ([[self.toolbar items] lastObject] == self.sendButton) {
+		CGRect bounds = self.newEntryField.bounds;
+		bounds.size.width += 10;
+		self.newEntryField.bounds = bounds;
+		
+		NSMutableArray *items = [[self.toolbar items] mutableCopy];
+		[items replaceObjectAtIndex:([items count] - 1) withObject:self.addButton];
+		[self.toolbar setItems:items animated:YES];
+	}
+}
+
+- (void)showSendButton {
+	if ([[self.toolbar items] lastObject] == self.addButton) {
+		CGRect bounds = self.newEntryField.bounds;
+		bounds.size.width -= 10;
+		self.newEntryField.bounds = bounds;
+		
+		NSMutableArray *items = [[self.toolbar items] mutableCopy];
+		[items replaceObjectAtIndex:([items count] - 1) withObject:self.sendButton];
+		[self.toolbar setItems:items animated:YES];
 	}
 }
 
@@ -143,6 +170,8 @@
 - (void)keyboardObserverWillShowKeyboard:(PDKeyboardObserver *)observer {
 	[self scrollToBottom];
 	[self setEditing:NO animated:YES];
+	
+	[self showAddButton];
 }
 
 #pragma mark -
@@ -283,8 +312,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[self addListEntry];
 	[textField resignFirstResponder];
+	[self showSendButton];
 	
 	return NO;
+}
+
+#pragma mark -
+#pragma mark Mail Compose Delegate Methods
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+		  didFinishWithResult:(MFMailComposeResult)result
+						error:(NSError *)error {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -
@@ -298,6 +337,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		self.newEntryField.text = @"";
 		
 		[self scrollToBottom];
+	}
+}
+
+- (IBAction)emailList {
+	NSString *entriesText = [self.list plainTextString];
+	
+	if ([MFMailComposeViewController canSendMail]) {
+		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+		mailController.mailComposeDelegate = self;
+		[mailController setSubject:self.list.title];
+		[mailController setMessageBody:entriesText isHTML:NO];
+		[self presentModalViewController:mailController animated:YES];
 	}
 }
 
