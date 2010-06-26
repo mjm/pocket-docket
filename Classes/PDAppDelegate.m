@@ -6,8 +6,6 @@
 
 @implementation PDAppDelegate
 
-@synthesize window;
-
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -29,8 +27,8 @@
 	}
 	[listsController release];
 	
-	[window addSubview:navController.view];
-	[window makeKeyAndVisible];
+	[self.window addSubview:navController.view];
+	[self.window makeKeyAndVisible];
 }
 
 /**
@@ -137,7 +135,7 @@
     [managedObjectModel release];
     [persistentStoreCoordinator release];
     
-	[window release];
+	[self.window release];
 	[super dealloc];
 }
 

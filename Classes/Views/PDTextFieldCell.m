@@ -2,8 +2,6 @@
 
 @implementation PDTextFieldCell
 
-@synthesize textField;
-
 + (PDTextFieldCell *)textFieldCell {
 	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"PDTextFieldCell" owner:self options:nil];
 	return [objects objectAtIndex:0];

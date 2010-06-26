@@ -5,8 +5,6 @@
 
 @implementation PDEditListViewController
 
-@synthesize list, delegate, titleCell, navItem, navBar, table;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 
@@ -71,7 +69,7 @@
 		cell.textField.delegate = self;
 	}
 	
-	cell.textField.text = list.title;
+	cell.textField.text = self.list.title;
 	[cell.textField becomeFirstResponder];
 	self.titleCell = cell;
 	

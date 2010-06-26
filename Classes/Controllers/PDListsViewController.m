@@ -52,9 +52,6 @@
 
 @implementation PDListsViewController
 
-@synthesize persistenceController, fetchedResultsController;
-@synthesize table, addButton, backButton;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 

@@ -8,9 +8,6 @@
 
 @implementation PDEntryDetailViewController
 
-@synthesize entry, persistenceController, keyboardObserver;
-@synthesize table, cancelButton;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 
@@ -20,7 +17,7 @@
 	
 	self.entry = aEntry;
 	self.persistenceController = controller;
-	keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:nil] autorelease];
 	
 	self.title = self.entry.text;
 	

@@ -5,9 +5,6 @@
 
 @implementation DOEntryDetailsViewController
 
-@synthesize entry, delegate, keyboardObserver;
-@synthesize cancelButton, saveButton, summaryTextField, commentTextView;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 
@@ -42,7 +39,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:nil] autorelease];
 	
 	self.navigationItem.leftBarButtonItem = self.cancelButton;
 	self.navigationItem.rightBarButtonItem = self.saveButton;

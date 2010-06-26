@@ -4,8 +4,6 @@
 
 @implementation DOEntryTableCell
 
-@synthesize checkboxButton, textLabel, commentLabel;
-
 + (DOEntryTableCell *)entryTableCell {
 	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"DOEntryTableCell" owner:self options:nil];
 	return [objects objectAtIndex:0];

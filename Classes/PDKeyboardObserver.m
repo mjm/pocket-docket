@@ -2,8 +2,6 @@
 
 @implementation PDKeyboardObserver
 
-@synthesize delegate, viewController, keyboardIsShowing;
-
 #pragma mark -
 #pragma mark Initializing a Keyboard Observer
 
@@ -49,7 +47,7 @@
 	
 	keyboardHeight = keyboardBounds.size.height;
 	
-	if (!keyboardIsShowing) {
+	if (!self.isKeyboardShowing) {
 		keyboardIsShowing = YES;
 		
 		CGRect frame = self.viewController.view.frame;
@@ -77,7 +75,7 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)note {
-	if (keyboardIsShowing) {
+	if (self.isKeyboardShowing) {
 		keyboardIsShowing = NO;
 		
 		CGRect frame = self.viewController.view.frame;

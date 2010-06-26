@@ -2,9 +2,6 @@
 
 @implementation PDCommentViewController
 
-@synthesize delegate, comment, keyboardObserver;
-@synthesize textView, saveButton;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 
@@ -14,7 +11,7 @@
 	
 	self.comment = aComment;
 	self.title = NSLocalizedString(@"Comment", nil);
-	keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:nil] autorelease];
 	
 	return self;
 }
@@ -31,7 +28,7 @@
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return ![keyboardObserver isKeyboardShowing];
+    return ![self.keyboardObserver isKeyboardShowing];
 }
 
 - (void)viewDidUnload {
@@ -42,7 +39,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[keyboardObserver registerNotifications];
+	[self.keyboardObserver registerNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -51,7 +48,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
-	[keyboardObserver unregisterNotifications];
+	[self.keyboardObserver unregisterNotifications];
 }
 
 #pragma mark -

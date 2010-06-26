@@ -4,18 +4,7 @@
 @protocol DOEntryDetailsViewControllerDelegate;
 
 @interface DOEntryDetailsViewController : UIViewController <UITextFieldDelegate> {
-	PDListEntry *entry;
-	id <DOEntryDetailsViewControllerDelegate> delegate;
-	
-	IBOutlet UIBarButtonItem *cancelButton;
-	IBOutlet UIBarButtonItem *saveButton;
-	
-	IBOutlet UITextField *summaryTextField;
-	IBOutlet UITextView *commentTextView;
-	
 	BOOL isNew;
-	
-	PDKeyboardObserver *keyboardObserver;
 }
 
 @property (nonatomic, retain) PDListEntry *entry;

@@ -6,14 +6,7 @@
 @protocol DOListsViewControllerDelegate;
 
 @interface DOListsViewController : UITableViewController <DOEditListViewControllerDelegate, UIPopoverControllerDelegate, NSFetchedResultsControllerDelegate> {
-	id <DOListsViewControllerDelegate> delegate;
-	
 	PDPersistenceController *persistenceController;
-	NSFetchedResultsController *fetchedResultsController;
-	UIPopoverController *popoverController;
-	
-	IBOutlet DOEntriesViewController *entriesViewController;
-	
 	BOOL userIsMoving;
 }
 

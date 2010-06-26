@@ -1,6 +1,4 @@
-@interface PDTextFieldCell : UITableViewCell {
-	IBOutlet UITextField *textField;
-}
+@interface PDTextFieldCell : UITableViewCell {}
 
 @property (nonatomic, retain) IBOutlet UITextField *textField;
 

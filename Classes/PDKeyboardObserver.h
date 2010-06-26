@@ -9,11 +9,8 @@
  
  */
 @interface PDKeyboardObserver : NSObject {
-	id <PDKeyboardObserverDelegate> delegate;
-	UIViewController *viewController;
-	
-	BOOL keyboardIsShowing;
 	CGFloat keyboardHeight;
+	BOOL keyboardIsShowing;
 }
 
 @property (nonatomic, assign) id <PDKeyboardObserverDelegate> delegate;

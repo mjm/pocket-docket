@@ -9,22 +9,7 @@
 
 @interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate> {
 	PDList *list;
-	PDPersistenceController *persistenceController;
-	NSFetchedResultsController *fetchedResultsController;
-	
-	UIPopoverController *listsPopoverController;
-	UIPopoverController *popoverController;
-	
-	IBOutlet DOListsViewController *listsViewController;
-	IBOutlet UIToolbar *toolbar;
-	IBOutlet UIBarButtonItem *titleButton;
-	IBOutlet UIBarButtonItem *editButton;
-	IBOutlet UIBarButtonItem *addButton;
-	IBOutlet UITableView *table;
-	
 	BOOL userIsMoving;
-	UITapGestureRecognizer *tapGestureRecognizer;
-	UISwipeGestureRecognizer *swipeGestureRecognizer;
 }
 
 @property (nonatomic, retain) PDList *list;

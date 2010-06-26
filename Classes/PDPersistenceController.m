@@ -5,17 +5,9 @@
 
 #pragma mark PrivateMethods
 
-@interface PDPersistenceController (PrivateMethods)
+@interface PDPersistenceController ()
 
 @property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
-
-@end
-
-@implementation PDPersistenceController (PrivateMethods)
-
-- (NSManagedObjectModel *)managedObjectModel {
-	return self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
-}
 
 @end
 
@@ -23,7 +15,9 @@
 
 @implementation PDPersistenceController
 
-@synthesize managedObjectContext;
+- (NSManagedObjectModel *)managedObjectModel {
+	return self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
+}
 
 #pragma mark -
 #pragma mark Registering Defaults

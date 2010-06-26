@@ -4,35 +4,7 @@
 @protocol PDEditListViewControllerDelegate;
 
 //! A view controller that allows the user to edit the title of a list.
-@interface PDEditListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-	//! \name Properties
-	//@{
-	
-	//! The list being edited by this controller.
-	PDList *list;
-	
-	//@}
-	//! \name Delegation
-	//@{
-	
-	id <PDEditListViewControllerDelegate> delegate;
-	
-	//@}
-	//! \name User Interface
-	//@{
-	
-	PDTextFieldCell *titleCell;
-	
-	//@}
-	//! \name Outlets
-	//@{
-	
-	IBOutlet UINavigationItem *navItem;
-	IBOutlet UINavigationBar	 *navBar;
-	IBOutlet UITableView *table;
-	
-	//@}
-}
+@interface PDEditListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {}
 
 @property (nonatomic, retain) PDList *list;
 @property (nonatomic, assign) id <PDEditListViewControllerDelegate> delegate;

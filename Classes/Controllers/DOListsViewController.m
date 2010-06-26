@@ -34,9 +34,6 @@
 
 @implementation DOListsViewController
 
-@synthesize delegate, persistenceController, fetchedResultsController, popoverController;
-@synthesize entriesViewController;
-
 #pragma mark -
 #pragma mark View Lifecycle
 
@@ -91,8 +88,8 @@
 #pragma mark Managing Persistence
 
 - (void)setPersistenceController:(PDPersistenceController *)controller {
-	if (persistenceController != controller) {
-		[persistenceController release];
+	if (self.persistenceController != controller) {
+		[self.persistenceController release];
 		persistenceController = [controller retain];
 		
 		self.fetchedResultsController = [self.persistenceController listsFetchedResultsController];

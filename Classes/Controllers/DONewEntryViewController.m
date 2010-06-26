@@ -5,9 +5,6 @@
 
 @implementation DONewEntryViewController
 
-@synthesize delegate, entry, textField;
-@synthesize table, doneButton;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 

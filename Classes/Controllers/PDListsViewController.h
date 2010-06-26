@@ -10,25 +10,6 @@
  \nosubgrouping
  */
 @interface PDListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDEditListViewControllerDelegate, NSFetchedResultsControllerDelegate> {
-	//! \name Managing Persistence
-	//@{
-	
-	//! The controller used for persistence operations.
-	PDPersistenceController *persistenceController;
-	
-	//! The controller used to manage the lists.
-	NSFetchedResultsController *fetchedResultsController;
-	
-	//@}
-	//! \name Outlets
-	//@{
-	
-	IBOutlet UITableView *table;
-
-	IBOutlet UIBarButtonItem *addButton;
-	IBOutlet UIBarButtonItem *backButton;
-	
-	//@}
 	//! \name Handling State
 	//@{
 	

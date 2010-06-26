@@ -1,6 +1,4 @@
-@interface PDTextViewCell : UITableViewCell {
-
-}
+@interface PDTextViewCell : UITableViewCell {}
 
 @property (nonatomic, readonly) UILabel *paragraphLabel;
 

@@ -5,14 +5,6 @@
 
 //! A view controller for displaying the entries in a list.
 @interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate, PDKeyboardObserverDelegate> {
-	PDList *list;
-	PDPersistenceController *persistenceController;
-	NSFetchedResultsController *fetchedResultsController;
-	
-	IBOutlet UITableView *table;
-	IBOutlet UITextField *newEntryField;
-	
-	PDKeyboardObserver *keyboardObserver;
 	
 	BOOL userIsMoving;
 }

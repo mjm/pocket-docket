@@ -5,34 +5,8 @@
 
 //! A view controller that allows the user to edit the title of a list.
 @interface DOEditListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-	//! \name Properties
-	//@{
-	
-	//! The list being edited by this controller.
-	PDList *list;
 	
 	BOOL didSave;
-	
-	//@}
-	//! \name Delegation
-	//@{
-	
-	id <DOEditListViewControllerDelegate> delegate;
-	
-	//@}
-	//! \name User Interface
-	//@{
-	
-	PDTextFieldCell *titleCell;
-	
-	//@}
-	//! \name Outlets
-	//@{
-	
-	IBOutlet UITableView *table;
-	IBOutlet UIBarButtonItem *saveButton;
-	
-	//@}
 }
 
 @property (nonatomic, retain) PDList *list;

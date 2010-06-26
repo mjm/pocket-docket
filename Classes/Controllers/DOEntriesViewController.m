@@ -18,11 +18,6 @@
 
 @implementation DOEntriesViewController
 
-@synthesize list, persistenceController, fetchedResultsController;
-@synthesize listsPopoverController, popoverController;
-@synthesize listsViewController, toolbar, titleButton, editButton, addButton, table;
-@synthesize tapGestureRecognizer, swipeGestureRecognizer;
-
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry {
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
 	 [UIImage imageNamed:@"CheckBoxChecked.png"] :
@@ -61,9 +56,9 @@
 	UIColor *sepColor = [UIColor colorWithRed:151.0/255.0 green:199.0/255.0 blue:223.0/255.0 alpha:1.0];
 	self.table.separatorColor = sepColor;
 	
-	NSMutableArray *items = [[toolbar items] mutableCopy];
+	NSMutableArray *items = [[self.toolbar items] mutableCopy];
 	[items insertObject:[self editButtonItem] atIndex:0];
-	[toolbar setItems:items animated:NO];
+	[self.toolbar setItems:items animated:NO];
 	[items release];
 	
 	[[self editButtonItem] setEnabled:NO];
@@ -74,8 +69,8 @@
 	[self.table addGestureRecognizer:self.swipeGestureRecognizer];
 	
 	self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapDetected:)];
-	tapGestureRecognizer.numberOfTapsRequired = 2;
-	[self.table addGestureRecognizer:tapGestureRecognizer];
+	self.tapGestureRecognizer.numberOfTapsRequired = 2;
+	[self.table addGestureRecognizer:self.tapGestureRecognizer];
 	
 	[self addObserver:self
 		   forKeyPath:@"list.title"
@@ -114,8 +109,8 @@
 #pragma mark Changing the Selected List
 
 - (void)setList:(PDList *)aList {
-	if (list != aList) {
-		[list release];
+	if (self.list != aList) {
+		[self.list release];
 		list = [aList retain];
 		
 		if (self.list) {
@@ -400,9 +395,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		  withBarButtonItem:(UIBarButtonItem *)barButtonItem
 	   forPopoverController:(UIPopoverController *)pc {
 	barButtonItem.title = @"Lists";
-	NSMutableArray *toolbarItems = [toolbar.items mutableCopy];
+	NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
 	[toolbarItems insertObject:barButtonItem atIndex:0];
-	[toolbar setItems:toolbarItems animated:YES];
+	[self.toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
 	
 	self.titleButton.title = self.list.title;
@@ -413,9 +408,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (void)splitViewController:(UISplitViewController *)svc
 	 willShowViewController:(UIViewController *)aViewController
   invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-	NSMutableArray *toolbarItems = [toolbar.items mutableCopy];
+	NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
 	[toolbarItems removeObjectAtIndex:0];
-	[toolbar setItems:toolbarItems animated:YES];
+	[self.toolbar setItems:toolbarItems animated:YES];
 	[toolbarItems release];
 	
 	self.titleButton.title = @"";

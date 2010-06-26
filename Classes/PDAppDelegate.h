@@ -3,8 +3,6 @@
     NSManagedObjectModel *managedObjectModel;
     NSManagedObjectContext *managedObjectContext;	    
     NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-    UIWindow *window;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

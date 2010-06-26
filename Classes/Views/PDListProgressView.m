@@ -2,8 +2,6 @@
 
 @implementation PDListProgressView
 
-@synthesize progress;
-
 - (void)drawRect:(CGRect)rect {
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSetRGBFillColor(ctx, 255, 255, 255, 0);

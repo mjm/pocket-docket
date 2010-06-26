@@ -60,9 +60,6 @@
 
 @implementation PDEntriesViewController
 
-@synthesize list, persistenceController, fetchedResultsController, keyboardObserver;
-@synthesize table, newEntryField;
-
 #pragma mark -
 #pragma mark Initializing a View Controller
 
@@ -74,7 +71,7 @@
 	self.persistenceController = controller;
 	self.fetchedResultsController = [self.persistenceController entriesFetchedResultsControllerForList:self.list];
 	self.fetchedResultsController.delegate = self;
-	keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:self];
+	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:self] autorelease];
 	
 	return self;
 }
@@ -110,7 +107,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
-	[keyboardObserver registerNotifications];
+	[self.keyboardObserver registerNotifications];
 	
 	[self.persistenceController saveSelectedList:self.list];
 }
@@ -118,11 +115,11 @@
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[self.newEntryField resignFirstResponder];
-	[keyboardObserver unregisterNotifications];
+	[self.keyboardObserver unregisterNotifications];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return ![keyboardObserver isKeyboardShowing];
+    return ![self.keyboardObserver isKeyboardShowing];
 }
 
 - (void)viewDidUnload {

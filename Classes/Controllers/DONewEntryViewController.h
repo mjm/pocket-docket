@@ -3,14 +3,7 @@
 @protocol DONewEntryViewControllerDelegate;
 
 @interface DONewEntryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
-	id <DONewEntryViewControllerDelegate> delegate;
-	PDListEntry *entry;
-	UITextField *textField;
-	
 	BOOL didSave;
-	
-	IBOutlet UITableView *table;
-	IBOutlet UIBarButtonItem *doneButton;
 }
 
 @property (nonatomic, assign) id <DONewEntryViewControllerDelegate> delegate;

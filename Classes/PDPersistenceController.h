@@ -5,14 +5,7 @@
 /*!
  \nosubgrouping
  */
-@interface PDPersistenceController : NSObject {
-	//! \name Accessing Core Data
-	//@{
-	
-	//! The Core Data managed object context.
-	NSManagedObjectContext *managedObjectContext;
-	//@}
-}
+@interface PDPersistenceController : NSObject {}
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) NSUndoManager *undoManager;

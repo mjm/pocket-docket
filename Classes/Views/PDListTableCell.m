@@ -2,8 +2,6 @@
 
 @implementation PDListTableCell
 
-@synthesize progressView, titleLabel, completionLabel;
-
 + (PDListTableCell *)listTableCell {
 	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"PDListTableCell" owner:self options:nil];
 	return [objects objectAtIndex:0];

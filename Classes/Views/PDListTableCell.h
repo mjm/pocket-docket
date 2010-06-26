@@ -8,16 +8,7 @@
  
  \nosubgrouping
  */
-@interface PDListTableCell : UITableViewCell {
-	//! \name Outlets
-	//@{
-	
-	IBOutlet PDListProgressView *progressView;
-	IBOutlet UILabel *titleLabel;
-	IBOutlet UILabel *completionLabel;
-	
-	//@}
-}
+@interface PDListTableCell : UITableViewCell {}
 
 @property (nonatomic, retain) IBOutlet PDListProgressView *progressView;
 @property (nonatomic, retain) IBOutlet UILabel *titleLabel;

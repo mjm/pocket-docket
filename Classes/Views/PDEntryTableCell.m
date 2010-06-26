@@ -2,8 +2,6 @@
 
 @implementation PDEntryTableCell
 
-@synthesize checkboxButton, textLabel;
-
 + (PDEntryTableCell *)entryTableCell {
 	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"PDEntryTableCell" owner:self options:nil];
 	return [objects objectAtIndex:0];

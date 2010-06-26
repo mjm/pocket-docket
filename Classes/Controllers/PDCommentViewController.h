@@ -2,16 +2,7 @@
 
 @protocol PDCommentViewControllerDelegate;
 
-@interface PDCommentViewController : UIViewController {
-	id <PDCommentViewControllerDelegate> delegate;
-	
-	NSString *comment;
-	
-	IBOutlet UITextView *textView;
-	IBOutlet UIBarButtonItem *saveButton;
-	
-	PDKeyboardObserver *keyboardObserver;
-}
+@interface PDCommentViewController : UIViewController {}
 
 @property (nonatomic, assign) id <PDCommentViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString *comment;

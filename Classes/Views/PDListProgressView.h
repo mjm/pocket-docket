@@ -1,6 +1,4 @@
-@interface PDListProgressView : UIView {
-	CGFloat progress;
-}
+@interface PDListProgressView : UIView {}
 
 @property (nonatomic) CGFloat progress;
 
