@@ -4,6 +4,9 @@
 
 - (void)drawRect:(CGRect)rect {
 	CGFloat len = 32;
+
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_3_2
 	CGFloat len2;
 	if ([self respondsToSelector:@selector(contentScaleFactor)]) {
 		len2 = len * self.contentScaleFactor;
@@ -17,6 +20,12 @@
 	} else {
 		UIGraphicsBeginImageContext(CGSizeMake(len, len));
 	}
+#else
+	CGFloat len2 = len;
+	UIGraphicsBeginImageContext(CGSizeMake(len, len));
+#endif
+#endif
+
 	CGContextRef ctx = UIGraphicsGetCurrentContext();
 	CGContextSetRGBFillColor(ctx, 255, 255, 255, 0);
 	CGContextFillRect(ctx, rect);
