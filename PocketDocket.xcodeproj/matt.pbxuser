@@ -9,9 +9,9 @@
 	};
 	1D3623250D0F684500981E51 /* PDAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 2940}}";
-			sepNavSelRange = "{1200, 0}";
-			sepNavVisRange = "{849, 803}";
+			sepNavIntBoundsRect = "{{0, 0}, {953, 2920}}";
+			sepNavSelRange = "{850, 0}";
+			sepNavVisRange = "{502, 856}";
 			sepNavWindowFrame = "{{38, 7}, {1190, 871}}";
 		};
 	};
@@ -256,6 +256,10 @@
 			C9DB1FFC11D711D0000A293A /* PBXTextBookmark */ = C9DB1FFC11D711D0000A293A /* PBXTextBookmark */;
 			C9DB200011D711E7000A293A /* PBXTextBookmark */ = C9DB200011D711E7000A293A /* PBXTextBookmark */;
 			C9DB200711D7122E000A293A /* PBXTextBookmark */ = C9DB200711D7122E000A293A /* PBXTextBookmark */;
+			C9DB201B11D78156000A293A /* PBXTextBookmark */ = C9DB201B11D78156000A293A /* PBXTextBookmark */;
+			C9DB201C11D78156000A293A /* PBXTextBookmark */ = C9DB201C11D78156000A293A /* PBXTextBookmark */;
+			C9DB201D11D78156000A293A /* PBXTextBookmark */ = C9DB201D11D78156000A293A /* PBXTextBookmark */;
+			C9DB201E11D78156000A293A /* PBXTextBookmark */ = C9DB201E11D78156000A293A /* PBXTextBookmark */;
 			C9E18D0A11CECABC00C61B18 = C9E18D0A11CECABC00C61B18 /* PBXBookmark */;
 			C9E18D0B11CECABC00C61B18 = C9E18D0B11CECABC00C61B18 /* PBXBookmark */;
 			C9E18D0C11CECABC00C61B18 = C9E18D0C11CECABC00C61B18 /* PBXBookmark */;
@@ -527,9 +531,9 @@
 	};
 	C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1242, 7920}}";
-			sepNavSelRange = "{10225, 0}";
-			sepNavVisRange = "{9145, 496}";
+			sepNavIntBoundsRect = "{{0, 0}, {953, 8140}}";
+			sepNavSelRange = "{2804, 83}";
+			sepNavVisRange = "{2561, 846}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1753,7 +1757,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 19;
+		rLoc = 28;
 		rType = 1;
 	};
 	C9DB1FB811D70546000A293A /* PBXTextBookmark */ = {
@@ -1761,7 +1765,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 11";
 		rLen = 0;
-		rLoc = 629;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 828;
 		vrLoc = 32;
@@ -1771,7 +1775,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 11";
 		rLen = 0;
-		rLoc = 629;
+		rLoc = 814;
 		rType = 0;
 		vrLen = 607;
 		vrLoc = 32;
@@ -1854,7 +1858,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 27";
 		rLen = 0;
-		rLoc = 1311;
+		rLoc = 1496;
 		rType = 0;
 		vrLen = 805;
 		vrLoc = 516;
@@ -1864,7 +1868,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 34";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1696;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 690;
@@ -1874,7 +1878,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 34";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1696;
 		rType = 0;
 		vrLen = 541;
 		vrLoc = 690;
@@ -1884,7 +1888,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 34";
 		rLen = 0;
-		rLoc = 1511;
+		rLoc = 1696;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 371;
@@ -1894,7 +1898,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 6";
 		rLen = 0;
-		rLoc = 497;
+		rLoc = 682;
 		rType = 0;
 		vrLen = 767;
 		vrLoc = 32;
@@ -1904,7 +1908,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 17";
 		rLen = 0;
-		rLoc = 494;
+		rLoc = 585;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 32;
@@ -1914,7 +1918,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 17";
 		rLen = 0;
-		rLoc = 494;
+		rLoc = 585;
 		rType = 0;
 		vrLen = 638;
 		vrLoc = 58;
@@ -1924,7 +1928,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 18";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 587;
 		rType = 0;
 		vrLen = 495;
 		vrLoc = 100;
@@ -1934,7 +1938,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 18";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 587;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 32;
@@ -1944,7 +1948,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 18";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 587;
 		rType = 0;
 		vrLen = 495;
 		vrLoc = 100;
@@ -1954,7 +1958,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 18";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 587;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 32;
@@ -1964,7 +1968,7 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 18";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 587;
 		rType = 0;
 		vrLen = 708;
 		vrLoc = 32;
@@ -1974,10 +1978,50 @@
 		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
 		name = "PDListProgressView.m: 15";
 		rLen = 0;
-		rLoc = 347;
+		rLoc = 438;
 		rType = 0;
 		vrLen = 670;
 		vrLoc = 32;
+	};
+	C9DB201B11D78156000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* PDAppDelegate.m */;
+		name = "PDAppDelegate.m: 22";
+		rLen = 0;
+		rLoc = 850;
+		rType = 0;
+		vrLen = 856;
+		vrLoc = 502;
+	};
+	C9DB201C11D78156000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 88";
+		rLen = 83;
+		rLoc = 2804;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 2561;
+	};
+	C9DB201D11D78156000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 7";
+		rLen = 0;
+		rLoc = 121;
+		rType = 0;
+		vrLen = 632;
+		vrLoc = 0;
+	};
+	C9DB201E11D78156000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */;
+		name = "PDListProgressView.m: 9";
+		rLen = 0;
+		rLoc = 209;
+		rType = 0;
+		vrLen = 583;
+		vrLoc = 100;
 	};
 	C9E18D0A11CECABC00C61B18 /* PBXBookmark */ = {
 		isa = PBXBookmark;
@@ -2008,9 +2052,9 @@
 	};
 	C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {953, 1060}}";
-			sepNavSelRange = "{347, 0}";
-			sepNavVisRange = "{32, 670}";
+			sepNavIntBoundsRect = "{{0, 0}, {953, 1240}}";
+			sepNavSelRange = "{209, 0}";
+			sepNavVisRange = "{100, 583}";
 		};
 	};
 }

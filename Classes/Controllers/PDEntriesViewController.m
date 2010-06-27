@@ -151,6 +151,7 @@
 		NSMutableArray *items = [[self.toolbar items] mutableCopy];
 		[items replaceObjectAtIndex:([items count] - 1) withObject:self.addButton];
 		[self.toolbar setItems:items animated:YES];
+		[items release];
 	}
 }
 
@@ -163,6 +164,7 @@
 		NSMutableArray *items = [[self.toolbar items] mutableCopy];
 		[items replaceObjectAtIndex:([items count] - 1) withObject:self.sendButton];
 		[self.toolbar setItems:items animated:YES];
+		[items release];
 	}
 }
 
