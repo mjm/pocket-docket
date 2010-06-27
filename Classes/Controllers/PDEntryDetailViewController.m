@@ -57,7 +57,6 @@
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
 	[super setEditing:editing animated:animated];
-	[self.table setEditing:editing animated:animated];
 	
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 	PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
@@ -82,6 +81,7 @@
 	}
 	
 	[self.table beginUpdates];
+	[self.table setEditing:editing animated:animated];
 	if (editing) {
 		[self.table insertSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
 	} else {
@@ -90,7 +90,7 @@
 	[self.table endUpdates];
 	
 	[self.table beginUpdates];
-	[self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+	[self.table reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
 	[self.table endUpdates];
 	
 	if (editing) {
