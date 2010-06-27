@@ -2,8 +2,8 @@
 {
 	1D3623240D0F684500981E51 /* PDAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 456}}";
-			sepNavSelRange = "{225, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 607}}";
+			sepNavSelRange = "{324, 0}";
 			sepNavVisRange = "{0, 606}";
 		};
 	};
@@ -24,9 +24,9 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
-		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphoneos4.0;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
+		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
+		activeSDKPreference = iphoneos3.2;
+		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
 		);
@@ -344,16 +344,16 @@
 	};
 	C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 780}}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 760}}";
 			sepNavSelRange = "{179, 0}";
-			sepNavVisRange = "{0, 1084}";
+			sepNavVisRange = "{0, 1131}";
 		};
 	};
 	C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 2880}}";
-			sepNavSelRange = "{155, 0}";
-			sepNavVisRange = "{0, 633}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 3040}}";
+			sepNavSelRange = "{2671, 0}";
+			sepNavVisRange = "{3046, 631}";
 			sepNavWindowFrame = "{{15, 180}, {910, 878}}";
 		};
 	};
@@ -436,16 +436,17 @@
 	};
 	C94C560111544FF700791FAC /* PDListsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 1020}}";
-			sepNavSelRange = "{490, 0}";
-			sepNavVisRange = "{0, 494}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 920}}";
+			sepNavSelRange = "{328, 0}";
+			sepNavVisRange = "{0, 897}";
+			sepNavWindowFrame = "{{15, 68}, {910, 810}}";
 		};
 	};
 	C94C560211544FF700791FAC /* PDListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1242, 6480}}";
-			sepNavSelRange = "{6286, 0}";
-			sepNavVisRange = "{6008, 661}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 6540}}";
+			sepNavSelRange = "{813, 256}";
+			sepNavVisRange = "{284, 964}";
 			sepNavWindowFrame = "{{15, 157}, {910, 896}}";
 		};
 	};
@@ -480,17 +481,17 @@
 	};
 	C94C56FB1156C72600791FAC /* PDEditListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 1260}}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 1180}}";
 			sepNavSelRange = "{279, 0}";
-			sepNavVisRange = "{84, 764}";
+			sepNavVisRange = "{0, 997}";
 			sepNavWindowFrame = "{{107, 98}, {1190, 871}}";
 		};
 	};
 	C94C56FC1156C72600791FAC /* PDEditListViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 2040}}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 2100}}";
 			sepNavSelRange = "{1738, 0}";
-			sepNavVisRange = "{1465, 543}";
+			sepNavVisRange = "{207, 728}";
 			sepNavWindowFrame = "{{84, 119}, {1190, 871}}";
 		};
 	};
@@ -524,16 +525,16 @@
 	};
 	C94C597E1158557400791FAC /* PDEntriesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1242, 740}}";
-			sepNavSelRange = "{384, 0}";
-			sepNavVisRange = "{83, 925}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 940}}";
+			sepNavSelRange = "{1469, 0}";
+			sepNavVisRange = "{412, 1064}";
 		};
 	};
 	C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {953, 8140}}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 8300}}";
 			sepNavSelRange = "{2804, 83}";
-			sepNavVisRange = "{2561, 846}";
+			sepNavVisRange = "{11501, 785}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -877,16 +878,16 @@
 	};
 	C9748C56116AC18B00D2B372 /* PDCommentViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 480}}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 505}}";
 			sepNavSelRange = "{134, 0}";
-			sepNavVisRange = "{78, 606}";
+			sepNavVisRange = "{0, 688}";
 		};
 	};
 	C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 1540}}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 1540}}";
 			sepNavSelRange = "{1251, 0}";
-			sepNavVisRange = "{1297, 384}";
+			sepNavVisRange = "{0, 611}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -913,16 +914,16 @@
 	};
 	C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 700}}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 700}}";
 			sepNavSelRange = "{368, 0}";
-			sepNavVisRange = "{187, 757}";
+			sepNavVisRange = "{0, 1050}";
 		};
 	};
 	C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 6380}}";
-			sepNavSelRange = "{684, 0}";
-			sepNavVisRange = "{7049, 852}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 6600}}";
+			sepNavSelRange = "{2596, 0}";
+			sepNavVisRange = "{9351, 411}";
 		};
 	};
 	C981B09011C0A29C003A5D1C /* PBXBookmark */ = {
@@ -1050,30 +1051,31 @@
 	};
 	C9BD122E1172B693005E350E /* DOListsViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1004, 580}}";
-			sepNavSelRange = "{415, 0}";
-			sepNavVisRange = "{102, 848}";
+			sepNavIntBoundsRect = "{{0, 0}, {851, 697}}";
+			sepNavSelRange = "{779, 0}";
+			sepNavVisRange = "{0, 1048}";
+			sepNavWindowFrame = "{{525, 68}, {910, 810}}";
 		};
 	};
 	C9BD122F1172B693005E350E /* DOListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 6840}}";
-			sepNavSelRange = "{2799, 0}";
-			sepNavVisRange = "{8943, 937}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 6860}}";
+			sepNavSelRange = "{7288, 0}";
+			sepNavVisRange = "{377, 886}";
 		};
 	};
 	C9BD12351172B9FB005E350E /* DOEntriesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1004, 720}}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 700}}";
 			sepNavSelRange = "{595, 0}";
-			sepNavVisRange = "{165, 1237}";
+			sepNavVisRange = "{0, 1537}";
 		};
 	};
 	C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1004, 11500}}";
-			sepNavSelRange = "{14795, 0}";
-			sepNavVisRange = "{14626, 699}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 11800}}";
+			sepNavSelRange = "{13690, 0}";
+			sepNavVisRange = "{18032, 522}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1084,16 +1086,16 @@
 	};
 	C9BD13521173F772005E350E /* DOEditListViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 1160}}";
+			sepNavIntBoundsRect = "{{0, 0}, {837, 1080}}";
 			sepNavSelRange = "{296, 0}";
-			sepNavVisRange = "{15, 855}";
+			sepNavVisRange = "{0, 869}";
 		};
 	};
 	C9BD13531173F772005E350E /* DOEditListViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {901, 2200}}";
-			sepNavSelRange = "{1891, 0}";
-			sepNavVisRange = "{1766, 453}";
+			sepNavIntBoundsRect = "{{0, 0}, {909, 2260}}";
+			sepNavSelRange = "{338, 0}";
+			sepNavVisRange = "{0, 725}";
 		};
 	};
 	C9BD148E117567CC005E350E /* PBXBookmark */ = {
@@ -1357,7 +1359,7 @@
 		fRef = C9BD122F1172B693005E350E /* DOListsViewController.m */;
 		name = "DOListsViewController.m: 92";
 		rLen = 0;
-		rLoc = 2799;
+		rLoc = 2924;
 		rType = 0;
 		vrLen = 937;
 		vrLoc = 8943;
@@ -1367,7 +1369,7 @@
 		fRef = C9BD13531173F772005E350E /* DOEditListViewController.m */;
 		name = "DOEditListViewController.m: 81";
 		rLen = 0;
-		rLoc = 1891;
+		rLoc = 1915;
 		rType = 0;
 		vrLen = 453;
 		vrLoc = 1766;
@@ -1587,7 +1589,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 447";
 		rLen = 0;
-		rLoc = 14795;
+		rLoc = 14819;
 		rType = 0;
 		vrLen = 699;
 		vrLoc = 14626;
@@ -2052,9 +2054,9 @@
 	};
 	C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {953, 1240}}";
-			sepNavSelRange = "{209, 0}";
-			sepNavVisRange = "{100, 583}";
+			sepNavIntBoundsRect = "{{0, 0}, {1139, 1180}}";
+			sepNavSelRange = "{884, 0}";
+			sepNavVisRange = "{1155, 528}";
 		};
 	};
 }

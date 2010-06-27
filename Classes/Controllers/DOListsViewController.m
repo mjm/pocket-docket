@@ -24,7 +24,10 @@
 	[cell.progressView setNeedsDisplay];
 	
 	cell.titleLabel.text = list.title;
-	cell.completionLabel.text = [NSString stringWithFormat:@"%d of %d completed", [list.completedEntries count], [list.entries count]];
+	NSString *of = NSLocalizedString(@"of", nil);
+	NSString *completed = NSLocalizedString(@"completed", nil);
+	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
+								 [list.completedEntries count], of, [list.entries count], completed];
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.editingAccessoryType = UITableViewCellAccessoryNone;
 }
@@ -116,7 +119,7 @@
 	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:list];
 	controller.delegate = self;
-	controller.title = @"New List";
+	controller.title = NSLocalizedString(@"New List", nil);
 	
 	if ([self.delegate listsControllerShouldDisplayControllerInPopover:self]) {
 		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -217,10 +220,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	[self.delegate listsController:self didSelectList:list];
-}
-
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-	//self.entriesViewController.list = nil;
 }
 
 #pragma mark -

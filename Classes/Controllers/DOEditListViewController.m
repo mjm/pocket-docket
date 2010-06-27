@@ -12,7 +12,7 @@
 	if (![super initWithNibName:@"DOEditListView" bundle:nil])
 		return nil;
 	
-	self.title = @"Edit List";
+	self.title = NSLocalizedString(@"Edit List", nil);
 	self.list = aList;
 	self.contentSizeForViewInPopover = CGSizeMake(320, 63);
 	

@@ -241,18 +241,15 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C9DB204311D8085A000A293A /* App Delegate */,
 				C929542F117A971F0052A674 /* Categories */,
 				C94C56E31156BEF400791FAC /* Models */,
 				C94C564011569C5400791FAC /* Views */,
 				C94C563F11569C4B00791FAC /* Controllers */,
-				1D3623240D0F684500981E51 /* PDAppDelegate.h */,
-				1D3623250D0F684500981E51 /* PDAppDelegate.m */,
 				C94C55FC115447E500791FAC /* PDPersistenceController.h */,
 				C94C55FD115447E500791FAC /* PDPersistenceController.m */,
 				C9BD10B211727788005E350E /* PDKeyboardObserver.h */,
 				C9BD10B311727788005E350E /* PDKeyboardObserver.m */,
-				C9BD122B1172B596005E350E /* DOAppDelegate.h */,
-				C9BD122C1172B596005E350E /* DOAppDelegate.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -348,24 +345,12 @@
 		C94C563F11569C4B00791FAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C94C560111544FF700791FAC /* PDListsViewController.h */,
-				C94C560211544FF700791FAC /* PDListsViewController.m */,
-				C94C56FB1156C72600791FAC /* PDEditListViewController.h */,
-				C94C56FC1156C72600791FAC /* PDEditListViewController.m */,
-				C94C597E1158557400791FAC /* PDEntriesViewController.h */,
-				C94C597F1158557400791FAC /* PDEntriesViewController.m */,
-				C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */,
-				C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */,
+				C9DB203D11D80667000A293A /* Lists View Controller */,
+				C9DB203E11D80755000A293A /* Edit List View Controller */,
+				C9DB203F11D80773000A293A /* Entries View Controller */,
+				C9DB204011D80782000A293A /* Entry Details View Controller */,
 				C9748C56116AC18B00D2B372 /* PDCommentViewController.h */,
 				C9748C57116AC18B00D2B372 /* PDCommentViewController.m */,
-				C9BD122E1172B693005E350E /* DOListsViewController.h */,
-				C9BD122F1172B693005E350E /* DOListsViewController.m */,
-				C9BD12351172B9FB005E350E /* DOEntriesViewController.h */,
-				C9BD12361172B9FB005E350E /* DOEntriesViewController.m */,
-				C9BD13521173F772005E350E /* DOEditListViewController.h */,
-				C9BD13531173F772005E350E /* DOEditListViewController.m */,
-				C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */,
-				C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */,
 				C9777E5B119892AC0047E997 /* DONewEntryViewController.h */,
 				C9777E5C119892AC0047E997 /* DONewEntryViewController.m */,
 			);
@@ -395,14 +380,10 @@
 			isa = PBXGroup;
 			children = (
 				C9DB1F9911D70155000A293A /* List Cells */,
+				C9DB204411D808FD000A293A /* Entry Cells */,
 				C9DB1F8E11D70135000A293A /* Launch Images */,
 				C9DB1F8D11D70123000A293A /* Toolbar Icons */,
 				C9DB1F8C11D70116000A293A /* App Icons */,
-				C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */,
-				C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */,
-				C9B584DB11BC1015008C973C /* Margin.png */,
-				C94C5B65115C332400791FAC /* CheckBox.png */,
-				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -473,6 +454,73 @@
 				C9DB1F9E11D70170000A293A /* ListIconDark@2x.png */,
 			);
 			name = "List Cells";
+			sourceTree = "<group>";
+		};
+		C9DB203D11D80667000A293A /* Lists View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C94C560111544FF700791FAC /* PDListsViewController.h */,
+				C94C560211544FF700791FAC /* PDListsViewController.m */,
+				C9BD122E1172B693005E350E /* DOListsViewController.h */,
+				C9BD122F1172B693005E350E /* DOListsViewController.m */,
+			);
+			name = "Lists View Controller";
+			sourceTree = "<group>";
+		};
+		C9DB203E11D80755000A293A /* Edit List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C94C56FB1156C72600791FAC /* PDEditListViewController.h */,
+				C94C56FC1156C72600791FAC /* PDEditListViewController.m */,
+				C9BD13521173F772005E350E /* DOEditListViewController.h */,
+				C9BD13531173F772005E350E /* DOEditListViewController.m */,
+			);
+			name = "Edit List View Controller";
+			sourceTree = "<group>";
+		};
+		C9DB203F11D80773000A293A /* Entries View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C94C597E1158557400791FAC /* PDEntriesViewController.h */,
+				C94C597F1158557400791FAC /* PDEntriesViewController.m */,
+				C9BD12351172B9FB005E350E /* DOEntriesViewController.h */,
+				C9BD12361172B9FB005E350E /* DOEntriesViewController.m */,
+			);
+			name = "Entries View Controller";
+			sourceTree = "<group>";
+		};
+		C9DB204011D80782000A293A /* Entry Details View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */,
+				C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */,
+				C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */,
+				C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */,
+			);
+			name = "Entry Details View Controller";
+			sourceTree = "<group>";
+		};
+		C9DB204311D8085A000A293A /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1D3623240D0F684500981E51 /* PDAppDelegate.h */,
+				1D3623250D0F684500981E51 /* PDAppDelegate.m */,
+				C9BD122B1172B596005E350E /* DOAppDelegate.h */,
+				C9BD122C1172B596005E350E /* DOAppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		C9DB204411D808FD000A293A /* Entry Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9B584DB11BC1015008C973C /* Margin.png */,
+				C94C5B65115C332400791FAC /* CheckBox.png */,
+				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
+				C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */,
+				C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */,
+			);
+			name = "Entry Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

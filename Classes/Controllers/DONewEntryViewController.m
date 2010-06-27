@@ -12,7 +12,7 @@
 	if (![super initWithNibName:@"DONewEntryView" bundle:nil])
 		return nil;
 
-	self.title = @"New Entry";
+	self.title = NSLocalizedString(@"New Entry", nil);
 	self.entry = aEntry;
 	self.contentSizeForViewInPopover = CGSizeMake(320, 63);
 	

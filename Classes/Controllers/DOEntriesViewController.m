@@ -412,7 +412,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	 willHideViewController:(UIViewController *)aViewController
 		  withBarButtonItem:(UIBarButtonItem *)barButtonItem
 	   forPopoverController:(UIPopoverController *)pc {
-	barButtonItem.title = @"Lists";
+	barButtonItem.title = NSLocalizedString(@"Lists", nil);
 	NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
 	[toolbarItems insertObject:barButtonItem atIndex:0];
 	[self.toolbar setItems:toolbarItems animated:YES];

@@ -98,7 +98,9 @@
 	if ([textField.text length] > 0) {
 		self.navigationItem.title = textField.text;
 	} else {
-		self.navigationItem.title = isNew ? @"New Entry" : @"Edit Entry";
+		self.navigationItem.title = isNew
+				? NSLocalizedString(@"New Entry", nil)
+				: NSLocalizedString(@"Edit Entry", nil);
 	}
 }
 
