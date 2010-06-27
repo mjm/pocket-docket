@@ -11,7 +11,7 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
 		C9295433117A97560052A674 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9295432117A97560052A674 /* NSString+Additions.m */; };
@@ -55,8 +55,6 @@
 		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
 		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
 		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
-		C9B584B211BC02D7008C973C /* ListCellHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584B111BC02D7008C973C /* ListCellHighlight.png */; };
-		C9B584B311BC02D7008C973C /* ListCellHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584B111BC02D7008C973C /* ListCellHighlight.png */; };
 		C9B584DC11BC1015008C973C /* Margin.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584DB11BC1015008C973C /* Margin.png */; };
 		C9B584DD11BC1015008C973C /* Margin.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B584DB11BC1015008C973C /* Margin.png */; };
 		C9B7FB281161AA1400C872D9 /* PDEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */; };
@@ -88,7 +86,11 @@
 		C9BD142F11753F15005E350E /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 		C9BD1479117554A0005E350E /* pencilangled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9BD1478117554A0005E350E /* pencilangled.png */; };
 		C9D6DE2711D688C300FF64EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6DE2611D688C300FF64EC /* MessageUI.framework */; };
+		C9D6DE6711D6D8F900FF64EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6DE2611D688C300FF64EC /* MessageUI.framework */; };
+		C9D6DE7311D6FB7400FF64EC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D6DE7211D6FB7400FF64EC /* Icon@2x.png */; };
 		C9D963EA1181199000E08A48 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D963E91181199000E08A48 /* Icon.png */; };
+		C9DB1F9F11D70170000A293A /* ListIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DB1F9D11D70170000A293A /* ListIcon@2x.png */; };
+		C9DB1FA011D70170000A293A /* ListIconDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DB1F9E11D70170000A293A /* ListIconDark@2x.png */; };
 		C9E18CF611CE964D00C61B18 /* CheckBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */; };
 		C9E18CF711CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */; };
 		C9E18CF811CE964D00C61B18 /* CheckBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */; };
@@ -175,7 +177,6 @@
 		C981B07D11C09DA6003A5D1C /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
-		C9B584B111BC02D7008C973C /* ListCellHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCellHighlight.png; sourceTree = "<group>"; };
 		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
 		C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryTableCell.xib; sourceTree = "<group>"; };
 		C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryTableCell.h; path = Views/PDEntryTableCell.h; sourceTree = "<group>"; };
@@ -196,7 +197,10 @@
 		C9BD13B61173FCFB005E350E /* DOEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEditListView.xib; sourceTree = "<group>"; };
 		C9BD1478117554A0005E350E /* pencilangled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilangled.png; sourceTree = "<group>"; };
 		C9D6DE2611D688C300FF64EC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C9D6DE7211D6FB7400FF64EC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C9D963E91181199000E08A48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C9DB1F9D11D70170000A293A /* ListIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ListIcon@2x.png"; sourceTree = "<group>"; };
+		C9DB1F9E11D70170000A293A /* ListIconDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ListIconDark@2x.png"; sourceTree = "<group>"; };
 		C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBox@2x.png"; sourceTree = "<group>"; };
 		C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBoxChecked@2x.png"; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				C9BD11CE1172AE3C005E350E /* Foundation.framework in Frameworks */,
 				C9BD11CF1172AE3C005E350E /* CoreGraphics.framework in Frameworks */,
 				C9BD11D01172AE3C005E350E /* CoreData.framework in Frameworks */,
+				C9D6DE6711D6D8F900FF64EC /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,21 +394,15 @@
 		C94C56991156B1A900791FAC /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C9DB1F9911D70155000A293A /* List Cells */,
+				C9DB1F8E11D70135000A293A /* Launch Images */,
+				C9DB1F8D11D70123000A293A /* Toolbar Icons */,
+				C9DB1F8C11D70116000A293A /* App Icons */,
 				C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */,
 				C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */,
-				C981B07C11C09DA6003A5D1C /* Default-Landscape.png */,
-				C981B07D11C09DA6003A5D1C /* Default-Portrait.png */,
 				C9B584DB11BC1015008C973C /* Margin.png */,
-				C9B584B111BC02D7008C973C /* ListCellHighlight.png */,
-				C9B5848F11BBFC22008C973C /* ListCell.png */,
-				C9D963E91181199000E08A48 /* Icon.png */,
-				C9748D0F116ADE7800D2B372 /* Default.png */,
 				C94C5B65115C332400791FAC /* CheckBox.png */,
 				C94C5B67115C332B00791FAC /* CheckBoxChecked.png */,
-				C94C569A1156B1A900791FAC /* ListIcon.png */,
-				C9EB356111701D1D0092DE45 /* ListIconDark.png */,
-				C9BD1478117554A0005E350E /* pencilangled.png */,
-				C9FD2AA91186763B00ED7954 /* IconPhone.png */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -434,6 +433,46 @@
 				C9777F51119A37350047E997 /* PDFirstLaunchData.plist */,
 			);
 			name = "First Launch";
+			sourceTree = "<group>";
+		};
+		C9DB1F8C11D70116000A293A /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C9FD2AA91186763B00ED7954 /* IconPhone.png */,
+				C9D6DE7211D6FB7400FF64EC /* Icon@2x.png */,
+				C9D963E91181199000E08A48 /* Icon.png */,
+			);
+			name = "App Icons";
+			sourceTree = "<group>";
+		};
+		C9DB1F8D11D70123000A293A /* Toolbar Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C9BD1478117554A0005E350E /* pencilangled.png */,
+			);
+			name = "Toolbar Icons";
+			sourceTree = "<group>";
+		};
+		C9DB1F8E11D70135000A293A /* Launch Images */ = {
+			isa = PBXGroup;
+			children = (
+				C9748D0F116ADE7800D2B372 /* Default.png */,
+				C981B07C11C09DA6003A5D1C /* Default-Landscape.png */,
+				C981B07D11C09DA6003A5D1C /* Default-Portrait.png */,
+			);
+			name = "Launch Images";
+			sourceTree = "<group>";
+		};
+		C9DB1F9911D70155000A293A /* List Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9B5848F11BBFC22008C973C /* ListCell.png */,
+				C94C569A1156B1A900791FAC /* ListIcon.png */,
+				C9EB356111701D1D0092DE45 /* ListIconDark.png */,
+				C9DB1F9D11D70170000A293A /* ListIcon@2x.png */,
+				C9DB1F9E11D70170000A293A /* ListIconDark@2x.png */,
+			);
+			name = "List Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,10 +561,12 @@
 				C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */,
 				C94D90CB11B3737500A3E225 /* Localizable.strings in Resources */,
 				C9B5849011BBFC22008C973C /* ListCell.png in Resources */,
-				C9B584B211BC02D7008C973C /* ListCellHighlight.png in Resources */,
 				C9B584DC11BC1015008C973C /* Margin.png in Resources */,
 				C9E18CF811CE964D00C61B18 /* CheckBox@2x.png in Resources */,
 				C9E18CF911CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */,
+				C9D6DE7311D6FB7400FF64EC /* Icon@2x.png in Resources */,
+				C9DB1F9F11D70170000A293A /* ListIcon@2x.png in Resources */,
+				C9DB1FA011D70170000A293A /* ListIconDark@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +591,6 @@
 				C9777F39119A1AEF0047E997 /* DOFirstLaunchData.plist in Resources */,
 				C94D90CC11B3737500A3E225 /* Localizable.strings in Resources */,
 				C9B5849111BBFC22008C973C /* ListCell.png in Resources */,
-				C9B584B311BC02D7008C973C /* ListCellHighlight.png in Resources */,
 				C9B584DD11BC1015008C973C /* Margin.png in Resources */,
 				C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */,
 				C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */,
