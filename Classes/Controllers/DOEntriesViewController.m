@@ -72,6 +72,8 @@
 	self.tapGestureRecognizer.numberOfTapsRequired = 2;
 	[self.table addGestureRecognizer:self.tapGestureRecognizer];
 	
+	self.sendButton.enabled = [MFMailComposeViewController canSendMail];
+	
 	[self addObserver:self
 		   forKeyPath:@"list.title"
 			  options:NSKeyValueObservingOptionNew
@@ -150,6 +152,22 @@
 
 #pragma mark -
 #pragma mark Actions
+
+- (IBAction)emailList {
+	if (self.popoverController.popoverVisible) {
+		[self.popoverController dismissPopoverAnimated:NO];
+	}
+	
+	if (self.listsPopoverController.popoverVisible) {
+		[self.listsPopoverController dismissPopoverAnimated:NO];
+	}
+	
+	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+	mailController.mailComposeDelegate = self;
+	[mailController setSubject:self.list.title];
+	[mailController setMessageBody:[self.list plainTextString] isHTML:NO];
+	[self presentModalViewController:mailController animated:YES];
+}
 
 - (IBAction)editList {
 	if (self.popoverController.popoverVisible) {
@@ -432,6 +450,15 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	
 	UINavigationController *controller = (UINavigationController *) aViewController;
 	[controller popToRootViewControllerAnimated:NO];
+}
+
+#pragma mark -
+#pragma mark Mail Compose Delegate Methods
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+		  didFinishWithResult:(MFMailComposeResult)result
+						error:(NSError *)error {
+	[self dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark -

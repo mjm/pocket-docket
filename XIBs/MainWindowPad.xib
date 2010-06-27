@@ -2,17 +2,17 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">800</int>
-		<string key="IBDocument.SystemVersion">10D573</string>
+		<string key="IBDocument.SystemVersion">10F569</string>
 		<string key="IBDocument.InterfaceBuilderVersion">788</string>
 		<string key="IBDocument.AppKitVersion">1038.29</string>
-		<string key="IBDocument.HIToolboxVersion">460.00</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">117</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="11"/>
+			<integer value="24"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -148,6 +148,12 @@
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<object class="NSMutableArray" key="IBUIItems">
 									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="IBUIBarButtonItem" id="540686788">
+										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+										<float key="IBUIWidth">35</float>
+										<reference key="IBUIToolbar" ref="788517909"/>
+										<int key="IBUISystemItemIdentifier">6</int>
+									</object>
 									<object class="IBUIBarButtonItem" id="270975921">
 										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 										<reference key="IBUIToolbar" ref="788517909"/>
@@ -162,9 +168,14 @@
 										<reference key="IBUIToolbar" ref="788517909"/>
 										<int key="IBUISystemItemIdentifier">5</int>
 									</object>
+									<object class="IBUIBarButtonItem" id="793284575">
+										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+										<reference key="IBUIToolbar" ref="788517909"/>
+										<int key="IBUISystemItemIdentifier">9</int>
+									</object>
 									<object class="IBUIBarButtonItem" id="237330056">
 										<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-										<float key="IBUIWidth">21</float>
+										<float key="IBUIWidth">25</float>
 										<reference key="IBUIToolbar" ref="788517909"/>
 										<int key="IBUISystemItemIdentifier">6</int>
 									</object>
@@ -408,6 +419,22 @@
 					</object>
 					<int key="connectionID">67</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">sendButton</string>
+						<reference key="source" ref="85400257"/>
+						<reference key="destination" ref="793284575"/>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">emailList</string>
+						<reference key="source" ref="793284575"/>
+						<reference key="destination" ref="85400257"/>
+					</object>
+					<int key="connectionID">74</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -503,8 +530,8 @@
 						<reference key="object" ref="587179350"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="788517909"/>
 							<reference ref="9975573"/>
+							<reference ref="788517909"/>
 						</object>
 						<reference key="parent" ref="85400257"/>
 					</object>
@@ -521,6 +548,8 @@
 							<reference ref="395646394"/>
 							<reference ref="237330056"/>
 							<reference ref="204503139"/>
+							<reference ref="793284575"/>
+							<reference ref="540686788"/>
 						</object>
 						<reference key="parent" ref="587179350"/>
 					</object>
@@ -574,6 +603,16 @@
 						<reference key="object" ref="204503139"/>
 						<reference key="parent" ref="788517909"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">71</int>
+						<reference key="object" ref="793284575"/>
+						<reference key="parent" ref="788517909"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">72</int>
+						<reference key="object" ref="540686788"/>
+						<reference key="parent" ref="788517909"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -606,6 +645,8 @@
 					<string>68.IBPluginDependency</string>
 					<string>7.IBPluginDependency</string>
 					<string>70.IBPluginDependency</string>
+					<string>71.IBPluginDependency</string>
+					<string>72.IBPluginDependency</string>
 					<string>8.CustomClassName</string>
 					<string>8.IBPluginDependency</string>
 					<string>9.CustomClassName</string>
@@ -639,7 +680,9 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{223, 82}, {1024, 768}}</string>
+					<string>{{348, 88}, {1024, 768}}</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -667,7 +710,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">70</int>
+			<int key="maxID">74</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -735,9 +778,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addEntry</string>
 							<string>editList</string>
+							<string>emailList</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -748,6 +793,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addEntry</string>
 							<string>editList</string>
+							<string>emailList</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -759,6 +805,10 @@
 								<string key="name">editList</string>
 								<string key="candidateClassName">id</string>
 							</object>
+							<object class="IBActionInfo">
+								<string key="name">emailList</string>
+								<string key="candidateClassName">id</string>
+							</object>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
@@ -768,6 +818,7 @@
 							<string>addButton</string>
 							<string>editButton</string>
 							<string>listsViewController</string>
+							<string>sendButton</string>
 							<string>table</string>
 							<string>titleButton</string>
 							<string>toolbar</string>
@@ -777,6 +828,7 @@
 							<string>UIBarButtonItem</string>
 							<string>UIBarButtonItem</string>
 							<string>DOListsViewController</string>
+							<string>UIBarButtonItem</string>
 							<string>UITableView</string>
 							<string>UIBarButtonItem</string>
 							<string>UIToolbar</string>
@@ -789,6 +841,7 @@
 							<string>addButton</string>
 							<string>editButton</string>
 							<string>listsViewController</string>
+							<string>sendButton</string>
 							<string>table</string>
 							<string>titleButton</string>
 							<string>toolbar</string>
@@ -806,6 +859,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">listsViewController</string>
 								<string key="candidateClassName">DOListsViewController</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">sendButton</string>
+								<string key="candidateClassName">UIBarButtonItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>

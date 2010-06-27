@@ -100,6 +100,8 @@
 	
 	NSError *error;
 	[self.fetchedResultsController performFetch:&error];
+	
+	self.sendButton.enabled = [MFMailComposeViewController canSendMail];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
