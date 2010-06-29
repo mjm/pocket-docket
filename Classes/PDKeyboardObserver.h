@@ -17,6 +17,8 @@
 @property (nonatomic, assign) UIViewController *viewController;
 @property (nonatomic, getter=isKeyboardShowing, readonly) BOOL keyboardIsShowing;
 
++ (PDKeyboardObserver *)keyboardObserverWithViewController:(UIViewController *)controller
+												  delegate:(id <PDKeyboardObserverDelegate>)aDelegate;
 - (id)initWithViewController:(UIViewController *)controller delegate:(id <PDKeyboardObserverDelegate>)aDelegate;
 
 - (void)registerNotifications;

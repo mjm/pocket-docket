@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:nil] autorelease];
+	self.keyboardObserver = [PDKeyboardObserver keyboardObserverWithViewController:self delegate:nil];
 	
 	self.navigationItem.leftBarButtonItem = self.cancelButton;
 	self.navigationItem.rightBarButtonItem = self.saveButton;

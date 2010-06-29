@@ -68,7 +68,7 @@
 	self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController]
 									 entriesFetchedResultsControllerForList:self.list];
 	self.fetchedResultsController.delegate = self;
-	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:self] autorelease];
+	self.keyboardObserver = [PDKeyboardObserver keyboardObserverWithViewController:self delegate:self];
 	
 	return self;
 }

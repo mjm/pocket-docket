@@ -5,6 +5,12 @@
 #pragma mark -
 #pragma mark Initializing a Keyboard Observer
 
++ (PDKeyboardObserver *)keyboardObserverWithViewController:(UIViewController *)controller
+												  delegate:(id <PDKeyboardObserverDelegate>)aDelegate
+{
+	return [[[self alloc] initWithViewController:controller delegate:aDelegate] autorelease];
+}
+
 - (id)initWithViewController:(UIViewController *)controller delegate:(id <PDKeyboardObserverDelegate>)aDelegate {
 	if (![super init])
 		return nil;
