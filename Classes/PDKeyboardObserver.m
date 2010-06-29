@@ -1,5 +1,10 @@
 #import "PDKeyboardObserver.h"
 
+#define GET_VALUE(type, var, dict, key) \
+	NSValue* _value##var = [dict valueForKey:key]; \
+	type var; \
+	[_value##var getValue:&var];
+
 @implementation PDKeyboardObserver
 
 #pragma mark -
@@ -48,8 +53,8 @@
 #pragma mark Handling Keyboard Notifications
 
 - (void)keyboardWillShow:(NSNotification *)note {
-	CGRect keyboardBounds;
-	[[note.userInfo valueForKey:UIKeyboardBoundsUserInfoKey] getValue:&keyboardBounds];
+	NSDictionary *info = [note userInfo];
+	GET_VALUE(CGRect, keyboardBounds, info, UIKeyboardBoundsUserInfoKey);
 	
 	keyboardHeight = keyboardBounds.size.height;
 	
@@ -62,15 +67,10 @@
 		[UIView beginAnimations:nil context:NULL];
 		
 		[UIView setAnimationBeginsFromCurrentState:YES];
-		NSDictionary *info = [note userInfo];
-		NSValue *value = [info valueForKey:UIKeyboardAnimationCurveUserInfoKey];
-		UIViewAnimationCurve curve;
-		[value getValue:&curve];
-		[UIView setAnimationCurve:curve];
 		
-		value = [info valueForKey:UIKeyboardAnimationDurationUserInfoKey];
-		NSTimeInterval duration;
-		[value getValue:&duration];
+		GET_VALUE(UIViewAnimationCurve, curve, info, UIKeyboardAnimationCurveUserInfoKey);
+		[UIView setAnimationCurve:curve];
+		GET_VALUE(NSTimeInterval, duration, info, UIKeyboardAnimationDurationUserInfoKey);
 		[UIView setAnimationDuration:duration];
 		
 		self.viewController.view.frame = frame;
@@ -90,7 +90,13 @@
 		[UIView beginAnimations:nil context:NULL];
 		
 		[UIView setAnimationBeginsFromCurrentState:YES];
-		[UIView setAnimationDelay:0.0f];
+		
+		NSDictionary *info = [note userInfo];
+		GET_VALUE(UIViewAnimationCurve, curve, info, UIKeyboardAnimationCurveUserInfoKey);
+		[UIView setAnimationCurve:curve];
+		GET_VALUE(NSTimeInterval, duration, info, UIKeyboardAnimationDurationUserInfoKey);
+		[UIView setAnimationDuration:duration];
+		
 		self.viewController.view.frame = frame;
 		
 		[UIView commitAnimations];
