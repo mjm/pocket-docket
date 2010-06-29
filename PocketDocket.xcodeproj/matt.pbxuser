@@ -339,6 +339,16 @@
 			C9DB222611DA405D000A293A /* PBXTextBookmark */ = C9DB222611DA405D000A293A /* PBXTextBookmark */;
 			C9DB222711DA405D000A293A /* XCBuildMessageTextBookmark */ = C9DB222711DA405D000A293A /* XCBuildMessageTextBookmark */;
 			C9DB222811DA405D000A293A /* PBXTextBookmark */ = C9DB222811DA405D000A293A /* PBXTextBookmark */;
+			C9DB222E11DA44AE000A293A /* PBXTextBookmark */ = C9DB222E11DA44AE000A293A /* PBXTextBookmark */;
+			C9DB222F11DA44AE000A293A /* PBXTextBookmark */ = C9DB222F11DA44AE000A293A /* PBXTextBookmark */;
+			C9DB223011DA44AE000A293A /* PBXTextBookmark */ = C9DB223011DA44AE000A293A /* PBXTextBookmark */;
+			C9DB223511DA4561000A293A /* PBXTextBookmark */ = C9DB223511DA4561000A293A /* PBXTextBookmark */;
+			C9DB223611DA4561000A293A /* PBXTextBookmark */ = C9DB223611DA4561000A293A /* PBXTextBookmark */;
+			C9DB223811DA456A000A293A /* PBXTextBookmark */ = C9DB223811DA456A000A293A /* PBXTextBookmark */;
+			C9DB223911DA4584000A293A /* PBXTextBookmark */ = C9DB223911DA4584000A293A /* PBXTextBookmark */;
+			C9DB223C11DA462D000A293A /* PBXTextBookmark */ = C9DB223C11DA462D000A293A /* PBXTextBookmark */;
+			C9DB223D11DA462D000A293A /* PBXTextBookmark */ = C9DB223D11DA462D000A293A /* PBXTextBookmark */;
+			C9DB223E11DA462D000A293A /* PBXTextBookmark */ = C9DB223E11DA462D000A293A /* PBXTextBookmark */;
 		};
 		sourceControlManager = C94C55DD1154410800791FAC /* Source Control */;
 		userBookmarkGroup = C9BD106011726B4B005E350E /* PBXBookmarkGroup */;
@@ -599,16 +609,16 @@
 	};
 	C94C597E1158557400791FAC /* PDEntriesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 697}}";
-			sepNavSelRange = "{1046, 0}";
-			sepNavVisRange = "{0, 1176}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 748}}";
+			sepNavSelRange = "{1303, 0}";
+			sepNavVisRange = "{404, 912}";
 		};
 	};
 	C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 6783}}";
-			sepNavSelRange = "{2328, 0}";
-			sepNavVisRange = "{1840, 1034}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 7667}}";
+			sepNavSelRange = "{12019, 0}";
+			sepNavVisRange = "{11199, 965}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1019,9 +1029,9 @@
 	};
 	C9BD10B311727788005E350E /* PDKeyboardObserver.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 1819}}";
-			sepNavSelRange = "{2048, 0}";
-			sepNavVisRange = "{1826, 914}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 1887}}";
+			sepNavSelRange = "{203, 0}";
+			sepNavVisRange = "{0, 817}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1532,7 +1542,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 38";
 		rLen = 0;
-		rLoc = 1225;
+		rLoc = 1303;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 412;
@@ -1963,7 +1973,7 @@
 		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
 		name = "PDEntriesViewController.m: 381";
 		rLen = 0;
-		rLoc = 12187;
+		rLoc = 13178;
 		rType = 0;
 		vrLen = 985;
 		vrLoc = 11422;
@@ -2023,7 +2033,7 @@
 		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
 		name = "PDEntriesViewController.h: 25";
 		rLen = 0;
-		rLoc = 1046;
+		rLoc = 1069;
 		rType = 0;
 		vrLen = 1176;
 		vrLoc = 0;
@@ -2899,6 +2909,106 @@
 		rType = 0;
 		vrLen = 914;
 		vrLoc = 1826;
+	};
+	C9DB222E11DA44AE000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */;
+		name = "PDKeyboardObserver.m: 9";
+		rLen = 0;
+		rLoc = 203;
+		rType = 0;
+		vrLen = 817;
+		vrLoc = 0;
+	};
+	C9DB222F11DA44AE000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 366";
+		rLen = 0;
+		rLoc = 11768;
+		rType = 0;
+		vrLen = 1040;
+		vrLoc = 10645;
+	};
+	C9DB223011DA44AE000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
+		name = "PDEntriesViewController.h: 35";
+		rLen = 0;
+		rLoc = 1253;
+		rType = 0;
+		vrLen = 886;
+		vrLoc = 380;
+	};
+	C9DB223511DA4561000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
+		name = "PDEntriesViewController.h: 6";
+		rLen = 0;
+		rLoc = 375;
+		rType = 0;
+		vrLen = 1171;
+		vrLoc = 0;
+	};
+	C9DB223611DA4561000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 347";
+		rLen = 0;
+		rLoc = 10765;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 10374;
+	};
+	C9DB223811DA456A000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 347";
+		rLen = 0;
+		rLoc = 10765;
+		rType = 0;
+		vrLen = 664;
+		vrLoc = 10374;
+	};
+	C9DB223911DA4584000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 347";
+		rLen = 0;
+		rLoc = 10765;
+		rType = 0;
+		vrLen = 364;
+		vrLoc = 10426;
+	};
+	C9DB223C11DA462D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597E1158557400791FAC /* PDEntriesViewController.h */;
+		name = "PDEntriesViewController.h: 37";
+		rLen = 0;
+		rLoc = 1303;
+		rType = 0;
+		vrLen = 912;
+		vrLoc = 404;
+	};
+	C9DB223D11DA462D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 347";
+		rLen = 0;
+		rLoc = 10765;
+		rType = 0;
+		vrLen = 661;
+		vrLoc = 10374;
+	};
+	C9DB223E11DA462D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */;
+		name = "PDEntriesViewController.m: 395";
+		rLen = 0;
+		rLoc = 12232;
+		rType = 0;
+		vrLen = 965;
+		vrLoc = 11199;
 	};
 	C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {
 		uiCtxt = {

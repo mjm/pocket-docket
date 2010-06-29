@@ -328,20 +328,9 @@
 		C94C55F31154450100791FAC /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				C94C55F41154450100791FAC /* MainWindowPhone.xib */,
-				C94C56041154529500791FAC /* PDListsView.xib */,
-				C94C56FE1156C86100791FAC /* PDEditListView.xib */,
-				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
-				C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */,
-				C94C59811158588000791FAC /* PDEntriesView.xib */,
-				C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */,
-				C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */,
-				C9748C59116AC33F00D2B372 /* PDCommentView.xib */,
-				C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */,
-				C9BD13B61173FCFB005E350E /* DOEditListView.xib */,
-				C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */,
-				C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */,
-				C9777E67119897120047E997 /* DONewEntryView.xib */,
+				C9DB222C11DA42D7000A293A /* Shared */,
+				C9DB222A11DA42CD000A293A /* iPhone */,
+				C9DB222B11DA42D3000A293A /* iPad */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -537,6 +526,41 @@
 				C9DB213411D97F0B000A293A /* PDSettingsController.m */,
 			);
 			name = Singletons;
+			sourceTree = "<group>";
+		};
+		C9DB222A11DA42CD000A293A /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				C94C55F41154450100791FAC /* MainWindowPhone.xib */,
+				C94C56041154529500791FAC /* PDListsView.xib */,
+				C94C56FE1156C86100791FAC /* PDEditListView.xib */,
+				C94C59811158588000791FAC /* PDEntriesView.xib */,
+				C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */,
+				C9B7FB271161AA1400C872D9 /* PDEntryTableCell.xib */,
+				C9748C59116AC33F00D2B372 /* PDCommentView.xib */,
+			);
+			name = iPhone;
+			sourceTree = "<group>";
+		};
+		C9DB222B11DA42D3000A293A /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				C9BD11DF1172AEF3005E350E /* MainWindowPad.xib */,
+				C9BD13B61173FCFB005E350E /* DOEditListView.xib */,
+				C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */,
+				C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */,
+				C9777E67119897120047E997 /* DONewEntryView.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		C9DB222C11DA42D7000A293A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
+				C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

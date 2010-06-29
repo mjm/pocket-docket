@@ -3,7 +3,7 @@
 @class PDList;
 
 //! A view controller for displaying the entries in a list.
-@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate, PDKeyboardObserverDelegate, MFMailComposeViewControllerDelegate> {
+@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate, PDKeyboardObserverDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate> {
 	
 	BOOL userIsMoving;
 }
@@ -32,7 +32,9 @@
 //@{
 
 - (IBAction)addListEntry;
+- (IBAction)showActionMenu;
 - (IBAction)emailList;
+- (IBAction)importEntries;
 
 //@}
 

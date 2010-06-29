@@ -334,12 +334,29 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 #pragma mark -
+#pragma mark Action Sheet Delegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == 0)
+	{
+		[self emailList];
+	}
+	else if (buttonIndex == 1)
+	{
+		[self importEntries];
+	}
+}
+
+#pragma mark -
 #pragma mark Actions
 
-- (IBAction)addListEntry {
+- (IBAction)addListEntry
+{
 	NSString *text = self.newEntryField.text;
 	
-	if ([text length] != 0) {
+	if ([text length] != 0)
+	{
 		[[PDPersistenceController sharedPersistenceController] createEntry:text inList:self.list];
 		self.newEntryField.text = @"";
 		
@@ -347,10 +364,32 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	}
 }
 
-- (IBAction)emailList {
+- (IBAction)showActionMenu
+{
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+															 delegate:self
+													cancelButtonTitle:nil
+											   destructiveButtonTitle:nil
+													otherButtonTitles:nil];
+	
+	if ([MFMailComposeViewController canSendMail])
+	{
+		[actionSheet addButtonWithTitle:NSLocalizedString(@"Email List", nil)];
+	}
+	[actionSheet addButtonWithTitle:NSLocalizedString(@"Import Entries", nil)];
+	[actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+	actionSheet.cancelButtonIndex = actionSheet.numberOfButtons - 1;
+	
+	[actionSheet showInView:self.view];
+	[actionSheet release];
+}
+
+- (IBAction)emailList
+{
 	NSString *entriesText = [self.list plainTextString];
 	
-	if ([MFMailComposeViewController canSendMail]) {
+	if ([MFMailComposeViewController canSendMail])
+	{
 		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 		mailController.mailComposeDelegate = self;
 		[mailController setSubject:self.list.title];
@@ -359,13 +398,20 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	}
 }
 
-- (IBAction)checkedBox:(id)sender forEvent:(UIEvent *)event {
+- (IBAction)importEntries
+{
+	NSLog(@"Attempting to import entries.");
+}
+
+- (IBAction)checkedBox:(id)sender forEvent:(UIEvent *)event
+{
 	NSSet *touches = [event allTouches];
 	UITouch *touch = [touches anyObject];
 	
 	CGPoint location = [touch locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:location];
-	if (indexPath != nil) {
+	if (indexPath != nil)
+	{
 		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
 		[[PDPersistenceController sharedPersistenceController] save];
