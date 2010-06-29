@@ -15,7 +15,6 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) UIPopoverController *listsPopoverController;
 @property (nonatomic, retain) UIPopoverController *popoverController;
-@property (nonatomic, retain) IBOutlet DOListsViewController *listsViewController;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *titleButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *sendButton;

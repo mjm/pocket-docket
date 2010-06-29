@@ -103,7 +103,6 @@
 	[super viewDidUnload];
 	self.listsPopoverController = nil;
 	self.popoverController = nil;
-	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.titleButton = nil;
 	self.editButton = nil;
@@ -575,7 +574,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	self.fetchedResultsController = nil;
 	self.listsPopoverController = nil;
 	self.popoverController = nil;
-	self.listsViewController = nil;
 	self.toolbar = nil;
 	self.titleButton = nil;
 	self.editButton = nil;
