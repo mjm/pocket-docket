@@ -103,15 +103,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 }
 
 #pragma mark -
-#pragma mark Registering Defaults
-
-+ (void)initialize {
-	[[NSUserDefaults standardUserDefaults]
-	 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-												  forKey:@"PDFirstLaunch"]];
-}
-
-#pragma mark -
 #pragma mark Undoing Changes
 
 - (NSUndoManager *)undoManager {

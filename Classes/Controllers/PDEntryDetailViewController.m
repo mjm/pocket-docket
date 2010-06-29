@@ -6,6 +6,14 @@
 #import "PDCommentViewController.h"
 #import "../PDPersistenceController.h"
 
+@interface PDEntryDetailViewController ()
+
+- (UITableViewCell *)createEntryTextCell:(BOOL)editing;
+- (UITableViewCell *)createEntryCommentCell:(BOOL)editing;
+- (UITableViewCell *)createDeleteCell;
+
+@end
+
 @implementation PDEntryDetailViewController
 
 #pragma mark -
@@ -126,73 +134,105 @@
 	return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView
-		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.section == 0) {
-		static NSString *TextViewCell = @"TextView";
-		if (indexPath.row == 0) {
-			static NSString *Cell = @"TextField";
-			
-			if (self.editing) {
-				PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-				if (!cell) {
-					cell = [PDTextFieldCell textFieldCell];
-				}
-				
-				cell.textField.text = self.entry.text;
-				cell.textField.delegate = self;
-				cell.textField.enabled = self.editing;
-				
-				return cell;
-			} else {
-				PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:TextViewCell];
-				if (!cell) {
-					cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:TextViewCell] autorelease];
-				}
-				
-				cell.paragraphLabel.text = self.entry.text;
-				cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
-				cell.paragraphLabel.textColor = [UIColor blackColor];
-				cell.accessoryType = UITableViewCellAccessoryNone;
-				
-				return cell;
-			}
-		} else {
-			
-			PDTextViewCell *cell = (PDTextViewCell *) [tableView dequeueReusableCellWithIdentifier:TextViewCell];
-			if (!cell) {
-				cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:TextViewCell] autorelease];
-			}
-			
-			cell.paragraphLabel.text = self.entry.comment;
-			if (self.entry.comment && [self.entry.comment length] > 0) {
-				cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
-				cell.paragraphLabel.textColor = [UIColor blackColor];
-			} else {
-				cell.paragraphLabel.text = self.editing
-						? NSLocalizedString(@"NoCommentTap", nil) //@"No comment. Tap to add one."
-						: NSLocalizedString(@"NoComment", nil); //@"No comment.";
-				cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
-				cell.paragraphLabel.textColor = [UIColor darkGrayColor];
-			}
-			cell.accessoryType = UITableViewCellAccessoryNone;
-			cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-			
-			return cell;
-		}
-	} else {
-		static NSString *Cell = @"DeleteButton";
-		
-		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:Cell];
-		if (!cell) {
-			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-										   reuseIdentifier:Cell] autorelease];
+- (UITableViewCell *)createEntryTextCell:(BOOL)editing
+{
+	static NSString *TextFieldCell = @"TextField";
+	static NSString *TextViewCell = @"TextView";
+	
+	if (editing)
+	{
+		PDTextFieldCell *cell = (PDTextFieldCell *) [self.table dequeueReusableCellWithIdentifier:TextFieldCell];
+		if (!cell)
+		{
+			cell = [PDTextFieldCell textFieldCell];
 		}
 		
-		cell.textLabel.textAlignment = UITextAlignmentCenter;
-		cell.textLabel.text = NSLocalizedString(@"Delete Entry", nil);
+		cell.textField.text = self.entry.text;
+		cell.textField.delegate = self;
 		
 		return cell;
+	}
+	else
+	{
+		PDTextViewCell *cell = (PDTextViewCell *) [self.table dequeueReusableCellWithIdentifier:TextViewCell];
+		if (!cell)
+		{
+			cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:TextViewCell] autorelease];
+		}
+		
+		cell.paragraphLabel.text = self.entry.text;
+		cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
+		cell.paragraphLabel.textColor = [UIColor blackColor];
+		cell.accessoryType = UITableViewCellAccessoryNone;
+		
+		return cell;
+	}	
+}
+
+- (UITableViewCell *)createEntryCommentCell:(BOOL)editing
+{
+	static NSString *TextViewCell = @"TextView";
+
+	PDTextViewCell *cell = (PDTextViewCell *) [self.table dequeueReusableCellWithIdentifier:TextViewCell];
+	if (!cell)
+	{
+		cell = [[[PDTextViewCell alloc] initWithReuseIdentifier:TextViewCell] autorelease];
+	}
+	
+	cell.paragraphLabel.text = self.entry.comment;
+	if (self.entry.comment && [self.entry.comment length] > 0)
+	{
+		cell.paragraphLabel.font = [UIFont systemFontOfSize:17.0];
+		cell.paragraphLabel.textColor = [UIColor blackColor];
+	}
+	else
+	{
+		cell.paragraphLabel.text = self.editing
+			? NSLocalizedString(@"NoCommentTap", nil) //@"No comment. Tap to add one."
+			: NSLocalizedString(@"NoComment", nil); //@"No comment.";
+		cell.paragraphLabel.font = [UIFont italicSystemFontOfSize:17.0];
+		cell.paragraphLabel.textColor = [UIColor darkGrayColor];
+	}
+	
+	cell.accessoryType = UITableViewCellAccessoryNone;
+	cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+	return cell;
+}
+
+- (UITableViewCell *)createDeleteCell
+{
+	static NSString *Cell = @"DeleteButton";
+	
+	UITableViewCell *cell = [self.table dequeueReusableCellWithIdentifier:Cell];
+	if (!cell)
+	{
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+									   reuseIdentifier:Cell] autorelease];
+	}
+	
+	cell.textLabel.textAlignment = UITextAlignmentCenter;
+	cell.textLabel.text = NSLocalizedString(@"Delete Entry", nil);
+	
+	return cell;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.section == 0)
+	{
+		if (indexPath.row == 0)
+		{
+			return [self createEntryTextCell:self.editing];
+		}
+		else
+		{
+			return [self createEntryCommentCell:self.editing];
+		}
+	}
+	else
+	{
+		return [self createDeleteCell];
 	}
 }
 
@@ -209,7 +249,8 @@
 #pragma mark Table View Delegate Methods
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (indexPath.row == 0 && self.editing) {
+	if ((indexPath.row == 0 && self.editing) || indexPath.section == 1)
+	{
 		return 44.0f;
 	}
 	
