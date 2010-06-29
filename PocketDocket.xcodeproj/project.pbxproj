@@ -91,6 +91,8 @@
 		C9D963EA1181199000E08A48 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D963E91181199000E08A48 /* Icon.png */; };
 		C9DB1F9F11D70170000A293A /* ListIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DB1F9D11D70170000A293A /* ListIcon@2x.png */; };
 		C9DB1FA011D70170000A293A /* ListIconDark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9DB1F9E11D70170000A293A /* ListIconDark@2x.png */; };
+		C9DB213511D97F0B000A293A /* PDSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB213411D97F0B000A293A /* PDSettingsController.m */; };
+		C9DB213611D97F0B000A293A /* PDSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9DB213411D97F0B000A293A /* PDSettingsController.m */; };
 		C9E18CF611CE964D00C61B18 /* CheckBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */; };
 		C9E18CF711CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */; };
 		C9E18CF811CE964D00C61B18 /* CheckBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */; };
@@ -201,6 +203,9 @@
 		C9D963E91181199000E08A48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		C9DB1F9D11D70170000A293A /* ListIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ListIcon@2x.png"; sourceTree = "<group>"; };
 		C9DB1F9E11D70170000A293A /* ListIconDark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ListIconDark@2x.png"; sourceTree = "<group>"; };
+		C9DB20AC11D9714A000A293A /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
+		C9DB213311D97F0B000A293A /* PDSettingsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSettingsController.h; sourceTree = "<group>"; };
+		C9DB213411D97F0B000A293A /* PDSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSettingsController.m; sourceTree = "<group>"; };
 		C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBox@2x.png"; sourceTree = "<group>"; };
 		C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBoxChecked@2x.png"; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
@@ -241,13 +246,12 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C9DB213211D97E2D000A293A /* Singletons */,
 				C9DB204311D8085A000A293A /* App Delegate */,
 				C929542F117A971F0052A674 /* Categories */,
 				C94C56E31156BEF400791FAC /* Models */,
 				C94C564011569C5400791FAC /* Views */,
 				C94C563F11569C4B00791FAC /* Controllers */,
-				C94C55FC115447E500791FAC /* PDPersistenceController.h */,
-				C94C55FD115447E500791FAC /* PDPersistenceController.m */,
 				C9BD10B211727788005E350E /* PDKeyboardObserver.h */,
 				C9BD10B311727788005E350E /* PDKeyboardObserver.m */,
 			);
@@ -523,6 +527,18 @@
 			name = "Entry Cells";
 			sourceTree = "<group>";
 		};
+		C9DB213211D97E2D000A293A /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				C9DB20AC11D9714A000A293A /* SynthesizeSingleton.h */,
+				C94C55FC115447E500791FAC /* PDPersistenceController.h */,
+				C94C55FD115447E500791FAC /* PDPersistenceController.m */,
+				C9DB213311D97F0B000A293A /* PDSettingsController.h */,
+				C9DB213411D97F0B000A293A /* PDSettingsController.m */,
+			);
+			name = Singletons;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -671,6 +687,7 @@
 				C9748C58116AC18B00D2B372 /* PDCommentViewController.m in Sources */,
 				C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */,
 				C9BD10B411727788005E350E /* PDKeyboardObserver.m in Sources */,
+				C9DB213611D97F0B000A293A /* PDSettingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +712,7 @@
 				C9295433117A97560052A674 /* NSString+Additions.m in Sources */,
 				C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */,
 				C9777E601198936A0047E997 /* DONewEntryViewController.m in Sources */,
+				C9DB213511D97F0B000A293A /* PDSettingsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

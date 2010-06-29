@@ -1,22 +1,102 @@
 #import "PDPersistenceController.h"
 
+#import "SynthesizeSingleton.h"
+#import "PDSettingsController.h"
 #import "Models/PDList.h"
 #import "Models/PDListEntry.h"
 
 #pragma mark PrivateMethods
 
 @interface PDPersistenceController ()
-
-@property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
-
+- (NSString *)applicationDocumentsDirectory;
 @end
 
 #pragma mark -
 
 @implementation PDPersistenceController
 
+SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
+
+#pragma mark -
+#pragma mark Core Data stack
+
+/**
+ Returns the managed object context for the application.
+ If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
+ */
+- (NSManagedObjectContext *)managedObjectContext {
+	if (managedObjectContext != nil) {
+		return managedObjectContext;
+	}
+	
+	NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+	if (coordinator != nil) {
+		managedObjectContext = [[NSManagedObjectContext alloc] init];
+		managedObjectContext.persistentStoreCoordinator = coordinator;
+	}
+	return managedObjectContext;
+}
+
+
+/**
+ Returns the managed object model for the application.
+ If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
+ */
 - (NSManagedObjectModel *)managedObjectModel {
-	return self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
+	if (managedObjectModel != nil) {
+		return managedObjectModel;
+	}
+	
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"PocketDocket" ofType:@"momd"];
+	NSURL *momURL = [NSURL fileURLWithPath:path];
+	managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:momURL];    
+	return managedObjectModel;
+}
+
+
+/**
+ Returns the persistent store coordinator for the application.
+ If the coordinator doesn't already exist, it is created and the application's store added to it.
+ */
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+	if (persistentStoreCoordinator != nil) {
+		return persistentStoreCoordinator;
+	}
+	
+	NSURL *storeUrl = [NSURL fileURLWithPath: [[self applicationDocumentsDirectory] stringByAppendingPathComponent: @"PocketDocket.sqlite"]];
+	
+	NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                             [NSNumber numberWithBool:YES], NSMigratePersistentStoresAutomaticallyOption,
+                             [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
+	NSError *error = nil;
+	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+	if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error]) {
+		/*
+		 Replace this implementation with code to handle the error appropriately.
+		 
+		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+		 
+		 Typical reasons for an error here include:
+		 * The persistent store is not accessible
+		 * The schema for the persistent store is incompatible with current managed object model
+		 Check the error message to determine what the actual problem was.
+		 */
+		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+		abort();
+	}    
+	
+	return persistentStoreCoordinator;
+}
+
+
+#pragma mark -
+#pragma mark Application's Documents directory
+
+/**
+ Returns the path to the application's Documents directory.
+ */
+- (NSString *)applicationDocumentsDirectory {
+	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
 #pragma mark -
@@ -26,17 +106,6 @@
 	[[NSUserDefaults standardUserDefaults]
 	 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
 												  forKey:@"PDFirstLaunch"]];
-}
-
-#pragma mark -
-#pragma mark Initializing a View Controller
-
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)context {
-	if (![super init])
-		return nil;
-	
-	self.managedObjectContext = context;
-	return self;
 }
 
 #pragma mark -
@@ -145,13 +214,13 @@
 }
 
 - (void)createFirstLaunchData {
-	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-	if (![userDefaults boolForKey:@"PDFirstLaunch"]) {
+	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
+	if (!settingsController.firstLaunch) {
 		return;
 	}
 	
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 30200
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	NSString *dataFileName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 		? @"DOFirstLaunchData"
 		: @"PDFirstLaunchData";
@@ -181,8 +250,8 @@
 	}
 	
 	[self save];
-	[self saveSelectedList:list];
-	[userDefaults setBool:NO forKey:@"PDFirstLaunch"];
+	[settingsController saveSelectedList:list];
+	settingsController.firstLaunch = NO;
 }
 
 #pragma mark -
@@ -318,35 +387,12 @@
 }
 
 #pragma mark -
-#pragma mark Saving and Restoring State
-
-- (void)saveSelectedList:(PDList *)list {
-	NSString *idString = [[[list objectID] URIRepresentation] absoluteString];
-	[[NSUserDefaults standardUserDefaults] setObject:idString forKey:@"PDSelectedListId"];
-}
-
-- (PDList *)loadSelectedList {
-	NSString *idString = [[NSUserDefaults standardUserDefaults] objectForKey:@"PDSelectedListId"];
-	if (idString == nil)
-		return nil;
-	
-	NSManagedObjectID *objectId = [[self.managedObjectContext persistentStoreCoordinator] managedObjectIDForURIRepresentation:[NSURL URLWithString:idString]];
-	PDList *list = (PDList *) [self.managedObjectContext objectWithID:objectId];
-	
-	@try {
-		list.title; // fire the fault
-	}
-	@catch (NSException * e) {
-		return nil;
-	}
-	return list;
-}
-
-#pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc {
-	self.managedObjectContext = nil;
+	[managedObjectContext release];
+	[managedObjectModel release];
+	[persistentStoreCoordinator release];
 	[super dealloc];
 }
 

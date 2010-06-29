@@ -4,7 +4,6 @@
 #import "DOEntryDetailsViewController.h"
 
 @class PDList;
-@class PDPersistenceController;
 @class DOListsViewController;
 
 @interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate> {
@@ -13,7 +12,6 @@
 }
 
 @property (nonatomic, retain) PDList *list;
-@property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) UIPopoverController *listsPopoverController;
 @property (nonatomic, retain) UIPopoverController *popoverController;

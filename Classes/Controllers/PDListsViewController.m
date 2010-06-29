@@ -43,7 +43,7 @@
 		[self.table deselectRowAtIndexPath:indexPath animated:YES];
 	}
 	
-	[self.persistenceController save];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 @end
@@ -55,13 +55,12 @@
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithPersistenceController:(PDPersistenceController *)controller {
+- (id)init {
 	if (![super initWithNibName:@"PDListsView" bundle:nil])
 		return nil;
 	
 	self.title = NSLocalizedString(@"Lists", nil);
-	self.persistenceController = controller;
-	self.fetchedResultsController = [controller listsFetchedResultsController];
+	self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController] listsFetchedResultsController];
 	self.fetchedResultsController.delegate = self;
 	
 	return self;
@@ -93,13 +92,14 @@
 	// Make sure the table is not in editing mode.
 	[self setEditing:NO];
 	
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
 	NSIndexPath *indexPath = [self.table indexPathForSelectedRow];
 	if (indexPath) {
 		PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		[self.persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
+		[persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
 	}
 	
-	[self.persistenceController saveSelectedList:nil];
+	[persistenceController saveSelectedList:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -134,8 +134,9 @@
 - (IBAction)addList {
 	isAdd = YES;
 	
-	[self.persistenceController.undoManager beginUndoGrouping];
-	PDList *list = [self.persistenceController createList];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager beginUndoGrouping];
+	PDList *list = [persistenceController createList];
 	
 	PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
 	editController.title = NSLocalizedString(@"New List", nil);
@@ -179,7 +180,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	userIsMoving = YES;
 	
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
-	[self.persistenceController moveList:list fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	[[PDPersistenceController sharedPersistenceController] moveList:list
+															fromRow:sourceIndexPath.row
+															  toRow:destinationIndexPath.row];
 	
 	userIsMoving = NO;
 }
@@ -192,8 +195,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	[self.persistenceController deleteList:list];
-	[self.persistenceController save];
+	
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController deleteList:list];
+	[persistenceController save];
 }
 
 #pragma mark -
@@ -220,9 +225,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		[self.navigationController pushViewController:editController animated:YES];
 		[editController release];
 	} else {
-		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc]
-													  initWithList:list
-													  persistenceController:self.persistenceController];
+		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list];
 		// TODO set delegate
 		
 		[self.navigationController pushViewController:entriesController animated:YES];
@@ -236,7 +239,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
 	// Prevent edits from crashing
 	if (isAdd) {
-		[self.persistenceController.undoManager endUndoGrouping];
+		[[[PDPersistenceController sharedPersistenceController] undoManager] endUndoGrouping];
 	}
 	
 	[self doneEditingList:list];
@@ -245,16 +248,16 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
 		[self.table selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
 		
-		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list
-																			 persistenceController:self.persistenceController];
+		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list];
 		[self.navigationController pushViewController:entriesController animated:YES];
 		[entriesController release];
 	}
 }
 
 - (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController.undoManager undo];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager endUndoGrouping];
+	[persistenceController.undoManager undo];
 
 	[self doneEditingList:list];
 }
@@ -317,7 +320,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark Memory Management
 
 - (void)dealloc {
-	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
 	
 	self.table = nil;

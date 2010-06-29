@@ -50,8 +50,7 @@
 - (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	
-	PDEntryDetailViewController *detailController = [[PDEntryDetailViewController alloc] initWithEntry:entry
-																				 persistenceController:self.persistenceController];
+	PDEntryDetailViewController *detailController = [[PDEntryDetailViewController alloc] initWithEntry:entry];
 	[self.navigationController pushViewController:detailController animated:YES];
 	
 	[detailController release];
@@ -60,13 +59,13 @@
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithList:(PDList *)aList persistenceController:(PDPersistenceController *)controller {
+- (id)initWithList:(PDList *)aList {
 	if (![super initWithNibName:@"PDEntriesView" bundle:nil])
 		return nil;
 	
 	self.list = aList;
-	self.persistenceController = controller;
-	self.fetchedResultsController = [self.persistenceController entriesFetchedResultsControllerForList:self.list];
+	self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController]
+									 entriesFetchedResultsControllerForList:self.list];
 	self.fetchedResultsController.delegate = self;
 	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:self] autorelease];
 	
@@ -108,7 +107,7 @@
 	[super viewWillAppear:animated];
 	[self.keyboardObserver registerNotifications];
 	
-	[self.persistenceController saveSelectedList:self.list];
+	[[PDPersistenceController sharedPersistenceController] saveSelectedList:self.list];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -212,8 +211,9 @@
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	[self.persistenceController deleteEntry:entry];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController deleteEntry:entry];
+	[persistenceController save];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -226,7 +226,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	userIsMoving = YES;
 	
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
-	[self.persistenceController moveEntry:entry fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	[[PDPersistenceController sharedPersistenceController] moveEntry:entry
+															 fromRow:sourceIndexPath.row
+															   toRow:destinationIndexPath.row];
 	
 	userIsMoving = NO;
 }
@@ -249,7 +251,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (void)tableView:(UITableView *)tableView didSwipeCellAtIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-	[self.persistenceController save];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
@@ -337,7 +339,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	NSString *text = self.newEntryField.text;
 	
 	if ([text length] != 0) {
-		[self.persistenceController createEntry:text inList:self.list];
+		[[PDPersistenceController sharedPersistenceController] createEntry:text inList:self.list];
 		self.newEntryField.text = @"";
 		
 		[self scrollToBottom];
@@ -365,7 +367,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	if (indexPath != nil) {
 		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-		[self.persistenceController save];
+		[[PDPersistenceController sharedPersistenceController] save];
 	}
 }
 
@@ -376,7 +378,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	if (indexPath != nil) {
 		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-		[self.persistenceController save];
+		[[PDPersistenceController sharedPersistenceController] save];
 	}
 }
 
@@ -385,7 +387,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)dealloc {
 	self.list = nil;
-	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
 	self.keyboardObserver = nil;
 	self.table = nil;

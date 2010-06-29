@@ -3,6 +3,7 @@
 #import "DOEntriesViewController.h"
 #import "DOEditListViewController.h"
 #import "../PDPersistenceController.h"
+#import "../PDSettingsController.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "../Models/PDList.h"
@@ -52,6 +53,15 @@
 	
 	// set correct separator color
 	self.tableView.separatorColor = [UIColor colorWithWhite:200.0f/255.0f alpha:1.0f];
+
+	self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController] listsFetchedResultsController];
+	self.fetchedResultsController.delegate = self;
+	
+	NSError *error;
+	[self.fetchedResultsController performFetch:&error];
+	
+	PDList *list = [[PDSettingsController sharedSettingsController] loadSelectedList];
+	self.entriesViewController.list = list;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -88,25 +98,6 @@
 }
 
 #pragma mark -
-#pragma mark Managing Persistence
-
-- (void)setPersistenceController:(PDPersistenceController *)controller {
-	if (self.persistenceController != controller) {
-		[self.persistenceController release];
-		persistenceController = [controller retain];
-		
-		self.fetchedResultsController = [self.persistenceController listsFetchedResultsController];
-		self.fetchedResultsController.delegate = self;
-		
-		NSError *error;
-		[self.fetchedResultsController performFetch:&error];
-		
-		PDList *list = [self.persistenceController loadSelectedList];
-		self.entriesViewController.list = list;
-	}
-}
-
-#pragma mark -
 #pragma mark Actions
 
 - (IBAction)addList {
@@ -114,8 +105,9 @@
 		return;
 	}
 	
-	[self.persistenceController.undoManager beginUndoGrouping];
-	PDList *list = [self.persistenceController createList];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager beginUndoGrouping];
+	PDList *list = [persistenceController createList];
 	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:list];
 	controller.delegate = self;
@@ -178,7 +170,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	userIsMoving = YES;
 	
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
-	[self.persistenceController moveList:list fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	[[PDPersistenceController sharedPersistenceController] moveList:list fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
 	
 	userIsMoving = NO;
 }
@@ -201,8 +193,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		}
 	}
 	
-	[self.persistenceController deleteList:list];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController deleteList:list];
+	[persistenceController save];
 }
 
 #pragma mark -
@@ -227,8 +220,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 // Called when the user hits the save button in the popover.
 - (void)editListController:(DOEditListViewController *)controller listDidChange:(PDList *)list {
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager endUndoGrouping];
+	[persistenceController save];
 	[self.popoverController dismissPopoverAnimated:YES];
 	
 	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
@@ -239,9 +233,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 - (void)editListController:(DOEditListViewController *)controller listDidNotChange:(PDList *)list {
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController.undoManager undo];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager endUndoGrouping];
+	[persistenceController.undoManager undo];
+	[persistenceController save];
 	
 	if (!self.editing) {
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
@@ -314,7 +309,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark Memory Management
 
 - (void)dealloc {
-	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
 	self.popoverController = nil;
 	[super dealloc];

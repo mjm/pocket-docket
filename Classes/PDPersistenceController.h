@@ -5,22 +5,19 @@
 /*!
  \nosubgrouping
  */
-@interface PDPersistenceController : NSObject {}
+@interface PDPersistenceController : NSObject {
+	NSManagedObjectModel *managedObjectModel;
+	NSManagedObjectContext *managedObjectContext;	    
+	NSPersistentStoreCoordinator *persistentStoreCoordinator;
+}
 
-@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, readonly) NSUndoManager *undoManager;
 
-//! \name Initializing a Persistence Controller
-//@{
++ (PDPersistenceController *)sharedPersistenceController;
 
-//! Creates a new persistence controller with a managed object context.
-/*!
- \param context The Core Data managed object context.
- \return A new persistence controller.
- */
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)context;
-
-//@}
 //! \name Retrieving Model Objects
 //@{
 
@@ -104,13 +101,6 @@
 //@{
 
 - (void)save;
-
-//@}
-//! \name Saving and Restoring State
-//@{
-
-- (void)saveSelectedList:(PDList *)list;
-- (PDList *)loadSelectedList;
 
 //@}
 

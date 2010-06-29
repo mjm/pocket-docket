@@ -1,17 +1,6 @@
-@interface PDAppDelegate : NSObject <UIApplicationDelegate> {
-
-    NSManagedObjectModel *managedObjectModel;
-    NSManagedObjectContext *managedObjectContext;	    
-    NSPersistentStoreCoordinator *persistentStoreCoordinator;
-}
-
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@interface PDAppDelegate : NSObject <UIApplicationDelegate> {}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-
-- (NSString *)applicationDocumentsDirectory;
 
 @end
 

@@ -1,17 +1,14 @@
 #import "DOEditListViewController.h"
 
-@class PDPersistenceController;
 @class DOEntriesViewController;
 
 @protocol DOListsViewControllerDelegate;
 
 @interface DOListsViewController : UITableViewController <DOEditListViewControllerDelegate, UIPopoverControllerDelegate, NSFetchedResultsControllerDelegate> {
-	PDPersistenceController *persistenceController;
 	BOOL userIsMoving;
 }
 
 @property (nonatomic, assign) IBOutlet id <DOListsViewControllerDelegate> delegate;
-@property (nonatomic, retain) PDPersistenceController *persistenceController;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @property (nonatomic, retain) IBOutlet DOEntriesViewController *entriesViewController;

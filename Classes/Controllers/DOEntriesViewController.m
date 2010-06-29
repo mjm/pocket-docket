@@ -1,6 +1,7 @@
 #import "DOEntriesViewController.h"
 
 #import "../PDPersistenceController.h"
+#import "../PDSettingsController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
 #import "../Views/DOEntryTableCell.h"
@@ -37,7 +38,7 @@
 
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	[self.persistenceController.undoManager beginUndoGrouping];
+	[[[PDPersistenceController sharedPersistenceController] undoManager] beginUndoGrouping];
 	
 	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc]
 												initWithExistingEntry:entry
@@ -116,7 +117,8 @@
 		list = [aList retain];
 		
 		if (self.list) {
-			self.fetchedResultsController = [self.persistenceController entriesFetchedResultsControllerForList:self.list];
+			self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController]
+											 entriesFetchedResultsControllerForList:self.list];
 			self.fetchedResultsController.delegate = self;
 			
 			NSError *error;
@@ -206,8 +208,9 @@
 		[self.listsPopoverController dismissPopoverAnimated:NO];
 	}
 	
-	[self.persistenceController.undoManager beginUndoGrouping];
-	PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager beginUndoGrouping];
+	PDListEntry *entry = [persistenceController createEntry:@"" inList:self.list];
 	
 	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithEntry:entry];
 	controller.delegate = self;
@@ -262,8 +265,9 @@
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
  forRowAtIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	[self.persistenceController deleteEntry:entry];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController deleteEntry:entry];
+	[persistenceController save];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -276,7 +280,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	userIsMoving = YES;
 	
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
-	[self.persistenceController moveEntry:entry fromRow:sourceIndexPath.row toRow:destinationIndexPath.row];
+	[[PDPersistenceController sharedPersistenceController] moveEntry:entry
+															 fromRow:sourceIndexPath.row
+															   toRow:destinationIndexPath.row];
 	
 	userIsMoving = NO;
 }
@@ -320,8 +326,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
 		
 		// make sure the list view gets updated
-		[self.persistenceController.managedObjectContext refreshObject:entry.list mergeChanges:YES];
-		[self.persistenceController save];
+		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+		[persistenceController.managedObjectContext refreshObject:entry.list mergeChanges:YES];
+		[persistenceController save];
 	}
 }
 
@@ -346,8 +353,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
 		
 		// make sure the list view gets updated
-		[self.persistenceController.managedObjectContext refreshObject:entry.list mergeChanges:YES];
-		[self.persistenceController save];
+		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+		[persistenceController.managedObjectContext refreshObject:entry.list mergeChanges:YES];
+		[persistenceController save];
 	}
 }
 
@@ -466,7 +474,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)aList {
 	self.list = aList;
-	[self.persistenceController saveSelectedList:self.list];
+	[[PDSettingsController sharedSettingsController] saveSelectedList:self.list];
 	
 	if (self.listsPopoverController) {
 		[self.listsPopoverController dismissPopoverAnimated:YES];
@@ -488,16 +496,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
 				  didSaveEntry:(PDListEntry *)entry {
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager endUndoGrouping];
+	[persistenceController save];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
 				didCancelEntry:(PDListEntry *)entry {
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController.undoManager undo];
+	NSUndoManager *undoManager = [[PDPersistenceController sharedPersistenceController] undoManager];
+	[undoManager endUndoGrouping];
+	[undoManager undo];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -515,23 +525,25 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		return;
 	}
 	
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController save];
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+	[persistenceController.undoManager endUndoGrouping];
+	[persistenceController save];
 	
 	if (dismiss) {
 		[self.popoverController dismissPopoverAnimated:YES];
 		self.popoverController = nil;
 	} else {
-		[self.persistenceController.undoManager beginUndoGrouping];
-		PDListEntry *entry = [self.persistenceController createEntry:@"" inList:self.list];
+		[persistenceController.undoManager beginUndoGrouping];
+		PDListEntry *entry = [persistenceController createEntry:@"" inList:self.list];
 		controller.entry = entry;
 	}
 }
 
 - (void)newEntryController:(DONewEntryViewController *)controller
 			didCancelEntry:(PDListEntry *)entry {
-	[self.persistenceController.undoManager endUndoGrouping];
-	[self.persistenceController.undoManager undo];
+	NSUndoManager *undoManager = [[PDPersistenceController sharedPersistenceController] undoManager];
+	[undoManager endUndoGrouping];
+	[undoManager undo];
 	
 	if (self.popoverController.popoverVisible) {
 		[self.popoverController dismissPopoverAnimated:YES];
@@ -544,7 +556,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)editListController:(DOEditListViewController *)controller
 			 listDidChange:(PDList *)list {
-	[self.persistenceController save];
+	[[PDPersistenceController sharedPersistenceController] save];
 	
 	[self.popoverController dismissPopoverAnimated:YES];
 	self.popoverController = nil;
@@ -563,7 +575,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (void)dealloc {
 	[self removeObserver:self forKeyPath:@"list.title"];
 	self.list = nil;
-	self.persistenceController = nil;
 	self.fetchedResultsController = nil;
 	self.listsPopoverController = nil;
 	self.popoverController = nil;

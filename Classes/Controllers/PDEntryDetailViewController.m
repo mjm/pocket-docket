@@ -11,12 +11,11 @@
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithEntry:(PDListEntry *)aEntry persistenceController:(PDPersistenceController *)controller {
+- (id)initWithEntry:(PDListEntry *)aEntry {
 	if (![super initWithNibName:@"PDEntryDetailView" bundle:nil])
 		return nil;
 	
 	self.entry = aEntry;
-	self.persistenceController = controller;
 	self.keyboardObserver = [[[PDKeyboardObserver alloc] initWithViewController:self delegate:nil] autorelease];
 	
 	self.title = self.entry.text;
@@ -61,20 +60,21 @@
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
 	PDTextFieldCell *cell = (PDTextFieldCell *) [self.table cellForRowAtIndexPath:indexPath];
 	
+	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
 	if (editing) {
-		[self.persistenceController.undoManager beginUndoGrouping];
+		[persistenceController.undoManager beginUndoGrouping];
 		self.navigationItem.hidesBackButton = YES;
 		[self.navigationItem setLeftBarButtonItem:self.cancelButton animated:animated];
 	} else {
 		self.entry.text = cell.textField.text;
 		[cell.textField resignFirstResponder];
 		
-		[self.persistenceController.undoManager endUndoGrouping];
+		[persistenceController.undoManager endUndoGrouping];
 		if (didCancel) {
-			[self.persistenceController.undoManager undo];
+			[persistenceController.undoManager undo];
 			didCancel = NO;
 		} else {
-			[self.persistenceController save];
+			[persistenceController save];
 		}
 		[self.navigationItem setLeftBarButtonItem:nil animated:animated];
 		self.navigationItem.hidesBackButton = NO;
@@ -270,9 +270,10 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
 	if (buttonIndex == [actionSheet destructiveButtonIndex]) {
-		[self.persistenceController deleteEntry:self.entry];
-		[self.persistenceController.undoManager endUndoGrouping];
-		[self.persistenceController save];
+		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+		[persistenceController deleteEntry:self.entry];
+		[persistenceController.undoManager endUndoGrouping];
+		[persistenceController save];
 		[self.navigationController popViewControllerAnimated:YES];
 	}
 }
@@ -301,7 +302,6 @@
 - (void)dealloc {
 	[self.entry removeObserver:self forKeyPath:@"text"];
 	self.entry = nil;
-	self.persistenceController = nil;
 	self.keyboardObserver = nil;
 	self.table = nil;
 	self.cancelButton = nil;
