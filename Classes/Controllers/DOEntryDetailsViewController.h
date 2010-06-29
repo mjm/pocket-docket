@@ -3,9 +3,7 @@
 
 @protocol DOEntryDetailsViewControllerDelegate;
 
-@interface DOEntryDetailsViewController : UIViewController <UITextFieldDelegate> {
-	BOOL isNew;
-}
+@interface DOEntryDetailsViewController : UIViewController <UITextFieldDelegate> {}
 
 @property (nonatomic, retain) PDListEntry *entry;
 @property (nonatomic, assign) id <DOEntryDetailsViewControllerDelegate> delegate;
@@ -15,8 +13,7 @@
 @property (nonatomic, retain) IBOutlet UITextView *commentTextView;
 @property (nonatomic, retain) PDKeyboardObserver *keyboardObserver;
 
-- (id)initWithNewEntry:(PDListEntry *)entry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate;
-- (id)initWithExistingEntry:(PDListEntry *)entry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate;
+- (id)initWithEntry:(PDListEntry *)entry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate;
 
 - (IBAction)cancelEntry;
 - (IBAction)saveEntry;

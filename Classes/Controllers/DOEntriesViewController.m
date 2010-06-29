@@ -37,13 +37,13 @@
 	cell.accessoryType = UITableViewCellAccessoryNone;
 }
 
-- (void)editEntryAtIndexPath:(NSIndexPath *)indexPath {
+- (void)editEntryAtIndexPath:(NSIndexPath *)indexPath
+{
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
-	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc]
-												initWithExistingEntry:entry
-												delegate:self];
+	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithEntry:entry
+																						  delegate:self];
 	
 	[controller presentModalToViewController:self];
 	[controller release];
@@ -182,6 +182,7 @@
 - (IBAction)editList {
 	[self dismissPopovers:NO];
 	
+	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.list];
 	controller.delegate = self;
 	
@@ -544,11 +545,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark Edit List Delegate Methods
 
 - (void)editListController:(DOEditListViewController *)controller
-			 listDidChange:(PDList *)list {
-	[[PDPersistenceController sharedPersistenceController] save];
+			 listDidChange:(PDList *)list
+{
+	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self.popoverController dismissPopoverAnimated:YES];
 	self.popoverController = nil;
+}
+
+- (void)editListController:(DOEditListViewController *)controller
+		  listDidNotChange:(PDList *)list
+{
+	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 }
 
 #pragma mark -

@@ -8,28 +8,13 @@
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate {
+- (id)initWithEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate
+{
 	if (![super initWithNibName:@"DOEntryDetailsView" bundle:nil])
 		return nil;
 	
 	self.entry = aEntry;
 	self.delegate = aDelegate;
-	return self;
-}
-
-- (id)initWithNewEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate {
-	if (![self initWithEntry:aEntry delegate:aDelegate])
-		return nil;
-	
-	isNew = YES;
-	return self;
-}
-
-- (id)initWithExistingEntry:(PDListEntry *)aEntry delegate:(id <DOEntryDetailsViewControllerDelegate>)aDelegate {
-	if (![self initWithEntry:aEntry delegate:aDelegate])
-		return nil;
-	
-	isNew = NO;
 	return self;
 }
 
@@ -98,9 +83,7 @@
 	if ([textField.text length] > 0) {
 		self.navigationItem.title = textField.text;
 	} else {
-		self.navigationItem.title = isNew
-				? NSLocalizedString(@"New Entry", nil)
-				: NSLocalizedString(@"Edit Entry", nil);
+		self.navigationItem.title = NSLocalizedString(@"Edit Entry", nil);
 	}
 }
 

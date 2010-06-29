@@ -11,6 +11,13 @@ NSString * const FirstLaunchKey = @"PDFirstLaunch";
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 
++ (void)initialize
+{
+	[[NSUserDefaults standardUserDefaults]
+	 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
+												  forKey:@"PDFirstLaunch"]];
+}
+
 - (void)saveSelectedList:(PDList *)list
 {
 	NSString *idString = [[[list objectID] URIRepresentation] absoluteString];
