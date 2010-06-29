@@ -24,9 +24,9 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
-		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
-		activeSDKPreference = iphoneos3.2;
-		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
+		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
+		activeSDKPreference = iphoneos4.0;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
 		addToTargets = (
 			C9BD10F91172AD83005E350E /* Docket */,
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
@@ -327,6 +327,18 @@
 			C9DB21F511D99E0B000A293A /* PBXTextBookmark */ = C9DB21F511D99E0B000A293A /* PBXTextBookmark */;
 			C9DB21F611D99E0B000A293A /* PBXTextBookmark */ = C9DB21F611D99E0B000A293A /* PBXTextBookmark */;
 			C9DB21FB11D99F16000A293A /* PBXTextBookmark */ = C9DB21FB11D99F16000A293A /* PBXTextBookmark */;
+			C9DB220A11DA3A51000A293A /* PBXTextBookmark */ = C9DB220A11DA3A51000A293A /* PBXTextBookmark */;
+			C9DB220B11DA3A51000A293A /* PBXTextBookmark */ = C9DB220B11DA3A51000A293A /* PBXTextBookmark */;
+			C9DB220C11DA3A51000A293A /* PBXTextBookmark */ = C9DB220C11DA3A51000A293A /* PBXTextBookmark */;
+			C9DB220D11DA3A51000A293A /* PBXTextBookmark */ = C9DB220D11DA3A51000A293A /* PBXTextBookmark */;
+			C9DB220E11DA3A51000A293A /* PBXTextBookmark */ = C9DB220E11DA3A51000A293A /* PBXTextBookmark */;
+			C9DB220F11DA3A51000A293A /* PBXTextBookmark */ = C9DB220F11DA3A51000A293A /* PBXTextBookmark */;
+			C9DB222311DA405D000A293A /* PBXTextBookmark */ = C9DB222311DA405D000A293A /* PBXTextBookmark */;
+			C9DB222411DA405D000A293A /* PBXTextBookmark */ = C9DB222411DA405D000A293A /* PBXTextBookmark */;
+			C9DB222511DA405D000A293A /* PBXTextBookmark */ = C9DB222511DA405D000A293A /* PBXTextBookmark */;
+			C9DB222611DA405D000A293A /* PBXTextBookmark */ = C9DB222611DA405D000A293A /* PBXTextBookmark */;
+			C9DB222711DA405D000A293A /* XCBuildMessageTextBookmark */ = C9DB222711DA405D000A293A /* XCBuildMessageTextBookmark */;
+			C9DB222811DA405D000A293A /* PBXTextBookmark */ = C9DB222811DA405D000A293A /* PBXTextBookmark */;
 		};
 		sourceControlManager = C94C55DD1154410800791FAC /* Source Control */;
 		userBookmarkGroup = C9BD106011726B4B005E350E /* PBXBookmarkGroup */;
@@ -506,9 +518,9 @@
 	};
 	C94C560211544FF700791FAC /* PDListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 5678}}";
-			sepNavSelRange = "{7045, 0}";
-			sepNavVisRange = "{4206, 1052}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 5440}}";
+			sepNavSelRange = "{3579, 0}";
+			sepNavVisRange = "{3509, 938}";
 			sepNavWindowFrame = "{{15, 157}, {910, 896}}";
 		};
 	};
@@ -937,8 +949,8 @@
 	C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1095, 1292}}";
-			sepNavSelRange = "{648, 0}";
-			sepNavVisRange = "{0, 851}";
+			sepNavSelRange = "{807, 0}";
+			sepNavVisRange = "{1073, 559}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -951,9 +963,9 @@
 	};
 	C9777E5C119892AC0047E997 /* DONewEntryViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 2040}}";
-			sepNavSelRange = "{381, 0}";
-			sepNavVisRange = "{1725, 1056}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 2125}}";
+			sepNavSelRange = "{2126, 0}";
+			sepNavVisRange = "{2216, 762}";
 		};
 	};
 	C9777F51119A37350047E997 /* PDFirstLaunchData.plist */ = {
@@ -1007,9 +1019,9 @@
 	};
 	C9BD10B311727788005E350E /* PDKeyboardObserver.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 1734}}";
-			sepNavSelRange = "{378, 0}";
-			sepNavVisRange = "{0, 1001}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 1819}}";
+			sepNavSelRange = "{2048, 0}";
+			sepNavVisRange = "{1826, 914}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1094,23 +1106,23 @@
 	};
 	C9BD122F1172B693005E350E /* DOListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 5304}}";
-			sepNavSelRange = "{8052, 0}";
-			sepNavVisRange = "{736, 995}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 5321}}";
+			sepNavSelRange = "{3033, 0}";
+			sepNavVisRange = "{9823, 751}";
 		};
 	};
 	C9BD12351172B9FB005E350E /* DOEntriesViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 612}}";
-			sepNavSelRange = "{164, 0}";
-			sepNavVisRange = "{34, 1542}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 595}}";
+			sepNavSelRange = "{1414, 0}";
+			sepNavVisRange = "{150, 1348}";
 		};
 	};
 	C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 10336}}";
-			sepNavSelRange = "{4861, 0}";
-			sepNavVisRange = "{4449, 852}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 10115}}";
+			sepNavSelRange = "{3382, 0}";
+			sepNavVisRange = "{15100, 975}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1128,9 +1140,9 @@
 	};
 	C9BD13531173F772005E350E /* DOEditListViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1095, 2108}}";
-			sepNavSelRange = "{1332, 0}";
-			sepNavVisRange = "{465, 699}";
+			sepNavIntBoundsRect = "{{0, 0}, {1095, 2142}}";
+			sepNavSelRange = "{740, 0}";
+			sepNavVisRange = "{465, 723}";
 		};
 	};
 	C9BD148E117567CC005E350E /* PBXBookmark */ = {
@@ -1300,7 +1312,7 @@
 		fRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */;
 		name = "PDKeyboardObserver.m: 78";
 		rLen = 0;
-		rLoc = 2498;
+		rLoc = 2507;
 		rType = 0;
 		vrLen = 594;
 		vrLoc = 1994;
@@ -1684,7 +1696,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 415";
 		rLen = 0;
-		rLoc = 14003;
+		rLoc = 13970;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 18032;
@@ -1724,7 +1736,7 @@
 		fRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */;
 		name = "PDCommentViewController.m: 51";
 		rLen = 0;
-		rLoc = 1241;
+		rLoc = 1202;
 		rType = 0;
 		vrLen = 611;
 		vrLoc = 0;
@@ -1791,7 +1803,7 @@
 		fRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */;
 		name = "PDKeyboardObserver.m: 46";
 		rLen = 0;
-		rLoc = 1551;
+		rLoc = 1719;
 		rType = 0;
 		vrLen = 975;
 		vrLoc = 827;
@@ -1891,7 +1903,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 536";
 		rLen = 0;
-		rLoc = 17409;
+		rLoc = 17376;
 		rType = 0;
 		vrLen = 1045;
 		vrLoc = 0;
@@ -2095,7 +2107,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 477";
 		rLen = 0;
-		rLoc = 15822;
+		rLoc = 15789;
 		rType = 0;
 		vrLen = 1016;
 		vrLoc = 15444;
@@ -2384,7 +2396,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 504";
 		rLen = 0;
-		rLoc = 16711;
+		rLoc = 16678;
 		rType = 0;
 		vrLen = 936;
 		vrLoc = 16045;
@@ -2394,7 +2406,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 534";
 		rLen = 0;
-		rLoc = 17606;
+		rLoc = 17573;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 17433;
@@ -2424,7 +2436,7 @@
 		fRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */;
 		name = "PDKeyboardObserver.m: 11";
 		rLen = 0;
-		rLoc = 378;
+		rLoc = 514;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 0;
@@ -2464,7 +2476,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 519";
 		rLen = 0;
-		rLoc = 17090;
+		rLoc = 17057;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 16464;
@@ -2654,7 +2666,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 559";
 		rLen = 0;
-		rLoc = 18305;
+		rLoc = 18272;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 17494;
@@ -2664,7 +2676,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 559";
 		rLen = 0;
-		rLoc = 18305;
+		rLoc = 18272;
 		rType = 0;
 		vrLen = 879;
 		vrLoc = 17494;
@@ -2674,7 +2686,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 559";
 		rLen = 0;
-		rLoc = 18305;
+		rLoc = 18272;
 		rType = 0;
 		vrLen = 990;
 		vrLoc = 15610;
@@ -2724,7 +2736,7 @@
 		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
 		name = "DOEntriesViewController.m: 158";
 		rLen = 0;
-		rLoc = 4861;
+		rLoc = 4828;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 4449;
@@ -2768,6 +2780,125 @@
 		rType = 0;
 		vrLen = 699;
 		vrLoc = 465;
+	};
+	C9DB220A11DA3A51000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD13531173F772005E350E /* DOEditListViewController.m */;
+		name = "DOEditListViewController.m: 32";
+		rLen = 0;
+		rLoc = 740;
+		rType = 0;
+		vrLen = 723;
+		vrLoc = 465;
+	};
+	C9DB220B11DA3A51000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9748C57116AC18B00D2B372 /* PDCommentViewController.m */;
+		name = "PDCommentViewController.m: 31";
+		rLen = 0;
+		rLoc = 807;
+		rType = 0;
+		vrLen = 559;
+		vrLoc = 1073;
+	};
+	C9DB220C11DA3A51000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9777E5C119892AC0047E997 /* DONewEntryViewController.m */;
+		name = "DONewEntryViewController.m: 86";
+		rLen = 0;
+		rLoc = 2126;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 2216;
+	};
+	C9DB220D11DA3A51000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12361172B9FB005E350E /* DOEntriesViewController.m */;
+		name = "DOEntriesViewController.m: 105";
+		rLen = 0;
+		rLoc = 3382;
+		rType = 0;
+		vrLen = 975;
+		vrLoc = 15100;
+	};
+	C9DB220E11DA3A51000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12351172B9FB005E350E /* DOEntriesViewController.h */;
+		name = "DOEntriesViewController.h: 6";
+		rLen = 0;
+		rLoc = 164;
+		rType = 0;
+		vrLen = 1497;
+		vrLoc = 34;
+	};
+	C9DB220F11DA3A51000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12351172B9FB005E350E /* DOEntriesViewController.h */;
+		name = "DOEntriesViewController.h: 17";
+		rLen = 0;
+		rLoc = 877;
+		rType = 0;
+		vrLen = 1436;
+		vrLoc = 34;
+	};
+	C9DB222311DA405D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD12351172B9FB005E350E /* DOEntriesViewController.h */;
+		name = "DOEntriesViewController.h: 25";
+		rLen = 0;
+		rLoc = 1414;
+		rType = 0;
+		vrLen = 1348;
+		vrLoc = 150;
+	};
+	C9DB222411DA405D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD122F1172B693005E350E /* DOListsViewController.m */;
+		name = "DOListsViewController.m: 95";
+		rLen = 0;
+		rLoc = 3033;
+		rType = 0;
+		vrLen = 751;
+		vrLoc = 9823;
+	};
+	C9DB222511DA405D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 126";
+		rLen = 0;
+		rLoc = 3579;
+		rType = 0;
+		vrLen = 938;
+		vrLoc = 3509;
+	};
+	C9DB222611DA405D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD10B211727788005E350E /* PDKeyboardObserver.h */;
+		name = "PDKeyboardObserver.h: 21";
+		rLen = 0;
+		rLoc = 750;
+		rType = 0;
+		vrLen = 1104;
+		vrLoc = 0;
+	};
+	C9DB222711DA405D000A293A /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Compile /Users/matt/Code/PocketDocket/Classes/PDKeyboardObserver.m";
+		fRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 0;
+		rLoc = 10;
+		rType = 1;
+	};
+	C9DB222811DA405D000A293A /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */;
+		name = "PDKeyboardObserver.m: 70";
+		rLen = 0;
+		rLoc = 2048;
+		rType = 0;
+		vrLen = 914;
+		vrLoc = 1826;
 	};
 	C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {
 		uiCtxt = {

@@ -79,7 +79,8 @@
 	static NSString *Cell = @"TextField";
 	
 	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-	if (!cell) {
+	if (!cell)
+	{
 		cell = [PDTextFieldCell textFieldCell];
 		cell.textField.delegate = self;
 		[cell.textField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventEditingChanged];
