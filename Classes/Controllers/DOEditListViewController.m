@@ -55,7 +55,13 @@
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)saveList {
+- (IBAction)textChanged:(UITextField *)sender
+{
+	self.list.title = sender.text;
+}
+
+- (IBAction)saveList
+{
 	self.list.title = self.titleCell.textField.text;
 	
 	didSave = YES;
@@ -69,13 +75,17 @@
 	return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView
+		 cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	static NSString *Cell = @"TextField";
 	
 	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-	if (!cell) {
+	if (!cell)
+	{
 		cell = [PDTextFieldCell textFieldCell];
 		cell.textField.delegate = self;
+		[cell.textField addTarget:self action:@selector(textChanged:) forControlEvents:UIControlEventEditingChanged];
 	}
 	
 	cell.textField.text = self.list.title;

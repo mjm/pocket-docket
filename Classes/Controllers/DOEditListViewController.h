@@ -30,6 +30,7 @@
 
 //! Action called when the user wants to save and close the list they are editing.
 - (IBAction)saveList;
+- (IBAction)textChanged:(UITextField *)sender;
 
 //@}
 
