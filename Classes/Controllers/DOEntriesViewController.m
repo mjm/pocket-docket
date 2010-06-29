@@ -14,6 +14,7 @@
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry;
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath;
+- (void)dismissPopovers:(BOOL)animated;
 
 @end
 
@@ -38,7 +39,7 @@
 
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath {
 	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	[[[PDPersistenceController sharedPersistenceController] undoManager] beginUndoGrouping];
+	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
 	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc]
 												initWithExistingEntry:entry
@@ -46,6 +47,19 @@
 	
 	[controller presentModalToViewController:self];
 	[controller release];
+}
+
+- (void)dismissPopovers:(BOOL)animated
+{
+	if (self.listsPopoverController.popoverVisible)
+	{
+		[self.listsPopoverController dismissPopoverAnimated:animated];
+	}
+	
+	if (self.popoverController.popoverVisible)
+	{
+		[self.popoverController dismissPopoverAnimated:animated];
+	}
 }
 
 #pragma mark -
@@ -156,13 +170,7 @@
 #pragma mark Actions
 
 - (IBAction)emailList {
-	if (self.popoverController.popoverVisible) {
-		[self.popoverController dismissPopoverAnimated:NO];
-	}
-	
-	if (self.listsPopoverController.popoverVisible) {
-		[self.listsPopoverController dismissPopoverAnimated:NO];
-	}
+	[self dismissPopovers:NO];
 	
 	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 	mailController.mailComposeDelegate = self;
@@ -172,19 +180,13 @@
 }
 
 - (IBAction)editList {
-	if (self.popoverController.popoverVisible) {
-		[self.popoverController dismissPopoverAnimated:NO];
-	}
+	[self dismissPopovers:NO];
 	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.list];
 	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
-	
-	if (self.listsPopoverController.popoverVisible) {
-		[self.listsPopoverController dismissPopoverAnimated:YES];
-	}
 	
 	if (self.popoverController) {
 		self.popoverController.contentViewController = navController;
@@ -200,16 +202,10 @@
 }
 
 - (IBAction)addEntry {
-	if (self.popoverController.popoverVisible) {
-		[self.popoverController dismissPopoverAnimated:NO];
-	}
-	
-	if (self.listsPopoverController.popoverVisible) {
-		[self.listsPopoverController dismissPopoverAnimated:NO];
-	}
+	[self dismissPopovers:NO];
 	
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager beginUndoGrouping];
+	[persistenceController beginEdits];
 	PDListEntry *entry = [persistenceController createEntry:@"" inList:self.list];
 	
 	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithEntry:entry];
@@ -496,18 +492,14 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
 				  didSaveEntry:(PDListEntry *)entry {
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager endUndoGrouping];
-	[persistenceController save];
+	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
 				didCancelEntry:(PDListEntry *)entry {
-	NSUndoManager *undoManager = [[PDPersistenceController sharedPersistenceController] undoManager];
-	[undoManager endUndoGrouping];
-	[undoManager undo];
+	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
@@ -526,14 +518,13 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	}
 	
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager endUndoGrouping];
-	[persistenceController save];
+	[persistenceController saveEdits];
 	
 	if (dismiss) {
 		[self.popoverController dismissPopoverAnimated:YES];
 		self.popoverController = nil;
 	} else {
-		[persistenceController.undoManager beginUndoGrouping];
+		[persistenceController beginEdits];
 		PDListEntry *entry = [persistenceController createEntry:@"" inList:self.list];
 		controller.entry = entry;
 	}
@@ -541,9 +532,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)newEntryController:(DONewEntryViewController *)controller
 			didCancelEntry:(PDListEntry *)entry {
-	NSUndoManager *undoManager = [[PDPersistenceController sharedPersistenceController] undoManager];
-	[undoManager endUndoGrouping];
-	[undoManager undo];
+	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 	
 	if (self.popoverController.popoverVisible) {
 		[self.popoverController dismissPopoverAnimated:YES];

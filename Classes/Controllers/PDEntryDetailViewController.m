@@ -62,19 +62,18 @@
 	
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
 	if (editing) {
-		[persistenceController.undoManager beginUndoGrouping];
+		[persistenceController beginEdits];
 		self.navigationItem.hidesBackButton = YES;
 		[self.navigationItem setLeftBarButtonItem:self.cancelButton animated:animated];
 	} else {
 		self.entry.text = cell.textField.text;
 		[cell.textField resignFirstResponder];
 		
-		[persistenceController.undoManager endUndoGrouping];
 		if (didCancel) {
-			[persistenceController.undoManager undo];
+			[persistenceController cancelEdits];
 			didCancel = NO;
 		} else {
-			[persistenceController save];
+			[persistenceController saveEdits];
 		}
 		[self.navigationItem setLeftBarButtonItem:nil animated:animated];
 		self.navigationItem.hidesBackButton = NO;
@@ -272,8 +271,7 @@
 	if (buttonIndex == [actionSheet destructiveButtonIndex]) {
 		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
 		[persistenceController deleteEntry:self.entry];
-		[persistenceController.undoManager endUndoGrouping];
-		[persistenceController save];
+		[persistenceController saveEdits];
 		[self.navigationController popViewControllerAnimated:YES];
 	}
 }

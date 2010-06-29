@@ -1,6 +1,7 @@
 #import "PDAppDelegate.h"
 
 #import "PDPersistenceController.h"
+#import "PDSettingsController.h"
 #import "Controllers/PDListsViewController.h"
 #import "Controllers/PDEntriesViewController.h"
 
@@ -15,7 +16,7 @@
 	PDListsViewController *listsController = [[PDListsViewController alloc] init];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];
 	
-	PDList *selectedList = [[PDPersistenceController sharedPersistenceController] loadSelectedList];
+	PDList *selectedList = [[PDSettingsController sharedSettingsController] loadSelectedList];
 	if (selectedList) {
 		PDEntriesViewController *listController = [[PDEntriesViewController alloc] initWithList:selectedList];
 		[navController pushViewController:listController animated:NO];

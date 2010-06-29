@@ -1,6 +1,7 @@
 #import "PDEntriesViewController.h"
 
 #import "../PDPersistenceController.h"
+#import "../PDSettingsController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
 #import "../Controllers/PDEntryDetailViewController.h"
@@ -107,7 +108,7 @@
 	[super viewWillAppear:animated];
 	[self.keyboardObserver registerNotifications];
 	
-	[[PDPersistenceController sharedPersistenceController] saveSelectedList:self.list];
+	[[PDSettingsController sharedSettingsController] saveSelectedList:self.list];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

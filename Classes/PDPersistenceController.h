@@ -14,9 +14,12 @@
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, readonly) NSUndoManager *undoManager;
 
 + (PDPersistenceController *)sharedPersistenceController;
+
+- (void)beginEdits;
+- (void)saveEdits;
+- (void)cancelEdits;
 
 //! \name Retrieving Model Objects
 //@{

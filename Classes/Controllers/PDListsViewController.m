@@ -3,6 +3,7 @@
 #import "PDEditListViewController.h"
 #import "PDEntriesViewController.h"
 #import "../PDPersistenceController.h"
+#import "../PDSettingsController.h"
 #import "../Models/PDList.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
@@ -99,7 +100,7 @@
 		[persistenceController.managedObjectContext refreshObject:list mergeChanges:YES];
 	}
 	
-	[persistenceController saveSelectedList:nil];
+	[[PDSettingsController sharedSettingsController] saveSelectedList:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -135,7 +136,7 @@
 	isAdd = YES;
 	
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager beginUndoGrouping];
+	[persistenceController beginEdits];
 	PDList *list = [persistenceController createList];
 	
 	PDEditListViewController *editController = [[PDEditListViewController alloc] initWithList:list];
@@ -239,7 +240,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)editListController:(PDEditListViewController *)controller listDidChange:(PDList *)list {
 	// Prevent edits from crashing
 	if (isAdd) {
-		[[[PDPersistenceController sharedPersistenceController] undoManager] endUndoGrouping];
+		[[PDPersistenceController sharedPersistenceController] saveEdits];
 	}
 	
 	[self doneEditingList:list];
@@ -255,9 +256,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 - (void)editListController:(PDEditListViewController *)controller listDidNotChange:(PDList *)list {
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager endUndoGrouping];
-	[persistenceController.undoManager undo];
+	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 
 	[self doneEditingList:list];
 }

@@ -8,7 +8,10 @@
 #pragma mark PrivateMethods
 
 @interface PDPersistenceController ()
+
+@property (nonatomic, readonly) NSUndoManager *undoManager;
 - (NSString *)applicationDocumentsDirectory;
+
 @end
 
 #pragma mark -
@@ -119,6 +122,23 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		[undoManager release];
 	}
 	return undoManager;
+}
+
+- (void)beginEdits
+{
+	[self.undoManager beginUndoGrouping];
+}
+
+- (void)saveEdits
+{
+	[self.undoManager endUndoGrouping];
+	[self save];
+}
+
+- (void)cancelEdits
+{
+	[self.undoManager endUndoGrouping];
+	[self.undoManager undo];
 }
 
 #pragma mark -

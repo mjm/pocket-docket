@@ -106,7 +106,7 @@
 	}
 	
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager beginUndoGrouping];
+	[persistenceController beginEdits];
 	PDList *list = [persistenceController createList];
 	
 	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:list];
@@ -220,9 +220,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 // Called when the user hits the save button in the popover.
 - (void)editListController:(DOEditListViewController *)controller listDidChange:(PDList *)list {
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager endUndoGrouping];
-	[persistenceController save];
+	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	[self.popoverController dismissPopoverAnimated:YES];
 	
 	NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
@@ -233,10 +231,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 }
 
 - (void)editListController:(DOEditListViewController *)controller listDidNotChange:(PDList *)list {
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController.undoManager endUndoGrouping];
-	[persistenceController.undoManager undo];
-	[persistenceController save];
+	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 	
 	if (!self.editing) {
 		NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.entriesViewController.list];
