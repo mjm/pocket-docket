@@ -4,9 +4,11 @@
 #import "DOEntryDetailsViewController.h"
 
 @class PDList;
+#import "PDImportEntriesViewController.h"
+
 @class DOListsViewController;
 
-@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate> {
+@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate> {
 	PDList *list;
 	BOOL userIsMoving;
 }
@@ -24,7 +26,9 @@
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeGestureRecognizer;
 
+- (IBAction)showActionMenu;
 - (IBAction)emailList;
+- (IBAction)importEntries;
 - (IBAction)editList;
 - (IBAction)addEntry;
 

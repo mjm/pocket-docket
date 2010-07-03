@@ -1,10 +1,11 @@
 #import "PDEntriesViewController.h"
 
+#import "PDEntryDetailViewController.h"
+#import "PDImportEntriesViewController.h"
 #import "../PDPersistenceController.h"
 #import "../PDSettingsController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
-#import "../Controllers/PDEntryDetailViewController.h"
 #import "../Views/PDEntryTableCell.h"
 
 #pragma mark Private Methods
@@ -178,6 +179,18 @@
 	[self showAddButton];
 }
 
+
+
+#pragma mark -
+#pragma mark Import Entries Controller Delegate Methods
+
+- (void)dismissImportEntriesController:(PDImportEntriesViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+
+
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
@@ -338,6 +351,11 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+	if (![MFMailComposeViewController canSendMail])
+	{
+		buttonIndex++;
+	}
+	
 	if (buttonIndex == 0)
 	{
 		[self emailList];
@@ -400,7 +418,14 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (IBAction)importEntries
 {
-	NSLog(@"Attempting to import entries.");
+	PDImportEntriesViewController *importController = [[PDImportEntriesViewController alloc] initWithList:self.list];
+	importController.delegate = self;
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:importController];
+	[importController release];
+	
+	[self presentModalViewController:navController animated:YES];
+	[navController release];
 }
 
 - (IBAction)checkedBox:(id)sender forEvent:(UIEvent *)event

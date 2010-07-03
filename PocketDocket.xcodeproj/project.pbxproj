@@ -52,6 +52,10 @@
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
 		C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07C11C09DA6003A5D1C /* Default-Landscape.png */; };
 		C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07D11C09DA6003A5D1C /* Default-Portrait.png */; };
+		C990F97E11DE9F1C00BA1579 /* PDEntryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */; };
+		C990F97F11DE9F1C00BA1579 /* PDEntryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */; };
+		C990F98211DEA34D00BA1579 /* PDListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F98111DEA34D00BA1579 /* PDListParser.m */; };
+		C990F98311DEA34D00BA1579 /* PDListParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F98111DEA34D00BA1579 /* PDListParser.m */; };
 		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
 		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
 		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
@@ -97,6 +101,10 @@
 		C9E18CF711CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */; };
 		C9E18CF811CE964D00C61B18 /* CheckBox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */; };
 		C9E18CF911CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */; };
+		C9E2D76411DA7DBB00B5ED60 /* PDImportEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2D76311DA7DBB00B5ED60 /* PDImportEntriesViewController.m */; };
+		C9E2D76511DA7DBB00B5ED60 /* PDImportEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E2D76311DA7DBB00B5ED60 /* PDImportEntriesViewController.m */; };
+		C9E2D76711DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E2D76611DA7E8D00B5ED60 /* PDImportEntriesView.xib */; };
+		C9E2D76811DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E2D76611DA7E8D00B5ED60 /* PDImportEntriesView.xib */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 		C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD2AA91186763B00ED7954 /* IconPhone.png */; };
@@ -177,6 +185,10 @@
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
 		C981B07C11C09DA6003A5D1C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		C981B07D11C09DA6003A5D1C /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		C990F97C11DE9F1C00BA1579 /* PDEntryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDEntryParser.h; sourceTree = "<group>"; };
+		C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDEntryParser.m; sourceTree = "<group>"; };
+		C990F98011DEA34D00BA1579 /* PDListParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDListParser.h; sourceTree = "<group>"; };
+		C990F98111DEA34D00BA1579 /* PDListParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDListParser.m; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
 		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
@@ -208,6 +220,9 @@
 		C9DB213411D97F0B000A293A /* PDSettingsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSettingsController.m; sourceTree = "<group>"; };
 		C9E18CF411CE964D00C61B18 /* CheckBox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBox@2x.png"; sourceTree = "<group>"; };
 		C9E18CF511CE964D00C61B18 /* CheckBoxChecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CheckBoxChecked@2x.png"; sourceTree = "<group>"; };
+		C9E2D76211DA7DBB00B5ED60 /* PDImportEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDImportEntriesViewController.h; path = Controllers/PDImportEntriesViewController.h; sourceTree = "<group>"; };
+		C9E2D76311DA7DBB00B5ED60 /* PDImportEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDImportEntriesViewController.m; path = Controllers/PDImportEntriesViewController.m; sourceTree = "<group>"; };
+		C9E2D76611DA7E8D00B5ED60 /* PDImportEntriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDImportEntriesView.xib; sourceTree = "<group>"; };
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
@@ -250,6 +265,7 @@
 				C9DB204311D8085A000A293A /* App Delegate */,
 				C929542F117A971F0052A674 /* Categories */,
 				C94C56E31156BEF400791FAC /* Models */,
+				C990F97B11DE9ED000BA1579 /* Element Processing */,
 				C94C564011569C5400791FAC /* Views */,
 				C94C563F11569C4B00791FAC /* Controllers */,
 				C9BD10B211727788005E350E /* PDKeyboardObserver.h */,
@@ -338,6 +354,7 @@
 		C94C563F11569C4B00791FAC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9E2D76111DA7D9200B5ED60 /* Import Entries View Controller */,
 				C9DB203D11D80667000A293A /* Lists View Controller */,
 				C9DB203E11D80755000A293A /* Edit List View Controller */,
 				C9DB203F11D80773000A293A /* Entries View Controller */,
@@ -407,6 +424,17 @@
 				C9777F51119A37350047E997 /* PDFirstLaunchData.plist */,
 			);
 			name = "First Launch";
+			sourceTree = "<group>";
+		};
+		C990F97B11DE9ED000BA1579 /* Element Processing */ = {
+			isa = PBXGroup;
+			children = (
+				C990F97C11DE9F1C00BA1579 /* PDEntryParser.h */,
+				C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */,
+				C990F98011DEA34D00BA1579 /* PDListParser.h */,
+				C990F98111DEA34D00BA1579 /* PDListParser.m */,
+			);
+			name = "Element Processing";
 			sourceTree = "<group>";
 		};
 		C9DB1F8C11D70116000A293A /* App Icons */ = {
@@ -559,8 +587,18 @@
 			children = (
 				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
 				C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */,
+				C9E2D76611DA7E8D00B5ED60 /* PDImportEntriesView.xib */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		C9E2D76111DA7D9200B5ED60 /* Import Entries View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C9E2D76211DA7DBB00B5ED60 /* PDImportEntriesViewController.h */,
+				C9E2D76311DA7DBB00B5ED60 /* PDImportEntriesViewController.m */,
+			);
+			name = "Import Entries View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,6 +693,7 @@
 				C9D6DE7311D6FB7400FF64EC /* Icon@2x.png in Resources */,
 				C9DB1F9F11D70170000A293A /* ListIcon@2x.png in Resources */,
 				C9DB1FA011D70170000A293A /* ListIconDark@2x.png in Resources */,
+				C9E2D76711DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,6 +723,7 @@
 				C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */,
 				C9E18CF611CE964D00C61B18 /* CheckBox@2x.png in Resources */,
 				C9E18CF711CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */,
+				C9E2D76811DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +752,9 @@
 				C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */,
 				C9BD10B411727788005E350E /* PDKeyboardObserver.m in Sources */,
 				C9DB213611D97F0B000A293A /* PDSettingsController.m in Sources */,
+				C9E2D76411DA7DBB00B5ED60 /* PDImportEntriesViewController.m in Sources */,
+				C990F97E11DE9F1C00BA1579 /* PDEntryParser.m in Sources */,
+				C990F98211DEA34D00BA1579 /* PDListParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +780,9 @@
 				C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */,
 				C9777E601198936A0047E997 /* DONewEntryViewController.m in Sources */,
 				C9DB213511D97F0B000A293A /* PDSettingsController.m in Sources */,
+				C9E2D76511DA7DBB00B5ED60 /* PDImportEntriesViewController.m in Sources */,
+				C990F97F11DE9F1C00BA1579 /* PDEntryParser.m in Sources */,
+				C990F98311DEA34D00BA1579 /* PDListParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

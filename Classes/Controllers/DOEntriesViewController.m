@@ -87,8 +87,6 @@
 	self.tapGestureRecognizer.numberOfTapsRequired = 2;
 	[self.table addGestureRecognizer:self.tapGestureRecognizer];
 	
-	self.sendButton.enabled = [MFMailComposeViewController canSendMail];
-	
 	[self addObserver:self
 		   forKeyPath:@"list.title"
 			  options:NSKeyValueObservingOptionNew
@@ -168,14 +166,52 @@
 #pragma mark -
 #pragma mark Actions
 
-- (IBAction)emailList {
+- (IBAction)showActionMenu
+{
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+															 delegate:self
+													cancelButtonTitle:nil
+											   destructiveButtonTitle:nil
+													otherButtonTitles:nil];
+	
+	if ([MFMailComposeViewController canSendMail])
+	{
+		[actionSheet addButtonWithTitle:NSLocalizedString(@"Email List", nil)];
+	}
+	[actionSheet addButtonWithTitle:NSLocalizedString(@"Import Entries", nil)];
+	[actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+	actionSheet.cancelButtonIndex = actionSheet.numberOfButtons - 1;
+	
+	[actionSheet showFromBarButtonItem:self.sendButton animated:YES];
+	[actionSheet release];
+}
+
+- (IBAction)emailList
+{
 	[self dismissPopovers:NO];
 	
-	MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
-	mailController.mailComposeDelegate = self;
-	[mailController setSubject:self.list.title];
-	[mailController setMessageBody:[self.list plainTextString] isHTML:NO];
-	[self presentModalViewController:mailController animated:YES];
+	if ([MFMailComposeViewController canSendMail])
+	{
+		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+		mailController.mailComposeDelegate = self;
+		[mailController setSubject:self.list.title];
+		[mailController setMessageBody:[self.list plainTextString] isHTML:NO];
+		[self presentModalViewController:mailController animated:YES];
+	}
+}
+
+- (IBAction)importEntries
+{
+	PDImportEntriesViewController *importController = [[PDImportEntriesViewController alloc] initWithList:self.list];
+	importController.delegate = self;
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:importController];
+	[importController release];
+	
+	navController.modalPresentationStyle = UIModalPresentationPageSheet;
+	
+	[self presentModalViewController:navController animated:YES];
+	[navController release];
 }
 
 - (IBAction)editList {
@@ -415,12 +451,16 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 - (void)splitViewController:(UISplitViewController *)svc
 	 willHideViewController:(UIViewController *)aViewController
 		  withBarButtonItem:(UIBarButtonItem *)barButtonItem
-	   forPopoverController:(UIPopoverController *)pc {
+	   forPopoverController:(UIPopoverController *)pc
+{
 	barButtonItem.title = NSLocalizedString(@"Lists", nil);
-	NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
-	[toolbarItems insertObject:barButtonItem atIndex:0];
-	[self.toolbar setItems:toolbarItems animated:YES];
-	[toolbarItems release];
+	if (barButtonItem != [self.toolbar.items objectAtIndex:0])
+	{
+		NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
+		[toolbarItems insertObject:barButtonItem atIndex:0];
+		[self.toolbar setItems:toolbarItems animated:YES];
+		[toolbarItems release];
+	}
 	
 	self.titleButton.title = self.list.title;
 	
@@ -429,7 +469,8 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)splitViewController:(UISplitViewController *)svc
 	 willShowViewController:(UIViewController *)aViewController
-  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
 	NSMutableArray *toolbarItems = [self.toolbar.items mutableCopy];
 	[toolbarItems removeObjectAtIndex:0];
 	[self.toolbar setItems:toolbarItems animated:YES];
@@ -445,8 +486,10 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)splitViewController:(UISplitViewController *)svc
 		  popoverController:(UIPopoverController *)pc
-  willPresentViewController:(UIViewController *)aViewController {
-	if (self.popoverController.popoverVisible) {
+  willPresentViewController:(UIViewController *)aViewController
+{
+	if (self.popoverController.popoverVisible)
+	{
 		[self.popoverController dismissPopoverAnimated:YES];
 	}
 	
@@ -463,6 +506,26 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		  didFinishWithResult:(MFMailComposeResult)result
 						error:(NSError *)error {
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark -
+#pragma mark Action Sheet Delegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (![MFMailComposeViewController canSendMail])
+	{
+		buttonIndex++;
+	}
+	
+	if (buttonIndex == 0)
+	{
+		[self emailList];
+	}
+	else if (buttonIndex == 1)
+	{
+		[self importEntries];
+	}
 }
 
 #pragma mark -
@@ -557,6 +620,18 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 {
 	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 }
+
+
+
+#pragma mark -
+#pragma mark Import Entries Controller Delegate Methods
+
+- (void)dismissImportEntriesController:(PDImportEntriesViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+
 
 #pragma mark -
 #pragma mark Popover Controller Delegate Methods
