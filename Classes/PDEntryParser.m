@@ -14,22 +14,29 @@
 	NSMutableDictionary *dict = [NSMutableDictionary dictionary];
 	
 	NSString *scanned;
-	[scanner scanCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"_X"]
-						intoString:&scanned];
-	
-	if ([scanned isEqualToString:@"_"])
+	if ([scanner scanCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"_Xx"]
+						intoString:&scanned])
 	{
-		[dict setObject:[NSNumber numberWithBool:NO] forKey:@"checked"];
-	}
-	else if ([scanned isEqualToString:@"X"])
-	{
-		[dict setObject:[NSNumber numberWithBool:YES] forKey:@"checked"];
+		if ([scanned isEqualToString:@"_"])
+		{
+			[dict setObject:[NSNumber numberWithBool:NO] forKey:@"checked"];
+		}
+		else if ([scanned isEqualToString:@"X"] || [scanned isEqualToString:@"x"])
+		{
+			[dict setObject:[NSNumber numberWithBool:YES] forKey:@"checked"];
+		}
 	}
 	
-	[scanner scanString:@"] " intoString:NULL];
-	[scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&scanned];
-	[dict setObject:[scanned stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
-			 forKey:@"text"];
+	[scanner scanUpToString:@"]" intoString:NULL];
+	[scanner scanString:@"]" intoString:NULL];
+	[scanner scanCharactersFromSet:[NSCharacterSet whitespaceCharacterSet]
+						intoString:NULL];
+	
+	if ([scanner scanUpToCharactersFromSet:[NSCharacterSet newlineCharacterSet] intoString:&scanned])
+	{
+		[dict setObject:[scanned stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]
+				 forKey:@"text"];
+	}
 	
 	if ([scanner scanUpToString:@"[" intoString:&scanned])
 	{
