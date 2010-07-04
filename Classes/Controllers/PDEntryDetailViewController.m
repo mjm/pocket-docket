@@ -149,6 +149,7 @@
 		
 		cell.textField.text = self.entry.text;
 		cell.textField.delegate = self;
+		cell.textField.autocapitalizationType = UITextAutocapitalizationTypeSentences;
 		
 		return cell;
 	}

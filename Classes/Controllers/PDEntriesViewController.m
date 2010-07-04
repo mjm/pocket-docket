@@ -8,6 +8,7 @@
 #import "../Models/PDListEntry.h"
 #import "../Views/PDEntryTableCell.h"
 
+
 #pragma mark Private Methods
 
 @interface PDEntriesViewController ()
@@ -21,26 +22,33 @@
 
 @end
 
+
 @implementation PDEntriesViewController
 
-- (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry {
+- (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry
+{
 	[cell.checkboxButton setImage:[entry.checked boolValue] ?
 	 [UIImage imageNamed:@"CheckBoxChecked.png"] :
 	 [UIImage imageNamed:@"CheckBox.png"]
 						 forState:UIControlStateNormal];
 	cell.textLabel.text = entry.text;
 	
-	if ([entry.checked boolValue]) {
+	if ([entry.checked boolValue])
+	{
 		cell.textLabel.textColor = [UIColor lightGrayColor];
-	} else {
+	}
+	else
+	{
 		cell.textLabel.textColor = [UIColor blackColor];
 	}
 	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
 }
 
-- (void)scrollToBottom {
-	NSUInteger numRows = [self tableView:self.table numberOfRowsInSection:0];
-	if (numRows > 0) {
+- (void)scrollToBottom
+{
+	NSUInteger numRows = [self.entriesController tableView:self.table numberOfRowsInSection:0];
+	if (numRows > 0)
+	{
 		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(numRows - 1) inSection:0];
 		
 		[self.table scrollToRowAtIndexPath:indexPath
@@ -49,8 +57,9 @@
 	}
 }
 
-- (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath {
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+- (void)displayEntryDetailsForIndexPath:(NSIndexPath *)indexPath
+{
+	PDListEntry *entry = [self.entriesController entryAtIndexPath:indexPath];
 	
 	PDEntryDetailViewController *detailController = [[PDEntryDetailViewController alloc] initWithEntry:entry];
 	[self.navigationController pushViewController:detailController animated:YES];
@@ -58,26 +67,27 @@
 	[detailController release];
 }
 
+
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithList:(PDList *)aList {
+- (id)initWithList:(PDList *)aList
+{
 	if (![super initWithNibName:@"PDEntriesView" bundle:nil])
 		return nil;
 	
 	self.list = aList;
-	self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController]
-									 entriesFetchedResultsControllerForList:self.list];
-	self.fetchedResultsController.delegate = self;
 	self.keyboardObserver = [PDKeyboardObserver keyboardObserverWithViewController:self delegate:self];
 	
 	return self;
 }
 
+
 #pragma mark -
 #pragma mark View Controller Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 	
 	self.title = self.list.title;
@@ -89,7 +99,8 @@
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 	float version = [[[UIDevice currentDevice] systemVersion] floatValue];
-	if (version >= 3.2) {
+	if (version >= 3.2)
+	{
 		id gestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
 																		 action:@selector(swipeDetected:)];
 		[gestureRecognizer setDirection:UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight];
@@ -99,20 +110,20 @@
 #endif
 #endif
 	
-	NSError *error;
-	[self.fetchedResultsController performFetch:&error];
-	
-	self.sendButton.enabled = [MFMailComposeViewController canSendMail];
+	self.entriesController.list = self.list;
+	[self.entriesController loadData];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
 	[super viewWillAppear:animated];
 	[self.keyboardObserver registerNotifications];
 	
 	[[PDSettingsController sharedSettingsController] saveSelectedList:self.list];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
+- (void)viewWillDisappear:(BOOL)animated
+{
 	[super viewWillDisappear:animated];
 	[self.newEntryField resignFirstResponder];
 	[self showSendButton];
@@ -120,31 +131,42 @@
 	[self.keyboardObserver unregisterNotifications];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
     return ![self.keyboardObserver isKeyboardShowing];
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
+	self.entriesController = nil;
 	self.table = nil;
+	self.toolbar = nil;
 	self.newEntryField = nil;
+	self.addButton = nil;
+	self.sendButton = nil;
 }
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
 	[super setEditing:editing animated:animated];
 	[self.table setEditing:editing animated:animated];
 	
 	// Only do this when editing since showing the keyboard will set editing to NO
-	if (editing) {
+	if (editing)
+	{
 		[self.newEntryField resignFirstResponder];
 		[self showSendButton];
 	}
 }
 
+
 #pragma mark -
 #pragma mark Changing the Button
 
-- (void)showAddButton {
-	if ([[self.toolbar items] lastObject] == self.sendButton) {
+- (void)showAddButton
+{
+	if ([[self.toolbar items] lastObject] == self.sendButton)
+	{
 		CGRect bounds = self.newEntryField.bounds;
 		bounds.size.width += 10;
 		self.newEntryField.bounds = bounds;
@@ -156,8 +178,10 @@
 	}
 }
 
-- (void)showSendButton {
-	if ([[self.toolbar items] lastObject] == self.addButton) {
+- (void)showSendButton
+{
+	if ([[self.toolbar items] lastObject] == self.addButton)
+	{
 		CGRect bounds = self.newEntryField.bounds;
 		bounds.size.width -= 10;
 		self.newEntryField.bounds = bounds;
@@ -168,6 +192,7 @@
 		[items release];
 	}
 }
+
 
 #pragma mark -
 #pragma mark Keyboard Observer Delegate Methods
@@ -180,7 +205,6 @@
 }
 
 
-
 #pragma mark -
 #pragma mark Import Entries Controller Delegate Methods
 
@@ -190,146 +214,62 @@
 }
 
 
-
 #pragma mark -
-#pragma mark Table View Data Source Methods
+#pragma mark Entries Controller Delegate Methods
 
-- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-	return [sectionInfo numberOfObjects];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)cellForEntriesController:(PDEntriesController *)controller
+{
 	static NSString *EntryCell = @"EntryCell";
 	
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	PDEntryTableCell *cell = (PDEntryTableCell *) [tableView dequeueReusableCellWithIdentifier:EntryCell];
-	
-	if (cell == nil) {
+	PDEntryTableCell *cell = (PDEntryTableCell *) [self.table dequeueReusableCellWithIdentifier:EntryCell];
+	if (cell == nil)
+	{
 		cell = [PDEntryTableCell entryTableCell];
 		[cell.checkboxButton addTarget:self
 								action:@selector(checkedBox:forEvent:)
 					  forControlEvents:UIControlEventTouchUpInside];
 	}
 	
-	[self configureCell:cell withEntry:entry];
-	
 	return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
+- (void)entriesController:(PDEntriesController *)controller
+			configureCell:(UITableViewCell *)cell
+				withEntry:(PDListEntry *)entry
+{
+	[self configureCell:(PDEntryTableCell *)cell withEntry:entry];
 }
 
-- (void) tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
- forRowAtIndexPath:(NSIndexPath *)indexPath {
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController deleteEntry:entry];
-	[persistenceController save];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-
-- (void) tableView:(UITableView *)tableView
-moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-	   toIndexPath:(NSIndexPath *)destinationIndexPath {
-	userIsMoving = YES;
-	
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
-	[[PDPersistenceController sharedPersistenceController] moveEntry:entry
-															 fromRow:sourceIndexPath.row
-															   toRow:destinationIndexPath.row];
-	
-	userIsMoving = NO;
-}
 
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	return nil;
 }
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView
-		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-	if ([self.table isEditing]) {
+		   editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (self.table.editing)
+	{
 		return UITableViewCellEditingStyleDelete;
 	}
 	return UITableViewCellEditingStyleNone;
 }
 
-- (void)tableView:(UITableView *)tableView didSwipeCellAtIndexPath:(NSIndexPath *)indexPath {
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-	[[PDPersistenceController sharedPersistenceController] save];
-}
-
-- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
 	[self displayEntryDetailsForIndexPath:indexPath];
 }
 
-#pragma mark -
-#pragma mark Fetched Results Controller Delegate Methods
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-	if (userIsMoving)
-		return;
-	
-	[self.table beginUpdates];
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-	if (userIsMoving)
-		return;
-	
-	[self.table endUpdates];
-}
-
-- (void)controller:(NSFetchedResultsController *)controller
-   didChangeObject:(id)anObject
-	   atIndexPath:(NSIndexPath *)indexPath
-	 forChangeType:(NSFetchedResultsChangeType)type
-	  newIndexPath:(NSIndexPath *)newIndexPath {
-	
-	switch (type) {
-		case NSFetchedResultsChangeInsert:
-			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-							  withRowAnimation:UITableViewRowAnimationFade];
-			break;
-		case NSFetchedResultsChangeDelete:
-			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-							  withRowAnimation:UITableViewRowAnimationFade];
-			break;
-		case NSFetchedResultsChangeUpdate:
-			[self configureCell:(PDEntryTableCell *) [self.table cellForRowAtIndexPath:indexPath]
-					  withEntry:anObject];
-			break;
-		case NSFetchedResultsChangeMove:
-			if (!userIsMoving) {
-				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-								  withRowAnimation:UITableViewRowAnimationFade];
-				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-								  withRowAnimation:UITableViewRowAnimationFade];
-			}
-			break;
-	}
-}
-
-- (void)controller:(NSFetchedResultsController *)controller
-  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-		   atIndex:(NSUInteger)sectionIndex
-	 forChangeType:(NSFetchedResultsChangeType)type {
-	return;
-}
 
 #pragma mark -
 #pragma mark Text Field Delegate Methods
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
 	[self addListEntry];
 	[textField resignFirstResponder];
 	[self showSendButton];
@@ -337,14 +277,17 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	return NO;
 }
 
+
 #pragma mark -
 #pragma mark Mail Compose Delegate Methods
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller
 		  didFinishWithResult:(MFMailComposeResult)result
-						error:(NSError *)error {
+						error:(NSError *)error
+{
 	[self dismissModalViewControllerAnimated:YES];
 }
+
 
 #pragma mark -
 #pragma mark Action Sheet Delegate Methods
@@ -365,6 +308,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		[self importEntries];
 	}
 }
+
 
 #pragma mark -
 #pragma mark Actions
@@ -435,34 +379,30 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	
 	CGPoint location = [touch locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:location];
-	if (indexPath != nil)
-	{
-		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-		[[PDPersistenceController sharedPersistenceController] save];
-	}
+	[self.entriesController checkEntryAtIndexPath:indexPath];
 }
 
-- (IBAction)swipeDetected:(id)gestureRecognizer {
+- (IBAction)swipeDetected:(id)gestureRecognizer
+{
 	CGPoint point = [gestureRecognizer locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:point];
-	
-	if (indexPath != nil) {
-		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-		[[PDPersistenceController sharedPersistenceController] save];
-	}
+	[self.entriesController checkEntryAtIndexPath:indexPath];
 }
+
 
 #pragma mark -
 #pragma mark Memory Management
 
-- (void)dealloc {
+- (void)dealloc
+{
 	self.list = nil;
-	self.fetchedResultsController = nil;
+	self.entriesController = nil;
 	self.keyboardObserver = nil;
 	self.table = nil;
+	self.toolbar = nil;
 	self.newEntryField = nil;
+	self.addButton = nil;
+	self.sendButton = nil;
     [super dealloc];
 }
 

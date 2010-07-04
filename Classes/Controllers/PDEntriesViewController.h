@@ -1,16 +1,17 @@
 #import "../PDKeyboardObserver.h"
+#import "PDEntriesController.h"
 #import "PDImportEntriesViewController.h"
 
 @class PDList;
 
 //! A view controller for displaying the entries in a list.
-@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UITextFieldDelegate, PDKeyboardObserverDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate> {
+@interface PDEntriesViewController : UIViewController <UIScrollViewDelegate, UITableViewDelegate, UITextFieldDelegate, PDKeyboardObserverDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate, PDEntriesControllerDelegate> {
 	
 	BOOL userIsMoving;
 }
 
 @property (nonatomic, retain) PDList *list;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) IBOutlet PDEntriesController *entriesController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, retain) IBOutlet UITextField *newEntryField;

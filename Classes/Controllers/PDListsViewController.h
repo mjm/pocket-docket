@@ -1,3 +1,4 @@
+#import "PDListsController.h"
 #import "PDEditListViewController.h"
 
 //! A view controller that displays all of the users lists.
@@ -7,12 +8,11 @@
  
  \nosubgrouping
  */
-@interface PDListsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDEditListViewControllerDelegate, NSFetchedResultsControllerDelegate> {
+@interface PDListsViewController : UIViewController <PDListsControllerDelegate, PDEditListViewControllerDelegate> {
 	//! \name Handling State
 	//@{
 	
 	BOOL isAdd;
-	BOOL userIsMoving;
 	
 	//@}
 }
@@ -21,6 +21,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, retain) IBOutlet PDListsController *listsController;
 
 //! \name Actions
 //@{
