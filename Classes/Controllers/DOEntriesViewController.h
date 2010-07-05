@@ -2,19 +2,13 @@
 #import "DOEditListViewController.h"
 #import "DONewEntryViewController.h"
 #import "DOEntryDetailsViewController.h"
-
-@class PDList;
 #import "PDImportEntriesViewController.h"
+#import "PDEntriesController.h"
 
-@class DOListsViewController;
+@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate, PDEntriesControllerDelegate> {}
 
-@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, UITableViewDataSource, UITableViewDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, NSFetchedResultsControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate> {
-	PDList *list;
-	BOOL userIsMoving;
-}
-
-@property (nonatomic, retain) PDList *list;
-@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) IBOutlet PDEntriesController *entriesController;
+@property (nonatomic, retain) IBOutlet PDListsController *listsController;
 @property (nonatomic, retain) UIPopoverController *listsPopoverController;
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;

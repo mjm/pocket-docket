@@ -20,17 +20,19 @@
 
 @implementation DOEntriesViewController
 
-- (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry {
-	[cell.checkboxButton setImage:[entry.checked boolValue] ?
-	 [UIImage imageNamed:@"CheckBoxChecked.png"] :
-	 [UIImage imageNamed:@"CheckBox.png"]
-						 forState:UIControlStateNormal];
+- (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry
+{
+	UIImage *checkImage = [UIImage imageNamed:([entry.checked boolValue] ? @"CheckBoxChecked.png" : @"CheckBox.png")];
+	[cell.checkboxButton setImage:checkImage forState:UIControlStateNormal];
 	cell.textLabel.text = entry.text;
 	cell.commentLabel.text = entry.comment;
 	
-	if ([entry.checked boolValue]) {
+	if ([entry.checked boolValue])
+	{
 		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
-	} else {
+	}
+	else
+	{
 		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
 	}
 	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
@@ -39,7 +41,7 @@
 
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath
 {
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	PDListEntry *entry = [self.entriesController entryAtIndexPath:indexPath];
 	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
 	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithEntry:entry
@@ -65,7 +67,8 @@
 #pragma mark -
 #pragma mark View Lifecycle
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
 	[super viewDidLoad];
 	
 	UIColor *sepColor = [UIColor colorWithRed:151.0/255.0 green:199.0/255.0 blue:223.0/255.0 alpha:1.0];
@@ -76,7 +79,7 @@
 	[self.toolbar setItems:items animated:NO];
 	[items release];
 	
-	[[self editButtonItem] setEnabled:NO];
+	//[[self editButtonItem] setEnabled:NO];
 	
 	self.swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self
 																			action:@selector(swipeDetected:)];
@@ -87,18 +90,32 @@
 	self.tapGestureRecognizer.numberOfTapsRequired = 2;
 	[self.table addGestureRecognizer:self.tapGestureRecognizer];
 	
-	[self addObserver:self
-		   forKeyPath:@"list.title"
-			  options:NSKeyValueObservingOptionNew
-			  context:NULL];
+	[self.entriesController bindToListsController:self.listsController];
+	
+	[self.listsController addObserver:self
+						   forKeyPath:@"selection.title"
+							  options:NSKeyValueObservingOptionNew
+							  context:NULL];
+	[self.listsController addObserver:self
+						   forKeyPath:@"selection"
+							  options:NSKeyValueObservingOptionNew
+							  context:NULL];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
     return YES;
 }
 
-- (void)viewDidUnload {
+- (void)viewDidUnload
+{
 	[super viewDidUnload];
+	
+	[self.listsController removeObserver:self forKeyPath:@"selection.title"];
+	[self.listsController removeObserver:self forKeyPath:@"selection"];
+	
+	self.listsController = nil;
+	self.entriesController = nil;
 	self.listsPopoverController = nil;
 	self.popoverController = nil;
 	self.toolbar = nil;
@@ -108,60 +125,52 @@
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
 	self.swipeGestureRecognizer = nil;
-	
-	[self removeObserver:self forKeyPath:@"list.title"];
 }
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
 	[super setEditing:editing animated:animated];
 	[self.table setEditing:editing animated:animated];
+	
 	self.swipeGestureRecognizer.enabled = !editing;
 	self.tapGestureRecognizer.enabled = !editing;
 }
 
 #pragma mark -
-#pragma mark Changing the Selected List
-
-- (void)setList:(PDList *)aList {
-	if (self.list != aList) {
-		[self.list release];
-		list = [aList retain];
-		
-		if (self.list) {
-			self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController]
-											 entriesFetchedResultsControllerForList:self.list];
-			self.fetchedResultsController.delegate = self;
-			
-			NSError *error;
-			[self.fetchedResultsController performFetch:&error];
-			[self.table reloadData];
-			
-			self.editButton.enabled = YES;
-			self.addButton.enabled = YES;
-			[[self editButtonItem] setEnabled:YES];
-		} else {
-			self.editButton.enabled = NO;
-			self.addButton.enabled = NO;
-			[[self editButtonItem] setEnabled:NO];
-		}
-	}
-}
+#pragma mark Key-Value Observing
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
 					  ofObject:(id)object
 						change:(NSDictionary *)change
 					   context:(void *)context {
-	if ([keyPath isEqual:@"list.title"]) {
-		if (self.listsPopoverController) {
+	if ([keyPath isEqualToString:@"selection.title"])
+	{
+		if (self.listsPopoverController)
+		{
 			id title = [change objectForKey:NSKeyValueChangeNewKey];
-			if (![title isEqual:[NSNull null]]) {
-				self.titleButton.title = [change objectForKey:NSKeyValueChangeNewKey];				
-			} else {
+			
+			if (![title isEqual:[NSNull null]])
+			{
+				self.titleButton.title = title;				
+			}
+			else
+			{
 				self.titleButton.title = @"";
 			}
 		}
 	}
+	else if ([keyPath isEqualToString:@"selection"])
+	{
+		id list = [change objectForKey:NSKeyValueChangeNewKey];
+		
+		BOOL enable = list != [NSNull null];
+		self.sendButton.enabled = enable;
+		self.editButton.enabled = enable;
+		self.addButton.enabled = enable;
+		[self editButtonItem].enabled = enable;
+	}
 }
+
 
 #pragma mark -
 #pragma mark Actions
@@ -194,15 +203,17 @@
 	{
 		MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
 		mailController.mailComposeDelegate = self;
-		[mailController setSubject:self.list.title];
-		[mailController setMessageBody:[self.list plainTextString] isHTML:NO];
+		
+		PDList *list = self.listsController.selection;
+		[mailController setSubject:list.title];
+		[mailController setMessageBody:[list plainTextString] isHTML:NO];
 		[self presentModalViewController:mailController animated:YES];
 	}
 }
 
 - (IBAction)importEntries
 {
-	PDImportEntriesViewController *importController = [[PDImportEntriesViewController alloc] initWithList:self.list];
+	PDImportEntriesViewController *importController = [[PDImportEntriesViewController alloc] initWithList:self.listsController.selection];
 	importController.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:importController];
@@ -214,19 +225,23 @@
 	[navController release];
 }
 
-- (IBAction)editList {
+- (IBAction)editList
+{
 	[self dismissPopovers:NO];
 	
 	[[PDPersistenceController sharedPersistenceController] beginEdits];
-	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.list];
+	DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.listsController.selection];
 	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
 	
-	if (self.popoverController) {
+	if (self.popoverController)
+	{
 		self.popoverController.contentViewController = navController;
-	} else {
+	}
+	else
+	{
 		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
 		self.popoverController.delegate = self;
 	}
@@ -237,12 +252,13 @@
 												   animated:YES];
 }
 
-- (IBAction)addEntry {
+- (IBAction)addEntry
+{
 	[self dismissPopovers:NO];
 	
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
 	[persistenceController beginEdits];
-	PDListEntry *entry = [persistenceController createEntry:@"" inList:self.list];
+	PDListEntry *entry = [persistenceController createEntry:@"" inList:self.listsController.selection];
 	
 	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithEntry:entry];
 	controller.delegate = self;
@@ -250,9 +266,12 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
 	[controller release];
 	
-	if (self.popoverController) {
+	if (self.popoverController)
+	{
 		self.popoverController.contentViewController = navController;
-	} else {
+	}
+	else
+	{
 		self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
 		self.popoverController.delegate = self;
 	}
@@ -263,187 +282,98 @@
 												   animated:YES];
 }
 
+
 #pragma mark -
-#pragma mark Table View Data Source Methods
+#pragma mark Entries Controller Delegate Methods
 
-- (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section {
-	id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
-	return [sectionInfo numberOfObjects];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-		 cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)cellForEntriesController:(PDEntriesController *)controller
+{
 	static NSString *Cell = @"EntryCell";
 	
-	DOEntryTableCell *cell = (DOEntryTableCell *) [tableView dequeueReusableCellWithIdentifier:Cell];
-	if (!cell) {
+	DOEntryTableCell *cell = (DOEntryTableCell *) [self.table dequeueReusableCellWithIdentifier:Cell];
+	if (!cell)
+	{
 		cell = [DOEntryTableCell entryTableCell];
 		[cell.checkboxButton addTarget:self
 								action:@selector(checkedBox:forEvent:)
 					  forControlEvents:UIControlEventTouchUpInside];
 	}
 	
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	[self configureCell:cell withEntry:entry];
-	
 	return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-	return self.editing;
+- (void)entriesController:(PDEntriesController *)controller
+			configureCell:(UITableViewCell *)cell
+				withEntry:(PDListEntry *)entry
+{
+	[self configureCell:(DOEntryTableCell *)cell withEntry:entry];
 }
 
-- (void) tableView:(UITableView *)tableView
-commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
- forRowAtIndexPath:(NSIndexPath *)indexPath {
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController deleteEntry:entry];
-	[persistenceController save];
-}
-
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-
-- (void) tableView:(UITableView *)tableView
-moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
-	   toIndexPath:(NSIndexPath *)destinationIndexPath {
-	userIsMoving = YES;
-	
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:sourceIndexPath];
-	[[PDPersistenceController sharedPersistenceController] moveEntry:entry
-															 fromRow:sourceIndexPath.row
-															   toRow:destinationIndexPath.row];
-	
-	userIsMoving = NO;
-}
 
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (self.editing) {
-		return indexPath;
-	}
-	return nil;
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return self.editing ? indexPath : nil;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
 	[self editEntryAtIndexPath:indexPath];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-	PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	PDListEntry *entry = [self.entriesController entryAtIndexPath:indexPath];
 	NSString *text = entry.comment;
 	
-	if (!text || [text length] == 0) {
+	if (!text || [text length] == 0)
+	{
 		return 44.0f;
-	} else {
+	}
+	else
+	{
 		CGFloat height = [text heightWithFont:[UIFont systemFontOfSize:17.0]
 						   constrainedToWidth:self.table.frame.size.width - ENTRY_CELL_OFFSET];
 		return 50.0f + height;
 	}
 }
 
+
 #pragma mark -
 #pragma mark Gesture Recognition
 
-- (void)swipeDetected:(UISwipeGestureRecognizer *)gestureRecognizer {
+- (void)swipeDetected:(UISwipeGestureRecognizer *)gestureRecognizer
+{
 	CGPoint point = [gestureRecognizer locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:point];
-	
-	if (indexPath != nil) {
-		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-		
-		// make sure the list view gets updated
-		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-		[persistenceController.managedObjectContext refreshObject:entry.list mergeChanges:YES];
-		[persistenceController save];
-	}
+	[self.entriesController checkEntryAtIndexPath:indexPath];
 }
 
-- (void)doubleTapDetected:(UITapGestureRecognizer *)gestureRecognizer {
-	if (gestureRecognizer.state == UIGestureRecognizerStateRecognized) {
+- (void)doubleTapDetected:(UITapGestureRecognizer *)gestureRecognizer
+{
+	if (gestureRecognizer.state == UIGestureRecognizerStateRecognized)
+	{
 		CGPoint popoverPoint = [gestureRecognizer locationInView:self.table];
 		NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:popoverPoint];
-		if (indexPath) {
+		if (indexPath)
+		{
 			[self editEntryAtIndexPath:indexPath];
 		}
 	}
 }
 
-- (void)checkedBox:(id)sender forEvent:(UIEvent *)event {
+- (void)checkedBox:(id)sender forEvent:(UIEvent *)event
+{
 	NSSet *touches = [event allTouches];
 	UITouch *touch = [touches anyObject];
 	
 	CGPoint location = [touch locationInView:self.table];
 	NSIndexPath *indexPath = [self.table indexPathForRowAtPoint:location];
-	if (indexPath != nil) {
-		PDListEntry *entry = [self.fetchedResultsController objectAtIndexPath:indexPath];
-		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
-		
-		// make sure the list view gets updated
-		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-		[persistenceController.managedObjectContext refreshObject:entry.list mergeChanges:YES];
-		[persistenceController save];
-	}
+	[self.entriesController checkEntryAtIndexPath:indexPath];
 }
 
-#pragma mark -
-#pragma mark Fetched Results Controller Delegate Methods
-
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-	if (userIsMoving)
-		return;
-	
-	[self.table beginUpdates];
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-	if (userIsMoving)
-		return;
-	
-	[self.table endUpdates];
-}
-
-- (void)controller:(NSFetchedResultsController *)controller
-   didChangeObject:(id)anObject
-	   atIndexPath:(NSIndexPath *)indexPath
-	 forChangeType:(NSFetchedResultsChangeType)type
-	  newIndexPath:(NSIndexPath *)newIndexPath {
-	
-	switch (type) {
-		case NSFetchedResultsChangeInsert:
-			[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-								  withRowAnimation:UITableViewRowAnimationFade];
-			break;
-		case NSFetchedResultsChangeDelete:
-			[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-								  withRowAnimation:UITableViewRowAnimationFade];
-			break;
-		case NSFetchedResultsChangeUpdate:
-			[self configureCell:(DOEntryTableCell *) [self.table cellForRowAtIndexPath:indexPath]
-					   withEntry:anObject];
-			break;
-		case NSFetchedResultsChangeMove:
-			if (!userIsMoving) {
-				[self.table deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-									  withRowAnimation:UITableViewRowAnimationFade];
-				[self.table insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
-									  withRowAnimation:UITableViewRowAnimationFade];
-			}
-			break;
-	}
-}
-
-- (void)controller:(NSFetchedResultsController *)controller
-  didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-		   atIndex:(NSUInteger)sectionIndex
-	 forChangeType:(NSFetchedResultsChangeType)type {
-	return;
-}
 
 #pragma mark -
 #pragma mark Split View Delegate Methods
@@ -462,7 +392,7 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 		[toolbarItems release];
 	}
 	
-	self.titleButton.title = self.list.title;
+	self.titleButton.title = self.listsController.selection.title;
 	
 	self.listsPopoverController = pc;
 }
@@ -499,14 +429,17 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	[controller popToRootViewControllerAnimated:NO];
 }
 
+
 #pragma mark -
 #pragma mark Mail Compose Delegate Methods
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller
 		  didFinishWithResult:(MFMailComposeResult)result
-						error:(NSError *)error {
+						error:(NSError *)error
+{
 	[self dismissModalViewControllerAnimated:YES];
 }
+
 
 #pragma mark -
 #pragma mark Action Sheet Delegate Methods
@@ -528,53 +461,62 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	}
 }
 
+
 #pragma mark -
 #pragma mark Lists Delegate Methods
 
-- (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)aList {
-	self.list = aList;
-	[[PDSettingsController sharedSettingsController] saveSelectedList:self.list];
-	
-	if (self.listsPopoverController) {
+- (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)aList
+{
+	if (self.listsPopoverController)
+	{
 		[self.listsPopoverController dismissPopoverAnimated:YES];
 	}
 }
 
-- (BOOL)listsControllerShouldDisplayControllerInPopover:(DOListsViewController *)controller {
+- (BOOL)listsControllerShouldDisplayControllerInPopover:(DOListsViewController *)controller
+{
 	BOOL usePopover = self.listsPopoverController == nil;
 	
-	if (!usePopover) {
+	if (!usePopover)
+	{
 		self.listsPopoverController.popoverContentSize = CGSizeMake(320, 100);
 	}
 	
 	return usePopover;
 }
 
+
 #pragma mark -
 #pragma mark Entry Details Delegate Methods
 
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
-				  didSaveEntry:(PDListEntry *)entry {
+				  didSaveEntry:(PDListEntry *)entry
+{
 	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
-				didCancelEntry:(PDListEntry *)entry {
+				didCancelEntry:(PDListEntry *)entry
+{
 	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 	
 	[self dismissModalViewControllerAnimated:YES];
 }
+
 
 #pragma mark -
 #pragma mark New Entry Delegate Methods
 
 - (void)newEntryController:(DONewEntryViewController *)controller
 			didCreateEntry:(PDListEntry *)entry
-			 shouldDismiss:(BOOL)dismiss {
-	if ([entry.text length] == 0) {
-		if (dismiss) {
+			 shouldDismiss:(BOOL)dismiss
+{
+	if ([entry.text length] == 0)
+	{
+		if (dismiss)
+		{
 			[self newEntryController:controller didCancelEntry:entry];
 		}
 		return;
@@ -583,25 +525,31 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
 	[persistenceController saveEdits];
 	
-	if (dismiss) {
+	if (dismiss)
+	{
 		[self.popoverController dismissPopoverAnimated:YES];
 		self.popoverController = nil;
-	} else {
+	}
+	else
+	{
 		[persistenceController beginEdits];
-		PDListEntry *entry = [persistenceController createEntry:@"" inList:self.list];
+		PDListEntry *entry = [persistenceController createEntry:@"" inList:self.listsController.selection];
 		controller.entry = entry;
 	}
 }
 
 - (void)newEntryController:(DONewEntryViewController *)controller
-			didCancelEntry:(PDListEntry *)entry {
+			didCancelEntry:(PDListEntry *)entry
+{
 	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 	
-	if (self.popoverController.popoverVisible) {
+	if (self.popoverController.popoverVisible)
+	{
 		[self.popoverController dismissPopoverAnimated:YES];
 	}
 	self.popoverController = nil;
 }
+
 
 #pragma mark -
 #pragma mark Edit List Delegate Methods
@@ -622,7 +570,6 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 
-
 #pragma mark -
 #pragma mark Import Entries Controller Delegate Methods
 
@@ -632,21 +579,24 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 }
 
 
-
 #pragma mark -
 #pragma mark Popover Controller Delegate Methods
 
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+{
 	self.popoverController = nil;
 }
+
 
 #pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc {
-	[self removeObserver:self forKeyPath:@"list.title"];
-	self.list = nil;
-	self.fetchedResultsController = nil;
+	[self.listsController removeObserver:self forKeyPath:@"selection.title"];
+	[self.listsController removeObserver:self forKeyPath:@"selection"];
+	
+	self.listsController = nil;
+	self.entriesController = nil;
 	self.listsPopoverController = nil;
 	self.popoverController = nil;
 	self.toolbar = nil;

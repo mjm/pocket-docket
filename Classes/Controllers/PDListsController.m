@@ -1,5 +1,6 @@
 #import "PDListsController.h"
 
+#import "../PDSettingsController.h"
 #import "../PDPersistenceController.h"
 
 
@@ -21,6 +22,11 @@
 	self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController] listsFetchedResultsController];
 	self.fetchedResultsController.delegate = self;
 	
+	[self addObserver:self
+		   forKeyPath:@"selection"
+			  options:NSKeyValueObservingOptionNew
+			  context:NULL];
+	
 	return self;
 }
 
@@ -28,6 +34,66 @@
 {
 	NSError *error = nil;
 	[self.fetchedResultsController performFetch:&error];
+	
+	self.selection = [[PDSettingsController sharedSettingsController] loadSelectedList];
+}
+
+- (void)setEditing:(BOOL)editing
+{
+	if (editing)
+	{
+		NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+		if (selectedIndex)
+		{
+			[self.tableView deselectRowAtIndexPath:selectedIndex animated:NO];
+		}
+	}
+	else
+	{
+		[self updateViewForCurrentSelection];
+	}
+}
+
+- (void)updateViewForCurrentSelection
+{
+	[self willChangeValueForKey:@"selection"];
+	[self didChangeValueForKey:@"selection"];
+}
+
+
+#pragma mark -
+#pragma mark Key-Value Observing
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context
+{
+	if ([keyPath isEqualToString:@"selection"])
+	{
+		if (self.showSelection && self.tableView && !self.tableView.editing)
+		{
+			id newSelection = [change objectForKey:NSKeyValueChangeNewKey];
+			
+			if (newSelection == [NSNull null])
+			{
+				// Deselect the row that was previously selected.
+				NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+				if (selectedIndex)
+				{
+					[self.tableView deselectRowAtIndexPath:selectedIndex animated:NO];
+				}
+			}
+			else
+			{
+				NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.selection];
+				if (indexPath)
+				{
+					[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+				}
+			}
+		}
+	}
 }
 
 
@@ -104,6 +170,11 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	return (self.showSelection && self.tableView.editing) ? nil : indexPath;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	return 65.0;
@@ -118,6 +189,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	PDList *list = [self.fetchedResultsController objectAtIndexPath:indexPath];
+	self.selection = list;
 	[self.delegate listsController:self didSelectList:list];
 }
 
@@ -152,11 +224,15 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		case NSFetchedResultsChangeInsert:
 			[self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
 								  withRowAnimation:UITableViewRowAnimationFade];
+			[self updateViewForCurrentSelection];
+			
 			break;
 			
 		case NSFetchedResultsChangeDelete:
 			[self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
 								  withRowAnimation:UITableViewRowAnimationFade];
+			[self updateViewForCurrentSelection];
+			
 			break;
 			
 		case NSFetchedResultsChangeUpdate:
@@ -190,9 +266,12 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)dealloc
 {
+	[self removeObserver:self forKeyPath:@"selection"];
+	
 	self.fetchedResultsController = nil;
 	self.selection = nil;
 	self.tableView = nil;
+	
 	[super dealloc];
 }
 

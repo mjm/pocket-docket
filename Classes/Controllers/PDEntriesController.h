@@ -1,5 +1,6 @@
 @class PDList;
 @class PDListEntry;
+@class PDListsController;
 
 @protocol PDEntriesControllerDelegate;
 
@@ -10,10 +11,13 @@
 @property (nonatomic, assign) IBOutlet id <PDEntriesControllerDelegate> delegate;
 @property (nonatomic, retain) PDList *list;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) PDListsController *listsController;
 
 - (void)loadData;
 - (void)checkEntryAtIndexPath:(NSIndexPath *)indexPath;
 - (PDListEntry *)entryAtIndexPath:(NSIndexPath *)indexPath;
+
+- (void)bindToListsController:(PDListsController *)controller;
 
 @end
 

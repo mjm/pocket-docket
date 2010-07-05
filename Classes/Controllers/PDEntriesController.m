@@ -59,6 +59,41 @@
 	return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
 
+- (void)bindToListsController:(PDListsController *)controller
+{
+	self.listsController = controller;
+	[controller addObserver:self
+				 forKeyPath:@"selection"
+					options:NSKeyValueObservingOptionNew
+					context:NULL];
+}
+
+
+#pragma mark -
+#pragma mark Key-Value Observing
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+						change:(NSDictionary *)change
+					   context:(void *)context
+{
+	if ([keyPath isEqualToString:@"selection"])
+	{
+		id list = [change objectForKey:NSKeyValueChangeNewKey];
+		if (list != [NSNull null])
+		{
+			self.list = list;
+			self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController] entriesFetchedResultsControllerForList:list];
+			self.fetchedResultsController.delegate = self;
+			
+			NSError *error = nil;
+			[self.fetchedResultsController performFetch:&error];
+			
+			[self.tableView reloadData];
+		}
+	}
+}
+
 
 #pragma mark -
 #pragma mark Table View Data Source Methods
@@ -179,9 +214,12 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 
 - (void)dealloc
 {
+	[self.listsController removeObserver:self forKeyPath:@"selection"];
+	
 	self.fetchedResultsController = nil;
 	self.list = nil;
 	self.tableView = nil;
+	self.listsController = nil;
 	[super dealloc];
 }
 

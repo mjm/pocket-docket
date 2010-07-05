@@ -12,7 +12,12 @@
 @property (nonatomic, retain) PDList *selection;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
 
+@property (nonatomic) BOOL showSelection;
+
 - (void)loadData;
+- (void)setEditing:(BOOL)editing;
+
+- (void)updateViewForCurrentSelection;
 
 @end
 
