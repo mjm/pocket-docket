@@ -893,8 +893,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = (
-					"-fobjc-nonfragile-abi2",
 					"-Xclang",
+					"-fobjc-nonfragile-abi2",
 				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.0;

@@ -24,9 +24,9 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
 		activeBuildConfigurationName = Debug;
-		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
-		activeSDKPreference = iphonesimulator4.0;
-		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
+		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
+		activeSDKPreference = iphoneos3.2;
+		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* PocketDocket */,
 			C9BD10F91172AD83005E350E /* Docket */,
@@ -306,6 +306,11 @@
 			C990FB3711E142F000BA1579 /* PBXTextBookmark */ = C990FB3711E142F000BA1579 /* PBXTextBookmark */;
 			C990FB3811E142F000BA1579 /* PBXTextBookmark */ = C990FB3811E142F000BA1579 /* PBXTextBookmark */;
 			C990FB3911E142F000BA1579 /* PBXTextBookmark */ = C990FB3911E142F000BA1579 /* PBXTextBookmark */;
+			C990FB4F11E25A4000BA1579 /* PBXTextBookmark */ = C990FB4F11E25A4000BA1579 /* PBXTextBookmark */;
+			C990FB5011E25A4000BA1579 /* PlistBookmark */ = C990FB5011E25A4000BA1579 /* PlistBookmark */;
+			C990FB5111E25A4000BA1579 /* PlistBookmark */ = C990FB5111E25A4000BA1579 /* PlistBookmark */;
+			C990FB5211E25A4000BA1579 /* XCBuildMessageTextBookmark */ = C990FB5211E25A4000BA1579 /* XCBuildMessageTextBookmark */;
+			C990FB5311E25A4000BA1579 /* PBXTextBookmark */ = C990FB5311E25A4000BA1579 /* PBXTextBookmark */;
 			C993F68111DCE3C300B282A4 = C993F68111DCE3C300B282A4 /* PBXTextBookmark */;
 			C993F68211DCE3C300B282A4 = C993F68211DCE3C300B282A4 /* PBXTextBookmark */;
 			C993F68311DCE3C300B282A4 = C993F68311DCE3C300B282A4 /* PBXTextBookmark */;
@@ -397,8 +402,8 @@
 	};
 	32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1004, 433}}";
-			sepNavSelRange = "{424, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {945, 474}}";
+			sepNavSelRange = "{240, 0}";
 			sepNavVisRange = "{0, 432}";
 		};
 	};
@@ -2115,9 +2120,9 @@
 	};
 	C990FAA911E11E2C00BA1579 /* PDEntriesController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {945, 3400}}";
+			sepNavIntBoundsRect = "{{0, 0}, {945, 3417}}";
 			sepNavSelRange = "{299, 0}";
-			sepNavVisRange = "{0, 425}";
+			sepNavVisRange = "{0, 442}";
 			sepNavWindowFrame = "{{15, 68}, {910, 810}}";
 		};
 	};
@@ -2654,6 +2659,58 @@
 		rLoc = 299;
 		rType = 0;
 		vrLen = 425;
+		vrLoc = 0;
+	};
+	C990FB4F11E25A4000BA1579 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C990FAA911E11E2C00BA1579 /* PDEntriesController.m */;
+		name = "PDEntriesController.m: 13";
+		rLen = 0;
+		rLoc = 299;
+		rType = 0;
+		vrLen = 442;
+		vrLoc = 0;
+	};
+	C990FB5011E25A4000BA1579 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9BD10FC1172AD83005E350E /* Docket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/matt/Code/PocketDocket/Docket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C990FB5111E25A4000BA1579 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PocketDocket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C990FB5211E25A4000BA1579 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Precompile PocketDocket_Prefix.pch";
+		fRef = 32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 0;
+		rLoc = 0;
+		rType = 1;
+	};
+	C990FB5311E25A4000BA1579 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */;
+		name = "PocketDocket_Prefix.pch: 10";
+		rLen = 0;
+		rLoc = 240;
+		rType = 0;
+		vrLen = 432;
 		vrLoc = 0;
 	};
 	C993F68111DCE3C300B282A4 /* PBXTextBookmark */ = {
