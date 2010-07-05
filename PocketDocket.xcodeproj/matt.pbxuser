@@ -23,7 +23,7 @@
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = C9BD10FB1172AD83005E350E /* Docket */;
 		activeSDKPreference = iphoneos3.2;
 		activeTarget = C9BD10F91172AD83005E350E /* Docket */;
@@ -3954,9 +3954,9 @@
 	};
 	C9BD12361172B9FB005E350E /* DOEntriesViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {964, 10319}}";
-			sepNavSelRange = "{682, 0}";
-			sepNavVisRange = "{258, 991}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 10336}}";
+			sepNavSelRange = "{947, 0}";
+			sepNavVisRange = "{1553, 804}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
