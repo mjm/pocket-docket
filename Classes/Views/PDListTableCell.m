@@ -4,7 +4,9 @@
 
 + (PDListTableCell *)listTableCell {
 	NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"PDListTableCell" owner:self options:nil];
-	return [objects objectAtIndex:0];
+	PDListTableCell *cell = [objects objectAtIndex:0];
+	[cell setIsAccessibilityElement:YES];
+	return cell;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

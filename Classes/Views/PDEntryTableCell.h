@@ -1,4 +1,7 @@
-@interface PDEntryTableCell : UITableViewCell {}
+@interface PDEntryTableCell : UITableViewCell
+{
+	BOOL isIndented;
+}
 
 @property (nonatomic, retain) IBOutlet UIButton *checkboxButton;
 @property (nonatomic, retain) IBOutlet UILabel *textLabel;
