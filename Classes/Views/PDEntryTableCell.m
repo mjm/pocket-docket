@@ -27,33 +27,19 @@ CGRect PDShiftRect(CGRect rect, NSInteger distance, BOOL changeWidth)
 {
 	[super willTransitionToState:state];
 	
-	[UIView beginAnimations:@"Editing" context:nil];
-	[UIView setAnimationDuration:0.3];
 	if (state == UITableViewCellStateShowingEditControlMask && !isIndented)
 	{
 		isIndented = YES;
+		self.checkboxImage.alpha = 0;
 		self.checkboxButton.alpha = 0;
-		
-		self.checkboxButton.frame = PDShiftRect(self.checkboxButton.frame, -32, NO);
 		self.textLabel.frame = PDShiftRect(self.textLabel.frame, -32, YES);
 	}
 	else if (state == UITableViewCellStateDefaultMask && isIndented)
 	{
 		isIndented = NO;
-		self.textLabel.frame = PDShiftRect(self.textLabel.frame, 32, YES);
-	}
-	[UIView commitAnimations];
-}
-
-- (void)didTransitionToState:(UITableViewCellStateMask)state
-{
-	[super didTransitionToState:state];
-	if (state == UITableViewCellStateDefaultMask)
-	{
-		self.checkboxButton.frame = PDShiftRect(self.checkboxButton.frame, 32, NO);
-		[UIView beginAnimations:nil context:nil];
+		self.checkboxImage.alpha = 1;
 		self.checkboxButton.alpha = 1;
-		[UIView commitAnimations];
+		self.textLabel.frame = PDShiftRect(self.textLabel.frame, 32, YES);
 	}
 }
 
