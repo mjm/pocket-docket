@@ -15,7 +15,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 {
 	[[NSUserDefaults standardUserDefaults]
 	 registerDefaults:[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:YES]
-												  forKey:@"PDFirstLaunch"]];
+												  forKey:FirstLaunchKey]];
 }
 
 - (void)saveSelectedList:(PDList *)list
@@ -36,7 +36,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 	PDList *list = (PDList *) [managedObjectContext objectWithID:objectId];
 	
 	@try {
-		list.title; // fire the fault
+		NSString *title = [list.title copy]; // fire the fault
+        [title release];
 	}
 	@catch (NSException * e) {
 		return nil;

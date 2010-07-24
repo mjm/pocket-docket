@@ -27,19 +27,19 @@
 
 - (void)configureCell:(PDEntryTableCell *)cell withEntry:(PDListEntry *)entry
 {
-	cell.textLabel.text = entry.text;
+	cell.entryLabel.text = entry.text;
 
 	if ([entry.checked boolValue])
 	{
 		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBoxChecked.png"];
-		cell.textLabel.textColor = [UIColor lightGrayColor];
+		cell.entryLabel.textColor = [UIColor lightGrayColor];
 	}
 	else
 	{
 		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBox.png"];
-		cell.textLabel.textColor = [UIColor blackColor];
+		cell.entryLabel.textColor = [UIColor blackColor];
 	}
-	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
+	cell.entryLabel.highlightedTextColor = cell.entryLabel.textColor;
 }
 
 - (void)scrollToBottom
@@ -330,7 +330,7 @@
 															 delegate:self
 													cancelButtonTitle:nil
 											   destructiveButtonTitle:nil
-													otherButtonTitles:nil];
+													otherButtonTitles:nil, nil]; // fix for LLVM 2.0 issue
 	
 	if ([MFMailComposeViewController canSendMail])
 	{

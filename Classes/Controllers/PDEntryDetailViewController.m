@@ -291,7 +291,7 @@
 																 delegate:self
 														cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
 												   destructiveButtonTitle:NSLocalizedString(@"Delete Entry", nil)
-														otherButtonTitles:nil];
+														otherButtonTitles:nil,nil]; // fix for LLVM 2.0 bug
 		[actionSheet showInView:self.view];
 		[actionSheet release];
 	}

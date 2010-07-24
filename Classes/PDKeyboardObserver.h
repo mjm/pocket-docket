@@ -19,7 +19,8 @@
 
 + (PDKeyboardObserver *)keyboardObserverWithViewController:(UIViewController *)controller
 												  delegate:(id <PDKeyboardObserverDelegate>)aDelegate;
-- (id)initWithViewController:(UIViewController *)controller delegate:(id <PDKeyboardObserverDelegate>)aDelegate;
+- (id)initWithViewController:(UIViewController *)controller
+                    delegate:(id <PDKeyboardObserverDelegate>)aDelegate;
 
 - (void)registerNotifications;
 - (void)unregisterNotifications;
