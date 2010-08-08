@@ -1,10 +1,20 @@
 #import "PDList.h"
 
 #import "PDListEntry.h"
+#import "List.h"
 
 @implementation PDList
 
-@dynamic title, order, entries, completedEntries;
+@dynamic title, order, remoteIdentifier, createdAt, updatedAt, entries, completedEntries;
+
+- (id)toResource
+{
+	List *list = [[List alloc] init];
+	list.title = self.title;
+	list.position = self.order;
+	list.listId = self.remoteIdentifier;
+	return [list autorelease];
+}
 
 - (NSString *)plainTextString {
 	NSManagedObjectModel *model = self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;

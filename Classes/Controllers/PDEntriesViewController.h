@@ -14,6 +14,7 @@
 @property (nonatomic, retain) IBOutlet PDEntriesController *entriesController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIToolbar *toolbar;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *newEntryFieldItem;
 @property (nonatomic, retain) IBOutlet UITextField *newEntryField;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *sendButton;

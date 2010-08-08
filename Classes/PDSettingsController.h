@@ -1,6 +1,6 @@
 @class PDList;
 
-@interface PDSettingsController : NSObject {}
+@interface PDSettingsController : NSObject
 
 + (PDSettingsController *)sharedSettingsController;
 
@@ -8,5 +8,6 @@
 - (PDList *)loadSelectedList;
 
 @property (nonatomic, getter=isFirstLaunch) BOOL firstLaunch;
+@property (nonatomic, retain) NSDate *lastSyncDate;
 
 @end

@@ -5,8 +5,10 @@
 #import "../PDPersistenceController.h"
 #import "../PDSettingsController.h"
 #import "../Models/PDList.h"
+#import "../Models/Change.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
+#import "ConnectionManager.h"
 
 
 #pragma mark Private Methods
@@ -15,6 +17,7 @@
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list;
 - (void)doneEditingList:(PDList *)list;
+- (void)showRefreshButton:(UIBarButtonItem *)button;
 
 @end
 
@@ -56,6 +59,11 @@
 	[[PDPersistenceController sharedPersistenceController] save];
 }
 
+- (void)showRefreshButton:(UIBarButtonItem *)button
+{
+	self.toolbarItems = [NSArray arrayWithObject:button];
+}
+
 @end
 
 #pragma mark -
@@ -85,6 +93,7 @@
 	
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 	self.navigationItem.rightBarButtonItem = self.addButton;
+	self.toolbarItems = [NSArray arrayWithObject:self.refreshButton];
 	
 	// eliminate separators for empty cells
 	UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
@@ -104,6 +113,8 @@
 	[self setEditing:NO];
 	
 	[[PDSettingsController sharedSettingsController] saveSelectedList:nil];
+	
+	self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -117,6 +128,11 @@
 	}
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	self.navigationController.toolbarHidden = YES;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
@@ -128,6 +144,8 @@
 	
 	self.table = nil;
 	self.addButton = nil;
+	self.refreshButton = nil;
+	self.stopButton = nil;
 	self.backButton = nil;
 	self.listsController = nil;
 }
@@ -156,6 +174,52 @@
 	
 	[self presentModalViewController:editController animated:YES];
 	[editController release];
+}
+
+- (void)doRefreshLists
+{
+	NSError *error = nil;
+	
+	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
+	NSDate *date = settingsController.lastSyncDate;
+	NSArray *changes;
+	if (date)
+	{
+		changes = [Change findAllRemoteSince:date response:&error];
+	}
+	else
+	{
+		changes = [Change findAllRemoteWithResponse:&error];
+	}
+	
+	if (error == nil)
+	{
+		NSLog(@"Found changes: %@", changes);
+		settingsController.lastSyncDate = [NSDate date];
+	}
+	else if ([error code] == 401)
+	{
+		NSLog(@"Username or password was wrong.");
+	}
+	
+	[self performSelectorOnMainThread:@selector(showRefreshButton:)
+						   withObject:self.refreshButton
+						waitUntilDone:YES];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (IBAction)refreshLists
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	[self showRefreshButton:self.stopButton];
+	[[ConnectionManager sharedInstance] runJob:@selector(doRefreshLists) onTarget:self];
+}
+
+- (IBAction)stopRefreshing
+{
+	[[ConnectionManager sharedInstance] cancelAllJobs];
+	[self showRefreshButton:self.refreshButton];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 
@@ -243,6 +307,8 @@
 {
 	self.table = nil;
 	self.addButton = nil;
+	self.refreshButton = nil;
+	self.stopButton = nil;
 	self.backButton = nil;
 	self.fetchedResultsController = nil;
 	

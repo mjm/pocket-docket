@@ -3,11 +3,14 @@
 #import "SynthesizeSingleton.h"
 #import "PDPersistenceController.h"
 #import "Models/PDList.h"
+#import "Categories/NSManagedObject+Additions.h"
+#import "Categories/NSManagedObjectContext+Additions.h"
 
 @implementation PDSettingsController
 
 NSString * const SelectedListIdKey = @"PDSelectedListId";
 NSString * const FirstLaunchKey = @"PDFirstLaunch";
+NSString * const LastSyncDateKey = @"PDLastSyncDate";
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 
@@ -20,8 +23,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 
 - (void)saveSelectedList:(PDList *)list
 {
-	NSString *idString = [[[list objectID] URIRepresentation] absoluteString];
-	[[NSUserDefaults standardUserDefaults] setObject:idString forKey:SelectedListIdKey];
+	[[NSUserDefaults standardUserDefaults] setObject:[list objectIDString] forKey:SelectedListIdKey];
 }
 
 - (PDList *)loadSelectedList
@@ -31,9 +33,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 		return nil;
 	
 	NSManagedObjectContext *managedObjectContext = [[PDPersistenceController sharedPersistenceController] managedObjectContext];
-	NSManagedObjectID *objectId = [[managedObjectContext persistentStoreCoordinator]
-								   managedObjectIDForURIRepresentation:[NSURL URLWithString:idString]];
-	PDList *list = (PDList *) [managedObjectContext objectWithID:objectId];
+	PDList *list = (PDList *) [managedObjectContext objectWithIDString:idString];
 	
 	@try {
 		NSString *title = [list.title copy]; // fire the fault
@@ -53,6 +53,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 - (void)setFirstLaunch:(BOOL)firstLaunch
 {
 	[[NSUserDefaults standardUserDefaults] setBool:firstLaunch forKey:FirstLaunchKey];
+}
+
+- (NSDate *)lastSyncDate
+{
+	return [[NSUserDefaults standardUserDefaults] objectForKey:LastSyncDateKey];
+}
+
+- (void)setLastSyncDate:(NSDate *)date
+{
+	[[NSUserDefaults standardUserDefaults] setObject:date forKey:LastSyncDateKey];
 }
 
 @end

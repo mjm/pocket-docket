@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *addButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *refreshButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *stopButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, retain) IBOutlet PDListsController *listsController;
 
@@ -28,6 +30,8 @@
 
 //! Action called when the user wants to create a new list.
 - (IBAction)addList;
+- (IBAction)refreshLists;
+- (IBAction)stopRefreshing;
 
 //@}
 

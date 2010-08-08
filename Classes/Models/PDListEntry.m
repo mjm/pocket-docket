@@ -2,7 +2,12 @@
 
 @implementation PDListEntry
 
-@dynamic text, comment, checked, order, list;
+@dynamic text, comment, checked, order, remoteId, createdAt, updatedAt, list;
+
+- (id)toResource
+{
+	return nil;
+}
 
 - (NSString *)plainTextString {
 	NSString *check = [self.checked boolValue] ? @"X" : @"_";

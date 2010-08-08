@@ -131,7 +131,8 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return ![self.keyboardObserver isKeyboardShowing];
+    //return ![self.keyboardObserver isKeyboardShowing];
+	return YES;
 }
 
 - (void)viewDidUnload

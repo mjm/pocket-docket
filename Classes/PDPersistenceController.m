@@ -2,6 +2,7 @@
 
 #import "SynthesizeSingleton.h"
 #import "PDSettingsController.h"
+#import "PDChangeManager.h"
 #import "Models/PDList.h"
 #import "Models/PDListEntry.h"
 
@@ -10,6 +11,7 @@
 @interface PDPersistenceController ()
 
 @property (nonatomic, readonly) NSUndoManager *undoManager;
+@property (nonatomic, retain) PDChangeManager *changeManager;
 - (NSString *)applicationDocumentsDirectory;
 
 @end
@@ -21,32 +23,43 @@
 SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 #pragma mark -
+#pragma mark Initializing a Persistence Controller
+
+- (id)init
+{
+	if (![super init])
+		return nil;
+	
+	NSString *path = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"PendingChanges.pd"];
+	self.changeManager = [PDChangeManager changeManagerWithContentsOfFile:path];
+	
+	return self;
+}
+
+
+#pragma mark -
 #pragma mark Core Data stack
 
-/**
- Returns the managed object context for the application.
- If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
- */
-- (NSManagedObjectContext *)managedObjectContext {
-	if (managedObjectContext != nil) {
+- (NSManagedObjectContext *)managedObjectContext
+{
+	if (managedObjectContext != nil)
+	{
 		return managedObjectContext;
 	}
 	
 	NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
-	if (coordinator != nil) {
+	if (coordinator != nil)
+	{
 		managedObjectContext = [[NSManagedObjectContext alloc] init];
 		managedObjectContext.persistentStoreCoordinator = coordinator;
 	}
 	return managedObjectContext;
 }
 
-
-/**
- Returns the managed object model for the application.
- If the model doesn't already exist, it is created by merging all of the models found in the application bundle.
- */
-- (NSManagedObjectModel *)managedObjectModel {
-	if (managedObjectModel != nil) {
+- (NSManagedObjectModel *)managedObjectModel
+{
+	if (managedObjectModel != nil)
+	{
 		return managedObjectModel;
 	}
 	
@@ -56,13 +69,10 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	return managedObjectModel;
 }
 
-
-/**
- Returns the persistent store coordinator for the application.
- If the coordinator doesn't already exist, it is created and the application's store added to it.
- */
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-	if (persistentStoreCoordinator != nil) {
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
+{
+	if (persistentStoreCoordinator != nil)
+	{
 		return persistentStoreCoordinator;
 	}
 	
@@ -73,17 +83,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
                              [NSNumber numberWithBool:YES], NSInferMappingModelAutomaticallyOption, nil];
 	NSError *error = nil;
 	persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-	if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error]) {
-		/*
-		 Replace this implementation with code to handle the error appropriately.
-		 
-		 abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-		 
-		 Typical reasons for an error here include:
-		 * The persistent store is not accessible
-		 * The schema for the persistent store is incompatible with current managed object model
-		 Check the error message to determine what the actual problem was.
-		 */
+	if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeUrl options:options error:&error])
+	{
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
 	}    
@@ -95,19 +96,19 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 #pragma mark -
 #pragma mark Application's Documents directory
 
-/**
- Returns the path to the application's Documents directory.
- */
 - (NSString *)applicationDocumentsDirectory {
 	return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
 }
 
+
 #pragma mark -
 #pragma mark Undoing Changes
 
-- (NSUndoManager *)undoManager {
+- (NSUndoManager *)undoManager
+{
 	NSUndoManager* undoManager = [self.managedObjectContext undoManager];
-	if (!undoManager) {
+	if (!undoManager)
+	{
 		undoManager = [[NSUndoManager alloc] init];
 		[self.managedObjectContext setUndoManager:undoManager];
 		[undoManager release];
@@ -130,12 +131,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 {
 	[self.undoManager endUndoGrouping];
 	[self.undoManager undo];
+	
+	[self.changeManager clearPendingChanges];
 }
+
 
 #pragma mark -
 #pragma mark Retrieving Model Objects
 
-- (NSFetchedResultsController *)listsFetchedResultsController {
+- (NSFetchedResultsController *)listsFetchedResultsController
+{
 	NSFetchRequest *request = [[self.managedObjectModel fetchRequestTemplateForName:@"allLists"] copy];
 	[request autorelease];
 	
@@ -149,7 +154,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 														   cacheName:nil] autorelease];
 }
 
-- (NSFetchedResultsController *)entriesFetchedResultsControllerForList:(PDList *)list {
+- (NSFetchedResultsController *)entriesFetchedResultsControllerForList:(PDList *)list
+{
 	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"LIST"];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesForList"
 																  substitutionVariables:vars];
@@ -164,32 +170,41 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 														   cacheName:nil] autorelease];
 }
 
+
 #pragma mark -
 #pragma mark Creating Model Objects
 
-- (PDList *)createList {
+- (PDList *)createList
+{
 	PDList *list = [NSEntityDescription insertNewObjectForEntityForName:@"List"
 												 inManagedObjectContext:self.managedObjectContext];
 	list.order = [NSNumber numberWithInteger:0];
+	[self.changeManager addChange:list changeType:PDChangeTypeCreate];
 	
 	// Now update the order of all the other lists.
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"allLists"];
 	NSError *error;
 	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-	if (results) {
-		for (PDList *each in results) {
-			if (![each isEqual:list]) {
+	if (results)
+	{
+		for (PDList *each in results)
+		{
+			if (![each isEqual:list])
+			{
 				each.order = [NSNumber numberWithInteger:[each.order integerValue] + 1];
 			}
 		}
-	} else {
+	}
+	else
+	{
 		NSLog(@"Error when retrieving lists to increment order, %@, %@", error, [error userInfo]);
 	}
 	
 	return list;
 }
 
-- (PDListEntry *)createEntry:(NSString *)text inList:(PDList *)list {
+- (PDListEntry *)createEntry:(NSString *)text inList:(PDList *)list
+{
 	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"LIST"];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesForList"
 																  substitutionVariables:vars];
@@ -203,30 +218,39 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	
 	NSError *error;
 	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-	if (results) {
+	if (results)
+	{
 		PDListEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"ListEntry"
 														   inManagedObjectContext:self.managedObjectContext];
 		entry.list = list;
 		entry.text = text;
 		
-		if ([results count] == 0) {
+		if ([results count] == 0)
+		{
 			entry.order = [NSNumber numberWithInteger:0];
-		} else {
+		}
+		else
+		{
 			entry.order = [NSNumber numberWithInteger:[[[results objectAtIndex:0] order] integerValue] + 1];
 		}
 		
+		[self.changeManager addChange:entry changeType:PDChangeTypeCreate];
 		[self save];
 		
 		return entry;
-	} else {
+	}
+	else
+	{
 		NSLog(@"Error loading entries for creating new entry, %@, %@", error, [error userInfo]);
 		return nil;
 	}
 }
 
-- (void)createFirstLaunchData {
+- (void)createFirstLaunchData
+{
 	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-	if (!settingsController.firstLaunch) {
+	if (!settingsController.firstLaunch)
+	{
 		return;
 	}
 	
@@ -241,7 +265,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 #endif
 	
 	NSString *pathToFile = [[NSBundle mainBundle] pathForResource:dataFileName ofType:@"plist"];
-	if (!pathToFile) {
+	if (!pathToFile)
+	{
 		NSLog(@"Could not load first launch data");
 		return;
 	}
@@ -251,11 +276,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	list.title = [dataDict valueForKey:@"title"];
 	
 	NSArray *entries = [dataDict valueForKey:@"entries"];
-	for (NSDictionary *entryDict in entries) {
+	for (NSDictionary *entryDict in entries)
+	{
 		PDListEntry *entry = [self createEntry:[entryDict valueForKey:@"text"]
 										inList:list];
 		NSString *comment = [entryDict valueForKey:@"comment"];
-		if (comment) {
+		if (comment)
+		{
 			entry.comment = comment;
 		}
 	}
@@ -265,10 +292,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	settingsController.firstLaunch = NO;
 }
 
+
 #pragma mark -
 #pragma mark Manipulating Model Objects
 
-- (void)moveList:(PDList *)list fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow {
+- (void)moveList:(PDList *)list fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow
+{
 	if (fromRow == toRow)
 		return;
 	
@@ -287,24 +316,33 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	
 	NSError *error;
 	NSArray *records = [self.managedObjectContext executeFetchRequest:request error:&error];
-	if (records) {
+	if (records)
+	{
 		NSUInteger index = (minRow == fromRow) ? minRow : minRow + 1;
-		for (PDList *each in records) {
-			if ([each isEqual:list]) {
+		for (PDList *each in records)
+		{
+			if ([each isEqual:list])
+			{
 				each.order = [NSNumber numberWithInteger:toRow];
-			} else {
+			}
+			else
+			{
 				each.order = [NSNumber numberWithInteger:index];
 				index++;
 			}
+			[self.changeManager addChange:each changeType:PDChangeTypeUpdate];
 		}
 		
 		[self save];
-	} else {
+	}
+	else
+	{
 		NSLog(@"Error retrieving objects to reorder: %@, %@", error, [error userInfo]);
 	}
 }
 
-- (void)moveEntry:(PDListEntry *)entry fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow {
+- (void)moveEntry:(PDListEntry *)entry fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow
+{
 	if (fromRow == toRow)
 		return;
 	
@@ -324,28 +362,45 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	
 	NSError *error;
 	NSArray *records = [self.managedObjectContext executeFetchRequest:request error:&error];
-	if (records) {
+	if (records)
+	{
 		NSUInteger index = (minRow == fromRow) ? minRow : minRow + 1;
-		for (PDListEntry *each in records) {
-			if ([each isEqual:entry]) {
+		for (PDListEntry *each in records)
+		{
+			if ([each isEqual:entry])
+			{
 				each.order = [NSNumber numberWithInteger:toRow];
-			} else {
+			}
+			else
+			{
 				each.order = [NSNumber numberWithInteger:index];
 				index++;
 			}
+			
+			[self.changeManager addChange:each changeType:PDChangeTypeUpdate];
 		}
 		
 		[self save];
-	} else {
+	}
+	else
+	{
 		NSLog(@"Error retrieving objects to reorder: %@, %@", error, [error userInfo]);
 	}
 }
 
+- (void)markChanged:(NSManagedObject <PDChanging>*)object
+{
+	[self.changeManager addChange:object changeType:PDChangeTypeUpdate];
+}
+
+
 #pragma mark -
 #pragma mark Deleting Model Objects
 
-- (void)deleteList:(PDList *)list {
+- (void)deleteList:(PDList *)list
+{
 	NSNumber *position = list.order;
+	[self.changeManager addChange:list changeType:PDChangeTypeDelete];
 	[self.managedObjectContext deleteObject:list];
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObject:position forKey:@"POSITION"];
@@ -353,19 +408,26 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 																  substitutionVariables:vars];
 	NSError *error;
 	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-	if (results) {
-		for (PDList *each in results) {
+	if (results)
+	{
+		for (PDList *each in results)
+		{
 			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
 		}
-	} else {
+	}
+	else
+	{
 		NSLog(@"Error retrieving objects with higher order, %@, %@", error, [error userInfo]);
 	}
 }
 
-- (void)deleteEntry:(PDListEntry *)entry {
+- (void)deleteEntry:(PDListEntry *)entry
+{
 	PDList *list = entry.list;
 	
 	NSNumber *position = entry.order;
+	
+	[self.changeManager addChange:list changeType:PDChangeTypeDelete];
 	[self.managedObjectContext deleteObject:entry];
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -374,11 +436,15 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 																  substitutionVariables:vars];
 	NSError *error;
 	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-	if (results) {
-		for (PDListEntry *each in results) {
+	if (results)
+	{
+		for (PDListEntry *each in results)
+		{
 			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
 		}
-	} else {
+	}
+	else
+	{
 		NSLog(@"Error retrieving objects with higher order, %@, %@", error, [error userInfo]);
 	}
 	
@@ -386,21 +452,28 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	[self.managedObjectContext refreshObject:list mergeChanges:YES];
 }
 
+
 #pragma mark -
 #pragma mark Saving Changes
 
-- (void)save {
+- (void)save
+{
 	NSError *error;
 	
-	if (![self.managedObjectContext save:&error]) {
+	if (![self.managedObjectContext save:&error])
+	{
 		NSLog(@"Error saving changes: %@, %@", error, [error userInfo]);
 	}
+	
+	[self.changeManager commitPendingChanges];
 }
+
 
 #pragma mark -
 #pragma mark Memory Management
 
-- (void)dealloc {
+- (void)dealloc
+{
 	[managedObjectContext release];
 	[managedObjectModel release];
 	[persistentStoreCoordinator release];

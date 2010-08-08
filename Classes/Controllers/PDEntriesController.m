@@ -49,6 +49,7 @@
 		entry.checked = [NSNumber numberWithBool:![entry.checked boolValue]];
 		
 		PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
+		[persistenceController markChanged:entry];
 		[persistenceController save];
 		[persistenceController.managedObjectContext refreshObject:self.list mergeChanges:YES];
 	}
