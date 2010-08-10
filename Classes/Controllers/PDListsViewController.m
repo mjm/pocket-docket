@@ -2,6 +2,7 @@
 
 #import "PDEditListViewController.h"
 #import "PDEntriesViewController.h"
+#import "PDLoginViewController.h"
 #import "../PDPersistenceController.h"
 #import "../PDSettingsController.h"
 #import "../Models/PDList.h"
@@ -210,6 +211,20 @@
 
 - (IBAction)refreshLists
 {
+	if (![[PDSettingsController sharedSettingsController] docketAnywhereUsername])
+	{
+		PDLoginViewController *loginController = [[PDLoginViewController alloc] init];
+		loginController.delegate = self;
+		
+		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginController];
+		[loginController release];
+		
+		navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+		
+		[self presentModalViewController:navController animated:YES];
+		return;
+	}
+	
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	[self showRefreshButton:self.stopButton];
 	[[ConnectionManager sharedInstance] runJob:@selector(doRefreshLists) onTarget:self];
@@ -297,6 +312,21 @@
 	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 
 	[self doneEditingList:list];
+}
+
+
+#pragma mark -
+#pragma mark Login Controller Delegate Methods
+
+- (void)loginControllerDidCancel:(PDLoginViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)loginControllerDidLogin:(PDLoginViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+	[self refreshLists];
 }
 
 

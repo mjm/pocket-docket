@@ -1,7 +1,9 @@
 #import "PDAppDelegate.h"
 
+#import "ObjectiveResourceConfig.h"
 #import "PDPersistenceController.h"
 #import "PDSettingsController.h"
+#import "PDKeychainManager.h"
 #import "Controllers/PDListsViewController.h"
 #import "Controllers/PDEntriesViewController.h"
 
@@ -10,14 +12,22 @@
 #pragma mark -
 #pragma mark Application lifecycle
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+	[ObjectiveResourceConfig setSite:@"http://10.0.1.13:3000/"];
+	[ObjectiveResourceConfig setResponseType:JSONResponse];
+	
+	[PDSettingsController sharedSettingsController].docketAnywhereUsername = nil;
+	[[PDKeychainManager sharedKeychainManager] erasePasswordForAccount:@"matt" service:@"com.docketanywhere.DocketAnywhere"];
+	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] init];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];
 	
 	PDList *selectedList = [[PDSettingsController sharedSettingsController] loadSelectedList];
-	if (selectedList) {
+	if (selectedList)
+	{
 		PDEntriesViewController *listController = [[PDEntriesViewController alloc] initWithList:selectedList];
 		[navController pushViewController:listController animated:NO];
 		[listController release];
@@ -28,7 +38,8 @@
 	[self.window makeKeyAndVisible];
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application {
+- (void)applicationWillTerminate:(UIApplication *)application
+{
 	[[PDPersistenceController sharedPersistenceController] save];
 }
 

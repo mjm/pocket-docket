@@ -1,5 +1,6 @@
 #import "PDListsController.h"
 #import "PDEditListViewController.h"
+#import "PDLoginViewController.h"
 
 //! A view controller that displays all of the users lists.
 /*!
@@ -8,7 +9,7 @@
  
  \nosubgrouping
  */
-@interface PDListsViewController : UIViewController <PDListsControllerDelegate, PDEditListViewControllerDelegate> {
+@interface PDListsViewController : UIViewController <PDListsControllerDelegate, PDEditListViewControllerDelegate, PDLoginViewControllerDelegate> {
 	//! \name Handling State
 	//@{
 	

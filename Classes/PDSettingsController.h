@@ -9,5 +9,7 @@
 
 @property (nonatomic, getter=isFirstLaunch) BOOL firstLaunch;
 @property (nonatomic, retain) NSDate *lastSyncDate;
+@property (nonatomic, retain) NSString *docketAnywhereUsername;
+@property (nonatomic, retain) NSString *docketAnywherePassword;
 
 @end

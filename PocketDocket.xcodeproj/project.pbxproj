@@ -56,6 +56,10 @@
 		C9777F52119A37350047E997 /* PDFirstLaunchData.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9777F51119A37350047E997 /* PDFirstLaunchData.plist */; };
 		C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */; };
 		C97C7E3511604DBB0070BF90 /* PDEntryDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */; };
+		C97CE2AA1210CD020054B858 /* PDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE2A91210CD020054B858 /* PDLoginViewController.m */; };
+		C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE2A91210CD020054B858 /* PDLoginViewController.m */; };
+		C97CE2B51210D2F80054B858 /* PDLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97CE2B41210D2F80054B858 /* PDLoginView.xib */; };
+		C97CE2B61210D2F80054B858 /* PDLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97CE2B41210D2F80054B858 /* PDLoginView.xib */; };
 		C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07C11C09DA6003A5D1C /* Default-Landscape.png */; };
 		C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07D11C09DA6003A5D1C /* Default-Portrait.png */; };
 		C990F97E11DE9F1C00BA1579 /* PDEntryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */; };
@@ -190,6 +194,10 @@
 		C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD2AA91186763B00ED7954 /* IconPhone.png */; };
 		C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
 		C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
+		C9FE8DFD12108E4E00DE376B /* PDKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */; };
+		C9FE8DFE12108E4E00DE376B /* PDKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */; };
+		C9FE8E121210952800DE376B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE8E111210952800DE376B /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C9FE8E141210953600DE376B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE8E111210952800DE376B /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -257,7 +265,7 @@
 		C94C8CBA120E1DBB00C41284 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		C94C8CBF120E1DD400C41284 /* NSManagedObjectContext+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+Additions.h"; sourceTree = "<group>"; };
 		C94C8CC0120E1DD400C41284 /* NSManagedObjectContext+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+Additions.m"; sourceTree = "<group>"; };
-		C94D90CA11B3737500A3E225 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		C94D90CA11B3737500A3E225 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		C9748C56116AC18B00D2B372 /* PDCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCommentViewController.h; path = Controllers/PDCommentViewController.h; sourceTree = "<group>"; };
 		C9748C57116AC18B00D2B372 /* PDCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCommentViewController.m; path = Controllers/PDCommentViewController.m; sourceTree = "<group>"; };
 		C9748C59116AC33F00D2B372 /* PDCommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDCommentView.xib; sourceTree = "<group>"; };
@@ -270,6 +278,9 @@
 		C97C7E2F116048E20070BF90 /* PDEntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntryDetailViewController.h; path = Controllers/PDEntryDetailViewController.h; sourceTree = "<group>"; };
 		C97C7E30116048E20070BF90 /* PDEntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntryDetailViewController.m; path = Controllers/PDEntryDetailViewController.m; sourceTree = "<group>"; };
 		C97C7E3411604DBB0070BF90 /* PDEntryDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntryDetailView.xib; sourceTree = "<group>"; };
+		C97CE2A81210CD020054B858 /* PDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDLoginViewController.h; path = Controllers/PDLoginViewController.h; sourceTree = "<group>"; };
+		C97CE2A91210CD020054B858 /* PDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDLoginViewController.m; path = Controllers/PDLoginViewController.m; sourceTree = "<group>"; };
+		C97CE2B41210D2F80054B858 /* PDLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDLoginView.xib; sourceTree = "<group>"; };
 		C981B07C11C09DA6003A5D1C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		C981B07D11C09DA6003A5D1C /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		C990F97C11DE9F1C00BA1579 /* PDEntryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDEntryParser.h; sourceTree = "<group>"; };
@@ -401,6 +412,9 @@
 		C9FD2AA91186763B00ED7954 /* IconPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPhone.png; sourceTree = "<group>"; };
 		C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPendingChange.h; sourceTree = "<group>"; };
 		C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPendingChange.m; sourceTree = "<group>"; };
+		C9FE8DFB12108E4E00DE376B /* PDKeychainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainManager.h; sourceTree = "<group>"; };
+		C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainManager.m; sourceTree = "<group>"; };
+		C9FE8E111210952800DE376B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,6 +422,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE8E121210952800DE376B /* Security.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -421,6 +436,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE8E141210953600DE376B /* Security.framework in Frameworks */,
 				C9BD11CD1172AE3C005E350E /* UIKit.framework in Frameworks */,
 				C9BD11CE1172AE3C005E350E /* Foundation.framework in Frameworks */,
 				C9BD11CF1172AE3C005E350E /* CoreGraphics.framework in Frameworks */,
@@ -504,6 +520,7 @@
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
 				C9B5845F11BB6F38008C973C /* QuartzCore.framework */,
 				C9D6DE2611D688C300FF64EC /* MessageUI.framework */,
+				C9FE8E111210952800DE376B /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -549,6 +566,7 @@
 				C9DB203E11D80755000A293A /* Edit List View Controller */,
 				C9DB203F11D80773000A293A /* Entries View Controller */,
 				C9DB204011D80782000A293A /* Entry Details View Controller */,
+				C97CE2A71210CC5A0054B858 /* Login View Controller */,
 				C9748C56116AC18B00D2B372 /* PDCommentViewController.h */,
 				C9748C57116AC18B00D2B372 /* PDCommentViewController.m */,
 				C9777E5B119892AC0047E997 /* DONewEntryViewController.h */,
@@ -620,6 +638,15 @@
 				C9777F51119A37350047E997 /* PDFirstLaunchData.plist */,
 			);
 			name = "First Launch";
+			sourceTree = "<group>";
+		};
+		C97CE2A71210CC5A0054B858 /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C97CE2A81210CD020054B858 /* PDLoginViewController.h */,
+				C97CE2A91210CD020054B858 /* PDLoginViewController.m */,
+			);
+			name = "Login View Controller";
 			sourceTree = "<group>";
 		};
 		C990F97B11DE9ED000BA1579 /* Element Processing */ = {
@@ -913,6 +940,8 @@
 				C94C55FD115447E500791FAC /* PDPersistenceController.m */,
 				C9DB213311D97F0B000A293A /* PDSettingsController.h */,
 				C9DB213411D97F0B000A293A /* PDSettingsController.m */,
+				C9FE8DFB12108E4E00DE376B /* PDKeychainManager.h */,
+				C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -949,6 +978,7 @@
 				C94C56441156A12B00791FAC /* PDListTableCell.xib */,
 				C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */,
 				C9E2D76611DA7E8D00B5ED60 /* PDImportEntriesView.xib */,
+				C97CE2B41210D2F80054B858 /* PDLoginView.xib */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -1056,6 +1086,7 @@
 				C9DB1FA011D70170000A293A /* ListIconDark@2x.png in Resources */,
 				C9E2D76711DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */,
 				C938256311E6A61B0029C32F /* Background.png in Resources */,
+				C97CE2B61210D2F80054B858 /* PDLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1086,6 +1117,7 @@
 				C9E18CF611CE964D00C61B18 /* CheckBox@2x.png in Resources */,
 				C9E18CF711CE964D00C61B18 /* CheckBoxChecked@2x.png in Resources */,
 				C9E2D76811DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */,
+				C97CE2B51210D2F80054B858 /* PDLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1158,6 +1190,8 @@
 				C94C8CBC120E1DBB00C41284 /* NSString+Additions.m in Sources */,
 				C94C8CC1120E1DD400C41284 /* NSManagedObjectContext+Additions.m in Sources */,
 				C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */,
+				C9FE8DFE12108E4E00DE376B /* PDKeychainManager.m in Sources */,
+				C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1226,6 +1260,8 @@
 				C94C8CBE120E1DBB00C41284 /* NSString+Additions.m in Sources */,
 				C94C8CC2120E1DD400C41284 /* NSManagedObjectContext+Additions.m in Sources */,
 				C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */,
+				C9FE8DFD12108E4E00DE376B /* PDKeychainManager.m in Sources */,
+				C97CE2AA1210CD020054B858 /* PDLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1290,6 +1326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
