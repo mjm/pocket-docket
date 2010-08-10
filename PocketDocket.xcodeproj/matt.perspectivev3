@@ -278,6 +278,7 @@
 								<string>C929542F117A971F0052A674</string>
 								<string>C94C56E31156BEF400791FAC</string>
 								<string>C9C1074C120D8C7500327A0D</string>
+								<string>C94C564011569C5400791FAC</string>
 								<string>C94C563F11569C4B00791FAC</string>
 								<string>C990FA1711DF8B8200BA1579</string>
 								<string>C9DB203D11D80667000A293A</string>
@@ -298,15 +299,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>86</integer>
-									<integer>84</integer>
-									<integer>65</integer>
+									<integer>98</integer>
+									<integer>96</integer>
+									<integer>77</integer>
 									<integer>27</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 802}, {266, 1213}}</string>
+							<string>{{0, 960}, {266, 1213}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -353,7 +354,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C97CE3721210F9320054B858</string>
+										<string>C97CE4111211E4030054B858</string>
 										<key>history</key>
 										<array>
 											<string>C9FE8F091210C3FB00DE376B</string>
@@ -366,13 +367,16 @@
 											<string>C97CE30D1210EF8C0054B858</string>
 											<string>C97CE30E1210EF8C0054B858</string>
 											<string>C97CE3251210F2570054B858</string>
-											<string>C97CE3321210F39A0054B858</string>
 											<string>C97CE33B1210F4730054B858</string>
 											<string>C97CE3511210F5CB0054B858</string>
 											<string>C97CE3561210F7010054B858</string>
-											<string>C97CE3571210F7010054B858</string>
 											<string>C97CE36E1210F8E20054B858</string>
-											<string>C97CE36F1210F8E20054B858</string>
+											<string>C97CE37612118D030054B858</string>
+											<string>C97CE3B71211CE880054B858</string>
+											<string>C97CE3B81211CE880054B858</string>
+											<string>C97CE3D51211D5B10054B858</string>
+											<string>C97CE4101211E4030054B858</string>
+											<string>C97CE3FE1211E10E0054B858</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -689,7 +693,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C97CE3711210F8E20054B858</string>
+		<string>C97CE4121211E4030054B858</string>
 		<string>C97CE2E11210D8440054B858</string>
 		<string>C97CE2E21210D8440054B858</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
