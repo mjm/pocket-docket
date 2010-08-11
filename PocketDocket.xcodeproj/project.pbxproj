@@ -60,6 +60,8 @@
 		C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE2A91210CD020054B858 /* PDLoginViewController.m */; };
 		C97CE2B51210D2F80054B858 /* PDLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97CE2B41210D2F80054B858 /* PDLoginView.xib */; };
 		C97CE2B61210D2F80054B858 /* PDLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97CE2B41210D2F80054B858 /* PDLoginView.xib */; };
+		C97CE41612122BD30054B858 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE41512122BD30054B858 /* User.m */; };
+		C97CE41712122BD30054B858 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE41512122BD30054B858 /* User.m */; };
 		C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07C11C09DA6003A5D1C /* Default-Landscape.png */; };
 		C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07D11C09DA6003A5D1C /* Default-Portrait.png */; };
 		C990F97E11DE9F1C00BA1579 /* PDEntryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */; };
@@ -281,6 +283,8 @@
 		C97CE2A81210CD020054B858 /* PDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDLoginViewController.h; path = Controllers/PDLoginViewController.h; sourceTree = "<group>"; };
 		C97CE2A91210CD020054B858 /* PDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDLoginViewController.m; path = Controllers/PDLoginViewController.m; sourceTree = "<group>"; };
 		C97CE2B41210D2F80054B858 /* PDLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDLoginView.xib; sourceTree = "<group>"; };
+		C97CE41412122BD30054B858 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
+		C97CE41512122BD30054B858 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 		C981B07C11C09DA6003A5D1C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		C981B07D11C09DA6003A5D1C /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		C990F97C11DE9F1C00BA1579 /* PDEntryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDEntryParser.h; sourceTree = "<group>"; };
@@ -619,6 +623,8 @@
 				C9C106DB120BB8E800327A0D /* Change.h */,
 				C9C106DC120BB8E800327A0D /* Change.m */,
 				C9C1075C120D965900327A0D /* PDChanging.h */,
+				C97CE41412122BD30054B858 /* User.h */,
+				C97CE41512122BD30054B858 /* User.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1192,6 +1198,7 @@
 				C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */,
 				C9FE8DFE12108E4E00DE376B /* PDKeychainManager.m in Sources */,
 				C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */,
+				C97CE41712122BD30054B858 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1262,6 +1269,7 @@
 				C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */,
 				C9FE8DFD12108E4E00DE376B /* PDKeychainManager.m in Sources */,
 				C97CE2AA1210CD020054B858 /* PDLoginViewController.m in Sources */,
+				C97CE41612122BD30054B858 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

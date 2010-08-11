@@ -3,6 +3,7 @@
 #import "../PDSettingsController.h"
 #import "../PDKeyboardObserver.h"
 #import "../Views/PDTextFieldCell.h"
+#import "../Models/User.h"
 
 #import "ObjectiveResource.h"
 #import "Connection.h"
@@ -29,6 +30,14 @@
 	
 	// TODO localize
 	self.title = NSLocalizedString(@"DocketAnywhere", nil);
+	
+	User *user = [[User alloc] init];
+	user.login = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+	user.password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
+	
+	self.user = user;
+	[user release];
+	
 	return self;
 }
 
@@ -80,11 +89,6 @@
 	[self.keyboardObserver registerNotifications];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-	//[self.usernameField becomeFirstResponder];
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[self.keyboardObserver unregisterNotifications];
@@ -132,8 +136,8 @@
 - (void)doLogin
 {
 	NSString *url = [[ObjectiveResourceConfig getSite] stringByAppendingString:@"ping"];
-	NSString *username = self.usernameField.text;
-	NSString *password = self.passwordField.text;
+	NSString *username = self.user.login;
+	NSString *password = self.user.password;
 	Response *response = [Connection get:url withUser:username andPassword:password];
 	
 	[self performSelectorOnMainThread:@selector(handleLoginResponse:) withObject:response waitUntilDone:NO];
@@ -146,6 +150,55 @@
 	[[ConnectionManager sharedInstance] runJob:@selector(doLogin) onTarget:self];
 }
 
+- (void)handleRegisterSuccess:(User *)user
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
+	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
+	settingsController.docketAnywhereUsername = user.login;
+	settingsController.docketAnywherePassword = user.password;
+	
+	[self.delegate loginControllerDidRegister:self];
+}
+
+- (void)handleRegisterFailure:(NSError *)error
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Registration Failed", nil)
+														message:NSLocalizedString(@"Registration Failed Message", nil)
+													   delegate:nil
+											  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+											  otherButtonTitles:nil, nil];
+	[alertView show];
+	[alertView release];
+	
+	self.cancelButton.enabled = self.registerButton.enabled = YES;
+}
+
+- (void)doRegister
+{
+	NSString *password = self.user.password;
+	
+	NSError *error = nil;
+	if ([self.user createRemoteWithResponse:&error])
+	{
+		self.user.password = password;
+		[self performSelectorOnMainThread:@selector(handleRegisterSuccess:) withObject:self.user waitUntilDone:YES];
+	}
+	else
+	{
+		[self performSelectorOnMainThread:@selector(handleRegisterFailure:) withObject:error waitUntilDone:YES];
+	}
+}
+
+- (IBAction)registerAccount
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	self.cancelButton.enabled = self.registerButton.enabled = NO;
+	[[ConnectionManager sharedInstance] runJob:@selector(doRegister) onTarget:self];
+}
+
 - (IBAction)setFormMode:(UISegmentedControl *)sender
 {
 	self.usernameField = self.emailField = self.passwordField = self.passwordConfirmField = nil;
@@ -153,18 +206,41 @@
 	if (sender.selectedSegmentIndex == 0)
 	{
 		self.showRegistrationFields = NO;
+		self.user.login = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+		self.user.password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
 		[self.navigationItem setRightBarButtonItem:self.loginButton animated:YES];
 	}
 	else
 	{
 		self.showRegistrationFields = YES;
+		self.user.login = @"";
+		self.user.email = @"";
+		self.user.password = @"";
+		self.user.passwordConfirmation = @"";
 		[self.navigationItem setRightBarButtonItem:self.registerButton animated:YES];
 	}
 
 	[self.tableView reloadData];
-//	[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
-//				  withRowAnimation:UITableViewRowAnimationFade];
-	//[self performSelector:@selector(activateTextFieldForRow:) withObject:[NSNumber numberWithInteger:0] afterDelay:0.2];
+}
+
+- (IBAction)textFieldChanged:(UITextField *)textField
+{
+	if (textField == self.usernameField)
+	{
+		self.user.login = textField.text;
+	}
+	else if (textField == self.emailField)
+	{
+		self.user.email = textField.text;
+	}
+	else if (textField == self.passwordField)
+	{
+		self.user.password = textField.text;
+	}
+	else
+	{
+		self.user.passwordConfirmation = textField.text;
+	}
 }
 
 
@@ -196,6 +272,7 @@
 	cell.textField.delegate = self;
 	cell.textField.returnKeyType = UIReturnKeyNext;
 	cell.textField.textColor = [UIColor colorWithRed:56/255.0 green:84/255.0 blue:135/255.0 alpha:1.0];
+	[cell.textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
 	
 	if (0 == indexPath.row)
 	{
@@ -207,10 +284,9 @@
 		self.usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
 		self.usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		
-		NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
-		if (username && !self.showRegistrationFields)
+		if (self.user.login)
 		{
-			self.usernameField.text = username;
+			self.usernameField.text = self.user.login;
 		}
 		else
 		{
@@ -230,7 +306,15 @@
 		self.emailField.autocorrectionType = UITextAutocorrectionTypeNo;
 		self.emailField.autocapitalizationType = UITextAutocapitalizationTypeNone;
 		self.emailField.keyboardType = UIKeyboardTypeEmailAddress;
-		self.emailField.text = @"";
+		
+		if (self.user.email)
+		{
+			self.emailField.text = self.user.email;
+		}
+		else
+		{
+			self.emailField.text = @"";
+		}
 	}
 	else if (passOffset == indexPath.row) 
 	{
@@ -239,10 +323,9 @@
 		
 		self.passwordField.secureTextEntry = YES;
 		
-		NSString *password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
-		if (password && !self.showRegistrationFields)
+		if (self.user.password)
 		{
-			self.passwordField.text = password;
+			self.passwordField.text = self.user.password;
 		}
 		else
 		{
@@ -261,7 +344,15 @@
 		
 		self.passwordConfirmField.returnKeyType = UIReturnKeyGo;
 		self.passwordConfirmField.secureTextEntry = YES;
-		self.passwordConfirmField.text = @"";
+		
+		if (self.user.passwordConfirmation)
+		{
+			self.passwordConfirmField.text = self.user.passwordConfirmation;
+		}
+		else
+		{
+			self.passwordConfirmField.text = @"";
+		}
 	}
 	
 	return cell;
@@ -309,7 +400,7 @@
 	{
 		if (self.showRegistrationFields)
 		{
-//			[self registerAccount];
+			[self registerAccount];
 		}
 		else
 		{
@@ -328,6 +419,7 @@
 {
 	self.delegate = nil;
 	self.keyboardObserver = nil;
+	self.user = nil;
 	self.tableView = nil;
 	self.cancelButton = nil;
 	self.loginButton = nil;

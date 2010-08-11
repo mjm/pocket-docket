@@ -198,7 +198,8 @@
 		NSLog(@"Found changes: %@", changes);
 		settingsController.lastSyncDate = [NSDate date];
 	}
-	else if ([error code] == 401)
+	else
+		if ([error code] == 401)
 	{
 		NSLog(@"Username or password was wrong.");
 	}
@@ -324,6 +325,12 @@
 }
 
 - (void)loginControllerDidLogin:(PDLoginViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+	[self refreshLists];
+}
+
+- (void)loginControllerDidRegister:(PDLoginViewController *)controller
 {
 	[self dismissModalViewControllerAnimated:YES];
 	[self refreshLists];

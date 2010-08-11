@@ -26,7 +26,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 	}
 	else if (errSecItemNotFound == error)
 	{
-		NSLog(@"Password for account %@ and service %@ not found.", account, service);
+		//NSLog(@"Password for account %@ and service %@ not found.", account, service);
 		return nil;
 	}
 	
@@ -53,10 +53,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 		{
 			[query setObject:(id)kSecAttrAccessibleAfterFirstUnlock forKey:(id)kSecAttrAccessible];
 		}
-		else
-		{
-			NSLog(@"Skipping accessible on lower OS.");
-		}
 		[query setObject:account forKey:(id)kSecAttrAccount];
 		[query setObject:service forKey:(id)kSecAttrService];
 		
@@ -71,10 +67,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0)
 		{
 			[info setObject:(id)kSecAttrAccessibleAfterFirstUnlock forKey:(id)kSecAttrAccessible];
-		}
-		else
-		{
-			NSLog(@"Skipping accessible on lower OS.");
 		}
 		[info setObject:account forKey:(id)kSecAttrAccount];
 		[info setObject:service forKey:(id)kSecAttrService];
