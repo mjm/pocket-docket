@@ -212,7 +212,8 @@
 
 - (IBAction)refreshLists
 {
-	if (![[PDSettingsController sharedSettingsController] docketAnywhereUsername])
+	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
+	if (!settingsController.docketAnywhereUsername)
 	{
 		PDLoginViewController *loginController = [[PDLoginViewController alloc] init];
 		loginController.delegate = self;
@@ -225,6 +226,10 @@
 		[self presentModalViewController:navController animated:YES];
 		return;
 	}
+	
+	
+	[ObjectiveResourceConfig setUser:settingsController.docketAnywhereUsername];
+	[ObjectiveResourceConfig setPassword:settingsController.docketAnywherePassword];
 	
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	[self showRefreshButton:self.stopButton];

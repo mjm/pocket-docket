@@ -74,7 +74,11 @@
 		self.navigationItem.hidesBackButton = YES;
 		[self.navigationItem setLeftBarButtonItem:self.cancelButton animated:animated];
 	} else {
-		self.entry.text = cell.textField.text;
+		if (![cell.textField.text isEqualToString:self.entry.text])
+		{
+			self.entry.text = cell.textField.text;
+			[persistenceController markChanged:self.entry];
+		}
 		[cell.textField resignFirstResponder];
 		
 		if (didCancel) {
@@ -302,6 +306,7 @@
 
 - (void)commentController:(PDCommentViewController *)controller commentDidChange:(NSString *)comment {
 	self.entry.comment = comment;
+	[[PDPersistenceController sharedPersistenceController] markChanged:self.entry];
 	
 	[self.navigationController popViewControllerAnimated:YES];
 }
@@ -324,6 +329,7 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
 	[textField resignFirstResponder];
 	self.entry.text = textField.text;
+	[[PDPersistenceController sharedPersistenceController] markChanged:self.entry];
 	
 	return NO;
 }

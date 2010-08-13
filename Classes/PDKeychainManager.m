@@ -90,7 +90,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 	
 	OSStatus error = SecItemDelete((CFDictionaryRef) query);
 	
-	if (errSecSuccess != error)
+	if (errSecSuccess != error && errSecItemNotFound != error)
 	{
 		NSLog(@"Error erasing password: %d", (int) error);
 	}

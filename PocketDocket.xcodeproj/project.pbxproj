@@ -13,6 +13,18 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
+		C9013D6D1214635100815A27 /* Change.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D631214635100815A27 /* Change.m */; };
+		C9013D6E1214635100815A27 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D651214635100815A27 /* List.m */; };
+		C9013D6F1214635100815A27 /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D681214635100815A27 /* PDList.m */; };
+		C9013D701214635100815A27 /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6A1214635100815A27 /* PDListEntry.m */; };
+		C9013D711214635100815A27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6C1214635100815A27 /* User.m */; };
+		C9013D721214635100815A27 /* Change.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D631214635100815A27 /* Change.m */; };
+		C9013D731214635100815A27 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D651214635100815A27 /* List.m */; };
+		C9013D741214635100815A27 /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D681214635100815A27 /* PDList.m */; };
+		C9013D751214635100815A27 /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6A1214635100815A27 /* PDListEntry.m */; };
+		C9013D761214635100815A27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6C1214635100815A27 /* User.m */; };
+		C9013D791214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
+		C9013D7A1214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
 		C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */; };
@@ -27,12 +39,10 @@
 		C94C564311569C8D00791FAC /* PDListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C564211569C8D00791FAC /* PDListTableCell.m */; };
 		C94C56451156A12B00791FAC /* PDListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56441156A12B00791FAC /* PDListTableCell.xib */; };
 		C94C569B1156B1A900791FAC /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
-		C94C56E61156BF2200791FAC /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C56E51156BF2200791FAC /* PDList.m */; };
 		C94C56F91156C5C500791FAC /* PDTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */; };
 		C94C56FD1156C72600791FAC /* PDEditListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C56FC1156C72600791FAC /* PDEditListViewController.m */; };
 		C94C56FF1156C86100791FAC /* PDEditListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C56FE1156C86100791FAC /* PDEditListView.xib */; };
 		C94C570C1156D6DE00791FAC /* PDTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C570B1156D6DE00791FAC /* PDTextFieldCell.m */; };
-		C94C594811584D3300791FAC /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C594711584D3300791FAC /* PDListEntry.m */; };
 		C94C59801158557400791FAC /* PDEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C597F1158557400791FAC /* PDEntriesViewController.m */; };
 		C94C59821158588000791FAC /* PDEntriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C94C59811158588000791FAC /* PDEntriesView.xib */; };
 		C94C59A311585B0D00791FAC /* PocketDocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */; };
@@ -60,8 +70,6 @@
 		C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE2A91210CD020054B858 /* PDLoginViewController.m */; };
 		C97CE2B51210D2F80054B858 /* PDLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97CE2B41210D2F80054B858 /* PDLoginView.xib */; };
 		C97CE2B61210D2F80054B858 /* PDLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97CE2B41210D2F80054B858 /* PDLoginView.xib */; };
-		C97CE41612122BD30054B858 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE41512122BD30054B858 /* User.m */; };
-		C97CE41712122BD30054B858 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C97CE41512122BD30054B858 /* User.m */; };
 		C981B07E11C09DA6003A5D1C /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07C11C09DA6003A5D1C /* Default-Landscape.png */; };
 		C981B07F11C09DA6003A5D1C /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = C981B07D11C09DA6003A5D1C /* Default-Portrait.png */; };
 		C990F97E11DE9F1C00BA1579 /* PDEntryParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C990F97D11DE9F1C00BA1579 /* PDEntryParser.m */; };
@@ -81,8 +89,6 @@
 		C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B7FB2D1161AB9000C872D9 /* PDEntryTableCell.m */; };
 		C9BD10B411727788005E350E /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C94C59A211585B0D00791FAC /* PocketDocket.xcdatamodeld */; };
-		C9BD11041172AE24005E350E /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C56E51156BF2200791FAC /* PDList.m */; };
-		C9BD11061172AE24005E350E /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C594711584D3300791FAC /* PDListEntry.m */; };
 		C9BD11081172AE24005E350E /* PDPersistenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */; };
 		C9BD11CD1172AE3C005E350E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		C9BD11CE1172AE3C005E350E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -105,8 +111,6 @@
 		C9BD142E11753F15005E350E /* ListIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C94C569A1156B1A900791FAC /* ListIcon.png */; };
 		C9BD142F11753F15005E350E /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
 		C9BD1479117554A0005E350E /* pencilangled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9BD1478117554A0005E350E /* pencilangled.png */; };
-		C9C105961209FDE400327A0D /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105951209FDE400327A0D /* List.m */; };
-		C9C105971209FDE400327A0D /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105951209FDE400327A0D /* List.m */; };
 		C9C10622120B05C100327A0D /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105D5120B05C100327A0D /* NSString+InflectionSupport.m */; };
 		C9C10623120B05C100327A0D /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105D7120B05C100327A0D /* NSData+Additions.m */; };
 		C9C10624120B05C100327A0D /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105D9120B05C100327A0D /* NSObject+PropertySupport.m */; };
@@ -171,8 +175,6 @@
 		C9C1065F120B05C100327A0D /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1061C120B05C100327A0D /* NSMutableURLRequest+ResponseType.m */; };
 		C9C10660120B05C100327A0D /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1061E120B05C100327A0D /* NSError+Error.m */; };
 		C9C10661120B05C100327A0D /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */; };
-		C9C106DD120BB8E800327A0D /* Change.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C106DC120BB8E800327A0D /* Change.m */; };
-		C9C106DE120BB8E800327A0D /* Change.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C106DC120BB8E800327A0D /* Change.m */; };
 		C9C1074F120D8C8B00327A0D /* PDChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1074E120D8C8B00327A0D /* PDChangeManager.m */; };
 		C9C10750120D8C8B00327A0D /* PDChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1074E120D8C8B00327A0D /* PDChangeManager.m */; };
 		C9D6DE2711D688C300FF64EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6DE2611D688C300FF64EC /* MessageUI.framework */; };
@@ -224,6 +226,19 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketDocket_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PocketDocket-Info.plist"; sourceTree = "<group>"; };
+		C9013D621214635100815A27 /* Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Change.h; sourceTree = "<group>"; };
+		C9013D631214635100815A27 /* Change.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Change.m; sourceTree = "<group>"; };
+		C9013D641214635100815A27 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
+		C9013D651214635100815A27 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
+		C9013D661214635100815A27 /* PDChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChanging.h; sourceTree = "<group>"; };
+		C9013D671214635100815A27 /* PDList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDList.h; sourceTree = "<group>"; };
+		C9013D681214635100815A27 /* PDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDList.m; sourceTree = "<group>"; };
+		C9013D691214635100815A27 /* PDListEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDListEntry.h; sourceTree = "<group>"; };
+		C9013D6A1214635100815A27 /* PDListEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDListEntry.m; sourceTree = "<group>"; };
+		C9013D6B1214635100815A27 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		C9013D6C1214635100815A27 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		C9013D771214635D00815A27 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		C9013D781214635D00815A27 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
@@ -244,16 +259,12 @@
 		C94C564211569C8D00791FAC /* PDListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListTableCell.m; path = Views/PDListTableCell.m; sourceTree = "<group>"; };
 		C94C56441156A12B00791FAC /* PDListTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDListTableCell.xib; sourceTree = "<group>"; };
 		C94C569A1156B1A900791FAC /* ListIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIcon.png; sourceTree = "<group>"; };
-		C94C56E41156BF2200791FAC /* PDList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDList.h; path = Models/PDList.h; sourceTree = "<group>"; };
-		C94C56E51156BF2200791FAC /* PDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDList.m; path = Models/PDList.m; sourceTree = "<group>"; };
 		C94C56F81156C5C500791FAC /* PDTextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDTextFieldCell.xib; sourceTree = "<group>"; };
 		C94C56FB1156C72600791FAC /* PDEditListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEditListViewController.h; path = Controllers/PDEditListViewController.h; sourceTree = "<group>"; };
 		C94C56FC1156C72600791FAC /* PDEditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEditListViewController.m; path = Controllers/PDEditListViewController.m; sourceTree = "<group>"; };
 		C94C56FE1156C86100791FAC /* PDEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEditListView.xib; sourceTree = "<group>"; };
 		C94C570A1156D6DE00791FAC /* PDTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextFieldCell.h; path = Views/PDTextFieldCell.h; sourceTree = "<group>"; };
 		C94C570B1156D6DE00791FAC /* PDTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextFieldCell.m; path = Views/PDTextFieldCell.m; sourceTree = "<group>"; };
-		C94C594611584D3300791FAC /* PDListEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListEntry.h; path = Models/PDListEntry.h; sourceTree = "<group>"; };
-		C94C594711584D3300791FAC /* PDListEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListEntry.m; path = Models/PDListEntry.m; sourceTree = "<group>"; };
 		C94C597E1158557400791FAC /* PDEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDEntriesViewController.h; path = Controllers/PDEntriesViewController.h; sourceTree = "<group>"; };
 		C94C597F1158557400791FAC /* PDEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDEntriesViewController.m; path = Controllers/PDEntriesViewController.m; sourceTree = "<group>"; };
 		C94C59811158588000791FAC /* PDEntriesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDEntriesView.xib; sourceTree = "<group>"; };
@@ -283,8 +294,6 @@
 		C97CE2A81210CD020054B858 /* PDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDLoginViewController.h; path = Controllers/PDLoginViewController.h; sourceTree = "<group>"; };
 		C97CE2A91210CD020054B858 /* PDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDLoginViewController.m; path = Controllers/PDLoginViewController.m; sourceTree = "<group>"; };
 		C97CE2B41210D2F80054B858 /* PDLoginView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDLoginView.xib; sourceTree = "<group>"; };
-		C97CE41412122BD30054B858 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User.h; sourceTree = "<group>"; };
-		C97CE41512122BD30054B858 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Models/User.m; sourceTree = "<group>"; };
 		C981B07C11C09DA6003A5D1C /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape.png"; sourceTree = "<group>"; };
 		C981B07D11C09DA6003A5D1C /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
 		C990F97C11DE9F1C00BA1579 /* PDEntryParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDEntryParser.h; sourceTree = "<group>"; };
@@ -316,8 +325,6 @@
 		C9BD13531173F772005E350E /* DOEditListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEditListViewController.m; path = Controllers/DOEditListViewController.m; sourceTree = "<group>"; };
 		C9BD13B61173FCFB005E350E /* DOEditListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEditListView.xib; sourceTree = "<group>"; };
 		C9BD1478117554A0005E350E /* pencilangled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pencilangled.png; sourceTree = "<group>"; };
-		C9C105941209FDE400327A0D /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = List.h; path = Models/List.h; sourceTree = "<group>"; };
-		C9C105951209FDE400327A0D /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = List.m; path = Models/List.m; sourceTree = "<group>"; };
 		C9C105D2120B05C100327A0D /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
 		C9C105D4120B05C100327A0D /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
 		C9C105D5120B05C100327A0D /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
@@ -392,11 +399,8 @@
 		C9C10620120B05C100327A0D /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceConfig.h; sourceTree = "<group>"; };
 		C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 4.xcdatamodel"; sourceTree = "<group>"; };
-		C9C106DB120BB8E800327A0D /* Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Change.h; path = Models/Change.h; sourceTree = "<group>"; };
-		C9C106DC120BB8E800327A0D /* Change.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Change.m; path = Models/Change.m; sourceTree = "<group>"; };
 		C9C1074D120D8C8B00327A0D /* PDChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChangeManager.h; sourceTree = "<group>"; };
 		C9C1074E120D8C8B00327A0D /* PDChangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChangeManager.m; sourceTree = "<group>"; };
-		C9C1075C120D965900327A0D /* PDChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDChanging.h; path = Models/PDChanging.h; sourceTree = "<group>"; };
 		C9D6DE2611D688C300FF64EC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9D6DE7211D6FB7400FF64EC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C9D963E91181199000E08A48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -529,6 +533,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C9013DA21214696F00815A27 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C9013D621214635100815A27 /* Change.h */,
+				C9013D631214635100815A27 /* Change.m */,
+				C9013D641214635100815A27 /* List.h */,
+				C9013D651214635100815A27 /* List.m */,
+				C9013D6B1214635100815A27 /* User.h */,
+				C9013D6C1214635100815A27 /* User.m */,
+				C9013D771214635D00815A27 /* Entry.h */,
+				C9013D781214635D00815A27 /* Entry.m */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C9013DA31214697400815A27 /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C9013D671214635100815A27 /* PDList.h */,
+				C9013D681214635100815A27 /* PDList.m */,
+				C9013D691214635100815A27 /* PDListEntry.h */,
+				C9013D6A1214635100815A27 /* PDListEntry.m */,
+			);
+			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
 		C929542F117A971F0052A674 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,19 +644,11 @@
 		C94C56E31156BEF400791FAC /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C94C56E41156BF2200791FAC /* PDList.h */,
-				C94C56E51156BF2200791FAC /* PDList.m */,
-				C94C594611584D3300791FAC /* PDListEntry.h */,
-				C94C594711584D3300791FAC /* PDListEntry.m */,
-				C9C105941209FDE400327A0D /* List.h */,
-				C9C105951209FDE400327A0D /* List.m */,
-				C9C106DB120BB8E800327A0D /* Change.h */,
-				C9C106DC120BB8E800327A0D /* Change.m */,
-				C9C1075C120D965900327A0D /* PDChanging.h */,
-				C97CE41412122BD30054B858 /* User.h */,
-				C97CE41512122BD30054B858 /* User.m */,
+				C9013DA31214697400815A27 /* Managed Objects */,
+				C9013DA21214696F00815A27 /* Resources */,
+				C9013D661214635100815A27 /* PDChanging.h */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C94D90C811B3737500A3E225 /* en.lproj */ = {
@@ -1140,10 +1162,8 @@
 				C94C55FE115447E500791FAC /* PDPersistenceController.m in Sources */,
 				C94C560311544FF700791FAC /* PDListsViewController.m in Sources */,
 				C94C564311569C8D00791FAC /* PDListTableCell.m in Sources */,
-				C94C56E61156BF2200791FAC /* PDList.m in Sources */,
 				C94C56FD1156C72600791FAC /* PDEditListViewController.m in Sources */,
 				C94C570C1156D6DE00791FAC /* PDTextFieldCell.m in Sources */,
-				C94C594811584D3300791FAC /* PDListEntry.m in Sources */,
 				C94C59801158557400791FAC /* PDEntriesViewController.m in Sources */,
 				C97C7E31116048E20070BF90 /* PDEntryDetailViewController.m in Sources */,
 				C9B7FB2E1161AB9000C872D9 /* PDEntryTableCell.m in Sources */,
@@ -1157,7 +1177,6 @@
 				C990F98211DEA34D00BA1579 /* PDListParser.m in Sources */,
 				C990FA1E11DF8D3200BA1579 /* PDListsController.m in Sources */,
 				C990FAAA11E11E2C00BA1579 /* PDEntriesController.m in Sources */,
-				C9C105971209FDE400327A0D /* List.m in Sources */,
 				C9C10642120B05C100327A0D /* NSString+InflectionSupport.m in Sources */,
 				C9C10643120B05C100327A0D /* NSData+Additions.m in Sources */,
 				C9C10644120B05C100327A0D /* NSObject+PropertySupport.m in Sources */,
@@ -1190,7 +1209,6 @@
 				C9C1065F120B05C100327A0D /* NSMutableURLRequest+ResponseType.m in Sources */,
 				C9C10660120B05C100327A0D /* NSError+Error.m in Sources */,
 				C9C10661120B05C100327A0D /* ObjectiveResourceConfig.m in Sources */,
-				C9C106DE120BB8E800327A0D /* Change.m in Sources */,
 				C9C10750120D8C8B00327A0D /* PDChangeManager.m in Sources */,
 				C94C8CBB120E1DBB00C41284 /* NSManagedObject+Additions.m in Sources */,
 				C94C8CBC120E1DBB00C41284 /* NSString+Additions.m in Sources */,
@@ -1198,7 +1216,12 @@
 				C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */,
 				C9FE8DFE12108E4E00DE376B /* PDKeychainManager.m in Sources */,
 				C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */,
-				C97CE41712122BD30054B858 /* User.m in Sources */,
+				C9013D721214635100815A27 /* Change.m in Sources */,
+				C9013D731214635100815A27 /* List.m in Sources */,
+				C9013D741214635100815A27 /* PDList.m in Sources */,
+				C9013D751214635100815A27 /* PDListEntry.m in Sources */,
+				C9013D761214635100815A27 /* User.m in Sources */,
+				C9013D791214635D00815A27 /* Entry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,8 +1232,6 @@
 				C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */,
 				C9BD12C11173E6B3005E350E /* PDListTableCell.m in Sources */,
 				C9BD11F31172B103005E350E /* main.m in Sources */,
-				C9BD11041172AE24005E350E /* PDList.m in Sources */,
-				C9BD11061172AE24005E350E /* PDListEntry.m in Sources */,
 				C9BD11081172AE24005E350E /* PDPersistenceController.m in Sources */,
 				C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */,
 				C9BD122D1172B596005E350E /* DOAppDelegate.m in Sources */,
@@ -1228,7 +1249,6 @@
 				C990F98311DEA34D00BA1579 /* PDListParser.m in Sources */,
 				C990FA1F11DF8D3200BA1579 /* PDListsController.m in Sources */,
 				C990FAAB11E11E2C00BA1579 /* PDEntriesController.m in Sources */,
-				C9C105961209FDE400327A0D /* List.m in Sources */,
 				C9C10622120B05C100327A0D /* NSString+InflectionSupport.m in Sources */,
 				C9C10623120B05C100327A0D /* NSData+Additions.m in Sources */,
 				C9C10624120B05C100327A0D /* NSObject+PropertySupport.m in Sources */,
@@ -1261,7 +1281,6 @@
 				C9C1063F120B05C100327A0D /* NSMutableURLRequest+ResponseType.m in Sources */,
 				C9C10640120B05C100327A0D /* NSError+Error.m in Sources */,
 				C9C10641120B05C100327A0D /* ObjectiveResourceConfig.m in Sources */,
-				C9C106DD120BB8E800327A0D /* Change.m in Sources */,
 				C9C1074F120D8C8B00327A0D /* PDChangeManager.m in Sources */,
 				C94C8CBD120E1DBB00C41284 /* NSManagedObject+Additions.m in Sources */,
 				C94C8CBE120E1DBB00C41284 /* NSString+Additions.m in Sources */,
@@ -1269,7 +1288,12 @@
 				C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */,
 				C9FE8DFD12108E4E00DE376B /* PDKeychainManager.m in Sources */,
 				C97CE2AA1210CD020054B858 /* PDLoginViewController.m in Sources */,
-				C97CE41612122BD30054B858 /* User.m in Sources */,
+				C9013D6D1214635100815A27 /* Change.m in Sources */,
+				C9013D6E1214635100815A27 /* List.m in Sources */,
+				C9013D6F1214635100815A27 /* PDList.m in Sources */,
+				C9013D701214635100815A27 /* PDListEntry.m in Sources */,
+				C9013D711214635100815A27 /* User.m in Sources */,
+				C9013D7A1214635D00815A27 /* Entry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

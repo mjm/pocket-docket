@@ -10,14 +10,6 @@ NSString *PDChangeTypeUpdate = @"update";
 NSString *PDChangeTypeDelete = @"delete";
 
 
-@interface NSObject ()
-
-- (NSString *)resourceId;
-- (void)setResourceId:(NSString *)resourceId;
-
-@end
-
-
 @interface PDChangeManager ()
 
 @property (nonatomic, retain) NSMutableDictionary *unpublishedCreates;
@@ -70,7 +62,7 @@ NSString *PDChangeTypeDelete = @"delete";
 	NSError *error = nil;
 	if ([resource createRemoteWithResponse:&error])
 	{
-		changed.remoteIdentifier = [resource resourceId];
+		changed.remoteIdentifier = [resource getRemoteId];
 		NSLog(@"Changed: %@", changed);
 		[[changed managedObjectContext] save:&error];
 	}
@@ -116,7 +108,7 @@ NSString *PDChangeTypeDelete = @"delete";
 	}
 	
 	id resource = [[resourceClass alloc] init];
-	[resource setResourceId:[parts objectAtIndex:1]];
+	[resource setRemoteId:[parts objectAtIndex:1]];
 	
 	NSError *error = nil;
 	if (![resource destroyRemoteWithResponse:&error])

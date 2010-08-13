@@ -1,12 +1,22 @@
 #import "PDListEntry.h"
 
+#import "PDList.h"
+#import "Entry.h"
+
 @implementation PDListEntry
 
-@dynamic text, comment, checked, order, remoteId, createdAt, updatedAt, list;
+@dynamic text, comment, checked, order, remoteIdentifier, createdAt, updatedAt, list;
 
 - (id)toResource
 {
-	return nil;
+	Entry *entry = [[Entry alloc] init];
+	entry.entryId = self.remoteIdentifier;
+	entry.listId = self.list.remoteIdentifier;
+	entry.text = self.text;
+	entry.comment = self.comment;
+	entry.checked = self.checked;
+	entry.position = self.order;
+	return [entry autorelease];
 }
 
 - (NSString *)plainTextString {

@@ -16,14 +16,4 @@
 	return [NSString stringWithFormat:@"<List:%@ title=%@, position=%@, userId=%@>", self.listId, self.title, self.position, self.userId];
 }
 
-- (NSString *)resourceId
-{
-	return self.listId;
-}
-
-- (void)setResourceId:(NSString *)resourceId
-{
-	self.listId = resourceId;
-}
-
 @end

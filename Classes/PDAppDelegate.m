@@ -17,9 +17,6 @@
 	[ObjectiveResourceConfig setSite:@"http://10.0.1.13:3000/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
-	[PDSettingsController sharedSettingsController].docketAnywhereUsername = nil;
-	[[PDKeychainManager sharedKeychainManager] erasePasswordForAccount:@"matt" service:@"com.docketanywhere.DocketAnywhere"];
-	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] init];
