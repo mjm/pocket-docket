@@ -2,7 +2,7 @@
 
 #import "SynthesizeSingleton.h"
 #import "PDSettingsController.h"
-#import "PDChangeManager.h"
+#import "PDCredentials.h"
 #import "Models/PDList.h"
 #import "Models/PDListEntry.h"
 
@@ -32,6 +32,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	
 	NSString *path = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"PendingChanges.pd"];
 	self.changeManager = [PDChangeManager changeManagerWithContentsOfFile:path];
+	self.changeManager.delegate = self;
 	
 	return self;
 }
@@ -466,6 +467,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	}
 	
 	[self.changeManager commitPendingChanges];
+}
+
+
+#pragma mark -
+#pragma mark Change Manager Delegate Methods
+
+- (PDCredentials *)credentialsForChangeManager:(PDChangeManager *)changeManager
+{
+	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+	if (!username)
+	{
+		// TODO send notification that the credentials are needed.
+		return nil;
+	}
+	
+	NSString *password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
+	NSString *deviceId = [[PDSettingsController sharedSettingsController] docketAnywhereDeviceId];
+	
+	return [PDCredentials credentialsWithUsername:username password:password deviceId:deviceId];
 }
 
 

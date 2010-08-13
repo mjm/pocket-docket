@@ -15,6 +15,7 @@ static NSString * const SelectedListIdKey = @"PDSelectedListId";
 static NSString * const FirstLaunchKey = @"PDFirstLaunch";
 static NSString * const LastSyncDateKey = @"PDLastSyncDate";
 static NSString * const DocketAnywhereUsernameKey = @"PDDocketAnywhereUsername";
+static NSString * const DocketAnywhereDeviceIdKey = @"PDDocketAnywhereDeviceId";
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 
@@ -97,6 +98,16 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 		return;
 	}
 	[[PDKeychainManager sharedKeychainManager] setPassword:password forAccount:username service:DocketAnywhereService];
+}
+
+- (NSString *)docketAnywhereDeviceId
+{
+	return [[NSUserDefaults standardUserDefaults] objectForKey:DocketAnywhereDeviceIdKey];
+}
+
+- (void)setDocketAnywhereDeviceId:(NSString *)deviceId
+{
+	[[NSUserDefaults standardUserDefaults] setObject:deviceId forKey:DocketAnywhereDeviceIdKey];
 }
 
 @end

@@ -25,10 +25,14 @@
 		C9013D761214635100815A27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6C1214635100815A27 /* User.m */; };
 		C9013D791214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
 		C9013D7A1214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
+		C9013DD31215D04200815A27 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013DD21215D04200815A27 /* Device.m */; };
+		C9013DD41215D04200815A27 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013DD21215D04200815A27 /* Device.m */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
 		C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */; };
 		C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */; };
+		C92B8C421215D1D60076F539 /* PDCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C411215D1D60076F539 /* PDCredentials.m */; };
+		C92B8C431215D1D60076F539 /* PDCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C411215D1D60076F539 /* PDCredentials.m */; };
 		C938256311E6A61B0029C32F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = C938256211E6A61B0029C32F /* Background.png */; };
 		C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */; };
 		C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */; };
@@ -239,11 +243,15 @@
 		C9013D6C1214635100815A27 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C9013D771214635D00815A27 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		C9013D781214635D00815A27 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		C9013DD11215D04200815A27 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		C9013DD21215D04200815A27 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
 		C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryTableCell.m; path = Views/DOEntryTableCell.m; sourceTree = "<group>"; };
 		C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryTableCell.xib; sourceTree = "<group>"; };
+		C92B8C401215D1D60076F539 /* PDCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDCredentials.h; sourceTree = "<group>"; };
+		C92B8C411215D1D60076F539 /* PDCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDCredentials.m; sourceTree = "<group>"; };
 		C92E4A5D1181159B00DF646A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		C938256211E6A61B0029C32F /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		C947F95D1177D84B0087574C /* DOEntryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryDetailsViewController.h; path = Controllers/DOEntryDetailsViewController.h; sourceTree = "<group>"; };
@@ -544,6 +552,8 @@
 				C9013D6C1214635100815A27 /* User.m */,
 				C9013D771214635D00815A27 /* Entry.h */,
 				C9013D781214635D00815A27 /* Entry.m */,
+				C9013DD11215D04200815A27 /* Device.h */,
+				C9013DD21215D04200815A27 /* Device.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -849,6 +859,8 @@
 				C9C1074E120D8C8B00327A0D /* PDChangeManager.m */,
 				C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */,
 				C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */,
+				C92B8C401215D1D60076F539 /* PDCredentials.h */,
+				C92B8C411215D1D60076F539 /* PDCredentials.m */,
 			);
 			name = "Change Handling";
 			sourceTree = "<group>";
@@ -1222,6 +1234,8 @@
 				C9013D751214635100815A27 /* PDListEntry.m in Sources */,
 				C9013D761214635100815A27 /* User.m in Sources */,
 				C9013D791214635D00815A27 /* Entry.m in Sources */,
+				C9013DD31215D04200815A27 /* Device.m in Sources */,
+				C92B8C431215D1D60076F539 /* PDCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1294,6 +1308,8 @@
 				C9013D701214635100815A27 /* PDListEntry.m in Sources */,
 				C9013D711214635100815A27 /* User.m in Sources */,
 				C9013D7A1214635D00815A27 /* Entry.m in Sources */,
+				C9013DD41215D04200815A27 /* Device.m in Sources */,
+				C92B8C421215D1D60076F539 /* PDCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

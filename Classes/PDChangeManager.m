@@ -1,5 +1,6 @@
 #import "PDChangeManager.h"
 
+#import "PDCredentials.h"
 #import "PDPendingChange.h"
 #import "ObjectiveResource.h"
 #import "ConnectionManager.h"
@@ -17,9 +18,9 @@ NSString *PDChangeTypeDelete = @"delete";
 @property (nonatomic, retain) NSMutableDictionary *unpublishedDeletes;
 @property (nonatomic, retain) NSMutableArray *pendingChanges;
 
-- (void)processCreate:(NSManagedObject <PDChanging>*)changed;
-- (void)processUpdate:(NSManagedObject <PDChanging>*)changed;
-- (void)processDelete:(PDPendingChange *)change;
+- (BOOL)processCreate:(NSManagedObject <PDChanging>*)changed;
+- (BOOL)processUpdate:(NSManagedObject <PDChanging>*)changed;
+- (BOOL)processDelete:(PDPendingChange *)change;
 
 @end
 
@@ -56,82 +57,92 @@ NSString *PDChangeTypeDelete = @"delete";
 	return self;
 }
 
-- (void)processCreate:(NSManagedObject <PDChanging> *)changed
+- (BOOL)processCreate:(NSManagedObject <PDChanging> *)changed
 {
-	id resource = [changed toResource];
-	NSError *error = nil;
-	if ([resource createRemoteWithResponse:&error])
+	if (attemptRemote)
 	{
-		changed.remoteIdentifier = [resource getRemoteId];
-		NSLog(@"Changed: %@", changed);
-		[[changed managedObjectContext] save:&error];
-	}
-	else
-	{
-		NSString *idString = [changed objectIDString];
-		@synchronized(self)
+		id resource = [changed toResource];
+		NSError *error = nil;
+		if ([resource createRemoteWithResponse:&error])
 		{
-			[self.unpublishedCreates setObject:[NSDate date] forKey:idString];
-		}
-	}
-	
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-- (void)processUpdate:(NSManagedObject <PDChanging> *)changed
-{
-	id resource = [changed toResource];
-	NSError *error = nil;
-	if (![resource updateRemoteWithResponse:&error])
-	{
-		NSString *idString = [changed objectIDString];
-		@synchronized(self)
-		{
-			if (![self.unpublishedCreates objectForKey:idString])
-			{
-				[self.unpublishedUpdates setObject:[NSDate date] forKey:idString];
-			}
-		}
-	}
-	
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-- (void)processDelete:(PDPendingChange *)change
-{
-	NSArray *parts = [change.remoteID componentsSeparatedByString:@":"];
-	Class resourceClass = NSClassFromString([parts objectAtIndex:0]);
-	if (!resourceClass)
-	{
-		NSLog(@"Could not process delete. Unable to find class named %@.", [parts objectAtIndex:0]);
-		return;
-	}
-	
-	id resource = [[resourceClass alloc] init];
-	[resource setRemoteId:[parts objectAtIndex:1]];
-	
-	NSError *error = nil;
-	if (![resource destroyRemoteWithResponse:&error])
-	{
-		@synchronized(self)
-		{
-			if ([self.unpublishedCreates objectForKey:change.objectID])
-			{
-				[self.unpublishedCreates removeObjectForKey:change.objectID];
-				return;
-			}
+			changed.remoteIdentifier = [resource getRemoteId];
+			[[changed managedObjectContext] save:&error];
 			
-			[self.unpublishedUpdates removeObjectForKey:change.objectID];
-			// If we delete something and don't publish it before quitting, we won't be able to find it again
-			// So we store the id information for the remote side, since we shouldn't ever be deleting something
-			// that doesn't already exist on the remote side.
-			[self.unpublishedDeletes setObject:[NSDate date] forKey:change.remoteID];
+			return YES;
 		}
 	}
 	
-	[resource release];
+	NSString *idString = [changed objectIDString];
+	@synchronized(self)
+	{
+		[self.unpublishedCreates setObject:[NSDate date] forKey:idString];
+	}
 	
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	return NO;
+}
+
+- (BOOL)processUpdate:(NSManagedObject <PDChanging> *)changed
+{
+	if (attemptRemote)
+	{
+		id resource = [changed toResource];
+		NSError *error = nil;
+		if ([resource updateRemoteWithResponse:&error])
+		{
+			return YES;
+		}
+	}
+
+	NSString *idString = [changed objectIDString];
+	@synchronized(self)
+	{
+		if (![self.unpublishedCreates objectForKey:idString])
+		{
+			[self.unpublishedUpdates setObject:[NSDate date] forKey:idString];
+		}
+	}
+	
+	return NO;
+}
+
+- (BOOL)processDelete:(PDPendingChange *)change
+{
+	if (attemptRemote)
+	{
+		NSArray *parts = [change.remoteID componentsSeparatedByString:@":"];
+		Class resourceClass = NSClassFromString([parts objectAtIndex:0]);
+		if (!resourceClass)
+		{
+			NSLog(@"Could not process delete. Unable to find class named %@.", [parts objectAtIndex:0]);
+			return NO;
+		}
+		
+		id resource = [[[resourceClass alloc] init] autorelease];
+		[resource setRemoteId:[parts objectAtIndex:1]];
+		
+		NSError *error = nil;
+		if ([resource destroyRemoteWithResponse:&error])
+		{
+			return YES;
+		}
+	}
+	
+	@synchronized(self)
+	{
+		if ([self.unpublishedCreates objectForKey:change.objectID])
+		{
+			[self.unpublishedCreates removeObjectForKey:change.objectID];
+			return NO;
+		}
+		
+		[self.unpublishedUpdates removeObjectForKey:change.objectID];
+		// If we delete something and don't publish it before quitting, we won't be able to find it again
+		// So we store the id information for the remote side, since we shouldn't ever be deleting something
+		// that doesn't already exist on the remote side.
+		[self.unpublishedDeletes setObject:[NSDate date] forKey:change.remoteID];
+	}
+	
+	return NO;
 }
 
 - (void)addChange:(NSManagedObject <PDChanging> *)changed changeType:(NSString *)changeType
@@ -142,33 +153,54 @@ NSString *PDChangeTypeDelete = @"delete";
 	[change release];
 }
 
-- (void)commitPendingChanges
+- (void)doCommitChangesWithCredentials:(PDCredentials *)credentials
 {
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	attemptRemote = credentials != nil;
+	
+	if (attemptRemote)
+	{
+		[ObjectiveResourceConfig setUser:credentials.username];
+		[ObjectiveResourceConfig setPassword:credentials.password];
+		// TODO set device id
+		
+		// TODO process unpublished changes
+	}
+
 	for (PDPendingChange* change in self.pendingChanges)
 	{
 		NSLog(@"Committing change of type '%@' for: %@", change.changeType, change.changed);
-		[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-		
-		SEL method;
-		id argument = change.changed;
+
+		BOOL result;
 		if ([change.changeType isEqualToString:PDChangeTypeCreate])
 		{
-			method = @selector(processCreate:);
+			result = [self processCreate:change.changed];
 		}
 		else if ([change.changeType isEqualToString:PDChangeTypeUpdate])
 		{
-			method = @selector(processUpdate:);
+			result = [self processUpdate:change.changed];
 		}
 		else if ([change.changeType isEqualToString:PDChangeTypeDelete])
 		{
-			method = @selector(processDelete:);
-			argument = change;
+			result = [self processDelete:change];
 		}
 		
-		[[ConnectionManager sharedInstance] runJob:method onTarget:self withArgument:argument];
+		// TODO decide whether to attempt remote connections
 	}
 	
-	[self.pendingChanges removeAllObjects];
+	// Clear these out of memory, in the interest of security.
+	[ObjectiveResourceConfig setUser:nil];
+	[ObjectiveResourceConfig setPassword:nil];
+	
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
+	[self.pendingChanges removeAllObjects];	
+}
+
+- (void)commitPendingChanges
+{
+	PDCredentials *credentials = [self.delegate credentialsForChangeManager:self];
+	[[ConnectionManager sharedInstance] runJob:@selector(doCommitChangesWithCredentials:) onTarget:self withArgument:credentials];
 }
 
 - (void)clearPendingChanges

@@ -1,11 +1,21 @@
 #import "PDChanging.h"
 
+@class PDCredentials;
+
 extern NSString *PDChangeTypeCreate;
 extern NSString *PDChangeTypeUpdate;
 extern NSString *PDChangeTypeDelete;
 
-@interface PDChangeManager : NSObject
 
+@protocol PDChangeManagerDelegate;
+
+
+@interface PDChangeManager : NSObject
+{
+	BOOL attemptRemote;
+}
+
+@property (nonatomic, assign) id <PDChangeManagerDelegate> delegate;
 @property (nonatomic, copy) NSString *path;
 
 + (PDChangeManager *)changeManagerWithContentsOfFile:(NSString *)path;
@@ -19,5 +29,12 @@ extern NSString *PDChangeTypeDelete;
 - (void)clearPendingChanges;
 
 - (void)saveChanges;
+
+@end
+
+
+@protocol PDChangeManagerDelegate <NSObject>
+
+- (PDCredentials *)credentialsForChangeManager:(PDChangeManager *)changeManager;
 
 @end

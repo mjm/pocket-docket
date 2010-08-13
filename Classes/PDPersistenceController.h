@@ -1,4 +1,5 @@
 #import "Models/PDChanging.h"
+#import "PDChangeManager.h"
 
 @class PDList;
 @class PDListEntry;
@@ -7,7 +8,7 @@
 /*!
  \nosubgrouping
  */
-@interface PDPersistenceController : NSObject {
+@interface PDPersistenceController : NSObject <PDChangeManagerDelegate> {
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;	    
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;

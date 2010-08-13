@@ -11,5 +11,6 @@
 @property (nonatomic, retain) NSDate *lastSyncDate;
 @property (nonatomic, retain) NSString *docketAnywhereUsername;
 @property (nonatomic, retain) NSString *docketAnywherePassword;
+@property (nonatomic, retain) NSString *docketAnywhereDeviceId;
 
 @end
