@@ -2,9 +2,9 @@
 
 #import "SynthesizeSingleton.h"
 #import "PDSettingsController.h"
-#import "PDCredentials.h"
-#import "Models/PDList.h"
-#import "Models/PDListEntry.h"
+#import "../Changes/PDCredentials.h"
+#import "../Models/PDList.h"
+#import "../Models/PDListEntry.h"
 
 
 NSString *PDCredentialsNeededNotification = @"PDCredentialsNeededNotification";

@@ -1,6 +1,6 @@
 #import "PDEntriesController.h"
 
-#import "../PDPersistenceController.h"
+#import "../Singletons/PDPersistenceController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
 #import "../Views/PDEntryTableCell.h"

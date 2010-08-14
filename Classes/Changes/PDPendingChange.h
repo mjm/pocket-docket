@@ -1,4 +1,4 @@
-#import "Models/PDChanging.h"
+#import "PDChanging.h"
 
 @interface PDPendingChange : NSObject
 

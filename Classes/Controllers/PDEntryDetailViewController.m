@@ -4,7 +4,7 @@
 #import "../Views/PDTextFieldCell.h"
 #import "../Views/PDTextViewCell.h"
 #import "PDCommentViewController.h"
-#import "../PDPersistenceController.h"
+#import "../Singletons/PDPersistenceController.h"
 
 @interface PDEntryDetailViewController ()
 

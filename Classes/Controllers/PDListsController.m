@@ -1,7 +1,7 @@
 #import "PDListsController.h"
 
-#import "../PDSettingsController.h"
-#import "../PDPersistenceController.h"
+#import "../Singletons/PDSettingsController.h"
+#import "../Singletons/PDPersistenceController.h"
 
 
 @interface PDListsController ()

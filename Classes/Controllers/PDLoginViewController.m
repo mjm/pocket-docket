@@ -1,6 +1,6 @@
 #import "PDLoginViewController.h"
 
-#import "../PDSettingsController.h"
+#import "../Singletons/PDSettingsController.h"
 #import "../PDKeyboardObserver.h"
 #import "../Views/PDTextFieldCell.h"
 #import "../Models/User.h"

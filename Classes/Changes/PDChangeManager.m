@@ -4,7 +4,7 @@
 #import "PDPendingChange.h"
 #import "ObjectiveResource.h"
 #import "ConnectionManager.h"
-#import "Categories/NSManagedObject+Additions.h"
+#import "../Categories/NSManagedObject+Additions.h"
 
 NSString *PDChangeTypeCreate = @"create";
 NSString *PDChangeTypeUpdate = @"update";

@@ -49,10 +49,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 		
 		NSMutableDictionary *query = [NSMutableDictionary dictionary];
 		[query setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0)
 		{
 			[query setObject:(id)kSecAttrAccessibleAfterFirstUnlock forKey:(id)kSecAttrAccessible];
 		}
+#endif
+#endif
 		[query setObject:account forKey:(id)kSecAttrAccount];
 		[query setObject:service forKey:(id)kSecAttrService];
 		
@@ -64,10 +68,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 	{
 		NSMutableDictionary *info = [NSMutableDictionary dictionary];
 		[info setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 		if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 4.0)
 		{
 			[info setObject:(id)kSecAttrAccessibleAfterFirstUnlock forKey:(id)kSecAttrAccessible];
 		}
+#endif
+#endif
 		[info setObject:account forKey:(id)kSecAttrAccount];
 		[info setObject:service forKey:(id)kSecAttrService];
 		[info setObject:[password dataUsingEncoding:NSUTF8StringEncoding] forKey:(id)kSecValueData];

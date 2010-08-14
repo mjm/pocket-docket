@@ -2,8 +2,8 @@
 
 #import "DOEntriesViewController.h"
 #import "DOEditListViewController.h"
-#import "../PDPersistenceController.h"
-#import "../PDSettingsController.h"
+#import "../Singletons/PDPersistenceController.h"
+#import "../Singletons/PDSettingsController.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "../Models/PDList.h"

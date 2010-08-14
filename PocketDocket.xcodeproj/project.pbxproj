@@ -238,7 +238,6 @@
 		C9013D631214635100815A27 /* Change.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Change.m; sourceTree = "<group>"; };
 		C9013D641214635100815A27 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		C9013D651214635100815A27 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
-		C9013D661214635100815A27 /* PDChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChanging.h; sourceTree = "<group>"; };
 		C9013D671214635100815A27 /* PDList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDList.h; sourceTree = "<group>"; };
 		C9013D681214635100815A27 /* PDList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDList.m; sourceTree = "<group>"; };
 		C9013D691214635100815A27 /* PDListEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDListEntry.h; sourceTree = "<group>"; };
@@ -433,6 +432,7 @@
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
+		C9FD266F1217077B00D9127D /* PDChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChanging.h; sourceTree = "<group>"; };
 		C9FD2AA91186763B00ED7954 /* IconPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPhone.png; sourceTree = "<group>"; };
 		C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPendingChange.h; sourceTree = "<group>"; };
 		C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPendingChange.m; sourceTree = "<group>"; };
@@ -476,10 +476,10 @@
 			isa = PBXGroup;
 			children = (
 				C9DB213211D97E2D000A293A /* Singletons */,
-				C9DB204311D8085A000A293A /* App Delegate */,
+				C9DB204311D8085A000A293A /* AppDelegates */,
 				C929542F117A971F0052A674 /* Categories */,
 				C94C56E31156BEF400791FAC /* Models */,
-				C9C1074C120D8C7500327A0D /* Change Handling */,
+				C9C1074C120D8C7500327A0D /* Changes */,
 				C990F97B11DE9ED000BA1579 /* Element Processing */,
 				C94C564011569C5400791FAC /* Views */,
 				C94C563F11569C4B00791FAC /* Controllers */,
@@ -668,7 +668,6 @@
 			children = (
 				C9013DA31214697400815A27 /* Managed Objects */,
 				C9013DA21214696F00815A27 /* Resources */,
-				C9013D661214635100815A27 /* PDChanging.h */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -864,7 +863,7 @@
 			name = Connection;
 			sourceTree = "<group>";
 		};
-		C9C1074C120D8C7500327A0D /* Change Handling */ = {
+		C9C1074C120D8C7500327A0D /* Changes */ = {
 			isa = PBXGroup;
 			children = (
 				C9C1074D120D8C8B00327A0D /* PDChangeManager.h */,
@@ -873,8 +872,9 @@
 				C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */,
 				C92B8C401215D1D60076F539 /* PDCredentials.h */,
 				C92B8C411215D1D60076F539 /* PDCredentials.m */,
+				C9FD266F1217077B00D9127D /* PDChanging.h */,
 			);
-			name = "Change Handling";
+			path = Changes;
 			sourceTree = "<group>";
 		};
 		C9DB1F8C11D70116000A293A /* App Icons */ = {
@@ -961,7 +961,7 @@
 			name = "Entry Details View Controller";
 			sourceTree = "<group>";
 		};
-		C9DB204311D8085A000A293A /* App Delegate */ = {
+		C9DB204311D8085A000A293A /* AppDelegates */ = {
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* PDAppDelegate.h */,
@@ -969,7 +969,7 @@
 				C9BD122B1172B596005E350E /* DOAppDelegate.h */,
 				C9BD122C1172B596005E350E /* DOAppDelegate.m */,
 			);
-			name = "App Delegate";
+			path = AppDelegates;
 			sourceTree = "<group>";
 		};
 		C9DB204411D808FD000A293A /* Entry Cells */ = {
@@ -995,7 +995,7 @@
 				C9FE8DFB12108E4E00DE376B /* PDKeychainManager.h */,
 				C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */,
 			);
-			name = Singletons;
+			path = Singletons;
 			sourceTree = "<group>";
 		};
 		C9DB222A11DA42CD000A293A /* iPhone */ = {

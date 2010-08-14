@@ -1,4 +1,4 @@
-#import "Models/PDChanging.h"
+#import "../Changes/PDChanging.h"
 #import "PDChangeManager.h"
 
 @class PDList;

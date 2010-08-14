@@ -2,7 +2,7 @@
 
 #import "../PDKeyboardObserver.h"
 #import "../PDListParser.h"
-#import "../PDPersistenceController.h"
+#import "../Singletons/PDPersistenceController.h"
 #import "../Models/PDListEntry.h"
 #import "../Models/PDList.h"
 
@@ -24,7 +24,7 @@
 	}
 	self.list = aList;
 	self.title = NSLocalizedString(@"Import Entries", nil);
-	self.keyboardObserver = [[PDKeyboardObserver alloc] initWithViewController:self delegate:nil];
+	self.keyboardObserver = [PDKeyboardObserver keyboardObserverWithViewController:self delegate:nil];
 	
 	return self;
 }

@@ -1,11 +1,11 @@
 #import "PDAppDelegate.h"
 
 #import "ObjectiveResourceConfig.h"
-#import "PDPersistenceController.h"
-#import "PDSettingsController.h"
-#import "PDKeychainManager.h"
-#import "Controllers/PDListsViewController.h"
-#import "Controllers/PDEntriesViewController.h"
+#import "../Singletons/PDPersistenceController.h"
+#import "../Singletons/PDSettingsController.h"
+#import "../Singletons/PDKeychainManager.h"
+#import "../Controllers/PDListsViewController.h"
+#import "../Controllers/PDEntriesViewController.h"
 
 @implementation PDAppDelegate
 

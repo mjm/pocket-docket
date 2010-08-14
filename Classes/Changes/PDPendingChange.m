@@ -1,6 +1,6 @@
 #import "PDPendingChange.h"
 
-#import "Categories/NSManagedObject+Additions.h"
+#import "../Categories/NSManagedObject+Additions.h"
 
 @implementation PDPendingChange
 

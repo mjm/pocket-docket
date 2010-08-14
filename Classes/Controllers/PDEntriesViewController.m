@@ -2,8 +2,8 @@
 
 #import "PDEntryDetailViewController.h"
 #import "PDImportEntriesViewController.h"
-#import "../PDPersistenceController.h"
-#import "../PDSettingsController.h"
+#import "../Singletons/PDPersistenceController.h"
+#import "../Singletons/PDSettingsController.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
 #import "../Views/PDEntryTableCell.h"

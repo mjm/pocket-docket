@@ -1,8 +1,8 @@
 #import "DOAppDelegate.h"
 
-#import "PDPersistenceController.h"
-#import "Controllers/DOListsViewController.h"
-#import "Controllers/DOEntriesViewController.h"
+#import "../Singletons/PDPersistenceController.h"
+#import "../Controllers/DOListsViewController.h"
+#import "../Controllers/DOEntriesViewController.h"
 
 @implementation DOAppDelegate
 
