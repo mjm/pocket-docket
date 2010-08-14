@@ -158,6 +158,11 @@
 	}
 }
 
+- (BOOL)shouldPresentLoginViewController
+{
+	return YES;
+}
+
 
 #pragma mark -
 #pragma mark Changing the Button

@@ -6,6 +6,10 @@
 #import "Models/PDList.h"
 #import "Models/PDListEntry.h"
 
+
+NSString *PDCredentialsNeededNotification = @"PDCredentialsNeededNotification";
+
+
 #pragma mark PrivateMethods
 
 @interface PDPersistenceController ()
@@ -16,11 +20,13 @@
 
 @end
 
+
 #pragma mark -
 
 @implementation PDPersistenceController
 
 SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
+
 
 #pragma mark -
 #pragma mark Initializing a Persistence Controller
@@ -478,7 +484,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
 	if (!username)
 	{
-		// TODO send notification that the credentials are needed.
+		[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
 		return nil;
 	}
 	

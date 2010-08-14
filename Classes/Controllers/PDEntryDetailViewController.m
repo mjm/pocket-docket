@@ -59,6 +59,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
 	[self.table reloadData];
 }
 
@@ -110,6 +112,12 @@
 		[cell.textField becomeFirstResponder];
 	}
 }
+
+- (BOOL)shouldPresentLoginViewController
+{
+	return YES;
+}
+
 
 #pragma mark -
 #pragma mark Handling Model Changes

@@ -9,6 +9,14 @@
 
 @implementation PDAppDelegate
 
+- (void)eraseCredentials
+{
+	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+	[[PDKeychainManager sharedKeychainManager] erasePasswordForAccount:username service:@"com.docketanywhere.DocketAnywhere"];
+	[PDSettingsController sharedSettingsController].docketAnywhereUsername = nil;
+}
+
+
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -18,6 +26,8 @@
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
+	
+	[self eraseCredentials];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] init];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];
@@ -39,6 +49,7 @@
 {
 	[[PDPersistenceController sharedPersistenceController] save];
 }
+
 
 #pragma mark -
 #pragma mark Memory management

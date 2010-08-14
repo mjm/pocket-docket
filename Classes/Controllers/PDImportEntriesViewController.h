@@ -1,9 +1,11 @@
+#import "PDViewController.h"
+
 @class PDKeyboardObserver;
 @class PDList;
 
 @protocol PDImportEntriesViewControllerDelegate;
 
-@interface PDImportEntriesViewController : UIViewController {}
+@interface PDImportEntriesViewController : PDViewController
 
 @property (nonatomic, assign) id <PDImportEntriesViewControllerDelegate> delegate;
 @property (nonatomic, retain) PDList *list;

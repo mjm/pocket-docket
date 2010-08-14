@@ -1,10 +1,12 @@
+#import "PDViewController.h"
+
 @class PDList;
 @class PDTextFieldCell;
 
 @protocol PDEditListViewControllerDelegate;
 
 //! A view controller that allows the user to edit the title of a list.
-@interface PDEditListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {}
+@interface PDEditListViewController : PDViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {}
 
 @property (nonatomic, retain) PDList *list;
 @property (nonatomic, assign) id <PDEditListViewControllerDelegate> delegate;

@@ -19,6 +19,7 @@
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list;
 - (void)doneEditingList:(PDList *)list;
 - (void)showRefreshButton:(UIBarButtonItem *)button;
+- (void)resetAddFlag;
 
 @end
 
@@ -63,6 +64,11 @@
 - (void)showRefreshButton:(UIBarButtonItem *)button
 {
 	self.toolbarItems = [NSArray arrayWithObject:button];
+}
+
+- (void)resetAddFlag
+{
+	isAdd = NO;
 }
 
 @end
@@ -110,6 +116,8 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
+	
 	// Make sure the table is not in editing mode.
 	[self setEditing:NO];
 	
@@ -131,6 +139,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
+	
 	self.navigationController.toolbarHidden = YES;
 }
 
@@ -155,6 +165,11 @@
 {
 	[super setEditing:editing animated:animated];
 	[self.table setEditing:editing animated:animated];
+}
+
+- (BOOL)shouldPresentLoginViewController
+{
+	return !isAdd;
 }
 
 
@@ -299,6 +314,10 @@
 	{
 		[[PDPersistenceController sharedPersistenceController] saveEdits];
 	}
+	else
+	{
+		[[PDPersistenceController sharedPersistenceController] markChanged:list];
+	}
 	
 	[self doneEditingList:list];
 	
@@ -310,6 +329,8 @@
 		PDEntriesViewController *entriesController = [[PDEntriesViewController alloc] initWithList:list];
 		[self.navigationController pushViewController:entriesController animated:YES];
 		[entriesController release];
+		
+		[self performSelector:@selector(resetAddFlag) withObject:nil afterDelay:1.0];
 	}
 }
 
@@ -318,26 +339,23 @@
 	[[PDPersistenceController sharedPersistenceController] cancelEdits];
 
 	[self doneEditingList:list];
+	
+	isAdd = NO;
 }
 
 
 #pragma mark -
 #pragma mark Login Controller Delegate Methods
 
-- (void)loginControllerDidCancel:(PDLoginViewController *)controller
-{
-	[self dismissModalViewControllerAnimated:YES];
-}
-
 - (void)loginControllerDidLogin:(PDLoginViewController *)controller
 {
-	[self dismissModalViewControllerAnimated:YES];
+	[super loginControllerDidLogin:controller];
 	[self refreshLists];
 }
 
 - (void)loginControllerDidRegister:(PDLoginViewController *)controller
 {
-	[self dismissModalViewControllerAnimated:YES];
+	[super loginControllerDidRegister:controller];
 	[self refreshLists];
 }
 

@@ -46,16 +46,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+	[super viewWillAppear:animated];
 	[self.keyboardObserver registerNotifications];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+	[super viewDidAppear:animated];
 	[self.textView becomeFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+	[super viewWillDisappear:animated];
 	[self.keyboardObserver unregisterNotifications];
 }
 

@@ -83,6 +83,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDKeychainManager, KeychainManager)
 
 - (void)erasePasswordForAccount:(NSString *)account service:(NSString *)service
 {
+	if (!account || !service)
+	{
+		return;
+	}
+	
 	NSMutableDictionary *query = [NSMutableDictionary dictionary];
 	[query setObject:(id)kSecClassGenericPassword forKey:(id)kSecClass];
 	[query setObject:account forKey:(id)kSecAttrAccount];

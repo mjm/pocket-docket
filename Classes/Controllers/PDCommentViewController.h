@@ -1,8 +1,10 @@
+#import "PDViewController.h"
+
 #import "../PDKeyboardObserver.h"
 
 @protocol PDCommentViewControllerDelegate;
 
-@interface PDCommentViewController : UIViewController {}
+@interface PDCommentViewController : PDViewController
 
 @property (nonatomic, assign) id <PDCommentViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString *comment;

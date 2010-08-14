@@ -1,10 +1,12 @@
+#import "PDViewController.h"
+
 #import "PDCommentViewController.h"
 #import "../PDKeyboardObserver.h"
 
 @class PDListEntry;
 
 //! A view controller for showing the details of a list entry.
-@interface PDEntryDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PDCommentViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate> {
+@interface PDEntryDetailViewController : PDViewController <UITableViewDataSource, UITableViewDelegate, PDCommentViewControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate> {
 	BOOL didCancel;
 }
 

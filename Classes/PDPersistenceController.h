@@ -4,6 +4,10 @@
 @class PDList;
 @class PDListEntry;
 
+
+extern NSString *PDCredentialsNeededNotification;
+
+
 //! Handles various persistence related operations.
 /*!
  \nosubgrouping
