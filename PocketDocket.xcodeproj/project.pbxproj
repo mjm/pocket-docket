@@ -877,22 +877,8 @@
 		C9C1074C120D8C7500327A0D /* Changes */ = {
 			isa = PBXGroup;
 			children = (
-				C9C1074D120D8C8B00327A0D /* PDChangeManager.h */,
-				C9C1074E120D8C8B00327A0D /* PDChangeManager.m */,
-				C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */,
-				C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */,
-				C92B8C401215D1D60076F539 /* PDCredentials.h */,
-				C92B8C411215D1D60076F539 /* PDCredentials.m */,
-				C9FD266F1217077B00D9127D /* PDLocalChanging.h */,
-				C9FD26C712170B1600D9127D /* PDChange.h */,
-				C9FD26C812170B1600D9127D /* PDChange.m */,
-				C9FD26D51217102800D9127D /* PDLocalChange.h */,
-				C9FD26D61217102800D9127D /* PDLocalChange.m */,
-				C9FD26E312171E9200D9127D /* PDChangeList.h */,
-				C9FD26E412171E9200D9127D /* PDChangeList.m */,
-				C9FD270312172CA800D9127D /* PDRemoteChange.h */,
-				C9FD270412172CA800D9127D /* PDRemoteChange.m */,
-				C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */,
+				C9FD2757121793FC00D9127D /* Public */,
+				C9FD27581217940200D9127D /* Private */,
 			);
 			path = Changes;
 			sourceTree = "<group>";
@@ -1062,6 +1048,36 @@
 				C9E2D76311DA7DBB00B5ED60 /* PDImportEntriesViewController.m */,
 			);
 			name = "Import Entries View Controller";
+			sourceTree = "<group>";
+		};
+		C9FD2757121793FC00D9127D /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				C9C1074D120D8C8B00327A0D /* PDChangeManager.h */,
+				C9C1074E120D8C8B00327A0D /* PDChangeManager.m */,
+				C92B8C401215D1D60076F539 /* PDCredentials.h */,
+				C92B8C411215D1D60076F539 /* PDCredentials.m */,
+				C9FD266F1217077B00D9127D /* PDLocalChanging.h */,
+				C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
+		C9FD27581217940200D9127D /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */,
+				C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */,
+				C9FD26C712170B1600D9127D /* PDChange.h */,
+				C9FD26C812170B1600D9127D /* PDChange.m */,
+				C9FD26D51217102800D9127D /* PDLocalChange.h */,
+				C9FD26D61217102800D9127D /* PDLocalChange.m */,
+				C9FD26E312171E9200D9127D /* PDChangeList.h */,
+				C9FD26E412171E9200D9127D /* PDChangeList.m */,
+				C9FD270312172CA800D9127D /* PDRemoteChange.h */,
+				C9FD270412172CA800D9127D /* PDRemoteChange.m */,
+			);
+			name = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -1,10 +1,16 @@
 #import "PDChangeManager.h"
 
+#import "Change.h"
 #import "PDCredentials.h"
 #import "PDPendingChange.h"
+#import "PDChangeList.h"
 #import "ObjectiveResource.h"
 #import "ConnectionManager.h"
 #import "../Categories/NSManagedObject+Additions.h"
+#import "../Categories/NSManagedObjectContext+Additions.h"
+
+// TODO don't require this
+#import "../Singletons/PDSettingsController.h"
 
 NSString *PDChangeTypeCreate = @"create";
 NSString *PDChangeTypeUpdate = @"update";
@@ -153,6 +159,95 @@ NSString *PDChangeTypeDelete = @"delete";
 	[change release];
 }
 
+- (BOOL)doPublishChangesWithCredentials:(PDCredentials *)credentials
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	
+	PDChangeList *changeList = [[PDChangeList alloc] init];
+	
+	// TODO don't use the date, use the device
+	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
+	NSDate *date = settingsController.lastSyncDate;
+	
+	NSError *error = nil;
+	NSArray *changes = date ? [Change findAllRemoteSince:date response:&error] : [Change findAllRemoteWithResponse:&error];
+	if (changes)
+	{
+		NSLog(@"Found changes: %@", changes);
+		settingsController.lastSyncDate = [NSDate date];
+	}
+	else
+	{
+		if ([error code] == 401)
+		{
+			NSLog(@"Username or password was wrong.");
+		}
+		
+		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+		return NO;
+	}
+
+	for (Change *change in changes)
+	{
+		[changeList addRemoteChange:change];
+	}
+	
+	for (NSString *objectIDString in self.unpublishedCreates)
+	{
+		NSError *error = nil;
+		NSManagedObject *object = [self.managedObjectContext existingObjectWithIDString:objectIDString error:&error];
+		if (object)
+		{
+			// TODO clean this up
+			
+			PDPendingChange *change = [[PDPendingChange alloc] initWithManagedObject:object changeType:PDChangeTypeCreate];
+			[changeList addPendingChange:change date:[self.unpublishedCreates objectForKey:objectIDString]];
+			[change release];
+		}
+		else
+		{
+			NSLog(@"Could not fetch previously created object: %@, %@", error, [error userInfo]);
+		}
+	}
+	
+	for (NSString *objectIDString in self.unpublishedUpdates)
+	{
+		NSError *error = nil;
+		NSManagedObject *object = [self.managedObjectContext existingObjectWithIDString:objectIDString error:&error];
+		if (object)
+		{
+			// TODO clean this up
+			
+			PDPendingChange *change = [[PDPendingChange alloc] initWithManagedObject:object changeType:PDChangeTypeUpdate];
+			[changeList addPendingChange:change date:[self.unpublishedUpdates objectForKey:objectIDString]];
+			[change release];
+		}
+		else
+		{
+			NSLog(@"Could not fetch previously updated object: %@, %@", error, [error userInfo]);
+		}
+	}
+	
+	for (NSString *remoteID in self.unpublishedDeletes)
+	{
+		PDPendingChange *change = [[PDPendingChange alloc] init];
+		change.remoteID = remoteID;
+		change.changeType = PDChangeTypeDelete;
+		[changeList addPendingChange:change date:[self.unpublishedDeletes objectForKey:remoteID]];
+		[change release];
+	}
+	
+	[changeList processChangesOnManagedObjectContext:self.managedObjectContext];
+	[changeList release];
+	
+	[self.unpublishedCreates removeAllObjects];
+	[self.unpublishedUpdates removeAllObjects];
+	[self.unpublishedDeletes removeAllObjects];
+	
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	return YES;
+}
+
 - (void)doCommitChangesWithCredentials:(PDCredentials *)credentials
 {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
@@ -164,7 +259,8 @@ NSString *PDChangeTypeDelete = @"delete";
 		[ObjectiveResourceConfig setPassword:credentials.password];
 		// TODO set device id
 		
-		// TODO process unpublished changes
+		attemptRemote = [self doPublishChangesWithCredentials:credentials];
+		[UIApplication sharedApplication].networkActivityIndicatorVisible = attemptRemote;
 	}
 
 	for (PDPendingChange* change in self.pendingChanges)
@@ -200,13 +296,26 @@ NSString *PDChangeTypeDelete = @"delete";
 - (void)commitPendingChanges
 {
 	PDCredentials *credentials = [self.delegate credentialsForChangeManager:self];
-	[[ConnectionManager sharedInstance] runJob:@selector(doCommitChangesWithCredentials:) onTarget:self withArgument:credentials];
+	[[ConnectionManager sharedInstance] runJob:@selector(doCommitChangesWithCredentials:)
+									  onTarget:self
+								  withArgument:credentials];
 }
 
 - (void)clearPendingChanges
 {
 	NSLog(@"Clearing all pending changes");
 	[self.pendingChanges removeAllObjects];
+}
+
+- (void)refreshAndPublishChanges
+{
+	PDCredentials *credentials = [self.delegate credentialsForChangeManager:self];
+	if (credentials)
+	{
+		[[ConnectionManager sharedInstance] runJob:@selector(doPublishChangesWithCredentials:)
+										  onTarget:self
+									  withArgument:credentials];
+	}
 }
 
 - (void)saveChanges

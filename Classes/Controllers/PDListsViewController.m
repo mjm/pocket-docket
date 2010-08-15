@@ -194,35 +194,35 @@
 
 - (void)doRefreshLists
 {
-	NSError *error = nil;
-	
-	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-	NSDate *date = settingsController.lastSyncDate;
-	NSArray *changes;
-	if (date)
-	{
-		changes = [Change findAllRemoteSince:date response:&error];
-	}
-	else
-	{
-		changes = [Change findAllRemoteWithResponse:&error];
-	}
-	
-	if (error == nil)
-	{
-		NSLog(@"Found changes: %@", changes);
-		settingsController.lastSyncDate = [NSDate date];
-	}
-	else
-		if ([error code] == 401)
-	{
-		NSLog(@"Username or password was wrong.");
-	}
-	
-	[self performSelectorOnMainThread:@selector(showRefreshButton:)
-						   withObject:self.refreshButton
-						waitUntilDone:YES];
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+//	NSError *error = nil;
+//	
+//	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
+//	NSDate *date = settingsController.lastSyncDate;
+//	NSArray *changes;
+//	if (date)
+//	{
+//		changes = [Change findAllRemoteSince:date response:&error];
+//	}
+//	else
+//	{
+//		changes = [Change findAllRemoteWithResponse:&error];
+//	}
+//	
+//	if (error == nil)
+//	{
+//		NSLog(@"Found changes: %@", changes);
+//		settingsController.lastSyncDate = [NSDate date];
+//	}
+//	else if ([error code] == 401)
+//	{
+//		NSLog(@"Username or password was wrong.");
+//	}
+//	
+//	[self performSelectorOnMainThread:@selector(showRefreshButton:)
+//						   withObject:self.refreshButton
+//						waitUntilDone:YES];
+//	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	[[PDPersistenceController sharedPersistenceController] refresh];
 }
 
 - (IBAction)refreshLists

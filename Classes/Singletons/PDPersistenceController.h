@@ -45,5 +45,6 @@ extern NSString *PDCredentialsNeededNotification;
 - (void)deleteEntry:(PDListEntry *)entry;
 
 - (void)save;
+- (void)refresh;
 
 @end

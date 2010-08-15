@@ -16,6 +16,7 @@ extern NSString *PDChangeTypeDelete;
 }
 
 @property (nonatomic, assign) id <PDChangeManagerDelegate> delegate;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, copy) NSString *path;
 
 + (PDChangeManager *)changeManagerWithContentsOfFile:(NSString *)path;
@@ -28,6 +29,7 @@ extern NSString *PDChangeTypeDelete;
 - (void)commitPendingChanges;
 - (void)clearPendingChanges;
 
+- (void)refreshAndPublishChanges;
 - (void)saveChanges;
 
 @end

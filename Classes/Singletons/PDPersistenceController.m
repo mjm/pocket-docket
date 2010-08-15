@@ -39,6 +39,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	NSString *path = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"PendingChanges.pd"];
 	self.changeManager = [PDChangeManager changeManagerWithContentsOfFile:path];
 	self.changeManager.delegate = self;
+	self.changeManager.managedObjectContext = self.managedObjectContext;
 	
 	return self;
 }
@@ -473,6 +474,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	}
 	
 	[self.changeManager commitPendingChanges];
+}
+
+- (void)refresh
+{
+	NSError *error;
+	if (![self.managedObjectContext save:&error])
+	{
+		NSLog(@"Error saving before refreshing: %@, %@", error, [error userInfo]);
+	}
+	
+	[self.changeManager refreshAndPublishChanges];
 }
 
 

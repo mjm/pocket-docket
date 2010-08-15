@@ -109,6 +109,10 @@
 
 - (void)executeOnManagedObjectContext:(NSManagedObjectContext *)context
 {
+	NSManagedObjectID *objectID = [[context persistentStoreCoordinator] managedObjectIDForURIRepresentation:[NSURL URLWithString:self.pendingChange.objectID]];
+	NSError *error = nil;
+	self.pendingChange.changed = [context existingObjectWithID:objectID error:&error];
+	
 	[self execute];
 }
 
