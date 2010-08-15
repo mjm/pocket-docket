@@ -102,7 +102,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 
 - (NSString *)docketAnywhereDeviceId
 {
-	return [[NSUserDefaults standardUserDefaults] objectForKey:DocketAnywhereDeviceIdKey];
+	//return [[NSUserDefaults standardUserDefaults] objectForKey:DocketAnywhereDeviceIdKey];
+	return @"1";
 }
 
 - (void)setDocketAnywhereDeviceId:(NSString *)deviceId

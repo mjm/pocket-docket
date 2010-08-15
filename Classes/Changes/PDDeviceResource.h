@@ -1,0 +1,3 @@
+@interface PDDeviceResource : NSObject
+
+@end

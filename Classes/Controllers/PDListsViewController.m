@@ -347,17 +347,15 @@
 #pragma mark -
 #pragma mark Login Controller Delegate Methods
 
-- (void)loginControllerDidLogin:(PDLoginViewController *)controller
-{
-	[super loginControllerDidLogin:controller];
-	[self refreshLists];
-}
-
-- (void)loginControllerDidRegister:(PDLoginViewController *)controller
-{
-	[super loginControllerDidRegister:controller];
-	[self refreshLists];
-}
+//- (void)loginControllerDidLogin:(PDLoginViewController *)controller
+//{
+//	[super loginControllerDidLogin:controller];
+//}
+//
+//- (void)loginControllerDidRegister:(PDLoginViewController *)controller
+//{
+//	[super loginControllerDidRegister:controller];
+//}
 
 
 #pragma mark -

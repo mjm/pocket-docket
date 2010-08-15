@@ -209,6 +209,10 @@
 		C9FD26E612171E9200D9127D /* PDChangeList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26E412171E9200D9127D /* PDChangeList.m */; };
 		C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD270412172CA800D9127D /* PDRemoteChange.m */; };
 		C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD270412172CA800D9127D /* PDRemoteChange.m */; };
+		C9FD27931218891700D9127D /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */; };
+		C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */; };
+		C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
+		C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
 		C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD2AA91186763B00ED7954 /* IconPhone.png */; };
 		C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
 		C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
@@ -446,6 +450,10 @@
 		C9FD26E412171E9200D9127D /* PDChangeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChangeList.m; sourceTree = "<group>"; };
 		C9FD270312172CA800D9127D /* PDRemoteChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRemoteChange.h; sourceTree = "<group>"; };
 		C9FD270412172CA800D9127D /* PDRemoteChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRemoteChange.m; sourceTree = "<group>"; };
+		C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeviceMethods.h"; sourceTree = "<group>"; };
+		C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeviceMethods.m"; sourceTree = "<group>"; };
+		C9FD279812188D0D00D9127D /* PDDeviceResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDeviceResource.h; sourceTree = "<group>"; };
+		C9FD279912188D0D00D9127D /* PDDeviceResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDeviceResource.m; sourceTree = "<group>"; };
 		C9FD2AA91186763B00ED7954 /* IconPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPhone.png; sourceTree = "<group>"; };
 		C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPendingChange.h; sourceTree = "<group>"; };
 		C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPendingChange.m; sourceTree = "<group>"; };
@@ -1059,6 +1067,10 @@
 				C92B8C411215D1D60076F539 /* PDCredentials.m */,
 				C9FD266F1217077B00D9127D /* PDLocalChanging.h */,
 				C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */,
+				C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */,
+				C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */,
+				C9FD279812188D0D00D9127D /* PDDeviceResource.h */,
+				C9FD279912188D0D00D9127D /* PDDeviceResource.m */,
 			);
 			name = Public;
 			sourceTree = "<group>";
@@ -1289,6 +1301,8 @@
 				C9FD26D71217102800D9127D /* PDLocalChange.m in Sources */,
 				C9FD26E512171E9200D9127D /* PDChangeList.m in Sources */,
 				C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */,
+				C9FD27931218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
+				C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1368,6 +1382,8 @@
 				C9FD26D81217102800D9127D /* PDLocalChange.m in Sources */,
 				C9FD26E612171E9200D9127D /* PDChangeList.m in Sources */,
 				C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */,
+				C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
+				C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,7 +27,7 @@
 	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
 	
-	[self eraseCredentials];
+	//[self eraseCredentials];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] init];
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:listsController];

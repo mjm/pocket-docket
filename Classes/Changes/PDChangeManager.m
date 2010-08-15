@@ -4,6 +4,7 @@
 #import "PDCredentials.h"
 #import "PDPendingChange.h"
 #import "PDChangeList.h"
+#import "NSObject+DeviceMethods.h"
 #import "ObjectiveResource.h"
 #import "ConnectionManager.h"
 #import "../Categories/NSManagedObject+Additions.h"
@@ -164,17 +165,11 @@ NSString *PDChangeTypeDelete = @"delete";
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	
 	PDChangeList *changeList = [[PDChangeList alloc] init];
-	
-	// TODO don't use the date, use the device
-	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-	NSDate *date = settingsController.lastSyncDate;
-	
 	NSError *error = nil;
-	NSArray *changes = date ? [Change findAllRemoteSince:date response:&error] : [Change findAllRemoteWithResponse:&error];
+	NSArray *changes = [Change findAllRemoteWithResponse:&error];
 	if (changes)
 	{
 		NSLog(@"Found changes: %@", changes);
-		settingsController.lastSyncDate = [NSDate date];
 	}
 	else
 	{
@@ -257,7 +252,7 @@ NSString *PDChangeTypeDelete = @"delete";
 	{
 		[ObjectiveResourceConfig setUser:credentials.username];
 		[ObjectiveResourceConfig setPassword:credentials.password];
-		// TODO set device id
+		[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
 		
 		attemptRemote = [self doPublishChangesWithCredentials:credentials];
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = attemptRemote;

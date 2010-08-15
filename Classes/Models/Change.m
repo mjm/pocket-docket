@@ -35,28 +35,28 @@ static NSString * const SinceDateKey = @"since";
 	return [NSString stringWithFormat:@"<Change:%@ model=%@:%@, event=%@, userId=%@, createdAt=%@>", self.changeId, self.model, self.modelId, self.event, self.userId, self.createdAt];
 }
 
-+ (NSArray *)findAllRemoteSince:(NSDate *)date response:(NSError **)error
-{
-	NSString *path = [[self getRemoteCollectionPath] stringByAppendingString:@"?since=:since"];
-	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	formatter.dateFormat = @"yyyyMMddHHmmss";
-	NSString *dateStr = [formatter stringFromDate:[date dateByAddingTimeInterval:-[[NSTimeZone defaultTimeZone] secondsFromGMTForDate:date]]];
-	[formatter release];
-	
-	NSDictionary *params = [NSDictionary dictionaryWithObject:dateStr forKey:SinceDateKey];
-	path = [self populateRemotePath:path withParameters:params];
-	
-	Response *res = [Connection get:path withUser:[[self class] getRemoteUser] andPassword:[[self class] getRemotePassword]];
-	if([res isError] && error)
-	{
-		*error = res.error;
-		return nil;
-	}
-	else
-	{
-		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
-	}
-}
+//+ (NSArray *)findAllRemoteSince:(NSDate *)date response:(NSError **)error
+//{
+//	NSString *path = [[self getRemoteCollectionPath] stringByAppendingString:@"&since=:since"];
+//	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//	formatter.dateFormat = @"yyyyMMddHHmmss";
+//	NSString *dateStr = [formatter stringFromDate:[date dateByAddingTimeInterval:-[[NSTimeZone defaultTimeZone] secondsFromGMTForDate:date]]];
+//	[formatter release];
+//	
+//	NSDictionary *params = [NSDictionary dictionaryWithObject:dateStr forKey:SinceDateKey];
+//	path = [self populateRemotePath:path withParameters:params];
+//	
+//	Response *res = [Connection get:path withUser:[[self class] getRemoteUser] andPassword:[[self class] getRemotePassword]];
+//	if([res isError] && error)
+//	{
+//		*error = res.error;
+//		return nil;
+//	}
+//	else
+//	{
+//		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
+//	}
+//}
 
 - (Class <PDRemoteChanging>)resourceClass
 {
