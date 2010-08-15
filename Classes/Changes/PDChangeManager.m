@@ -29,6 +29,9 @@ NSString *PDChangeTypeDelete = @"delete";
 - (BOOL)processUpdate:(NSManagedObject <PDLocalChanging>*)changed;
 - (BOOL)processDelete:(PDPendingChange *)change;
 
+- (void)applyCredentials:(PDCredentials *)credentials;
+- (void)clearCredentials;
+
 @end
 
 
@@ -160,9 +163,25 @@ NSString *PDChangeTypeDelete = @"delete";
 	[change release];
 }
 
+- (void)applyCredentials:(PDCredentials *)credentials
+{
+	[ObjectiveResourceConfig setUser:credentials.username];
+	[ObjectiveResourceConfig setPassword:credentials.password];
+	[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
+}
+
+- (void)clearCredentials
+{
+	// Clear these out of memory, in the interest of security.
+	[ObjectiveResourceConfig setUser:nil];
+	[ObjectiveResourceConfig setPassword:nil];
+	[ObjectiveResourceConfig setDeviceId:nil];
+}
+
 - (BOOL)doPublishChangesWithCredentials:(PDCredentials *)credentials
 {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	[self applyCredentials:credentials];
 	
 	PDChangeList *changeList = [[PDChangeList alloc] init];
 	NSError *error = nil;
@@ -235,11 +254,14 @@ NSString *PDChangeTypeDelete = @"delete";
 	[changeList processChangesOnManagedObjectContext:self.managedObjectContext];
 	[changeList release];
 	
+	[self clearCredentials];
+	
 	[self.unpublishedCreates removeAllObjects];
 	[self.unpublishedUpdates removeAllObjects];
 	[self.unpublishedDeletes removeAllObjects];
 	
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	[self saveChanges];
 	return YES;
 }
 
@@ -249,15 +271,13 @@ NSString *PDChangeTypeDelete = @"delete";
 	attemptRemote = credentials != nil;
 	
 	if (attemptRemote)
-	{
-		[ObjectiveResourceConfig setUser:credentials.username];
-		[ObjectiveResourceConfig setPassword:credentials.password];
-		[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
-		
+	{		
 		attemptRemote = [self doPublishChangesWithCredentials:credentials];
+		
+		[self applyCredentials:credentials];
 		[UIApplication sharedApplication].networkActivityIndicatorVisible = attemptRemote;
 	}
-
+	
 	for (PDPendingChange* change in self.pendingChanges)
 	{
 		NSLog(@"Committing change of type '%@' for: %@", change.changeType, change.changed);
@@ -279,13 +299,12 @@ NSString *PDChangeTypeDelete = @"delete";
 		// TODO decide whether to attempt remote connections
 	}
 	
-	// Clear these out of memory, in the interest of security.
-	[ObjectiveResourceConfig setUser:nil];
-	[ObjectiveResourceConfig setPassword:nil];
+	[self clearCredentials];
 	
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	
-	[self.pendingChanges removeAllObjects];	
+	[self.pendingChanges removeAllObjects];
+	[self saveChanges];
 }
 
 - (void)commitPendingChanges
@@ -325,6 +344,7 @@ NSString *PDChangeTypeDelete = @"delete";
 
 - (void)dealloc
 {
+	self.managedObjectContext = nil;
 	self.path = nil;
 	self.unpublishedCreates = nil;
 	self.unpublishedUpdates = nil;

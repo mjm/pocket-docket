@@ -11,7 +11,16 @@
 	
 	self.changed = object;
 	self.objectID = [object objectIDString];
-	self.remoteID = [NSString stringWithFormat:@"%@:%@", NSStringFromClass([[object toResource] class]), [object remoteIdentifier]];
+	if (object.remoteIdentifier)
+	{
+		self.remoteID = [NSString stringWithFormat:@"%@:%@",
+						 NSStringFromClass([[object toResource] class]),
+						 object.remoteIdentifier];
+	}
+	else
+	{
+		self.remoteID = nil;
+	}
 	self.changeType = changeType;
 	
 	return self;
