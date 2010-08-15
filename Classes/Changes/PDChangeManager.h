@@ -1,4 +1,4 @@
-#import "PDChanging.h"
+#import "PDLocalChanging.h"
 
 @class PDCredentials;
 
@@ -22,7 +22,7 @@ extern NSString *PDChangeTypeDelete;
 
 - (id)initWithContentsOfFile:(NSString *)path;
 
-- (void)addChange:(NSManagedObject <PDChanging> *)changed
+- (void)addChange:(NSManagedObject <PDLocalChanging> *)changed
 	   changeType:(NSString *)changeType;
 
 - (void)commitPendingChanges;

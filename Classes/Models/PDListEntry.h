@@ -1,8 +1,8 @@
-#import "PDChanging.h"
+#import "PDLocalChanging.h"
 
 @class PDList;
 
-@interface PDListEntry : NSManagedObject <PDChanging>
+@interface PDListEntry : NSManagedObject <PDLocalChanging>
 
 @property (nonatomic, retain) NSNumber *checked;
 @property (nonatomic, retain) NSString *comment;

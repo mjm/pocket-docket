@@ -8,4 +8,9 @@
 	return [self objectWithID:[[self persistentStoreCoordinator] managedObjectIDForURIRepresentation:[NSURL URLWithString:idString]]];
 }
 
+- (NSManagedObjectModel *)managedObjectModel
+{
+	return [[self persistentStoreCoordinator] managedObjectModel];
+}
+
 @end

@@ -18,8 +18,8 @@ NSString *PDChangeTypeDelete = @"delete";
 @property (nonatomic, retain) NSMutableDictionary *unpublishedDeletes;
 @property (nonatomic, retain) NSMutableArray *pendingChanges;
 
-- (BOOL)processCreate:(NSManagedObject <PDChanging>*)changed;
-- (BOOL)processUpdate:(NSManagedObject <PDChanging>*)changed;
+- (BOOL)processCreate:(NSManagedObject <PDLocalChanging>*)changed;
+- (BOOL)processUpdate:(NSManagedObject <PDLocalChanging>*)changed;
 - (BOOL)processDelete:(PDPendingChange *)change;
 
 @end
@@ -57,7 +57,7 @@ NSString *PDChangeTypeDelete = @"delete";
 	return self;
 }
 
-- (BOOL)processCreate:(NSManagedObject <PDChanging> *)changed
+- (BOOL)processCreate:(NSManagedObject <PDLocalChanging> *)changed
 {
 	if (attemptRemote)
 	{
@@ -81,7 +81,7 @@ NSString *PDChangeTypeDelete = @"delete";
 	return NO;
 }
 
-- (BOOL)processUpdate:(NSManagedObject <PDChanging> *)changed
+- (BOOL)processUpdate:(NSManagedObject <PDLocalChanging> *)changed
 {
 	if (attemptRemote)
 	{
@@ -145,7 +145,7 @@ NSString *PDChangeTypeDelete = @"delete";
 	return NO;
 }
 
-- (void)addChange:(NSManagedObject <PDChanging> *)changed changeType:(NSString *)changeType
+- (void)addChange:(NSManagedObject <PDLocalChanging> *)changed changeType:(NSString *)changeType
 {
 	NSLog(@"Adding a pending change of type '%@' for: %@", changeType, changed);
 	PDPendingChange *change = [[PDPendingChange alloc] initWithManagedObject:changed changeType:changeType];

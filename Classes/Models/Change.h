@@ -1,4 +1,5 @@
 #import "ObjectiveResource.h"
+#import "../Changes/PDRemoteChanging.h"
 
 @interface Change : NSObject <NSCoding>
 
@@ -9,6 +10,8 @@
 @property (nonatomic, retain) NSString *event;
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSDate *updatedAt;
+
+@property (nonatomic, readonly) Class <PDRemoteChanging> resourceClass;
 
 + (NSArray *)findAllRemoteSince:(NSDate *)date response:(NSError **)error;
 

@@ -47,13 +47,20 @@ static NSString * const SinceDateKey = @"since";
 	path = [self populateRemotePath:path withParameters:params];
 	
 	Response *res = [Connection get:path withUser:[[self class] getRemoteUser] andPassword:[[self class] getRemotePassword]];
-	if([res isError] && error) {
+	if([res isError] && error)
+	{
 		*error = res.error;
 		return nil;
 	}
-	else {
+	else
+	{
 		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
 	}
+}
+
+- (Class <PDRemoteChanging>)resourceClass
+{
+	return NSClassFromString(self.model);
 }
 
 @end

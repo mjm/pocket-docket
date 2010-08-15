@@ -4,7 +4,7 @@
 
 @implementation PDPendingChange
 
-- (id)initWithManagedObject:(NSManagedObject <PDChanging> *)object changeType:(NSString *)changeType
+- (id)initWithManagedObject:(NSManagedObject <PDLocalChanging> *)object changeType:(NSString *)changeType
 {
 	if (![super init])
 		return nil;

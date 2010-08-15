@@ -1,6 +1,6 @@
-#import "PDChanging.h"
+#import "PDLocalChanging.h"
 
-@interface PDList : NSManagedObject <PDChanging>
+@interface PDList : NSManagedObject <PDLocalChanging>
 
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSNumber *order;

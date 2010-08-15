@@ -1,4 +1,6 @@
-@interface Entry : NSObject
+#import "../Changes/PDRemoteChanging.h"
+
+@interface Entry : NSObject <PDRemoteChanging>
 
 @property (nonatomic, retain) NSString *entryId;
 @property (nonatomic, retain) NSString *listId;

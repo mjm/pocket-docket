@@ -25,8 +25,6 @@
 		C9013D761214635100815A27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6C1214635100815A27 /* User.m */; };
 		C9013D791214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
 		C9013D7A1214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
-		C9013DD31215D04200815A27 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013DD21215D04200815A27 /* Device.m */; };
-		C9013DD41215D04200815A27 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013DD21215D04200815A27 /* Device.m */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
 		C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */; };
@@ -254,10 +252,9 @@
 		C9013D6C1214635100815A27 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		C9013D771214635D00815A27 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		C9013D781214635D00815A27 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
-		C9013DD11215D04200815A27 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		C9013DD21215D04200815A27 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
+		C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRemoteChanging.h; sourceTree = "<group>"; };
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
 		C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryTableCell.m; path = Views/DOEntryTableCell.m; sourceTree = "<group>"; };
 		C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryTableCell.xib; sourceTree = "<group>"; };
@@ -440,7 +437,7 @@
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
-		C9FD266F1217077B00D9127D /* PDChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChanging.h; sourceTree = "<group>"; };
+		C9FD266F1217077B00D9127D /* PDLocalChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDLocalChanging.h; sourceTree = "<group>"; };
 		C9FD26C712170B1600D9127D /* PDChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChange.h; sourceTree = "<group>"; };
 		C9FD26C812170B1600D9127D /* PDChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChange.m; sourceTree = "<group>"; };
 		C9FD26D51217102800D9127D /* PDLocalChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDLocalChange.h; sourceTree = "<group>"; };
@@ -576,8 +573,6 @@
 				C9013D6C1214635100815A27 /* User.m */,
 				C9013D771214635D00815A27 /* Entry.h */,
 				C9013D781214635D00815A27 /* Entry.m */,
-				C9013DD11215D04200815A27 /* Device.h */,
-				C9013DD21215D04200815A27 /* Device.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -888,7 +883,7 @@
 				C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */,
 				C92B8C401215D1D60076F539 /* PDCredentials.h */,
 				C92B8C411215D1D60076F539 /* PDCredentials.m */,
-				C9FD266F1217077B00D9127D /* PDChanging.h */,
+				C9FD266F1217077B00D9127D /* PDLocalChanging.h */,
 				C9FD26C712170B1600D9127D /* PDChange.h */,
 				C9FD26C812170B1600D9127D /* PDChange.m */,
 				C9FD26D51217102800D9127D /* PDLocalChange.h */,
@@ -897,6 +892,7 @@
 				C9FD26E412171E9200D9127D /* PDChangeList.m */,
 				C9FD270312172CA800D9127D /* PDRemoteChange.h */,
 				C9FD270412172CA800D9127D /* PDRemoteChange.m */,
+				C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */,
 			);
 			path = Changes;
 			sourceTree = "<group>";
@@ -1270,7 +1266,6 @@
 				C9013D751214635100815A27 /* PDListEntry.m in Sources */,
 				C9013D761214635100815A27 /* User.m in Sources */,
 				C9013D791214635D00815A27 /* Entry.m in Sources */,
-				C9013DD31215D04200815A27 /* Device.m in Sources */,
 				C92B8C431215D1D60076F539 /* PDCredentials.m in Sources */,
 				C92B8C6B1215DCE30076F539 /* UIViewController+Additions.m in Sources */,
 				C92B8C731215E01B0076F539 /* PDViewController.m in Sources */,
@@ -1350,7 +1345,6 @@
 				C9013D701214635100815A27 /* PDListEntry.m in Sources */,
 				C9013D711214635100815A27 /* User.m in Sources */,
 				C9013D7A1214635D00815A27 /* Entry.m in Sources */,
-				C9013DD41215D04200815A27 /* Device.m in Sources */,
 				C92B8C421215D1D60076F539 /* PDCredentials.m in Sources */,
 				C92B8C6A1215DCE30076F539 /* UIViewController+Additions.m in Sources */,
 				C92B8C721215E01B0076F539 /* PDViewController.m in Sources */,

@@ -1,7 +1,6 @@
-#import "ObjectiveResource.h"
-#import "ConnectionManager.h"
+#import "../Changes/PDRemoteChanging.h"
 
-@interface List : NSObject
+@interface List : NSObject <PDRemoteChanging>
 
 @property (nonatomic, retain) NSString *listId;
 @property (nonatomic, retain) NSString *title;

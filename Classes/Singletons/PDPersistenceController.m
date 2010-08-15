@@ -395,7 +395,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	}
 }
 
-- (void)markChanged:(NSManagedObject <PDChanging>*)object
+- (void)markChanged:(NSManagedObject <PDLocalChanging>*)object
 {
 	[self.changeManager addChange:object changeType:PDChangeTypeUpdate];
 }

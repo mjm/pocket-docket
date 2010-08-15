@@ -1,4 +1,4 @@
-@protocol PDChanging <NSObject>
+@protocol PDLocalChanging <NSObject>
 
 @property (nonatomic, retain) NSString *remoteIdentifier;
 
