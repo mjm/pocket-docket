@@ -13,6 +13,7 @@ extern NSString *PDChangeTypeDelete;
 @interface PDChangeManager : NSObject
 {
 	BOOL attemptRemote;
+	SEL lastOperation;
 }
 
 @property (nonatomic, assign) id <PDChangeManagerDelegate> delegate;
@@ -31,6 +32,8 @@ extern NSString *PDChangeTypeDelete;
 
 - (void)refreshAndPublishChanges;
 - (void)saveChanges;
+
+- (void)retry;
 
 @end
 

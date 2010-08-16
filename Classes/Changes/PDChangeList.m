@@ -58,7 +58,15 @@
 - (NSArray *)sortedChanges
 {
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
-	NSArray *result = [self.changes sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	NSArray *result;
+	if ([self.changes respondsToSelector:@selector(sortedArrayUsingDescriptors:)])
+	{
+		result = [self.changes sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	}
+	else
+	{
+		result = [[self.changes allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	}
 	[sortDescriptor release];
 	
 	return result;
@@ -100,8 +108,10 @@
 		[self mergeChanges];
 	}
 	
+	NSLog(@"Processing changes");
 	for (PDChange *change in [self sortedChanges])
 	{
+		NSLog(@"Processing change: %@", change);
 		[change executeOnManagedObjectContext:context];
 	}
 	

@@ -5,6 +5,10 @@
 #import "../Changes/PDCredentials.h"
 #import "../Models/PDList.h"
 #import "../Models/PDListEntry.h"
+#import "../Models/Device.h"
+
+#import "ObjectiveResource.h"
+#import "ConnectionManager.h"
 
 
 NSString *PDCredentialsNeededNotification = @"PDCredentialsNeededNotification";
@@ -491,6 +495,25 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 #pragma mark -
 #pragma mark Change Manager Delegate Methods
 
+- (void)createRemoteDevice
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	
+	Device *device = [[[Device alloc] init] autorelease];
+	NSError *error = nil;
+	if ([device createRemoteWithResponse:&error])
+	{
+		[PDSettingsController sharedSettingsController].docketAnywhereDeviceId = device.deviceId;
+		[self.changeManager retry];
+	}
+	else
+	{
+		NSLog(@"Couldn't create a new device ID: %@, %@", error, [error userInfo]);
+	}
+	
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 - (PDCredentials *)credentialsForChangeManager:(PDChangeManager *)changeManager
 {
 	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
@@ -500,8 +523,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		return nil;
 	}
 	
-	NSString *password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
 	NSString *deviceId = [[PDSettingsController sharedSettingsController] docketAnywhereDeviceId];
+	if (!deviceId)
+	{
+		[[ConnectionManager sharedInstance] runJob:@selector(createRemoteDevice) onTarget:self];
+		return nil;
+	}
+	
+	NSString *password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
 	
 	return [PDCredentials credentialsWithUsername:username password:password deviceId:deviceId];
 }
@@ -512,6 +541,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (void)dealloc
 {
+	self.changeManager = nil;
 	[managedObjectContext release];
 	[managedObjectModel release];
 	[persistentStoreCoordinator release];

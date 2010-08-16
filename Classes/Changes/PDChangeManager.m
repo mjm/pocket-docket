@@ -180,10 +180,12 @@ NSString *PDChangeTypeDelete = @"delete";
 
 - (BOOL)doPublishChangesWithCredentials:(PDCredentials *)credentials
 {
+	NSLog(@"Attempting to publish");
+	
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	[self applyCredentials:credentials];
 	
-	PDChangeList *changeList = [[PDChangeList alloc] init];
+	PDChangeList *changeList = [[[PDChangeList alloc] init] autorelease];
 	NSError *error = nil;
 	NSArray *changes = [Change findAllRemoteWithResponse:&error];
 	if (changes)
@@ -203,6 +205,7 @@ NSString *PDChangeTypeDelete = @"delete";
 
 	for (Change *change in changes)
 	{
+		NSLog(@"Adding remote change: %@", change);
 		[changeList addRemoteChange:change];
 	}
 	
@@ -252,7 +255,6 @@ NSString *PDChangeTypeDelete = @"delete";
 	}
 	
 	[changeList processChangesOnManagedObjectContext:self.managedObjectContext];
-	[changeList release];
 	
 	[self clearCredentials];
 	
@@ -309,6 +311,8 @@ NSString *PDChangeTypeDelete = @"delete";
 
 - (void)commitPendingChanges
 {
+	lastOperation = _cmd;
+	
 	PDCredentials *credentials = [self.delegate credentialsForChangeManager:self];
 	[[ConnectionManager sharedInstance] runJob:@selector(doCommitChangesWithCredentials:)
 									  onTarget:self
@@ -323,6 +327,8 @@ NSString *PDChangeTypeDelete = @"delete";
 
 - (void)refreshAndPublishChanges
 {
+	lastOperation = _cmd;
+	
 	PDCredentials *credentials = [self.delegate credentialsForChangeManager:self];
 	if (credentials)
 	{
@@ -340,6 +346,14 @@ NSString *PDChangeTypeDelete = @"delete";
 	[changes setObject:self.unpublishedDeletes forKey:PDChangeTypeDelete];
 	
 	[NSKeyedArchiver archiveRootObject:changes toFile:self.path];
+}
+
+- (void)retry
+{
+	if (lastOperation)
+	{
+		[self performSelector:lastOperation];
+	}
 }
 
 - (void)dealloc

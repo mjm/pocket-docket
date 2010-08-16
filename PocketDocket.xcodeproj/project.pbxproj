@@ -213,6 +213,8 @@
 		C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */; };
 		C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
 		C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
+		C9FD28411218D52B00D9127D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD28401218D52B00D9127D /* Device.m */; };
+		C9FD28421218D52B00D9127D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD28401218D52B00D9127D /* Device.m */; };
 		C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD2AA91186763B00ED7954 /* IconPhone.png */; };
 		C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
 		C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
@@ -454,6 +456,8 @@
 		C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeviceMethods.m"; sourceTree = "<group>"; };
 		C9FD279812188D0D00D9127D /* PDDeviceResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDeviceResource.h; sourceTree = "<group>"; };
 		C9FD279912188D0D00D9127D /* PDDeviceResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDeviceResource.m; sourceTree = "<group>"; };
+		C9FD283F1218D52B00D9127D /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		C9FD28401218D52B00D9127D /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		C9FD2AA91186763B00ED7954 /* IconPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPhone.png; sourceTree = "<group>"; };
 		C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPendingChange.h; sourceTree = "<group>"; };
 		C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPendingChange.m; sourceTree = "<group>"; };
@@ -575,6 +579,8 @@
 			children = (
 				C9013D621214635100815A27 /* Change.h */,
 				C9013D631214635100815A27 /* Change.m */,
+				C9FD283F1218D52B00D9127D /* Device.h */,
+				C9FD28401218D52B00D9127D /* Device.m */,
 				C9013D641214635100815A27 /* List.h */,
 				C9013D651214635100815A27 /* List.m */,
 				C9013D6B1214635100815A27 /* User.h */,
@@ -1303,6 +1309,7 @@
 				C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */,
 				C9FD27931218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
 				C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */,
+				C9FD28411218D52B00D9127D /* Device.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1384,6 +1391,7 @@
 				C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */,
 				C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
 				C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */,
+				C9FD28421218D52B00D9127D /* Device.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

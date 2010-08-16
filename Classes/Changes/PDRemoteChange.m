@@ -83,6 +83,7 @@
 
 - (void)executeOnManagedObjectContext:(NSManagedObjectContext *)context
 {
+	NSLog(@"Executing remote change");
 	Class <PDRemoteChanging> resourceClass = [self.change resourceClass];
 	if (!resourceClass)
 	{
