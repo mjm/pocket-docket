@@ -26,6 +26,8 @@
 		C9013D791214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
 		C9013D7A1214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
 		C915E64F1166F0F0004A9597 /* PDTextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C915E64E1166F0F0004A9597 /* PDTextViewCell.m */; };
+		C91C2477121ABDA600FBA1F0 /* PDSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */; };
+		C91C2478121ABDA600FBA1F0 /* PDSyncController.m in Sources */ = {isa = PBXBuildFile; fileRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */; };
 		C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */; };
 		C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */; };
@@ -261,6 +263,8 @@
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
 		C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRemoteChanging.h; sourceTree = "<group>"; };
+		C91C2475121ABDA600FBA1F0 /* PDSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSyncController.h; sourceTree = "<group>"; };
+		C91C2476121ABDA600FBA1F0 /* PDSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSyncController.m; sourceTree = "<group>"; };
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
 		C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryTableCell.m; path = Views/DOEntryTableCell.m; sourceTree = "<group>"; };
 		C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryTableCell.xib; sourceTree = "<group>"; };
@@ -504,6 +508,7 @@
 				C9DB204311D8085A000A293A /* AppDelegates */,
 				C929542F117A971F0052A674 /* Categories */,
 				C94C56E31156BEF400791FAC /* Models */,
+				C91C2473121ABD3700FBA1F0 /* Syncing */,
 				C9C1074C120D8C7500327A0D /* Changes */,
 				C990F97B11DE9ED000BA1579 /* Element Processing */,
 				C94C564011569C5400791FAC /* Views */,
@@ -600,6 +605,15 @@
 				C9013D6A1214635100815A27 /* PDListEntry.m */,
 			);
 			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
+		C91C2473121ABD3700FBA1F0 /* Syncing */ = {
+			isa = PBXGroup;
+			children = (
+				C91C2475121ABDA600FBA1F0 /* PDSyncController.h */,
+				C91C2476121ABDA600FBA1F0 /* PDSyncController.m */,
+			);
+			path = Syncing;
 			sourceTree = "<group>";
 		};
 		C929542F117A971F0052A674 /* Categories */ = {
@@ -1310,6 +1324,7 @@
 				C9FD27931218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
 				C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28411218D52B00D9127D /* Device.m in Sources */,
+				C91C2477121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1392,6 +1407,7 @@
 				C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
 				C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28421218D52B00D9127D /* Device.m in Sources */,
+				C91C2478121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
