@@ -8,10 +8,14 @@
 
 @interface NSManagedObject (SyncingAdditions)
 - (NSString *)remoteIdentifier;
+- (NSNumber *)moved;
+- (NSDate *)updatedAt;
 @end
 
 @interface NSObject (SyncingAdditions)
 - (NSString *)entityName;
+- (NSNumber *)moved;
+- (NSDate *)updatedAt;
 @end
 
 
@@ -159,7 +163,7 @@
 		if ([results count] > 0)
 		{
 			// We found a deleted copy, so this item was deleted locally
-			if (![self.delegate syncController:self deleteRemoteCopyOfObject:remoteObject])
+			if (![self.delegate syncController:self deleteRemoteObject:remoteObject])
 			{
 				NSLog(@"Sync controller delegate failed to delete remote copy of object: %@", remoteObject);
 			}
@@ -192,7 +196,7 @@
 	{
 		// If it has a remote ID, than it was already created on the remote side at some point.
 		// In that case, it's gone because the remote side deleted it.
-		result = [self.delegate syncController:self deleteLocalCopyOfObject:localObject];
+		result = [self.delegate syncController:self deleteLocalObject:localObject];
 		if (!result)
 		{
 			NSLog(@"Sync controller delegate failed to delete local copy of object: %@", localObject);
@@ -215,7 +219,23 @@
 - (void)reconcileDifferencesBetweenLocalObject:(NSManagedObject *)localObject
 							   andRemoteObject:(NSObject *)remoteObject
 {
-	NSLog(@"TODO reconcile the differences");
+	BOOL result = NO;
+	
+	switch ([[localObject updatedAt] compare:[remoteObject updatedAt]])
+	{
+		case NSOrderedSame:
+		case NSOrderedAscending:
+			result = [self.delegate syncController:self updateLocalObject:localObject withRemoteObject:remoteObject];
+			break;
+		case NSOrderedDescending:
+			result = [self.delegate syncController:self updateRemoteObject:remoteObject withLocalObject:localObject];
+			break;
+	}
+	
+	if (!result)
+	{
+		NSLog(@"Sync controller delegate failed to update objects: %@, %@", localObject, remoteObject);
+	}
 }
 
 
@@ -276,6 +296,17 @@
 		if (localMoved && remoteMoved)
 		{
 			// TODO handle both changing places
+			if ([localObject moved])
+			{
+				// TODO reconcile changes
+				[results addObject:localObject];
+			}
+			
+			if ([remoteObject moved])
+			{
+				// TODO reconcile changes
+				// TODO add local object
+			}
 			continue;
 		}
 		

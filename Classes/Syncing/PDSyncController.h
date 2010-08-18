@@ -24,7 +24,16 @@
 - (NSManagedObject *)syncController:(PDSyncController *)syncController
 	  createLocalCopyOfRemoteObject:(NSObject *)remoteObject;
 
-- (BOOL)syncController:(PDSyncController *)syncController deleteRemoteCopyOfObject:(NSObject *)remoteObject;
-- (BOOL)syncController:(PDSyncController *)syncController deleteLocalCopyOfObject:(NSManagedObject *)localObject;
+- (BOOL)syncController:(PDSyncController *)syncController
+	deleteRemoteObject:(NSObject *)remoteObject;
+- (BOOL)syncController:(PDSyncController *)syncController
+	 deleteLocalObject:(NSManagedObject *)localObject;
+
+- (BOOL)syncController:(PDSyncController *)syncController
+	 updateLocalObject:(NSManagedObject *)localObject
+	  withRemoteObject:(NSObject *)remoteObject;
+- (BOOL)syncController:(PDSyncController *)syncController
+	updateRemoteObject:(NSObject *)remoteObject
+	   withLocalObject:(NSManagedObject *)localObject;
 
 @end
