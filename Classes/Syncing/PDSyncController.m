@@ -8,7 +8,8 @@
 
 @interface NSManagedObject (SyncingAdditions)
 - (NSString *)remoteIdentifier;
-- (NSNumber *)moved;
+- (BOOL)movedSinceSyncValue;
+- (void)setMovedSinceSyncValue:(BOOL)value;
 - (NSDate *)updatedAt;
 @end
 
@@ -31,6 +32,9 @@
 - (NSManagedObject *)handleRemotelyCreatedOrLocallyDeletedObject:(NSObject *)remoteObject;
 - (BOOL)handleLocallyCreatedOrRemotelyDeletedObject:(NSManagedObject *)localObject;
 - (void)reconcileDifferencesBetweenLocalObject:(NSManagedObject *)localObject andRemoteObject:(NSObject *)remoteObject;
+
+- (NSObject *)remoteObjectInArray:(NSArray *)objects matchingLocalObject:(NSManagedObject *)localObject;
+- (NSManagedObject *)localObjectMatchingRemoteObject:(NSObject *)remoteObject;
 
 @end
 
@@ -238,6 +242,53 @@
 	}
 }
 
+- (NSObject *)remoteObjectInArray:(NSArray *)objects matchingLocalObject:(NSManagedObject *)localObject
+{
+	NSString *remoteId = [localObject remoteIdentifier];
+	
+	for (NSObject *object in objects)
+	{
+		if ([[object getRemoteId] isEqualToString:remoteId])
+		{
+			return object;
+		}
+	}
+	
+	NSAssert1(NO, @"Couldn't find remote object with ID %@. This shouldn't happen.", remoteId);
+	return nil;
+}
+
+- (NSManagedObject *)localObjectMatchingRemoteObject:(NSObject *)remoteObject
+{
+	NSString *remoteId = [remoteObject getRemoteId];
+	NSString *entityName = [remoteObject entityName];
+	
+	NSEntityDescription *entity = [[self.managedObjectContext.managedObjectModel entitiesByName] objectForKey:entityName];
+	if (!entity)
+	{
+		return nil;
+	}
+	
+	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	
+	[request setEntity:entity];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"remoteIdentifier = %@", remoteId]];
+	[request setFetchLimit:1];
+	
+	NSError *error = nil;
+	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+	if (results)
+	{
+		NSAssert1([results count] > 0, @"Couldn't find local object with remote ID %@. This shouldn't happen.", remoteId);
+		return [results objectAtIndex:0];
+	}
+	else
+	{
+		NSLog(@"Couldn't retrieve local object with remote ID %@. Error: %@, %@", remoteId, error, [error userInfo]);
+		return nil;
+	}
+}
+
 
 #pragma mark -
 #pragma mark Syncing
@@ -295,17 +346,27 @@
 		
 		if (localMoved && remoteMoved)
 		{
-			if ([localObject moved])
+			if ([localObject movedSinceSyncValue])
 			{
-				// TODO reconcile changes
+				NSObject *myRemoteObject = [self remoteObjectInArray:remoteObjects matchingLocalObject:localObject];
+				// TODO mark the move on the remote side
+				[localObject setMovedSinceSyncValue:NO];
+				[self reconcileDifferencesBetweenLocalObject:localObject andRemoteObject:myRemoteObject];
 				[results addObject:localObject];
 			}
 			
-			if ([remoteObject moved])
+			localObject = [localEnum nextObject];
+			
+			if ([[remoteObject moved] boolValue])
 			{
-				// TODO reconcile changes
-				// TODO add local object
+				// TODO mark remotely that this device got the move
+				NSManagedObject *myLocalObject = [self localObjectMatchingRemoteObject:remoteObject];
+				[self reconcileDifferencesBetweenLocalObject:myLocalObject andRemoteObject:remoteObject];
+				[results addObject:myLocalObject];
 			}
+			
+			remoteObject = [remoteEnum nextObject];
+			
 			continue;
 		}
 		

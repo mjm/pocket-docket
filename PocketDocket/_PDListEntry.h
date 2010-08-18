@@ -14,6 +14,7 @@
 
 
 
+
 @interface PDListEntryID : NSManagedObjectID {}
 @end
 
@@ -28,6 +29,16 @@
 @property (nonatomic, retain) NSString *text;
 
 //- (BOOL)validateText:(id*)value_ error:(NSError**)error_;
+
+
+
+@property (nonatomic, retain) NSNumber *movedSinceSync;
+
+@property BOOL movedSinceSyncValue;
+- (BOOL)movedSinceSyncValue;
+- (void)setMovedSinceSyncValue:(BOOL)value_;
+
+//- (BOOL)validateMovedSinceSync:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -47,15 +58,15 @@
 
 
 
-@property (nonatomic, retain) NSDate *updatedAt;
-
-//- (BOOL)validateUpdatedAt:(id*)value_ error:(NSError**)error_;
-
-
-
 @property (nonatomic, retain) NSString *comment;
 
 //- (BOOL)validateComment:(id*)value_ error:(NSError**)error_;
+
+
+
+@property (nonatomic, retain) NSDate *updatedAt;
+
+//- (BOOL)validateUpdatedAt:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -108,6 +119,13 @@
 - (void)setPrimitiveText:(NSString*)value;
 
 
+- (NSNumber*)primitiveMovedSinceSync;
+- (void)setPrimitiveMovedSinceSync:(NSNumber*)value;
+
+- (BOOL)primitiveMovedSinceSyncValue;
+- (void)setPrimitiveMovedSinceSyncValue:(BOOL)value_;
+
+
 - (NSString*)primitiveRemoteIdentifier;
 - (void)setPrimitiveRemoteIdentifier:(NSString*)value;
 
@@ -119,12 +137,12 @@
 - (void)setPrimitiveOrderValue:(int)value_;
 
 
-- (NSDate*)primitiveUpdatedAt;
-- (void)setPrimitiveUpdatedAt:(NSDate*)value;
-
-
 - (NSString*)primitiveComment;
 - (void)setPrimitiveComment:(NSString*)value;
+
+
+- (NSDate*)primitiveUpdatedAt;
+- (void)setPrimitiveUpdatedAt:(NSDate*)value;
 
 
 - (NSNumber*)primitiveChecked;

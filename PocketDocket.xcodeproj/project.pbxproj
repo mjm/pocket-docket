@@ -338,6 +338,14 @@
 		C99BCE15121C805D00A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
 		C99BCE16121C805D00A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
 		C99BCE17121C805D00A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
+		C99BCEDF121C9D9600A5A582 /* PDList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDList.m; sourceTree = "<group>"; };
+		C99BCEE0121C9D9600A5A582 /* PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDListEntry.m; sourceTree = "<group>"; };
+		C99BCEE1121C9D9600A5A582 /* PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDList.h; sourceTree = "<group>"; };
+		C99BCEE2121C9D9600A5A582 /* PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDListEntry.h; sourceTree = "<group>"; };
+		C99BCEE3121C9D9600A5A582 /* _PDList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDList.m; sourceTree = "<group>"; };
+		C99BCEE4121C9D9600A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
+		C99BCEE5121C9D9600A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
+		C99BCEE6121C9D9700A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
 		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
@@ -511,7 +519,8 @@
 				C9DB213211D97E2D000A293A /* Singletons */,
 				C9DB204311D8085A000A293A /* AppDelegates */,
 				C929542F117A971F0052A674 /* Categories */,
-				C94C56E31156BEF400791FAC /* Models */,
+				C99BCDF7121C7DE300A5A582 /* PocketDocket */,
+				C94C56E31156BEF400791FAC /* Resources */,
 				C91C2473121ABD3700FBA1F0 /* Syncing */,
 				C9C1074C120D8C7500327A0D /* Changes */,
 				C990F97B11DE9ED000BA1579 /* Element Processing */,
@@ -565,7 +574,7 @@
 				8D1107310486CEB800E47090 /* PocketDocket-Info.plist */,
 				C9BD10FC1172AD83005E350E /* Docket-Info.plist */,
 				C92E4A5D1181159B00DF646A /* Entitlements.plist */,
-				C99BCDF7121C7DE300A5A582 /* PocketDocket */,
+				C99BCEC6121C9CE900A5A582 /* PocketDocket */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -582,23 +591,6 @@
 				C9FE8E111210952800DE376B /* Security.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C9013DA21214696F00815A27 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				C9013D621214635100815A27 /* Change.h */,
-				C9013D631214635100815A27 /* Change.m */,
-				C9FD283F1218D52B00D9127D /* Device.h */,
-				C9FD28401218D52B00D9127D /* Device.m */,
-				C9013D641214635100815A27 /* List.h */,
-				C9013D651214635100815A27 /* List.m */,
-				C9013D6B1214635100815A27 /* User.h */,
-				C9013D6C1214635100815A27 /* User.m */,
-				C9013D771214635D00815A27 /* Entry.h */,
-				C9013D781214635D00815A27 /* Entry.m */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 		C91C2473121ABD3700FBA1F0 /* Syncing */ = {
@@ -696,11 +688,21 @@
 			path = Graphics;
 			sourceTree = "<group>";
 		};
-		C94C56E31156BEF400791FAC /* Models */ = {
+		C94C56E31156BEF400791FAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C9013DA21214696F00815A27 /* Resources */,
+				C9013D621214635100815A27 /* Change.h */,
+				C9013D631214635100815A27 /* Change.m */,
+				C9FD283F1218D52B00D9127D /* Device.h */,
+				C9FD28401218D52B00D9127D /* Device.m */,
+				C9013D641214635100815A27 /* List.h */,
+				C9013D651214635100815A27 /* List.m */,
+				C9013D6B1214635100815A27 /* User.h */,
+				C9013D6C1214635100815A27 /* User.m */,
+				C9013D771214635D00815A27 /* Entry.h */,
+				C9013D781214635D00815A27 /* Entry.m */,
 			);
+			name = Resources;
 			path = Models;
 			sourceTree = "<group>";
 		};
@@ -763,6 +765,22 @@
 				C99BCE15121C805D00A5A582 /* _PDListEntry.m */,
 				C99BCE16121C805D00A5A582 /* _PDList.h */,
 				C99BCE17121C805D00A5A582 /* _PDListEntry.h */,
+			);
+			name = PocketDocket;
+			path = ../PocketDocket;
+			sourceTree = "<group>";
+		};
+		C99BCEC6121C9CE900A5A582 /* PocketDocket */ = {
+			isa = PBXGroup;
+			children = (
+				C99BCEDF121C9D9600A5A582 /* PDList.m */,
+				C99BCEE0121C9D9600A5A582 /* PDListEntry.m */,
+				C99BCEE1121C9D9600A5A582 /* PDList.h */,
+				C99BCEE2121C9D9600A5A582 /* PDListEntry.h */,
+				C99BCEE3121C9D9600A5A582 /* _PDList.m */,
+				C99BCEE4121C9D9600A5A582 /* _PDListEntry.m */,
+				C99BCEE5121C9D9600A5A582 /* _PDList.h */,
+				C99BCEE6121C9D9700A5A582 /* _PDListEntry.h */,
 			);
 			path = PocketDocket;
 			sourceTree = "<group>";

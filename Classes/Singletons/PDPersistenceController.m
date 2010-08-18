@@ -328,6 +328,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 			if ([each isEqual:list])
 			{
 				each.orderValue = toRow;
+				each.movedSinceSyncValue = YES;
 			}
 			else
 			{
@@ -374,6 +375,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 			if ([each isEqual:entry])
 			{
 				each.orderValue = toRow;
+				each.movedSinceSyncValue = YES;
 			}
 			else
 			{
