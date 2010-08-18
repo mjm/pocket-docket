@@ -1,21 +1,22 @@
 #import "PDList.h"
+#import "List.h"
 
 @implementation PDList
 
 @dynamic completedEntries;
 
-//- (id)toResource
-//{
-//	List *list = [[List alloc] init];
-//	list.title = self.title;
-//	list.position = self.order;
-//	list.listId = self.remoteIdentifier;
-//	return [list autorelease];
-//}
+- (id)toResource
+{
+	List *list = [[List alloc] init];
+	list.title = self.title;
+	list.position = self.order;
+	list.listId = self.remoteIdentifier;
+	return [list autorelease];
+}
 
 - (NSString *)plainTextString {
 	NSManagedObjectModel *model = self.managedObjectContext.persistentStoreCoordinator.managedObjectModel;
-	NSDictionary *vars = [NSDictionary dictionaryWithObject:self forKey:@"LIST"];
+	NSDictionary *vars = [NSDictionary dictionaryWithObject:self forKey:@"list"];
 	NSFetchRequest *request = [model fetchRequestFromTemplateWithName:@"entriesForList"
 												substitutionVariables:vars];
 	

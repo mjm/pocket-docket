@@ -1,6 +1,20 @@
 #import "PDListEntry.h"
+#import "PDList.h"
+#import "Entry.h"
 
 @implementation PDListEntry
+
+- (id)toResource
+{
+	Entry *entry = [[Entry alloc] init];
+	entry.entryId = self.remoteIdentifier;
+	entry.listId = self.list.remoteIdentifier;
+	entry.text = self.text;
+	entry.comment = self.comment;
+	entry.checked = self.checked;
+	entry.position = self.order;
+	return [entry autorelease];
+}
 
 - (NSString *)plainTextString {	
 	NSString *check = [self.checked boolValue] ? @"X" : @"_";

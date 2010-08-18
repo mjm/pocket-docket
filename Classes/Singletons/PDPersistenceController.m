@@ -168,7 +168,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (NSFetchedResultsController *)entriesFetchedResultsControllerForList:(PDList *)list
 {
-	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"LIST"];
+	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"list"];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesForList"
 																  substitutionVariables:vars];
 	
@@ -188,28 +188,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (PDList *)createList
 {
-	PDList *list = [NSEntityDescription insertNewObjectForEntityForName:@"List"
-												 inManagedObjectContext:self.managedObjectContext];
-	list.order = [NSNumber numberWithInteger:0];
+	PDList *list = [PDList insertInManagedObjectContext:self.managedObjectContext];
+	list.orderValue = 0;
 	[self.changeManager addChange:list changeType:PDChangeTypeCreate];
 	
 	// Now update the order of all the other lists.
-	NSFetchRequest *request = [self.managedObjectModel fetchRequestTemplateForName:@"allLists"];
-	NSError *error;
-	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+	NSArray *results = [PDList fetchAllLists:self.managedObjectContext];
 	if (results)
 	{
 		for (PDList *each in results)
 		{
 			if (![each isEqual:list])
 			{
-				each.order = [NSNumber numberWithInteger:[each.order integerValue] + 1];
+				each.orderValue = each.orderValue + 1;
 			}
 		}
-	}
-	else
-	{
-		NSLog(@"Error when retrieving lists to increment order, %@, %@", error, [error userInfo]);
 	}
 	
 	return list;
@@ -217,7 +210,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (PDListEntry *)createEntry:(NSString *)text inList:(PDList *)list
 {
-	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"LIST"];
+	NSDictionary *vars = [NSDictionary dictionaryWithObject:list forKey:@"list"];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesForList"
 																  substitutionVariables:vars];
 	
@@ -232,18 +225,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
 	if (results)
 	{
-		PDListEntry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"ListEntry"
-														   inManagedObjectContext:self.managedObjectContext];
+		PDListEntry *entry = [PDListEntry insertInManagedObjectContext:self.managedObjectContext];
 		entry.list = list;
 		entry.text = text;
 		
 		if ([results count] == 0)
 		{
-			entry.order = [NSNumber numberWithInteger:0];
+			entry.orderValue = 0;
 		}
 		else
 		{
-			entry.order = [NSNumber numberWithInteger:[[[results objectAtIndex:0] order] integerValue] + 1];
+			entry.orderValue = [[results objectAtIndex:0] orderValue] + 1;
 		}
 		
 		[self.changeManager addChange:entry changeType:PDChangeTypeCreate];
@@ -317,8 +309,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	NSUInteger maxRow = MAX(fromRow, toRow);
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
-						  [NSNumber numberWithInteger:minRow], @"MIN_ROW",
-						  [NSNumber numberWithInteger:maxRow], @"MAX_ROW", nil];
+						  [NSNumber numberWithInteger:minRow], @"minRow",
+						  [NSNumber numberWithInteger:maxRow], @"maxRow", nil];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"listsBetween"
 																  substitutionVariables:vars];
 	
@@ -335,11 +327,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		{
 			if ([each isEqual:list])
 			{
-				each.order = [NSNumber numberWithInteger:toRow];
+				each.orderValue = toRow;
 			}
 			else
 			{
-				each.order = [NSNumber numberWithInteger:index];
+				each.orderValue = index;
 				index++;
 			}
 			[self.changeManager addChange:each changeType:PDChangeTypeUpdate];
@@ -362,9 +354,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	NSUInteger maxRow = MAX(fromRow, toRow);
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
-						  [NSNumber numberWithInteger:minRow], @"MIN_ROW",
-						  [NSNumber numberWithInteger:maxRow], @"MAX_ROW",
-						  entry.list, @"LIST", nil];
+						  [NSNumber numberWithInteger:minRow], @"minRow",
+						  [NSNumber numberWithInteger:maxRow], @"maxRow",
+						  entry.list, @"list", nil];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesBetween"
 																  substitutionVariables:vars];
 	
@@ -381,11 +373,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		{
 			if ([each isEqual:entry])
 			{
-				each.order = [NSNumber numberWithInteger:toRow];
+				each.orderValue = toRow;
 			}
 			else
 			{
-				each.order = [NSNumber numberWithInteger:index];
+				each.orderValue = index;
 				index++;
 			}
 			
@@ -415,7 +407,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	[self.changeManager addChange:list changeType:PDChangeTypeDelete];
 	[self.managedObjectContext deleteObject:list];
 	
-	NSDictionary *vars = [NSDictionary dictionaryWithObject:position forKey:@"POSITION"];
+	NSDictionary *vars = [NSDictionary dictionaryWithObject:position forKey:@"position"];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"listsAbove"
 																  substitutionVariables:vars];
 	NSError *error;
@@ -424,7 +416,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	{
 		for (PDList *each in results)
 		{
-			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
+			each.orderValue = each.orderValue - 1;
 		}
 	}
 	else
@@ -443,7 +435,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	[self.managedObjectContext deleteObject:entry];
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
-						  position, @"POSITION", list, @"LIST", nil];
+						  position, @"position", list, @"list", nil];
 	NSFetchRequest *request = [self.managedObjectModel fetchRequestFromTemplateWithName:@"entriesAbove"
 																  substitutionVariables:vars];
 	NSError *error;
@@ -452,7 +444,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	{
 		for (PDListEntry *each in results)
 		{
-			each.order = [NSNumber numberWithInteger:[each.order integerValue] - 1];
+			each.orderValue = each.orderValue - 1;
 		}
 	}
 	else
