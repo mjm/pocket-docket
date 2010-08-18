@@ -5,7 +5,7 @@
 #import "PDLoginViewController.h"
 #import "../Singletons/PDPersistenceController.h"
 #import "../Singletons/PDSettingsController.h"
-#import "../Models/PDList.h"
+#import "PDList.h"
 #import "../Models/Change.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"

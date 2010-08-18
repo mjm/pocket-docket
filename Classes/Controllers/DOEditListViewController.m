@@ -1,6 +1,6 @@
 #import "DOEditListViewController.h"
 
-#import "../Models/PDList.h"
+#import "PDList.h"
 #import "../Views/PDTextFieldCell.h"
 
 @implementation DOEditListViewController

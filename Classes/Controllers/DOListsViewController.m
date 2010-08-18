@@ -6,7 +6,7 @@
 #import "../Singletons/PDSettingsController.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
-#import "../Models/PDList.h"
+#import "PDList.h"
 
 @interface DOListsViewController (PrivateMethods)
 

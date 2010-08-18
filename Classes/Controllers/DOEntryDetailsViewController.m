@@ -1,7 +1,7 @@
 #import "DOEntryDetailsViewController.h"
 
 #import "../PDKeyboardObserver.h"
-#import "../Models/PDListEntry.h"
+#import "PDListEntry.h"
 
 @implementation DOEntryDetailsViewController
 

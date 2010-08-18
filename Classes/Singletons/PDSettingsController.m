@@ -3,7 +3,7 @@
 #import "SynthesizeSingleton.h"
 #import "PDPersistenceController.h"
 #import "PDKeychainManager.h"
-#import "../Models/PDList.h"
+#import "PDList.h"
 #import "../Categories/NSManagedObject+Additions.h"
 #import "../Categories/NSManagedObjectContext+Additions.h"
 

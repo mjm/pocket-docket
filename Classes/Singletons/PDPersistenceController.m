@@ -3,8 +3,8 @@
 #import "SynthesizeSingleton.h"
 #import "PDSettingsController.h"
 #import "../Changes/PDCredentials.h"
-#import "../Models/PDList.h"
-#import "../Models/PDListEntry.h"
+#import "PDList.h"
+#import "PDListEntry.h"
 #import "../Models/Device.h"
 
 #import "ObjectiveResource.h"

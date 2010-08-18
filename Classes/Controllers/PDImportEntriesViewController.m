@@ -3,8 +3,8 @@
 #import "../PDKeyboardObserver.h"
 #import "../PDListParser.h"
 #import "../Singletons/PDPersistenceController.h"
-#import "../Models/PDListEntry.h"
-#import "../Models/PDList.h"
+#import "PDListEntry.h"
+#import "PDList.h"
 
 
 @implementation PDImportEntriesViewController

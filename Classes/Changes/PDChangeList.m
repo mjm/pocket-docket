@@ -59,11 +59,15 @@
 {
 	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:YES];
 	NSArray *result;
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
 	if ([self.changes respondsToSelector:@selector(sortedArrayUsingDescriptors:)])
 	{
 		result = [self.changes sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 	}
 	else
+#endif
+#endif
 	{
 		result = [[self.changes allObjects] sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
 	}

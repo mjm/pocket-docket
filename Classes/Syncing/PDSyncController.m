@@ -295,7 +295,6 @@
 		
 		if (localMoved && remoteMoved)
 		{
-			// TODO handle both changing places
 			if ([localObject moved])
 			{
 				// TODO reconcile changes

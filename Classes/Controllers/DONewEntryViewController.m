@@ -1,6 +1,6 @@
 #import "DONewEntryViewController.h"
 
-#import "../Models/PDListEntry.h"
+#import "PDListEntry.h"
 #import "../Views/PDTextFieldCell.h"
 
 @implementation DONewEntryViewController

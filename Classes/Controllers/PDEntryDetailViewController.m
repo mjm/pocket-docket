@@ -1,6 +1,6 @@
 #import "PDEntryDetailViewController.h"
 
-#import "../Models/PDListEntry.h"
+#import "PDListEntry.h"
 #import "../Views/PDTextFieldCell.h"
 #import "../Views/PDTextViewCell.h"
 #import "PDCommentViewController.h"
