@@ -1,6 +1,22 @@
 #import "PDSyncController.h"
 
 #import "ObjectiveResource.h"
+#import "../Categories/NSManagedObjectContext+Additions.h"
+
+
+#pragma mark Categories
+
+@interface NSManagedObject (SyncingAdditions)
+- (NSString *)remoteIdentifier;
+@end
+
+@interface NSObject (SyncingAdditions)
+- (NSString *)entityName;
+@end
+
+
+#pragma mark -
+#pragma mark Private Methods
 
 @interface PDSyncController ()
 
@@ -15,9 +31,11 @@
 @end
 
 
+#pragma mark -
+
 @implementation PDSyncController
 
-#pragma mark -
+
 #pragma mark Creating a Sync Controller
 
 + (PDSyncController *)syncControllerWithManagedObjectContext:(NSManagedObjectContext *)context
@@ -113,6 +131,91 @@
 	// Only keep items present in both sets.
 	[updatedIds intersectSet:remoteIds];
 	return updatedIds;
+}
+
+- (NSManagedObject *)handleRemotelyCreatedOrLocallyDeletedObject:(NSObject *)remoteObject
+{
+	// Need to determine why it's on the remote side and not the local side (create vs. delete)
+	NSManagedObjectModel *mom = self.managedObjectContext.managedObjectModel;
+	NSString *entityName = [remoteObject entityName];
+	
+	NSEntityDescription *entity = [[mom entitiesByName] objectForKey:entityName];
+	if (!entity)
+	{
+		NSLog(@"Couldn't load remote object entity with name: %@", entityName);
+		return nil;
+	}
+	
+	NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+	[request setEntity:entity];
+	[request setFetchLimit:1];
+	[request setPredicate:[NSPredicate predicateWithFormat:@"remoteIdentifier = %@ AND deletedAt != nil", [remoteObject getRemoteId]]];
+	
+	NSError *error = nil;
+	NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+	
+	if (results)
+	{
+		if ([results count] > 0)
+		{
+			// We found a deleted copy, so this item was deleted locally
+			if (![self.delegate syncController:self deleteRemoteCopyOfObject:remoteObject])
+			{
+				NSLog(@"Sync controller delegate failed to delete remote copy of object: %@", remoteObject);
+			}
+			return nil;
+		}
+		else
+		{
+			// No deleted copy, so this item was created remotely
+			NSManagedObject *created = [self.delegate syncController:self createLocalCopyOfRemoteObject:remoteObject];
+			if (!created)
+			{
+				NSLog(@"Sync controller delegate failed to create local copy of object: %@", remoteObject);
+			}
+			return created;
+		}
+	}
+	else
+	{
+		NSLog(@"Couldn't check if remote object with ID %@ has been deleted: %@, %@", [remoteObject getRemoteId], error, [error userInfo]);
+		return nil;
+	}
+}
+
+- (BOOL)handleLocallyCreatedOrRemotelyDeletedObject:(NSManagedObject *)localObject
+{
+	NSString *remoteId = [localObject remoteIdentifier];
+	BOOL result;
+	
+	if (remoteId)
+	{
+		// If it has a remote ID, than it was already created on the remote side at some point.
+		// In that case, it's gone because the remote side deleted it.
+		result = [self.delegate syncController:self deleteLocalCopyOfObject:localObject];
+		if (!result)
+		{
+			NSLog(@"Sync controller delegate failed to delete local copy of object: %@", localObject);
+		}
+	}
+	else
+	{
+		// If it has no remote ID, then it is not present on the remote side because it hasn't been
+		// created there.
+		result = [self.delegate syncController:self createRemoteCopyOfLocalObject:localObject];
+		if (!result)
+		{
+			NSLog(@"Sync controller delegate failed to create remote copy of object: %@", localObject);
+		}
+	}
+	
+	return result;
+}
+
+- (void)reconcileDifferencesBetweenLocalObject:(NSManagedObject *)localObject
+							   andRemoteObject:(NSObject *)remoteObject
+{
+	NSLog(@"TODO reconcile the differences");
 }
 
 

@@ -20,4 +20,11 @@
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController;
 - (NSArray *)remoteInvocationsForSyncController:(PDSyncController *)syncController;
 
+- (BOOL)syncController:(PDSyncController *)syncController createRemoteCopyOfLocalObject:(NSManagedObject *)localObject;
+- (NSManagedObject *)syncController:(PDSyncController *)syncController
+	  createLocalCopyOfRemoteObject:(NSObject *)remoteObject;
+
+- (BOOL)syncController:(PDSyncController *)syncController deleteRemoteCopyOfObject:(NSObject *)remoteObject;
+- (BOOL)syncController:(PDSyncController *)syncController deleteLocalCopyOfObject:(NSManagedObject *)localObject;
+
 @end
