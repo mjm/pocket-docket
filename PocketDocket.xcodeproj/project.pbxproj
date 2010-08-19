@@ -90,6 +90,8 @@
 		C99BCE1D121C81CF00A5A582 /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE11121C805C00A5A582 /* PDListEntry.m */; };
 		C99BCF1B121CCF5500A5A582 /* PDSyncDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */; };
 		C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */; };
+		C99BCF7C121DC1B800A5A582 /* PDResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */; };
+		C99BCF7D121DC1B800A5A582 /* PDResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */; };
 		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
 		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
 		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
@@ -350,6 +352,8 @@
 		C99BCF47121CD5BD00A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
 		C99BCF48121CD5BE00A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
 		C99BCF49121CD5BE00A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
+		C99BCF7A121DC1B800A5A582 /* PDResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDResource.h; sourceTree = "<group>"; };
+		C99BCF7B121DC1B800A5A582 /* PDResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDResource.m; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
 		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
@@ -707,6 +711,8 @@
 				C9013D6C1214635100815A27 /* User.m */,
 				C9013D771214635D00815A27 /* Entry.h */,
 				C9013D781214635D00815A27 /* Entry.m */,
+				C99BCF7A121DC1B800A5A582 /* PDResource.h */,
+				C99BCF7B121DC1B800A5A582 /* PDResource.m */,
 			);
 			name = Resources;
 			path = Models;
@@ -1360,6 +1366,7 @@
 				C99BCE1C121C81CD00A5A582 /* PDList.m in Sources */,
 				C99BCE1D121C81CF00A5A582 /* PDListEntry.m in Sources */,
 				C99BCF1B121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,
+				C99BCF7C121DC1B800A5A582 /* PDResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1442,6 +1449,7 @@
 				C9FD28421218D52B00D9127D /* Device.m in Sources */,
 				C91C2478121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
 				C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,
+				C99BCF7D121DC1B800A5A582 /* PDResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

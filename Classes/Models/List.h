@@ -1,7 +1,6 @@
-#import "../Changes/PDRemoteChanging.h"
-#import "../Changes/PDDeviceResource.h"
+#import "PDResource.h"
 
-@interface List : PDDeviceResource <PDRemoteChanging>
+@interface List : PDResource
 
 @property (nonatomic, retain) NSString *listId;
 @property (nonatomic, retain) NSString *title;
@@ -10,6 +9,7 @@
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSDate *updatedAt;
 
++ (NSString *)entityName;
 + (NSInvocation *)findAllRemoteInvocation;
 
 @end

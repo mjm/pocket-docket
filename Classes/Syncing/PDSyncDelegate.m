@@ -212,7 +212,43 @@
 - (BOOL)syncController:(PDSyncController *)syncController movedLocalObject:(NSManagedObject *)localObject
 {
 	NSLog(@"Updating remote that an object has moved locally.");
-	return YES;
+	
+	if ([localObject isKindOfClass:[PDList class]])
+	{
+		PDList *localList = (PDList *)localObject;
+		List *list = [[[List alloc] init] autorelease];
+		list.listId = localList.remoteIdentifier;
+		
+		NSError *error = nil;
+		if (![list moveRemoteWithResponse:&error])
+		{
+			NSLog(@"Failed to move local list on remote side: %@, %@", error, [error userInfo]);
+			return NO;
+		}
+		
+		return YES;
+	}
+	else if ([localObject isKindOfClass:[PDListEntry class]])
+	{
+		PDListEntry *localEntry = (PDListEntry *)localObject;
+		Entry *entry = [[[Entry alloc] init] autorelease];
+		entry.entryId = localEntry.remoteIdentifier;
+		entry.listId = localEntry.list.remoteIdentifier;
+		
+		NSError *error = nil;
+		if (![entry moveRemoteWithResponse:&error])
+		{
+			NSLog(@"Failed to move local entry on remote side: %@, %@", error, [error userInfo]);
+			return NO;
+		}
+		
+		return YES;
+	}
+	else
+	{
+		NSLog(@"Sync controller gave the delegate something weird: %@", localObject);
+		return NO;
+	}
 }
 
 - (BOOL)syncController:(PDSyncController *)syncController movedRemoteObject:(NSObject *)remoteObject
