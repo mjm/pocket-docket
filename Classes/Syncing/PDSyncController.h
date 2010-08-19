@@ -38,5 +38,6 @@
 
 - (BOOL)syncController:(PDSyncController *)syncController movedLocalObject:(NSManagedObject *)localObject;
 - (BOOL)syncController:(PDSyncController *)syncController movedRemoteObject:(NSObject *)remoteObject;
+- (BOOL)syncController:(PDSyncController *)syncController updateObjectPositions:(NSArray *)localObjects;
 
 @end

@@ -9,6 +9,12 @@
 #import "ObjectiveResource.h"
 
 
+@interface NSManagedObject (SyncDelegate)
+- (void)setOrderValue:(NSInteger)value;
+- (NSString *)remoteIdentifier;
+@end
+
+
 @implementation PDSyncDelegate
 
 - (NSManagedObjectContext *)managedObjectContext
@@ -213,6 +219,49 @@
 {
 	NSLog(@"Updating remote that an object that was moved remotely has been updated on this device.");
 	return YES;
+}
+
+- (BOOL)syncController:(PDSyncController *)syncController updateObjectPositions:(NSArray *)localObjects
+{
+	if ([localObjects count] == 0)
+	{
+		// nothing to do, nice and easy
+		return YES;
+	}
+	
+	NSMutableArray *remoteIds = [NSMutableArray array];
+	
+	NSInteger index = 0;
+	for (NSManagedObject *object in localObjects)
+	{
+		[object setOrderValue:index];
+		[remoteIds addObject:[object remoteIdentifier]];
+		index++;
+	}
+	
+	NSManagedObject *object = [localObjects objectAtIndex:0];
+	if ([object isKindOfClass:[PDList class]])
+	{
+		// TODO change list orders
+		NSLog(@"Updating orders of lists to: %@", remoteIds);
+		
+		return YES;
+	}
+	else if ([object isKindOfClass:[PDListEntry class]])
+	{
+		PDListEntry *entry = (PDListEntry *)object;
+		NSString *listId = entry.list.remoteIdentifier;
+		
+		// TODO change entry orders
+		NSLog(@"Updating orders of entries in list %@ to: %@", listId, remoteIds);
+		
+		return YES;
+	}
+	else
+	{
+		NSLog(@"Sync controller gave the delegate something weird: %@", object);
+		return NO;
+	}
 }
 
 @end

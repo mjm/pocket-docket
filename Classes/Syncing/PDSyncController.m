@@ -336,7 +336,7 @@
 		}
 	}
 	
-	// TODO handle ordering of final list
+	[self.delegate syncController:self updateObjectPositions:results];
 	
 	return results;
 }
