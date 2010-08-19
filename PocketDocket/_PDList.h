@@ -80,13 +80,18 @@
 
 
 
-+ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ ;
-+ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ error:(NSError**)error_;
-
-
-
 + (NSArray*)fetchListsBetween:(NSManagedObjectContext*)moc_ minRow:(NSNumber*)minRow_ maxRow:(NSNumber*)maxRow_ ;
 + (NSArray*)fetchListsBetween:(NSManagedObjectContext*)moc_ minRow:(NSNumber*)minRow_ maxRow:(NSNumber*)maxRow_ error:(NSError**)error_;
+
+
+
++ (NSArray*)fetchListWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ ;
++ (NSArray*)fetchListWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ error:(NSError**)error_;
+
+
+
++ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ ;
++ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ error:(NSError**)error_;
 
 
 @end

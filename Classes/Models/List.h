@@ -10,4 +10,6 @@
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSDate *updatedAt;
 
++ (NSInvocation *)findAllRemoteInvocation;
+
 @end

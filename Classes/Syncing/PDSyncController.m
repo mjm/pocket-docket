@@ -25,8 +25,6 @@
 
 @interface PDSyncController ()
 
-- (NSArray *)fetchLocallyChangedObjects;
-- (NSArray *)fetchRemotelyChangedObjects;
 - (NSSet *)sharedIdsForLocalObjects:(NSArray *)localObjects remoteObjects:(NSArray *)remoteObjects;
 
 - (NSManagedObject *)handleRemotelyCreatedOrLocallyDeletedObject:(NSObject *)remoteObject;
@@ -63,59 +61,6 @@
 
 #pragma mark -
 #pragma mark Private Syncing Methods
-
-- (NSArray *)fetchLocallyChangedObjects
-{
-	NSMutableArray *changes = [NSMutableArray array];
-	NSArray *requests = [self.delegate fetchRequestsForSyncController:self];
-	
-	for (NSFetchRequest *request in requests)
-	{
-		NSError *error = nil;
-		NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
-		
-		if (results)
-		{
-			[changes addObject:results];
-		}
-		else
-		{
-			NSLog(@"Error trying to load locally changed objects: %@, %@", error, [error userInfo]);
-			return nil;
-		}
-	}
-	
-	return changes;
-}
-
-- (NSArray *)fetchRemotelyChangedObjects
-{
-	NSMutableArray *changes = [NSMutableArray array];
-	NSArray *invocations = [self.delegate remoteInvocationsForSyncController:self];
-	
-	for (NSInvocation *invocation in invocations)
-	{
-		NSArray *results = nil;
-		NSError *error = nil;
-		NSError **perror = &error;
-		
-		[invocation setArgument:&perror atIndex:0];
-		[invocation invoke];
-		[invocation getReturnValue:&results];
-		
-		if (results)
-		{
-			[changes addObject:results];
-		}
-		else
-		{
-			NSLog(@"Error trying to load remotely changed objects: %@, %@", error, [error userInfo]);
-			return nil;
-		}
-	}
-	
-	return changes;
-}
 
 - (NSSet *)sharedIdsForLocalObjects:(NSArray *)localObjects remoteObjects:(NSArray *)remoteObjects
 {
@@ -349,7 +294,7 @@
 			if ([localObject movedSinceSyncValue])
 			{
 				NSObject *myRemoteObject = [self remoteObjectInArray:remoteObjects matchingLocalObject:localObject];
-				// TODO mark the move on the remote side
+				[self.delegate syncController:self movedLocalObject:localObject];
 				[localObject setMovedSinceSyncValue:NO];
 				[self reconcileDifferencesBetweenLocalObject:localObject andRemoteObject:myRemoteObject];
 				[results addObject:localObject];
@@ -359,7 +304,7 @@
 			
 			if ([[remoteObject moved] boolValue])
 			{
-				// TODO mark remotely that this device got the move
+				[self.delegate syncController:self movedRemoteObject:remoteObject];
 				NSManagedObject *myLocalObject = [self localObjectMatchingRemoteObject:remoteObject];
 				[self reconcileDifferencesBetweenLocalObject:myLocalObject andRemoteObject:remoteObject];
 				[results addObject:myLocalObject];
@@ -391,36 +336,54 @@
 		}
 	}
 	
+	// TODO handle ordering of final list
+	
 	return results;
 }
 
 - (void)sync
 {
-	NSArray *localChanges = [self fetchLocallyChangedObjects];
-	if (!localChanges)
+	NSArray *fetchRequests = [self.delegate fetchRequestsForSyncController:self];
+	if (!fetchRequests)
 	{
 		return;
 	}
 	
-	NSArray *remoteChanges = [self fetchRemotelyChangedObjects];
-	if (!remoteChanges)
+	NSArray *remoteInvocations = [self.delegate remoteInvocationsForSyncController:self];
+	if (!remoteInvocations)
 	{
 		return;
 	}
 	
-	if ([localChanges count] == [remoteChanges count])
-	{
-		NSLog(@"Local and remote change requests don't match.");
-		return;
-	}
+	NSAssert([fetchRequests count] == [remoteInvocations count], @"Local and remote change requests don't match.");
 	
-	NSEnumerator *localEnum = [localChanges objectEnumerator];
-	NSEnumerator *remoteEnum = [remoteChanges objectEnumerator];
+	NSEnumerator *localEnum = [fetchRequests objectEnumerator];
+	NSEnumerator *remoteEnum = [remoteInvocations objectEnumerator];
 	
-	NSArray *localChange;
-	NSArray *remoteChange;
-	while ((localChange = [localEnum nextObject]) && (remoteChange = [remoteEnum nextObject]))
+	NSFetchRequest *fetchRequest;
+	NSInvocation *invocation;
+	while ((fetchRequest = [localEnum nextObject]) && (invocation = [remoteEnum nextObject]))
 	{
+		NSError *error = nil;
+		NSArray *localChange = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+		if (!localChange)
+		{
+			NSLog(@"An error occurred fetching local changes: %@, %@", error, [error userInfo]);
+			return;
+		}
+		
+		NSArray	*remoteChange = nil;
+		NSError **perror = &error;
+		[invocation setArgument:&perror atIndex:0];
+		[invocation invoke];
+		[invocation getReturnValue:&remoteChange];
+		
+		if (!remoteChange)
+		{
+			NSLog(@"An error occurred fetching remote changes: %@, %@", error, [error userInfo]);
+			return;
+		}
+		
 		[self mergeLocalObjects:localChange withRemoteObjects:remoteChange];
 	}
 }

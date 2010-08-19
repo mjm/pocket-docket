@@ -158,37 +158,6 @@
 
 
 
-+ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ {
-	NSError *error = nil;
-	NSArray *result = [self fetchAllLists:moc_ error:&error];
-	if (error) {
-#if TARGET_OS_IPHONE
-		NSLog(@"error: %@", error);
-#else
-		[NSApp presentError:error];
-#endif
-	}
-	return result;
-}
-+ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ error:(NSError**)error_ {
-	NSParameterAssert(moc_);
-	NSError *error = nil;
-	
-	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
-	
-	NSDictionary *substitutionVariables = nil;
-										
-	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"allLists"
-													 substitutionVariables:substitutionVariables];
-	NSAssert(fetchRequest, @"Can't find fetch request named \"allLists\".");
-	
-	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
-	if (error_) *error_ = error;
-	return result;
-}
-
-
-
 + (NSArray*)fetchListsBetween:(NSManagedObjectContext*)moc_ minRow:(NSNumber*)minRow_ maxRow:(NSNumber*)maxRow_ {
 	NSError *error = nil;
 	NSArray *result = [self fetchListsBetween:moc_ minRow:minRow_ maxRow:maxRow_ error:&error];
@@ -218,6 +187,72 @@
 	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"listsBetween"
 													 substitutionVariables:substitutionVariables];
 	NSAssert(fetchRequest, @"Can't find fetch request named \"listsBetween\".");
+	
+	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
+	if (error_) *error_ = error;
+	return result;
+}
+
+
+
++ (NSArray*)fetchListWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ {
+	NSError *error = nil;
+	NSArray *result = [self fetchListWithRemoteId:moc_ remoteId:remoteId_ error:&error];
+	if (error) {
+#if TARGET_OS_IPHONE
+		NSLog(@"error: %@", error);
+#else
+		[NSApp presentError:error];
+#endif
+	}
+	return result;
+}
++ (NSArray*)fetchListWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = [NSDictionary dictionaryWithObjectsAndKeys:
+														
+														remoteId_, @"remoteId",
+														
+														nil];
+										
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"listWithRemoteId"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"listWithRemoteId\".");
+	
+	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
+	if (error_) *error_ = error;
+	return result;
+}
+
+
+
++ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ {
+	NSError *error = nil;
+	NSArray *result = [self fetchAllLists:moc_ error:&error];
+	if (error) {
+#if TARGET_OS_IPHONE
+		NSLog(@"error: %@", error);
+#else
+		[NSApp presentError:error];
+#endif
+	}
+	return result;
+}
++ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = nil;
+										
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"allLists"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"allLists\".");
 	
 	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
 	if (error_) *error_ = error;

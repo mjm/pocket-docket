@@ -88,6 +88,8 @@
 		C99BCE1B121C81CD00A5A582 /* _PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE15121C805D00A5A582 /* _PDListEntry.m */; };
 		C99BCE1C121C81CD00A5A582 /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE10121C805C00A5A582 /* PDList.m */; };
 		C99BCE1D121C81CF00A5A582 /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE11121C805C00A5A582 /* PDListEntry.m */; };
+		C99BCF1B121CCF5500A5A582 /* PDSyncDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */; };
+		C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */; };
 		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
 		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
 		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
@@ -338,14 +340,16 @@
 		C99BCE15121C805D00A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
 		C99BCE16121C805D00A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
 		C99BCE17121C805D00A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
-		C99BCEDF121C9D9600A5A582 /* PDList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDList.m; sourceTree = "<group>"; };
-		C99BCEE0121C9D9600A5A582 /* PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDListEntry.m; sourceTree = "<group>"; };
-		C99BCEE1121C9D9600A5A582 /* PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDList.h; sourceTree = "<group>"; };
-		C99BCEE2121C9D9600A5A582 /* PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDListEntry.h; sourceTree = "<group>"; };
-		C99BCEE3121C9D9600A5A582 /* _PDList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDList.m; sourceTree = "<group>"; };
-		C99BCEE4121C9D9600A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
-		C99BCEE5121C9D9600A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
-		C99BCEE6121C9D9700A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
+		C99BCF19121CCF5500A5A582 /* PDSyncDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSyncDelegate.h; sourceTree = "<group>"; };
+		C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSyncDelegate.m; sourceTree = "<group>"; };
+		C99BCF42121CD5BD00A5A582 /* PDList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDList.m; sourceTree = "<group>"; };
+		C99BCF43121CD5BD00A5A582 /* PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDListEntry.m; sourceTree = "<group>"; };
+		C99BCF44121CD5BD00A5A582 /* PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDList.h; sourceTree = "<group>"; };
+		C99BCF45121CD5BD00A5A582 /* PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDListEntry.h; sourceTree = "<group>"; };
+		C99BCF46121CD5BD00A5A582 /* _PDList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDList.m; sourceTree = "<group>"; };
+		C99BCF47121CD5BD00A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
+		C99BCF48121CD5BE00A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
+		C99BCF49121CD5BE00A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
 		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
@@ -598,6 +602,8 @@
 			children = (
 				C91C2475121ABDA600FBA1F0 /* PDSyncController.h */,
 				C91C2476121ABDA600FBA1F0 /* PDSyncController.m */,
+				C99BCF19121CCF5500A5A582 /* PDSyncDelegate.h */,
+				C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */,
 			);
 			path = Syncing;
 			sourceTree = "<group>";
@@ -773,14 +779,14 @@
 		C99BCEC6121C9CE900A5A582 /* PocketDocket */ = {
 			isa = PBXGroup;
 			children = (
-				C99BCEDF121C9D9600A5A582 /* PDList.m */,
-				C99BCEE0121C9D9600A5A582 /* PDListEntry.m */,
-				C99BCEE1121C9D9600A5A582 /* PDList.h */,
-				C99BCEE2121C9D9600A5A582 /* PDListEntry.h */,
-				C99BCEE3121C9D9600A5A582 /* _PDList.m */,
-				C99BCEE4121C9D9600A5A582 /* _PDListEntry.m */,
-				C99BCEE5121C9D9600A5A582 /* _PDList.h */,
-				C99BCEE6121C9D9700A5A582 /* _PDListEntry.h */,
+				C99BCF42121CD5BD00A5A582 /* PDList.m */,
+				C99BCF43121CD5BD00A5A582 /* PDListEntry.m */,
+				C99BCF44121CD5BD00A5A582 /* PDList.h */,
+				C99BCF45121CD5BD00A5A582 /* PDListEntry.h */,
+				C99BCF46121CD5BD00A5A582 /* _PDList.m */,
+				C99BCF47121CD5BD00A5A582 /* _PDListEntry.m */,
+				C99BCF48121CD5BE00A5A582 /* _PDList.h */,
+				C99BCF49121CD5BE00A5A582 /* _PDListEntry.h */,
 			);
 			path = PocketDocket;
 			sourceTree = "<group>";
@@ -1353,6 +1359,7 @@
 				C99BCE1B121C81CD00A5A582 /* _PDListEntry.m in Sources */,
 				C99BCE1C121C81CD00A5A582 /* PDList.m in Sources */,
 				C99BCE1D121C81CF00A5A582 /* PDListEntry.m in Sources */,
+				C99BCF1B121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1434,6 +1441,7 @@
 				C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28421218D52B00D9127D /* Device.m in Sources */,
 				C91C2478121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
+				C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

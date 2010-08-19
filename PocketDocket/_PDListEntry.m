@@ -149,43 +149,6 @@
 
 
 
-+ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ {
-	NSError *error = nil;
-	NSArray *result = [self fetchEntriesAbove:moc_ position:position_ list:list_ error:&error];
-	if (error) {
-#if TARGET_OS_IPHONE
-		NSLog(@"error: %@", error);
-#else
-		[NSApp presentError:error];
-#endif
-	}
-	return result;
-}
-+ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ error:(NSError**)error_ {
-	NSParameterAssert(moc_);
-	NSError *error = nil;
-	
-	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
-	
-	NSDictionary *substitutionVariables = [NSDictionary dictionaryWithObjectsAndKeys:
-														
-														position_, @"position",
-														
-														list_, @"list",
-														
-														nil];
-										
-	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"entriesAbove"
-													 substitutionVariables:substitutionVariables];
-	NSAssert(fetchRequest, @"Can't find fetch request named \"entriesAbove\".");
-	
-	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
-	if (error_) *error_ = error;
-	return result;
-}
-
-
-
 + (NSArray*)fetchEntriesForList:(NSManagedObjectContext*)moc_ list:(PDList*)list_ {
 	NSError *error = nil;
 	NSArray *result = [self fetchEntriesForList:moc_ list:list_ error:&error];
@@ -213,6 +176,41 @@
 	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"entriesForList"
 													 substitutionVariables:substitutionVariables];
 	NSAssert(fetchRequest, @"Can't find fetch request named \"entriesForList\".");
+	
+	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
+	if (error_) *error_ = error;
+	return result;
+}
+
+
+
++ (NSArray*)fetchEntryWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ {
+	NSError *error = nil;
+	NSArray *result = [self fetchEntryWithRemoteId:moc_ remoteId:remoteId_ error:&error];
+	if (error) {
+#if TARGET_OS_IPHONE
+		NSLog(@"error: %@", error);
+#else
+		[NSApp presentError:error];
+#endif
+	}
+	return result;
+}
++ (NSArray*)fetchEntryWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = [NSDictionary dictionaryWithObjectsAndKeys:
+														
+														remoteId_, @"remoteId",
+														
+														nil];
+										
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"entryWithRemoteId"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"entryWithRemoteId\".");
 	
 	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
 	if (error_) *error_ = error;
@@ -252,6 +250,43 @@
 	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"entriesBetween"
 													 substitutionVariables:substitutionVariables];
 	NSAssert(fetchRequest, @"Can't find fetch request named \"entriesBetween\".");
+	
+	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
+	if (error_) *error_ = error;
+	return result;
+}
+
+
+
++ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ {
+	NSError *error = nil;
+	NSArray *result = [self fetchEntriesAbove:moc_ position:position_ list:list_ error:&error];
+	if (error) {
+#if TARGET_OS_IPHONE
+		NSLog(@"error: %@", error);
+#else
+		[NSApp presentError:error];
+#endif
+	}
+	return result;
+}
++ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = [NSDictionary dictionaryWithObjectsAndKeys:
+														
+														position_, @"position",
+														
+														list_, @"list",
+														
+														nil];
+										
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"entriesAbove"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"entriesAbove\".");
 	
 	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
 	if (error_) *error_ = error;

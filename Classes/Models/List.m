@@ -14,6 +14,15 @@
 	return @"List";
 }
 
++ (NSInvocation *)findAllRemoteInvocation
+{
+	NSMethodSignature *sig = [self methodSignatureForSelector:@selector(findAllRemoteWithResponse:)];
+	NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sig];
+	[invocation setTarget:self];
+	[invocation setSelector:@selector(findAllRemoteWithResponse:)];
+	return invocation;
+}
+
 - (void)copyPropertiesTo:(NSManagedObject *)object
 {
 	[object setValue:self.listId forKey:@"remoteIdentifier"];

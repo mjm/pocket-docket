@@ -93,18 +93,23 @@
 
 
 
-+ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ ;
-+ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ error:(NSError**)error_;
-
-
-
 + (NSArray*)fetchEntriesForList:(NSManagedObjectContext*)moc_ list:(PDList*)list_ ;
 + (NSArray*)fetchEntriesForList:(NSManagedObjectContext*)moc_ list:(PDList*)list_ error:(NSError**)error_;
 
 
 
++ (NSArray*)fetchEntryWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ ;
++ (NSArray*)fetchEntryWithRemoteId:(NSManagedObjectContext*)moc_ remoteId:(NSString*)remoteId_ error:(NSError**)error_;
+
+
+
 + (NSArray*)fetchEntriesBetween:(NSManagedObjectContext*)moc_ minRow:(NSNumber*)minRow_ maxRow:(NSNumber*)maxRow_ list:(PDList*)list_ ;
 + (NSArray*)fetchEntriesBetween:(NSManagedObjectContext*)moc_ minRow:(NSNumber*)minRow_ maxRow:(NSNumber*)maxRow_ list:(PDList*)list_ error:(NSError**)error_;
+
+
+
++ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ ;
++ (NSArray*)fetchEntriesAbove:(NSManagedObjectContext*)moc_ position:(NSNumber*)position_ list:(PDList*)list_ error:(NSError**)error_;
 
 
 @end
