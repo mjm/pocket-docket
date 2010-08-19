@@ -211,8 +211,6 @@
 
 - (BOOL)syncController:(PDSyncController *)syncController movedLocalObject:(NSManagedObject *)localObject
 {
-	NSLog(@"Updating remote that an object has moved locally.");
-	
 	if ([localObject isKindOfClass:[PDList class]])
 	{
 		PDList *localList = (PDList *)localObject;
@@ -253,7 +251,20 @@
 
 - (BOOL)syncController:(PDSyncController *)syncController movedRemoteObject:(NSObject *)remoteObject
 {
-	NSLog(@"Updating remote that an object that was moved remotely has been updated on this device.");
+	if (![remoteObject isKindOfClass:[PDResource class]])
+	{
+		NSLog(@"Sync controller gave the delegate something weird: %@", remoteObject);
+		return NO;
+	}
+	
+	PDResource *resource = (PDResource *)remoteObject;
+	NSError *error = nil;
+	if (![resource gotMoveRemoteWithResponse:&error])
+	{
+		NSLog(@"Failed to receive movement of remote object %@: %@, %@", resource, error, [error userInfo]);
+		return NO;
+	}
+	
 	return YES;
 }
 
@@ -278,8 +289,12 @@
 	NSManagedObject *object = [localObjects objectAtIndex:0];
 	if ([object isKindOfClass:[PDList class]])
 	{
-		// TODO change list orders
-		NSLog(@"Updating orders of lists to: %@", remoteIds);
+		NSError *error = nil;
+		if (![List sortRemote:remoteIds withResponse:&error])
+		{
+			NSLog(@"Failed to sort remote lists: %@, %@", error, [error userInfo]);
+			return NO;
+		}
 		
 		return YES;
 	}
@@ -288,8 +303,12 @@
 		PDListEntry *entry = (PDListEntry *)object;
 		NSString *listId = entry.list.remoteIdentifier;
 		
-		// TODO change entry orders
-		NSLog(@"Updating orders of entries in list %@ to: %@", listId, remoteIds);
+		NSError *error = nil;
+		if (![Entry sortRemote:remoteIds forList:listId withResponse:&error])
+		{
+			NSLog(@"Failed to sort remote entries for list %@: %@, %@", listId, error, [error userInfo]);
+			return NO;
+		}
 		
 		return YES;
 	}

@@ -268,6 +268,9 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>C94954461205D513003BDD2D</string>
+								<string>C9C1060D120B05C100327A0D</string>
+								<string>C9C10610120B05C100327A0D</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>C9DB213211D97E2D000A293A</string>
 								<string>C9DB204311D8085A000A293A</string>
@@ -275,6 +278,8 @@
 								<string>C99BCDF7121C7DE300A5A582</string>
 								<string>C94C56E31156BEF400791FAC</string>
 								<string>C91C2473121ABD3700FBA1F0</string>
+								<string>C9C1074C120D8C7500327A0D</string>
+								<string>C9FD2757121793FC00D9127D</string>
 								<string>C990F97B11DE9ED000BA1579</string>
 								<string>C94C564011569C5400791FAC</string>
 								<string>C94C563F11569C4B00791FAC</string>
@@ -300,14 +305,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>45</integer>
-									<integer>43</integer>
-									<integer>2</integer>
+									<integer>71</integer>
+									<integer>67</integer>
+									<integer>24</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 134}, {266, 1222}}</string>
+							<string>{{0, 565}, {266, 1222}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -342,7 +347,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDSyncController.m</string>
+								<string>PDSyncDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -350,18 +355,17 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDSyncController.m</string>
+										<string>PDSyncDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C99BCF78121DADB600A5A582</string>
+										<string>C99BCFD7121DD28D00A5A582</string>
 										<key>history</key>
 										<array>
 											<string>C97CE30B1210EF8C0054B858</string>
 											<string>C97CE30E1210EF8C0054B858</string>
 											<string>C97CE3251210F2570054B858</string>
 											<string>C97CE3B71211CE880054B858</string>
-											<string>C97CE41B12124DBE0054B858</string>
 											<string>C97CE41C12124DBE0054B858</string>
 											<string>C97CE41D12124DBE0054B858</string>
 											<string>C97CE41E12124DBE0054B858</string>
@@ -388,11 +392,6 @@
 											<string>C9FD277C121887B200D9127D</string>
 											<string>C9FD277E121887B200D9127D</string>
 											<string>C9FD277F121887B200D9127D</string>
-											<string>C9FD2781121887B200D9127D</string>
-											<string>C9FD27A312189F8100D9127D</string>
-											<string>C9FD27A412189F8100D9127D</string>
-											<string>C9FD27A512189F8100D9127D</string>
-											<string>C9FD27EC1218A69900D9127D</string>
 											<string>C9FD27EE1218A69900D9127D</string>
 											<string>C9FD27F01218A69900D9127D</string>
 											<string>C9FD28131218ABF400D9127D</string>
@@ -450,8 +449,23 @@
 											<string>C99BCEEF121C9E8C00A5A582</string>
 											<string>C99BCEF1121C9E8C00A5A582</string>
 											<string>C99BCEF2121C9E8C00A5A582</string>
-											<string>C99BCF76121DADB600A5A582</string>
-											<string>C99BCF77121DADB600A5A582</string>
+											<string>C99BCFAC121DCE5D00A5A582</string>
+											<string>C99BCFAE121DCE5D00A5A582</string>
+											<string>C99BCFAF121DCE5D00A5A582</string>
+											<string>C99BCFB0121DCE5D00A5A582</string>
+											<string>C99BCFB1121DCE5D00A5A582</string>
+											<string>C99BCFB2121DCE5D00A5A582</string>
+											<string>C99BCFB3121DCE5D00A5A582</string>
+											<string>C99BCFB4121DCE5D00A5A582</string>
+											<string>C99BCFB5121DCE5D00A5A582</string>
+											<string>C99BCFB7121DCE5D00A5A582</string>
+											<string>C99BCFB8121DCE5D00A5A582</string>
+											<string>C99BCFBA121DCE5D00A5A582</string>
+											<string>C99BCFD0121DD1F900A5A582</string>
+											<string>C99BCFD1121DD1F900A5A582</string>
+											<string>C99BCFD2121DD1F900A5A582</string>
+											<string>C99BCFD5121DD28D00A5A582</string>
+											<string>C99BCFD6121DD28D00A5A582</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -491,8 +505,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {992, 117}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 137 1280 1281 0 0 2560 1418 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -546,7 +558,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {992, 115}}</string>
+										<string>{{10, 27}, {992, 117}}</string>
+										<key>RubberWindowFrame</key>
+										<string>0 137 1280 1281 0 0 2560 1418 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>

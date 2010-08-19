@@ -67,7 +67,18 @@ static NSString * _activeDeviceId;
 - (BOOL)moveRemoteWithResponse:(NSError **)aError
 {
 	NSString *movePath = [self remoteElementPathForAction:@"move"];
-	Response *res = [Connection put:@"" to:movePath withUser:[[self class] getUser] andPassword:[[self class] getPassword]];
+	Response *res = [Connection put:@"" to:movePath withUser:[[self class] getRemoteUser] andPassword:[[self class] getRemotePassword]];
+	
+	if (aError && [res isError])
+		*aError = res.error;
+	
+	return [res isSuccess];
+}
+
+- (BOOL)gotMoveRemoteWithResponse:(NSError **)aError
+{
+	NSString *movePath = [self remoteElementPathForAction:@"got_move"];
+	Response *res = [Connection put:@"" to:movePath withUser:[[self class] getRemoteUser] andPassword:[[self class] getRemotePassword]];
 	
 	if (aError && [res isError])
 		*aError = res.error;

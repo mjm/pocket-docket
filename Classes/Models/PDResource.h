@@ -17,5 +17,6 @@
 - (NSString *)remoteElementPathForAction:(NSString *)action;
 
 - (BOOL)moveRemoteWithResponse:(NSError **)aError;
+- (BOOL)gotMoveRemoteWithResponse:(NSError **)aError;
 
 @end

@@ -2,7 +2,9 @@
 
 #import "List.h"
 #import "ObjectiveResource.h"
-#import "../Categories/NSManagedObjectContext+Additions.h"
+#import "Connection.h"
+#import "Response.h"
+#import "ObjectiveSupport.h"
 
 @implementation Entry
 
@@ -92,6 +94,25 @@
 - (BOOL)destroyRemoteWithResponse:(NSError **)aError
 {
 	return [self destroyRemoteAtPath:[self getRemoteElementPath] withResponse:aError];
+}
+
++ (BOOL)sortRemote:(NSArray *)ids forList:(NSString *)listId withResponse:(NSError **)aError
+{
+	NSString *sortPath = [NSString stringWithFormat:@"%@%@/%@/%@/sort%@",
+						  [self getRemoteSite],
+						  [List getRemoteCollectionName],
+						  listId,
+						  [self getRemoteCollectionName],
+						  [self getRemoteProtocolExtension]];
+	
+	NSDictionary *bodyDict = [NSDictionary dictionaryWithObject:ids forKey:@"ids"];
+	NSString *body = [bodyDict toJSON];
+	
+	Response *res = [Connection put:body to:sortPath withUser:[self getRemoteUser] andPassword:[self getRemotePassword]];
+	if (aError && [res isError])
+		*aError = res.error;
+	
+	return [res isSuccess];
 }
 
 @end

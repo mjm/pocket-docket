@@ -1,5 +1,9 @@
 #import "List.h"
 
+#import "ObjectiveResource.h"
+#import "Connection.h"
+#import "Response.h"
+#import "ObjectiveSupport.h"
 
 @implementation List
 
@@ -23,11 +27,28 @@
 	return invocation;
 }
 
-- (void)copyPropertiesTo:(NSManagedObject *)object
+//- (void)copyPropertiesTo:(NSManagedObject *)object
+//{
+//	[object setValue:self.listId forKey:@"remoteIdentifier"];
+//	[object setValue:self.title forKey:@"title"];
+//	[object setValue:self.position forKey:@"order"];
+//}
+
++ (BOOL)sortRemote:(NSArray *)ids withResponse:(NSError **)aError
 {
-	[object setValue:self.listId forKey:@"remoteIdentifier"];
-	[object setValue:self.title forKey:@"title"];
-	[object setValue:self.position forKey:@"order"];
+	NSString *sortPath = [NSString stringWithFormat:@"%@%@/sort%@",
+						  [self getRemoteSite],
+						  [self getRemoteCollectionName],
+						  [self getRemoteProtocolExtension]];
+	
+	NSDictionary *bodyDict = [NSDictionary dictionaryWithObject:ids forKey:@"ids"];
+	NSString *body = [bodyDict toJSON];
+	
+	Response *res = [Connection put:body to:sortPath withUser:[self getRemoteUser] andPassword:[self getRemotePassword]];
+	if (aError && [res isError])
+		*aError = res.error;
+	
+	return [res isSuccess];
 }
 
 @end
