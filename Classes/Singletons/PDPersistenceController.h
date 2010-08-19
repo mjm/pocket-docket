@@ -1,18 +1,14 @@
 #import "../Changes/PDLocalChanging.h"
-#import "PDChangeManager.h"
 
 @class PDList;
 @class PDListEntry;
-
-
-extern NSString *PDCredentialsNeededNotification;
 
 
 //! Handles various persistence related operations.
 /*!
  \nosubgrouping
  */
-@interface PDPersistenceController : NSObject <PDChangeManagerDelegate>
+@interface PDPersistenceController : NSObject
 {
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;	    

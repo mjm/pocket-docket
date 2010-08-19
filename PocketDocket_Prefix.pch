@@ -14,4 +14,6 @@
     #import <CoreData/CoreData.h>
 	#import <QuartzCore/QuartzCore.h>
 	#import <MessageUI/MessageUI.h>
+
+	#define PRINT_SELECTOR NSLog(@"Calling -%s", sel_getName(_cmd));
 #endif

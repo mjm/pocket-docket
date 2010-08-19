@@ -29,14 +29,40 @@
 
 
 
-@dynamic createdAt;
+@dynamic movedSinceSync;
+
+
+
+- (BOOL)movedSinceSyncValue {
+	NSNumber *result = [self movedSinceSync];
+	return [result boolValue];
+}
+
+- (void)setMovedSinceSyncValue:(BOOL)value_ {
+	[self setMovedSinceSync:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveMovedSinceSyncValue {
+	NSNumber *result = [self primitiveMovedSinceSync];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveMovedSinceSyncValue:(BOOL)value_ {
+	[self setPrimitiveMovedSinceSync:[NSNumber numberWithBool:value_]];
+}
+
+
+
+
+
+@dynamic deletedAt;
 
 
 
 
 
 
-@dynamic title;
+@dynamic remoteIdentifier;
 
 
 
@@ -69,40 +95,21 @@
 
 
 
-@dynamic movedSinceSync;
-
-
-
-- (BOOL)movedSinceSyncValue {
-	NSNumber *result = [self movedSinceSync];
-	return [result boolValue];
-}
-
-- (void)setMovedSinceSyncValue:(BOOL)value_ {
-	[self setMovedSinceSync:[NSNumber numberWithBool:value_]];
-}
-
-- (BOOL)primitiveMovedSinceSyncValue {
-	NSNumber *result = [self primitiveMovedSinceSync];
-	return [result boolValue];
-}
-
-- (void)setPrimitiveMovedSinceSyncValue:(BOOL)value_ {
-	[self setPrimitiveMovedSinceSync:[NSNumber numberWithBool:value_]];
-}
-
-
-
-
-
-@dynamic remoteIdentifier;
-
-
-
-
-
-
 @dynamic updatedAt;
+
+
+
+
+
+
+@dynamic createdAt;
+
+
+
+
+
+
+@dynamic title;
 
 
 

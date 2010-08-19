@@ -1,7 +1,7 @@
 #import "PDViewController.h"
 
 #import "UIViewController+Additions.h"
-#import "PDPersistenceController.h"
+#import "PDSyncDelegate.h"
 
 static BOOL credentialsNeeded = NO;
 

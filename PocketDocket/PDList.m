@@ -41,4 +41,21 @@
 	}
 }
 
++ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = [NSDictionary dictionary];
+	
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"allLists"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"allLists\".");
+	
+	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
+	if (error_) *error_ = error;
+	return result;
+}
+
 @end

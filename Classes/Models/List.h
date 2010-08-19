@@ -11,5 +11,6 @@
 
 + (NSString *)entityName;
 + (NSInvocation *)findAllRemoteInvocation;
++ (BOOL)sortRemote:(NSArray *)ids withResponse:(NSError **)aError;
 
 @end

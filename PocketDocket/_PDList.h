@@ -13,6 +13,7 @@
 
 
 
+
 @interface PDListID : NSManagedObjectID {}
 @end
 
@@ -21,28 +22,6 @@
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
 - (PDListID*)objectID;
-
-
-
-@property (nonatomic, retain) NSDate *createdAt;
-
-//- (BOOL)validateCreatedAt:(id*)value_ error:(NSError**)error_;
-
-
-
-@property (nonatomic, retain) NSString *title;
-
-//- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
-
-
-
-@property (nonatomic, retain) NSNumber *order;
-
-@property int orderValue;
-- (int)orderValue;
-- (void)setOrderValue:(int)value_;
-
-//- (BOOL)validateOrder:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -56,15 +35,43 @@
 
 
 
+@property (nonatomic, retain) NSDate *deletedAt;
+
+//- (BOOL)validateDeletedAt:(id*)value_ error:(NSError**)error_;
+
+
+
 @property (nonatomic, retain) NSString *remoteIdentifier;
 
 //- (BOOL)validateRemoteIdentifier:(id*)value_ error:(NSError**)error_;
 
 
 
+@property (nonatomic, retain) NSNumber *order;
+
+@property int orderValue;
+- (int)orderValue;
+- (void)setOrderValue:(int)value_;
+
+//- (BOOL)validateOrder:(id*)value_ error:(NSError**)error_;
+
+
+
 @property (nonatomic, retain) NSDate *updatedAt;
 
 //- (BOOL)validateUpdatedAt:(id*)value_ error:(NSError**)error_;
+
+
+
+@property (nonatomic, retain) NSDate *createdAt;
+
+//- (BOOL)validateCreatedAt:(id*)value_ error:(NSError**)error_;
+
+
+
+@property (nonatomic, retain) NSString *title;
+
+//- (BOOL)validateTitle:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -107,12 +114,19 @@
 
 @interface _PDList (CoreDataGeneratedPrimitiveAccessors)
 
-- (NSDate*)primitiveCreatedAt;
-- (void)setPrimitiveCreatedAt:(NSDate*)value;
+- (NSNumber*)primitiveMovedSinceSync;
+- (void)setPrimitiveMovedSinceSync:(NSNumber*)value;
+
+- (BOOL)primitiveMovedSinceSyncValue;
+- (void)setPrimitiveMovedSinceSyncValue:(BOOL)value_;
 
 
-- (NSString*)primitiveTitle;
-- (void)setPrimitiveTitle:(NSString*)value;
+- (NSDate*)primitiveDeletedAt;
+- (void)setPrimitiveDeletedAt:(NSDate*)value;
+
+
+- (NSString*)primitiveRemoteIdentifier;
+- (void)setPrimitiveRemoteIdentifier:(NSString*)value;
 
 
 - (NSNumber*)primitiveOrder;
@@ -122,19 +136,16 @@
 - (void)setPrimitiveOrderValue:(int)value_;
 
 
-- (NSNumber*)primitiveMovedSinceSync;
-- (void)setPrimitiveMovedSinceSync:(NSNumber*)value;
-
-- (BOOL)primitiveMovedSinceSyncValue;
-- (void)setPrimitiveMovedSinceSyncValue:(BOOL)value_;
-
-
-- (NSString*)primitiveRemoteIdentifier;
-- (void)setPrimitiveRemoteIdentifier:(NSString*)value;
-
-
 - (NSDate*)primitiveUpdatedAt;
 - (void)setPrimitiveUpdatedAt:(NSDate*)value;
+
+
+- (NSDate*)primitiveCreatedAt;
+- (void)setPrimitiveCreatedAt:(NSDate*)value;
+
+
+- (NSString*)primitiveTitle;
+- (void)setPrimitiveTitle:(NSString*)value;
 
 
 

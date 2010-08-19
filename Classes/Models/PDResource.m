@@ -52,7 +52,7 @@ static NSString * _activeDeviceId;
 {
 	return [NSString stringWithFormat:@"%@%@/%@/%@%@?deviceId=%@",
 			[self getRemoteSite],
-			[self getRemoteCollectionPath],
+			[self getRemoteCollectionName],
 			elementId,
 			action,
 			[self getRemoteProtocolExtension],

@@ -1,12 +1,19 @@
 #import "PDSyncDelegate.h"
 
+#import "PDCredentials.h"
 #import "../Singletons/PDPersistenceController.h"
+#import "../Singletons/PDSettingsController.h"
 #import "PDList.h"
 #import "PDListEntry.h"
 #import "../Models/List.h"
 #import "../Models/Entry.h"
+#import "../Models/Device.h"
 
 #import "ObjectiveResource.h"
+#import "ConnectionManager.h"
+
+
+NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotification";
 
 
 @interface NSManagedObject (SyncDelegate)
@@ -27,10 +34,51 @@
 	return [[PDPersistenceController sharedPersistenceController] managedObjectModel];
 }
 
+- (void)createRemoteDevice:(PDSyncController *)syncController
+{
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+	
+	Device *device = [[[Device alloc] init] autorelease];
+	NSError *error = nil;
+	if ([device createRemoteWithResponse:&error])
+	{
+		[PDSettingsController sharedSettingsController].docketAnywhereDeviceId = device.deviceId;
+		[syncController sync];
+	}
+	else
+	{
+		NSLog(@"Couldn't create a new device ID: %@, %@", error, [error userInfo]);
+	}
+	
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (PDCredentials *)credentialsForSyncController:(PDSyncController *)syncController
+{
+	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+	if (!username)
+	{
+		[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
+		return nil;
+	}
+	
+	NSString *deviceId = [[PDSettingsController sharedSettingsController] docketAnywhereDeviceId];
+	if (!deviceId)
+	{
+		[[ConnectionManager sharedInstance] runJob:@selector(createRemoteDevice:) onTarget:self withArgument:syncController];
+		return nil;
+	}
+	
+	NSString *password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
+	
+	return [PDCredentials credentialsWithUsername:username password:password deviceId:deviceId];
+}
+
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController
 {
+	PRINT_SELECTOR
 	NSFetchRequest *request = [[self managedObjectModel] fetchRequestFromTemplateWithName:@"allLists"
-																	substitutionVariables:nil];
+																	substitutionVariables:[NSDictionary dictionary]];
 	
 	[request setSortDescriptors:[NSArray arrayWithObject:[[[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES] autorelease]]];
 	return [NSArray arrayWithObject:request];
@@ -38,11 +86,13 @@
 
 - (NSArray *)remoteInvocationsForSyncController:(PDSyncController *)syncController
 {
+	PRINT_SELECTOR
 	return [NSArray arrayWithObject:[List findAllRemoteInvocation]];
 }
 
 - (BOOL)syncController:(PDSyncController *)syncController createRemoteCopyOfLocalObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	if ([localObject isKindOfClass:[PDList class]])
 	{
 		PDList *localList = (PDList *)localObject;
@@ -92,6 +142,7 @@
 - (NSManagedObject *)syncController:(PDSyncController *)syncController
 	  createLocalCopyOfRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	if ([remoteObject isKindOfClass:[List class]])
 	{
 		List *list = (List *)remoteObject;
@@ -127,6 +178,7 @@
 - (BOOL)syncController:(PDSyncController *)syncController
 	deleteRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	NSError *error = nil;
 	if (![remoteObject destroyRemoteWithResponse:&error])
 	{
@@ -140,6 +192,7 @@
 - (BOOL)syncController:(PDSyncController *)syncController
 	 deleteLocalObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	[[self managedObjectContext] deleteObject:localObject];
 	return YES;
 }
@@ -148,12 +201,15 @@
 	 updateLocalObject:(NSManagedObject *)localObject
 	  withRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	if ([localObject isKindOfClass:[PDList class]])
 	{
 		PDList *localList = (PDList *)localObject;
 		List *list = (List *)remoteObject;
 		
 		localList.title = list.title;
+		
+		// TODO merge the entries
 		
 		return YES;
 	}
@@ -177,12 +233,15 @@
 	updateRemoteObject:(NSObject *)remoteObject
 	   withLocalObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	if ([localObject isKindOfClass:[PDList class]])
 	{
 		PDList *localList = (PDList *)localObject;
 		List *list = (List *)remoteObject;
 		
 		list.title = localList.title;
+		
+		// TODO merge the entries
 	}
 	else if ([localObject isKindOfClass:[PDListEntry class]])
 	{
@@ -211,6 +270,7 @@
 
 - (BOOL)syncController:(PDSyncController *)syncController movedLocalObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	if ([localObject isKindOfClass:[PDList class]])
 	{
 		PDList *localList = (PDList *)localObject;
@@ -251,6 +311,7 @@
 
 - (BOOL)syncController:(PDSyncController *)syncController movedRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	if (![remoteObject isKindOfClass:[PDResource class]])
 	{
 		NSLog(@"Sync controller gave the delegate something weird: %@", remoteObject);
@@ -270,6 +331,7 @@
 
 - (BOOL)syncController:(PDSyncController *)syncController updateObjectPositions:(NSArray *)localObjects
 {
+	PRINT_SELECTOR
 	if ([localObjects count] == 0)
 	{
 		// nothing to do, nice and easy

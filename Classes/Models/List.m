@@ -3,7 +3,7 @@
 #import "ObjectiveResource.h"
 #import "Connection.h"
 #import "Response.h"
-#import "ObjectiveSupport.h"
+#import "JSONFramework.h"
 
 @implementation List
 
@@ -20,10 +20,10 @@
 
 + (NSInvocation *)findAllRemoteInvocation
 {
-	NSMethodSignature *sig = [self methodSignatureForSelector:@selector(findAllRemoteWithResponse:)];
+	NSMethodSignature *sig = [self methodSignatureForSelector:@selector(findAllRemote)];
 	NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sig];
-	[invocation setTarget:self];
-	[invocation setSelector:@selector(findAllRemoteWithResponse:)];
+	[invocation setTarget:[self class]];
+	[invocation setSelector:@selector(findAllRemote)];
 	return invocation;
 }
 
@@ -42,7 +42,7 @@
 						  [self getRemoteProtocolExtension]];
 	
 	NSDictionary *bodyDict = [NSDictionary dictionaryWithObject:ids forKey:@"ids"];
-	NSString *body = [bodyDict toJSON];
+	NSString *body = [bodyDict JSONRepresentation];
 	
 	Response *res = [Connection put:body to:sortPath withUser:[self getRemoteUser] andPassword:[self getRemotePassword]];
 	if (aError && [res isError])

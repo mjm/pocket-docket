@@ -1,7 +1,9 @@
 #import "PDSyncController.h"
 
 #import "ObjectiveResource.h"
+#import "ObjectiveResourceConfig.h"
 #import "../Categories/NSManagedObjectContext+Additions.h"
+#import "PDCredentials.h"
 
 
 #pragma mark Categories
@@ -34,7 +36,17 @@
 - (NSObject *)remoteObjectInArray:(NSArray *)objects matchingLocalObject:(NSManagedObject *)localObject;
 - (NSManagedObject *)localObjectMatchingRemoteObject:(NSObject *)remoteObject;
 
+- (void)syncStarted;
+- (void)syncStopped;
+
 @end
+
+
+#pragma mark -
+#pragma mark Notifications
+
+NSString * const PDSyncDidStartNotification = @"PDSyncDidStartNotification";
+NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 
 
 #pragma mark -
@@ -42,6 +54,7 @@
 @implementation PDSyncController
 
 
+#pragma mark -
 #pragma mark Creating a Sync Controller
 
 + (PDSyncController *)syncControllerWithManagedObjectContext:(NSManagedObjectContext *)context
@@ -88,6 +101,7 @@
 
 - (NSManagedObject *)handleRemotelyCreatedOrLocallyDeletedObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	// Need to determine why it's on the remote side and not the local side (create vs. delete)
 	NSManagedObjectModel *mom = self.managedObjectContext.managedObjectModel;
 	NSString *entityName = [remoteObject entityName];
@@ -138,6 +152,7 @@
 
 - (BOOL)handleLocallyCreatedOrRemotelyDeletedObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	NSString *remoteId = [localObject remoteIdentifier];
 	BOOL result;
 	
@@ -168,6 +183,7 @@
 - (void)reconcileDifferencesBetweenLocalObject:(NSManagedObject *)localObject
 							   andRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	BOOL result = NO;
 	
 	switch ([[localObject updatedAt] compare:[remoteObject updatedAt]])
@@ -189,6 +205,7 @@
 
 - (NSObject *)remoteObjectInArray:(NSArray *)objects matchingLocalObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	NSString *remoteId = [localObject remoteIdentifier];
 	
 	for (NSObject *object in objects)
@@ -205,6 +222,7 @@
 
 - (NSManagedObject *)localObjectMatchingRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	NSString *remoteId = [remoteObject getRemoteId];
 	NSString *entityName = [remoteObject entityName];
 	
@@ -234,6 +252,22 @@
 	}
 }
 
+- (void)syncStarted
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStartNotification object:self];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)syncStopped
+{
+	[ObjectiveResourceConfig setUser:nil];
+	[ObjectiveResourceConfig setPassword:nil];
+	[ObjectiveResourceConfig setDeviceId:nil];
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStopNotification object:self];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
 
 #pragma mark -
 #pragma mark Syncing
@@ -250,6 +284,7 @@
 	NSObject *remoteObject = [remoteEnum nextObject];
 	while (localObject || remoteObject)
 	{
+		NSLog(@"ITERATION\nLocal Object: %@\nRemote Object: %@", localObject, remoteObject);
 		if (!localObject)
 		{
 			NSManagedObject *newLocalObject = [self handleRemotelyCreatedOrLocallyDeletedObject:remoteObject];
@@ -259,6 +294,8 @@
 			}
 			
 			remoteObject = [remoteEnum nextObject];
+			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -270,6 +307,8 @@
 			}
 			
 			localObject = [localEnum nextObject];
+			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -285,6 +324,8 @@
 			
 			localObject = [localEnum nextObject];
 			remoteObject = [remoteEnum nextObject];
+			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -314,6 +355,7 @@
 			
 			remoteObject = [remoteEnum nextObject];
 			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -336,6 +378,8 @@
 			
 			remoteObject = [remoteEnum nextObject];
 		}
+		
+		NSLog(@"--- Results so far: %@", results);
 	}
 	
 	[self.delegate syncController:self updateObjectPositions:results];
@@ -345,6 +389,16 @@
 
 - (void)sync
 {
+	PDCredentials *credentials = [self.delegate credentialsForSyncController:self];
+	if (!credentials)
+	{
+		return;
+	}
+	
+	[ObjectiveResourceConfig setUser:credentials.username];
+	[ObjectiveResourceConfig setPassword:credentials.password];
+	[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
+	
 	NSArray *fetchRequests = [self.delegate fetchRequestsForSyncController:self];
 	if (!fetchRequests)
 	{
@@ -359,6 +413,8 @@
 	
 	NSAssert([fetchRequests count] == [remoteInvocations count], @"Local and remote change requests don't match.");
 	
+	[self performSelectorOnMainThread:@selector(syncStarted) withObject:nil waitUntilDone:YES];
+	
 	NSEnumerator *localEnum = [fetchRequests objectEnumerator];
 	NSEnumerator *remoteEnum = [remoteInvocations objectEnumerator];
 	
@@ -371,23 +427,25 @@
 		if (!localChange)
 		{
 			NSLog(@"An error occurred fetching local changes: %@, %@", error, [error userInfo]);
+			[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 			return;
 		}
 		
 		NSArray	*remoteChange = nil;
-		NSError **perror = &error;
-		[invocation setArgument:&perror atIndex:0];
 		[invocation invoke];
 		[invocation getReturnValue:&remoteChange];
 		
 		if (!remoteChange)
 		{
-			NSLog(@"An error occurred fetching remote changes: %@, %@", error, [error userInfo]);
+			NSLog(@"An error occurred fetching remote changes.");
+			[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 			return;
 		}
 		
 		[self mergeLocalObjects:localChange withRemoteObjects:remoteChange];
 	}
+	
+	[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 }
 
 @end

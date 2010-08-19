@@ -1,5 +1,10 @@
+@class PDCredentials;
+
 @protocol PDSyncControllerDelegate;
 
+
+extern NSString * const PDSyncDidStartNotification;
+extern NSString * const PDSyncDidStopNotification;
 
 @interface PDSyncController : NSObject
 
@@ -17,6 +22,7 @@
 
 @protocol PDSyncControllerDelegate <NSObject>
 
+- (PDCredentials *)credentialsForSyncController:(PDSyncController *)syncController;
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController;
 - (NSArray *)remoteInvocationsForSyncController:(PDSyncController *)syncController;
 

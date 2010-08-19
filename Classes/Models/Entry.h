@@ -11,4 +11,6 @@
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSDate *updatedAt;
 
++ (BOOL)sortRemote:(NSArray *)ids forList:(NSString *)listId withResponse:(NSError **)aError;
+
 @end
