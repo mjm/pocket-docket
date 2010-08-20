@@ -9,6 +9,11 @@ extern NSString * const PDSyncDidStopNotification;
 @interface PDSyncController : NSObject
 {
 	BOOL currentlySyncing;
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+	UIBackgroundTaskIdentifier backgroundTask;
+#endif
+#endif
 }
 
 @property (nonatomic, assign) id <PDSyncControllerDelegate> delegate;

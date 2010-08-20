@@ -50,6 +50,16 @@
 	[[PDPersistenceController sharedPersistenceController] save];
 }
 
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+	[[PDPersistenceController sharedPersistenceController] save];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+	
+}
+
 
 #pragma mark -
 #pragma mark Memory management

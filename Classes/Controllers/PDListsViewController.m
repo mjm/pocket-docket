@@ -193,21 +193,6 @@
 
 - (IBAction)refreshLists
 {
-//	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-//	if (!settingsController.docketAnywhereUsername)
-//	{
-//		PDLoginViewController *loginController = [[PDLoginViewController alloc] init];
-//		loginController.delegate = self;
-//		
-//		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginController];
-//		[loginController release];
-//		
-//		navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-//		
-//		[self presentModalViewController:navController animated:YES];
-//		return;
-//	}
-	
 	[[PDPersistenceController sharedPersistenceController] save];
 }
 

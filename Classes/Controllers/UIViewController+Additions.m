@@ -1,5 +1,6 @@
 #import "UIViewController+Additions.h"
 
+#import "../Singletons/PDPersistenceController.h"
 
 @implementation UIViewController (Additions)
 
@@ -33,11 +34,13 @@
 - (void)loginControllerDidLogin:(PDLoginViewController *)controller
 {
 	[self dismissModalViewControllerAnimated:YES];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 - (void)loginControllerDidRegister:(PDLoginViewController *)controller
 {
 	[self dismissModalViewControllerAnimated:YES];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 @end

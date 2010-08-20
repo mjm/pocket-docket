@@ -254,8 +254,34 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	}
 }
 
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+- (BOOL)backgroundingSupported
+{
+	UIDevice *device = [UIDevice currentDevice];
+	if ([device respondsToSelector:@selector(isMultitaskingSupported)])
+	{
+		return device.multitaskingSupported;
+	}
+	return NO;
+}
+#endif
+#endif
+
 - (void)syncStarted
 {
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+	if ([self backgroundingSupported])
+	{
+		backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+			[[ConnectionManager sharedInstance] cancelAllJobs];
+			[self syncStopped];
+		}];
+	}
+#endif
+#endif
+	
 	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStartNotification object:self];
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
@@ -270,6 +296,15 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	
 	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStopNotification object:self];
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+	if ([self backgroundingSupported])
+	{
+		[[UIApplication sharedApplication] endBackgroundTask:backgroundTask];
+	}
+#endif
+#endif
 }
 
 
