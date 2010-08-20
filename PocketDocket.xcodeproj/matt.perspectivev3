@@ -303,14 +303,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>67</integer>
-									<integer>65</integer>
+									<integer>35</integer>
+									<integer>33</integer>
 									<integer>24</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 172}, {266, 1222}}</string>
+							<string>{{0, 532}, {266, 1222}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -345,7 +345,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDSyncController.m</string>
+								<string>PDAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -353,11 +353,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDSyncController.m</string>
+										<string>PDAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C99BD2C8121EF98400A5A582</string>
+										<string>C99BD2CC121F145200A5A582</string>
 										<key>history</key>
 										<array>
 											<string>C97CE30B1210EF8C0054B858</string>
@@ -461,8 +461,8 @@
 											<string>C99BD29A121E2E5A00A5A582</string>
 											<string>C99BD29B121E2E5A00A5A582</string>
 											<string>C99BD29D121E2E5A00A5A582</string>
-											<string>C99BD2C6121EF98400A5A582</string>
-											<string>C99BD2C7121EF98400A5A582</string>
+											<string>C99BD2CA121F145200A5A582</string>
+											<string>C99BD2CB121F145200A5A582</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -779,7 +779,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C99BD2C9121EF98400A5A582</string>
 		<string>C99BD2B5121EF7A100A5A582</string>
 		<string>C99BD2B7121EF7A100A5A582</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>

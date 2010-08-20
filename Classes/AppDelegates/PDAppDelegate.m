@@ -22,7 +22,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-	[ObjectiveResourceConfig setSite:@"http://10.0.1.13:3000/"];
+	[ObjectiveResourceConfig setSite:@"http://docketanywhere.com/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];

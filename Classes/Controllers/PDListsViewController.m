@@ -9,6 +9,7 @@
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "ConnectionManager.h"
+#import "PDSyncController.h"
 
 
 #pragma mark Private Methods
@@ -123,6 +124,15 @@
 	[[PDSettingsController sharedSettingsController] saveSelectedList:nil];
 	
 	self.navigationController.toolbarHidden = NO;
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -141,6 +151,9 @@
 	[super viewWillDisappear:animated];
 	
 	self.navigationController.toolbarHidden = YES;
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -201,6 +214,16 @@
 //	[[ConnectionManager sharedInstance] cancelAllJobs];
 //	[self showRefreshButton:self.refreshButton];
 //	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+	[self showRefreshButton:self.stopButton];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+	[self showRefreshButton:self.refreshButton];
 }
 
 
@@ -290,24 +313,12 @@
 
 
 #pragma mark -
-#pragma mark Login Controller Delegate Methods
-
-//- (void)loginControllerDidLogin:(PDLoginViewController *)controller
-//{
-//	[super loginControllerDidLogin:controller];
-//}
-//
-//- (void)loginControllerDidRegister:(PDLoginViewController *)controller
-//{
-//	[super loginControllerDidRegister:controller];
-//}
-
-
-#pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
 	self.table = nil;
 	self.addButton = nil;
 	self.refreshButton = nil;
