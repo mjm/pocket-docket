@@ -10,7 +10,6 @@
 #import "PDSyncDelegate.h"
 
 #import "ObjectiveResource.h"
-#import "ConnectionManager.h"
 
 
 #pragma mark PrivateMethods
@@ -18,7 +17,6 @@
 @interface PDPersistenceController ()
 
 @property (nonatomic, readonly) NSUndoManager *undoManager;
-//@property (nonatomic, retain) PDChangeManager *changeManager;
 @property (nonatomic, retain) PDSyncController *syncController;
 - (NSString *)applicationDocumentsDirectory;
 
@@ -42,10 +40,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	
 	self.syncController = [PDSyncController syncControllerWithManagedObjectContext:self.managedObjectContext];
 	self.syncController.delegate = [[PDSyncDelegate alloc] init];
-//	NSString *path = [[self applicationDocumentsDirectory] stringByAppendingPathComponent:@"PendingChanges.pd"];
-//	self.changeManager = [PDChangeManager changeManagerWithContentsOfFile:path];
-//	self.changeManager.delegate = self;
-//	self.changeManager.managedObjectContext = self.managedObjectContext;
 	
 	return self;
 }
@@ -192,7 +186,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 {
 	PDList *list = [PDList insertInManagedObjectContext:self.managedObjectContext];
 	list.orderValue = 0;
-	//[self.changeManager addChange:list changeType:PDChangeTypeCreate];
 	
 	// Now update the order of all the other lists.
 	NSArray *results = [PDList fetchAllLists:self.managedObjectContext];
@@ -240,7 +233,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 			entry.orderValue = [[results objectAtIndex:0] orderValue] + 1;
 		}
 		
-		//[self.changeManager addChange:entry changeType:PDChangeTypeCreate];
 		[self save];
 		
 		return entry;
@@ -337,7 +329,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 				index++;
 			}
 			each.movedSinceSyncValue = YES;
-			//[self.changeManager addChange:each changeType:PDChangeTypeUpdate];
 		}
 		
 		[self save];
@@ -384,8 +375,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 				index++;
 			}
 			each.movedSinceSyncValue = YES;
-			
-			//[self.changeManager addChange:each changeType:PDChangeTypeUpdate];
 		}
 		
 		[self save];
@@ -399,7 +388,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 - (void)markChanged:(NSManagedObject <PDLocalChanging>*)object
 {
 	[object setUpdatedAt:[NSDate date]];
-	//[self.changeManager addChange:object changeType:PDChangeTypeUpdate];
 }
 
 
@@ -409,8 +397,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 - (void)deleteList:(PDList *)list
 {
 	NSNumber *position = list.order;
-	//[self.changeManager addChange:list changeType:PDChangeTypeDelete];
-	//[self.managedObjectContext deleteObject:list];
 	list.deletedAt = [NSDate date];
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObject:position forKey:@"position"];
@@ -436,9 +422,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	PDList *list = entry.list;
 	
 	NSNumber *position = entry.order;
-	
-	//[self.changeManager addChange:entry changeType:PDChangeTypeDelete];
-	//[self.managedObjectContext deleteObject:entry];
 	entry.deletedAt = [NSDate date];
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -476,65 +459,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		NSLog(@"Error saving changes: %@, %@", error, [error userInfo]);
 	}
 	
-	[[ConnectionManager sharedInstance] runJob:@selector(sync) onTarget:self.syncController];
-	//[self.changeManager commitPendingChanges];
+	[self.syncController sync];
 }
 
 - (void)refresh
 {
-//	NSError *error;
-//	if (![self.managedObjectContext save:&error])
-//	{
-//		NSLog(@"Error saving before refreshing: %@, %@", error, [error userInfo]);
-//	}
-//	
-//	[self.changeManager refreshAndPublishChanges];
 	[self save];
 }
-
-
-#pragma mark -
-#pragma mark Change Manager Delegate Methods
-
-//- (void)createRemoteDevice
-//{
-//	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-//	
-//	Device *device = [[[Device alloc] init] autorelease];
-//	NSError *error = nil;
-//	if ([device createRemoteWithResponse:&error])
-//	{
-//		[PDSettingsController sharedSettingsController].docketAnywhereDeviceId = device.deviceId;
-//		[self.changeManager retry];
-//	}
-//	else
-//	{
-//		NSLog(@"Couldn't create a new device ID: %@, %@", error, [error userInfo]);
-//	}
-//	
-//	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-//}
-//
-//- (PDCredentials *)credentialsForChangeManager:(PDChangeManager *)changeManager
-//{
-//	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
-//	if (!username)
-//	{
-//		[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
-//		return nil;
-//	}
-//	
-//	NSString *deviceId = [[PDSettingsController sharedSettingsController] docketAnywhereDeviceId];
-//	if (!deviceId)
-//	{
-//		[[ConnectionManager sharedInstance] runJob:@selector(createRemoteDevice) onTarget:self];
-//		return nil;
-//	}
-//	
-//	NSString *password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
-//	
-//	return [PDCredentials credentialsWithUsername:username password:password deviceId:deviceId];
-//}
 
 
 #pragma mark -
@@ -542,7 +473,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (void)dealloc
 {
-	//self.changeManager = nil;
+	self.syncController = nil;
 	[managedObjectContext release];
 	[managedObjectModel release];
 	[persistentStoreCoordinator release];

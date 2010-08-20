@@ -494,6 +494,7 @@
 			C99BD145121DF42300A5A582 /* XDModelBookmark */ = C99BD145121DF42300A5A582 /* XDModelBookmark */;
 			C99BD146121DF42300A5A582 /* PBXTextBookmark */ = C99BD146121DF42300A5A582 /* PBXTextBookmark */;
 			C99BD147121DF42300A5A582 /* PBXTextBookmark */ = C99BD147121DF42300A5A582 /* PBXTextBookmark */;
+			C99BD148121DF42B00A5A582 /* PBXBookmark */ = C99BD148121DF42B00A5A582 /* PBXBookmark */;
 			C99BD149121DF45C00A5A582 /* XDModelBookmark */ = C99BD149121DF45C00A5A582 /* XDModelBookmark */;
 			C99BD14A121DF45C00A5A582 /* PBXTextBookmark */ = C99BD14A121DF45C00A5A582 /* PBXTextBookmark */;
 			C99BD14B121DF46100A5A582 /* PBXTextBookmark */ = C99BD14B121DF46100A5A582 /* PBXTextBookmark */;
@@ -523,6 +524,63 @@
 			C99BD199121DFA5D00A5A582 /* PBXTextBookmark */ = C99BD199121DFA5D00A5A582 /* PBXTextBookmark */;
 			C99BD19A121DFA5D00A5A582 /* PBXTextBookmark */ = C99BD19A121DFA5D00A5A582 /* PBXTextBookmark */;
 			C99BD19D121DFB7800A5A582 /* PBXTextBookmark */ = C99BD19D121DFB7800A5A582 /* PBXTextBookmark */;
+			C99BD1B8121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1B8121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1B9121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1B9121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1BA121E1A9900A5A582 /* XDModelBookmark */ = C99BD1BA121E1A9900A5A582 /* XDModelBookmark */;
+			C99BD1BB121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1BB121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1BC121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1BC121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1BD121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1BD121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1BE121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1BE121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1BF121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1BF121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1C0121E1A9900A5A582 /* PBXTextBookmark */ = C99BD1C0121E1A9900A5A582 /* PBXTextBookmark */;
+			C99BD1C1121E1A9D00A5A582 /* PBXTextBookmark */ = C99BD1C1121E1A9D00A5A582 /* PBXTextBookmark */;
+			C99BD1C2121E1A9D00A5A582 /* PBXTextBookmark */ = C99BD1C2121E1A9D00A5A582 /* PBXTextBookmark */;
+			C99BD1C3121E1B5C00A5A582 /* PBXTextBookmark */ = C99BD1C3121E1B5C00A5A582 /* PBXTextBookmark */;
+			C99BD1C4121E1B5C00A5A582 /* PBXTextBookmark */ = C99BD1C4121E1B5C00A5A582 /* PBXTextBookmark */;
+			C99BD1C5121E1B5C00A5A582 /* PBXTextBookmark */ = C99BD1C5121E1B5C00A5A582 /* PBXTextBookmark */;
+			C99BD1C6121E1B5C00A5A582 /* PBXTextBookmark */ = C99BD1C6121E1B5C00A5A582 /* PBXTextBookmark */;
+			C99BD1C9121E1B5C00A5A582 /* XDModelBookmark */ = C99BD1C9121E1B5C00A5A582 /* XDModelBookmark */;
+			C99BD1D4121E1E6F00A5A582 /* PBXTextBookmark */ = C99BD1D4121E1E6F00A5A582 /* PBXTextBookmark */;
+			C99BD1D5121E1E6F00A5A582 /* PBXTextBookmark */ = C99BD1D5121E1E6F00A5A582 /* PBXTextBookmark */;
+			C99BD1D6121E1E6F00A5A582 /* PBXTextBookmark */ = C99BD1D6121E1E6F00A5A582 /* PBXTextBookmark */;
+			C99BD1D7121E1E6F00A5A582 /* PBXTextBookmark */ = C99BD1D7121E1E6F00A5A582 /* PBXTextBookmark */;
+			C99BD1D8121E1F0A00A5A582 /* PBXTextBookmark */ = C99BD1D8121E1F0A00A5A582 /* PBXTextBookmark */;
+			C99BD1D9121E1F0A00A5A582 /* PBXTextBookmark */ = C99BD1D9121E1F0A00A5A582 /* PBXTextBookmark */;
+			C99BD1DC121E1F6500A5A582 /* PBXTextBookmark */ = C99BD1DC121E1F6500A5A582 /* PBXTextBookmark */;
+			C99BD1DD121E1F6500A5A582 /* PBXTextBookmark */ = C99BD1DD121E1F6500A5A582 /* PBXTextBookmark */;
+			C99BD1DE121E1F6500A5A582 /* PBXTextBookmark */ = C99BD1DE121E1F6500A5A582 /* PBXTextBookmark */;
+			C99BD1DF121E1F6500A5A582 /* XDModelBookmark */ = C99BD1DF121E1F6500A5A582 /* XDModelBookmark */;
+			C99BD1E9121E21F900A5A582 /* PBXTextBookmark */ = C99BD1E9121E21F900A5A582 /* PBXTextBookmark */;
+			C99BD1EA121E21F900A5A582 /* PBXTextBookmark */ = C99BD1EA121E21F900A5A582 /* PBXTextBookmark */;
+			C99BD1EB121E21F900A5A582 /* PBXTextBookmark */ = C99BD1EB121E21F900A5A582 /* PBXTextBookmark */;
+			C99BD1EC121E21F900A5A582 /* PBXTextBookmark */ = C99BD1EC121E21F900A5A582 /* PBXTextBookmark */;
+			C99BD1ED121E21F900A5A582 /* PBXTextBookmark */ = C99BD1ED121E21F900A5A582 /* PBXTextBookmark */;
+			C99BD1EE121E21F900A5A582 /* XDModelBookmark */ = C99BD1EE121E21F900A5A582 /* XDModelBookmark */;
+			C99BD1F3121E224D00A5A582 /* PBXTextBookmark */ = C99BD1F3121E224D00A5A582 /* PBXTextBookmark */;
+			C99BD1F6121E243300A5A582 /* PBXTextBookmark */ = C99BD1F6121E243300A5A582 /* PBXTextBookmark */;
+			C99BD1F7121E243300A5A582 /* PBXTextBookmark */ = C99BD1F7121E243300A5A582 /* PBXTextBookmark */;
+			C99BD1FE121E245C00A5A582 /* PBXTextBookmark */ = C99BD1FE121E245C00A5A582 /* PBXTextBookmark */;
+			C99BD1FF121E245C00A5A582 /* PBXTextBookmark */ = C99BD1FF121E245C00A5A582 /* PBXTextBookmark */;
+			C99BD200121E245C00A5A582 /* PBXTextBookmark */ = C99BD200121E245C00A5A582 /* PBXTextBookmark */;
+			C99BD203121E24F700A5A582 /* PBXTextBookmark */ = C99BD203121E24F700A5A582 /* PBXTextBookmark */;
+			C99BD204121E24F700A5A582 /* PBXTextBookmark */ = C99BD204121E24F700A5A582 /* PBXTextBookmark */;
+			C99BD205121E250300A5A582 /* PBXTextBookmark */ = C99BD205121E250300A5A582 /* PBXTextBookmark */;
+			C99BD206121E250300A5A582 /* XDModelBookmark */ = C99BD206121E250300A5A582 /* XDModelBookmark */;
+			C99BD20E121E25CA00A5A582 /* PBXTextBookmark */ = C99BD20E121E25CA00A5A582 /* PBXTextBookmark */;
+			C99BD20F121E25CA00A5A582 /* PBXTextBookmark */ = C99BD20F121E25CA00A5A582 /* PBXTextBookmark */;
+			C99BD210121E25CA00A5A582 /* PBXTextBookmark */ = C99BD210121E25CA00A5A582 /* PBXTextBookmark */;
+			C99BD211121E25CA00A5A582 /* XDModelBookmark */ = C99BD211121E25CA00A5A582 /* XDModelBookmark */;
+			C99BD213121E25F000A5A582 /* PBXTextBookmark */ = C99BD213121E25F000A5A582 /* PBXTextBookmark */;
+			C99BD214121E261B00A5A582 /* PBXTextBookmark */ = C99BD214121E261B00A5A582 /* PBXTextBookmark */;
+			C99BD215121E261B00A5A582 /* PBXTextBookmark */ = C99BD215121E261B00A5A582 /* PBXTextBookmark */;
+			C99BD21E121E282700A5A582 /* PBXTextBookmark */ = C99BD21E121E282700A5A582 /* PBXTextBookmark */;
+			C99BD21F121E282700A5A582 /* PBXTextBookmark */ = C99BD21F121E282700A5A582 /* PBXTextBookmark */;
+			C99BD220121E282700A5A582 /* PBXTextBookmark */ = C99BD220121E282700A5A582 /* PBXTextBookmark */;
+			C99BD221121E282700A5A582 /* PBXTextBookmark */ = C99BD221121E282700A5A582 /* PBXTextBookmark */;
+			C99BD222121E282700A5A582 /* PBXTextBookmark */ = C99BD222121E282700A5A582 /* PBXTextBookmark */;
+			C99BD223121E282700A5A582 /* PBXTextBookmark */ = C99BD223121E282700A5A582 /* PBXTextBookmark */;
+			C99BD224121E282700A5A582 /* PBXTextBookmark */ = C99BD224121E282700A5A582 /* PBXTextBookmark */;
+			C99BD225121E282700A5A582 /* XDModelBookmark */ = C99BD225121E282700A5A582 /* XDModelBookmark */;
 			C9E6D29B121C53E200E4D3B1 = C9E6D29B121C53E200E4D3B1 /* PBXTextBookmark */;
 			C9E6D2A4121C5B4B00E4D3B1 = C9E6D2A4121C5B4B00E4D3B1 /* PBXTextBookmark */;
 			C9FD26321216FACD00D9127D = C9FD26321216FACD00D9127D /* PBXTextBookmark */;
@@ -679,9 +737,9 @@
 	};
 	C9013D781214635D00815A27 /* Entry.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1174, 1768}}";
-			sepNavSelRange = "{3530, 0}";
-			sepNavVisRange = "{0, 2254}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 1417}}";
+			sepNavSelRange = "{132, 0}";
+			sepNavVisRange = "{0, 777}";
 		};
 	};
 	C9013D9B1214692A00815A27 /* PBXTextBookmark */ = {
@@ -768,15 +826,15 @@
 	C91C2475121ABDA600FBA1F0 /* PDSyncController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
-			sepNavSelRange = "{120, 0}";
-			sepNavVisRange = "{0, 2032}";
+			sepNavSelRange = "{229, 0}";
+			sepNavVisRange = "{0, 2060}";
 		};
 	};
 	C91C2476121ABDA600FBA1F0 /* PDSyncController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 5850}}";
-			sepNavSelRange = "{3388, 0}";
-			sepNavVisRange = "{2583, 1299}";
+			sepNavIntBoundsRect = "{{0, 0}, {985, 6123}}";
+			sepNavSelRange = "{12817, 0}";
+			sepNavVisRange = "{0, 2039}";
 		};
 	};
 	C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {
@@ -794,6 +852,12 @@
 		};
 	};
 	C92B8C401215D1D60076F539 /* PDCredentials.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDCredentials.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDCredentials.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
 			sepNavSelRange = "{333, 0}";
@@ -801,6 +865,12 @@
 		};
 	};
 	C92B8C411215D1D60076F539 /* PDCredentials.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDCredentials.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDCredentials.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
 			sepNavSelRange = "{284, 0}";
@@ -940,7 +1010,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 292";
 		rLen = 0;
-		rLoc = 9419;
+		rLoc = 9475;
 		rType = 0;
 		vrLen = 1971;
 		vrLoc = 6680;
@@ -1031,9 +1101,9 @@
 	};
 	C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 7189}}";
-			sepNavSelRange = "{14323, 0}";
-			sepNavVisRange = "{13174, 2160}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 6045}}";
+			sepNavSelRange = "{834, 0}";
+			sepNavVisRange = "{537, 620}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1693,7 +1763,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 491";
 		rLen = 0;
-		rLoc = 13670;
+		rLoc = 12361;
 		rType = 0;
 		vrLen = 1725;
 		vrLoc = 13066;
@@ -1801,7 +1871,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 265";
 		rLen = 0;
-		rLoc = 8641;
+		rLoc = 8697;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 6740;
@@ -1910,7 +1980,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 26";
 		rLen = 0;
-		rLoc = 637;
+		rLoc = 543;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 0;
@@ -1960,7 +2030,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 265";
 		rLen = 0;
-		rLoc = 8641;
+		rLoc = 8697;
 		rType = 0;
 		vrLen = 1943;
 		vrLoc = 0;
@@ -1970,7 +2040,7 @@
 		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
 		name = "PDSyncController.h: 32";
 		rLen = 0;
-		rLoc = 1440;
+		rLoc = 1468;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 0;
@@ -2453,7 +2523,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 26";
 		rLen = 0;
-		rLoc = 637;
+		rLoc = 543;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 0;
@@ -2463,7 +2533,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 203";
 		rLen = 0;
-		rLoc = 5900;
+		rLoc = 5433;
 		rType = 0;
 		vrLen = 2175;
 		vrLoc = 5129;
@@ -2513,7 +2583,7 @@
 		isa = PBXTextBookmark;
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		rLen = 5;
-		rLoc = 5564;
+		rLoc = 5167;
 		rType = 0;
 	};
 	C99BCEAC121C9B9600A5A582 /* PBXTextBookmark */ = {
@@ -2521,7 +2591,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 510";
 		rLen = 0;
-		rLoc = 13763;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1974;
 		vrLoc = 12745;
@@ -2547,7 +2617,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 510";
 		rLen = 0;
-		rLoc = 13763;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 13257;
@@ -2557,7 +2627,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 493";
 		rLen = 0;
-		rLoc = 13763;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 2012;
 		vrLoc = 12271;
@@ -2707,7 +2777,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 372";
 		rLen = 0;
-		rLoc = 10745;
+		rLoc = 10134;
 		rType = 0;
 		vrLen = 2300;
 		vrLoc = 9436;
@@ -2717,7 +2787,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 265";
 		rLen = 0;
-		rLoc = 8641;
+		rLoc = 8697;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 0;
@@ -2727,7 +2797,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 11";
 		rLen = 0;
-		rLoc = 313;
+		rLoc = 343;
 		rType = 0;
 		vrLen = 1786;
 		vrLoc = 7432;
@@ -2737,7 +2807,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 303";
 		rLen = 0;
-		rLoc = 10034;
+		rLoc = 10090;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 7332;
@@ -2747,7 +2817,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 36";
 		rLen = 0;
-		rLoc = 1204;
+		rLoc = 1234;
 		rType = 0;
 		vrLen = 2127;
 		vrLoc = 0;
@@ -2757,7 +2827,7 @@
 		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
 		name = "PDSyncController.h: 32";
 		rLen = 0;
-		rLoc = 1440;
+		rLoc = 1468;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 0;
@@ -2767,7 +2837,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 275";
 		rLen = 0;
-		rLoc = 6712;
+		rLoc = 6742;
 		rType = 0;
 		vrLen = 2398;
 		vrLoc = 6387;
@@ -2777,7 +2847,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 288";
 		rLen = 0;
-		rLoc = 7171;
+		rLoc = 7201;
 		rType = 0;
 		vrLen = 2438;
 		vrLoc = 6387;
@@ -2787,7 +2857,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 351";
 		rLen = 0;
-		rLoc = 9808;
+		rLoc = 9864;
 		rType = 0;
 		vrLen = 2087;
 		vrLoc = 8770;
@@ -2797,7 +2867,7 @@
 		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
 		name = "PDSyncController.h: 23";
 		rLen = 0;
-		rLoc = 987;
+		rLoc = 1015;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 0;
@@ -2807,7 +2877,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 364";
 		rLen = 0;
-		rLoc = 10286;
+		rLoc = 10342;
 		rType = 0;
 		vrLen = 2131;
 		vrLoc = 8770;
@@ -2817,7 +2887,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 352";
 		rLen = 0;
-		rLoc = 9808;
+		rLoc = 9864;
 		rType = 0;
 		vrLen = 2156;
 		vrLoc = 8770;
@@ -2827,7 +2897,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 405";
 		rLen = 0;
-		rLoc = 11515;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 9439;
@@ -2837,23 +2907,23 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 421";
 		rLen = 0;
-		rLoc = 12231;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1474;
 		vrLoc = 9572;
 	};
 	C99BCF19121CCF5500A5A582 /* PDSyncDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
 			sepNavSelRange = "{49, 0}";
 			sepNavVisRange = "{0, 160}";
 		};
 	};
 	C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {957, 5083}}";
-			sepNavSelRange = "{5814, 0}";
-			sepNavVisRange = "{3910, 2347}";
+			sepNavIntBoundsRect = "{{0, 0}, {1219, 5993}}";
+			sepNavSelRange = "{8398, 0}";
+			sepNavVisRange = "{7817, 1096}";
 		};
 	};
 	C99BCF71121DA7EA00A5A582 /* PBXTextBookmark */ = {
@@ -2861,7 +2931,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 141";
 		rLen = 0;
-		rLoc = 6317;
+		rLoc = 7087;
 		rType = 0;
 		vrLen = 2305;
 		vrLoc = 2335;
@@ -2871,7 +2941,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 139";
 		rLen = 0;
-		rLoc = 6257;
+		rLoc = 7027;
 		rType = 0;
 		vrLen = 2032;
 		vrLoc = 5213;
@@ -2881,7 +2951,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 225";
 		rLen = 0;
-		rLoc = 9994;
+		rLoc = 12219;
 		rType = 0;
 		vrLen = 2032;
 		vrLoc = 5213;
@@ -2891,7 +2961,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 339";
 		rLen = 0;
-		rLoc = 11033;
+		rLoc = 11089;
 		rType = 0;
 		vrLen = 2294;
 		vrLoc = 7916;
@@ -2901,15 +2971,15 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 281";
 		rLen = 0;
-		rLoc = 9130;
+		rLoc = 9186;
 		rType = 0;
 		vrLen = 2445;
 		vrLoc = 6478;
 	};
 	C99BCF7A121DC1B800A5A582 /* PDResource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
-			sepNavSelRange = "{496, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
+			sepNavSelRange = "{503, 0}";
 			sepNavVisRange = "{0, 503}";
 		};
 	};
@@ -2985,7 +3055,7 @@
 		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
 		name = "PDSyncController.h: 20";
 		rLen = 1150;
-		rLoc = 771;
+		rLoc = 799;
 		rType = 0;
 		vrLen = 1821;
 		vrLoc = 0;
@@ -3025,7 +3095,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 61";
 		rLen = 0;
-		rLoc = 1927;
+		rLoc = 779;
 		rType = 0;
 		vrLen = 2441;
 		vrLoc = 320;
@@ -3035,7 +3105,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 26";
 		rLen = 0;
-		rLoc = 578;
+		rLoc = 608;
 		rType = 0;
 		vrLen = 2053;
 		vrLoc = 0;
@@ -3075,7 +3145,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 298";
 		rLen = 0;
-		rLoc = 11027;
+		rLoc = 13252;
 		rType = 0;
 		vrLen = 2021;
 		vrLoc = 6184;
@@ -3085,7 +3155,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 268";
 		rLen = 0;
-		rLoc = 9869;
+		rLoc = 12094;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 6537;
@@ -3095,7 +3165,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 268";
 		rLen = 0;
-		rLoc = 9869;
+		rLoc = 12094;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 6537;
@@ -3135,7 +3205,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 61";
 		rLen = 0;
-		rLoc = 1927;
+		rLoc = 779;
 		rType = 0;
 		vrLen = 2396;
 		vrLoc = 0;
@@ -3145,7 +3215,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 7";
 		rLen = 0;
-		rLoc = 138;
+		rLoc = 135;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -3155,7 +3225,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 75";
 		rLen = 0;
-		rLoc = 2253;
+		rLoc = 1105;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -3165,7 +3235,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 268";
 		rLen = 0;
-		rLoc = 9869;
+		rLoc = 12094;
 		rType = 0;
 		vrLen = 1958;
 		vrLoc = 6490;
@@ -3175,7 +3245,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 310";
 		rLen = 0;
-		rLoc = 10978;
+		rLoc = 13203;
 		rType = 0;
 		vrLen = 2338;
 		vrLoc = 0;
@@ -3185,7 +3255,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 67";
 		rLen = 0;
-		rLoc = 3490;
+		rLoc = 4125;
 		rType = 0;
 		vrLen = 2545;
 		vrLoc = 633;
@@ -3215,7 +3285,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 2291;
 		vrLoc = 1144;
@@ -3235,7 +3305,7 @@
 		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
 		name = "PDSyncController.h: 20";
 		rLen = 1150;
-		rLoc = 771;
+		rLoc = 799;
 		rType = 0;
 		vrLen = 1821;
 		vrLoc = 0;
@@ -3375,7 +3445,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 409";
 		rLen = 0;
-		rLoc = 11413;
+		rLoc = 10654;
 		rType = 0;
 		vrLen = 2353;
 		vrLoc = 9995;
@@ -3385,7 +3455,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 378";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2497;
 		vrLoc = 7033;
@@ -3395,7 +3465,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2328;
 		vrLoc = 10329;
@@ -3405,7 +3475,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2332;
 		vrLoc = 10325;
@@ -3415,7 +3485,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 477";
 		rLen = 0;
-		rLoc = 13405;
+		rLoc = 12340;
 		rType = 0;
 		vrLen = 2183;
 		vrLoc = 12416;
@@ -3470,7 +3540,7 @@
 		isa = PBXTextBookmark;
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		rLen = 0;
-		rLoc = 434;
+		rLoc = 465;
 		rType = 1;
 	};
 	C99BD039121DDC3300A5A582 /* PBXTextBookmark */ = {
@@ -3478,7 +3548,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 12518;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1421;
 		vrLoc = 11236;
@@ -3498,7 +3568,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 12518;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2304;
 		vrLoc = 10353;
@@ -3568,7 +3638,7 @@
 		isa = PBXTextBookmark;
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		rLen = 0;
-		rLoc = 434;
+		rLoc = 465;
 		rType = 1;
 	};
 	C99BD04A121DDDCB00A5A582 /* PBXTextBookmark */ = {
@@ -3576,7 +3646,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 12518;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 11234;
@@ -3586,7 +3656,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 12518;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2304;
 		vrLoc = 10353;
@@ -3626,7 +3696,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 12518;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 11234;
@@ -3693,7 +3763,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 419";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 10349;
@@ -3703,7 +3773,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 419";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2394;
 		vrLoc = 10349;
@@ -3723,7 +3793,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2417;
 		vrLoc = 10349;
@@ -3733,7 +3803,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2419;
 		vrLoc = 10349;
@@ -3753,7 +3823,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 11236;
@@ -3790,7 +3860,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2419;
 		vrLoc = 10349;
@@ -3815,7 +3885,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 11236;
@@ -3825,7 +3895,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2291;
 		vrLoc = 10483;
@@ -3835,7 +3905,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2291;
 		vrLoc = 10483;
@@ -3845,7 +3915,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 11236;
@@ -3913,7 +3983,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2296;
 		vrLoc = 10478;
@@ -3938,7 +4008,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 12483;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 11351;
@@ -3958,8 +4028,8 @@
 		comments = "Method '+setDeviceId:' not found (return type defaults to 'id')";
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
-		rLen = 1;
-		rLoc = 399;
+		rLen = 0;
+		rLoc = 465;
 		rType = 1;
 	};
 	C99BD08E121DE6EE00A5A582 /* PBXTextBookmark */ = {
@@ -3967,7 +4037,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11077;
+		rLoc = 11133;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 10115;
@@ -3977,7 +4047,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11077;
+		rLoc = 11133;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 10925;
@@ -3987,7 +4057,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11077;
+		rLoc = 11133;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 10115;
@@ -4147,7 +4217,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 2243;
 		vrLoc = 1192;
@@ -4157,7 +4227,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -4167,7 +4237,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -4177,7 +4247,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11077;
+		rLoc = 11133;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 10925;
@@ -4187,7 +4257,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 2488;
@@ -4197,7 +4267,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -4207,7 +4277,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11077;
+		rLoc = 11133;
 		rType = 0;
 		vrLen = 2252;
 		vrLoc = 10119;
@@ -4257,7 +4327,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 2901;
+		rLoc = 1753;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 2488;
@@ -4297,7 +4367,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2261;
 		vrLoc = 10284;
@@ -4317,7 +4387,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 324";
 		rLen = 0;
-		rLoc = 9681;
+		rLoc = 11906;
 		rType = 0;
 		vrLen = 1917;
 		vrLoc = 8485;
@@ -4337,7 +4407,7 @@
 		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
 		name = "PDSyncDelegate.m: 324";
 		rLen = 0;
-		rLoc = 9681;
+		rLoc = 11906;
 		rType = 0;
 		vrLen = 646;
 		vrLoc = 8724;
@@ -4404,7 +4474,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2264;
 		vrLoc = 10280;
@@ -4414,7 +4484,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2472;
 		vrLoc = 7761;
@@ -4434,7 +4504,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 9668;
@@ -4444,7 +4514,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 2172;
 		vrLoc = 8633;
@@ -4454,7 +4524,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 11498;
+		rLoc = 13334;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 9668;
@@ -4464,7 +4534,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 369";
 		rLen = 0;
-		rLoc = 10989;
+		rLoc = 11045;
 		rType = 0;
 		vrLen = 2159;
 		vrLoc = 8995;
@@ -4474,7 +4544,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 369";
 		rLen = 0;
-		rLoc = 10989;
+		rLoc = 11045;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 9668;
@@ -4484,7 +4554,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 292";
 		rLen = 0;
-		rLoc = 8641;
+		rLoc = 8697;
 		rType = 0;
 		vrLen = 2425;
 		vrLoc = 7907;
@@ -4494,7 +4564,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9911;
+		rLoc = 9967;
 		rType = 0;
 		vrLen = 2425;
 		vrLoc = 7907;
@@ -4504,7 +4574,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9911;
+		rLoc = 9967;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 7624;
@@ -4534,7 +4604,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9911;
+		rLoc = 9967;
 		rType = 0;
 		vrLen = 2287;
 		vrLoc = 6963;
@@ -4544,7 +4614,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 225";
 		rLen = 0;
-		rLoc = 6261;
+		rLoc = 6291;
 		rType = 0;
 		vrLen = 2461;
 		vrLoc = 5651;
@@ -4554,7 +4624,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7739;
+		rLoc = 7795;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 7525;
@@ -4564,7 +4634,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7739;
+		rLoc = 7795;
 		rType = 0;
 		vrLen = 2401;
 		vrLoc = 6861;
@@ -4584,7 +4654,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 477";
 		rLen = 0;
-		rLoc = 13405;
+		rLoc = 12340;
 		rType = 0;
 		vrLen = 2174;
 		vrLoc = 12416;
@@ -4594,7 +4664,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 477";
 		rLen = 0;
-		rLoc = 13405;
+		rLoc = 12340;
 		rType = 0;
 		vrLen = 2596;
 		vrLoc = 3807;
@@ -4604,7 +4674,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7739;
+		rLoc = 7795;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 7525;
@@ -4614,7 +4684,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 218";
 		rLen = 0;
-		rLoc = 6232;
+		rLoc = 5765;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6430;
@@ -4624,7 +4694,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 218";
 		rLen = 0;
-		rLoc = 6232;
+		rLoc = 5765;
 		rType = 0;
 		vrLen = 2141;
 		vrLoc = 13124;
@@ -4634,7 +4704,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7739;
+		rLoc = 7795;
 		rType = 0;
 		vrLen = 2365;
 		vrLoc = 6861;
@@ -4644,7 +4714,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9586;
+		rLoc = 9642;
 		rType = 0;
 		vrLen = 2301;
 		vrLoc = 8540;
@@ -4654,7 +4724,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 218";
 		rLen = 0;
-		rLoc = 6232;
+		rLoc = 5765;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 6430;
@@ -4664,7 +4734,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9586;
+		rLoc = 9642;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 9077;
@@ -4674,7 +4744,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9586;
+		rLoc = 9642;
 		rType = 0;
 		vrLen = 2301;
 		vrLoc = 8540;
@@ -4684,7 +4754,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 218";
 		rLen = 0;
-		rLoc = 6232;
+		rLoc = 5765;
 		rType = 0;
 		vrLen = 2143;
 		vrLoc = 13122;
@@ -4694,7 +4764,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 385";
 		rLen = 0;
-		rLoc = 10915;
+		rLoc = 10304;
 		rType = 0;
 		vrLen = 2325;
 		vrLoc = 9681;
@@ -4704,7 +4774,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 385";
 		rLen = 0;
-		rLoc = 10915;
+		rLoc = 10304;
 		rType = 0;
 		vrLen = 2297;
 		vrLoc = 9662;
@@ -4714,7 +4784,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9586;
+		rLoc = 9642;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 9077;
@@ -4724,7 +4794,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 930;
 		vrLoc = 8850;
@@ -4734,7 +4804,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 8788;
@@ -4744,7 +4814,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 2415;
 		vrLoc = 8265;
@@ -4754,7 +4824,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 992;
 		vrLoc = 8788;
@@ -4764,7 +4834,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 107";
 		rLen = 0;
-		rLoc = 2781;
+		rLoc = 2811;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 2414;
@@ -4837,7 +4907,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 2415;
 		vrLoc = 8265;
@@ -4862,7 +4932,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 875;
 		vrLoc = 8998;
@@ -4872,7 +4942,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 125";
 		rLen = 0;
-		rLoc = 3388;
+		rLoc = 3418;
 		rType = 0;
 		vrLen = 1299;
 		vrLoc = 2583;
@@ -4893,7 +4963,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 2415;
 		vrLoc = 8265;
@@ -4903,7 +4973,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 145";
 		rLen = 0;
-		rLoc = 4013;
+		rLoc = 4043;
 		rType = 0;
 		vrLen = 2592;
 		vrLoc = 2230;
@@ -5239,7 +5309,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 125";
 		rLen = 0;
-		rLoc = 3388;
+		rLoc = 3418;
 		rType = 0;
 		vrLen = 1299;
 		vrLoc = 2583;
@@ -5776,6 +5846,10 @@
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 5403;
+	};
+	C99BD148121DF42B00A5A582 /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
 	};
 	C99BD149121DF45C00A5A582 /* XDModelBookmark */ = {
 		isa = XDModelBookmark;
@@ -6366,7 +6440,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 339";
 		rLen = 0;
-		rLoc = 9585;
+		rLoc = 9046;
 		rType = 0;
 		vrLen = 2113;
 		vrLoc = 10666;
@@ -6376,7 +6450,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 11602;
+		rLoc = 10723;
 		rType = 0;
 		vrLen = 2214;
 		vrLoc = 10559;
@@ -6549,7 +6623,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 11602;
+		rLoc = 10723;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 11061;
@@ -6586,7 +6660,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 11602;
+		rLoc = 10723;
 		rType = 0;
 		vrLen = 2214;
 		vrLoc = 10559;
@@ -6626,7 +6700,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 11602;
+		rLoc = 10723;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 11061;
@@ -6666,7 +6740,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 118";
 		rLen = 0;
-		rLoc = 3530;
+		rLoc = 2394;
 		rType = 0;
 		vrLen = 2254;
 		vrLoc = 0;
@@ -7004,7 +7078,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 11602;
+		rLoc = 10723;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 10559;
@@ -7014,7 +7088,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 14323;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 13174;
@@ -7024,16 +7098,1685 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 14323;
+		rLoc = 12377;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 13796;
+	};
+	C99BD1AC121DFD9F00A5A582 /* PDList.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
+			sepNavSelRange = "{1413, 0}";
+			sepNavVisRange = "{0, 1943}";
+		};
 	};
 	C99BD1AE121DFD9F00A5A582 /* PDList.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
 			sepNavSelRange = "{160, 0}";
 			sepNavVisRange = "{0, 199}";
+		};
+	};
+	C99BD1B3121DFDA000A5A582 /* _PDListEntry.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1118, 2288}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{1083, 2208}";
+		};
+	};
+	C99BD1B8121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 516";
+		rLen = 0;
+		rLoc = 12377;
+		rType = 0;
+		vrLen = 2160;
+		vrLoc = 13174;
+	};
+	C99BD1B9121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 189";
+		rLen = 0;
+		rLoc = 6584;
+		rType = 0;
+		vrLen = 2347;
+		vrLoc = 3910;
+	};
+	C99BD1BA121E1A9900A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 1;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					60.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {645, 220}}",
+						"{{650, 0}, {340, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {990, 220}}",
+						"{{0, 225}, {990, 826}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {210, 220}}",
+						"{{215, 0}, {430, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					279.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					278.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-164, -190}, {975, 811}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchedProperty: 0x204ea7280>{name=allEntries, type=(null)}",
+			);
+		};
+	};
+	C99BD1BB121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 44";
+		rLen = 0;
+		rLoc = 1275;
+		rType = 0;
+		vrLen = 1910;
+		vrLoc = 0;
+	};
+	C99BD1BC121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9BD122F1172B693005E350E /* DOListsViewController.m */;
+		name = "DOListsViewController.m: 32";
+		rLen = 0;
+		rLoc = 1070;
+		rType = 0;
+		vrLen = 2250;
+		vrLoc = 0;
+	};
+	C99BD1BD121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BD1AE121DFD9F00A5A582 /* PDList.h */;
+		name = "PDList.h: 6";
+		rLen = 0;
+		rLoc = 160;
+		rType = 0;
+		vrLen = 199;
+		vrLoc = 0;
+	};
+	C99BD1BE121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BD1AC121DFD9F00A5A582 /* PDList.m */;
+		name = "PDList.m: 45";
+		rLen = 0;
+		rLoc = 1413;
+		rType = 0;
+		vrLen = 1943;
+		vrLoc = 0;
+	};
+	C99BD1BF121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 145";
+		rLen = 0;
+		rLoc = 4043;
+		rType = 0;
+		vrLen = 2592;
+		vrLoc = 2230;
+	};
+	C99BD1C0121E1A9900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 115";
+		rLen = 0;
+		rLoc = 3022;
+		rType = 0;
+		vrLen = 2702;
+		vrLoc = 2230;
+	};
+	C99BD1C1121E1A9D00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 516";
+		rLen = 0;
+		rLoc = 12377;
+		rType = 0;
+		vrLen = 1213;
+		vrLoc = 13796;
+	};
+	C99BD1C2121E1A9D00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 115";
+		rLen = 0;
+		rLoc = 3022;
+		rType = 0;
+		vrLen = 1223;
+		vrLoc = 2475;
+	};
+	C99BD1C3121E1B5C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 115";
+		rLen = 0;
+		rLoc = 3022;
+		rType = 0;
+		vrLen = 2702;
+		vrLoc = 2230;
+	};
+	C99BD1C4121E1B5C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BD1B3121DFDA000A5A582 /* _PDListEntry.h */;
+		name = "_PDListEntry.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 2208;
+		vrLoc = 1083;
+	};
+	C99BD1C5121E1B5C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 111";
+		rLen = 0;
+		rLoc = 4017;
+		rType = 0;
+		vrLen = 2362;
+		vrLoc = 2586;
+	};
+	C99BD1C6121E1B5C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 118";
+		rLen = 0;
+		rLoc = 4008;
+		rType = 0;
+		vrLen = 2289;
+		vrLoc = 2586;
+	};
+	C99BD1C9121E1B5C00A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 449}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, -1}, {987, 434}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
+		};
+	};
+	C99BD1D4121E1E6F00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 130";
+		rLen = 0;
+		rLoc = 4008;
+		rType = 0;
+		vrLen = 2453;
+		vrLoc = 0;
+	};
+	C99BD1D5121E1E6F00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 454";
+		rLen = 0;
+		rLoc = 13334;
+		rType = 0;
+		vrLen = 2298;
+		vrLoc = 10876;
+	};
+	C99BD1D6121E1E6F00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 516";
+		rLen = 0;
+		rLoc = 12377;
+		rType = 0;
+		vrLen = 2162;
+		vrLoc = 13172;
+	};
+	C99BD1D7121E1E6F00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 42";
+		rLen = 0;
+		rLoc = 834;
+		rType = 0;
+		vrLen = 2052;
+		vrLoc = 0;
+	};
+	C99BD1D8121E1F0A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 116";
+		rLen = 0;
+		rLoc = 3022;
+		rType = 0;
+		vrLen = 1117;
+		vrLoc = 2927;
+	};
+	C99BD1D9121E1F0A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 42";
+		rLen = 0;
+		rLoc = 834;
+		rType = 0;
+		vrLen = 883;
+		vrLoc = 607;
+	};
+	C99BD1DC121E1F6500A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 476";
+		rLen = 0;
+		rLoc = 12472;
+		rType = 0;
+		vrLen = 1864;
+		vrLoc = 0;
+	};
+	C99BD1DD121E1F6500A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 130";
+		rLen = 0;
+		rLoc = 4008;
+		rType = 0;
+		vrLen = 2425;
+		vrLoc = 28;
+	};
+	C99BD1DE121E1F6500A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 130";
+		rLen = 0;
+		rLoc = 4008;
+		rType = 0;
+		vrLen = 2425;
+		vrLoc = 2187;
+	};
+	C99BD1DF121E1F6500A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 426}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
+		};
+	};
+	C99BD1E9121E21F900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
+		name = "PDSyncController.h: 7";
+		rLen = 0;
+		rLoc = 120;
+		rType = 0;
+		vrLen = 2032;
+		vrLoc = 0;
+	};
+	C99BD1EA121E21F900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BD1AC121DFD9F00A5A582 /* PDList.m */;
+		name = "PDList.m: 45";
+		rLen = 0;
+		rLoc = 1413;
+		rType = 0;
+		vrLen = 1943;
+		vrLoc = 0;
+	};
+	C99BD1EB121E21F900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF19121CCF5500A5A582 /* PDSyncDelegate.h */;
+		name = "PDSyncDelegate.h: 4";
+		rLen = 0;
+		rLoc = 49;
+		rType = 0;
+		vrLen = 160;
+		vrLoc = 0;
+	};
+	C99BD1EC121E21F900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 243";
+		rLen = 0;
+		rLoc = 7419;
+		rType = 0;
+		vrLen = 2415;
+		vrLoc = 6892;
+	};
+	C99BD1ED121E21F900A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 338";
+		rLen = 0;
+		rLoc = 10434;
+		rType = 0;
+		vrLen = 2241;
+		vrLoc = 8126;
+	};
+	C99BD1EE121E21F900A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 426}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
+		};
+	};
+	C99BD1F3121E224D00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 338";
+		rLen = 0;
+		rLoc = 10334;
+		rType = 0;
+		vrLen = 2188;
+		vrLoc = 8520;
+	};
+	C99BD1F6121E243300A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 41";
+		rLen = 0;
+		rLoc = 834;
+		rType = 0;
+		vrLen = 620;
+		vrLoc = 537;
+	};
+	C99BD1F7121E243300A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 338";
+		rLen = 0;
+		rLoc = 10334;
+		rType = 0;
+		vrLen = 962;
+		vrLoc = 9574;
+	};
+	C99BD1FE121E245C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 338";
+		rLen = 0;
+		rLoc = 10334;
+		rType = 0;
+		vrLen = 2188;
+		vrLoc = 8520;
+	};
+	C99BD1FF121E245C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 118";
+		rLen = 0;
+		rLoc = 2394;
+		rType = 0;
+		vrLen = 2254;
+		vrLoc = 0;
+	};
+	C99BD200121E245C00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 7";
+		rLen = 0;
+		rLoc = 132;
+		rType = 0;
+		vrLen = 2251;
+		vrLoc = 0;
+	};
+	C99BD203121E24F700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 338";
+		rLen = 0;
+		rLoc = 10334;
+		rType = 0;
+		vrLen = 962;
+		vrLoc = 9574;
+	};
+	C99BD204121E24F700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 7";
+		rLen = 0;
+		rLoc = 132;
+		rType = 0;
+		vrLen = 1086;
+		vrLoc = 0;
+	};
+	C99BD205121E250300A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 7";
+		rLen = 0;
+		rLoc = 132;
+		rType = 0;
+		vrLen = 2251;
+		vrLoc = 0;
+	};
+	C99BD206121E250300A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 426}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
+		};
+	};
+	C99BD20E121E25CA00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 14";
+		rLen = 0;
+		rLoc = 210;
+		rType = 0;
+		vrLen = 2347;
+		vrLoc = 503;
+	};
+	C99BD20F121E25CA00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 338";
+		rLen = 0;
+		rLoc = 10334;
+		rType = 0;
+		vrLen = 2156;
+		vrLoc = 8552;
+	};
+	C99BD210121E25CA00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 272";
+		rLen = 0;
+		rLoc = 8398;
+		rType = 0;
+		vrLen = 2483;
+		vrLoc = 7355;
+	};
+	C99BD211121E25CA00A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 426}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
+		};
+	};
+	C99BD213121E25F000A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 272";
+		rLen = 0;
+		rLoc = 8398;
+		rType = 0;
+		vrLen = 2483;
+		vrLoc = 7355;
+	};
+	C99BD214121E261B00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 7";
+		rLen = 0;
+		rLoc = 132;
+		rType = 0;
+		vrLen = 777;
+		vrLoc = 0;
+	};
+	C99BD215121E261B00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 272";
+		rLen = 0;
+		rLoc = 8398;
+		rType = 0;
+		vrLen = 1096;
+		vrLoc = 7817;
+	};
+	C99BD21E121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */;
+		name = "PDSyncDelegate.m: 272";
+		rLen = 0;
+		rLoc = 8398;
+		rType = 0;
+		vrLen = 2483;
+		vrLoc = 7355;
+	};
+	C99BD21F121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
+		name = "PDSyncController.h: 11";
+		rLen = 0;
+		rLoc = 229;
+		rType = 0;
+		vrLen = 2060;
+		vrLoc = 0;
+	};
+	C99BD220121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 443";
+		rLen = 0;
+		rLoc = 12817;
+		rType = 0;
+		vrLen = 2039;
+		vrLoc = 0;
+	};
+	C99BD221121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF7A121DC1B800A5A582 /* PDResource.h */;
+		name = "PDResource.h: 20";
+		rLen = 0;
+		rLoc = 496;
+		rType = 0;
+		vrLen = 503;
+		vrLoc = 0;
+	};
+	C99BD222121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */;
+		name = "NSObject+DeviceMethods.m: 15";
+		rLen = 0;
+		rLoc = 246;
+		rType = 0;
+		vrLen = 326;
+		vrLoc = 0;
+	};
+	C99BD223121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */;
+		name = "NSObject+DeviceMethods.h: 1";
+		rLen = 109;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 109;
+		vrLoc = 0;
+	};
+	C99BD224121E282700A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */;
+		name = "NSObject+DeviceMethods.h: 1";
+		rLen = 109;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 109;
+		vrLoc = 0;
+	};
+	C99BD225121E282700A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 426}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
 		};
 	};
 	C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {
@@ -7429,7 +9172,7 @@
 			"Xdesign Model Editor Bookmark Key" = {
 				UIContextForDetailArea = {
 					_indexOfSelectedPane = 0;
-					_indexOfSelectedView = 1;
+					_indexOfSelectedView = 0;
 				};
 				UIContextForEntityArea = {
 					_indexOfSelectedView = 0;
@@ -7450,7 +9193,7 @@
 					chosenTableWidths = (
 						103.000000,
 						22.000000,
-						60.080078,
+						63.080078,
 					);
 				};
 				UIContextForLayoutManager = {
@@ -7460,8 +9203,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {645, 220}}",
-							"{{650, 0}, {340, 220}}",
+							"{{0, 0}, {653, 220}}",
+							"{{658, 0}, {344, 220}}",
 						);
 					};
 					diagramSplitGeometry = {
@@ -7470,8 +9213,8 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {990, 220}}",
-							"{{0, 225}, {990, 826}}",
+							"{{0, 0}, {1002, 220}}",
+							"{{0, 225}, {1002, 426}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -7480,13 +9223,13 @@
 						_percentageOfCollapsedView = 0;
 						isCollapsed = yes;
 						sizes = (
-							"{{0, 0}, {210, 220}}",
-							"{{215, 0}, {430, 220}}",
+							"{{0, 0}, {213, 220}}",
+							"{{218, 0}, {435, 220}}",
 						);
 					};
 				};
 				UIContextForPropertyArea = {
-					_indexOfSelectedView = 0;
+					_indexOfSelectedView = 4;
 					chosenTableColumnnFRTs = (
 						"FT Fetch Request",
 						"FT Predicate",
@@ -7556,7 +9299,7 @@
 					);
 					chosenTableWidthsAT = (
 						128.000000,
-						279.000000,
+						64.000000,
 					);
 					chosenTableWidthsFPT = (
 						128.000000,
@@ -7565,7 +9308,7 @@
 					);
 					chosenTableWidthsFRT = (
 						128.000000,
-						278.764160,
+						283.764160,
 					);
 					chosenTableWidthsPT = (
 						128.000000,
@@ -7578,7 +9321,7 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-164, -190}, {975, 811}}";
+				"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
 			};
 			sepNavWindowFrame = "{{15, 91}, {1002, 787}}";
 		};
@@ -7638,7 +9381,7 @@
 		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
 		name = "PDSyncController.h: 32";
 		rLen = 0;
-		rLoc = 1440;
+		rLoc = 1468;
 		rType = 0;
 		vrLen = 1506;
 		vrLoc = 0;
@@ -7648,7 +9391,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 302";
 		rLen = 0;
-		rLoc = 9984;
+		rLoc = 10040;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 7754;
@@ -7945,7 +9688,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 72";
 		rLen = 0;
-		rLoc = 1488;
+		rLoc = 340;
 		rType = 0;
 		vrLen = 2280;
 		vrLoc = 36;
@@ -7961,16 +9704,28 @@
 		vrLoc = 0;
 	};
 	C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = "NSObject+DeviceMethods.h";
+		path = "/Users/matt/Code/PocketDocket/Classes/Changes/NSObject+DeviceMethods.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
 			sepNavSelRange = "{0, 109}";
 			sepNavVisRange = "{0, 109}";
 		};
 	};
 	C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = "NSObject+DeviceMethods.m";
+		path = "/Users/matt/Code/PocketDocket/Classes/Changes/NSObject+DeviceMethods.m";
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
-			sepNavSelRange = "{36, 289}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
+			sepNavSelRange = "{246, 0}";
 			sepNavVisRange = "{0, 326}";
 		};
 	};

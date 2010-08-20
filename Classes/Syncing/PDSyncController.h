@@ -7,6 +7,9 @@ extern NSString * const PDSyncDidStartNotification;
 extern NSString * const PDSyncDidStopNotification;
 
 @interface PDSyncController : NSObject
+{
+	BOOL currentlySyncing;
+}
 
 @property (nonatomic, assign) id <PDSyncControllerDelegate> delegate;
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;

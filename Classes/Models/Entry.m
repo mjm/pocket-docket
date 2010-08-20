@@ -4,7 +4,7 @@
 #import "ObjectiveResource.h"
 #import "Connection.h"
 #import "Response.h"
-#import "ObjectiveSupport.h"
+#import "JSONFramework.h"
 
 @implementation Entry
 
@@ -12,37 +12,6 @@
 {
 	return @"ListEntry";
 }
-
-//- (void)copyPropertiesTo:(NSManagedObject *)object
-//{
-//	[object setValue:self.entryId forKey:@"remoteIdentifier"];
-//	[object setValue:self.text forKey:@"text"];
-//	[object setValue:self.comment forKey:@"comment"];
-//	[object setValue:self.checked forKey:@"checked"];
-//	[object setValue:self.position forKey:@"order"];
-//	
-//	NSManagedObjectContext *ctx = [object managedObjectContext];
-//	NSEntityDescription *listEntity = [[ctx.managedObjectModel entitiesByName] objectForKey:[List entityName]];
-//	
-//	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-//	[request setEntity:listEntity];
-//	[request setPredicate:[NSPredicate predicateWithFormat:@"remoteIdentifier = %@", self.listId]];
-//	[request setFetchLimit:1];
-//	
-//	NSError *error = nil;
-//	NSArray *results = [ctx executeFetchRequest:request error:&error];
-//	if (results && [results count] > 0)
-//	{
-//		NSManagedObject *list = [results objectAtIndex:0];
-//		[object setValue:list forKey:@"list"];
-//	}
-//	else
-//	{
-//		NSLog(@"There was a problem retrieving the List with remote ID %@: %@, %@", self.listId, error, [error userInfo]);
-//	}
-//	
-//	[request release];
-//}
 
 + (NSString *)getRemoteCollectionName
 {
@@ -111,7 +80,7 @@
 						  [self getRemoteProtocolExtension]];
 	
 	NSDictionary *bodyDict = [NSDictionary dictionaryWithObject:ids forKey:@"ids"];
-	NSString *body = [bodyDict toJSON];
+	NSString *body = [bodyDict JSONRepresentation];
 	
 	Response *res = [Connection put:body to:sortPath withUser:[self getRemoteUser] andPassword:[self getRemotePassword]];
 	if (aError && [res isError])

@@ -27,8 +27,6 @@
 		C929548F117BCCE60052A674 /* PDKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = C9BD10B311727788005E350E /* PDKeyboardObserver.m */; };
 		C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */; };
 		C92A11FF117E80DF00D43C65 /* DOEntryTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */; };
-		C92B8C421215D1D60076F539 /* PDCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C411215D1D60076F539 /* PDCredentials.m */; };
-		C92B8C431215D1D60076F539 /* PDCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C411215D1D60076F539 /* PDCredentials.m */; };
 		C92B8C6A1215DCE30076F539 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C691215DCE30076F539 /* UIViewController+Additions.m */; };
 		C92B8C6B1215DCE30076F539 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C691215DCE30076F539 /* UIViewController+Additions.m */; };
 		C92B8C721215E01B0076F539 /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C711215E01B0076F539 /* PDViewController.m */; };
@@ -92,6 +90,10 @@
 		C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */; };
 		C99BCF7C121DC1B800A5A582 /* PDResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */; };
 		C99BCF7D121DC1B800A5A582 /* PDResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */; };
+		C99BD229121E285C00A5A582 /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BD228121E285C00A5A582 /* NSObject+DeviceMethods.m */; };
+		C99BD22A121E285C00A5A582 /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BD228121E285C00A5A582 /* NSObject+DeviceMethods.m */; };
+		C99BD22D121E286200A5A582 /* PDCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BD22C121E286200A5A582 /* PDCredentials.m */; };
+		C99BD22E121E286200A5A582 /* PDCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BD22C121E286200A5A582 /* PDCredentials.m */; };
 		C9B5846011BB6F38008C973C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B5845F11BB6F38008C973C /* QuartzCore.framework */; };
 		C9B5849011BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
 		C9B5849111BBFC22008C973C /* ListCell.png in Resources */ = {isa = PBXBuildFile; fileRef = C9B5848F11BBFC22008C973C /* ListCell.png */; };
@@ -215,8 +217,6 @@
 		C9FD26E612171E9200D9127D /* PDChangeList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26E412171E9200D9127D /* PDChangeList.m */; };
 		C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD270412172CA800D9127D /* PDRemoteChange.m */; };
 		C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD270412172CA800D9127D /* PDRemoteChange.m */; };
-		C9FD27931218891700D9127D /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */; };
-		C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */; };
 		C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
 		C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
 		C9FD28411218D52B00D9127D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD28401218D52B00D9127D /* Device.m */; };
@@ -268,8 +268,6 @@
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
 		C92A11FC117E7FEC00D43C65 /* DOEntryTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DOEntryTableCell.m; path = Views/DOEntryTableCell.m; sourceTree = "<group>"; };
 		C92A11FE117E80DF00D43C65 /* DOEntryTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DOEntryTableCell.xib; sourceTree = "<group>"; };
-		C92B8C401215D1D60076F539 /* PDCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDCredentials.h; path = ../Changes/PDCredentials.h; sourceTree = "<group>"; };
-		C92B8C411215D1D60076F539 /* PDCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDCredentials.m; path = ../Changes/PDCredentials.m; sourceTree = "<group>"; };
 		C92B8C681215DCE30076F539 /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Additions.h"; path = "Controllers/UIViewController+Additions.h"; sourceTree = "<group>"; };
 		C92B8C691215DCE30076F539 /* UIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Additions.m"; path = "Controllers/UIViewController+Additions.m"; sourceTree = "<group>"; };
 		C92B8C701215E01B0076F539 /* PDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDViewController.h; path = Controllers/PDViewController.h; sourceTree = "<group>"; };
@@ -354,6 +352,10 @@
 		C99BD1B1121DFDA000A5A582 /* _PDListEntry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _PDListEntry.m; sourceTree = "<group>"; };
 		C99BD1B2121DFDA000A5A582 /* _PDList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDList.h; sourceTree = "<group>"; };
 		C99BD1B3121DFDA000A5A582 /* _PDListEntry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = _PDListEntry.h; sourceTree = "<group>"; };
+		C99BD227121E285C00A5A582 /* NSObject+DeviceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeviceMethods.h"; sourceTree = "<group>"; };
+		C99BD228121E285C00A5A582 /* NSObject+DeviceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeviceMethods.m"; sourceTree = "<group>"; };
+		C99BD22B121E286200A5A582 /* PDCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDCredentials.h; sourceTree = "<group>"; };
+		C99BD22C121E286200A5A582 /* PDCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDCredentials.m; sourceTree = "<group>"; };
 		C9B5845F11BB6F38008C973C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C9B5848F11BBFC22008C973C /* ListCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListCell.png; sourceTree = "<group>"; };
 		C9B584DB11BC1015008C973C /* Margin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Margin.png; sourceTree = "<group>"; };
@@ -476,8 +478,6 @@
 		C9FD26E412171E9200D9127D /* PDChangeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChangeList.m; sourceTree = "<group>"; };
 		C9FD270312172CA800D9127D /* PDRemoteChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRemoteChange.h; sourceTree = "<group>"; };
 		C9FD270412172CA800D9127D /* PDRemoteChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRemoteChange.m; sourceTree = "<group>"; };
-		C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DeviceMethods.h"; sourceTree = "<group>"; };
-		C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DeviceMethods.m"; sourceTree = "<group>"; };
 		C9FD279812188D0D00D9127D /* PDDeviceResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDeviceResource.h; sourceTree = "<group>"; };
 		C9FD279912188D0D00D9127D /* PDDeviceResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDeviceResource.m; sourceTree = "<group>"; };
 		C9FD283F1218D52B00D9127D /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
@@ -606,10 +606,12 @@
 			children = (
 				C91C2475121ABDA600FBA1F0 /* PDSyncController.h */,
 				C91C2476121ABDA600FBA1F0 /* PDSyncController.m */,
-				C92B8C401215D1D60076F539 /* PDCredentials.h */,
-				C92B8C411215D1D60076F539 /* PDCredentials.m */,
 				C99BCF19121CCF5500A5A582 /* PDSyncDelegate.h */,
 				C99BCF1A121CCF5500A5A582 /* PDSyncDelegate.m */,
+				C99BD227121E285C00A5A582 /* NSObject+DeviceMethods.h */,
+				C99BD228121E285C00A5A582 /* NSObject+DeviceMethods.m */,
+				C99BD22B121E286200A5A582 /* PDCredentials.h */,
+				C99BD22C121E286200A5A582 /* PDCredentials.m */,
 			);
 			path = Syncing;
 			sourceTree = "<group>";
@@ -1125,8 +1127,6 @@
 				C9C1074E120D8C8B00327A0D /* PDChangeManager.m */,
 				C9FD266F1217077B00D9127D /* PDLocalChanging.h */,
 				C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */,
-				C9FD27911218891700D9127D /* NSObject+DeviceMethods.h */,
-				C9FD27921218891700D9127D /* NSObject+DeviceMethods.m */,
 				C9FD279812188D0D00D9127D /* PDDeviceResource.h */,
 				C9FD279912188D0D00D9127D /* PDDeviceResource.m */,
 			);
@@ -1350,14 +1350,12 @@
 				C9013D731214635100815A27 /* List.m in Sources */,
 				C9013D761214635100815A27 /* User.m in Sources */,
 				C9013D791214635D00815A27 /* Entry.m in Sources */,
-				C92B8C431215D1D60076F539 /* PDCredentials.m in Sources */,
 				C92B8C6B1215DCE30076F539 /* UIViewController+Additions.m in Sources */,
 				C92B8C731215E01B0076F539 /* PDViewController.m in Sources */,
 				C9FD26C912170B1600D9127D /* PDChange.m in Sources */,
 				C9FD26D71217102800D9127D /* PDLocalChange.m in Sources */,
 				C9FD26E512171E9200D9127D /* PDChangeList.m in Sources */,
 				C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */,
-				C9FD27931218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
 				C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28411218D52B00D9127D /* Device.m in Sources */,
 				C91C2477121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
@@ -1367,6 +1365,8 @@
 				C99BCE1D121C81CF00A5A582 /* PDListEntry.m in Sources */,
 				C99BCF1B121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,
 				C99BCF7C121DC1B800A5A582 /* PDResource.m in Sources */,
+				C99BD229121E285C00A5A582 /* NSObject+DeviceMethods.m in Sources */,
+				C99BD22D121E286200A5A582 /* PDCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1437,19 +1437,19 @@
 				C9013D6E1214635100815A27 /* List.m in Sources */,
 				C9013D711214635100815A27 /* User.m in Sources */,
 				C9013D7A1214635D00815A27 /* Entry.m in Sources */,
-				C92B8C421215D1D60076F539 /* PDCredentials.m in Sources */,
 				C92B8C6A1215DCE30076F539 /* UIViewController+Additions.m in Sources */,
 				C92B8C721215E01B0076F539 /* PDViewController.m in Sources */,
 				C9FD26CA12170B1600D9127D /* PDChange.m in Sources */,
 				C9FD26D81217102800D9127D /* PDLocalChange.m in Sources */,
 				C9FD26E612171E9200D9127D /* PDChangeList.m in Sources */,
 				C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */,
-				C9FD27941218891700D9127D /* NSObject+DeviceMethods.m in Sources */,
 				C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28421218D52B00D9127D /* Device.m in Sources */,
 				C91C2478121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
 				C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,
 				C99BCF7D121DC1B800A5A582 /* PDResource.m in Sources */,
+				C99BD22A121E285C00A5A582 /* NSObject+DeviceMethods.m in Sources */,
+				C99BD22E121E286200A5A582 /* PDCredentials.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

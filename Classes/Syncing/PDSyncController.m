@@ -2,6 +2,7 @@
 
 #import "ObjectiveResource.h"
 #import "ObjectiveResourceConfig.h"
+#import "ConnectionManager.h"
 #import "../Categories/NSManagedObjectContext+Additions.h"
 #import "PDCredentials.h"
 
@@ -264,6 +265,8 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	[ObjectiveResourceConfig setPassword:nil];
 	[ObjectiveResourceConfig setDeviceId:nil];
 	
+	currentlySyncing = NO;
+	
 	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStopNotification object:self];
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
@@ -387,14 +390,8 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	return results;
 }
 
-- (void)sync
+- (void)doSyncWithCredentials:(PDCredentials *)credentials
 {
-	PDCredentials *credentials = [self.delegate credentialsForSyncController:self];
-	if (!credentials)
-	{
-		return;
-	}
-	
 	[ObjectiveResourceConfig setUser:credentials.username];
 	[ObjectiveResourceConfig setPassword:credentials.password];
 	[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
@@ -402,12 +399,14 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	NSArray *fetchRequests = [self.delegate fetchRequestsForSyncController:self];
 	if (!fetchRequests)
 	{
+		currentlySyncing = NO;
 		return;
 	}
 	
 	NSArray *remoteInvocations = [self.delegate remoteInvocationsForSyncController:self];
 	if (!remoteInvocations)
 	{
+		currentlySyncing = NO;
 		return;
 	}
 	
@@ -446,6 +445,25 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	}
 	
 	[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
+}
+
+- (void)sync
+{
+	if (currentlySyncing)
+	{
+		return;
+	}
+	
+	currentlySyncing = YES;
+	
+	PDCredentials *credentials = [self.delegate credentialsForSyncController:self];
+	if (!credentials)
+	{
+		currentlySyncing = NO;
+		return;
+	}
+	
+	[[ConnectionManager sharedInstance] runJob:@selector(doSyncWithCredentials:) onTarget:self withArgument:credentials];
 }
 
 @end

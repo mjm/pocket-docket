@@ -108,7 +108,28 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 		
 		localList.remoteIdentifier = list.listId;
 		
-		// TODO create the entries for this list
+		NSArray *entries = [PDListEntry fetchEntriesForList:[self managedObjectContext] list:localList];
+		if (entries)
+		{
+			for (PDListEntry *localEntry in entries)
+			{
+				Entry *entry = [[[Entry alloc] init] autorelease];
+				entry.text = localEntry.text;
+				entry.comment = localEntry.comment;
+				entry.checked = localEntry.checked;
+				entry.listId = list.listId;
+				entry.position = localEntry.order;
+				
+				NSError *error = nil;
+				if (![entry	createRemoteWithResponse:&error])
+				{
+					NSLog(@"Failed to create remote entry while creating list: %@, %@", error, [error userInfo]);
+					return NO;
+				}
+				
+				localEntry.remoteIdentifier = entry.entryId;
+			}
+		}
 		
 		return YES;
 	}
@@ -164,6 +185,9 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 				localEntry.list = localList;
 				localEntry.order = entry.position;
 			}
+			
+			// Update the entry counts in the fetched properties
+			[[self managedObjectContext] refreshObject:localList mergeChanges:YES];
 		}
 		else
 		{
@@ -217,6 +241,38 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	return YES;
 }
 
+- (void)syncController:(PDSyncController *)syncController mergeEntriesForLocalList:(PDList *)localList remoteList:(List *)list
+{
+	NSDictionary *subs = [NSDictionary dictionaryWithObject:localList forKey:@"list"];
+	NSFetchRequest *request = [[self managedObjectModel] fetchRequestFromTemplateWithName:@"entriesForList"
+																	substitutionVariables:subs];
+	
+	NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:YES];
+	[request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	[sortDescriptor release];
+	
+	NSError *error = nil;
+	NSArray *localObjects = [[self managedObjectContext] executeFetchRequest:request error:&error];
+	if (!localObjects)
+	{
+		NSLog(@"Error fetching local entries to merge: %@, %@", error, [error userInfo]);
+		return;
+	}
+	
+	error = nil;
+	NSArray *remoteObjects = [Entry findAllRemoteInList:list.listId withResponse:&error];
+	if (!remoteObjects)
+	{
+		NSLog(@"Error fetching remote entries to merge: %@, %@", error, [error userInfo]);
+		return;
+	}
+	
+	[syncController mergeLocalObjects:localObjects withRemoteObjects:remoteObjects];
+	
+	// Update the entry counts in the fetched properties
+	[[self managedObjectContext] refreshObject:localList mergeChanges:YES];
+}
+
 - (BOOL)syncController:(PDSyncController *)syncController
 	 updateLocalObject:(NSManagedObject *)localObject
 	  withRemoteObject:(NSObject *)remoteObject
@@ -229,7 +285,7 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 		
 		localList.title = list.title;
 		
-		// TODO merge the entries
+		[self syncController:syncController mergeEntriesForLocalList:localList remoteList:list];
 		
 		return YES;
 	}
@@ -260,8 +316,6 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 		List *list = (List *)remoteObject;
 		
 		list.title = localList.title;
-		
-		// TODO merge the entries
 	}
 	else if ([localObject isKindOfClass:[PDListEntry class]])
 	{
@@ -283,6 +337,11 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	{
 		NSLog(@"Failed to update remote object %@: %@, %@", remoteObject, error, [error userInfo]);
 		return NO;
+	}
+	
+	if ([localObject isKindOfClass:[PDList class]])
+	{
+		[self syncController:syncController mergeEntriesForLocalList:(PDList *)localObject remoteList:(List *)remoteObject];
 	}
 	
 	return YES;
