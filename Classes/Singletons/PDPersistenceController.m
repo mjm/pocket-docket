@@ -385,7 +385,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	}
 }
 
-- (void)markChanged:(NSManagedObject <PDLocalChanging>*)object
+- (void)markChanged:(NSManagedObject *)object
 {
 	[object setUpdatedAt:[NSDate date]];
 }

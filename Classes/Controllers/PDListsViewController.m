@@ -6,7 +6,6 @@
 #import "../Singletons/PDPersistenceController.h"
 #import "../Singletons/PDSettingsController.h"
 #import "PDList.h"
-#import "../Models/Change.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "ConnectionManager.h"

@@ -13,10 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D801B30F44B63D00FB423F /* CoreData.framework */; };
-		C9013D6D1214635100815A27 /* Change.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D631214635100815A27 /* Change.m */; };
 		C9013D6E1214635100815A27 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D651214635100815A27 /* List.m */; };
 		C9013D711214635100815A27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6C1214635100815A27 /* User.m */; };
-		C9013D721214635100815A27 /* Change.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D631214635100815A27 /* Change.m */; };
 		C9013D731214635100815A27 /* List.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D651214635100815A27 /* List.m */; };
 		C9013D761214635100815A27 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D6C1214635100815A27 /* User.m */; };
 		C9013D791214635D00815A27 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9013D781214635D00815A27 /* Entry.m */; };
@@ -189,8 +187,6 @@
 		C9C1065F120B05C100327A0D /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1061C120B05C100327A0D /* NSMutableURLRequest+ResponseType.m */; };
 		C9C10660120B05C100327A0D /* NSError+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1061E120B05C100327A0D /* NSError+Error.m */; };
 		C9C10661120B05C100327A0D /* ObjectiveResourceConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */; };
-		C9C1074F120D8C8B00327A0D /* PDChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1074E120D8C8B00327A0D /* PDChangeManager.m */; };
-		C9C10750120D8C8B00327A0D /* PDChangeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C1074E120D8C8B00327A0D /* PDChangeManager.m */; };
 		C9D6DE2711D688C300FF64EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6DE2611D688C300FF64EC /* MessageUI.framework */; };
 		C9D6DE6711D6D8F900FF64EC /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D6DE2611D688C300FF64EC /* MessageUI.framework */; };
 		C9D6DE7311D6FB7400FF64EC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9D6DE7211D6FB7400FF64EC /* Icon@2x.png */; };
@@ -209,21 +205,9 @@
 		C9E2D76811DA7E8D00B5ED60 /* PDImportEntriesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9E2D76611DA7E8D00B5ED60 /* PDImportEntriesView.xib */; };
 		C9EB3524117015B40092DE45 /* PDListProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EB3523117015B40092DE45 /* PDListProgressView.m */; };
 		C9EB356211701D1D0092DE45 /* ListIconDark.png in Resources */ = {isa = PBXBuildFile; fileRef = C9EB356111701D1D0092DE45 /* ListIconDark.png */; };
-		C9FD26C912170B1600D9127D /* PDChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26C812170B1600D9127D /* PDChange.m */; };
-		C9FD26CA12170B1600D9127D /* PDChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26C812170B1600D9127D /* PDChange.m */; };
-		C9FD26D71217102800D9127D /* PDLocalChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26D61217102800D9127D /* PDLocalChange.m */; };
-		C9FD26D81217102800D9127D /* PDLocalChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26D61217102800D9127D /* PDLocalChange.m */; };
-		C9FD26E512171E9200D9127D /* PDChangeList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26E412171E9200D9127D /* PDChangeList.m */; };
-		C9FD26E612171E9200D9127D /* PDChangeList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD26E412171E9200D9127D /* PDChangeList.m */; };
-		C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD270412172CA800D9127D /* PDRemoteChange.m */; };
-		C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD270412172CA800D9127D /* PDRemoteChange.m */; };
-		C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
-		C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD279912188D0D00D9127D /* PDDeviceResource.m */; };
 		C9FD28411218D52B00D9127D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD28401218D52B00D9127D /* Device.m */; };
 		C9FD28421218D52B00D9127D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FD28401218D52B00D9127D /* Device.m */; };
 		C9FD2AAA1186763B00ED7954 /* IconPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = C9FD2AA91186763B00ED7954 /* IconPhone.png */; };
-		C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
-		C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */; };
 		C9FE8DFD12108E4E00DE376B /* PDKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */; };
 		C9FE8DFE12108E4E00DE376B /* PDKeychainManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */; };
 		C9FE8E121210952800DE376B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9FE8E111210952800DE376B /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -252,8 +236,6 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketDocket_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PocketDocket-Info.plist"; sourceTree = "<group>"; };
-		C9013D621214635100815A27 /* Change.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Change.h; sourceTree = "<group>"; };
-		C9013D631214635100815A27 /* Change.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Change.m; sourceTree = "<group>"; };
 		C9013D641214635100815A27 /* List.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = List.h; sourceTree = "<group>"; };
 		C9013D651214635100815A27 /* List.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = List.m; sourceTree = "<group>"; };
 		C9013D6B1214635100815A27 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -262,7 +244,6 @@
 		C9013D781214635D00815A27 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDTextViewCell.h; path = Views/PDTextViewCell.h; sourceTree = "<group>"; };
 		C915E64E1166F0F0004A9597 /* PDTextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDTextViewCell.m; path = Views/PDTextViewCell.m; sourceTree = "<group>"; };
-		C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRemoteChanging.h; sourceTree = "<group>"; };
 		C91C2475121ABDA600FBA1F0 /* PDSyncController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDSyncController.h; sourceTree = "<group>"; };
 		C91C2476121ABDA600FBA1F0 /* PDSyncController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDSyncController.m; sourceTree = "<group>"; };
 		C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DOEntryTableCell.h; path = Views/DOEntryTableCell.h; sourceTree = "<group>"; };
@@ -451,8 +432,6 @@
 		C9C10620120B05C100327A0D /* ObjectiveResourceConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveResourceConfig.h; sourceTree = "<group>"; };
 		C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResourceConfig.m; sourceTree = "<group>"; };
 		C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */ = {isa = PBXFileReference; comments = xmod; lastKnownFileType = wrapper.xcdatamodel; path = "PocketDocket 4.xcdatamodel"; sourceTree = "<group>"; };
-		C9C1074D120D8C8B00327A0D /* PDChangeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChangeManager.h; sourceTree = "<group>"; };
-		C9C1074E120D8C8B00327A0D /* PDChangeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChangeManager.m; sourceTree = "<group>"; };
 		C9D6DE2611D688C300FF64EC /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C9D6DE7211D6FB7400FF64EC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C9D963E91181199000E08A48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -469,22 +448,9 @@
 		C9EB3522117015B40092DE45 /* PDListProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PDListProgressView.h; path = Views/PDListProgressView.h; sourceTree = "<group>"; };
 		C9EB3523117015B40092DE45 /* PDListProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PDListProgressView.m; path = Views/PDListProgressView.m; sourceTree = "<group>"; };
 		C9EB356111701D1D0092DE45 /* ListIconDark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ListIconDark.png; sourceTree = "<group>"; };
-		C9FD266F1217077B00D9127D /* PDLocalChanging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDLocalChanging.h; sourceTree = "<group>"; };
-		C9FD26C712170B1600D9127D /* PDChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChange.h; sourceTree = "<group>"; };
-		C9FD26C812170B1600D9127D /* PDChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChange.m; sourceTree = "<group>"; };
-		C9FD26D51217102800D9127D /* PDLocalChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDLocalChange.h; sourceTree = "<group>"; };
-		C9FD26D61217102800D9127D /* PDLocalChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDLocalChange.m; sourceTree = "<group>"; };
-		C9FD26E312171E9200D9127D /* PDChangeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDChangeList.h; sourceTree = "<group>"; };
-		C9FD26E412171E9200D9127D /* PDChangeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDChangeList.m; sourceTree = "<group>"; };
-		C9FD270312172CA800D9127D /* PDRemoteChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDRemoteChange.h; sourceTree = "<group>"; };
-		C9FD270412172CA800D9127D /* PDRemoteChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDRemoteChange.m; sourceTree = "<group>"; };
-		C9FD279812188D0D00D9127D /* PDDeviceResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDDeviceResource.h; sourceTree = "<group>"; };
-		C9FD279912188D0D00D9127D /* PDDeviceResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDDeviceResource.m; sourceTree = "<group>"; };
 		C9FD283F1218D52B00D9127D /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		C9FD28401218D52B00D9127D /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		C9FD2AA91186763B00ED7954 /* IconPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IconPhone.png; sourceTree = "<group>"; };
-		C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDPendingChange.h; sourceTree = "<group>"; };
-		C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDPendingChange.m; sourceTree = "<group>"; };
 		C9FE8DFB12108E4E00DE376B /* PDKeychainManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDKeychainManager.h; sourceTree = "<group>"; };
 		C9FE8DFC12108E4E00DE376B /* PDKeychainManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDKeychainManager.m; sourceTree = "<group>"; };
 		C9FE8E111210952800DE376B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -530,7 +496,6 @@
 				C99BCDF7121C7DE300A5A582 /* PocketDocket */,
 				C94C56E31156BEF400791FAC /* Resources */,
 				C91C2473121ABD3700FBA1F0 /* Syncing */,
-				C9C1074C120D8C7500327A0D /* Changes */,
 				C990F97B11DE9ED000BA1579 /* Element Processing */,
 				C94C564011569C5400791FAC /* Views */,
 				C94C563F11569C4B00791FAC /* Controllers */,
@@ -705,8 +670,6 @@
 		C94C56E31156BEF400791FAC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C9013D621214635100815A27 /* Change.h */,
-				C9013D631214635100815A27 /* Change.m */,
 				C9FD283F1218D52B00D9127D /* Device.h */,
 				C9FD28401218D52B00D9127D /* Device.m */,
 				C9013D641214635100815A27 /* List.h */,
@@ -944,15 +907,6 @@
 			name = Connection;
 			sourceTree = "<group>";
 		};
-		C9C1074C120D8C7500327A0D /* Changes */ = {
-			isa = PBXGroup;
-			children = (
-				C9FD2757121793FC00D9127D /* Public */,
-				C9FD27581217940200D9127D /* Private */,
-			);
-			path = Changes;
-			sourceTree = "<group>";
-		};
 		C9DB1F8C11D70116000A293A /* App Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -1118,36 +1072,6 @@
 				C9E2D76311DA7DBB00B5ED60 /* PDImportEntriesViewController.m */,
 			);
 			name = "Import Entries View Controller";
-			sourceTree = "<group>";
-		};
-		C9FD2757121793FC00D9127D /* Public */ = {
-			isa = PBXGroup;
-			children = (
-				C9C1074D120D8C8B00327A0D /* PDChangeManager.h */,
-				C9C1074E120D8C8B00327A0D /* PDChangeManager.m */,
-				C9FD266F1217077B00D9127D /* PDLocalChanging.h */,
-				C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */,
-				C9FD279812188D0D00D9127D /* PDDeviceResource.h */,
-				C9FD279912188D0D00D9127D /* PDDeviceResource.m */,
-			);
-			name = Public;
-			sourceTree = "<group>";
-		};
-		C9FD27581217940200D9127D /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */,
-				C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */,
-				C9FD26C712170B1600D9127D /* PDChange.h */,
-				C9FD26C812170B1600D9127D /* PDChange.m */,
-				C9FD26D51217102800D9127D /* PDLocalChange.h */,
-				C9FD26D61217102800D9127D /* PDLocalChange.m */,
-				C9FD26E312171E9200D9127D /* PDChangeList.h */,
-				C9FD26E412171E9200D9127D /* PDChangeList.m */,
-				C9FD270312172CA800D9127D /* PDRemoteChange.h */,
-				C9FD270412172CA800D9127D /* PDRemoteChange.m */,
-			);
-			name = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1339,24 +1263,16 @@
 				C9C1065F120B05C100327A0D /* NSMutableURLRequest+ResponseType.m in Sources */,
 				C9C10660120B05C100327A0D /* NSError+Error.m in Sources */,
 				C9C10661120B05C100327A0D /* ObjectiveResourceConfig.m in Sources */,
-				C9C10750120D8C8B00327A0D /* PDChangeManager.m in Sources */,
 				C94C8CBB120E1DBB00C41284 /* NSManagedObject+Additions.m in Sources */,
 				C94C8CBC120E1DBB00C41284 /* NSString+Additions.m in Sources */,
 				C94C8CC1120E1DD400C41284 /* NSManagedObjectContext+Additions.m in Sources */,
-				C9FE8DB2120F6CF000DE376B /* PDPendingChange.m in Sources */,
 				C9FE8DFE12108E4E00DE376B /* PDKeychainManager.m in Sources */,
 				C97CE2AB1210CD020054B858 /* PDLoginViewController.m in Sources */,
-				C9013D721214635100815A27 /* Change.m in Sources */,
 				C9013D731214635100815A27 /* List.m in Sources */,
 				C9013D761214635100815A27 /* User.m in Sources */,
 				C9013D791214635D00815A27 /* Entry.m in Sources */,
 				C92B8C6B1215DCE30076F539 /* UIViewController+Additions.m in Sources */,
 				C92B8C731215E01B0076F539 /* PDViewController.m in Sources */,
-				C9FD26C912170B1600D9127D /* PDChange.m in Sources */,
-				C9FD26D71217102800D9127D /* PDLocalChange.m in Sources */,
-				C9FD26E512171E9200D9127D /* PDChangeList.m in Sources */,
-				C9FD270512172CA800D9127D /* PDRemoteChange.m in Sources */,
-				C9FD279A12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28411218D52B00D9127D /* Device.m in Sources */,
 				C91C2477121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
 				C99BCE1A121C81CC00A5A582 /* _PDList.m in Sources */,
@@ -1426,24 +1342,16 @@
 				C9C1063F120B05C100327A0D /* NSMutableURLRequest+ResponseType.m in Sources */,
 				C9C10640120B05C100327A0D /* NSError+Error.m in Sources */,
 				C9C10641120B05C100327A0D /* ObjectiveResourceConfig.m in Sources */,
-				C9C1074F120D8C8B00327A0D /* PDChangeManager.m in Sources */,
 				C94C8CBD120E1DBB00C41284 /* NSManagedObject+Additions.m in Sources */,
 				C94C8CBE120E1DBB00C41284 /* NSString+Additions.m in Sources */,
 				C94C8CC2120E1DD400C41284 /* NSManagedObjectContext+Additions.m in Sources */,
-				C9FE8DB1120F6CF000DE376B /* PDPendingChange.m in Sources */,
 				C9FE8DFD12108E4E00DE376B /* PDKeychainManager.m in Sources */,
 				C97CE2AA1210CD020054B858 /* PDLoginViewController.m in Sources */,
-				C9013D6D1214635100815A27 /* Change.m in Sources */,
 				C9013D6E1214635100815A27 /* List.m in Sources */,
 				C9013D711214635100815A27 /* User.m in Sources */,
 				C9013D7A1214635D00815A27 /* Entry.m in Sources */,
 				C92B8C6A1215DCE30076F539 /* UIViewController+Additions.m in Sources */,
 				C92B8C721215E01B0076F539 /* PDViewController.m in Sources */,
-				C9FD26CA12170B1600D9127D /* PDChange.m in Sources */,
-				C9FD26D81217102800D9127D /* PDLocalChange.m in Sources */,
-				C9FD26E612171E9200D9127D /* PDChangeList.m in Sources */,
-				C9FD270612172CA800D9127D /* PDRemoteChange.m in Sources */,
-				C9FD279B12188D0D00D9127D /* PDDeviceResource.m in Sources */,
 				C9FD28421218D52B00D9127D /* Device.m in Sources */,
 				C91C2478121ABDA600FBA1F0 /* PDSyncController.m in Sources */,
 				C99BCF1C121CCF5500A5A582 /* PDSyncDelegate.m in Sources */,

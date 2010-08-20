@@ -1,5 +1,6 @@
 #import "PDSyncController.h"
 
+#import "NSObject+DeviceMethods.h"
 #import "ObjectiveResource.h"
 #import "ObjectiveResourceConfig.h"
 #import "ConnectionManager.h"

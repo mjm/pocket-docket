@@ -1,11 +1,3 @@
-@interface NSObject (DeviceMethods)
-
-+ (NSString *)deviceId;
-+ (void)setDeviceId:(NSString *)deviceId;
-
-@end
-
-
 @interface PDResource : NSObject
 
 @property (nonatomic, retain) NSNumber *moved;

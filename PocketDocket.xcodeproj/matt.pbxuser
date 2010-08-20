@@ -603,6 +603,18 @@
 			C99BD26D121E2BAB00A5A582 /* PBXTextBookmark */ = C99BD26D121E2BAB00A5A582 /* PBXTextBookmark */;
 			C99BD26E121E2BAB00A5A582 /* XCBuildMessageTextBookmark */ = C99BD26E121E2BAB00A5A582 /* XCBuildMessageTextBookmark */;
 			C99BD26F121E2BAB00A5A582 /* PBXTextBookmark */ = C99BD26F121E2BAB00A5A582 /* PBXTextBookmark */;
+			C99BD270121E2DAA00A5A582 /* PBXTextBookmark */ = C99BD270121E2DAA00A5A582 /* PBXTextBookmark */;
+			C99BD271121E2DAA00A5A582 /* PBXTextBookmark */ = C99BD271121E2DAA00A5A582 /* PBXTextBookmark */;
+			C99BD296121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD296121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD297121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD297121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD298121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD298121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD299121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD299121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD29A121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD29A121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD29B121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD29B121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD29C121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD29C121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD29D121E2E5A00A5A582 /* XCBuildMessageTextBookmark */ = C99BD29D121E2E5A00A5A582 /* XCBuildMessageTextBookmark */;
+			C99BD29E121E2E5A00A5A582 /* PBXTextBookmark */ = C99BD29E121E2E5A00A5A582 /* PBXTextBookmark */;
+			C99BD29F121E2E5A00A5A582 /* XDModelBookmark */ = C99BD29F121E2E5A00A5A582 /* XDModelBookmark */;
 			C9E6D29B121C53E200E4D3B1 = C9E6D29B121C53E200E4D3B1 /* PBXTextBookmark */;
 			C9E6D2A4121C5B4B00E4D3B1 = C9E6D2A4121C5B4B00E4D3B1 /* PBXTextBookmark */;
 			C9FD26321216FACD00D9127D = C9FD26321216FACD00D9127D /* PBXTextBookmark */;
@@ -677,15 +689,27 @@
 		};
 	};
 	C9013D621214635100815A27 /* Change.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = Change.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Models/Change.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1038}}";
-			sepNavSelRange = "{656, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
+			sepNavSelRange = "{159, 0}";
 			sepNavVisRange = "{0, 656}";
 		};
 	};
 	C9013D631214635100815A27 /* Change.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = Change.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Models/Change.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1293, 1005}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1293, 1059}}";
 			sepNavSelRange = "{1265, 926}";
 			sepNavVisRange = "{0, 2284}";
 		};
@@ -759,9 +783,9 @@
 	};
 	C9013D781214635D00815A27 /* Entry.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 1417}}";
-			sepNavSelRange = "{132, 0}";
-			sepNavVisRange = "{0, 777}";
+			sepNavIntBoundsRect = "{{0, 0}, {1174, 1391}}";
+			sepNavSelRange = "{71, 0}";
+			sepNavVisRange = "{0, 2125}";
 		};
 	};
 	C9013D9B1214692A00815A27 /* PBXTextBookmark */ = {
@@ -839,6 +863,12 @@
 		};
 	};
 	C91C241512175E5700FBA1F0 /* PDRemoteChanging.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDRemoteChanging.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDRemoteChanging.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1028}}";
 			sepNavSelRange = "{45, 0}";
@@ -854,9 +884,9 @@
 	};
 	C91C2476121ABDA600FBA1F0 /* PDSyncController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {985, 6123}}";
-			sepNavSelRange = "{12817, 0}";
-			sepNavVisRange = "{0, 2039}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 6318}}";
+			sepNavSelRange = "{64, 0}";
+			sepNavVisRange = "{0, 2094}";
 		};
 	};
 	C92A11FB117E7FEC00D43C65 /* DOEntryTableCell.h */ = {
@@ -1032,7 +1062,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 292";
 		rLen = 0;
-		rLoc = 9475;
+		rLoc = 9510;
 		rType = 0;
 		vrLen = 1971;
 		vrLoc = 6680;
@@ -1117,15 +1147,15 @@
 	C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
-			sepNavSelRange = "{38, 0}";
-			sepNavVisRange = "{0, 1380}";
+			sepNavSelRange = "{108, 0}";
+			sepNavVisRange = "{0, 1322}";
 		};
 	};
 	C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {999, 6396}}";
-			sepNavSelRange = "{111, 0}";
-			sepNavVisRange = "{0, 1853}";
+			sepNavIntBoundsRect = "{{0, 0}, {1013, 6045}}";
+			sepNavSelRange = "{10488, 0}";
+			sepNavVisRange = "{1792, 2458}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1139,9 +1169,9 @@
 	};
 	C94C560211544FF700791FAC /* PDListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 4524}}";
-			sepNavSelRange = "{1275, 0}";
-			sepNavVisRange = "{0, 1910}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 4511}}";
+			sepNavSelRange = "{257, 0}";
+			sepNavVisRange = "{0, 1941}";
 			sepNavWindowFrame = "{{15, 68}, {910, 810}}";
 		};
 	};
@@ -1775,7 +1805,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 62";
 		rLen = 0;
-		rLoc = 1695;
+		rLoc = 1666;
 		rType = 0;
 		vrLen = 2192;
 		vrLoc = 3734;
@@ -1785,7 +1815,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 491";
 		rLen = 0;
-		rLoc = 12350;
+		rLoc = 12333;
 		rType = 0;
 		vrLen = 1725;
 		vrLoc = 13066;
@@ -1893,7 +1923,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 265";
 		rLen = 0;
-		rLoc = 8697;
+		rLoc = 8732;
 		rType = 0;
 		vrLen = 1911;
 		vrLoc = 6740;
@@ -1992,7 +2022,7 @@
 		fRef = C94C55FC115447E500791FAC /* PDPersistenceController.h */;
 		name = "PDPersistenceController.h: 48";
 		rLen = 0;
-		rLoc = 1373;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1486;
 		vrLoc = 0;
@@ -2052,7 +2082,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 265";
 		rLen = 0;
-		rLoc = 8697;
+		rLoc = 8732;
 		rType = 0;
 		vrLen = 1943;
 		vrLoc = 0;
@@ -2327,7 +2357,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 37";
 		rLen = 0;
-		rLoc = 942;
+		rLoc = 913;
 		rType = 0;
 		vrLen = 1904;
 		vrLoc = 0;
@@ -2613,7 +2643,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 510";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 1974;
 		vrLoc = 12745;
@@ -2639,7 +2669,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 510";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 1287;
 		vrLoc = 13257;
@@ -2649,7 +2679,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 493";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 2012;
 		vrLoc = 12271;
@@ -2809,7 +2839,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 265";
 		rLen = 0;
-		rLoc = 8697;
+		rLoc = 8732;
 		rType = 0;
 		vrLen = 1950;
 		vrLoc = 0;
@@ -2819,7 +2849,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 11";
 		rLen = 0;
-		rLoc = 343;
+		rLoc = 378;
 		rType = 0;
 		vrLen = 1786;
 		vrLoc = 7432;
@@ -2829,7 +2859,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 303";
 		rLen = 0;
-		rLoc = 10090;
+		rLoc = 10125;
 		rType = 0;
 		vrLen = 1760;
 		vrLoc = 7332;
@@ -2839,7 +2869,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 36";
 		rLen = 0;
-		rLoc = 1234;
+		rLoc = 1269;
 		rType = 0;
 		vrLen = 2127;
 		vrLoc = 0;
@@ -2859,7 +2889,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 275";
 		rLen = 0;
-		rLoc = 6742;
+		rLoc = 6777;
 		rType = 0;
 		vrLen = 2398;
 		vrLoc = 6387;
@@ -2869,7 +2899,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 288";
 		rLen = 0;
-		rLoc = 7201;
+		rLoc = 7236;
 		rType = 0;
 		vrLen = 2438;
 		vrLoc = 6387;
@@ -2879,7 +2909,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 351";
 		rLen = 0;
-		rLoc = 9864;
+		rLoc = 9899;
 		rType = 0;
 		vrLen = 2087;
 		vrLoc = 8770;
@@ -2899,7 +2929,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 364";
 		rLen = 0;
-		rLoc = 10342;
+		rLoc = 10377;
 		rType = 0;
 		vrLen = 2131;
 		vrLoc = 8770;
@@ -2909,7 +2939,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 352";
 		rLen = 0;
-		rLoc = 9864;
+		rLoc = 9899;
 		rType = 0;
 		vrLen = 2156;
 		vrLoc = 8770;
@@ -2919,7 +2949,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 405";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1607;
 		vrLoc = 9439;
@@ -2929,7 +2959,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 421";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1474;
 		vrLoc = 9572;
@@ -2983,7 +3013,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 339";
 		rLen = 0;
-		rLoc = 11089;
+		rLoc = 11124;
 		rType = 0;
 		vrLen = 2294;
 		vrLoc = 7916;
@@ -2993,23 +3023,23 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 281";
 		rLen = 0;
-		rLoc = 9186;
+		rLoc = 9221;
 		rType = 0;
 		vrLen = 2445;
 		vrLoc = 6478;
 	};
 	C99BCF7A121DC1B800A5A582 /* PDResource.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1036}}";
-			sepNavSelRange = "{503, 0}";
-			sepNavVisRange = "{0, 503}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 392}";
 		};
 	};
 	C99BCF7B121DC1B800A5A582 /* PDResource.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1219, 1170}}";
-			sepNavSelRange = "{1072, 0}";
-			sepNavVisRange = "{743, 614}";
+			sepNavIntBoundsRect = "{{0, 0}, {964, 1059}}";
+			sepNavSelRange = "{59, 0}";
+			sepNavVisRange = "{0, 1733}";
 		};
 	};
 	C99BCFAC121DCE5D00A5A582 /* PBXTextBookmark */ = {
@@ -3117,7 +3147,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 61";
 		rLen = 0;
-		rLoc = 779;
+		rLoc = 815;
 		rType = 0;
 		vrLen = 2441;
 		vrLoc = 320;
@@ -3127,7 +3157,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 26";
 		rLen = 0;
-		rLoc = 608;
+		rLoc = 643;
 		rType = 0;
 		vrLen = 2053;
 		vrLoc = 0;
@@ -3147,7 +3177,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 87";
 		rLen = 0;
-		rLoc = 1982;
+		rLoc = 1726;
 		rType = 0;
 		vrLen = 1830;
 		vrLoc = 135;
@@ -3157,7 +3187,7 @@
 		fRef = C99BCF7A121DC1B800A5A582 /* PDResource.h */;
 		name = "PDResource.h: 20";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 385;
 		rType = 0;
 		vrLen = 503;
 		vrLoc = 0;
@@ -3207,7 +3237,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 70";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1203;
 		rType = 0;
 		vrLen = 1854;
 		vrLoc = 135;
@@ -3227,7 +3257,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 61";
 		rLen = 0;
-		rLoc = 779;
+		rLoc = 815;
 		rType = 0;
 		vrLen = 2396;
 		vrLoc = 0;
@@ -3237,7 +3267,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 7";
 		rLen = 0;
-		rLoc = 135;
+		rLoc = 171;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -3247,7 +3277,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 75";
 		rLen = 0;
-		rLoc = 1105;
+		rLoc = 1141;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -3307,7 +3337,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 2291;
 		vrLoc = 1144;
@@ -3457,7 +3487,7 @@
 		fRef = C94C55FC115447E500791FAC /* PDPersistenceController.h */;
 		name = "PDPersistenceController.h: 1";
 		rLen = 0;
-		rLoc = 38;
+		rLoc = 0;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 0;
@@ -3467,7 +3497,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 409";
 		rLen = 0;
-		rLoc = 10643;
+		rLoc = 10626;
 		rType = 0;
 		vrLen = 2353;
 		vrLoc = 9995;
@@ -3477,7 +3507,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 378";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2497;
 		vrLoc = 7033;
@@ -3487,7 +3517,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2328;
 		vrLoc = 10329;
@@ -3497,7 +3527,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2332;
 		vrLoc = 10325;
@@ -3507,7 +3537,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 477";
 		rLen = 0;
-		rLoc = 12329;
+		rLoc = 12312;
 		rType = 0;
 		vrLen = 2183;
 		vrLoc = 12416;
@@ -3517,7 +3547,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 221";
 		rLen = 0;
-		rLoc = 5236;
+		rLoc = 5207;
 		rType = 0;
 		vrLen = 2249;
 		vrLoc = 3949;
@@ -3527,7 +3557,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 5784;
+		rLoc = 5755;
 		rType = 0;
 		vrLen = 2209;
 		vrLoc = 3548;
@@ -3537,7 +3567,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 5784;
+		rLoc = 5755;
 		rType = 0;
 		vrLen = 1252;
 		vrLoc = 4505;
@@ -3562,7 +3592,7 @@
 		isa = PBXTextBookmark;
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		rLen = 0;
-		rLoc = 465;
+		rLoc = 466;
 		rType = 1;
 	};
 	C99BD039121DDC3300A5A582 /* PBXTextBookmark */ = {
@@ -3570,7 +3600,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1421;
 		vrLoc = 11236;
@@ -3580,7 +3610,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 238";
 		rLen = 0;
-		rLoc = 5784;
+		rLoc = 5755;
 		rType = 0;
 		vrLen = 2209;
 		vrLoc = 3548;
@@ -3590,7 +3620,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2304;
 		vrLoc = 10353;
@@ -3660,7 +3690,7 @@
 		isa = PBXTextBookmark;
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		rLen = 0;
-		rLoc = 465;
+		rLoc = 466;
 		rType = 1;
 	};
 	C99BD04A121DDDCB00A5A582 /* PBXTextBookmark */ = {
@@ -3668,7 +3698,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 11234;
@@ -3678,7 +3708,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2304;
 		vrLoc = 10353;
@@ -3718,7 +3748,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 422";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 11234;
@@ -3785,7 +3815,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 419";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2308;
 		vrLoc = 10349;
@@ -3795,7 +3825,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 419";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2394;
 		vrLoc = 10349;
@@ -3815,7 +3845,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2417;
 		vrLoc = 10349;
@@ -3825,7 +3855,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2419;
 		vrLoc = 10349;
@@ -3845,7 +3875,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 11236;
@@ -3882,7 +3912,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2419;
 		vrLoc = 10349;
@@ -3907,7 +3937,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 11236;
@@ -3917,7 +3947,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2291;
 		vrLoc = 10483;
@@ -3927,7 +3957,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2291;
 		vrLoc = 10483;
@@ -3937,7 +3967,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1532;
 		vrLoc = 11236;
@@ -4005,7 +4035,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2296;
 		vrLoc = 10478;
@@ -4030,7 +4060,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 420";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 1423;
 		vrLoc = 11351;
@@ -4051,7 +4081,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 0;
-		rLoc = 465;
+		rLoc = 466;
 		rType = 1;
 	};
 	C99BD08E121DE6EE00A5A582 /* PBXTextBookmark */ = {
@@ -4059,7 +4089,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11133;
+		rLoc = 11168;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 10115;
@@ -4069,7 +4099,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11133;
+		rLoc = 11168;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 10925;
@@ -4079,7 +4109,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11133;
+		rLoc = 11168;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 10115;
@@ -4239,7 +4269,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 2243;
 		vrLoc = 1192;
@@ -4249,7 +4279,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -4259,7 +4289,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -4269,7 +4299,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11133;
+		rLoc = 11168;
 		rType = 0;
 		vrLen = 650;
 		vrLoc = 10925;
@@ -4279,7 +4309,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 2488;
@@ -4289,7 +4319,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 2248;
 		vrLoc = 1187;
@@ -4299,7 +4329,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 372";
 		rLen = 0;
-		rLoc = 11133;
+		rLoc = 11168;
 		rType = 0;
 		vrLen = 2252;
 		vrLoc = 10119;
@@ -4319,7 +4349,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 70";
 		rLen = 0;
-		rLoc = 1459;
+		rLoc = 1203;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 135;
@@ -4329,7 +4359,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 55";
 		rLen = 0;
-		rLoc = 1072;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 135;
@@ -4339,7 +4369,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 55";
 		rLen = 0;
-		rLoc = 1072;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 135;
@@ -4349,7 +4379,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 99";
 		rLen = 92;
-		rLoc = 1753;
+		rLoc = 1789;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 2488;
@@ -4359,7 +4389,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 55";
 		rLen = 0;
-		rLoc = 1072;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 614;
 		vrLoc = 743;
@@ -4369,7 +4399,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 55";
 		rLen = 0;
-		rLoc = 1072;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 1849;
 		vrLoc = 135;
@@ -4389,7 +4419,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2261;
 		vrLoc = 10284;
@@ -4419,7 +4449,7 @@
 		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
 		name = "PDResource.m: 55";
 		rLen = 0;
-		rLoc = 1072;
+		rLoc = 816;
 		rType = 0;
 		vrLen = 614;
 		vrLoc = 743;
@@ -4496,7 +4526,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2264;
 		vrLoc = 10280;
@@ -4506,7 +4536,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2472;
 		vrLoc = 7761;
@@ -4526,7 +4556,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 9668;
@@ -4536,7 +4566,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2172;
 		vrLoc = 8633;
@@ -4546,7 +4576,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 388";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 9668;
@@ -4556,7 +4586,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 369";
 		rLen = 0;
-		rLoc = 11045;
+		rLoc = 11080;
 		rType = 0;
 		vrLen = 2159;
 		vrLoc = 8995;
@@ -4566,7 +4596,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 369";
 		rLen = 0;
-		rLoc = 11045;
+		rLoc = 11080;
 		rType = 0;
 		vrLen = 565;
 		vrLoc = 9668;
@@ -4576,7 +4606,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 292";
 		rLen = 0;
-		rLoc = 8697;
+		rLoc = 8732;
 		rType = 0;
 		vrLen = 2425;
 		vrLoc = 7907;
@@ -4586,7 +4616,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9967;
+		rLoc = 10002;
 		rType = 0;
 		vrLen = 2425;
 		vrLoc = 7907;
@@ -4596,7 +4626,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9967;
+		rLoc = 10002;
 		rType = 0;
 		vrLen = 1014;
 		vrLoc = 7624;
@@ -4626,7 +4656,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9967;
+		rLoc = 10002;
 		rType = 0;
 		vrLen = 2287;
 		vrLoc = 6963;
@@ -4636,7 +4666,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 225";
 		rLen = 0;
-		rLoc = 6291;
+		rLoc = 6326;
 		rType = 0;
 		vrLen = 2461;
 		vrLoc = 5651;
@@ -4646,7 +4676,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7795;
+		rLoc = 7830;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 7525;
@@ -4656,7 +4686,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7795;
+		rLoc = 7830;
 		rType = 0;
 		vrLen = 2401;
 		vrLoc = 6861;
@@ -4676,7 +4706,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 477";
 		rLen = 0;
-		rLoc = 12329;
+		rLoc = 12312;
 		rType = 0;
 		vrLen = 2174;
 		vrLoc = 12416;
@@ -4686,7 +4716,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 477";
 		rLen = 0;
-		rLoc = 12329;
+		rLoc = 12312;
 		rType = 0;
 		vrLen = 2596;
 		vrLoc = 3807;
@@ -4696,7 +4726,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7795;
+		rLoc = 7830;
 		rType = 0;
 		vrLen = 1134;
 		vrLoc = 7525;
@@ -4726,7 +4756,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 273";
 		rLen = 0;
-		rLoc = 7795;
+		rLoc = 7830;
 		rType = 0;
 		vrLen = 2365;
 		vrLoc = 6861;
@@ -4736,7 +4766,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9642;
+		rLoc = 9677;
 		rType = 0;
 		vrLen = 2301;
 		vrLoc = 8540;
@@ -4756,7 +4786,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9642;
+		rLoc = 9677;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 9077;
@@ -4766,7 +4796,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9642;
+		rLoc = 9677;
 		rType = 0;
 		vrLen = 2301;
 		vrLoc = 8540;
@@ -4806,7 +4836,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 336";
 		rLen = 0;
-		rLoc = 9642;
+		rLoc = 9677;
 		rType = 0;
 		vrLen = 1308;
 		vrLoc = 9077;
@@ -4856,7 +4886,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 107";
 		rLen = 0;
-		rLoc = 2811;
+		rLoc = 2846;
 		rType = 0;
 		vrLen = 1254;
 		vrLoc = 2414;
@@ -4965,7 +4995,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 125";
 		rLen = 0;
-		rLoc = 3418;
+		rLoc = 3453;
 		rType = 0;
 		vrLen = 1299;
 		vrLoc = 2583;
@@ -4996,7 +5026,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 145";
 		rLen = 0;
-		rLoc = 4043;
+		rLoc = 4078;
 		rType = 0;
 		vrLen = 2592;
 		vrLoc = 2230;
@@ -5332,7 +5362,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 125";
 		rLen = 0;
-		rLoc = 3418;
+		rLoc = 3453;
 		rType = 0;
 		vrLen = 1299;
 		vrLoc = 2583;
@@ -6474,7 +6504,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 10712;
+		rLoc = 10695;
 		rType = 0;
 		vrLen = 2214;
 		vrLoc = 10559;
@@ -6647,7 +6677,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 10712;
+		rLoc = 10695;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 11061;
@@ -6684,7 +6714,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 10712;
+		rLoc = 10695;
 		rType = 0;
 		vrLen = 2214;
 		vrLoc = 10559;
@@ -6724,7 +6754,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 10712;
+		rLoc = 10695;
 		rType = 0;
 		vrLen = 995;
 		vrLoc = 11061;
@@ -6764,7 +6794,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 118";
 		rLen = 0;
-		rLoc = 2394;
+		rLoc = 2430;
 		rType = 0;
 		vrLen = 2254;
 		vrLoc = 0;
@@ -7102,7 +7132,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 414";
 		rLen = 0;
-		rLoc = 10712;
+		rLoc = 10695;
 		rType = 0;
 		vrLen = 2211;
 		vrLoc = 10559;
@@ -7112,7 +7142,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 13174;
@@ -7122,7 +7152,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 13796;
@@ -7153,7 +7183,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 2160;
 		vrLoc = 13174;
@@ -7338,7 +7368,7 @@
 		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
 		name = "PDListsViewController.m: 44";
 		rLen = 0;
-		rLoc = 1275;
+		rLoc = 1246;
 		rType = 0;
 		vrLen = 1910;
 		vrLoc = 0;
@@ -7378,7 +7408,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 145";
 		rLen = 0;
-		rLoc = 4043;
+		rLoc = 4078;
 		rType = 0;
 		vrLen = 2592;
 		vrLoc = 2230;
@@ -7388,7 +7418,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 115";
 		rLen = 0;
-		rLoc = 3022;
+		rLoc = 3057;
 		rType = 0;
 		vrLen = 2702;
 		vrLoc = 2230;
@@ -7398,7 +7428,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 1213;
 		vrLoc = 13796;
@@ -7408,7 +7438,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 115";
 		rLen = 0;
-		rLoc = 3022;
+		rLoc = 3057;
 		rType = 0;
 		vrLen = 1223;
 		vrLoc = 2475;
@@ -7418,7 +7448,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 115";
 		rLen = 0;
-		rLoc = 3022;
+		rLoc = 3057;
 		rType = 0;
 		vrLen = 2702;
 		vrLoc = 2230;
@@ -7633,7 +7663,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 454";
 		rLen = 0;
-		rLoc = 13334;
+		rLoc = 13369;
 		rType = 0;
 		vrLen = 2298;
 		vrLoc = 10876;
@@ -7643,7 +7673,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 516";
 		rLen = 0;
-		rLoc = 12366;
+		rLoc = 12349;
 		rType = 0;
 		vrLen = 2162;
 		vrLoc = 13172;
@@ -7663,7 +7693,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 116";
 		rLen = 0;
-		rLoc = 3022;
+		rLoc = 3057;
 		rType = 0;
 		vrLen = 1117;
 		vrLoc = 2927;
@@ -7683,7 +7713,7 @@
 		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
 		name = "PDPersistenceController.m: 476";
 		rLen = 0;
-		rLoc = 12461;
+		rLoc = 12444;
 		rType = 0;
 		vrLen = 1864;
 		vrLoc = 0;
@@ -8133,7 +8163,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 118";
 		rLen = 0;
-		rLoc = 2394;
+		rLoc = 2430;
 		rType = 0;
 		vrLen = 2254;
 		vrLoc = 0;
@@ -8143,7 +8173,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 7";
 		rLen = 0;
-		rLoc = 132;
+		rLoc = 168;
 		rType = 0;
 		vrLen = 2251;
 		vrLoc = 0;
@@ -8163,7 +8193,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 7";
 		rLen = 0;
-		rLoc = 132;
+		rLoc = 168;
 		rType = 0;
 		vrLen = 1086;
 		vrLoc = 0;
@@ -8173,7 +8203,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 7";
 		rLen = 0;
-		rLoc = 132;
+		rLoc = 168;
 		rType = 0;
 		vrLen = 2251;
 		vrLoc = 0;
@@ -8348,7 +8378,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 14";
 		rLen = 0;
-		rLoc = 210;
+		rLoc = 246;
 		rType = 0;
 		vrLen = 2347;
 		vrLoc = 503;
@@ -8553,7 +8583,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 7";
 		rLen = 0;
-		rLoc = 132;
+		rLoc = 168;
 		rType = 0;
 		vrLen = 777;
 		vrLoc = 0;
@@ -8593,7 +8623,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 443";
 		rLen = 0;
-		rLoc = 12817;
+		rLoc = 12852;
 		rType = 0;
 		vrLen = 2039;
 		vrLoc = 0;
@@ -8603,7 +8633,7 @@
 		fRef = C99BCF7A121DC1B800A5A582 /* PDResource.h */;
 		name = "PDResource.h: 20";
 		rLen = 0;
-		rLoc = 496;
+		rLoc = 385;
 		rType = 0;
 		vrLen = 503;
 		vrLoc = 0;
@@ -8815,7 +8845,7 @@
 		fRef = C99BCF7A121DC1B800A5A582 /* PDResource.h */;
 		name = "PDResource.h: 23";
 		rLen = 0;
-		rLoc = 503;
+		rLoc = 392;
 		rType = 0;
 		vrLen = 503;
 		vrLoc = 0;
@@ -9220,6 +9250,280 @@
 		vrLen = 1853;
 		vrLoc = 0;
 	};
+	C99BD270121E2DAA00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2475121ABDA600FBA1F0 /* PDSyncController.h */;
+		name = "PDSyncController.h: 2";
+		rLen = 143;
+		rLoc = 22;
+		rType = 0;
+		vrLen = 879;
+		vrLoc = 0;
+	};
+	C99BD271121E2DAA00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 13";
+		rLen = 0;
+		rLoc = 287;
+		rType = 0;
+		vrLen = 591;
+		vrLoc = 0;
+	};
+	C99BD296121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FC115447E500791FAC /* PDPersistenceController.h */;
+		name = "PDPersistenceController.h: 7";
+		rLen = 0;
+		rLoc = 108;
+		rType = 0;
+		vrLen = 1322;
+		vrLoc = 0;
+	};
+	C99BD297121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 8";
+		rLen = 0;
+		rLoc = 257;
+		rType = 0;
+		vrLen = 1941;
+		vrLoc = 0;
+	};
+	C99BD298121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C55FD115447E500791FAC /* PDPersistenceController.m */;
+		name = "PDPersistenceController.m: 388";
+		rLen = 0;
+		rLoc = 10488;
+		rType = 0;
+		vrLen = 2458;
+		vrLoc = 1792;
+	};
+	C99BD299121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF7A121DC1B800A5A582 /* PDResource.h */;
+		name = "PDResource.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 392;
+		vrLoc = 0;
+	};
+	C99BD29A121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C99BCF7B121DC1B800A5A582 /* PDResource.m */;
+		name = "PDResource.m: 4";
+		rLen = 0;
+		rLoc = 59;
+		rType = 0;
+		vrLen = 1733;
+		vrLoc = 0;
+	};
+	C99BD29B121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9013D781214635D00815A27 /* Entry.m */;
+		name = "Entry.m: 5";
+		rLen = 0;
+		rLoc = 71;
+		rType = 0;
+		vrLen = 2125;
+		vrLoc = 0;
+	};
+	C99BD29C121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
+		name = "PDSyncController.m: 3";
+		rLen = 0;
+		rLoc = 64;
+		rType = 0;
+		vrLen = 2094;
+		vrLoc = 0;
+	};
+	C99BD29D121E2E5A00A5A582 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Incomplete implementation";
+		fRef = C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 10;
+		rType = 1;
+	};
+	C99BD29E121E2E5A00A5A582 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */;
+		name = "ObjectiveResourceConfig.m: 11";
+		rLen = 40;
+		rLoc = 192;
+		rType = 0;
+		vrLen = 1339;
+		vrLoc = 0;
+	};
+	C99BD29F121E2E5A00A5A582 /* XDModelBookmark */ = {
+		isa = XDModelBookmark;
+		fRef = C9C106C3120B143000327A0D /* PocketDocket 4.xcdatamodel */;
+		fallbackIsa = PBXBookmark;
+		uiCtxt = {
+			UIContextForDetailArea = {
+				_indexOfSelectedPane = 0;
+				_indexOfSelectedView = 0;
+			};
+			UIContextForEntityArea = {
+				_indexOfSelectedView = 0;
+				chosenTableColumnns = (
+					"ET Entity",
+					"ET Abstract",
+					"ET Class",
+				);
+				chosenTableColumnns_sortDirections = (
+					YES,
+				);
+				chosenTableColumnns_sortKeys = (
+					name,
+				);
+				chosenTableColumnns_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidths = (
+					103.000000,
+					22.000000,
+					63.080078,
+				);
+			};
+			UIContextForLayoutManager = {
+				detailSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {653, 220}}",
+						"{{658, 0}, {344, 220}}",
+					);
+				};
+				diagramSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {1002, 220}}",
+						"{{0, 225}, {1002, 449}}",
+					);
+				};
+				tableSplitGeometry = {
+					_collapsingFrameDimension = 0;
+					_indexOfCollapsedView = 0;
+					_percentageOfCollapsedView = 0;
+					isCollapsed = yes;
+					sizes = (
+						"{{0, 0}, {213, 220}}",
+						"{{218, 0}, {435, 220}}",
+					);
+				};
+			};
+			UIContextForPropertyArea = {
+				_indexOfSelectedView = 4;
+				chosenTableColumnnFRTs = (
+					"FT Fetch Request",
+					"FT Predicate",
+				);
+				chosenTableColumnnFRTs_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnFRTs_sortKeys = (
+					name,
+				);
+				chosenTableColumnnFRTs_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsAT = (
+					"AT Attribute",
+					"AT Type",
+				);
+				chosenTableColumnnsAT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsAT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsAT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsFPT = (
+					"FP FetchedProperty",
+					"FP Destination",
+					"FP Predicate",
+				);
+				chosenTableColumnnsFPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsFPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsFPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsPT = (
+					"PT Property",
+					"PT Kind",
+					"PT SharedKeyOne",
+				);
+				chosenTableColumnnsPT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsPT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsPT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableColumnnsRT = (
+					"RT Relationship",
+					"RT Destination",
+				);
+				chosenTableColumnnsRT_sortDirections = (
+					YES,
+				);
+				chosenTableColumnnsRT_sortKeys = (
+					name,
+				);
+				chosenTableColumnnsRT_sortSelectors = (
+					"_xdcaseInsensitiveNumericCompare:",
+				);
+				chosenTableWidthsAT = (
+					128.000000,
+					64.000000,
+				);
+				chosenTableWidthsFPT = (
+					128.000000,
+					64.000000,
+					144.764160,
+				);
+				chosenTableWidthsFRT = (
+					128.000000,
+					283.764160,
+				);
+				chosenTableWidthsPT = (
+					128.000000,
+					108.110840,
+					167.570801,
+				);
+				chosenTableWidthsRT = (
+					128.000000,
+					64.000000,
+				);
+			};
+			"xdesign model browser state key - shown/hidden" = 1;
+			"xdesign model diagram view visible rect key" = "{{-170, -1}, {987, 434}}";
+			"xdesign model selected entities key" = (
+				"<XDPMEntity: 0x2048f38e0>{name=List, package=}",
+			);
+			"xdesign model selected properties key" = (
+				"<XDPMFetchRequest: 0x203698fe0>",
+			);
+		};
+	};
 	C9B7FB2C1161AB9000C872D9 /* PDEntryTableCell.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1033}}";
@@ -9603,8 +9907,8 @@
 	};
 	C9C10621120B05C100327A0D /* ObjectiveResourceConfig.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1034}}";
-			sepNavSelRange = "{0, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
+			sepNavSelRange = "{192, 40}";
 			sepNavVisRange = "{0, 1339}";
 		};
 	};
@@ -9655,7 +9959,7 @@
 						isCollapsed = yes;
 						sizes = (
 							"{{0, 0}, {1002, 220}}",
-							"{{0, 225}, {1002, 426}}",
+							"{{0, 225}, {1002, 449}}",
 						);
 					};
 					tableSplitGeometry = {
@@ -9762,12 +10066,18 @@
 					);
 				};
 				"xdesign model browser state key - shown/hidden" = 1;
-				"xdesign model diagram view visible rect key" = "{{-170, 0}, {987, 411}}";
+				"xdesign model diagram view visible rect key" = "{{-170, -1}, {987, 434}}";
 			};
 			sepNavWindowFrame = "{{15, 91}, {1002, 787}}";
 		};
 	};
 	C9C1074D120D8C8B00327A0D /* PDChangeManager.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDChangeManager.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDChangeManager.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
 			sepNavSelRange = "{959, 0}";
@@ -9775,6 +10085,12 @@
 		};
 	};
 	C9C1074E120D8C8B00327A0D /* PDChangeManager.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDChangeManager.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDChangeManager.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1219, 4576}}";
 			sepNavSelRange = "{5645, 0}";
@@ -9832,7 +10148,7 @@
 		fRef = C91C2476121ABDA600FBA1F0 /* PDSyncController.m */;
 		name = "PDSyncController.m: 302";
 		rLen = 0;
-		rLoc = 10040;
+		rLoc = 10075;
 		rType = 0;
 		vrLen = 878;
 		vrLoc = 7754;
@@ -9902,6 +10218,12 @@
 		vrLoc = 0;
 	};
 	C9FD266F1217077B00D9127D /* PDLocalChanging.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDLocalChanging.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDLocalChanging.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {959, 558}}";
 			sepNavSelRange = "{121, 0}";
@@ -10008,14 +10330,13 @@
 		vrLen = 2254;
 		vrLoc = 0;
 	};
-	C9FD26C712170B1600D9127D /* PDChange.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {959, 498}}";
-			sepNavSelRange = "{436, 0}";
-			sepNavVisRange = "{0, 444}";
-		};
-	};
 	C9FD26C812170B1600D9127D /* PDChange.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDChange.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDChange.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1027}}";
 			sepNavSelRange = "{513, 0}";
@@ -10023,6 +10344,12 @@
 		};
 	};
 	C9FD26D51217102800D9127D /* PDLocalChange.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDLocalChange.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDLocalChange.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1028}}";
 			sepNavSelRange = "{183, 0}";
@@ -10030,6 +10357,12 @@
 		};
 	};
 	C9FD26D61217102800D9127D /* PDLocalChange.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDLocalChange.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDLocalChange.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1219, 1560}}";
 			sepNavSelRange = "{2337, 0}";
@@ -10037,6 +10370,12 @@
 		};
 	};
 	C9FD26E312171E9200D9127D /* PDChangeList.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDChangeList.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDChangeList.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1219, 528}}";
 			sepNavSelRange = "{0, 0}";
@@ -10044,20 +10383,25 @@
 		};
 	};
 	C9FD26E412171E9200D9127D /* PDChangeList.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDChangeList.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDChangeList.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1742}}";
 			sepNavSelRange = "{534, 0}";
 			sepNavVisRange = "{0, 1689}";
 		};
 	};
-	C9FD270312172CA800D9127D /* PDRemoteChange.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {959, 498}}";
-			sepNavSelRange = "{128, 0}";
-			sepNavVisRange = "{0, 128}";
-		};
-	};
 	C9FD270412172CA800D9127D /* PDRemoteChange.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDRemoteChange.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDRemoteChange.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1219, 1742}}";
 			sepNavSelRange = "{2031, 0}";
@@ -10129,7 +10473,7 @@
 		fRef = C9013D781214635D00815A27 /* Entry.m */;
 		name = "Entry.m: 72";
 		rLen = 0;
-		rLoc = 340;
+		rLoc = 376;
 		rType = 0;
 		vrLen = 2280;
 		vrLoc = 36;
@@ -10171,6 +10515,12 @@
 		};
 	};
 	C9FD279812188D0D00D9127D /* PDDeviceResource.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDDeviceResource.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDDeviceResource.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
 			sepNavSelRange = "{38, 0}";
@@ -10178,6 +10528,12 @@
 		};
 	};
 	C9FD279912188D0D00D9127D /* PDDeviceResource.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDDeviceResource.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDDeviceResource.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
 			sepNavSelRange = "{129, 336}";
@@ -10333,7 +10689,7 @@
 		fRef = C94C55FC115447E500791FAC /* PDPersistenceController.h */;
 		name = "PDPersistenceController.h: 48";
 		rLen = 0;
-		rLoc = 1373;
+		rLoc = 1315;
 		rType = 0;
 		vrLen = 1486;
 		vrLoc = 0;
@@ -10429,6 +10785,12 @@
 		vrLoc = 0;
 	};
 	C9FE8DAF120F6CF000DE376B /* PDPendingChange.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = PDPendingChange.h;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDPendingChange.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {931, 1028}}";
 			sepNavSelRange = "{9, 0}";
@@ -10436,6 +10798,12 @@
 		};
 	};
 	C9FE8DB0120F6CF000DE376B /* PDPendingChange.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = PDPendingChange.m;
+		path = /Users/matt/Code/PocketDocket/Classes/Changes/PDPendingChange.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1219, 510}}";
 			sepNavSelRange = "{538, 0}";

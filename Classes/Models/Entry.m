@@ -1,6 +1,8 @@
 #import "Entry.h"
 
 #import "List.h"
+#import "NSObject+DeviceMethods.h"
+
 #import "ObjectiveResource.h"
 #import "Connection.h"
 #import "Response.h"

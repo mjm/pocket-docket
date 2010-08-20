@@ -1,5 +1,3 @@
-#import "../Changes/PDLocalChanging.h"
-
 @class PDList;
 @class PDListEntry;
 
@@ -35,7 +33,7 @@
 
 - (void)moveList:(PDList *)list fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
 - (void)moveEntry:(PDListEntry *)entry fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
-- (void)markChanged:(NSManagedObject <PDLocalChanging> *)object;
+- (void)markChanged:(NSManagedObject *)object;
 
 - (void)deleteList:(PDList *)list;
 - (void)deleteEntry:(PDListEntry *)entry;
