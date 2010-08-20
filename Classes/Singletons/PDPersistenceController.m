@@ -2,7 +2,7 @@
 
 #import "SynthesizeSingleton.h"
 #import "PDSettingsController.h"
-#import "../Changes/PDCredentials.h"
+#import "PDCredentials.h"
 #import "PDList.h"
 #import "PDListEntry.h"
 #import "../Models/Device.h"

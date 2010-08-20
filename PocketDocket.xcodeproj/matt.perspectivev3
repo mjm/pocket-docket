@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>C99BD225121E282700A5A582</string>
+						<string>C99BD25B121E2B0600A5A582</string>
 						<key>history</key>
 						<array>
 							<string>C99BD148121DF42B00A5A582</string>
@@ -273,8 +273,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -348,13 +346,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>74</integer>
-									<integer>67</integer>
-									<integer>24</integer>
-									<integer>0</integer>
-								</array>
-								<array>
-									<integer>75</integer>
+									<integer>68</integer>
 									<integer>67</integer>
 									<integer>24</integer>
 									<integer>0</integer>
@@ -377,8 +369,6 @@
 							<string>MainColumn</string>
 							<real>266</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>0 137 1280 1281 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -394,7 +384,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NSObject+DeviceMethods.h</string>
+								<string>asm +[NSConcreteNotification newTempNotificationWithName:object:userInfo:]  0x346c8910</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -402,11 +392,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NSObject+DeviceMethods.h</string>
+										<string>asm +[NSConcreteNotification newTempNotificationWithName:object:userInfo:]  0x346c8910</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C99BD224121E282700A5A582</string>
+										<string>C99BD25A121E2B0600A5A582</string>
 										<key>history</key>
 										<array>
 											<string>C97CE30B1210EF8C0054B858</string>
@@ -490,8 +480,6 @@
 											<string>C99BCFB5121DCE5D00A5A582</string>
 											<string>C99BCFD0121DD1F900A5A582</string>
 											<string>C99BCFE0121DD32F00A5A582</string>
-											<string>C99BD01D121DD9D700A5A582</string>
-											<string>C99BD01F121DD9D700A5A582</string>
 											<string>C99BD020121DD9D700A5A582</string>
 											<string>C99BD023121DD9D700A5A582</string>
 											<string>C99BD024121DD9D700A5A582</string>
@@ -523,14 +511,13 @@
 											<string>C99BD1C4121E1B5C00A5A582</string>
 											<string>C99BD1DC121E1F6500A5A582</string>
 											<string>C99BD1EA121E21F900A5A582</string>
-											<string>C99BD1EB121E21F900A5A582</string>
 											<string>C99BD20E121E25CA00A5A582</string>
-											<string>C99BD21E121E282700A5A582</string>
-											<string>C99BD21F121E282700A5A582</string>
 											<string>C99BD220121E282700A5A582</string>
-											<string>C99BD221121E282700A5A582</string>
-											<string>C99BD222121E282700A5A582</string>
-											<string>C99BD223121E282700A5A582</string>
+											<string>C99BD231121E29E700A5A582</string>
+											<string>C99BD232121E29E700A5A582</string>
+											<string>C99BD233121E29E700A5A582</string>
+											<string>C99BD234121E29E700A5A582</string>
+											<string>C99BD235121E29E700A5A582</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -545,8 +532,6 @@
 							<dict>
 								<key>Frame</key>
 								<string>{{0, 0}, {992, 1091}}</string>
-								<key>RubberWindowFrame</key>
-								<string>0 137 1280 1281 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -570,8 +555,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {992, 117}}</string>
-										<key>RubberWindowFrame</key>
-										<string>0 137 1280 1281 0 0 2560 1418 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -709,6 +692,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1280, 628}}</string>
+						<key>RubberWindowFrame</key>
+						<string>0 137 1280 1281 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -732,8 +717,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {600, 131}}</string>
-									<string>{{600, 0}, {680, 131}}</string>
+									<string>{{0, 0}, {668, 201}}</string>
+									<string>{{668, 0}, {612, 201}}</string>
 								</array>
 							</dict>
 							<key>VerticalSplitView</key>
@@ -748,8 +733,8 @@
 								<string>yes</string>
 								<key>sizes</key>
 								<array>
-									<string>{{0, 0}, {1280, 131}}</string>
-									<string>{{0, 131}, {1280, 476}}</string>
+									<string>{{0, 0}, {1280, 201}}</string>
+									<string>{{0, 201}, {1280, 406}}</string>
 								</array>
 							</dict>
 						</dict>
@@ -779,11 +764,15 @@
 								<string>Value</string>
 								<real>85</real>
 								<string>Summary</string>
-								<real>354</real>
+								<real>286</real>
 							</array>
 							<key>Frame</key>
-							<string>{{600, 0}, {680, 131}}</string>
+							<string>{{668, 0}, {612, 201}}</string>
+							<key>RubberWindowFrame</key>
+							<string>0 137 1280 1281 0 0 2560 1418 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>0 137 1280 1281 0 0 2560 1418 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -847,7 +836,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C99BD226121E282700A5A582</string>
+		<string>C99BD25C121E2B0600A5A582</string>
 		<string>C99BD057121DE48900A5A582</string>
 		<string>C99BD058121DE48900A5A582</string>
 		<string>C99BD1C7121E1B5C00A5A582</string>
