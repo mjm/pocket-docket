@@ -480,6 +480,8 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 		[self mergeLocalObjects:localChange withRemoteObjects:remoteChange];
 	}
 	
+	[[self managedObjectContext] save:NULL];
+	
 	[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 }
 

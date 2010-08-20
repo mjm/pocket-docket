@@ -43,6 +43,8 @@
 	
 	[self.window addSubview:navController.view];
 	[self.window makeKeyAndVisible];
+	
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
