@@ -3,7 +3,7 @@
 
 @implementation PDList
 
-@dynamic completedEntries;
+@dynamic completedEntries, allEntries;
 
 - (id)toResource
 {

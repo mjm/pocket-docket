@@ -34,14 +34,14 @@
 	}
 	else
 	{
-		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
+		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.allEntries count]);
 	}
 	cell.titleLabel.text = list.title;
 	
 	NSString *of = NSLocalizedString(@"of", nil);
 	NSString *completed = NSLocalizedString(@"completed", nil);
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
-								 [list.completedEntries count], of, [list.entries count], completed];
+								 [list.completedEntries count], of, [list.allEntries count], completed];
 }
 
 - (void)doneEditingList:(PDList *)list

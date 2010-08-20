@@ -21,7 +21,7 @@
 	if ([list.entries count] == 0) {
 		cell.progressView.progress = 0.0;
 	} else {
-		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
+		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.allEntries count]);
 	}
 	[cell.progressView setNeedsDisplay];
 	
@@ -29,7 +29,7 @@
 	NSString *of = NSLocalizedString(@"of", nil);
 	NSString *completed = NSLocalizedString(@"completed", nil);
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
-								 [list.completedEntries count], of, [list.entries count], completed];
+								 [list.completedEntries count], of, [list.allEntries count], completed];
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.editingAccessoryType = UITableViewCellAccessoryNone;
 }

@@ -13,4 +13,6 @@
 
 + (BOOL)sortRemote:(NSArray *)ids forList:(NSString *)listId withResponse:(NSError **)aError;
 
++ (NSArray *)findAllRemoteInList:(NSString *)listId withResponse:(NSError **)aError;
+
 @end

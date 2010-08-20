@@ -50,15 +50,20 @@
 	return @"entries";
 }
 
-- (NSString *)getRemoteCollectionPath
++ (NSString *)getRemoteCollectionPathForList:(NSString *)listId
 {
 	return [NSString stringWithFormat:@"%@%@/%@/%@%@?deviceId=%@",
 			[[self class] getRemoteSite],
 			[List getRemoteCollectionName],
-			self.listId,
+			listId,
 			[[self class] getRemoteCollectionName],
 			[[self class] getRemoteProtocolExtension],
 			[[self class] deviceId]];
+}
+
+- (NSString *)getRemoteCollectionPath
+{
+	return [[self class] getRemoteCollectionPathForList:self.listId];
 }
 
 - (NSString *)getRemoteElementPath
@@ -113,6 +118,18 @@
 		*aError = res.error;
 	
 	return [res isSuccess];
+}
+
++ (NSArray *)findAllRemoteInList:(NSString *)listId withResponse:(NSError **)aError
+{
+	Response *res = [Connection get:[self getRemoteCollectionPathForList:listId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	if([res isError] && aError) {
+		*aError = res.error;
+		return nil;
+	}
+	else {
+		return [self performSelector:[self getRemoteParseDataMethod] withObject:res.body];
+	}
 }
 
 @end

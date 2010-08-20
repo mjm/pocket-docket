@@ -150,6 +150,26 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 		localList.title = list.title;
 		localList.remoteIdentifier = list.listId;
 		
+		NSError *error = nil;
+		NSArray *entries = [Entry findAllRemoteInList:list.listId withResponse:&error];
+		if (entries)
+		{
+			for (Entry *entry in entries)
+			{
+				PDListEntry *localEntry = [PDListEntry insertInManagedObjectContext:[self managedObjectContext]];
+				localEntry.text = entry.text;
+				localEntry.comment = entry.comment;
+				localEntry.checked = entry.checked;
+				localEntry.remoteIdentifier = entry.entryId;
+				localEntry.list = localList;
+				localEntry.order = entry.position;
+			}
+		}
+		else
+		{
+			NSLog(@"There was a problem fetching remote entries for list with ID %@: %@, %@", list.listId, error, [error userInfo]);
+		}
+		
 		return localList;
 	}
 	else if ([remoteObject isKindOfClass:[Entry class]])

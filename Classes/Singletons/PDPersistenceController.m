@@ -438,7 +438,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	NSNumber *position = entry.order;
 	
 	//[self.changeManager addChange:entry changeType:PDChangeTypeDelete];
-	[self.managedObjectContext deleteObject:entry];
+	//[self.managedObjectContext deleteObject:entry];
+	entry.deletedAt = [NSDate date];
 	
 	NSDictionary *vars = [NSDictionary dictionaryWithObjectsAndKeys:
 						  position, @"position", list, @"list", nil];
