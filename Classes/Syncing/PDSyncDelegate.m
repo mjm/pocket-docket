@@ -74,6 +74,12 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	return [PDCredentials credentialsWithUsername:username password:password deviceId:deviceId];
 }
 
+- (void)credentialsNotAuthorizedForSyncController:(PDSyncController *)syncController
+{
+	// TODO add some info to indicate that the login info is bad.
+	[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
+}
+
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController
 {
 	PRINT_SELECTOR

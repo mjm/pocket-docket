@@ -4,6 +4,8 @@
 #import "ObjectiveResource.h"
 #import "ObjectiveResourceConfig.h"
 #import "ConnectionManager.h"
+#import "Connection.h"
+#import "Response.h"
 #import "../Categories/NSManagedObjectContext+Additions.h"
 #import "PDCredentials.h"
 
@@ -307,6 +309,16 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 #endif
 }
 
+- (BOOL)isLoginValid
+{
+	NSString *url = [[ObjectiveResourceConfig getSite] stringByAppendingString:@"ping"];
+	NSString *username = [ObjectiveResourceConfig getUser];
+	NSString *password = [ObjectiveResourceConfig getPassword];
+	Response *response = [Connection get:url withUser:username andPassword:password];
+	
+	return response.statusCode != 401;
+}
+
 
 #pragma mark -
 #pragma mark Syncing
@@ -432,23 +444,40 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	[ObjectiveResourceConfig setPassword:credentials.password];
 	[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
 	
+	[self performSelectorOnMainThread:@selector(syncStarted) withObject:nil waitUntilDone:YES];
+	
+	NSString *url = [[ObjectiveResourceConfig getSite] stringByAppendingString:@"ping"];
+	Response *response = [Connection get:url withUser:credentials.username andPassword:credentials.password];
+	
+	if (response.statusCode == 401) // Not Authorized
+	{
+		[self syncStopped];
+		[(NSObject *)self.delegate performSelectorOnMainThread:@selector(credentialsNotAuthorizedForSyncController:)
+													withObject:self
+												 waitUntilDone:YES];
+		return;
+	}
+	else if ([response isError])
+	{
+		[self syncStopped];
+		return;
+	}
+	
 	NSArray *fetchRequests = [self.delegate fetchRequestsForSyncController:self];
 	if (!fetchRequests)
 	{
-		currentlySyncing = NO;
+		[self syncStopped];
 		return;
 	}
 	
 	NSArray *remoteInvocations = [self.delegate remoteInvocationsForSyncController:self];
 	if (!remoteInvocations)
 	{
-		currentlySyncing = NO;
+		[self syncStopped];
 		return;
 	}
 	
 	NSAssert([fetchRequests count] == [remoteInvocations count], @"Local and remote change requests don't match.");
-	
-	[self performSelectorOnMainThread:@selector(syncStarted) withObject:nil waitUntilDone:YES];
 	
 	NSEnumerator *localEnum = [fetchRequests objectEnumerator];
 	NSEnumerator *remoteEnum = [remoteInvocations objectEnumerator];

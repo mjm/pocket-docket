@@ -31,6 +31,8 @@ extern NSString * const PDSyncDidStopNotification;
 @protocol PDSyncControllerDelegate <NSObject>
 
 - (PDCredentials *)credentialsForSyncController:(PDSyncController *)syncController;
+- (void)credentialsNotAuthorizedForSyncController:(PDSyncController *)syncController;
+
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController;
 - (NSArray *)remoteInvocationsForSyncController:(PDSyncController *)syncController;
 
