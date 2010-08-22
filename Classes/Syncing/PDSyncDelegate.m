@@ -80,6 +80,14 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
 }
 
+- (void)syncController:(PDSyncController *)syncController deviceNotFoundForCredentials:(PDCredentials *)credentials
+{
+	[ObjectiveResourceConfig setUser:credentials.username];
+	[ObjectiveResourceConfig setPassword:credentials.password];
+	
+	[self createRemoteDevice:syncController];
+}
+
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController
 {
 	PRINT_SELECTOR

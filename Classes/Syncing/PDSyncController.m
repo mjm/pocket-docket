@@ -309,16 +309,6 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 #endif
 }
 
-- (BOOL)isLoginValid
-{
-	NSString *url = [[ObjectiveResourceConfig getSite] stringByAppendingString:@"ping"];
-	NSString *username = [ObjectiveResourceConfig getUser];
-	NSString *password = [ObjectiveResourceConfig getPassword];
-	Response *response = [Connection get:url withUser:username andPassword:password];
-	
-	return response.statusCode != 401;
-}
-
 
 #pragma mark -
 #pragma mark Syncing
@@ -446,34 +436,42 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	
 	[self performSelectorOnMainThread:@selector(syncStarted) withObject:nil waitUntilDone:YES];
 	
-	NSString *url = [[ObjectiveResourceConfig getSite] stringByAppendingString:@"ping"];
+	NSString *url = [NSString stringWithFormat:@"%@ping?deviceId=%@",
+					 [ObjectiveResourceConfig getSite],
+					 credentials.deviceId];
 	Response *response = [Connection get:url withUser:credentials.username andPassword:credentials.password];
 	
 	if (response.statusCode == 401) // Not Authorized
 	{
-		[self syncStopped];
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 		[(NSObject *)self.delegate performSelectorOnMainThread:@selector(credentialsNotAuthorizedForSyncController:)
 													withObject:self
 												 waitUntilDone:YES];
 		return;
 	}
+	else if (response.statusCode == 404) // Device Not Found
+	{
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
+		[self.delegate syncController:self deviceNotFoundForCredentials:credentials];
+		return;
+	}
 	else if ([response isError])
 	{
-		[self syncStopped];
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 		return;
 	}
 	
 	NSArray *fetchRequests = [self.delegate fetchRequestsForSyncController:self];
 	if (!fetchRequests)
 	{
-		[self syncStopped];
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 		return;
 	}
 	
 	NSArray *remoteInvocations = [self.delegate remoteInvocationsForSyncController:self];
 	if (!remoteInvocations)
 	{
-		[self syncStopped];
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 		return;
 	}
 	
