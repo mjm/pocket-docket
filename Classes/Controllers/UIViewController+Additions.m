@@ -13,6 +13,10 @@
 	[loginController release];
 	
 	navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		navController.modalPresentationStyle = UIModalPresentationFormSheet;
+	}
 	
 	[self presentModalViewController:navController animated:YES];
 }

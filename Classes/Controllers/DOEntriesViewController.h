@@ -5,7 +5,7 @@
 #import "PDImportEntriesViewController.h"
 #import "PDEntriesController.h"
 
-@interface DOEntriesViewController : UIViewController <UISplitViewControllerDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate, PDEntriesControllerDelegate> {}
+@interface DOEntriesViewController : PDViewController <UISplitViewControllerDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate, PDEntriesControllerDelegate> {}
 
 @property (nonatomic, retain) IBOutlet PDEntriesController *entriesController;
 @property (nonatomic, retain) IBOutlet PDListsController *listsController;

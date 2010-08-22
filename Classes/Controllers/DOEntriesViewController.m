@@ -136,6 +136,11 @@
 	self.tapGestureRecognizer.enabled = !editing;
 }
 
+- (BOOL)shouldPresentLoginViewController
+{
+	return YES;
+}
+
 #pragma mark -
 #pragma mark Key-Value Observing
 

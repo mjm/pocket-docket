@@ -459,6 +459,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		NSLog(@"Error saving changes: %@, %@", error, [error userInfo]);
 	}
 	
+	NSLog(@"Sync controller is...%@", self.syncController);
 	[self.syncController sync];
 }
 

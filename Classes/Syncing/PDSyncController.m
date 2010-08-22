@@ -514,6 +514,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 
 - (void)sync
 {
+	NSLog(@"FUCK 1");
 	if (currentlySyncing)
 	{
 		return;
@@ -521,13 +522,16 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	
 	currentlySyncing = YES;
 	
+	NSLog(@"FUCK 2");
 	PDCredentials *credentials = [self.delegate credentialsForSyncController:self];
 	if (!credentials)
 	{
+		NSLog(@"FUCK 3");
 		currentlySyncing = NO;
 		return;
 	}
 	
+	NSLog(@"FUCK 4");
 	[[ConnectionManager sharedInstance] runJob:@selector(doSyncWithCredentials:) onTarget:self withArgument:credentials];
 }
 

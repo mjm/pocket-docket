@@ -80,6 +80,10 @@
 		C990FA1F11DF8D3200BA1579 /* PDListsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C990FA1D11DF8D3200BA1579 /* PDListsController.m */; };
 		C990FAAA11E11E2C00BA1579 /* PDEntriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C990FAA911E11E2C00BA1579 /* PDEntriesController.m */; };
 		C990FAAB11E11E2C00BA1579 /* PDEntriesController.m in Sources */ = {isa = PBXBuildFile; fileRef = C990FAA911E11E2C00BA1579 /* PDEntriesController.m */; };
+		C99751AB122177F80041387D /* _PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE14121C805D00A5A582 /* _PDList.m */; };
+		C99751AC122177F90041387D /* _PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE15121C805D00A5A582 /* _PDListEntry.m */; };
+		C99751AD122177F90041387D /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE10121C805C00A5A582 /* PDList.m */; };
+		C99751AE122177FA0041387D /* PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE11121C805C00A5A582 /* PDListEntry.m */; };
 		C99BCE1A121C81CC00A5A582 /* _PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE14121C805D00A5A582 /* _PDList.m */; };
 		C99BCE1B121C81CD00A5A582 /* _PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE15121C805D00A5A582 /* _PDListEntry.m */; };
 		C99BCE1C121C81CD00A5A582 /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE10121C805C00A5A582 /* PDList.m */; };
@@ -1358,6 +1362,10 @@
 				C99BCF7D121DC1B800A5A582 /* PDResource.m in Sources */,
 				C99BD22A121E285C00A5A582 /* NSObject+DeviceMethods.m in Sources */,
 				C99BD22E121E286200A5A582 /* PDCredentials.m in Sources */,
+				C99751AB122177F80041387D /* _PDList.m in Sources */,
+				C99751AC122177F90041387D /* _PDListEntry.m in Sources */,
+				C99751AD122177F90041387D /* PDList.m in Sources */,
+				C99751AE122177FA0041387D /* PDListEntry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

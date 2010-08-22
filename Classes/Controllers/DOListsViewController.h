@@ -9,9 +9,13 @@
 
 @property (nonatomic, assign) IBOutlet id <DOListsViewControllerDelegate> delegate;
 @property (nonatomic, retain) IBOutlet PDListsController *listsController;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *refreshButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *stopButton;
 @property (nonatomic, retain) UIPopoverController *popoverController;
 
 - (IBAction)addList;
+- (IBAction)refreshLists;
+- (IBAction)stopRefreshing;
 
 @end
 
