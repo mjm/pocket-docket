@@ -7,10 +7,12 @@
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "PDList.h"
+#import "PDSyncController.h"
 
 @interface DOListsViewController (PrivateMethods)
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list;
+- (void)showRefreshButton:(UIBarButtonItem *)button;
 
 @end
 
@@ -18,10 +20,13 @@
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list
 {
-	if ([list.entries count] == 0) {
+	if ([list.entries count] == 0)
+	{
 		cell.progressView.progress = 0.0;
-	} else {
-		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
+	}
+	else
+	{
+		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.allEntries count]);
 	}
 	[cell.progressView setNeedsDisplay];
 	
@@ -29,9 +34,14 @@
 	NSString *of = NSLocalizedString(@"of", nil);
 	NSString *completed = NSLocalizedString(@"completed", nil);
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
-								 [list.completedEntries count], of, [list.entries count], completed];
+								 [list.completedEntries count], of, [list.allEntries count], completed];
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.editingAccessoryType = UITableViewCellAccessoryNone;
+}
+
+- (void)showRefreshButton:(UIBarButtonItem *)button
+{
+	self.toolbarItems = [NSArray arrayWithObject:button];
 }
 
 @end
@@ -60,12 +70,34 @@
 	[self.listsController loadData];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
 	
 	// Make sure the correct list is selected when the application loads.
 	[self.listsController updateViewForCurrentSelection];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -76,6 +108,8 @@
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
+	self.refreshButton = nil;
+	self.stopButton = nil;
 	self.listsController = nil;
 	self.popoverController = nil;
 }
@@ -133,6 +167,26 @@
 		[self.navigationController pushViewController:controller animated:YES];
 		[controller release];
 	}
+}
+
+- (IBAction)refreshLists
+{
+	[[PDPersistenceController sharedPersistenceController] save];
+}
+
+- (IBAction)stopRefreshing
+{
+	
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+	[self showRefreshButton:self.stopButton];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+	[self showRefreshButton:self.refreshButton];
 }
 
 
@@ -194,6 +248,10 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
+	self.refreshButton = nil;
+	self.stopButton = nil;
 	self.listsController = nil;
 	self.popoverController = nil;
 	[super dealloc];

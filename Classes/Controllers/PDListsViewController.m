@@ -6,10 +6,10 @@
 #import "../Singletons/PDPersistenceController.h"
 #import "../Singletons/PDSettingsController.h"
 #import "PDList.h"
-#import "../Models/Change.h"
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "ConnectionManager.h"
+#import "PDSyncController.h"
 
 
 #pragma mark Private Methods
@@ -34,14 +34,14 @@
 	}
 	else
 	{
-		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
+		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.allEntries count]);
 	}
 	cell.titleLabel.text = list.title;
 	
 	NSString *of = NSLocalizedString(@"of", nil);
 	NSString *completed = NSLocalizedString(@"completed", nil);
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
-								 [list.completedEntries count], of, [list.entries count], completed];
+								 [list.completedEntries count], of, [list.allEntries count], completed];
 }
 
 - (void)doneEditingList:(PDList *)list
@@ -124,6 +124,15 @@
 	[[PDSettingsController sharedSettingsController] saveSelectedList:nil];
 	
 	self.navigationController.toolbarHidden = NO;
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -142,6 +151,9 @@
 	[super viewWillDisappear:animated];
 	
 	self.navigationController.toolbarHidden = YES;
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -192,70 +204,26 @@
 	[editController release];
 }
 
-- (void)doRefreshLists
-{
-//	NSError *error = nil;
-//	
-//	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-//	NSDate *date = settingsController.lastSyncDate;
-//	NSArray *changes;
-//	if (date)
-//	{
-//		changes = [Change findAllRemoteSince:date response:&error];
-//	}
-//	else
-//	{
-//		changes = [Change findAllRemoteWithResponse:&error];
-//	}
-//	
-//	if (error == nil)
-//	{
-//		NSLog(@"Found changes: %@", changes);
-//		settingsController.lastSyncDate = [NSDate date];
-//	}
-//	else if ([error code] == 401)
-//	{
-//		NSLog(@"Username or password was wrong.");
-//	}
-//	
-//	[self performSelectorOnMainThread:@selector(showRefreshButton:)
-//						   withObject:self.refreshButton
-//						waitUntilDone:YES];
-//	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	[[PDPersistenceController sharedPersistenceController] refresh];
-}
-
 - (IBAction)refreshLists
 {
-	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-	if (!settingsController.docketAnywhereUsername)
-	{
-		PDLoginViewController *loginController = [[PDLoginViewController alloc] init];
-		loginController.delegate = self;
-		
-		UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:loginController];
-		[loginController release];
-		
-		navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-		
-		[self presentModalViewController:navController animated:YES];
-		return;
-	}
-	
-	
-	[ObjectiveResourceConfig setUser:settingsController.docketAnywhereUsername];
-	[ObjectiveResourceConfig setPassword:settingsController.docketAnywherePassword];
-	
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-	[self showRefreshButton:self.stopButton];
-	[[ConnectionManager sharedInstance] runJob:@selector(doRefreshLists) onTarget:self];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 - (IBAction)stopRefreshing
 {
-	[[ConnectionManager sharedInstance] cancelAllJobs];
+//	[[ConnectionManager sharedInstance] cancelAllJobs];
+//	[self showRefreshButton:self.refreshButton];
+//	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+	[self showRefreshButton:self.stopButton];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
 	[self showRefreshButton:self.refreshButton];
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 
@@ -345,24 +313,12 @@
 
 
 #pragma mark -
-#pragma mark Login Controller Delegate Methods
-
-//- (void)loginControllerDidLogin:(PDLoginViewController *)controller
-//{
-//	[super loginControllerDidLogin:controller];
-//}
-//
-//- (void)loginControllerDidRegister:(PDLoginViewController *)controller
-//{
-//	[super loginControllerDidRegister:controller];
-//}
-
-
-#pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
 	self.table = nil;
 	self.addButton = nil;
 	self.refreshButton = nil;

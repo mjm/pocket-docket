@@ -62,6 +62,13 @@
 
 
 
+@dynamic deletedAt;
+
+
+
+
+
+
 @dynamic remoteIdentifier;
 
 
@@ -95,14 +102,14 @@
 
 
 
-@dynamic comment;
-
-
-
-
-
-
 @dynamic updatedAt;
+
+
+
+
+
+
+@dynamic comment;
 
 
 

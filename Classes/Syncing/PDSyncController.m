@@ -1,7 +1,13 @@
 #import "PDSyncController.h"
 
+#import "NSObject+DeviceMethods.h"
 #import "ObjectiveResource.h"
+#import "ObjectiveResourceConfig.h"
+#import "ConnectionManager.h"
+#import "Connection.h"
+#import "Response.h"
 #import "../Categories/NSManagedObjectContext+Additions.h"
+#import "PDCredentials.h"
 
 
 #pragma mark Categories
@@ -34,7 +40,17 @@
 - (NSObject *)remoteObjectInArray:(NSArray *)objects matchingLocalObject:(NSManagedObject *)localObject;
 - (NSManagedObject *)localObjectMatchingRemoteObject:(NSObject *)remoteObject;
 
+- (void)syncStarted;
+- (void)syncStopped;
+
 @end
+
+
+#pragma mark -
+#pragma mark Notifications
+
+NSString * const PDSyncDidStartNotification = @"PDSyncDidStartNotification";
+NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 
 
 #pragma mark -
@@ -42,6 +58,7 @@
 @implementation PDSyncController
 
 
+#pragma mark -
 #pragma mark Creating a Sync Controller
 
 + (PDSyncController *)syncControllerWithManagedObjectContext:(NSManagedObjectContext *)context
@@ -88,6 +105,7 @@
 
 - (NSManagedObject *)handleRemotelyCreatedOrLocallyDeletedObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	// Need to determine why it's on the remote side and not the local side (create vs. delete)
 	NSManagedObjectModel *mom = self.managedObjectContext.managedObjectModel;
 	NSString *entityName = [remoteObject entityName];
@@ -138,6 +156,7 @@
 
 - (BOOL)handleLocallyCreatedOrRemotelyDeletedObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	NSString *remoteId = [localObject remoteIdentifier];
 	BOOL result;
 	
@@ -168,6 +187,7 @@
 - (void)reconcileDifferencesBetweenLocalObject:(NSManagedObject *)localObject
 							   andRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	BOOL result = NO;
 	
 	switch ([[localObject updatedAt] compare:[remoteObject updatedAt]])
@@ -189,6 +209,7 @@
 
 - (NSObject *)remoteObjectInArray:(NSArray *)objects matchingLocalObject:(NSManagedObject *)localObject
 {
+	PRINT_SELECTOR
 	NSString *remoteId = [localObject remoteIdentifier];
 	
 	for (NSObject *object in objects)
@@ -205,6 +226,7 @@
 
 - (NSManagedObject *)localObjectMatchingRemoteObject:(NSObject *)remoteObject
 {
+	PRINT_SELECTOR
 	NSString *remoteId = [remoteObject getRemoteId];
 	NSString *entityName = [remoteObject entityName];
 	
@@ -234,6 +256,59 @@
 	}
 }
 
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+- (BOOL)backgroundingSupported
+{
+	UIDevice *device = [UIDevice currentDevice];
+	if ([device respondsToSelector:@selector(isMultitaskingSupported)])
+	{
+		return device.multitaskingSupported;
+	}
+	return NO;
+}
+#endif
+#endif
+
+- (void)syncStarted
+{
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+	if ([self backgroundingSupported])
+	{
+		backgroundTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+			[[ConnectionManager sharedInstance] cancelAllJobs];
+			[self syncStopped];
+		}];
+	}
+#endif
+#endif
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStartNotification object:self];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)syncStopped
+{
+	[ObjectiveResourceConfig setUser:nil];
+	[ObjectiveResourceConfig setPassword:nil];
+	[ObjectiveResourceConfig setDeviceId:nil];
+	
+	currentlySyncing = NO;
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:PDSyncDidStopNotification object:self];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+	if ([self backgroundingSupported])
+	{
+		[[UIApplication sharedApplication] endBackgroundTask:backgroundTask];
+	}
+#endif
+#endif
+}
+
 
 #pragma mark -
 #pragma mark Syncing
@@ -250,6 +325,7 @@
 	NSObject *remoteObject = [remoteEnum nextObject];
 	while (localObject || remoteObject)
 	{
+		NSLog(@"ITERATION\nLocal Object: %@\nRemote Object: %@", localObject, remoteObject);
 		if (!localObject)
 		{
 			NSManagedObject *newLocalObject = [self handleRemotelyCreatedOrLocallyDeletedObject:remoteObject];
@@ -259,6 +335,8 @@
 			}
 			
 			remoteObject = [remoteEnum nextObject];
+			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -270,6 +348,8 @@
 			}
 			
 			localObject = [localEnum nextObject];
+			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -278,11 +358,15 @@
 		
 		if (localId && [localId isEqual:remoteId])
 		{
+			// TODO handle movements to make sure those are ok
+			
 			[self reconcileDifferencesBetweenLocalObject:localObject andRemoteObject:remoteObject];
 			[results addObject:localObject];
 			
 			localObject = [localEnum nextObject];
 			remoteObject = [remoteEnum nextObject];
+			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -312,6 +396,7 @@
 			
 			remoteObject = [remoteEnum nextObject];
 			
+			NSLog(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -334,24 +419,59 @@
 			
 			remoteObject = [remoteEnum nextObject];
 		}
+		
+		NSLog(@"--- Results so far: %@", results);
 	}
 	
-	// TODO handle ordering of final list
+	[self.delegate syncController:self updateObjectPositions:results];
 	
 	return results;
 }
 
-- (void)sync
+- (void)doSyncWithCredentials:(PDCredentials *)credentials
 {
+	[ObjectiveResourceConfig setUser:credentials.username];
+	[ObjectiveResourceConfig setPassword:credentials.password];
+	[ObjectiveResourceConfig setDeviceId:credentials.deviceId];
+	
+	[self performSelectorOnMainThread:@selector(syncStarted) withObject:nil waitUntilDone:YES];
+	
+	NSString *url = [NSString stringWithFormat:@"%@ping?deviceId=%@",
+					 [ObjectiveResourceConfig getSite],
+					 credentials.deviceId];
+	Response *response = [Connection get:url withUser:credentials.username andPassword:credentials.password];
+	
+	if (response.statusCode == 401) // Not Authorized
+	{
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
+		[(NSObject *)self.delegate performSelectorOnMainThread:@selector(credentialsNotAuthorizedForSyncController:)
+													withObject:self
+												 waitUntilDone:YES];
+		return;
+	}
+	else if (response.statusCode == 404) // Device Not Found
+	{
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
+		[self.delegate syncController:self deviceNotFoundForCredentials:credentials];
+		return;
+	}
+	else if ([response isError])
+	{
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
+		return;
+	}
+	
 	NSArray *fetchRequests = [self.delegate fetchRequestsForSyncController:self];
 	if (!fetchRequests)
 	{
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 		return;
 	}
 	
 	NSArray *remoteInvocations = [self.delegate remoteInvocationsForSyncController:self];
 	if (!remoteInvocations)
 	{
+		[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 		return;
 	}
 	
@@ -369,23 +489,50 @@
 		if (!localChange)
 		{
 			NSLog(@"An error occurred fetching local changes: %@, %@", error, [error userInfo]);
+			[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 			return;
 		}
 		
 		NSArray	*remoteChange = nil;
-		NSError **perror = &error;
-		[invocation setArgument:&perror atIndex:0];
 		[invocation invoke];
 		[invocation getReturnValue:&remoteChange];
 		
 		if (!remoteChange)
 		{
-			NSLog(@"An error occurred fetching remote changes: %@, %@", error, [error userInfo]);
+			NSLog(@"An error occurred fetching remote changes.");
+			[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 			return;
 		}
 		
 		[self mergeLocalObjects:localChange withRemoteObjects:remoteChange];
 	}
+	
+	[[self managedObjectContext] save:NULL];
+	
+	[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
+}
+
+- (void)sync
+{
+	NSLog(@"FUCK 1");
+	if (currentlySyncing)
+	{
+		return;
+	}
+	
+	currentlySyncing = YES;
+	
+	NSLog(@"FUCK 2");
+	PDCredentials *credentials = [self.delegate credentialsForSyncController:self];
+	if (!credentials)
+	{
+		NSLog(@"FUCK 3");
+		currentlySyncing = NO;
+		return;
+	}
+	
+	NSLog(@"FUCK 4");
+	[[ConnectionManager sharedInstance] runJob:@selector(doSyncWithCredentials:) onTarget:self withArgument:credentials];
 }
 
 @end

@@ -22,7 +22,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application
 {
-	[ObjectiveResourceConfig setSite:@"http://10.0.1.13:3000/"];
+	[ObjectiveResourceConfig setSite:@"http://docketanywhere.com/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
@@ -43,11 +43,23 @@
 	
 	[self.window addSubview:navController.view];
 	[self.window makeKeyAndVisible];
+	
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 	[[PDPersistenceController sharedPersistenceController] save];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+	[[PDPersistenceController sharedPersistenceController] save];
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+	
 }
 
 
