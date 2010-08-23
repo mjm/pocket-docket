@@ -7,6 +7,10 @@
 #import "../Controllers/PDListsViewController.h"
 #import "../Controllers/PDEntriesViewController.h"
 
+#if !defined(CONFIGURATION_Release)
+#import "BWHockeyController.h"
+#endif
+
 @implementation PDAppDelegate
 
 - (void)eraseCredentials
@@ -24,6 +28,10 @@
 {
 	[ObjectiveResourceConfig setSite:@"http://docketanywhere.com/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
+	
+#if !defined(CONFIGURATION_Release)
+	[[BWHockeyController sharedHockeyController] setBetaURL:@"http://beta.docketanywhere.com/"];
+#endif
 	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
 	

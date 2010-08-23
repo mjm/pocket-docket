@@ -11,6 +11,11 @@
 #import "ConnectionManager.h"
 #import "PDSyncController.h"
 
+#if !defined(CONFIGURATION_Release)
+#import "BWHockeyController.h"
+#import "BWHockeyViewController.h"
+#endif
+
 
 #pragma mark Private Methods
 
@@ -63,7 +68,10 @@
 
 - (void)showRefreshButton:(UIBarButtonItem *)button
 {
-	self.toolbarItems = [NSArray arrayWithObject:button];
+	NSMutableArray *toolbarItems = [self.toolbarItems mutableCopy];
+	[toolbarItems replaceObjectAtIndex:0 withObject:button];
+	self.toolbarItems = toolbarItems;
+	[toolbarItems release];
 }
 
 - (void)resetAddFlag
@@ -100,7 +108,12 @@
 	
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 	self.navigationItem.rightBarButtonItem = self.addButton;
-	self.toolbarItems = [NSArray arrayWithObject:self.refreshButton];
+	self.toolbarItems = [NSArray arrayWithObjects:self.refreshButton,
+						 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+																	   target:nil
+																	   action:NULL],
+						 self.settingsButton,
+						 nil];
 	
 	// eliminate separators for empty cells
 	UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
@@ -224,6 +237,19 @@
 - (void)syncDidStop:(NSNotification *)note
 {
 	[self showRefreshButton:self.refreshButton];
+}
+
+- (IBAction)showBetaSettings
+{
+#if !defined(CONFIGURATION_Release)
+	BWHockeyViewController *hockeyController = [[BWHockeyViewController alloc] init:[BWHockeyController sharedHockeyController]
+																			  modal:YES];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hockeyController];
+	[hockeyController release];
+	
+	[self presentModalViewController:navController animated:YES];
+	[navController release];
+#endif
 }
 
 

@@ -26,6 +26,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *refreshButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *stopButton;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *backButton;
+@property (nonatomic, retain) IBOutlet UIBarButtonItem *settingsButton; 
 @property (nonatomic, retain) IBOutlet PDListsController *listsController;
 
 //! \name Actions
@@ -35,6 +36,7 @@
 - (IBAction)addList;
 - (IBAction)refreshLists;
 - (IBAction)stopRefreshing;
+- (IBAction)showBetaSettings;
 
 //@}
 
