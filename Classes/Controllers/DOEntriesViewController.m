@@ -22,17 +22,17 @@
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry
 {
-	UIImage *checkImage = [UIImage imageNamed:([entry.checked boolValue] ? @"CheckBoxChecked.png" : @"CheckBox.png")];
-	[cell.checkboxButton setImage:checkImage forState:UIControlStateNormal];
 	cell.textLabel.text = entry.text;
 	cell.commentLabel.text = entry.comment;
 	
 	if ([entry.checked boolValue])
 	{
+		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBoxChecked.png"];
 		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
 	}
 	else
 	{
+		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBox.png"];
 		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
 	}
 	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;

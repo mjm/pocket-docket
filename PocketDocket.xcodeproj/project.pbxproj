@@ -114,6 +114,7 @@
 		C99752671222092F0041387D /* UIApplication+NetworkIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = C997524B1222092F0041387D /* UIApplication+NetworkIndicator.m */; };
 		C99752A212220F310041387D /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = C99752A112220F310041387D /* 19-gear.png */; };
 		C99752A312220F310041387D /* 19-gear.png in Resources */ = {isa = PBXBuildFile; fileRef = C99752A112220F310041387D /* 19-gear.png */; };
+		C997531B122362A10041387D /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = C938256211E6A61B0029C32F /* Background.png */; };
 		C99BCE1A121C81CC00A5A582 /* _PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE14121C805D00A5A582 /* _PDList.m */; };
 		C99BCE1B121C81CD00A5A582 /* _PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE15121C805D00A5A582 /* _PDListEntry.m */; };
 		C99BCE1C121C81CD00A5A582 /* PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C99BCE10121C805C00A5A582 /* PDList.m */; };
@@ -162,9 +163,6 @@
 		C9C10624120B05C100327A0D /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105D9120B05C100327A0D /* NSObject+PropertySupport.m */; };
 		C9C10625120B05C100327A0D /* NSString+GSub.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105DB120B05C100327A0D /* NSString+GSub.m */; };
 		C9C10626120B05C100327A0D /* ObjectiveResourceDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105DD120B05C100327A0D /* ObjectiveResourceDateFormatter.m */; };
-		C9C10627120B05C100327A0D /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105E2120B05C100327A0D /* NSObject+SBJSON.m */; };
-		C9C10628120B05C100327A0D /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105E4120B05C100327A0D /* NSString+SBJSON.m */; };
-		C9C10629120B05C100327A0D /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105E6120B05C100327A0D /* SBJSON.m */; };
 		C9C1062A120B05C100327A0D /* NSArray+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105EA120B05C100327A0D /* NSArray+JSONSerializableSupport.m */; };
 		C9C1062B120B05C100327A0D /* NSDictionary+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105EE120B05C100327A0D /* NSDictionary+JSONSerializableSupport.m */; };
 		C9C1062C120B05C100327A0D /* NSObject+JSONSerializableSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C105F0120B05C100327A0D /* NSObject+JSONSerializableSupport.m */; };
@@ -1335,6 +1333,7 @@
 				C997525E1222092F0041387D /* License.md in Resources */,
 				C99752661222092F0041387D /* README in Resources */,
 				C99752A312220F310041387D /* 19-gear.png in Resources */,
+				C997531B122362A10041387D /* Background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1459,9 +1458,6 @@
 				C9C10624120B05C100327A0D /* NSObject+PropertySupport.m in Sources */,
 				C9C10625120B05C100327A0D /* NSString+GSub.m in Sources */,
 				C9C10626120B05C100327A0D /* ObjectiveResourceDateFormatter.m in Sources */,
-				C9C10627120B05C100327A0D /* NSObject+SBJSON.m in Sources */,
-				C9C10628120B05C100327A0D /* NSString+SBJSON.m in Sources */,
-				C9C10629120B05C100327A0D /* SBJSON.m in Sources */,
 				C9C1062A120B05C100327A0D /* NSArray+JSONSerializableSupport.m in Sources */,
 				C9C1062B120B05C100327A0D /* NSDictionary+JSONSerializableSupport.m in Sources */,
 				C9C1062C120B05C100327A0D /* NSObject+JSONSerializableSupport.m in Sources */,
@@ -1666,7 +1662,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/Code/PocketDocket/DistributionEntitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = DistributionEntitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Matt Moriarity";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
@@ -1695,7 +1691,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = armv7;
-				CODE_SIGN_ENTITLEMENTS = "~/Code/PocketDocket/DistributionEntitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
