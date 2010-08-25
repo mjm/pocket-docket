@@ -124,6 +124,19 @@
 	// set correct separator color
 	self.table.separatorColor = [UIColor colorWithWhite:200.0f/255.0f alpha:1.0f];
 	
+	if ([[PDSettingsController sharedSettingsController] isFirstLaunch])
+	{
+		UIAlertView *syncAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sync with DocketAnywhere", nil)
+															message:NSLocalizedString(@"Sync Prompt Message", nil)
+														   delegate:self.listsController
+												  cancelButtonTitle:NSLocalizedString(@"Don't Sync", nil)
+												  otherButtonTitles:NSLocalizedString(@"Sync Lists", nil), nil];
+		[syncAlert show];
+		[syncAlert release];
+		
+		[PDSettingsController sharedSettingsController].firstLaunch = NO;
+	}
+	
 	[self.listsController loadData];
 }
 

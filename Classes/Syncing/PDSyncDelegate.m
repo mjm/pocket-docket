@@ -58,7 +58,6 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
 	if (!username)
 	{
-		[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
 		return nil;
 	}
 	

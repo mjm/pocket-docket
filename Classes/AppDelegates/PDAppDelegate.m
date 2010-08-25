@@ -33,8 +33,6 @@
 	[[BWHockeyController sharedHockeyController] setBetaURL:@"http://beta.docketanywhere.com/"];
 #endif
 	
-	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
-	
 	//[self eraseCredentials];
 	
 	PDListsViewController *listsController = [[PDListsViewController alloc] init];

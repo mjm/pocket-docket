@@ -245,13 +245,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 }
 
 - (void)createFirstLaunchData
-{
-	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-	if (!settingsController.firstLaunch)
-	{
-		return;
-	}
-	
+{	
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_3_2
 	NSString *dataFileName = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -286,8 +280,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	}
 	
 	[self save];
-	[settingsController saveSelectedList:list];
-	settingsController.firstLaunch = NO;
+	[[PDSettingsController sharedSettingsController] saveSelectedList:list];
 }
 
 
@@ -459,12 +452,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		NSLog(@"Error saving changes: %@, %@", error, [error userInfo]);
 	}
 	
-	NSLog(@"Sync controller is...%@", self.syncController);
 	[self.syncController sync];
 }
 
 - (void)refresh
 {
+	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+	if (!username)
+	{
+		[[NSNotificationCenter defaultCenter] postNotificationName:PDCredentialsNeededNotification object:self];
+		return;
+	}
+	
 	[self save];
 }
 

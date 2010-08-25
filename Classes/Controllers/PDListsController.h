@@ -4,7 +4,7 @@
 @protocol PDListsControllerDelegate;
 
 
-@interface PDListsController : NSObject <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource> {
+@interface PDListsController : NSObject <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate> {
 	BOOL movingList;
 }
 

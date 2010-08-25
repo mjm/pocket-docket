@@ -262,6 +262,22 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 
 #pragma mark -
+#pragma mark Alert View Delegate Methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == alertView.cancelButtonIndex)
+	{
+		[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
+	}
+	else
+	{
+		[[PDPersistenceController sharedPersistenceController] refresh];
+	}
+}
+
+
+#pragma mark -
 #pragma mark Memory Management
 
 - (void)dealloc
