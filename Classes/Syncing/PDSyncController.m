@@ -16,13 +16,14 @@
 - (NSString *)remoteIdentifier;
 - (BOOL)movedSinceSyncValue;
 - (void)setMovedSinceSyncValue:(BOOL)value;
-- (NSDate *)updatedAt;
+- (BOOL)updatedSinceSyncValue;
+- (void)setUpdatedSinceSyncValue:(BOOL)value;
 @end
 
 @interface NSObject (SyncingAdditions)
 - (NSString *)entityName;
 - (NSNumber *)moved;
-- (NSDate *)updatedAt;
+- (NSNumber *)updated;
 @end
 
 
@@ -190,18 +191,28 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	PRINT_SELECTOR
 	BOOL result = NO;
 	
-	switch ([[localObject updatedAt] compare:[remoteObject updatedAt]])
+	BOOL localUpdated = [localObject updatedSinceSyncValue];
+	BOOL remoteUpdated = [[remoteObject updated] boolValue];
+	
+	if (remoteUpdated)
 	{
-		case NSOrderedSame:
-		case NSOrderedAscending:
-			result = [self.delegate syncController:self updateLocalObject:localObject withRemoteObject:remoteObject];
-			break;
-		case NSOrderedDescending:
-			result = [self.delegate syncController:self updateRemoteObject:remoteObject withLocalObject:localObject];
-			break;
+		result = [self.delegate syncController:self updateLocalObject:localObject withRemoteObject:remoteObject];
+	}
+	else if (localUpdated)
+	{
+		result = [self.delegate syncController:self updateRemoteObject:remoteObject withLocalObject:localObject];
+	}
+	else
+	{
+		result = [self.delegate syncController:self localObject:localObject matchesRemoteObject:remoteObject];
 	}
 	
-	if (!result)
+	
+	if (result)
+	{
+		[localObject setUpdatedSinceSyncValue:NO];
+	}
+	else
 	{
 		NSLog(@"Sync controller delegate failed to update objects: %@, %@", localObject, remoteObject);
 	}

@@ -24,4 +24,29 @@
 	return [NSString stringWithFormat:@"[%@] %@%@", check, self.text, comm];
 }
 
+
+// This shouldn't be necessary but MOGenerator is screwing up
+
+@dynamic updatedSinceSync;
+
+
+
+- (BOOL)updatedSinceSyncValue {
+	NSNumber *result = [self updatedSinceSync];
+	return [result boolValue];
+}
+
+- (void)setUpdatedSinceSyncValue:(BOOL)value_ {
+	[self setUpdatedSinceSync:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveUpdatedSinceSyncValue {
+	NSNumber *result = [self primitiveUpdatedSinceSync];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveUpdatedSinceSyncValue:(BOOL)value_ {
+	[self setPrimitiveUpdatedSinceSync:[NSNumber numberWithBool:value_]];
+}
+
 @end

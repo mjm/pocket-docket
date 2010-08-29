@@ -53,6 +53,10 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+
+#pragma mark -
+#pragma mark Login Credentials
+
 - (PDCredentials *)credentialsForSyncController:(PDSyncController *)syncController
 {
 	NSString *username = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
@@ -87,6 +91,10 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	[self createRemoteDevice:syncController];
 }
 
+
+#pragma mark -
+#pragma mark Loading Objects
+
 - (NSArray *)fetchRequestsForSyncController:(PDSyncController *)syncController
 {
 	PRINT_SELECTOR
@@ -102,6 +110,10 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	PRINT_SELECTOR
 	return [NSArray arrayWithObject:[List findAllRemoteInvocation]];
 }
+
+
+#pragma mark -
+#pragma mark Creating Objects
 
 - (BOOL)syncController:(PDSyncController *)syncController createRemoteCopyOfLocalObject:(NSManagedObject *)localObject
 {
@@ -232,6 +244,10 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	}
 }
 
+
+#pragma mark -
+#pragma mark Deleting Objects
+
 - (BOOL)syncController:(PDSyncController *)syncController
 	deleteRemoteObject:(NSObject *)remoteObject
 {
@@ -253,6 +269,10 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	[[self managedObjectContext] deleteObject:localObject];
 	return YES;
 }
+
+
+#pragma mark -
+#pragma mark Updating Objects
 
 - (void)syncController:(PDSyncController *)syncController mergeEntriesForLocalList:(PDList *)localList remoteList:(List *)list
 {
@@ -298,6 +318,13 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 		
 		localList.title = list.title;
 		
+		NSError *error = nil;
+		if (![list gotUpdateRemoteWithResponse:&error])
+		{
+			NSLog(@"Error recording list update: %@, %@", error, [error userInfo]);
+			return NO;
+		}
+		
 		[self syncController:syncController mergeEntriesForLocalList:localList remoteList:list];
 		
 		return YES;
@@ -310,6 +337,13 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 		localEntry.text = entry.text;
 		localEntry.comment = entry.comment;
 		localEntry.checked = entry.checked;
+		
+		NSError *error = nil;
+		if (![entry gotUpdateRemoteWithResponse:&error])
+		{
+			NSLog(@"Error recording entry update: %@, %@", error, [error userInfo]);
+			return NO;
+		}
 		
 		return YES;
 	}
@@ -359,6 +393,22 @@ NSString * const PDCredentialsNeededNotification = @"PDCredentialsNeededNotifica
 	
 	return YES;
 }
+
+- (BOOL)syncController:(PDSyncController *)syncController
+		   localObject:(NSManagedObject *)localObject
+   matchesRemoteObject:(NSObject *)remoteObject
+{
+	if ([localObject isKindOfClass:[PDList class]])
+	{
+		[self syncController:syncController mergeEntriesForLocalList:(PDList *)localObject remoteList:(List *)remoteObject];
+	}
+	
+	return YES;
+}
+
+
+#pragma mark -
+#pragma mark Moving Objects
 
 - (BOOL)syncController:(PDSyncController *)syncController movedLocalObject:(NSManagedObject *)localObject
 {

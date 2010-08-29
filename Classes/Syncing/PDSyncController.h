@@ -52,6 +52,9 @@ extern NSString * const PDSyncDidStopNotification;
 - (BOOL)syncController:(PDSyncController *)syncController
 	updateRemoteObject:(NSObject *)remoteObject
 	   withLocalObject:(NSManagedObject *)localObject;
+- (BOOL)syncController:(PDSyncController *)syncController
+		   localObject:(NSManagedObject *)localObject
+   matchesRemoteObject:(NSObject *)remoteObject;
 
 - (BOOL)syncController:(PDSyncController *)syncController movedLocalObject:(NSManagedObject *)localObject;
 - (BOOL)syncController:(PDSyncController *)syncController movedRemoteObject:(NSObject *)remoteObject;

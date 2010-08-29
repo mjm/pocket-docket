@@ -12,7 +12,14 @@
 #import "ObjectiveResource.h"
 
 
-#pragma mark PrivateMethods
+#pragma mark Categories
+
+@interface NSManagedObject (SyncMethods)
+- (void)setUpdatedSinceSyncValue:(BOOL)value;
+@end
+
+
+#pragma mark Private Methods
 
 @interface PDPersistenceController ()
 
@@ -380,7 +387,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (void)markChanged:(NSManagedObject *)object
 {
-	[object setUpdatedAt:[NSDate date]];
+	[object setUpdatedSinceSyncValue:YES];
 }
 
 

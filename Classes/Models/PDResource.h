@@ -1,6 +1,7 @@
 @interface PDResource : NSObject
 
 @property (nonatomic, retain) NSNumber *moved;
+@property (nonatomic, retain) NSNumber *updated;
 
 + (NSString *)entityName;
 - (NSString *)entityName;
@@ -10,5 +11,7 @@
 
 - (BOOL)moveRemoteWithResponse:(NSError **)aError;
 - (BOOL)gotMoveRemoteWithResponse:(NSError **)aError;
+
+- (BOOL)gotUpdateRemoteWithResponse:(NSError **)aError;
 
 @end

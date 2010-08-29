@@ -67,4 +67,15 @@
 	return [res isSuccess];
 }
 
+- (BOOL)gotUpdateRemoteWithResponse:(NSError **)aError
+{
+	NSString *updatePath = [self remoteElementPathForAction:@"got_update"];
+	Response *res = [Connection put:@"" to:updatePath withUser:[[self class] getRemoteUser] andPassword:[[self class] getRemotePassword]];
+	
+	if (aError && [res isError])
+		*aError = res.error;
+	
+	return [res isSuccess];
+}
+
 @end
