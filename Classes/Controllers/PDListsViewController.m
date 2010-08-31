@@ -170,6 +170,8 @@
 	{
 		[self.table deselectRowAtIndexPath:indexPath animated:NO];
 	}
+	
+	[self.listsController endSyncing];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -180,6 +182,8 @@
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
+	
+	[self.listsController beginSyncing];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -245,10 +249,12 @@
 - (void)syncDidStart:(NSNotification *)note
 {
 	[self showRefreshButton:self.stopButton];
+	[self.listsController beginSyncing];
 }
 
 - (void)syncDidStop:(NSNotification *)note
 {
+	[self.listsController endSyncing];
 	[self showRefreshButton:self.refreshButton];
 }
 

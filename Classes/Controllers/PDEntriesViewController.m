@@ -7,6 +7,7 @@
 #import "PDList.h"
 #import "PDListEntry.h"
 #import "../Views/PDEntryTableCell.h"
+#import "PDSyncController.h"
 
 
 #pragma mark Private Methods
@@ -117,6 +118,15 @@
 	[super viewWillAppear:animated];
 	[self.keyboardObserver registerNotifications];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
+	
 	[[PDSettingsController sharedSettingsController] saveSelectedList:self.list];
 }
 
@@ -125,6 +135,9 @@
 	[super viewWillDisappear:animated];
 	[self.newEntryField resignFirstResponder];
 	[self showSendButton];
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
 	
 	[self.keyboardObserver unregisterNotifications];
 }
@@ -195,6 +208,16 @@
 		[self.toolbar setItems:items animated:YES];
 		[items release];
 	}
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+	[self.entriesController beginSyncing];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+	[self.entriesController endSyncing];
 }
 
 
@@ -399,6 +422,7 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	self.list = nil;
 	self.entriesController = nil;
 	self.keyboardObserver = nil;

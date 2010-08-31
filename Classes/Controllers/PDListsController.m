@@ -60,6 +60,19 @@
 	[self didChangeValueForKey:@"selection"];
 }
 
+- (void)beginSyncing
+{
+	syncing = YES;
+}
+
+- (void)endSyncing
+{
+	syncing = NO;
+	
+	[self.fetchedResultsController performFetch:NULL];
+	[self.tableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark Key-Value Observing
@@ -199,7 +212,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-	if (movingList)
+	if (movingList || syncing)
 		return;
 	
 	[self.tableView beginUpdates];
@@ -207,7 +220,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-	if (movingList)
+	if (movingList || syncing)
 		return;
 	
 	[self.tableView endUpdates];
@@ -219,6 +232,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	 forChangeType:(NSFetchedResultsChangeType)type
 	  newIndexPath:(NSIndexPath *)newIndexPath
 {
+	if (syncing)
+		return;
+	
 	switch (type)
 	{
 		case NSFetchedResultsChangeInsert:

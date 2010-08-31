@@ -6,6 +6,7 @@
 
 @interface PDListsController : NSObject <NSFetchedResultsControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate> {
 	BOOL movingList;
+	BOOL syncing;
 }
 
 @property (nonatomic, assign) IBOutlet id <PDListsControllerDelegate> delegate;
@@ -18,6 +19,9 @@
 - (void)setEditing:(BOOL)editing;
 
 - (void)updateViewForCurrentSelection;
+
+- (void)beginSyncing;
+- (void)endSyncing;
 
 @end
 
