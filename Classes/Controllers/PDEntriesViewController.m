@@ -347,6 +347,7 @@
 	if ([text length] != 0)
 	{
 		[[PDPersistenceController sharedPersistenceController] createEntry:text inList:self.list];
+        [[PDPersistenceController sharedPersistenceController] save];
 		self.newEntryField.text = @"";
 		
 		[self scrollToBottom];

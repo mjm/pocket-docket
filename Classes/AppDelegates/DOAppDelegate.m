@@ -11,8 +11,6 @@
 	[ObjectiveResourceConfig setSite:@"http://docketanywhere.com/"];
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
-	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
-	
 	[window addSubview:splitViewController.view];
 	[window makeKeyAndVisible];
 	

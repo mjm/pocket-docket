@@ -240,8 +240,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 			entry.orderValue = [[results objectAtIndex:0] orderValue] + 1;
 		}
 		
-		[self save];
-		
 		return entry;
 	}
 	else

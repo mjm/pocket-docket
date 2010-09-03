@@ -71,6 +71,8 @@
 	
 	[self.fetchedResultsController performFetch:NULL];
 	[self.tableView reloadData];
+    
+    [self updateViewForCurrentSelection];
 }
 
 

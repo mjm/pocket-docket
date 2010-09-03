@@ -67,6 +67,20 @@
 	self.tableView.separatorColor = [UIColor colorWithWhite:200.0f/255.0f alpha:1.0f];
 
 	self.listsController.showSelection = YES;
+    
+    if ([[PDSettingsController sharedSettingsController] isFirstLaunch])
+	{
+		UIAlertView *syncAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sync with DocketAnywhere", nil)
+															message:NSLocalizedString(@"Sync Prompt Message", nil)
+														   delegate:self.listsController
+												  cancelButtonTitle:NSLocalizedString(@"Don't Sync", nil)
+												  otherButtonTitles:NSLocalizedString(@"Sync Lists", nil), nil];
+		[syncAlert show];
+		[syncAlert release];
+		
+		[PDSettingsController sharedSettingsController].firstLaunch = NO;
+	}
+    
 	[self.listsController loadData];
 }
 
@@ -171,7 +185,7 @@
 
 - (IBAction)refreshLists
 {
-	[[PDPersistenceController sharedPersistenceController] save];
+	[[PDPersistenceController sharedPersistenceController] refresh];
 }
 
 - (IBAction)stopRefreshing
@@ -181,11 +195,13 @@
 
 - (void)syncDidStart:(NSNotification *)note
 {
-	[self showRefreshButton:self.stopButton];
+    [self showRefreshButton:self.stopButton];
+    [self.listsController beginSyncing];
 }
 
 - (void)syncDidStop:(NSNotification *)note
 {
+    [self.listsController endSyncing];
 	[self showRefreshButton:self.refreshButton];
 }
 

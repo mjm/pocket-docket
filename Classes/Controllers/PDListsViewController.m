@@ -236,7 +236,7 @@
 
 - (IBAction)refreshLists
 {
-	[[PDPersistenceController sharedPersistenceController] save];
+	[[PDPersistenceController sharedPersistenceController] refresh];
 }
 
 - (IBAction)stopRefreshing

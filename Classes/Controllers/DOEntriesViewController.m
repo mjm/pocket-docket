@@ -6,6 +6,7 @@
 #import "PDListEntry.h"
 #import "../Views/DOEntryTableCell.h"
 #import "../Categories/NSString+Additions.h"
+#import "PDSyncController.h"
 
 #pragma mark -
 #pragma mark Private Methods
@@ -100,6 +101,28 @@
 						   forKeyPath:@"selection"
 							  options:NSKeyValueObservingOptionNew
 							  context:NULL];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -285,6 +308,16 @@
 	[self.popoverController presentPopoverFromBarButtonItem:self.addButton
 								   permittedArrowDirections:UIPopoverArrowDirectionAny
 												   animated:YES];
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+    [self.entriesController beginSyncing];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+    [self.entriesController endSyncing];
 }
 
 
@@ -497,6 +530,7 @@
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
 				  didSaveEntry:(PDListEntry *)entry
 {
+    [[PDPersistenceController sharedPersistenceController] markChanged:entry];
 	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self dismissModalViewControllerAnimated:YES];
@@ -562,6 +596,7 @@
 - (void)editListController:(DOEditListViewController *)controller
 			 listDidChange:(PDList *)list
 {
+    [[PDPersistenceController sharedPersistenceController] markChanged:list];
 	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self.popoverController dismissPopoverAnimated:YES];

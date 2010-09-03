@@ -29,6 +29,8 @@
 		C92B8C6B1215DCE30076F539 /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C691215DCE30076F539 /* UIViewController+Additions.m */; };
 		C92B8C721215E01B0076F539 /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C711215E01B0076F539 /* PDViewController.m */; };
 		C92B8C731215E01B0076F539 /* PDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C92B8C711215E01B0076F539 /* PDViewController.m */; };
+		C931A4031231990000927BBF /* _PDList.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B8C0E2122AF7C10073AC09 /* _PDList.m */; };
+		C931A4041231990300927BBF /* _PDListEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B8C0E3122AF7C10073AC09 /* _PDListEntry.m */; };
 		C938256311E6A61B0029C32F /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = C938256211E6A61B0029C32F /* Background.png */; };
 		C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C947F95E1177D84B0087574C /* DOEntryDetailsViewController.m */; };
 		C947F9611177DBAE0087574C /* DOEntryDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C947F9601177DBAE0087574C /* DOEntryDetailsView.xib */; };
@@ -1431,10 +1433,14 @@
 				C9BD11001172ADD9005E350E /* PocketDocket.xcdatamodeld in Sources */,
 				C9BD122D1172B596005E350E /* DOAppDelegate.m in Sources */,
 				C9BD12301172B693005E350E /* DOListsViewController.m in Sources */,
+				C99751AD122177F90041387D /* PDList.m in Sources */,
 				C9BD12371172B9FB005E350E /* DOEntriesViewController.m in Sources */,
+				C99751AE122177FA0041387D /* PDListEntry.m in Sources */,
 				C9BD13541173F772005E350E /* DOEditListViewController.m in Sources */,
 				C9BD135A1173F97C005E350E /* PDTextFieldCell.m in Sources */,
+				C931A4031231990000927BBF /* _PDList.m in Sources */,
 				C9BD141A11753E7B005E350E /* PDListProgressView.m in Sources */,
+				C931A4041231990300927BBF /* _PDListEntry.m in Sources */,
 				C947F95F1177D84B0087574C /* DOEntryDetailsViewController.m in Sources */,
 				C92A11FD117E7FEC00D43C65 /* DOEntryTableCell.m in Sources */,
 				C9777E601198936A0047E997 /* DONewEntryViewController.m in Sources */,
@@ -1489,8 +1495,6 @@
 				C99BCF7D121DC1B800A5A582 /* PDResource.m in Sources */,
 				C99BD22A121E285C00A5A582 /* NSObject+DeviceMethods.m in Sources */,
 				C99BD22E121E286200A5A582 /* PDCredentials.m in Sources */,
-				C99751AD122177F90041387D /* PDList.m in Sources */,
-				C99751AE122177FA0041387D /* PDListEntry.m in Sources */,
 				C997525A1222092F0041387D /* BWGlobal.m in Sources */,
 				C997525B1222092F0041387D /* BWHockeyController.m in Sources */,
 				C997525C1222092F0041387D /* BWHockeyViewController.m in Sources */,
@@ -1540,7 +1544,7 @@
 					"-fobjc-nonfragile-abi2",
 				);
 				PRODUCT_NAME = PocketDocket;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -1560,7 +1564,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				PRODUCT_NAME = PocketDocket;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1576,13 +1580,13 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = (
 					"-Xclang",
 					"-fobjc-nonfragile-abi2",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Debug;
 		};
@@ -1601,7 +1605,7 @@
 					"-fobjc-nonfragile-abi2",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
 			};
 			name = Release;
 		};
@@ -1614,12 +1618,13 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_CFLAGS = (
 					"-fobjc-nonfragile-abi2",
 					"-Xclang",
 				);
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1.3;
+				SDKROOT = iphoneos4.1;
 			};
 			name = AdHoc;
 		};
@@ -1643,7 +1648,8 @@
 				);
 				PRODUCT_NAME = PocketDocket;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos4.1;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = AdHoc;
 		};
