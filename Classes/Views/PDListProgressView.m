@@ -8,6 +8,12 @@
 
 @implementation PDListProgressView
 
+- (void)setProgress:(CGFloat)aProgress
+{
+    progress = aProgress;
+    [self setNeedsDisplay];
+}
+
 - (void)drawRect:(CGRect)rect {
 	CGFloat len = 32;
 	CGRect fullRect = CGRectMake(0, 0, len, len);
