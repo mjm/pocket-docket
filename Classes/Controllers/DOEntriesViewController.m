@@ -284,11 +284,9 @@
 {
 	[self dismissPopovers:NO];
 	
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController beginEdits];
-	PDListEntry *entry = [persistenceController createEntry:@"" inList:self.listsController.selection];
+	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
-	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithEntry:entry];
+	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithList:self.listsController.selection];
 	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -572,8 +570,6 @@
 	else
 	{
 		[persistenceController beginEdits];
-		PDListEntry *entry = [persistenceController createEntry:@"" inList:self.listsController.selection];
-		controller.entry = entry;
 	}
 }
 

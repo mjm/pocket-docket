@@ -1,3 +1,4 @@
+@class PDList;
 @class PDListEntry;
 
 @protocol DONewEntryViewControllerDelegate;
@@ -7,12 +8,12 @@
 }
 
 @property (nonatomic, assign) id <DONewEntryViewControllerDelegate> delegate;
-@property (nonatomic, retain) PDListEntry *entry;
+@property (nonatomic, retain) PDList *list;
 @property (nonatomic, retain) UITextField *textField;
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 
-- (id)initWithEntry:(PDListEntry *)aEntry;
+- (id)initWithList:(PDList *)aList;
 
 - (IBAction)textChanged:(UITextField *)sender;
 - (IBAction)doneAdding;

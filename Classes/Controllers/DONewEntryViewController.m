@@ -2,18 +2,20 @@
 
 #import "PDListEntry.h"
 #import "../Views/PDTextFieldCell.h"
+#import "../Singletons/PDPersistenceController.h"
 
 @implementation DONewEntryViewController
 
 #pragma mark -
 #pragma mark Initializing a View Controller
 
-- (id)initWithEntry:(PDListEntry *)aEntry {
+- (id)initWithList:(PDList *)aList
+{
 	if (![super initWithNibName:@"DONewEntryView" bundle:nil])
 		return nil;
 
 	self.title = NSLocalizedString(@"New Entry", nil);
-	self.entry = aEntry;
+    self.list = aList;
 	self.contentSizeForViewInPopover = CGSizeMake(320, 63);
 	
 	return self;
@@ -32,7 +34,7 @@
 	[super viewWillDisappear:animated];
 	
 	if (!didSave) {
-		[self.delegate newEntryController:self didCancelEntry:self.entry];
+		[self.delegate newEntryController:self didCancelEntry:nil];
 	}
 }
 
@@ -55,16 +57,16 @@
 	didSave = YES;
 	
 	if ([self.textField.text length] == 0) {
-		[self.delegate newEntryController:self didCancelEntry:self.entry];
+		[self.delegate newEntryController:self didCancelEntry:nil];
 		return;
 	}
 	
-	self.entry.text = self.textField.text;
-	[self.delegate newEntryController:self didCreateEntry:self.entry shouldDismiss:YES];
+    PDListEntry *entry = [[PDPersistenceController sharedPersistenceController] createEntry:self.textField.text inList:self.list];
+	[self.delegate newEntryController:self didCreateEntry:entry shouldDismiss:YES];
 }
 
 - (IBAction)textChanged:(UITextField *)sender {
-	self.entry.text = sender.text;
+	//self.entry.text = sender.text;
 }
 
 #pragma mark -
@@ -101,10 +103,10 @@
 #pragma mark Text Field Delegate Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	self.entry.text = self.textField.text;
-	[self.delegate newEntryController:self didCreateEntry:self.entry shouldDismiss:NO];
+    PDListEntry *entry = [[PDPersistenceController sharedPersistenceController] createEntry:self.textField.text inList:self.list];
+	[self.delegate newEntryController:self didCreateEntry:entry shouldDismiss:NO];
 	
-	self.textField.text = self.entry.text;
+	self.textField.text = @"";
 	
 	return NO;
 }
@@ -114,7 +116,7 @@
 
 - (void)dealloc {
 	self.delegate = nil;
-	self.entry = nil;
+    self.list = nil;
 	self.textField = nil;
 	self.table = nil;
 	self.doneButton = nil;
