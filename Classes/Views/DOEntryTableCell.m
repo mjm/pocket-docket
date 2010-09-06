@@ -33,7 +33,7 @@ CGRect PDShiftRect(CGRect rect, NSInteger distance, BOOL changeWidth)
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 	[super setSelected:selected animated:animated];
-	self.textLabel.highlighted = selected;
+	self.entryLabel.highlighted = selected;
 	self.commentLabel.highlighted = selected;
 }
 
@@ -46,7 +46,7 @@ CGRect PDShiftRect(CGRect rect, NSInteger distance, BOOL changeWidth)
 		isIndented = YES;
 		self.checkboxImage.alpha = 0;
 		self.checkboxButton.alpha = 0;
-		self.textLabel.frame = PDShiftRect(self.textLabel.frame, -32, YES);
+		self.entryLabel.frame = PDShiftRect(self.entryLabel.frame, -32, YES);
 		self.commentLabel.frame = PDShiftRect(self.commentLabel.frame, -32, YES);
 	}
 	else if (state == UITableViewCellStateDefaultMask && isIndented)
@@ -54,14 +54,14 @@ CGRect PDShiftRect(CGRect rect, NSInteger distance, BOOL changeWidth)
 		isIndented = NO;
 		self.checkboxImage.alpha = 1;
 		self.checkboxButton.alpha = 1;
-		self.textLabel.frame = PDShiftRect(self.textLabel.frame, 32, YES);
+		self.entryLabel.frame = PDShiftRect(self.entryLabel.frame, 32, YES);
 		self.commentLabel.frame = PDShiftRect(self.commentLabel.frame, 32, YES);
 	}
 }
 
 - (void)dealloc {
 	self.checkboxButton = nil;
-	self.textLabel = nil;
+	self.entryLabel = nil;
 	self.commentLabel = nil;
 	[super dealloc];
 }

@@ -7,7 +7,7 @@
 
 @property (nonatomic, retain) IBOutlet UIButton *checkboxButton;
 @property (nonatomic, retain) IBOutlet UIImageView *checkboxImage;
-@property (nonatomic, retain) IBOutlet UILabel *textLabel;
+@property (nonatomic, retain) IBOutlet UILabel *entryLabel;
 @property (nonatomic, retain) IBOutlet UILabel *commentLabel;
 
 + (DOEntryTableCell *)entryTableCell;

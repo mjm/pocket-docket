@@ -23,20 +23,20 @@
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry
 {
-	cell.textLabel.text = entry.text;
+	cell.entryLabel.text = entry.text;
 	cell.commentLabel.text = entry.comment;
 	
 	if ([entry.checked boolValue])
 	{
 		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBoxChecked.png"];
-		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
+		cell.entryLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
 	}
 	else
 	{
 		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBox.png"];
-		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
+		cell.entryLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
 	}
-	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
+	cell.entryLabel.highlightedTextColor = cell.entryLabel.textColor;
 	cell.accessoryType = UITableViewCellAccessoryNone;
 }
 
