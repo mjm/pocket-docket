@@ -40,5 +40,6 @@
 
 - (void)save;
 - (void)refresh;
+- (BOOL)isSyncing;
 
 @end

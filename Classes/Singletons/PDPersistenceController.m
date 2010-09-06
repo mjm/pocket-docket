@@ -472,6 +472,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 	[self save];
 }
 
+- (BOOL)isSyncing
+{
+    return self.syncController.currentlySyncing;
+}
+
 
 #pragma mark -
 #pragma mark Memory Management

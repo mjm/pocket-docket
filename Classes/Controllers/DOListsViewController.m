@@ -96,6 +96,8 @@
 											 selector:@selector(syncDidStop:)
 												 name:PDSyncDidStopNotification
 											   object:nil];
+    
+    [self showRefreshButton:[[PDPersistenceController sharedPersistenceController] isSyncing] ? self.stopButton : self.refreshButton];
 }
 
 - (void)viewDidAppear:(BOOL)animated
