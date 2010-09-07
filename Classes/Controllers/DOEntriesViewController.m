@@ -189,6 +189,11 @@
 	}
 	else if ([keyPath isEqualToString:@"selection"])
 	{
+        if (self.listsPopoverController)
+        {
+            [self.listsPopoverController dismissPopoverAnimated:YES];
+        }
+        
 		id list = [change objectForKey:NSKeyValueChangeNewKey];
 		
 		BOOL enable = list != [NSNull null];
@@ -500,14 +505,6 @@
 
 #pragma mark -
 #pragma mark Lists Delegate Methods
-
-- (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)aList
-{
-	if (self.listsPopoverController)
-	{
-		[self.listsPopoverController dismissPopoverAnimated:YES];
-	}
-}
 
 - (BOOL)listsControllerShouldDisplayControllerInPopover:(DOListsViewController *)controller
 {

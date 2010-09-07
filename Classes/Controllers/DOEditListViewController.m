@@ -36,6 +36,7 @@
 	[super viewWillAppear:animated];
 
 	didSave = NO;
+    self.navigationController.toolbarHidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

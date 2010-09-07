@@ -282,7 +282,7 @@
 	{
 		BOOL focusUsername = self.usernameField == nil;
 		
-		cell.textLabel.text = @"Username"; // TODO localize
+		cell.label.text = @"Username"; // TODO localize
 		self.usernameField = cell.textField;
 		
 		self.usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -304,7 +304,7 @@
 	}
 	else if (self.showRegistrationFields && 1 == indexPath.row)
 	{
-		cell.textLabel.text = @"Email"; // TODO localize
+		cell.label.text = @"Email"; // TODO localize
 		self.emailField = cell.textField;
 		
 		self.emailField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -322,7 +322,7 @@
 	}
 	else if (passOffset == indexPath.row) 
 	{
-		cell.textLabel.text = @"Password"; // TODO localize
+		cell.label.text = @"Password"; // TODO localize
 		self.passwordField = cell.textField;
 		
 		self.passwordField.secureTextEntry = YES;
@@ -343,7 +343,7 @@
 	}
 	else
 	{
-		cell.textLabel.text = @"Confirm"; // TODO localize
+		cell.label.text = @"Confirm"; // TODO localize
 		self.passwordConfirmField = cell.textField;
 		
 		self.passwordConfirmField.returnKeyType = UIReturnKeyGo;

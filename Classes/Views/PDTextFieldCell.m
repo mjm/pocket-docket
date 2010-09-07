@@ -12,7 +12,7 @@
 	[super layoutSubviews];
 	
 	CGRect rect = self.textField.frame;
-	if (!self.textLabel.text || [@"" isEqualToString:self.textLabel.text])
+	if (!self.label.text || [@"" isEqualToString:self.label.text])
 	{
 		rect.origin.x = 10;
 		rect.size.width = self.frame.size.width - 30;
@@ -27,7 +27,7 @@
 
 - (void)dealloc {
 	self.textField = nil;
-	self.textLabel = nil;
+	self.label = nil;
     [super dealloc];
 }
 

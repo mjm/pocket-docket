@@ -54,10 +54,33 @@
 	}
 }
 
+- (void)updateViewForSelectedList:(id)list
+{
+    if (self.showSelection && self.tableView && !self.tableView.editing)
+    {
+        if (list == [NSNull null])
+        {
+            // Deselect the row that was previously selected.
+            NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+            if (selectedIndex)
+            {
+                [self.tableView deselectRowAtIndexPath:selectedIndex animated:NO];
+            }
+        }
+        else
+        {
+            NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
+            if (indexPath)
+            {
+                [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+            }
+        }
+    }
+}
+
 - (void)updateViewForCurrentSelection
 {
-	[self willChangeValueForKey:@"selection"];
-	[self didChangeValueForKey:@"selection"];
+    [self updateViewForSelectedList:self.selection];
 }
 
 - (void)beginSyncing
@@ -86,28 +109,7 @@
 {
 	if ([keyPath isEqualToString:@"selection"])
 	{
-		if (self.showSelection && self.tableView && !self.tableView.editing)
-		{
-			id newSelection = [change objectForKey:NSKeyValueChangeNewKey];
-			
-			if (newSelection == [NSNull null])
-			{
-				// Deselect the row that was previously selected.
-				NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
-				if (selectedIndex)
-				{
-					[self.tableView deselectRowAtIndexPath:selectedIndex animated:NO];
-				}
-			}
-			else
-			{
-				NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.selection];
-				if (indexPath)
-				{
-					[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-				}
-			}
-		}
+        [self updateViewForSelectedList:[change objectForKey:NSKeyValueChangeNewKey]];
 	}
 }
 
@@ -185,10 +187,10 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return (self.showSelection && self.tableView.editing) ? nil : indexPath;
-}
+//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//	return indexPath;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

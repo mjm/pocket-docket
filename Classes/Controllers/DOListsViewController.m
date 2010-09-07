@@ -98,6 +98,8 @@
 											   object:nil];
     
     [self showRefreshButton:[[PDPersistenceController sharedPersistenceController] isSyncing] ? self.stopButton : self.refreshButton];
+    
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -233,8 +235,7 @@
 
 - (void)listsController:(PDListsController *)controller didSelectList:(PDList *)list
 {
-	[[PDSettingsController sharedSettingsController] saveSelectedList:list];
-	[self.delegate listsController:self didSelectList:list];
+    [[PDSettingsController sharedSettingsController] saveSelectedList:list];
 }
 
 
@@ -248,8 +249,6 @@
 	[self.popoverController dismissPopoverAnimated:YES];
 	
 	self.listsController.selection = list;
-	// TODO remove
-	[self.delegate listsController:self didSelectList:list];
 	
 	[self.navigationController popToRootViewControllerAnimated:NO];
 }
