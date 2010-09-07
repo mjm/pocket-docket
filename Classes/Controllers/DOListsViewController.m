@@ -235,6 +235,43 @@
 
 - (void)listsController:(PDListsController *)controller didSelectList:(PDList *)list
 {
+    if (self.editing)
+    {
+        [self setEditing:NO animated:YES];
+        
+        [[PDPersistenceController sharedPersistenceController] beginEdits];
+        DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.listsController.selection];
+        controller.delegate = self;
+        
+        if ([self.delegate listsControllerShouldDisplayControllerInPopover:self])
+        {
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+            [controller release];
+            
+            if (self.popoverController)
+            {
+                self.popoverController.contentViewController = navController;
+            }
+            else
+            {
+                self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+                self.popoverController.delegate = self;
+            }
+            [navController release];
+            
+            UITableViewCell *cell = [self.listsController cellForList:list];
+            [self.popoverController presentPopoverFromRect:cell.bounds
+                                                    inView:cell
+                                  permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                  animated:YES];
+        }
+        else
+        {
+            [self.navigationController pushViewController:controller animated:YES];
+            [controller release];
+        }
+    }
+    
     [[PDSettingsController sharedSettingsController] saveSelectedList:list];
 }
 

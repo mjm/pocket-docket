@@ -19,6 +19,7 @@
 - (void)setEditing:(BOOL)editing;
 
 - (void)updateViewForCurrentSelection;
+- (UITableViewCell *)cellForList:(PDList *)list;
 
 - (void)beginSyncing;
 - (void)endSyncing;

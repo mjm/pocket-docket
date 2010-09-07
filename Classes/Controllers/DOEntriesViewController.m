@@ -189,7 +189,7 @@
 	}
 	else if ([keyPath isEqualToString:@"selection"])
 	{
-        if (self.listsPopoverController)
+        if (self.listsPopoverController && !self.listsController.tableView.editing)
         {
             [self.listsPopoverController dismissPopoverAnimated:YES];
         }

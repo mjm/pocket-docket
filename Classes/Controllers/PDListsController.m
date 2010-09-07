@@ -83,6 +83,11 @@
     [self updateViewForSelectedList:self.selection];
 }
 
+- (UITableViewCell *)cellForList:(PDList *)list
+{
+    return [self.tableView cellForRowAtIndexPath:[self.fetchedResultsController indexPathForObject:list]];
+}
+
 - (void)beginSyncing
 {
 	syncing = YES;
@@ -186,11 +191,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 #pragma mark -
 #pragma mark Table View Delegate Methods
-
-//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//	return indexPath;
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
