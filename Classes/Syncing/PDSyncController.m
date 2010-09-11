@@ -9,6 +9,11 @@
 #import "../Categories/NSManagedObjectContext+Additions.h"
 #import "PDCredentials.h"
 
+#ifdef DEBUG_SYNC
+#define SYNC_LOG(...) NSLog(__VA_ARGS__)
+#else
+#define SYNC_LOG(...)
+#endif
 
 #pragma mark Categories
 
@@ -114,7 +119,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	NSEntityDescription *entity = [[mom entitiesByName] objectForKey:entityName];
 	if (!entity)
 	{
-		NSLog(@"Couldn't load remote object entity with name: %@", entityName);
+		SYNC_LOG(@"Couldn't load remote object entity with name: %@", entityName);
 		return nil;
 	}
 	
@@ -133,7 +138,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			// We found a deleted copy, so this item was deleted locally
 			if (![self.delegate syncController:self deleteRemoteObject:remoteObject])
 			{
-				NSLog(@"Sync controller delegate failed to delete remote copy of object: %@", remoteObject);
+				SYNC_LOG(@"Sync controller delegate failed to delete remote copy of object: %@", remoteObject);
 			}
 			return nil;
 		}
@@ -143,14 +148,14 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			NSManagedObject *created = [self.delegate syncController:self createLocalCopyOfRemoteObject:remoteObject];
 			if (!created)
 			{
-				NSLog(@"Sync controller delegate failed to create local copy of object: %@", remoteObject);
+				SYNC_LOG(@"Sync controller delegate failed to create local copy of object: %@", remoteObject);
 			}
 			return created;
 		}
 	}
 	else
 	{
-		NSLog(@"Couldn't check if remote object with ID %@ has been deleted: %@, %@", [remoteObject getRemoteId], error, [error userInfo]);
+		SYNC_LOG(@"Couldn't check if remote object with ID %@ has been deleted: %@, %@", [remoteObject getRemoteId], error, [error userInfo]);
 		return nil;
 	}
 }
@@ -168,7 +173,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 		result = [self.delegate syncController:self deleteLocalObject:localObject];
 		if (!result)
 		{
-			NSLog(@"Sync controller delegate failed to delete local copy of object: %@", localObject);
+			SYNC_LOG(@"Sync controller delegate failed to delete local copy of object: %@", localObject);
 		}
 	}
 	else
@@ -178,7 +183,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 		result = [self.delegate syncController:self createRemoteCopyOfLocalObject:localObject];
 		if (!result)
 		{
-			NSLog(@"Sync controller delegate failed to create remote copy of object: %@", localObject);
+			SYNC_LOG(@"Sync controller delegate failed to create remote copy of object: %@", localObject);
 		}
 	}
 	
@@ -214,7 +219,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	}
 	else
 	{
-		NSLog(@"Sync controller delegate failed to update objects: %@, %@", localObject, remoteObject);
+		SYNC_LOG(@"Sync controller delegate failed to update objects: %@, %@", localObject, remoteObject);
 	}
 }
 
@@ -262,7 +267,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	}
 	else
 	{
-		NSLog(@"Couldn't retrieve local object with remote ID %@. Error: %@, %@", remoteId, error, [error userInfo]);
+		SYNC_LOG(@"Couldn't retrieve local object with remote ID %@. Error: %@, %@", remoteId, error, [error userInfo]);
 		return nil;
 	}
 }
@@ -336,7 +341,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 	NSObject *remoteObject = [remoteEnum nextObject];
 	while (localObject || remoteObject)
 	{
-		NSLog(@"ITERATION\nLocal Object: %@\nRemote Object: %@", localObject, remoteObject);
+		SYNC_LOG(@"ITERATION\nLocal Object: %@\nRemote Object: %@", localObject, remoteObject);
 		if (!localObject)
 		{
 			NSManagedObject *newLocalObject = [self handleRemotelyCreatedOrLocallyDeletedObject:remoteObject];
@@ -347,7 +352,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			
 			remoteObject = [remoteEnum nextObject];
 			
-			NSLog(@"--- Results so far: %@", results);
+			SYNC_LOG(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -360,7 +365,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			
 			localObject = [localEnum nextObject];
 			
-			NSLog(@"--- Results so far: %@", results);
+			SYNC_LOG(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -377,7 +382,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			localObject = [localEnum nextObject];
 			remoteObject = [remoteEnum nextObject];
 			
-			NSLog(@"--- Results so far: %@", results);
+			SYNC_LOG(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -407,7 +412,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			
 			remoteObject = [remoteEnum nextObject];
 			
-			NSLog(@"--- Results so far: %@", results);
+			SYNC_LOG(@"--- Results so far: %@", results);
 			continue;
 		}
 		
@@ -431,7 +436,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 			remoteObject = [remoteEnum nextObject];
 		}
 		
-		NSLog(@"--- Results so far: %@", results);
+		SYNC_LOG(@"--- Results so far: %@", results);
 	}
 	
 	[self.delegate syncController:self updateObjectPositions:results];
@@ -499,7 +504,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 		NSArray *localChange = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
 		if (!localChange)
 		{
-			NSLog(@"An error occurred fetching local changes: %@, %@", error, [error userInfo]);
+			SYNC_LOG(@"An error occurred fetching local changes: %@, %@", error, [error userInfo]);
 			[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 			return;
 		}
@@ -510,7 +515,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 		
 		if (!remoteChange)
 		{
-			NSLog(@"An error occurred fetching remote changes.");
+			SYNC_LOG(@"An error occurred fetching remote changes.");
 			[self performSelectorOnMainThread:@selector(syncStopped) withObject:nil waitUntilDone:YES];
 			return;
 		}

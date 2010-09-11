@@ -52,6 +52,11 @@
 	[self.keyboardObserver unregisterNotifications];
 }
 
+- (void)applicationDidEnterBackground:(NSNotification *)note
+{
+    [self.textView resignFirstResponder];
+}
+
 #pragma mark -
 #pragma mark Actions
 

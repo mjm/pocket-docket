@@ -138,7 +138,12 @@
 	
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
-	
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
 	[self.keyboardObserver unregisterNotifications];
 }
 
@@ -150,6 +155,7 @@
 
 - (void)viewDidUnload
 {
+    NSLog(@"Unloading view");
 	self.entriesController = nil;
 	self.table = nil;
 	self.toolbar = nil;
@@ -174,6 +180,11 @@
 - (BOOL)shouldPresentLoginViewController
 {
 	return YES;
+}
+
+- (void)applicationDidEnterBackground:(NSNotification *)note
+{
+    [self.newEntryField resignFirstResponder];
 }
 
 

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme>
+   <BuildAction
+      buildConfiguration = "AdHoc">
+      <BuildableProductReferences>
+         <BuildableProductReference
+            BuildableProductIdentifier = "Docket.app">
+         </BuildableProductReference>
+      </BuildableProductReferences>
+   </BuildAction>
+   <TestAction
+      failureAction = "0">
+   </TestAction>
+   <ArchiveAction>
+      <ArchivingStrategy
+         StrategyType = "Xcode.IDEStandardArchivingStrategies.ArchivingStrategyType.Application">
+         <StrategyContent>
+         </StrategyContent>
+      </ArchivingStrategy>
+   </ArchiveAction>
+</Scheme>
