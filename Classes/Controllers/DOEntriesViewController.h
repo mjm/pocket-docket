@@ -5,6 +5,8 @@
 #import "PDImportEntriesViewController.h"
 #import "PDEntriesController.h"
 
+@class PDKeyboardObserver;
+
 @interface DOEntriesViewController : PDViewController <UISplitViewControllerDelegate, DOEditListViewControllerDelegate, UIPopoverControllerDelegate, DOEntryDetailsViewControllerDelegate, DOListsViewControllerDelegate, DONewEntryViewControllerDelegate, MFMailComposeViewControllerDelegate, UIActionSheetDelegate, PDImportEntriesViewControllerDelegate, PDEntriesControllerDelegate> {}
 
 @property (nonatomic, retain) IBOutlet PDEntriesController *entriesController;
@@ -19,6 +21,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *table;
 @property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeGestureRecognizer;
+@property (nonatomic, retain) PDKeyboardObserver *keyboardObserver;
 
 - (IBAction)showActionMenu;
 - (IBAction)emailList;

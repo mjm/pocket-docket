@@ -7,6 +7,7 @@
 #import "../Views/DOEntryTableCell.h"
 #import "../Categories/NSString+Additions.h"
 #import "PDSyncController.h"
+#import "PDKeyboardObserver.h"
 
 #pragma mark -
 #pragma mark Private Methods
@@ -16,6 +17,7 @@
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry;
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dismissPopovers:(BOOL)animated;
+- (void)scrollToBottom;
 
 @end
 
@@ -65,12 +67,27 @@
 	}
 }
 
+- (void)scrollToBottom
+{
+	NSUInteger numRows = [self.entriesController tableView:self.table numberOfRowsInSection:0];
+	if (numRows > 0)
+	{
+		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(numRows - 1) inSection:0];
+		
+		[self.table scrollToRowAtIndexPath:indexPath
+						  atScrollPosition:UITableViewScrollPositionBottom
+								  animated:YES];
+	}
+}
+
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+    
+    self.keyboardObserver = [PDKeyboardObserver keyboardObserverWithViewController:self delegate:nil];
 	
 	UIColor *sepColor = [UIColor colorWithRed:151.0/255.0 green:199.0/255.0 blue:223.0/255.0 alpha:1.0];
 	self.table.separatorColor = sepColor;
@@ -106,6 +123,8 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.keyboardObserver registerNotifications];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(syncDidStart:)
@@ -120,6 +139,8 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
+    
+    [self.keyboardObserver unregisterNotifications];
     
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
 	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
@@ -148,6 +169,7 @@
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
 	self.swipeGestureRecognizer = nil;
+    self.keyboardObserver = nil;
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -311,6 +333,8 @@
 	[self.popoverController presentPopoverFromBarButtonItem:self.addButton
 								   permittedArrowDirections:UIPopoverArrowDirectionAny
 												   animated:YES];
+    
+    [self performSelector:@selector(scrollToBottom) withObject:nil afterDelay:0.2];
 }
 
 - (void)syncDidStart:(NSNotification *)note
@@ -566,6 +590,7 @@
 	}
 	else
 	{
+        [self scrollToBottom];
 		[persistenceController beginEdits];
 	}
 }
@@ -639,6 +664,7 @@
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
 	self.swipeGestureRecognizer = nil;
+    self.keyboardObserver = nil;
 	[super dealloc];
 }
 
