@@ -15,7 +15,7 @@
 	navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 	{
-		navController.modalPresentationStyle = UIModalPresentationFormSheet;
+		navController.modalPresentationStyle = UIModalPresentationPageSheet;
 	}
 	
 	[self presentModalViewController:navController animated:YES];

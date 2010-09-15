@@ -28,7 +28,6 @@
 	if (![super initWithNibName:@"PDLoginView" bundle:nil])
 		return self;
 	
-	// TODO localize
 	self.title = NSLocalizedString(@"DocketAnywhere", nil);
 	
 	User *user = [[User alloc] init];
@@ -91,6 +90,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[self.keyboardObserver registerNotifications];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self performSelector:@selector(activateTextFieldForRow:) withObject:[NSNumber numberWithInteger:0] afterDelay:0.2];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -225,6 +229,7 @@
 	}
 
 	[self.tableView reloadData];
+    [self performSelector:@selector(activateTextFieldForRow:) withObject:[NSNumber numberWithInteger:0] afterDelay:0.2];
 }
 
 - (IBAction)textFieldChanged:(UITextField *)textField
@@ -258,8 +263,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-	// TODO localize
-	return self.showRegistrationFields ? @"Create an Account" : @"Login to DocketAnywhere";
+	return NSLocalizedString(self.showRegistrationFields ? @"Create an Account" : @"Login to DocketAnywhere", nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -277,12 +281,15 @@
 	cell.textField.returnKeyType = UIReturnKeyNext;
 	cell.textField.textColor = [UIColor colorWithRed:56/255.0 green:84/255.0 blue:135/255.0 alpha:1.0];
 	[cell.textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        cell.leftIndent = 75;
+    }
 	
 	if (0 == indexPath.row)
 	{
-		BOOL focusUsername = self.usernameField == nil;
-		
-		cell.label.text = @"Username"; // TODO localize
+		cell.label.text = NSLocalizedString(@"Username", nil);
 		self.usernameField = cell.textField;
 		
 		self.usernameField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -296,15 +303,10 @@
 		{
 			self.usernameField.text = @"";
 		}
-		
-		if (focusUsername)
-		{
-			[self.usernameField becomeFirstResponder];
-		}
 	}
 	else if (self.showRegistrationFields && 1 == indexPath.row)
 	{
-		cell.label.text = @"Email"; // TODO localize
+		cell.label.text = NSLocalizedString(@"Email", nil);
 		self.emailField = cell.textField;
 		
 		self.emailField.autocorrectionType = UITextAutocorrectionTypeNo;
@@ -322,7 +324,7 @@
 	}
 	else if (passOffset == indexPath.row) 
 	{
-		cell.label.text = @"Password"; // TODO localize
+		cell.label.text = NSLocalizedString(@"Password", nil);
 		self.passwordField = cell.textField;
 		
 		self.passwordField.secureTextEntry = YES;
@@ -343,7 +345,7 @@
 	}
 	else
 	{
-		cell.label.text = @"Confirm"; // TODO localize
+		cell.label.text = NSLocalizedString(@"Confirm", nil);
 		self.passwordConfirmField = cell.textField;
 		
 		self.passwordConfirmField.returnKeyType = UIReturnKeyGo;
