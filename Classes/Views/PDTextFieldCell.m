@@ -15,12 +15,12 @@
 	if (!self.label.text || [@"" isEqualToString:self.label.text])
 	{
 		rect.origin.x = 10;
-		rect.size.width = self.frame.size.width - 30 - leftIndent;
+		rect.size.width = self.frame.size.width - 30 - self.leftIndent;
 	}
 	else
 	{
 		rect.origin.x = 103;
-		rect.size.width = self.frame.size.width - 123 - leftIndent;
+		rect.size.width = self.frame.size.width - 123 - self.leftIndent;
 	}
 	self.textField.frame = rect;
 }
