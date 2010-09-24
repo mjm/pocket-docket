@@ -252,35 +252,107 @@
 	}
 }
 
+- (void)displayResetMessage:(NSString *)message
+{
+	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Password Reset", nil)
+														message:message
+													   delegate:nil
+											  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+											  otherButtonTitles:nil];
+	[alertView show];
+	[alertView release];
+}
+
+- (void)doResetPassword:(NSString *)username
+{
+	NSString *url = [NSString stringWithFormat:@"%@forgot/%@",
+					 [ObjectiveResourceConfig getSite],
+					 username];
+	Response *response = [Connection get:url];
+	
+	NSString *alertMessage;
+	if ([response isError])
+	{
+		alertMessage = NSLocalizedString(@"Password Reset Error Message", nil);
+	}
+	else
+	{
+		alertMessage = [[[NSString alloc] initWithData:response.body encoding:NSUTF8StringEncoding] autorelease];
+	}
+	
+	[self performSelectorOnMainThread:@selector(displayResetMessage:) withObject:alertMessage waitUntilDone:YES];
+}
+
+- (void)forgotPassword
+{
+	NSString *username = self.usernameField.text;
+	if (!username || [@"" isEqualToString:username])
+	{
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Enter Your Username", nil)
+															message:NSLocalizedString(@"No Username Message", nil)
+														   delegate:nil
+												  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+												  otherButtonTitles:nil];
+		[alertView show];
+		[alertView release];
+		
+		return;
+	}
+	
+	[[ConnectionManager sharedInstance] runJob:@selector(doResetPassword:) onTarget:self withArgument:username];
+}
+
 
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.showRegistrationFields ? 1 : 2;
+}
+
 - (NSInteger)tableView:(UITableView *)table numberOfRowsInSection:(NSInteger)section
 {
-	return self.showRegistrationFields ? 4 : 2;
+	return self.showRegistrationFields ? 4 : (section == 0 ? 2 : 1);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
+    if (section == 1) return nil;
 	return NSLocalizedString(self.showRegistrationFields ? @"Create an Account" : @"Login to DocketAnywhere", nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.section == 1)
+    {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForgotPassword"];
+        if (!cell)
+        {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                           reuseIdentifier:@"ForgotPassword"] autorelease];
+        }
+        
+        cell.textLabel.text = NSLocalizedString(@"Forgot Password", nil);
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+        
+        return cell;
+    }
+    
+    
 	static NSString *TextFieldCell = @"TextFieldCell";
 	
 	NSInteger passOffset = self.showRegistrationFields ? 2 : 1;
 	
-	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:TextFieldCell];
-	if (!cell)
-	{
-		cell = [PDTextFieldCell textFieldCell];
-	}
-	cell.textField.delegate = self;
-	cell.textField.returnKeyType = UIReturnKeyNext;
-	cell.textField.textColor = [UIColor colorWithRed:56/255.0 green:84/255.0 blue:135/255.0 alpha:1.0];
-	[cell.textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
+    PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:TextFieldCell];
+    if (!cell)
+    {
+        cell = [PDTextFieldCell textFieldCell];
+    }
+    cell.textField.delegate = self;
+    cell.textField.returnKeyType = UIReturnKeyNext;
+    cell.textField.textColor = [UIColor colorWithRed:56/255.0 green:84/255.0 blue:135/255.0 alpha:1.0];
+    [cell.textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
     {
@@ -371,6 +443,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    if (indexPath.section == 1)
+    {
+        [self forgotPassword];
+        return;
+    }
+    
 	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView cellForRowAtIndexPath:indexPath];
 	[cell.textField becomeFirstResponder];
 }
