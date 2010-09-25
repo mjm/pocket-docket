@@ -17,7 +17,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.2b2</string>
+	<string>1.2b3</string>
 	<key>NSMainNibFile</key>
 	<string>MainWindowPad</string>
 	<key>UISupportedInterfaceOrientations</key>
