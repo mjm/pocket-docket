@@ -21,14 +21,11 @@ CGRect PDShiftRect(CGRect rect, NSInteger distance, BOOL changeWidth)
 - (void)layoutSubviews {
 	[super layoutSubviews];
 	
-	if (self.editing)
-		return;
-	
 	CGFloat constraintWidth = self.frame.size.width - ENTRY_CELL_OFFSET;
 	CGFloat height = [self.commentLabel.text heightWithFont:self.commentLabel.font
 										 constrainedToWidth:constraintWidth];
 	
-	self.commentLabel.frame = CGRectMake(53, 40, constraintWidth, height);
+	self.commentLabel.frame = CGRectMake(self.editing ? 21 : 53, 40, constraintWidth, height);
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

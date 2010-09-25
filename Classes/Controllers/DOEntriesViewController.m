@@ -45,6 +45,8 @@
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath
 {
 	PDListEntry *entry = [self.entriesController entryAtIndexPath:indexPath];
+	LOG_EXPR(entry);
+	
 	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
 	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithEntry:entry

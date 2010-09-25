@@ -374,7 +374,7 @@ NSString * const PDSyncDidStopNotification = @"PDSyncDidStopNotification";
 		
 		if (localId && [localId isEqual:remoteId])
 		{
-			// TODO handle movements to make sure those are ok
+			[self.delegate syncController:self movedRemoteObject:remoteObject];
 			
 			[self reconcileDifferencesBetweenLocalObject:localObject andRemoteObject:remoteObject];
 			[results addObject:localObject];

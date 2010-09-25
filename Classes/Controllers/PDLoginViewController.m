@@ -1,5 +1,6 @@
 #import "PDLoginViewController.h"
 
+#import "../Singletons/PDPersistenceController.h"
 #import "../Singletons/PDSettingsController.h"
 #import "../PDKeyboardObserver.h"
 #import "../Views/PDTextFieldCell.h"
@@ -165,6 +166,8 @@
 	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
 	settingsController.docketAnywhereUsername = user.login;
 	settingsController.docketAnywherePassword = user.password;
+	
+	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
 	
 	[self.delegate loginControllerDidRegister:self];
 }
