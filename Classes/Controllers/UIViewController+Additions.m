@@ -1,5 +1,6 @@
 #import "UIViewController+Additions.h"
 
+#import "../Singletons/PDPersistenceController.h"
 
 @implementation UIViewController (Additions)
 
@@ -12,6 +13,10 @@
 	[loginController release];
 	
 	navController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+	{
+		navController.modalPresentationStyle = UIModalPresentationPageSheet;
+	}
 	
 	[self presentModalViewController:navController animated:YES];
 }
@@ -33,11 +38,13 @@
 - (void)loginControllerDidLogin:(PDLoginViewController *)controller
 {
 	[self dismissModalViewControllerAnimated:YES];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 - (void)loginControllerDidRegister:(PDLoginViewController *)controller
 {
 	[self dismissModalViewControllerAnimated:YES];
+	[[PDPersistenceController sharedPersistenceController] save];
 }
 
 @end

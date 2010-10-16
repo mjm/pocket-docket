@@ -1,22 +1,18 @@
-#import "../Changes/PDLocalChanging.h"
-#import "PDChangeManager.h"
-
 @class PDList;
 @class PDListEntry;
-
-
-extern NSString *PDCredentialsNeededNotification;
 
 
 //! Handles various persistence related operations.
 /*!
  \nosubgrouping
  */
-@interface PDPersistenceController : NSObject <PDChangeManagerDelegate>
+@interface PDPersistenceController : NSObject
 {
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;	    
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
+	
+	NSTimer *syncTimer;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
@@ -39,12 +35,13 @@ extern NSString *PDCredentialsNeededNotification;
 
 - (void)moveList:(PDList *)list fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
 - (void)moveEntry:(PDListEntry *)entry fromRow:(NSUInteger)fromRow toRow:(NSUInteger)toRow;
-- (void)markChanged:(NSManagedObject <PDLocalChanging> *)object;
+- (void)markChanged:(NSManagedObject *)object;
 
 - (void)deleteList:(PDList *)list;
 - (void)deleteEntry:(PDListEntry *)entry;
 
 - (void)save;
 - (void)refresh;
+- (BOOL)isSyncing;
 
 @end

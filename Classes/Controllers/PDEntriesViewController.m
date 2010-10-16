@@ -7,6 +7,7 @@
 #import "PDList.h"
 #import "PDListEntry.h"
 #import "../Views/PDEntryTableCell.h"
+#import "PDSyncController.h"
 
 
 #pragma mark Private Methods
@@ -117,6 +118,15 @@
 	[super viewWillAppear:animated];
 	[self.keyboardObserver registerNotifications];
 	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
+	
 	[[PDSettingsController sharedSettingsController] saveSelectedList:self.list];
 }
 
@@ -126,6 +136,14 @@
 	[self.newEntryField resignFirstResponder];
 	[self showSendButton];
 	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
 	[self.keyboardObserver unregisterNotifications];
 }
 
@@ -137,6 +155,7 @@
 
 - (void)viewDidUnload
 {
+    NSLog(@"Unloading view");
 	self.entriesController = nil;
 	self.table = nil;
 	self.toolbar = nil;
@@ -161,6 +180,11 @@
 - (BOOL)shouldPresentLoginViewController
 {
 	return YES;
+}
+
+- (void)applicationDidEnterBackground:(NSNotification *)note
+{
+    [self.newEntryField resignFirstResponder];
 }
 
 
@@ -195,6 +219,16 @@
 		[self.toolbar setItems:items animated:YES];
 		[items release];
 	}
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+	[self.entriesController beginSyncing];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+	[self.entriesController endSyncing];
 }
 
 
@@ -324,6 +358,7 @@
 	if ([text length] != 0)
 	{
 		[[PDPersistenceController sharedPersistenceController] createEntry:text inList:self.list];
+        [[PDPersistenceController sharedPersistenceController] save];
 		self.newEntryField.text = @"";
 		
 		[self scrollToBottom];
@@ -399,6 +434,7 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	self.list = nil;
 	self.entriesController = nil;
 	self.keyboardObserver = nil;

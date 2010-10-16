@@ -69,6 +69,19 @@
 					context:NULL];
 }
 
+- (void)beginSyncing
+{
+	syncing = YES;
+}
+
+- (void)endSyncing
+{
+	syncing = NO;
+	
+	[self.fetchedResultsController performFetch:NULL];
+	[self.tableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark Key-Value Observing
@@ -152,14 +165,14 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 #pragma mark Fetched Results Controller Delegate Methods
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-	if (movingEntries)
+	if (movingEntries || syncing)
 		return;
 	
 	[self.tableView beginUpdates];
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-	if (movingEntries)
+	if (movingEntries || syncing)
 		return;
 	
 	[self.tableView endUpdates];
@@ -171,6 +184,9 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 	 forChangeType:(NSFetchedResultsChangeType)type
 	  newIndexPath:(NSIndexPath *)newIndexPath
 {
+	if (syncing)
+		return;
+	
 	switch (type)
 	{
 		case NSFetchedResultsChangeInsert:

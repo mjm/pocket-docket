@@ -15,6 +15,7 @@
 
 
 
+
 @interface PDListEntryID : NSManagedObjectID {}
 @end
 
@@ -42,6 +43,12 @@
 
 
 
+@property (nonatomic, retain) NSDate *deletedAt;
+
+//- (BOOL)validateDeletedAt:(id*)value_ error:(NSError**)error_;
+
+
+
 @property (nonatomic, retain) NSString *remoteIdentifier;
 
 //- (BOOL)validateRemoteIdentifier:(id*)value_ error:(NSError**)error_;
@@ -58,15 +65,15 @@
 
 
 
-@property (nonatomic, retain) NSString *comment;
-
-//- (BOOL)validateComment:(id*)value_ error:(NSError**)error_;
-
-
-
 @property (nonatomic, retain) NSDate *updatedAt;
 
 //- (BOOL)validateUpdatedAt:(id*)value_ error:(NSError**)error_;
+
+
+
+@property (nonatomic, retain) NSString *comment;
+
+//- (BOOL)validateComment:(id*)value_ error:(NSError**)error_;
 
 
 
@@ -131,6 +138,10 @@
 - (void)setPrimitiveMovedSinceSyncValue:(BOOL)value_;
 
 
+- (NSDate*)primitiveDeletedAt;
+- (void)setPrimitiveDeletedAt:(NSDate*)value;
+
+
 - (NSString*)primitiveRemoteIdentifier;
 - (void)setPrimitiveRemoteIdentifier:(NSString*)value;
 
@@ -142,12 +153,12 @@
 - (void)setPrimitiveOrderValue:(int)value_;
 
 
-- (NSString*)primitiveComment;
-- (void)setPrimitiveComment:(NSString*)value;
-
-
 - (NSDate*)primitiveUpdatedAt;
 - (void)setPrimitiveUpdatedAt:(NSDate*)value;
+
+
+- (NSString*)primitiveComment;
+- (void)setPrimitiveComment:(NSString*)value;
 
 
 - (NSNumber*)primitiveChecked;

@@ -1,5 +1,9 @@
 #import "List.h"
 
+#import "ObjectiveResource.h"
+#import "Connection.h"
+#import "Response.h"
+#import "JSONFramework.h"
 
 @implementation List
 
@@ -16,18 +20,35 @@
 
 + (NSInvocation *)findAllRemoteInvocation
 {
-	NSMethodSignature *sig = [self methodSignatureForSelector:@selector(findAllRemoteWithResponse:)];
+	NSMethodSignature *sig = [self methodSignatureForSelector:@selector(findAllRemote)];
 	NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:sig];
-	[invocation setTarget:self];
-	[invocation setSelector:@selector(findAllRemoteWithResponse:)];
+	[invocation setTarget:[self class]];
+	[invocation setSelector:@selector(findAllRemote)];
 	return invocation;
 }
 
-- (void)copyPropertiesTo:(NSManagedObject *)object
+//- (void)copyPropertiesTo:(NSManagedObject *)object
+//{
+//	[object setValue:self.listId forKey:@"remoteIdentifier"];
+//	[object setValue:self.title forKey:@"title"];
+//	[object setValue:self.position forKey:@"order"];
+//}
+
++ (BOOL)sortRemote:(NSArray *)ids withResponse:(NSError **)aError
 {
-	[object setValue:self.listId forKey:@"remoteIdentifier"];
-	[object setValue:self.title forKey:@"title"];
-	[object setValue:self.position forKey:@"order"];
+	NSString *sortPath = [NSString stringWithFormat:@"%@%@/sort%@",
+						  [self getRemoteSite],
+						  [self getRemoteCollectionName],
+						  [self getRemoteProtocolExtension]];
+	
+	NSDictionary *bodyDict = [NSDictionary dictionaryWithObject:ids forKey:@"ids"];
+	NSString *body = [bodyDict JSONRepresentation];
+	
+	Response *res = [Connection put:body to:sortPath withUser:[self getRemoteUser] andPassword:[self getRemotePassword]];
+	if (aError && [res isError])
+		*aError = res.error;
+	
+	return [res isSuccess];
 }
 
 @end

@@ -14,4 +14,16 @@
     #import <CoreData/CoreData.h>
 	#import <QuartzCore/QuartzCore.h>
 	#import <MessageUI/MessageUI.h>
+
+	#define PRINT_SELECTOR NSLog(@"Calling -%s", sel_getName(_cmd));
+    #import "VTPG_Common.h"
+
+#ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 40000
+
+#define MULTITASKING
+
+#endif
+#endif
+
 #endif

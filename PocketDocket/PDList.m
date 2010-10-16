@@ -3,7 +3,7 @@
 
 @implementation PDList
 
-@dynamic completedEntries;
+@dynamic completedEntries, allEntries;
 
 - (id)toResource
 {
@@ -39,6 +39,48 @@
 		NSLog(@"Error generating plain text string for list: %@, %@", error, [error description]);
 		return nil;
 	}
+}
+
++ (NSArray*)fetchAllLists:(NSManagedObjectContext*)moc_ error:(NSError**)error_ {
+	NSParameterAssert(moc_);
+	NSError *error = nil;
+	
+	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
+	
+	NSDictionary *substitutionVariables = [NSDictionary dictionary];
+	
+	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"allLists"
+													 substitutionVariables:substitutionVariables];
+	NSAssert(fetchRequest, @"Can't find fetch request named \"allLists\".");
+	
+	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
+	if (error_) *error_ = error;
+	return result;
+}
+
+
+// This shouldn't be necessary but MOGenerator is screwing up
+
+@dynamic updatedSinceSync;
+
+
+
+- (BOOL)updatedSinceSyncValue {
+	NSNumber *result = [self updatedSinceSync];
+	return [result boolValue];
+}
+
+- (void)setUpdatedSinceSyncValue:(BOOL)value_ {
+	[self setUpdatedSinceSync:[NSNumber numberWithBool:value_]];
+}
+
+- (BOOL)primitiveUpdatedSinceSyncValue {
+	NSNumber *result = [self primitiveUpdatedSinceSync];
+	return [result boolValue];
+}
+
+- (void)setPrimitiveUpdatedSinceSyncValue:(BOOL)value_ {
+	[self setPrimitiveUpdatedSinceSync:[NSNumber numberWithBool:value_]];
 }
 
 @end

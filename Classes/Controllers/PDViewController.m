@@ -1,7 +1,21 @@
 #import "PDViewController.h"
 
 #import "UIViewController+Additions.h"
-#import "PDPersistenceController.h"
+#import "PDSyncDelegate.h"
+
+#ifdef MULTITASKING
+
+BOOL PDCanBackground()
+{
+    UIDevice *device = [UIDevice currentDevice];
+    return [device respondsToSelector:@selector(isMultitaskingSupported)] && device.multitaskingSupported;
+}
+
+#else
+
+BOOL PDCanBackground() { return NO; }
+
+#endif
 
 static BOOL credentialsNeeded = NO;
 
@@ -20,6 +34,11 @@ static BOOL credentialsNeeded = NO;
 	}
 }
 
+- (void)applicationDidEnterBackground:(NSNotification *)note
+{
+    // Default to do nothing. Subclasses should override if desired.
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
@@ -27,6 +46,13 @@ static BOOL credentialsNeeded = NO;
 											 selector:@selector(credentialsNeeded:)
 												 name:PDCredentialsNeededNotification
 											   object:nil];
+#ifdef MULTITASKING
+    if (PDCanBackground())
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(applicationDidEnterBackground:)
+                                                     name:UIApplicationDidEnterBackgroundNotification
+                                                   object:nil];
+#endif
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -46,6 +72,12 @@ static BOOL credentialsNeeded = NO;
 	[[NSNotificationCenter defaultCenter] removeObserver:self
 													name:PDCredentialsNeededNotification
 												  object:nil];
+#ifdef MULTITASKING
+    if (PDCanBackground())
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:UIApplicationDidEnterBackgroundNotification
+                                                      object:nil];
+#endif
 }
 
 - (void)dealloc
@@ -53,6 +85,12 @@ static BOOL credentialsNeeded = NO;
 	[[NSNotificationCenter defaultCenter] removeObserver:self
 													name:PDCredentialsNeededNotification
 												  object:nil];
+#ifdef MULTITASKING
+    if (PDCanBackground())
+        [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                        name:UIApplicationDidEnterBackgroundNotification
+                                                      object:nil];
+#endif
 	[super dealloc];
 }
 

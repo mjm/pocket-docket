@@ -6,6 +6,7 @@
 
 @interface PDEntriesController : NSObject <UITableViewDataSource, NSFetchedResultsControllerDelegate> {
 	BOOL movingEntries;
+	BOOL syncing;
 }
 
 @property (nonatomic, assign) IBOutlet id <PDEntriesControllerDelegate> delegate;
@@ -18,6 +19,9 @@
 - (PDListEntry *)entryAtIndexPath:(NSIndexPath *)indexPath;
 
 - (void)bindToListsController:(PDListsController *)controller;
+
+- (void)beginSyncing;
+- (void)endSyncing;
 
 @end
 

@@ -38,15 +38,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 		return nil;
 	
 	NSManagedObjectContext *managedObjectContext = [[PDPersistenceController sharedPersistenceController] managedObjectContext];
-	PDList *list = (PDList *) [managedObjectContext objectWithIDString:idString];
-	
-	@try {
-		NSString *title = [list.title copy]; // fire the fault
-        [title release];
-	}
-	@catch (NSException * e) {
-		return nil;
-	}
+	PDList *list = (PDList *) [managedObjectContext existingObjectWithIDString:idString error:NULL];
 	return list;
 }
 

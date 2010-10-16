@@ -7,10 +7,12 @@
 #import "../Views/PDListTableCell.h"
 #import "../Views/PDListProgressView.h"
 #import "PDList.h"
+#import "PDSyncController.h"
 
 @interface DOListsViewController (PrivateMethods)
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list;
+- (void)showRefreshButton:(UIBarButtonItem *)button;
 
 @end
 
@@ -18,10 +20,13 @@
 
 - (void)configureCell:(PDListTableCell *)cell withList:(PDList *)list
 {
-	if ([list.entries count] == 0) {
+	if ([list.entries count] == 0)
+	{
 		cell.progressView.progress = 0.0;
-	} else {
-		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.entries count]);
+	}
+	else
+	{
+		cell.progressView.progress = ((CGFloat) [list.completedEntries count]) / ((CGFloat) [list.allEntries count]);
 	}
 	[cell.progressView setNeedsDisplay];
 	
@@ -29,9 +34,14 @@
 	NSString *of = NSLocalizedString(@"of", nil);
 	NSString *completed = NSLocalizedString(@"completed", nil);
 	cell.completionLabel.text = [NSString stringWithFormat:@"%d %@ %d %@",
-								 [list.completedEntries count], of, [list.entries count], completed];
+								 [list.completedEntries count], of, [list.allEntries count], completed];
 	cell.accessoryType = UITableViewCellAccessoryNone;
 	cell.editingAccessoryType = UITableViewCellAccessoryNone;
+}
+
+- (void)showRefreshButton:(UIBarButtonItem *)button
+{
+	self.toolbarItems = [NSArray arrayWithObject:button];
 }
 
 @end
@@ -57,7 +67,39 @@
 	self.tableView.separatorColor = [UIColor colorWithWhite:200.0f/255.0f alpha:1.0f];
 
 	self.listsController.showSelection = YES;
+    
+    if ([[PDSettingsController sharedSettingsController] isFirstLaunch])
+	{
+		UIAlertView *syncAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sync with DocketAnywhere", nil)
+															message:NSLocalizedString(@"Sync Prompt Message", nil)
+														   delegate:self.listsController
+												  cancelButtonTitle:NSLocalizedString(@"Don't Sync", nil)
+												  otherButtonTitles:NSLocalizedString(@"Sync Lists", nil), nil];
+		[syncAlert show];
+		[syncAlert release];
+		
+		[PDSettingsController sharedSettingsController].firstLaunch = NO;
+	}
+    
 	[self.listsController loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+	[super viewWillAppear:animated];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
+    
+    [self showRefreshButton:[[PDPersistenceController sharedPersistenceController] isSyncing] ? self.stopButton : self.refreshButton];
+    
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -68,6 +110,14 @@
 	[self.listsController updateViewForCurrentSelection];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
@@ -76,6 +126,8 @@
 - (void)viewDidUnload
 {
 	[super viewDidUnload];
+	self.refreshButton = nil;
+	self.stopButton = nil;
 	self.listsController = nil;
 	self.popoverController = nil;
 }
@@ -135,6 +187,28 @@
 	}
 }
 
+- (IBAction)refreshLists
+{
+	[[PDPersistenceController sharedPersistenceController] refresh];
+}
+
+- (IBAction)stopRefreshing
+{
+	
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+    [self showRefreshButton:self.stopButton];
+    [self.listsController beginSyncing];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+    [self.listsController endSyncing];
+	[self showRefreshButton:self.refreshButton];
+}
+
 
 #pragma mark -
 #pragma mark Lists Controller Delegate Methods
@@ -161,8 +235,44 @@
 
 - (void)listsController:(PDListsController *)controller didSelectList:(PDList *)list
 {
-	[[PDSettingsController sharedSettingsController] saveSelectedList:list];
-	[self.delegate listsController:self didSelectList:list];
+    if (self.editing)
+    {
+        [self setEditing:NO animated:YES];
+        
+        [[PDPersistenceController sharedPersistenceController] beginEdits];
+        DOEditListViewController *controller = [[DOEditListViewController alloc] initWithList:self.listsController.selection];
+        controller.delegate = self;
+        
+        if ([self.delegate listsControllerShouldDisplayControllerInPopover:self])
+        {
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+            [controller release];
+            
+            if (self.popoverController)
+            {
+                self.popoverController.contentViewController = navController;
+            }
+            else
+            {
+                self.popoverController = [[UIPopoverController alloc] initWithContentViewController:navController];
+                self.popoverController.delegate = self;
+            }
+            [navController release];
+            
+            UITableViewCell *cell = [self.listsController cellForList:list];
+            [self.popoverController presentPopoverFromRect:cell.bounds
+                                                    inView:cell
+                                  permittedArrowDirections:UIPopoverArrowDirectionAny
+                                                  animated:YES];
+        }
+        else
+        {
+            [self.navigationController pushViewController:controller animated:YES];
+            [controller release];
+        }
+    }
+    
+    [[PDSettingsController sharedSettingsController] saveSelectedList:list];
 }
 
 
@@ -176,8 +286,6 @@
 	[self.popoverController dismissPopoverAnimated:YES];
 	
 	self.listsController.selection = list;
-	// TODO remove
-	[self.delegate listsController:self didSelectList:list];
 	
 	[self.navigationController popToRootViewControllerAnimated:NO];
 }
@@ -194,6 +302,10 @@
 
 - (void)dealloc
 {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+	
+	self.refreshButton = nil;
+	self.stopButton = nil;
 	self.listsController = nil;
 	self.popoverController = nil;
 	[super dealloc];

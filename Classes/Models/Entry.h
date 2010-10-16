@@ -1,7 +1,6 @@
-#import "../Changes/PDRemoteChanging.h"
-#import "../Changes/PDDeviceResource.h"
+#import "PDResource.h"
 
-@interface Entry : PDDeviceResource <PDRemoteChanging>
+@interface Entry : PDResource
 
 @property (nonatomic, retain) NSString *entryId;
 @property (nonatomic, retain) NSString *listId;
@@ -11,5 +10,9 @@
 @property (nonatomic, retain) NSNumber *position;
 @property (nonatomic, retain) NSDate *createdAt;
 @property (nonatomic, retain) NSDate *updatedAt;
+
++ (BOOL)sortRemote:(NSArray *)ids forList:(NSString *)listId withResponse:(NSError **)aError;
+
++ (NSArray *)findAllRemoteInList:(NSString *)listId withResponse:(NSError **)aError;
 
 @end

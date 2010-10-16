@@ -6,6 +6,8 @@
 #import "PDListEntry.h"
 #import "../Views/DOEntryTableCell.h"
 #import "../Categories/NSString+Additions.h"
+#import "PDSyncController.h"
+#import "PDKeyboardObserver.h"
 
 #pragma mark -
 #pragma mark Private Methods
@@ -15,6 +17,7 @@
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry;
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath;
 - (void)dismissPopovers:(BOOL)animated;
+- (void)scrollToBottom;
 
 @end
 
@@ -22,26 +25,28 @@
 
 - (void)configureCell:(DOEntryTableCell *)cell withEntry:(PDListEntry *)entry
 {
-	UIImage *checkImage = [UIImage imageNamed:([entry.checked boolValue] ? @"CheckBoxChecked.png" : @"CheckBox.png")];
-	[cell.checkboxButton setImage:checkImage forState:UIControlStateNormal];
-	cell.textLabel.text = entry.text;
+	cell.entryLabel.text = entry.text;
 	cell.commentLabel.text = entry.comment;
 	
 	if ([entry.checked boolValue])
 	{
-		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
+		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBoxChecked.png"];
+		cell.entryLabel.textColor = cell.commentLabel.textColor = [UIColor lightGrayColor];
 	}
 	else
 	{
-		cell.textLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
+		cell.checkboxImage.image = [UIImage imageNamed:@"CheckBox.png"];
+		cell.entryLabel.textColor = cell.commentLabel.textColor = [UIColor blackColor];
 	}
-	cell.textLabel.highlightedTextColor = cell.textLabel.textColor;
+	cell.entryLabel.highlightedTextColor = cell.entryLabel.textColor;
 	cell.accessoryType = UITableViewCellAccessoryNone;
 }
 
 - (void)editEntryAtIndexPath:(NSIndexPath *)indexPath
 {
 	PDListEntry *entry = [self.entriesController entryAtIndexPath:indexPath];
+	LOG_EXPR(entry);
+	
 	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
 	DOEntryDetailsViewController *controller = [[DOEntryDetailsViewController alloc] initWithEntry:entry
@@ -64,12 +69,27 @@
 	}
 }
 
+- (void)scrollToBottom
+{
+	NSUInteger numRows = [self.entriesController tableView:self.table numberOfRowsInSection:0];
+	if (numRows > 0)
+	{
+		NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(numRows - 1) inSection:0];
+		
+		[self.table scrollToRowAtIndexPath:indexPath
+						  atScrollPosition:UITableViewScrollPositionBottom
+								  animated:YES];
+	}
+}
+
 #pragma mark -
 #pragma mark View Lifecycle
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+    
+    self.keyboardObserver = [PDKeyboardObserver keyboardObserverWithViewController:self delegate:nil];
 	
 	UIColor *sepColor = [UIColor colorWithRed:151.0/255.0 green:199.0/255.0 blue:223.0/255.0 alpha:1.0];
 	self.table.separatorColor = sepColor;
@@ -102,6 +122,32 @@
 							  context:NULL];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self.keyboardObserver registerNotifications];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStart:)
+												 name:PDSyncDidStartNotification
+											   object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(syncDidStop:)
+												 name:PDSyncDidStopNotification
+											   object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    [self.keyboardObserver unregisterNotifications];
+    
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStartNotification object:nil];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:PDSyncDidStopNotification object:nil];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
@@ -125,6 +171,7 @@
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
 	self.swipeGestureRecognizer = nil;
+    self.keyboardObserver = nil;
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated
@@ -134,6 +181,11 @@
 	
 	self.swipeGestureRecognizer.enabled = !editing;
 	self.tapGestureRecognizer.enabled = !editing;
+}
+
+- (BOOL)shouldPresentLoginViewController
+{
+	return YES;
 }
 
 #pragma mark -
@@ -161,6 +213,11 @@
 	}
 	else if ([keyPath isEqualToString:@"selection"])
 	{
+        if (self.listsPopoverController && !self.listsController.tableView.editing)
+        {
+            [self.listsPopoverController dismissPopoverAnimated:YES];
+        }
+        
 		id list = [change objectForKey:NSKeyValueChangeNewKey];
 		
 		BOOL enable = list != [NSNull null];
@@ -256,11 +313,9 @@
 {
 	[self dismissPopovers:NO];
 	
-	PDPersistenceController *persistenceController = [PDPersistenceController sharedPersistenceController];
-	[persistenceController beginEdits];
-	PDListEntry *entry = [persistenceController createEntry:@"" inList:self.listsController.selection];
+	[[PDPersistenceController sharedPersistenceController] beginEdits];
 	
-	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithEntry:entry];
+	DONewEntryViewController *controller = [[DONewEntryViewController alloc] initWithList:self.listsController.selection];
 	controller.delegate = self;
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -280,6 +335,18 @@
 	[self.popoverController presentPopoverFromBarButtonItem:self.addButton
 								   permittedArrowDirections:UIPopoverArrowDirectionAny
 												   animated:YES];
+    
+    [self performSelector:@selector(scrollToBottom) withObject:nil afterDelay:0.2];
+}
+
+- (void)syncDidStart:(NSNotification *)note
+{
+    [self.entriesController beginSyncing];
+}
+
+- (void)syncDidStop:(NSNotification *)note
+{
+    [self.entriesController endSyncing];
 }
 
 
@@ -465,14 +532,6 @@
 #pragma mark -
 #pragma mark Lists Delegate Methods
 
-- (void)listsController:(DOListsViewController *)controller didSelectList:(PDList *)aList
-{
-	if (self.listsPopoverController)
-	{
-		[self.listsPopoverController dismissPopoverAnimated:YES];
-	}
-}
-
 - (BOOL)listsControllerShouldDisplayControllerInPopover:(DOListsViewController *)controller
 {
 	BOOL usePopover = self.listsPopoverController == nil;
@@ -492,6 +551,7 @@
 - (void)entryDetailsController:(DOEntryDetailsViewController *)controller
 				  didSaveEntry:(PDListEntry *)entry
 {
+    [[PDPersistenceController sharedPersistenceController] markChanged:entry];
 	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self dismissModalViewControllerAnimated:YES];
@@ -532,9 +592,8 @@
 	}
 	else
 	{
+        [self scrollToBottom];
 		[persistenceController beginEdits];
-		PDListEntry *entry = [persistenceController createEntry:@"" inList:self.listsController.selection];
-		controller.entry = entry;
 	}
 }
 
@@ -557,6 +616,7 @@
 - (void)editListController:(DOEditListViewController *)controller
 			 listDidChange:(PDList *)list
 {
+    [[PDPersistenceController sharedPersistenceController] markChanged:list];
 	[[PDPersistenceController sharedPersistenceController] saveEdits];
 	
 	[self.popoverController dismissPopoverAnimated:YES];
@@ -606,6 +666,7 @@
 	self.table = nil;
 	self.tapGestureRecognizer = nil;
 	self.swipeGestureRecognizer = nil;
+    self.keyboardObserver = nil;
 	[super dealloc];
 }
 

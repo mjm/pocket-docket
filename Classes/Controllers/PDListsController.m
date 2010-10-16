@@ -54,10 +54,53 @@
 	}
 }
 
+- (void)updateViewForSelectedList:(id)list
+{
+    if (self.showSelection && self.tableView && !self.tableView.editing)
+    {
+        if (list == [NSNull null])
+        {
+            // Deselect the row that was previously selected.
+            NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
+            if (selectedIndex)
+            {
+                [self.tableView deselectRowAtIndexPath:selectedIndex animated:NO];
+            }
+        }
+        else
+        {
+            NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:list];
+            if (indexPath)
+            {
+                [self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
+            }
+        }
+    }
+}
+
 - (void)updateViewForCurrentSelection
 {
-	[self willChangeValueForKey:@"selection"];
-	[self didChangeValueForKey:@"selection"];
+    [self updateViewForSelectedList:self.selection];
+}
+
+- (UITableViewCell *)cellForList:(PDList *)list
+{
+    return [self.tableView cellForRowAtIndexPath:[self.fetchedResultsController indexPathForObject:list]];
+}
+
+- (void)beginSyncing
+{
+	syncing = YES;
+}
+
+- (void)endSyncing
+{
+	syncing = NO;
+	
+	[self.fetchedResultsController performFetch:NULL];
+	[self.tableView reloadData];
+    
+    [self updateViewForCurrentSelection];
 }
 
 
@@ -71,28 +114,7 @@
 {
 	if ([keyPath isEqualToString:@"selection"])
 	{
-		if (self.showSelection && self.tableView && !self.tableView.editing)
-		{
-			id newSelection = [change objectForKey:NSKeyValueChangeNewKey];
-			
-			if (newSelection == [NSNull null])
-			{
-				// Deselect the row that was previously selected.
-				NSIndexPath *selectedIndex = [self.tableView indexPathForSelectedRow];
-				if (selectedIndex)
-				{
-					[self.tableView deselectRowAtIndexPath:selectedIndex animated:NO];
-				}
-			}
-			else
-			{
-				NSIndexPath *indexPath = [self.fetchedResultsController indexPathForObject:self.selection];
-				if (indexPath)
-				{
-					[self.tableView selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
-				}
-			}
-		}
+        [self updateViewForSelectedList:[change objectForKey:NSKeyValueChangeNewKey]];
 	}
 }
 
@@ -170,11 +192,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return (self.showSelection && self.tableView.editing) ? nil : indexPath;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	return 65.0;
@@ -199,7 +216,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
 {
-	if (movingList)
+	if (movingList || syncing)
 		return;
 	
 	[self.tableView beginUpdates];
@@ -207,7 +224,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
-	if (movingList)
+	if (movingList || syncing)
 		return;
 	
 	[self.tableView endUpdates];
@@ -219,6 +236,9 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 	 forChangeType:(NSFetchedResultsChangeType)type
 	  newIndexPath:(NSIndexPath *)newIndexPath
 {
+	if (syncing)
+		return;
+	
 	switch (type)
 	{
 		case NSFetchedResultsChangeInsert:
@@ -258,6 +278,22 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
 		   atIndex:(NSUInteger)sectionIndex
 	 forChangeType:(NSFetchedResultsChangeType)type
 {
+}
+
+
+#pragma mark -
+#pragma mark Alert View Delegate Methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == alertView.cancelButtonIndex)
+	{
+		[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
+	}
+	else
+	{
+		[[PDPersistenceController sharedPersistenceController] refresh];
+	}
 }
 
 

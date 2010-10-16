@@ -17,6 +17,9 @@
 			text = "Check entries by tapping the box";
 		},
 		{
+			text = "Or by swiping if you have iOS 4";
+		},
+		{
 			text = "The blue arrow shows details";
 		},
 		{

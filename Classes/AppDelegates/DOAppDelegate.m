@@ -3,14 +3,18 @@
 #import "../Singletons/PDPersistenceController.h"
 #import "../Controllers/DOListsViewController.h"
 #import "../Controllers/DOEntriesViewController.h"
+#import "ObjectiveResourceConfig.h"
 
 @implementation DOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
+	[ObjectiveResourceConfig setSite:@"http://docketanywhere.com/"];
+	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 	[window addSubview:splitViewController.view];
 	[window makeKeyAndVisible];
+	
+	[[PDPersistenceController sharedPersistenceController] save];
 	
 	return YES;
 }
@@ -21,10 +25,5 @@
 
 #pragma mark -
 #pragma mark Memory management
-
-- (void)dealloc {
-	[window release];
-	[super dealloc];
-}
-
+                                                  
 @end

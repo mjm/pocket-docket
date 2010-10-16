@@ -20,6 +20,7 @@
 - (IBAction)cancel;
 - (IBAction)login;
 - (IBAction)registerAccount;
+- (void)forgotPassword;
 
 - (IBAction)setFormMode:(UISegmentedControl *)sender;
 - (IBAction)textFieldChanged:(UITextField *)textField;
