@@ -308,15 +308,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>113</integer>
-									<integer>112</integer>
-									<integer>93</integer>
-									<integer>29</integer>
+									<integer>178</integer>
+									<integer>138</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 1137}, {266, 1222}}</string>
+							<string>{{0, 2120}, {266, 1222}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -349,7 +347,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>C94C55DF115441EA00791FAC</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>PDEntriesViewController.h</string>
+								<string>PocketDocket-Info.plist</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -357,7 +355,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>PDEntriesViewController.h</string>
+										<string>PocketDocket-Info.plist</string>
+										<key>_historyCapacity</key>
+										<integer>0</integer>
+										<key>bookmark</key>
+										<string>C9204B21126A16C400CFE87E</string>
 										<key>history</key>
 										<array>
 											<string>C97CE30B1210EF8C0054B858</string>
@@ -383,7 +385,6 @@
 											<string>C9FD28751218D98B00D9127D</string>
 											<string>C9FD28761218D98B00D9127D</string>
 											<string>C99BCE34121C8E5000A5A582</string>
-											<string>C99BCE37121C8E5000A5A582</string>
 											<string>C99BCE39121C8E5000A5A582</string>
 											<string>C99BCE3F121C8E5000A5A582</string>
 											<string>C99BCE40121C8E5000A5A582</string>
@@ -426,6 +427,12 @@
 											<string>C9702C30123EECBA005A4C9C</string>
 											<string>C9702C32123EECBA005A4C9C</string>
 											<string>C9702C33123EECBA005A4C9C</string>
+											<string>C9204B1B126A16C400CFE87E</string>
+											<string>C9204B1C126A16C400CFE87E</string>
+											<string>C9204B1D126A16C400CFE87E</string>
+											<string>C9204B1E126A16C400CFE87E</string>
+											<string>C9204B1F126A16C400CFE87E</string>
+											<string>C9204B20126A16C400CFE87E</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -454,8 +461,6 @@
 							<key>Tabs</key>
 							<array>
 								<dict>
-									<key>BecomeActive</key>
-									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -467,8 +472,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {992, 183}}</string>
-										<key>RubberWindowFrame</key>
-										<string>5 137 1280 1281 0 0 2560 1418 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -522,7 +525,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {992, 173}}</string>
+										<string>{{10, 27}, {992, 183}}</string>
+										<key>RubberWindowFrame</key>
+										<string>5 137 1280 1281 0 0 2560 1418 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -744,7 +749,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9204B041269185800CFE87E</string>
 		<string>C9204B051269185800CFE87E</string>
 		<string>C9204B061269185800CFE87E</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
