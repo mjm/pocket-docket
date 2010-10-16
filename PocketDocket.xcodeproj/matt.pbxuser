@@ -23,7 +23,7 @@
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
-		activeBuildConfigurationName = AdHoc;
+		activeBuildConfigurationName = Debug;
 		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
 		activeSDKPreference = iphoneos4.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
@@ -149,8 +149,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 307129112;
-			PBXWorkspaceStateSaveDate = 307129112;
+			PBXPerProjectTemplateStateSaveDate = 308876301;
+			PBXWorkspaceStateSaveDate = 308876301;
 		};
 		perUserProjectItems = {
 			C9013DB012146AF900815A27 = C9013DB012146AF900815A27 /* PBXTextBookmark */;
@@ -228,16 +228,16 @@
 			C99BCE61121C8E5000A5A582 = C99BCE61121C8E5000A5A582 /* PBXTextBookmark */;
 			C99BCE63121C8E5000A5A582 = C99BCE63121C8E5000A5A582 /* PBXTextBookmark */;
 			C99BCE6E121C96F800A5A582 = C99BCE6E121C96F800A5A582 /* PBXTextBookmark */;
-			C9DD1A45124E6B250054348C /* PBXTextBookmark */ = C9DD1A45124E6B250054348C /* PBXTextBookmark */;
-			C9DD1A46124E6B250054348C /* PBXTextBookmark */ = C9DD1A46124E6B250054348C /* PBXTextBookmark */;
-			C9DD1A47124E6B3D0054348C /* PBXTextBookmark */ = C9DD1A47124E6B3D0054348C /* PBXTextBookmark */;
-			C9DD1A52124E70F00054348C /* PBXTextBookmark */ = C9DD1A52124E70F00054348C /* PBXTextBookmark */;
-			C9DD1A55124E71590054348C /* PBXTextBookmark */ = C9DD1A55124E71590054348C /* PBXTextBookmark */;
-			C9DD1A6B124E719D0054348C /* PBXTextBookmark */ = C9DD1A6B124E719D0054348C /* PBXTextBookmark */;
-			C9DD1A7C124E74040054348C /* PBXTextBookmark */ = C9DD1A7C124E74040054348C /* PBXTextBookmark */;
-			C9DD1A7D124E74040054348C /* PlistBookmark */ = C9DD1A7D124E74040054348C /* PlistBookmark */;
-			C9DD1A7E124E74040054348C /* PlistBookmark */ = C9DD1A7E124E74040054348C /* PlistBookmark */;
-			C9DD1A7F124E74040054348C /* PlistBookmark */ = C9DD1A7F124E74040054348C /* PlistBookmark */;
+			C9DD1A45124E6B250054348C = C9DD1A45124E6B250054348C /* PBXTextBookmark */;
+			C9DD1A46124E6B250054348C = C9DD1A46124E6B250054348C /* PBXTextBookmark */;
+			C9DD1A47124E6B3D0054348C = C9DD1A47124E6B3D0054348C /* PBXTextBookmark */;
+			C9DD1A52124E70F00054348C = C9DD1A52124E70F00054348C /* PBXTextBookmark */;
+			C9DD1A55124E71590054348C = C9DD1A55124E71590054348C /* PBXTextBookmark */;
+			C9DD1A6B124E719D0054348C = C9DD1A6B124E719D0054348C /* PBXTextBookmark */;
+			C9DD1A7C124E74040054348C = C9DD1A7C124E74040054348C /* PBXTextBookmark */;
+			C9DD1A7D124E74040054348C = C9DD1A7D124E74040054348C /* PlistBookmark */;
+			C9DD1A7E124E74040054348C = C9DD1A7E124E74040054348C /* PlistBookmark */;
+			C9DD1A7F124E74040054348C = C9DD1A7F124E74040054348C /* PlistBookmark */;
 			C9FD26321216FACD00D9127D = C9FD26321216FACD00D9127D /* PBXTextBookmark */;
 			C9FD26641217076500D9127D = C9FD26641217076500D9127D /* PBXTextBookmark */;
 			C9FD26BB12170A6300D9127D = C9FD26BB12170A6300D9127D /* PBXTextBookmark */;
@@ -627,16 +627,16 @@
 	};
 	C94C55FC115447E500791FAC /* PDPersistenceController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 1059}}";
-			sepNavSelRange = "{108, 0}";
-			sepNavVisRange = "{0, 1322}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 993}}";
+			sepNavSelRange = "{337, 0}";
+			sepNavVisRange = "{0, 1364}";
 		};
 	};
 	C94C55FD115447E500791FAC /* PDPersistenceController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1013, 6175}}";
-			sepNavSelRange = "{255, 0}";
-			sepNavVisRange = "{6983, 1076}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 6591}}";
+			sepNavSelRange = "{12395, 0}";
+			sepNavVisRange = "{11191, 1639}";
 			sepNavWindowFrame = "{{15, 0}, {910, 878}}";
 		};
 	};
@@ -1860,9 +1860,9 @@
 		fRef = C94C55FC115447E500791FAC /* PDPersistenceController.h */;
 		name = "PDPersistenceController.h: 48";
 		rLen = 0;
-		rLoc = 1315;
+		rLoc = 1338;
 		rType = 0;
-		vrLen = 1486;
+		vrLen = 1341;
 		vrLoc = 0;
 	};
 	C99BCE39121C8E5000A5A582 /* PBXTextBookmark */ = {
@@ -2812,7 +2812,7 @@
 		);
 		name = "/Users/matt/Code/PocketDocket/Docket-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	C9DD1A7E124E74040054348C /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -2823,7 +2823,7 @@
 		);
 		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	C9DD1A7F124E74040054348C /* PlistBookmark */ = {
 		isa = PlistBookmark;
@@ -2835,7 +2835,7 @@
 		);
 		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
 		rLen = 0;
-		rLoc = 9223372036854775807;
+		rLoc = 9223372036854775808;
 	};
 	C9E2D76211DA7DBB00B5ED60 /* PDImportEntriesViewController.h */ = {
 		uiCtxt = {

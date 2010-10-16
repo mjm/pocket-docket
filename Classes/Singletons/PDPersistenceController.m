@@ -448,6 +448,12 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 #pragma mark -
 #pragma mark Saving Changes
 
+- (void)syncTimerFired:(NSTimer *)timer
+{
+	[self.syncController sync];
+	syncTimer = nil;
+}
+
 - (void)save
 {
 	NSError *error;
@@ -457,7 +463,17 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 		NSLog(@"Error saving changes: %@, %@", error, [error userInfo]);
 	}
 	
-	[self.syncController sync];
+	if (syncTimer)
+	{
+		[syncTimer invalidate];
+		syncTimer = nil;
+	}
+	
+	syncTimer = [NSTimer scheduledTimerWithTimeInterval:3.0
+												 target:self
+											   selector:@selector(syncTimerFired:)
+											   userInfo:nil
+												repeats:NO];
 }
 
 - (void)refresh

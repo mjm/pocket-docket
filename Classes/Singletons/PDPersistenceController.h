@@ -11,6 +11,8 @@
 	NSManagedObjectModel *managedObjectModel;
 	NSManagedObjectContext *managedObjectContext;	    
 	NSPersistentStoreCoordinator *persistentStoreCoordinator;
+	
+	NSTimer *syncTimer;
 }
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
