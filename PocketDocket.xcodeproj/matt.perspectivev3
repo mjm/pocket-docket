@@ -356,10 +356,6 @@
 										<string>C94C55E0115441EA00791FAC</string>
 										<key>PBXProjectModuleLabel</key>
 										<string>PocketDocket-Info.plist</string>
-										<key>_historyCapacity</key>
-										<integer>0</integer>
-										<key>bookmark</key>
-										<string>C9204B21126A16C400CFE87E</string>
 										<key>history</key>
 										<array>
 											<string>C97CE30B1210EF8C0054B858</string>
@@ -446,18 +442,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {992, 1025}}</string>
+								<string>{{0, 0}, {992, 1021}}</string>
 								<key>RubberWindowFrame</key>
 								<string>5 137 1280 1281 0 0 2560 1418 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>1025pt</string>
+							<string>1021pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>210pt</string>
+							<string>214pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -471,7 +467,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {992, 183}}</string>
+										<string>{{10, 27}, {992, 187}}</string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -525,7 +521,7 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {992, 183}}</string>
+										<string>{{10, 27}, {992, 187}}</string>
 										<key>RubberWindowFrame</key>
 										<string>5 137 1280 1281 0 0 2560 1418 </string>
 									</dict>
@@ -555,11 +551,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C9204AFB1269185800CFE87E</string>
+				<string>C9204B3F12729B6000CFE87E</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>C9204AFC1269185800CFE87E</string>
+				<string>C9204B4012729B6000CFE87E</string>
 				<string>C94C55DF115441EA00791FAC</string>
-				<string>C9204AFD1269185800CFE87E</string>
+				<string>C9204B4112729B6000CFE87E</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -708,14 +704,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>C9204AFE1269185800CFE87E</string>
+				<string>C9204B4212729B6000CFE87E</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>C9204AFF1269185800CFE87E</string>
-				<string>C9204B001269185800CFE87E</string>
-				<string>C9204B011269185800CFE87E</string>
-				<string>C9204B021269185800CFE87E</string>
-				<string>C9204B031269185800CFE87E</string>
+				<string>C9204B4312729B6000CFE87E</string>
+				<string>C9204B4412729B6000CFE87E</string>
+				<string>C9204B4512729B6000CFE87E</string>
+				<string>C9204B4612729B6000CFE87E</string>
+				<string>C94C55DF115441EA00791FAC</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -749,8 +745,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9204B051269185800CFE87E</string>
-		<string>C9204B061269185800CFE87E</string>
+		<string>C9204B4712729B6000CFE87E</string>
+		<string>C9204B4812729B6000CFE87E</string>
+		<string>C9204B4912729B6000CFE87E</string>
 		<string>/Users/matt/Code/PocketDocket/PocketDocket.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
