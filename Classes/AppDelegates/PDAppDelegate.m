@@ -30,7 +30,7 @@
 	[ObjectiveResourceConfig setResponseType:JSONResponse];
 	
 #if !defined(CONFIGURATION_Release)
-	[[BWHockeyController sharedHockeyController] setBetaURL:@"http://beta.docketanywhere.com/"];
+	//[[BWHockeyController sharedHockeyController] setBetaURL:@"http://beta.docketanywhere.com/"];
 #endif
 	
 	//[self eraseCredentials];

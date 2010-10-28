@@ -23,7 +23,7 @@
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeArchitecturePreference = armv7;
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = C94C55CF115440E800791FAC /* PocketDocket */;
 		activeSDKPreference = iphoneos4.1;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* PocketDocket */;
@@ -149,11 +149,22 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 308965454;
-			PBXWorkspaceStateSaveDate = 308965454;
+			PBXPerProjectTemplateStateSaveDate = 309577479;
+			PBXWorkspaceStateSaveDate = 309577479;
 		};
 		perUserProjectItems = {
 			C9013DB012146AF900815A27 = C9013DB012146AF900815A27 /* PBXTextBookmark */;
+			C90B06D81273C5630067D548 = C90B06D81273C5630067D548 /* PBXTextBookmark */;
+			C90B06DA1273C5630067D548 = C90B06DA1273C5630067D548 /* PBXTextBookmark */;
+			C90B06DB1273C5630067D548 = C90B06DB1273C5630067D548 /* PBXTextBookmark */;
+			C90B070E1273C7100067D548 /* PBXTextBookmark */ = C90B070E1273C7100067D548 /* PBXTextBookmark */;
+			C90B070F1273C7100067D548 /* PBXTextBookmark */ = C90B070F1273C7100067D548 /* PBXTextBookmark */;
+			C90B07191273C75A0067D548 /* PBXTextBookmark */ = C90B07191273C75A0067D548 /* PBXTextBookmark */;
+			C90B071A1273C75A0067D548 /* PlistBookmark */ = C90B071A1273C75A0067D548 /* PlistBookmark */;
+			C90B071B1273C75A0067D548 /* PlistBookmark */ = C90B071B1273C75A0067D548 /* PlistBookmark */;
+			C90B071C1273C75A0067D548 /* PlistBookmark */ = C90B071C1273C75A0067D548 /* PlistBookmark */;
+			C90B071D1273C7790067D548 /* PlistBookmark */ = C90B071D1273C7790067D548 /* PlistBookmark */;
+			C90B071E1273C7870067D548 /* PlistBookmark */ = C90B071E1273C7870067D548 /* PlistBookmark */;
 			C9188C1E122CA5EB007695ED = C9188C1E122CA5EB007695ED /* PBXTextBookmark */;
 			C9188C1F122CA5EB007695ED = C9188C1F122CA5EB007695ED /* PBXTextBookmark */;
 			C9188C22122CA5EB007695ED = C9188C22122CA5EB007695ED /* PBXTextBookmark */;
@@ -269,9 +280,9 @@
 	};
 	32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 503}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 499}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 550}}";
+			sepNavSelRange = "{240, 0}";
+			sepNavVisRange = "{0, 650}";
 		};
 	};
 	8D1107310486CEB800E47090 /* PocketDocket-Info.plist */ = {
@@ -330,6 +341,130 @@
 		rType = 0;
 		vrLen = 288;
 		vrLoc = 0;
+	};
+	C90B06D81273C5630067D548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C90B06D91273C5630067D548 /* CGPDFContext.h */;
+		name = "CGPDFContext.h: 60";
+		rLen = 0;
+		rLoc = 2481;
+		rType = 0;
+		vrLen = 1729;
+		vrLoc = 1591;
+	};
+	C90B06D91273C5630067D548 /* CGPDFContext.h */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = sourcecode.c.h;
+		name = CGPDFContext.h;
+		path = /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGPDFContext.h;
+		sourceTree = "<absolute>";
+	};
+	C90B06DA1273C5630067D548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Precompile PocketDocket_Prefix.pch";
+		fRef = 32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */;
+		rLen = 0;
+		rLoc = 0;
+		rType = 1;
+	};
+	C90B06DB1273C5630067D548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 32CA4F630368D1EE00C91783 /* PocketDocket_Prefix.pch */;
+		name = "PocketDocket_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 650;
+		vrLoc = 0;
+	};
+	C90B070E1273C7100067D548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 118";
+		rLen = 0;
+		rLoc = 2930;
+		rType = 0;
+		vrLen = 1497;
+		vrLoc = 2342;
+	};
+	C90B070F1273C7100067D548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 117";
+		rLen = 0;
+		rLoc = 2899;
+		rType = 0;
+		vrLen = 1497;
+		vrLoc = 2342;
+	};
+	C90B07191273C75A0067D548 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = C94C560211544FF700791FAC /* PDListsViewController.m */;
+		name = "PDListsViewController.m: 117";
+		rLen = 0;
+		rLoc = 2899;
+		rType = 0;
+		vrLen = 1497;
+		vrLoc = 2342;
+	};
+	C90B071A1273C75A0067D548 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = C9BD10FC1172AD83005E350E /* Docket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			NSMainNibFile,
+		);
+		name = "/Users/matt/Code/PocketDocket/Docket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C90B071B1273C75A0067D548 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PocketDocket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C90B071C1273C75A0067D548 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PocketDocket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C90B071D1273C7790067D548 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PocketDocket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	C90B071E1273C7870067D548 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* PocketDocket-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			LSRequiresIPhoneOS,
+		);
+		name = "/Users/matt/Code/PocketDocket/PocketDocket-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
 	};
 	C915E64D1166F0F0004A9597 /* PDTextViewCell.h */ = {
 		uiCtxt = {
@@ -454,7 +589,7 @@
 		fRef = 1D3623250D0F684500981E51 /* PDAppDelegate.m */;
 		name = "PDAppDelegate.m: 34";
 		rLen = 0;
-		rLoc = 1122;
+		rLoc = 1124;
 		rType = 0;
 		vrLen = 2254;
 		vrLoc = 0;
@@ -732,9 +867,9 @@
 	};
 	C94C560211544FF700791FAC /* PDListsViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {931, 5005}}";
-			sepNavSelRange = "{2930, 0}";
-			sepNavVisRange = "{1984, 2003}";
+			sepNavIntBoundsRect = "{{0, 0}, {931, 4940}}";
+			sepNavSelRange = "{2899, 0}";
+			sepNavVisRange = "{2342, 1497}";
 			sepNavWindowFrame = "{{15, 68}, {910, 810}}";
 		};
 	};
