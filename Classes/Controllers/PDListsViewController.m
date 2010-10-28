@@ -108,16 +108,13 @@
 	
 	self.navigationItem.leftBarButtonItem = [self editButtonItem];
 	self.navigationItem.rightBarButtonItem = self.addButton;
-#if !defined(CONFIGURATION_Release)
-	self.toolbarItems = [NSArray arrayWithObjects:self.refreshButton,
-						 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-																	   target:nil
-																	   action:NULL],
-						 self.settingsButton,
-						 nil];
-#else
+//	self.toolbarItems = [NSArray arrayWithObjects:self.refreshButton,
+//						 [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+//																	   target:nil
+//																	   action:NULL],
+//						 self.settingsButton,
+//						 nil];
 	self.toolbarItems = [NSArray arrayWithObject:self.refreshButton];
-#endif
 	
 	// eliminate separators for empty cells
 	UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 0)];
