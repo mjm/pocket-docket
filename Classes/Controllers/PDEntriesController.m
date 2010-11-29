@@ -93,11 +93,11 @@
 {
 	if ([keyPath isEqualToString:@"selection"])
 	{
-		id list = [change objectForKey:NSKeyValueChangeNewKey];
-		if (list != [NSNull null])
+		id aList = [change objectForKey:NSKeyValueChangeNewKey];
+		if (aList != [NSNull null])
 		{
-			self.list = list;
-			self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController] entriesFetchedResultsControllerForList:list];
+			self.list = aList;
+			self.fetchedResultsController = [[PDPersistenceController sharedPersistenceController] entriesFetchedResultsControllerForList:aList];
 			self.fetchedResultsController.delegate = self;
 			
 			NSError *error = nil;

@@ -121,14 +121,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDPersistenceController, PersistenceController)
 
 - (NSUndoManager *)undoManager
 {
-	NSUndoManager* undoManager = [self.managedObjectContext undoManager];
-	if (!undoManager)
+	NSUndoManager* manager = [self.managedObjectContext undoManager];
+	if (!manager)
 	{
-		undoManager = [[NSUndoManager alloc] init];
-		[self.managedObjectContext setUndoManager:undoManager];
-		[undoManager release];
+		manager = [[NSUndoManager alloc] init];
+		[self.managedObjectContext setUndoManager:manager];
+		[manager release];
 	}
-	return undoManager;
+	return manager;
 }
 
 - (void)beginEdits

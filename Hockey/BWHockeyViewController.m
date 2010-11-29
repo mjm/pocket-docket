@@ -38,10 +38,10 @@
 #pragma mark -
 #pragma mark Initialization
 
-- (id)init:(BWHockeyController *)hockeyController modal:(BOOL)modal {
+- (id)init:(BWHockeyController *)aHockeyController modal:(BOOL)isModal {
     if ((self = [super initWithStyle:UITableViewStyleGrouped])) {
-        self.hockeyController = hockeyController;
-        self.modal = modal;
+        self.hockeyController = aHockeyController;
+        self.modal = isModal;
         self.title = NSLocalizedString(@"Beta Updates", @"");
     }
     return self;    

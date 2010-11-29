@@ -3,19 +3,19 @@
 
 @implementation PDCredentials
 
-+ (PDCredentials *)credentialsWithUsername:(NSString *)username password:(NSString *)password deviceId:(NSString *)deviceId
++ (PDCredentials *)credentialsWithUsername:(NSString *)aUsername password:(NSString *)aPassword deviceId:(NSString *)aDeviceId
 {
-	return [[[self alloc] initWithUsername:username password:password deviceId:deviceId] autorelease];
+	return [[[self alloc] initWithUsername:aUsername password:aPassword deviceId:aDeviceId] autorelease];
 }
 
-- (id)initWithUsername:(NSString *)username password:(NSString *)password deviceId:(NSString *)deviceId
+- (id)initWithUsername:(NSString *)aUsername password:(NSString *)aPassword deviceId:(NSString *)aDeviceId
 {
 	if (![super init])
 		return nil;
 	
-	self.username = username;
-	self.password = password;
-	self.deviceId = deviceId;
+	self.username = aUsername;
+	self.password = aPassword;
+	self.deviceId = aDeviceId;
 	
 	return self;
 }

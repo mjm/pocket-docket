@@ -31,12 +31,10 @@
 	
 	self.title = NSLocalizedString(@"DocketAnywhere", nil);
 	
-	User *user = [[User alloc] init];
-	user.login = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
-	user.password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
-	
-	self.user = user;
-	[user release];
+	self.user = [[User alloc] init];
+	self.user.login = [[PDSettingsController sharedSettingsController] docketAnywhereUsername];
+	self.user.password = [[PDSettingsController sharedSettingsController] docketAnywherePassword];
+	[self.user release];
 	
 	return self;
 }
@@ -159,13 +157,13 @@
 	[[ConnectionManager sharedInstance] runJob:@selector(doLogin) onTarget:self];
 }
 
-- (void)handleRegisterSuccess:(User *)user
+- (void)handleRegisterSuccess:(User *)aUser
 {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	
 	PDSettingsController *settingsController = [PDSettingsController sharedSettingsController];
-	settingsController.docketAnywhereUsername = user.login;
-	settingsController.docketAnywherePassword = user.password;
+	settingsController.docketAnywhereUsername = aUser.login;
+	settingsController.docketAnywherePassword = aUser.password;
 	
 	[[PDPersistenceController sharedPersistenceController] createFirstLaunchData];
 	
@@ -309,7 +307,7 @@
 #pragma mark -
 #pragma mark Table View Data Source Methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)table
 {
     return self.showRegistrationFields ? 1 : 2;
 }
@@ -319,17 +317,17 @@
 	return self.showRegistrationFields ? 4 : (section == 0 ? 2 : 1);
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)table titleForHeaderInSection:(NSInteger)section
 {
     if (section == 1) return nil;
 	return NSLocalizedString(self.showRegistrationFields ? @"Create an Account" : @"Login to DocketAnywhere", nil);
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)table cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1)
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForgotPassword"];
+        UITableViewCell *cell = [table dequeueReusableCellWithIdentifier:@"ForgotPassword"];
         if (!cell)
         {
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
@@ -347,7 +345,7 @@
 	
 	NSInteger passOffset = self.showRegistrationFields ? 2 : 1;
 	
-    PDTextFieldCell *cell = (PDTextFieldCell *) [tableView dequeueReusableCellWithIdentifier:TextFieldCell];
+    PDTextFieldCell *cell = (PDTextFieldCell *) [table dequeueReusableCellWithIdentifier:TextFieldCell];
     if (!cell)
     {
         cell = [PDTextFieldCell textFieldCell];
@@ -443,9 +441,9 @@
 #pragma mark -
 #pragma mark Table View Delegate Methods
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)table didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	[tableView deselectRowAtIndexPath:indexPath animated:NO];
+	[table deselectRowAtIndexPath:indexPath animated:NO];
     
     if (indexPath.section == 1)
     {
@@ -453,7 +451,7 @@
         return;
     }
     
-	PDTextFieldCell *cell = (PDTextFieldCell *) [tableView cellForRowAtIndexPath:indexPath];
+	PDTextFieldCell *cell = (PDTextFieldCell *) [table cellForRowAtIndexPath:indexPath];
 	[cell.textField becomeFirstResponder];
 }
 

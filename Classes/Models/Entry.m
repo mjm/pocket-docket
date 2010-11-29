@@ -21,12 +21,12 @@
 	return @"entries";
 }
 
-+ (NSString *)getRemoteCollectionPathForList:(NSString *)listId
++ (NSString *)getRemoteCollectionPathForList:(NSString *)aListId
 {
 	return [NSString stringWithFormat:@"%@%@/%@/%@%@?deviceId=%@",
 			[[self class] getRemoteSite],
 			[List getRemoteCollectionName],
-			listId,
+			aListId,
 			[[self class] getRemoteCollectionName],
 			[[self class] getRemoteProtocolExtension],
 			[[self class] deviceId]];
@@ -72,12 +72,12 @@
 	return [self destroyRemoteAtPath:[self getRemoteElementPath] withResponse:aError];
 }
 
-+ (BOOL)sortRemote:(NSArray *)ids forList:(NSString *)listId withResponse:(NSError **)aError
++ (BOOL)sortRemote:(NSArray *)ids forList:(NSString *)aListId withResponse:(NSError **)aError
 {
 	NSString *sortPath = [NSString stringWithFormat:@"%@%@/%@/%@/sort%@",
 						  [self getRemoteSite],
 						  [List getRemoteCollectionName],
-						  listId,
+						  aListId,
 						  [self getRemoteCollectionName],
 						  [self getRemoteProtocolExtension]];
 	
@@ -91,9 +91,9 @@
 	return [res isSuccess];
 }
 
-+ (NSArray *)findAllRemoteInList:(NSString *)listId withResponse:(NSError **)aError
++ (NSArray *)findAllRemoteInList:(NSString *)aListId withResponse:(NSError **)aError
 {
-	Response *res = [Connection get:[self getRemoteCollectionPathForList:listId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
+	Response *res = [Connection get:[self getRemoteCollectionPathForList:aListId] withUser:[[self class] getRemoteUser] andPassword:[[self class]  getRemotePassword]];
 	if([res isError] && aError) {
 		*aError = res.error;
 		return nil;

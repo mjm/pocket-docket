@@ -47,9 +47,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(PDSettingsController, SettingsController)
 	return [[NSUserDefaults standardUserDefaults] boolForKey:FirstLaunchKey];
 }
 
-- (void)setFirstLaunch:(BOOL)firstLaunch
+- (void)setFirstLaunch:(BOOL)launch
 {
-	[[NSUserDefaults standardUserDefaults] setBool:firstLaunch forKey:FirstLaunchKey];
+	[[NSUserDefaults standardUserDefaults] setBool:launch forKey:FirstLaunchKey];
 }
 
 - (NSDate *)lastSyncDate

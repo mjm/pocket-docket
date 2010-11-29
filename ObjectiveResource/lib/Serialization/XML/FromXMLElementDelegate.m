@@ -14,9 +14,9 @@
 
 @synthesize targetClass, parsedObject, currentPropertyName, contentOfCurrentProperty, unclosedProperties, currentPropertyType;
 
-+ (FromXMLElementDelegate *)delegateForClass:(Class)targetClass {
++ (FromXMLElementDelegate *)delegateForClass:(Class)aTargetClass {
 	FromXMLElementDelegate *delegate = [[[self alloc] init] autorelease];
-	[delegate setTargetClass:targetClass];
+	[delegate setTargetClass:aTargetClass];
 	return delegate;
 }
 

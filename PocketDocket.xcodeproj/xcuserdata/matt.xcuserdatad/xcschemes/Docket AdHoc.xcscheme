@@ -1,21 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Scheme>
+<Scheme
+   version = "1.1">
    <BuildAction
-      buildConfiguration = "AdHoc">
-      <BuildableProductReferences>
-         <BuildableProductReference
-            BuildableProductIdentifier = "Docket.app">
-         </BuildableProductReference>
-      </BuildableProductReferences>
+      parallelizeBuildables = "NO"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C9BD10F91172AD83005E350E"
+               BuildableName = "Docket.app"
+               BlueprintName = "Docket"
+               ReferencedContainer = "container:PocketDocket.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
-      failureAction = "0">
+      buildConfiguration = "Debug">
+      <Testables>
+      </Testables>
    </TestAction>
-   <ArchiveAction>
-      <ArchivingStrategy
-         StrategyType = "Xcode.IDEStandardArchivingStrategies.ArchivingStrategyType.Application">
-         <StrategyContent>
-         </StrategyContent>
-      </ArchivingStrategy>
+   <LaunchAction
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      loadSymbolsForSpecifiedModules = "NO"
+      displayScaleIsEnabled = "NO"
+      displayScale = "1.00"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+      <AdditionalOptions>
+      </AdditionalOptions>
+   </LaunchAction>
+   <ProfileAction
+      displayScaleIsEnabled = "NO"
+      displayScale = "1.00"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      useCustomWorkingDirectory = "NO"
+      buildConfiguration = "Debug">
+   </ProfileAction>
+   <ArchiveAction
+      buildConfiguration = "Release">
    </ArchiveAction>
 </Scheme>
