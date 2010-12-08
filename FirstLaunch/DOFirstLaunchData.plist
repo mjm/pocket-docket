@@ -1,5 +1,5 @@
 {
-	title = "Welcome to Docket";
+	title = "Welcome to Checkpad";
 	entries = (
 		{
 			text = "This is an example list.";
